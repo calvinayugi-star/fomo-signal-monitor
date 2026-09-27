@@ -1,1 +1,27 @@
-[]
+[
+ {
+  "id": "2026-09-27T20-baton",
+  "mint": "Hg5Ja55T5wESq4vyFoiVCMeHXtGyVA69X2UHq8hgpump",
+  "symbol": "baton",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "Cb7ZRgPLhji3Th7htXyKEqbXvNjPpeTvckXuWakBUhXu",
+  "alertedAt": "2026-09-27T20:06:46.416Z",
+  "exitDeadline": "2026-09-28T20:06:46.416Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.003514,
+  "group": "below score bar",
+  "outcome": "score 25.7",
+  "demandScore": 33.3,
+  "score": 25.7,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.5064,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
+  "result": null
+ }
+]
