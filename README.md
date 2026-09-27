@@ -51,7 +51,7 @@ Update `costs` in [config.json](config.json) if FOMO's fees change or you get a 
   - A **signal quality** table comparing alerts with each runner-up group.
   - A table of every alert.
 - [data/runs.jsonl](data/runs.jsonl): one line per run with rejection counts. Use it to see which rule filters out the most tokens when tuning.
-- A daily Telegram summary is sent at 08:00 UTC (`dailySummaryHourUtc`). It includes the alerts' average result next to the runner-ups'.
+- A daily Telegram summary is sent at 8 AM New York time (`dailySummaryHour`, in `displayTimezone`). It includes the alerts' average result next to the runner-ups'.
 - Hourly liquidity readings are working data, not records. They are kept in the GitHub Actions cache (`.cache/`), not in the repository.
 
 **Reading the signal quality table.** If alerts don't clearly beat the runner-ups, the score isn't picking winners.

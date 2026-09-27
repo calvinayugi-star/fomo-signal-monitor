@@ -26,16 +26,20 @@ const readJson = (file, fallback) => {
 };
 const writeJson = (file, value) => fs.writeFileSync(path.join(DATA, file), JSON.stringify(value, null, 1) + '\n');
 
+// Times shown in the display time zone, e.g. "Sun, Sep 27, 13:07 EDT".
 const when = (d) =>
-  `${new Intl.DateTimeFormat('en-GB', {
+  new Intl.DateTimeFormat('en-US', {
     timeZone: cfg.displayTimezone,
     weekday: 'short',
-    day: '2-digit',
     month: 'short',
+    day: 'numeric',
     hour: '2-digit',
     minute: '2-digit',
-    hour12: false,
-  }).format(d)} ${cfg.displayTimezone}`;
+    hourCycle: 'h23',
+    timeZoneName: 'short',
+  }).format(d);
+const localHour = (d) =>
+  Number(new Intl.DateTimeFormat('en-US', { timeZone: cfg.displayTimezone, hour: 'numeric', hourCycle: 'h23' }).format(d));
 const px = (x) => (x >= 1 ? x.toFixed(4) : x.toPrecision(4));
 const signed = (x, d = 0) => `${x >= 0 ? '+' : ''}${x.toFixed(d)}%`;
 
@@ -200,7 +204,7 @@ async function main() {
     log.errors.push(`screen: ${e.message}`);
   }
 
-  if (now.getUTCHours() === cfg.dailySummaryHourUtc && store.alerts.length) {
+  if (localHour(now) === cfg.dailySummaryHour && store.alerts.length) {
     const since = Date.parse(state.lastSummaryAt ?? 0);
     const closedSince = store.alerts.filter((a) => a.result && Date.parse(a.result.closedAt) > since);
     if (await sendTelegram(summaryMessage(store.alerts, store.shadows, closedSince), { dryRun })) state.lastSummaryAt = now.toISOString();

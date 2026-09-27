@@ -150,10 +150,15 @@ function comparisonRows(alerts, shadows) {
 }
 
 export function resultsMarkdown(alerts, shadows, cfg) {
+  const tz = cfg.displayTimezone;
+  const local = (d) =>
+    new Intl.DateTimeFormat('en-US', {
+      timeZone: tz, month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZoneName: 'short',
+    }).format(new Date(d));
   const s = stats(alerts);
   const rows = [...alerts].reverse().map((a) => {
     const r = a.result;
-    return `| ${a.alertedAt.slice(0, 16).replace('T', ' ')} | ${a.symbol} | ${a.sources.join('+')} | ${a.status} | ${price(a.entryPriceUsd)} | ${price(r?.exitPriceUsd)} | ${sf(r?.bestPct)} | ${sf(r?.worstPct)} | ${usd(r?.costsUsd ?? a.costs.totalUsd)} | ${r ? usd(r.netUsd) : '–'} |`;
+    return `| ${local(a.alertedAt)} | ${a.symbol} | ${a.sources.join('+')} | ${a.status} | ${price(a.entryPriceUsd)} | ${price(r?.exitPriceUsd)} | ${sf(r?.bestPct)} | ${sf(r?.worstPct)} | ${usd(r?.costsUsd ?? a.costs.totalUsd)} | ${r ? usd(r.netUsd) : '–'} |`;
   });
   const reviewNote =
     s.closed >= cfg.reviewAfterAlerts
@@ -161,7 +166,7 @@ export function resultsMarkdown(alerts, shadows, cfg) {
       : `${s.closed} of ~${cfg.reviewAfterAlerts} tracked alerts needed before review.`;
   return `# FOMO Signal Monitor: Results (${cfg.mode.toUpperCase()} MODE)
 
-Updated ${new Date().toISOString().slice(0, 16).replace('T', ' ')} UTC. ${reviewNote}
+Updated ${local(Date.now())}. ${reviewNote}
 
 Each alert is a hypothetical $${cfg.positionUsd} buy at the alert price, sold at the ${cfg.holdHours}h exit deadline.
 Costs = FOMO fees (${cfg.costs.fomoFeePct}% or $${cfg.costs.fomoMinFeeUsd} minimum, each side) + quoted slippage/pool fees.
@@ -195,7 +200,7 @@ ${comparisonRows(alerts, shadows).join('\n')}
 
 ## All alerts (newest first)
 
-| Alerted (UTC) | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
+| Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
 ${rows.join('\n') || '| – | – | – | – | – | – | – | – | – | – |'}
 

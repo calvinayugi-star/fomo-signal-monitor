@@ -2,13 +2,13 @@
   "mode": "paper",
   "positionUsd": 20,
   "holdHours": 24,
-  "displayTimezone": "UTC",
+  "displayTimezone": "America/New_York",
   "quoteValidMinutes": 20,
   "maxEntryDriftPct": 3,
   "cooldownDays": 7,
   "minScore": 55,
   "reviewAfterAlerts": 50,
-  "dailySummaryHourUtc": 8,
+  "dailySummaryHour": 8,
 
   "sources": {
     "trendingDurations": ["1h", "6h"],
