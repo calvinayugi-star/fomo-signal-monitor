@@ -1,0 +1,54 @@
+name: FOMO Signal Monitor
+
+on:
+  schedule:
+    - cron: '7 * * * *' # hourly at :07 UTC (GitHub may start it a few minutes late)
+  workflow_dispatch: # "Run workflow" button for manual runs
+
+permissions:
+  contents: write # needed to save the records back to the repo
+
+concurrency:
+  group: monitor
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      # Hourly liquidity readings are working data, kept in the Actions cache instead of git history.
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache
+          key: snapshots-${{ github.run_id }}
+          restore-keys: snapshots-
+
+      - name: Track alerts, screen, alert
+        run: node src/run.js
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache
+          key: snapshots-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Save records
+        if: always()
+        run: |
+          git config user.name "fomo-monitor-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data RESULTS.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Monitor run $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase
+          git push

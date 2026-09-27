@@ -1,0 +1,55 @@
+{
+  "mode": "paper",
+  "positionUsd": 20,
+  "holdHours": 24,
+  "displayTimezone": "UTC",
+  "quoteValidMinutes": 20,
+  "maxEntryDriftPct": 3,
+  "cooldownDays": 7,
+  "minScore": 55,
+  "reviewAfterAlerts": 50,
+  "dailySummaryHourUtc": 8,
+
+  "sources": {
+    "trendingDurations": ["1h", "6h"],
+    "pumpfunSorts": ["last_trade_timestamp", "market_cap"],
+    "graduatedMaxAgeHours": 72
+  },
+
+  "demand": {
+    "minLiquidityUsd": 25000,
+    "minMarketCapUsd": 100000,
+    "minPairAgeHours": 2,
+    "minVolumeH1Usd": 15000,
+    "minBuysH1": 60,
+    "minBuySellRatioH1": 1.15,
+    "minBuySellRatioH6": 1.0,
+    "minVolumeAcceleration": 1.2,
+    "minPriceChangeH1Pct": 0,
+    "maxPriceChangeH1Pct": 50,
+    "minPriceChangeH6Pct": -10,
+    "requireLiquidityHistory": true,
+    "minLiquidityGrowthPct": 0
+  },
+
+  "safety": {
+    "maxChecksPerRun": 6,
+    "minHolders": 300,
+    "maxTop10HolderPct": 60,
+    "maxDevHoldingPct": 10
+  },
+
+  "shadow": {
+    "maxPerRun": 5,
+    "cooldownHours": 24,
+    "assumedDexRoundTripPct": 1
+  },
+
+  "costs": {
+    "fomoFeePct": 0.5,
+    "fomoMinFeeUsd": 0.95,
+    "slippageBps": 300,
+    "maxDexRoundTripPct": 3,
+    "maxTotalCostPct": 12.5
+  }
+}

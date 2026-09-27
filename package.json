@@ -1,0 +1,11 @@
+{
+  "name": "fomo-signal-monitor",
+  "private": true,
+  "type": "module",
+  "description": "Hourly paper-mode research monitor for FOMO-style Trending/Graduated Solana tokens",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "run": "node src/run.js",
+    "dry-run": "node src/run.js --dry-run"
+  }
+}
