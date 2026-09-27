@@ -26,17 +26,18 @@ Tokens alerted in the last 7 days are skipped. Every remaining token must pass a
    - Needs ≥ 300 holders; the top 10 wallets may hold at most 60%, a figure that includes the liquidity pool.
    - The developer wallet may hold at most 10%.
 3. **Sellability and cost** (Jupiter): a live $20 buy quote followed by a sell quote for the tokens received.
-   If there is no sell route, the token is rejected as a possible honeypot. Slippage and pool fees must be ≤ 3%, and total cost ≤ 12.5%.
+   If there is no sell route, the token is rejected as a possible honeypot. Slippage and pool fees must be ≤ 3%, and total cost ≤ 7%.
 4. **Score** (0–100): volume acceleration, buy pressure (1h and 6h), liquidity growth, momentum and volume size,
    minus penalties for pool costs and wallet concentration. The best token scoring ≥ 55 is alerted. If none reaches 55, nothing is sent.
 
 Each alert contains the entry conditions (maximum entry price, quote expiry 20 minutes after the alert), estimated costs, the reasons it qualified, the risks, and the exit deadline.
 
-### Costs: a $20 position starts about 10–12% behind
+### Costs: a $20 position starts about 4–7% behind
 
-FOMO charges 0.5% per trade with a **$0.95 minimum** on both the buy and the sell. That is about $1.90, or 9.5%, of a $20 position,
-before slippage. So each alert needs roughly a +10–12% move just to break even.
-Update `costs` in [config.json](config.json) if FOMO's fees change or you get a referral discount.
+The FOMO app quoted a **$0.37 fee** on a $20 trade (checked 2026-09-27). The monitor assumes the same fee on the sell,
+so about $0.74, or 3.7%, of a $20 position before slippage. With up to 3% slippage and pool fees on top,
+each alert needs roughly a +4–7% move just to break even.
+The model is `max(fomoMinFeeUsd, fomoFeePct × trade size)`. Update `costs` in [config.json](config.json) if the fee in the app changes.
 
 ## Results tracker
 

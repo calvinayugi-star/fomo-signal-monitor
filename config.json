@@ -47,9 +47,9 @@
 
   "costs": {
     "fomoFeePct": 0.5,
-    "fomoMinFeeUsd": 0.95,
+    "fomoMinFeeUsd": 0.37,
     "slippageBps": 300,
     "maxDexRoundTripPct": 3,
-    "maxTotalCostPct": 12.5
+    "maxTotalCostPct": 7
   }
 }
