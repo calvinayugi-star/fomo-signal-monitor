@@ -20,14 +20,26 @@
    "dexRoundTripUsd": 0.5064,
    "estimated": false
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.004,
    "lastSampleAt": "2026-09-28T17:36:56.876Z",
    "bestPriceUsd": 0.004,
    "worstPriceUsd": 0.002637
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-09-28T23:12:58.515Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.0035424884146459954,
+   "bestPriceUsd": 0.004935137584543763,
+   "worstPriceUsd": 0.00228265202242207,
+   "grossPct": 0.8107118567443061,
+   "bestPct": 40.44216233761419,
+   "worstPct": -35.04120596408452,
+   "costsUsd": 1.2464,
+   "netUsd": -1.0842576286511396,
+   "netPct": -5.421288143255698
+  }
  },
  {
   "id": "2026-09-28T01-PENGU",
@@ -52,10 +64,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.009666,
-   "lastSampleAt": "2026-09-28T17:36:56.876Z",
+   "lastPriceUsd": 0.009399,
+   "lastSampleAt": "2026-09-28T23:12:58.079Z",
    "bestPriceUsd": 0.009666,
-   "worstPriceUsd": 0.009567
+   "worstPriceUsd": 0.009399
   },
   "result": null
  }
