@@ -22,11 +22,36 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.003378,
-   "lastSampleAt": "2026-09-27T23:02:06.332Z",
+   "lastPriceUsd": 0.002713,
+   "lastSampleAt": "2026-09-28T01:35:50.397Z",
    "bestPriceUsd": 0.003378,
-   "worstPriceUsd": 0.003378
+   "worstPriceUsd": 0.002713
   },
+  "result": null
+ },
+ {
+  "id": "2026-09-28T01-PENGU",
+  "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+  "symbol": "PENGU",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "FAqh648xeeaTqL7du49sztp9nfj5PjRQrfvaMccyd9cz",
+  "alertedAt": "2026-09-28T01:35:50.229Z",
+  "exitDeadline": "2026-09-29T01:35:50.229Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.01036,
+  "group": "below score bar",
+  "outcome": "score 41.2",
+  "demandScore": 43.9,
+  "score": 41.2,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
