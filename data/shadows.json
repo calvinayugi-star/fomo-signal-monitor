@@ -62,13 +62,25 @@
    "dexRoundTripUsd": 0,
    "estimated": false
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.009399,
    "lastSampleAt": "2026-09-28T23:12:58.079Z",
    "bestPriceUsd": 0.009666,
    "worstPriceUsd": 0.009399
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-09-29T05:37:34.517Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.009141447142364008,
+   "bestPriceUsd": 0.010365938795987418,
+   "worstPriceUsd": 0.009023729769381254,
+   "grossPct": -11.76209322042463,
+   "bestPct": 0.057324285592841306,
+   "worstPct": -12.898361299408734,
+   "costsUsd": 0.74,
+   "netUsd": -3.092418644084928,
+   "netPct": -15.462093220424638
+  }
  }
 ]
