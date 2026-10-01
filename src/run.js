@@ -40,6 +40,7 @@ const when = (d) =>
   }).format(d);
 const localHour = (d) =>
   Number(new Intl.DateTimeFormat('en-US', { timeZone: cfg.displayTimezone, hour: 'numeric', hourCycle: 'h23' }).format(d));
+const localDate = (d) => new Intl.DateTimeFormat('en-CA', { timeZone: cfg.displayTimezone }).format(d); // YYYY-MM-DD
 const px = (x) => (x >= 1 ? x.toFixed(4) : x.toPrecision(4));
 const signed = (x, d = 0) => `${x >= 0 ? '+' : ''}${x.toFixed(d)}%`;
 
@@ -151,19 +152,48 @@ function buildShadow(c, now) {
   };
 }
 
-function summaryMessage(alerts, shadows, closedSinceLast) {
+// Last 24h of run logs (plus this run), so the summary also proves the monitor is alive.
+function activityLines(log, now) {
+  const runs = [];
+  try {
+    for (const line of fs.readFileSync(path.join(DATA, 'runs.jsonl'), 'utf8').trim().split('\n')) {
+      const r = JSON.parse(line);
+      if (now - Date.parse(r.t) <= 24 * 3600e3) runs.push(r);
+    }
+  } catch {
+    /* no log yet */
+  }
+  runs.push(log);
+  const sum = (k) => runs.reduce((s, r) => s + (r[k] ?? 0), 0);
+  const blockers = {};
+  for (const r of runs) for (const [k, v] of Object.entries(r.rejects ?? {})) blockers[k] = (blockers[k] ?? 0) + v;
+  const top = Object.entries(blockers)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([k, v]) => `${esc(k)} (${v})`)
+    .join(', ');
+  return `<b>Last 24h:</b> ${runs.length} runs, ~${Math.round(sum('candidates') / runs.length)} tokens checked per run
+Passed demand checks: ${sum('passedDemand')} · Runner-ups recorded: ${sum('shadowed')} · Alerts: ${runs.filter((r) => r.alerted).length}
+Top reasons tokens were rejected: ${top || 'n/a'}`;
+}
+
+function summaryMessage(alerts, shadows, closedSinceLast, log, now) {
   const s = stats(alerts);
   const sh = stats(shadows);
   const f = (x, suffix = '%') => (x == null ? 'n/a' : `${x.toFixed(1)}${suffix}`);
   const recent = closedSinceLast.map(
     (a) => `• $${esc(a.symbol)}: ${a.result.netUsd >= 0 ? '+' : '-'}$${Math.abs(a.result.netUsd).toFixed(2)} net (best ${f(a.result.bestPct)}, worst ${f(a.result.worstPct)})`,
   );
-  return `📊 <b>Daily results (${cfg.mode.toUpperCase()} MODE)</b>
-Alerts: ${s.total} (${s.open} open, ${s.closed} closed of ~${cfg.reviewAfterAlerts} for review)
+  const results = s.total
+    ? `Alerts: ${s.total} (${s.open} open, ${s.closed} closed of ~${cfg.reviewAfterAlerts} for review)
 Win rate: ${f(s.winRate)} · Avg gain ${f(s.avgGainPct)} · Avg loss ${f(s.avgLossPct)}
 Net after costs: ${s.netUsd < 0 ? '-' : ''}$${Math.abs(s.netUsd).toFixed(2)} (costs $${s.costsUsd.toFixed(2)})
-Avg per alert after costs: ${f(s.avgNetPct)} vs runner-ups ${f(sh.avgNetPct)} (${sh.closed} tracked)
-${recent.length ? `\nClosed since last summary:\n${recent.join('\n')}` : ''}`;
+Avg per alert after costs: ${f(s.avgNetPct)} vs runner-ups ${f(sh.avgNetPct)} (${sh.closed} tracked)`
+    : `No alerts yet: no token has cleared every check. Runner-ups tracked: ${sh.total} (${sh.closed} closed).`;
+  return `📊 <b>Daily summary (${cfg.mode.toUpperCase()} MODE)</b>
+${results}
+${recent.length ? `\nClosed since last summary:\n${recent.join('\n')}\n` : ''}
+${activityLines(log, now)}`;
 }
 
 async function main() {
@@ -204,10 +234,14 @@ async function main() {
     log.errors.push(`screen: ${e.message}`);
   }
 
-  if (localHour(now) === cfg.dailySummaryHour && store.alerts.length) {
+  // Once a day, at the first run at or after the summary hour (runs can be late), even with no alerts.
+  if (localHour(now) >= cfg.dailySummaryHour && state.lastSummaryDate !== localDate(now)) {
     const since = Date.parse(state.lastSummaryAt ?? 0);
     const closedSince = store.alerts.filter((a) => a.result && Date.parse(a.result.closedAt) > since);
-    if (await sendTelegram(summaryMessage(store.alerts, store.shadows, closedSince), { dryRun })) state.lastSummaryAt = now.toISOString();
+    if (await sendTelegram(summaryMessage(store.alerts, store.shadows, closedSince, log, now), { dryRun })) {
+      state.lastSummaryAt = now.toISOString();
+      state.lastSummaryDate = localDate(now);
+    }
   }
 
   // Liquidity snapshots are working data (not records), so keep only the last 26h.
