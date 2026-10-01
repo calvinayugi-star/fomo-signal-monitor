@@ -55,10 +55,10 @@ function metrics(pair, now) {
   };
 }
 
-// Liquidity growth vs the snapshot taken roughly an hour ago (40 min - 3 h window).
+// Liquidity growth vs the most recent earlier snapshot (40 min - 8 h window, since scheduled runs can be late).
 function liquidityGrowth(snapshots, mint, liqUsd, now) {
   const prev = (snapshots[mint] ?? [])
-    .filter((s) => now - s.t >= 40 * 60e3 && now - s.t <= 3 * HOUR)
+    .filter((s) => now - s.t >= 40 * 60e3 && now - s.t <= 8 * HOUR)
     .sort((a, b) => b.t - a.t)[0];
   return prev && prev.liqUsd > 0 ? liqUsd / prev.liqUsd - 1 : null;
 }
@@ -75,6 +75,8 @@ function demandFailure(c, m, cfg) {
   if (m.buysH1 < d.minBuysH1) return 'too few buys (1h)';
   if (m.ratioH1 < d.minBuySellRatioH1) return 'buying not dominant (1h)';
   if (m.ratioH6 < d.minBuySellRatioH6) return 'buying not sustained (6h)';
+  // Dozens of buys per sell, hour after hour, is a volume bot, not real demand.
+  if (Math.max(m.ratioH1, m.ratioH6) > d.maxBuySellRatio) return 'unnatural buy/sell pattern (likely bots)';
   if (m.accel == null || m.accel < d.minVolumeAcceleration) return 'volume not accelerating';
   if (m.chgH1 < d.minPriceChangeH1Pct) return 'no 1h momentum';
   if (m.chgH1 > d.maxPriceChangeH1Pct) return 'already spiked (1h)';

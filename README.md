@@ -16,9 +16,9 @@ Each run rebuilds the two lists from public data. Solana only, because FOMO's gr
 Tokens alerted in the last 7 days are skipped. Every remaining token must pass all of the checks below. All thresholds live in [config.json](config.json).
 
 1. **Demand** (DexScreener): liquidity ≥ $25k, market cap ≥ $100k, pool ≥ 2h old, 1h volume ≥ $15k with ≥ 60 buys,
-   buys/sells ≥ 1.15 over 1h and ≥ 1.0 over 6h, 1h volume ≥ 1.2× the prior hourly average,
-   price up over 1h but by no more than 50% (to avoid chasing a spike), and 6h change no worse than -10%.
-   Liquidity must also be flat or growing compared with this monitor's own reading about an hour earlier.
+   buys/sells ≥ 1.15 over 1h and ≥ 1.0 over 6h but no more than 5 (higher is a volume bot), 1h volume at least the prior hourly average,
+   price over 1h between -5% and +50% (to avoid chasing a spike), and 6h change no worse than -10%.
+   Liquidity must also be flat or growing compared with this monitor's own previous reading (40 minutes to 8 hours earlier).
    So a token must be seen on two runs before it can alert.
 2. **Safety** (GeckoTerminal and GoPlus):
    - Mint and freeze authority must be confirmed off.
