@@ -2,8 +2,10 @@ name: FOMO Signal Monitor
 
 on:
   schedule:
-    - cron: '7 * * * *' # hourly at :07 UTC (GitHub may start it a few minutes late)
-  workflow_dispatch: # "Run workflow" button for manual runs
+    # GitHub skips many scheduled runs, so offer 4 chances an hour; the guard below
+    # makes sure the monitor itself still runs at most about once an hour.
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch: # "Run workflow" button for manual runs (always runs)
 
 permissions:
   contents: write # needed to save the records back to the repo
@@ -19,31 +21,44 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Skip if the monitor ran in the last 50 minutes
+        id: guard
+        run: |
+          last=$(tail -n 1 data/runs.jsonl 2>/dev/null | sed -E 's/^\{"t":"([^"]+)".*/\1/')
+          age=$(( ( $(date -u +%s) - $(date -u -d "${last:-1970-01-01}" +%s) ) / 60 ))
+          echo "Last run ${last:-never} (${age} min ago)"
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$age" -lt 50 ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-node@v5
+        if: steps.guard.outputs.skip != 'true'
         with:
           node-version: 22
 
       # Hourly liquidity readings are working data, kept in the Actions cache instead of git history.
       - uses: actions/cache/restore@v4
+        if: steps.guard.outputs.skip != 'true'
         with:
           path: .cache
           key: snapshots-${{ github.run_id }}
           restore-keys: snapshots-
 
       - name: Track alerts, screen, alert
+        if: steps.guard.outputs.skip != 'true'
         run: node src/run.js
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
       - uses: actions/cache/save@v4
-        if: always()
+        if: always() && steps.guard.outputs.skip != 'true'
         with:
           path: .cache
           key: snapshots-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Save records
-        if: always()
+        if: always() && steps.guard.outputs.skip != 'true'
         run: |
           git config user.name "fomo-monitor-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
