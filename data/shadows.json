@@ -106,11 +106,86 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005766,
-   "lastSampleAt": "2026-10-02T10:00:22.995Z",
+   "lastPriceUsd": 0.005836,
+   "lastSampleAt": "2026-10-02T11:00:24.270Z",
    "bestPriceUsd": 0.005866,
    "worstPriceUsd": 0.005766
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-02T11-e/acc",
+  "mint": "ERxLYPjqeFfLsnChuPnvS6f3y5Me8BjgJi9oWaTJpump",
+  "symbol": "e/acc",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "ADd8YiSXcRn6kL6t8LsSyiCQTWyWJtLFy5R7gzANZoqK",
+  "alertedAt": "2026-10-02T11:00:23.954Z",
+  "exitDeadline": "2026-10-03T11:00:23.954Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0009214,
+  "group": "below score bar",
+  "outcome": "score 35.0",
+  "demandScore": 41.1,
+  "score": 35,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4115,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
+  "result": null
+ },
+ {
+  "id": "2026-10-02T11-CARDS",
+  "mint": "CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp",
+  "symbol": "CARDS",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "HnhpJPJgBG2KwniMTNW8cVBHvk1hFog3RC3kjnyc23tD",
+  "alertedAt": "2026-10-02T11:00:23.954Z",
+  "exitDeadline": "2026-10-03T11:00:23.954Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.2517,
+  "group": "failed safety",
+  "outcome": "top 10 wallets hold too much",
+  "demandScore": 39,
+  "score": null,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2,
+   "estimated": true
+  },
+  "status": "open",
+  "track": {},
+  "result": null
+ },
+ {
+  "id": "2026-10-02T11-fone",
+  "mint": "CTPoyCwkjMvoJwU4xvZZqoD8tiYk6yDchySiN5gGpump",
+  "symbol": "fone",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "3dcwhqJp6JBTJPq8ga335HWgSQVS7uQmdmeX7iGjMNpj",
+  "alertedAt": "2026-10-02T11:00:23.954Z",
+  "exitDeadline": "2026-10-03T11:00:23.954Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.005888,
+  "group": "below score bar",
+  "outcome": "score 29.7",
+  "demandScore": 31.1,
+  "score": 29.7,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.0882,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
