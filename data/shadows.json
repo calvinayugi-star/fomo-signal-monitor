@@ -106,8 +106,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005251,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
+   "lastPriceUsd": 0.005294,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
    "bestPriceUsd": 0.006086,
    "worstPriceUsd": 0.005251
   },
@@ -136,8 +136,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0006446,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
+   "lastPriceUsd": 0.0005683,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
    "bestPriceUsd": 0.0009104,
    "worstPriceUsd": 0.0005017
   },
@@ -166,8 +166,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2489,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
+   "lastPriceUsd": 0.2527,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
    "bestPriceUsd": 0.2793,
    "worstPriceUsd": 0.2489
   },
@@ -196,8 +196,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.004831,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
+   "lastPriceUsd": 0.004998,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
    "bestPriceUsd": 0.005686,
    "worstPriceUsd": 0.00477
   },
@@ -226,8 +226,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.04092,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
+   "lastPriceUsd": 0.0394,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
    "bestPriceUsd": 0.04757,
    "worstPriceUsd": 0.03621
   },
@@ -256,10 +256,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003282,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
+   "lastPriceUsd": 0.0003237,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
    "bestPriceUsd": 0.00162,
-   "worstPriceUsd": 0.0003282
+   "worstPriceUsd": 0.0003237
   },
   "result": null
  },
@@ -286,8 +286,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2273,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
+   "lastPriceUsd": 0.2236,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
    "bestPriceUsd": 0.2512,
    "worstPriceUsd": 0.2212
   },
@@ -316,9 +316,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.01711,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
-   "bestPriceUsd": 0.01711,
+   "lastPriceUsd": 0.01738,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "bestPriceUsd": 0.01738,
    "worstPriceUsd": 0.01247
   },
   "result": null
@@ -346,9 +346,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0002451,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
-   "bestPriceUsd": 0.0003148,
+   "lastPriceUsd": 0.0003429,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "bestPriceUsd": 0.0003429,
    "worstPriceUsd": 0.0001408
   },
   "result": null
@@ -376,11 +376,61 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.04166,
-   "lastSampleAt": "2026-10-02T21:00:25.571Z",
-   "bestPriceUsd": 0.04166,
+   "lastPriceUsd": 0.04231,
+   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "bestPriceUsd": 0.04231,
    "worstPriceUsd": 0.04166
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-02T22-TOKEN2049",
+  "mint": "G7k8YPnJL6jKmA1H5Pt9sPLXhcd6YXjexHgmRQ4zpump",
+  "symbol": "TOKEN2049",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "8E1Zcg4VqnNetv4Pp6fVyYRFbDqUj3RueCcSyJM8sSSX",
+  "alertedAt": "2026-10-02T22:00:23.584Z",
+  "exitDeadline": "2026-10-03T22:00:23.584Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0008713,
+  "group": "failed safety",
+  "outcome": "developer holds too much",
+  "demandScore": 51.7,
+  "score": null,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2,
+   "estimated": true
+  },
+  "status": "open",
+  "track": {},
+  "result": null
+ },
+ {
+  "id": "2026-10-02T22-swordcat",
+  "mint": "5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump",
+  "symbol": "swordcat",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d",
+  "alertedAt": "2026-10-02T22:00:23.584Z",
+  "exitDeadline": "2026-10-03T22:00:23.584Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0008822,
+  "group": "below score bar",
+  "outcome": "score 36.2",
+  "demandScore": 42.3,
+  "score": 36.2,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.401,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]

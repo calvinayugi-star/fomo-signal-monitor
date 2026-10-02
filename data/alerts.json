@@ -59,11 +59,74 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.008724,
-   "lastSampleAt": "2026-10-02T21:00:25.406Z",
+   "lastPriceUsd": 0.008834,
+   "lastSampleAt": "2026-10-02T22:00:23.719Z",
    "bestPriceUsd": 0.01,
    "worstPriceUsd": 0.008724
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-02T22-HOTBOT",
+  "mode": "paper",
+  "mint": "8nnaeWCw8mUypcGAgbmSuzAT85uWx4UN12adDrMhXrGF",
+  "symbol": "HOTBOT",
+  "name": "Hot Bot",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "GLL3CzybpSCLZdoACf8QUM5YrKVwyA65kQ2RcTsJxxzV",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-02T22:00:23.584Z",
+  "quoteExpiresAt": "2026-10-02T22:20:23.584Z",
+  "exitDeadline": "2026-10-03T22:00:23.584Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0007706,
+  "maxEntryPriceUsd": 0.000793718,
+  "effectiveEntryPriceUsd": 0.0007815734984000639,
+  "score": 59.7,
+  "metrics": {
+   "priceUsd": 0.0008,
+   "liqUsd": 91192.44,
+   "mcapUsd": 742054,
+   "ageH": 16.2204,
+   "volH1": 688644.2,
+   "volH6": 1010488.25,
+   "volH24": 5013284.2,
+   "buysH1": 3240,
+   "sellsH1": 2691,
+   "ratioH1": 1.204,
+   "ratioH6": 1.1294,
+   "accel": 10.6984,
+   "chgH1": 46.04,
+   "chgH6": 57.92,
+   "chgH24": 1430,
+   "liqGrowth": 0.2046
+  },
+  "safety": {
+   "holders": 2204,
+   "top10Pct": 27.2027,
+   "devPct": 1.41,
+   "gtScore": 76.10389610389609
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4401,
+   "totalUsd": 1.1801,
+   "totalPct": 5.9,
+   "route": "Deriverse > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (16.2h old)",
+   "already up 46% in the last hour; pullbacks are common",
+   "costs of 5.9% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
