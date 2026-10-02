@@ -106,9 +106,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005795,
-   "lastSampleAt": "2026-10-02T12:00:23.633Z",
-   "bestPriceUsd": 0.005866,
+   "lastPriceUsd": 0.005948,
+   "lastSampleAt": "2026-10-02T13:00:30.055Z",
+   "bestPriceUsd": 0.005948,
    "worstPriceUsd": 0.005766
   },
   "result": null
@@ -136,10 +136,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0009104,
-   "lastSampleAt": "2026-10-02T12:00:23.633Z",
+   "lastPriceUsd": 0.00091,
+   "lastSampleAt": "2026-10-02T13:00:30.055Z",
    "bestPriceUsd": 0.0009104,
-   "worstPriceUsd": 0.0009104
+   "worstPriceUsd": 0.00091
   },
   "result": null
  },
@@ -167,7 +167,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.2511,
-   "lastSampleAt": "2026-10-02T12:00:23.633Z",
+   "lastSampleAt": "2026-10-02T13:00:30.055Z",
    "bestPriceUsd": 0.2511,
    "worstPriceUsd": 0.2511
   },
@@ -196,9 +196,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005675,
-   "lastSampleAt": "2026-10-02T12:00:23.633Z",
-   "bestPriceUsd": 0.005675,
+   "lastPriceUsd": 0.005686,
+   "lastSampleAt": "2026-10-02T13:00:30.055Z",
+   "bestPriceUsd": 0.005686,
    "worstPriceUsd": 0.005675
   },
   "result": null
@@ -223,6 +223,61 @@
    "buyFeeUsd": 0.37,
    "dexRoundTripUsd": 0.2,
    "estimated": true
+  },
+  "status": "open",
+  "track": {
+   "lastPriceUsd": 0.04061,
+   "lastSampleAt": "2026-10-02T13:00:30.055Z",
+   "bestPriceUsd": 0.04061,
+   "worstPriceUsd": 0.04061
+  },
+  "result": null
+ },
+ {
+  "id": "2026-10-02T13-PARASITE",
+  "mint": "3kmygWKZBkCYrgZHKfiuB9UFKTcDLTFFsKo3BWpmpump",
+  "symbol": "PARASITE",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "4zLRGHwKdXyaTovP8UkV66CskWgo9E7kAaGYcw1vFh7E",
+  "alertedAt": "2026-10-02T13:00:29.595Z",
+  "exitDeadline": "2026-10-03T13:00:29.595Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.001147,
+  "group": "below score bar",
+  "outcome": "score 49.7",
+  "demandScore": 55.8,
+  "score": 49.7,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4074,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
+  "result": null
+ },
+ {
+  "id": "2026-10-02T13-STONK",
+  "mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+  "symbol": "STONK",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX",
+  "alertedAt": "2026-10-02T13:00:29.595Z",
+  "exitDeadline": "2026-10-03T13:00:29.595Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.259,
+  "group": "below score bar",
+  "outcome": "score 46.6",
+  "demandScore": 46.9,
+  "score": 46.6,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.0196,
+   "estimated": false
   },
   "status": "open",
   "track": {},
