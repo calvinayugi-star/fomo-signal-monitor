@@ -87,12 +87,13 @@ Stay in paper mode until about 50 alerts have closed and the numbers have been r
 3. In the repository, go to **Settings → Secrets and variables → Actions → New repository secret**. Add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
 4. Go to **Actions → FOMO Signal Monitor → Run workflow** to test it once. After that it runs about once an hour.
 
-**Scheduling.** GitHub's free scheduler skips many runs (here it managed about one every 5 hours on an hourly schedule).
-So the workflow is offered 4 times an hour (:07, :22, :37, :52 UTC), and a guard step exits within seconds if the monitor ran in the last 50 minutes.
-The repository is public, so these runs use no paid minutes (public repositories get unlimited free Actions minutes).
+**Scheduling.** GitHub's free scheduler starts runs here only every 4–6 hours, even when offered 4 slots an hour.
+So each job keeps going for up to about 5½ hours and runs the monitor itself about once an hour, waiting until an hour has passed since the previous check.
+Records are committed after every check. Extra schedule slots queue the next job (one at a time), so coverage continues when a job ends.
+The repository is public, so these long jobs use no paid minutes (public repositories get unlimited free Actions minutes).
 Others can read it but not change it, and the Telegram secrets are never visible.
-If it is ever made private, set the schedule back to hourly (`'7 * * * *'`) first, or the runs can exceed the 2,000 free minutes a month.
-The records are committed after each run, which also keeps the schedule from being paused for inactivity.
+Actions must be pinned to full commit SHAs (a repository setting); keep that when updating the workflow.
+If the repository is ever made private, switch back to short hourly runs first, or the jobs will use up the 2,000 free minutes a month within days.
 
 ## Running locally
 

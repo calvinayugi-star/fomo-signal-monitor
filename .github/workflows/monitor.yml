@@ -1,11 +1,12 @@
 name: FOMO Signal Monitor
 
+# GitHub starts scheduled runs only every few hours here, so each job keeps going for
+# up to ~5.5 hours and runs the monitor about once an hour itself. Extra schedule slots
+# just queue the next job (one at a time) so coverage continues when this one ends.
 on:
   schedule:
-    # GitHub skips many scheduled runs, so offer 4 chances an hour; the guard below
-    # makes sure the monitor itself still runs at most about once an hour.
     - cron: '7,22,37,52 * * * *'
-  workflow_dispatch: # "Run workflow" button for manual runs (always runs)
+  workflow_dispatch: # "Run workflow" button
 
 permissions:
   contents: write # needed to save the records back to the repo
@@ -17,53 +18,52 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
-      - name: Skip if the monitor ran in the last 50 minutes
-        id: guard
-        run: |
-          last=$(tail -n 1 data/runs.jsonl 2>/dev/null | sed -E 's/^\{"t":"([^"]+)".*/\1/')
-          age=$(( ( $(date -u +%s) - $(date -u -d "${last:-1970-01-01}" +%s) ) / 60 ))
-          echo "Last run ${last:-never} (${age} min ago)"
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$age" -lt 50 ]; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-          fi
-
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5.0.0
-        if: steps.guard.outputs.skip != 'true'
         with:
           node-version: 22
 
       # Hourly liquidity readings are working data, kept in the Actions cache instead of git history.
       - uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        if: steps.guard.outputs.skip != 'true'
         with:
           path: .cache
           key: snapshots-${{ github.run_id }}
           restore-keys: snapshots-
 
-      - name: Track alerts, screen, alert
-        if: steps.guard.outputs.skip != 'true'
-        run: node src/run.js
+      - name: Run the monitor about hourly for up to ~5.5 hours
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-
-      - uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        if: always() && steps.guard.outputs.skip != 'true'
-        with:
-          path: .cache
-          key: snapshots-${{ github.run_id }}-${{ github.run_attempt }}
-
-      - name: Save records
-        if: always() && steps.guard.outputs.skip != 'true'
         run: |
           git config user.name "fomo-monitor-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data RESULTS.md
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Monitor run $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull --rebase
-          git push
+          end=$(( $(date +%s) + 5 * 3600 + 20 * 60 ))
+          while :; do
+            # Wait until an hour after the last check (from this job or the previous one).
+            last=$(tail -n 1 data/runs.jsonl 2>/dev/null | sed -E 's/^\{"t":"([^"]+)".*/\1/')
+            next=$(( $(date -u -d "${last:-1970-01-01}" +%s) + 3600 ))
+            now=$(date +%s)
+            if [ "$next" -gt "$now" ]; then
+              if [ "$next" -gt "$end" ]; then break; fi
+              echo "Next check at $(date -u -d "@$next" +%H:%M) UTC"
+              sleep $(( next - now ))
+            fi
+
+            node src/run.js || echo "::warning::monitor run failed"
+
+            # Save records after every check, so nothing is lost if the job is stopped.
+            git add data RESULTS.md
+            if ! git diff --cached --quiet; then
+              git commit -q -m "Monitor run $(date -u +%Y-%m-%dT%H:%MZ)"
+              git pull --rebase -q && git push -q || echo "::warning::could not push records"
+            fi
+          done
+
+      - uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        if: always()
+        with:
+          path: .cache
+          key: snapshots-${{ github.run_id }}-${{ github.run_attempt }}
