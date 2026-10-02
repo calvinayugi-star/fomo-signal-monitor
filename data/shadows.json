@@ -82,5 +82,30 @@
    "netUsd": -3.092418644084928,
    "netPct": -15.462093220424638
   }
+ },
+ {
+  "id": "2026-10-02T08-PUMP",
+  "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+  "symbol": "PUMP",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "2uF4Xh61rDwxnG9woyxsVQP7zuA6kLFpb3NvnRQeoiSd",
+  "alertedAt": "2026-10-02T08:00:23.598Z",
+  "exitDeadline": "2026-10-03T08:00:23.598Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.005947,
+  "group": "below score bar",
+  "outcome": "score 18.0",
+  "demandScore": 28,
+  "score": 18,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.0046,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
+  "result": null
  }
 ]
