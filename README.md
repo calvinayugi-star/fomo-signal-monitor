@@ -87,22 +87,9 @@ Stay in paper mode until about 50 alerts have closed and the numbers have been r
 3. In the repository, go to **Settings → Secrets and variables → Actions → New repository secret**. Add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
 4. Go to **Actions → FOMO Signal Monitor → Run workflow** to test it once. After that it runs about once an hour.
 
-**Scheduling.** GitHub's free scheduler skips many runs (here it managed about one every 5 hours on an hourly schedule).
-So the workflow is offered 4 times an hour (:07, :22, :37, :52 UTC), and a guard step exits within seconds if the monitor ran in the last 50 minutes.
-The repository is public, so these runs use no paid minutes (public repositories get unlimited free Actions minutes).
-Others can read it but not change it, and the Telegram secrets are never visible.
-If it is ever made private, set the schedule back to hourly (`'7 * * * *'`) first, or the runs can exceed the 2,000 free minutes a month.
-The records are committed after each run, which also keeps the schedule from being paused for inactivity.
-
-## Running locally
-
-```powershell
-node src/run.js --dry-run   # screens now, prints any alert, saves nothing
-```
-
-## Limits
-
-- Research only. It has no trading code, no wallet access, and nothing it produces is financial advice.
-- The lists approximate FOMO's Trending and Graduated tabs. They are not an exact copy.
-- The honeypot check relies on token-program flags plus a live sell quote. Neither guarantees a real sell will succeed.
-- Best and worst prices come from 15-minute candles, so short wicks may be missed.
+**Scheduling.** GitHub's own scheduler starts runs here only every 4–6 hours, so the main trigger is external:
+a free **cron-job.org** job sends a POST to this workflow's `dispatches` endpoint at the top of every hour.
+It uses a fine-grained GitHub token limited to this repository with *Actions: Read and write* only. The token expires around 2026-12-31; replace it in cron-job.org before then.
+GitHub's schedule (4 slots an hour) stays as a backup; a guard step makes those runs exit within seconds if the monitor ran in the last 50 minutes.
+The repository is public (unlimited free Actions minutes). Others can read it but not change it, and the Telegram secrets are never visible.
+Actions must be pinned to full commit SHAs (a repository setting); keep that when updating the workflow.
