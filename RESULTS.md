@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 2, 00:09 EDT. 0 of ~50 tracked alerts needed before review.
+Updated Oct 2, 01:22 EDT. 0 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 0 (0 / 0) |
+| Alerts (open / closed) | 1 (1 / 0) |
 | Win rate after costs | n/a (plausible true range n/a) |
 | Average gain (winners, after costs) | n/a |
 | Average loss (losers, after costs) | n/a |
@@ -42,6 +42,6 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – |
+| Oct 2, 01:21 EDT | PENGU | Trending | open | 0.009884 | n/a | n/a | n/a | $0.74 | – |
 
 Runner-up records are in [data/shadows.json](data/shadows.json).

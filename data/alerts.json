@@ -1,1 +1,64 @@
-[]
+[
+ {
+  "id": "2026-10-02T05-PENGU",
+  "mode": "paper",
+  "mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+  "symbol": "PENGU",
+  "name": "Pudgy Penguins",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "DdMA1cHcHEqYfttc1z1sJEY978CcU1pyjNuTWTNmdvzU",
+  "dexId": "meteora",
+  "alertedAt": "2026-10-02T05:21:59.147Z",
+  "quoteExpiresAt": "2026-10-02T05:41:59.147Z",
+  "exitDeadline": "2026-10-03T05:21:59.147Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.009884,
+  "maxEntryPriceUsd": 0.01018052,
+  "effectiveEntryPriceUsd": 0.009907732266674012,
+  "score": 58.4,
+  "metrics": {
+   "priceUsd": 0.0099,
+   "liqUsd": 4425240.84,
+   "mcapUsd": 621361511,
+   "ageH": 7427.1648,
+   "volH1": 270150.16,
+   "volH6": 1010346.53,
+   "volH24": 4233994.38,
+   "buysH1": 272,
+   "sellsH1": 100,
+   "ratioH1": 2.72,
+   "ratioH6": 1.8147,
+   "accel": 1.8249,
+   "chgH1": 1.24,
+   "chgH6": 4.59,
+   "chgH24": 0.5,
+   "liqGrowth": 0.0186
+  },
+  "safety": {
+   "holders": 560872,
+   "top10Pct": 45.1302,
+   "devPct": 0,
+   "gtScore": 73.44002170595597
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0,
+   "totalUsd": 0.74,
+   "totalPct": 3.7,
+   "route": "Meteora DLMM"
+  },
+  "risks": [
+   "top 10 wallets hold 45% (includes the liquidity pool)",
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "costs of 3.7% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
+  "result": null
+ }
+]
