@@ -152,6 +152,20 @@ function buildShadow(c, now) {
   };
 }
 
+// Warns in the daily summary before the cron-job.org GitHub token expires (it can't warn by itself).
+function tokenReminder(now) {
+  const t = cfg.triggerToken;
+  if (!t?.expires) return '';
+  const days = Math.ceil((Date.parse(`${t.expires}T23:59:59Z`) - now) / 86400e3);
+  if (days > t.remindDaysBefore) return '';
+  const when = days > 0 ? `expires in <b>${days} day${days === 1 ? '' : 's'}</b> (${t.expires})` : `<b>expired</b> on ${t.expires}`;
+  const lapsed = days <= 0 ? "\nUntil then the monitor only runs when GitHub's own scheduler starts it (every few hours)." : '';
+  return `
+
+⚠️ <b>Action needed:</b> the GitHub token used by cron-job.org ${when}.
+Create a new one (github.com/settings/personal-access-tokens/new: only fomo-signal-monitor, Actions: Read and write), paste it into the cron-job.org job's Authorization header after "Bearer ", then update triggerToken.expires in config.json.${lapsed}`;
+}
+
 // Last 24h of run logs (plus this run), so the summary also proves the monitor is alive.
 function activityLines(log, now) {
   const runs = [];
@@ -193,7 +207,7 @@ Avg per alert after costs: ${f(s.avgNetPct)} vs runner-ups ${f(sh.avgNetPct)} ($
   return `📊 <b>Daily summary (${cfg.mode.toUpperCase()} MODE)</b>
 ${results}
 ${recent.length ? `\nClosed since last summary:\n${recent.join('\n')}\n` : ''}
-${activityLines(log, now)}`;
+${activityLines(log, now)}${tokenReminder(now)}`;
 }
 
 async function main() {

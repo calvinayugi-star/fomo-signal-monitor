@@ -10,6 +10,11 @@
   "reviewAfterAlerts": 50,
   "dailySummaryHour": 8,
 
+  "triggerToken": {
+    "expires": "2026-12-31",
+    "remindDaysBefore": 22
+  },
+
   "sources": {
     "trendingDurations": ["1h", "6h"],
     "pumpfunSorts": ["last_trade_timestamp", "market_cap"],
