@@ -106,8 +106,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005294,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.005406,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.006086,
    "worstPriceUsd": 0.005251
   },
@@ -136,8 +136,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005683,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.0007524,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.0009104,
    "worstPriceUsd": 0.0005017
   },
@@ -166,8 +166,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2527,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.2608,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.2793,
    "worstPriceUsd": 0.2489
   },
@@ -196,8 +196,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.004998,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.004886,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.005686,
    "worstPriceUsd": 0.00477
   },
@@ -226,8 +226,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0394,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.03739,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.04757,
    "worstPriceUsd": 0.03621
   },
@@ -256,8 +256,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003237,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.0003285,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.00162,
    "worstPriceUsd": 0.0003237
   },
@@ -286,8 +286,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2236,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.233,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.2512,
    "worstPriceUsd": 0.2212
   },
@@ -316,9 +316,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.01738,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
-   "bestPriceUsd": 0.01738,
+   "lastPriceUsd": 0.01788,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
+   "bestPriceUsd": 0.01788,
    "worstPriceUsd": 0.01247
   },
   "result": null
@@ -346,8 +346,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003429,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.0002667,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.0003429,
    "worstPriceUsd": 0.0001408
   },
@@ -376,10 +376,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.04231,
-   "lastSampleAt": "2026-10-02T22:00:23.956Z",
+   "lastPriceUsd": 0.0391,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
    "bestPriceUsd": 0.04231,
-   "worstPriceUsd": 0.04166
+   "worstPriceUsd": 0.0391
   },
   "result": null
  },
@@ -405,7 +405,12 @@
    "estimated": true
   },
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.0009384,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
+   "bestPriceUsd": 0.0009384,
+   "worstPriceUsd": 0.0009384
+  },
   "result": null
  },
  {
@@ -428,6 +433,61 @@
    "buyFeeUsd": 0.37,
    "dexRoundTripUsd": 0.401,
    "estimated": false
+  },
+  "status": "open",
+  "track": {
+   "lastPriceUsd": 0.0009192,
+   "lastSampleAt": "2026-10-02T23:00:23.720Z",
+   "bestPriceUsd": 0.0009192,
+   "worstPriceUsd": 0.0009192
+  },
+  "result": null
+ },
+ {
+  "id": "2026-10-02T23-WSOS",
+  "mint": "5Pb14rnBcYQvn8L8jFveqBocFAi7SMpi2WUiE52Xpump",
+  "symbol": "WSOS",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "B9aPCCz81DKfobpsy6AccUVXhshJ492zmc2B4XsWWZNz",
+  "alertedAt": "2026-10-02T23:00:23.250Z",
+  "exitDeadline": "2026-10-03T23:00:23.250Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.03786,
+  "group": "failed safety",
+  "outcome": "developer holds too much",
+  "demandScore": 74.7,
+  "score": null,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2,
+   "estimated": true
+  },
+  "status": "open",
+  "track": {},
+  "result": null
+ },
+ {
+  "id": "2026-10-02T23-VSOF",
+  "mint": "C6YyGisqmf2Wmd2UGwzsTdsJcoeupxkHradv4yXfpump",
+  "symbol": "VSOF",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "4HozvxmT9kye9H7TnvS4JoChYb9fRcHudNdEawkENxt1",
+  "alertedAt": "2026-10-02T23:00:23.250Z",
+  "exitDeadline": "2026-10-03T23:00:23.250Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0007837,
+  "group": "failed safety",
+  "outcome": "developer holds too much",
+  "demandScore": 56.4,
+  "score": null,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2,
+   "estimated": true
   },
   "status": "open",
   "track": {},
