@@ -106,8 +106,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005836,
-   "lastSampleAt": "2026-10-02T11:00:24.270Z",
+   "lastPriceUsd": 0.005795,
+   "lastSampleAt": "2026-10-02T12:00:23.633Z",
    "bestPriceUsd": 0.005866,
    "worstPriceUsd": 0.005766
   },
@@ -135,7 +135,12 @@
    "estimated": false
   },
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.0009104,
+   "lastSampleAt": "2026-10-02T12:00:23.633Z",
+   "bestPriceUsd": 0.0009104,
+   "worstPriceUsd": 0.0009104
+  },
   "result": null
  },
  {
@@ -160,7 +165,12 @@
    "estimated": true
   },
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.2511,
+   "lastSampleAt": "2026-10-02T12:00:23.633Z",
+   "bestPriceUsd": 0.2511,
+   "worstPriceUsd": 0.2511
+  },
   "result": null
  },
  {
@@ -183,6 +193,36 @@
    "buyFeeUsd": 0.37,
    "dexRoundTripUsd": 0.0882,
    "estimated": false
+  },
+  "status": "open",
+  "track": {
+   "lastPriceUsd": 0.005675,
+   "lastSampleAt": "2026-10-02T12:00:23.633Z",
+   "bestPriceUsd": 0.005675,
+   "worstPriceUsd": 0.005675
+  },
+  "result": null
+ },
+ {
+  "id": "2026-10-02T12-SI",
+  "mint": "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP",
+  "symbol": "SI",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "B4VFURUHHzyt8YzBGBV9jiarBvjh1EbMAbRNBnNqaxUD",
+  "alertedAt": "2026-10-02T12:00:23.252Z",
+  "exitDeadline": "2026-10-03T12:00:23.252Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.04438,
+  "group": "failed safety",
+  "outcome": "has transfer fee",
+  "demandScore": 36.9,
+  "score": null,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2,
+   "estimated": true
   },
   "status": "open",
   "track": {},
