@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 94.2,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "SOCKET",
+    "mint": "XLBLxbY1Mr7aadnqAbmqSBXLEyUdjvUXtXCnz8Mpump",
+    "pairAddress": "BA2YYZ4YUKsMCMDGpqrV5FQiotGnyKrc571pFhc66Gje",
+    "decidedAt": "2026-10-03T11:01:24.246Z",
+    "alertPriceUsd": 0.0008082,
+    "sizeUsd": 94.2,
+    "dexRoundTripPct": 2.04,
+    "roundTripPct": 3.03,
+    "stopNetPct": 6,
+    "atr5Pct": 7.75,
+    "chgH1": 17.09
+   },
    "trades": [
     {
      "n": 1,
