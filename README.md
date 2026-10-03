@@ -72,7 +72,8 @@ It never trades; Telegram messages are marked PAPER MODE. Settings are under `co
 - **Entry (hourly):** 1h change between +10% and +60%; still rising over 5 and 15 minutes; buys/sells 1.15–5; last 15 minutes of volume at least
   the hour's 15-minute average; liquidity ≥ $25k and ≥ 50× the position; the monitor's safety checks; a Jupiter round trip at the real
   position size ≤ 4% including FOMO fees. The strongest token (1h change × volume trend) is bought; otherwise NO TRADE.
-- **Exit:** stop −4% net (up to −6% for volatile tokens), at +10% net the stop locks +6% and then trails giving back at most 40% of the peak gain,
+- **Exit:** stop −10% net (up to −15% for volatile tokens), judged on 15-minute closes so short wicks don't end a trade, plus an emergency
+  stop on any price at −20% net that rises with the stop. At +10% net the stop locks +6% and then trails giving back at most 40% of the peak gain,
   6h time stop if the target isn't reached, 24h maximum hold. Paper fills happen 3 minutes after the alert and exits are settled on
   1-minute candles, so stops work as if the price were watched continuously, even though the job runs hourly.
 - **Limits:** at most 2 entries a day (New York midnight), one position at a time, no re-entry into a token traded that day.
@@ -87,8 +88,10 @@ It never trades; Telegram messages are marked PAPER MODE. Settings are under `co
 - **Replay:** `node src/compounder-replay.js [--run 2026-10]` reruns the logged hours with other floors (5–20%), stops (−3 to −8%),
   targets (+6 to +20%) and trailing give-backs (25–50%), and writes COMPOUNDER-REPLAY.md. Run it locally; candles are cached in `.cache/replay`.
 
-**Costs decide the stop.** The stop is measured after costs. With a 2% round trip, a −4% net stop sits only about 2% below the entry price,
-which fast-moving tokens can hit within minutes. Watch the stop-loss share in COMPOUNDER.md and the stop rows in the replay.
+**Why the stop is wide.** The first version stopped at −4 to −6% net on any 1-minute low. With 2–4% round-trip costs that was only 2–3% below
+the entry price, and both trades on 2026-10-03 were stopped out within 4 minutes; one of them (HI) then rose 81% within the hour.
+Since 2026-10-03 the stop is −10% net on 15-minute closes. The trade-off: losers lose about −10% instead of −6%, so the strategy
+needs bigger winners or a higher win rate. COMPOUNDER.md shows the win rate needed against the one achieved, and the replay's stop rows show which width works.
 
 ## Setup (one time)
 

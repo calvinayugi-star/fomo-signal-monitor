@@ -284,6 +284,7 @@ function buyMessage(run, r, pos, rows, k, cfg, time, now, entriesToday) {
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: r.priceUsd, dexRoundTripPct: r.dexRoundTripPct, costs: cfg.costs });
   const stopPx = priceForNet(p, -pos.stopNetPct, cfg.costs);
   const targetPx = priceForNet(p, k.exits.targetNetPct, cfg.costs);
+  const emergencyPx = priceForNet(p, -k.exits.emergencyStopNetPct, cfg.costs);
   const up = (pos.sizeUsd * k.exits.targetNetPct) / 100;
   const down = (pos.sizeUsd * pos.stopNetPct) / 100;
   return `${PAPER}
@@ -301,9 +302,9 @@ ${candidateLines(rows, k)}
 <b>POSITION SIZE:</b> ${usd(pos.sizeUsd)}${run.cash > 0.005 ? ` of ${usd(bankrollOf(run))} (sized to finish the run)` : ' (100%)'}
 <b>ENTRY:</b> ~$${price(r.priceUsd)} (paper fill ${k.exits.fillDelayMinutes} min after this alert)
 <b>PROFIT OBJECTIVE:</b> +${k.exits.targetNetPct}% net (~$${price(targetPx)}), then lock +${k.exits.lockNetPct}% and trail
-<b>EXIT / INVALIDATION:</b> stop −${pos.stopNetPct}% net (~$${price(stopPx)}, ${signed(pctChange(stopPx, r.priceUsd))} in price); time stop ${k.exits.timeStopHours}h
+<b>EXIT / INVALIDATION:</b> a ${k.exits.stopCheckMinutes}-min close below ~$${price(stopPx)} (−${pos.stopNetPct}% net, ${signed(pctChange(stopPx, r.priceUsd))} in price), or any price below ~$${price(emergencyPx)} (−${k.exits.emergencyStopNetPct}% net); time stop ${k.exits.timeStopHours}h
 <b>ESTIMATED NET UPSIDE:</b> +${k.exits.targetNetPct}% (+${usd(up)}) or more if it trails
-<b>ESTIMATED NET DOWNSIDE:</b> −${pos.stopNetPct}% (−${usd(down)}); more if it gaps through the stop
+<b>ESTIMATED NET DOWNSIDE:</b> −${pos.stopNetPct}% (−${usd(down)}); up to −${k.exits.emergencyStopNetPct}% in a sudden drop, more if it gaps
 <b>WHY:</b> Up ${r.chgH1.toFixed(0)}% in the last hour with 15-min volume at ${r.volTrend.toFixed(1)}× the hour's average and ${r.ratioH1.toFixed(2)} buys per sell. Round trip costs ~${r.roundTripPct}% at this size, so the stop sits ${Math.abs(pctChange(stopPx, r.priceUsd)).toFixed(1)}% below entry in price.
 <b>$5K RUN:</b> ${runLine(run)}
 <b>TRADES TODAY:</b> ${entriesToday} / ${k.daily.maxEntries}

@@ -83,8 +83,10 @@
     "costs": { "maxRoundTripPct": 4, "replayAssumedDexRoundTripPct": 1.5 },
     "exits": {
       "fillDelayMinutes": 3,
-      "stopNetPct": 4,
-      "maxStopNetPct": 6,
+      "stopNetPct": 10,
+      "maxStopNetPct": 15,
+      "stopCheckMinutes": 15,
+      "emergencyStopNetPct": 20,
       "atrStopMultiple": 1.5,
       "minStopRoomPct": 1,
       "targetNetPct": 10,
@@ -95,6 +97,6 @@
     },
     "daily": { "maxEntries": 2, "goodDayNetPct": 8, "afterWin": { "minChgH1Pct": 20, "minVolumeTrend": 1.5 } },
     "sizing": { "expectedNetPct": 10, "bufferPct": 3 },
-    "assumed": { "avgWinPct": 10, "avgLossPct": -4.5 }
+    "assumed": { "avgWinPct": 10, "avgLossPct": -10 }
   }
 }

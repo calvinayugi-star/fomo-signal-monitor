@@ -158,8 +158,8 @@ ${past.join('\n') || '| – | – | – | – | – | – |'}
 ## Rules in effect
 
 - Entry: 1h change +${k.momentum.minChgH1Pct}% to +${k.momentum.maxChgH1Pct}% (after a winning day: +${k.daily.afterWin.minChgH1Pct}% and volume trend ≥ ${k.daily.afterWin.minVolumeTrend}), 5-min and 15-min change positive, buys/sells ${k.momentum.minBuySellRatioH1}–${k.momentum.maxBuySellRatio}, last 15 min volume ≥ ${k.momentum.minVolumeTrend}× the hour's 15-min average, liquidity ≥ $${k.liquidity.minUsd / 1000}k and ≥ ${k.liquidity.minMultipleOfPosition}× the position, safety checks, round trip ≤ ${k.costs.maxRoundTripPct}% at the real size.
-- Exit: stop −${e.stopNetPct}% net (up to −${e.maxStopNetPct}% for volatile tokens: ${e.atrStopMultiple}× the average 5-min range), lock +${e.lockNetPct}% at +${e.targetNetPct}% net then trail giving back ≤ ${e.trailGiveBackPct}% of the peak gain, time stop ${e.timeStopHours}h without the target, max hold ${e.maxHoldHours}h.
-- Paper fill ${e.fillDelayMinutes} min after the decision; exits settled on 1-minute candles (stop checked before new highs within a minute).
+- Exit: stop −${e.stopNetPct}% net (up to −${e.maxStopNetPct}% for volatile tokens: ${e.atrStopMultiple}× the average 5-min range), judged on ${e.stopCheckMinutes}-min closes so short wicks don't end a trade; emergency stop on any price at −${e.emergencyStopNetPct}% net, rising with the stop. Lock +${e.lockNetPct}% at +${e.targetNetPct}% net then trail giving back ≤ ${e.trailGiveBackPct}% of the peak gain, time stop ${e.timeStopHours}h without the target, max hold ${e.maxHoldHours}h.
+- Paper fill ${e.fillDelayMinutes} min after the decision; exits settled on 1-minute candles (the stop is checked before any new high can raise it).
 - At most ${k.daily.maxEntries} entries a day (midnight ${cfg.displayTimezone}), one position at a time, no re-entry into a token traded that day.
 - Near the target the position is sized to need about +${k.sizing.expectedNetPct}% (with a ${k.sizing.bufferPct}% buffer); the finish line exits at $${k.targetUsd.toLocaleString('en-US')} + ${k.finishLineBufferPct}%.
 

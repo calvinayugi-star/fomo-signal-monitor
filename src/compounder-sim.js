@@ -42,9 +42,11 @@ export function findFill(candles, fillAt) {
   return next ? { rawPrice: next[1], fillCandleT: next[0] - 1 } : null;
 }
 
-// Applies the exit rules minute by minute, conservatively: within one candle the stop is checked
-// before any new high can raise it. Rules (all net of costs):
-//   stop at -stopNetPct; once +targetNetPct is reached the stop locks at +lockNetPct and then trails,
+// Applies the exit rules minute by minute, conservatively: the stop is checked before any new high
+// can raise it. Rules (all net of costs):
+//   stop at -stopNetPct, judged on stopCheckMinutes closes (e.g. 15-minute candles) so brief wicks don't
+//   end a trade, with an emergency stop on any price (starting at -emergencyStopNetPct, then rising
+//   with the stop, the same distance below it); once +targetNetPct is reached the stop locks at +lockNetPct and then trails,
 //   giving back at most trailGiveBackPct of the peak gain; time stop if the target isn't reached in
 //   timeStopHours; never held past maxHoldHours or hardEndAt (month end).
 // takeProfitNetUsd: exit as soon as the net gain reaches it (the $5k finish line).
@@ -54,6 +56,11 @@ export function replayExit(p, candles, r, costs, { fillAt, now, hardEndAt = Infi
     ? priceForNet(p, (takeProfitNetUsd / p.sizeUsd) * 100, costs)
     : Infinity;
   let stop = priceForNet(p, -r.stopNetPct, costs);
+  // The emergency stop sits a fixed fraction below the stop and rises with it.
+  const emergencyRatio = r.emergencyStopNetPct ? priceForNet(p, -r.emergencyStopNetPct, costs) / stop : 0;
+  const bucketSec = (r.stopCheckMinutes ?? 1) * 60; // 60 = every 1-minute low counts
+  const onCloses = bucketSec > 60;
+  const stopReason = () => (targetHitAt ? 'trailing stop' : 'stop loss');
   let peak = p.rawEntry;
   let targetHitAt = null;
   let last = null;
@@ -78,7 +85,11 @@ export function replayExit(p, candles, r, costs, { fillAt, now, hardEndAt = Infi
     const ms = t * 1000;
     const end = deadline();
     if (ms >= end.at) return done(o, ms, end.reason);
-    if (l <= stop) return done(Math.min(o, stop), ms, targetHitAt ? 'trailing stop' : 'stop loss');
+    if (onCloses) {
+      // A new period started: if the previous one closed at or below the stop, sell at this open.
+      if (last && Math.floor(t / bucketSec) !== Math.floor(last[0] / bucketSec) && last[4] <= stop) return done(o, ms, stopReason());
+      if (l <= stop * emergencyRatio) return done(Math.min(o, stop * emergencyRatio), ms, 'emergency stop');
+    } else if (l <= stop) return done(Math.min(o, stop), ms, stopReason());
     if (h >= finishPrice) return done(Math.max(o, finishPrice), ms, 'finish line reached');
     if (h > peak) {
       peak = h;
@@ -93,6 +104,10 @@ export function replayExit(p, candles, r, costs, { fillAt, now, hardEndAt = Infi
 
   const lastPrice = last ? last[4] : p.rawEntry;
   const end = deadline();
+  if (onCloses && last && last[4] <= stop) {
+    const periodEnd = (Math.floor(last[0] / bucketSec) + 1) * bucketSec * 1000;
+    if (now >= periodEnd && periodEnd < end.at) return done(lastPrice, periodEnd, stopReason());
+  }
   if (now >= end.at) return done(lastPrice, end.at, end.reason);
   return {
     closed: false,

@@ -28,7 +28,7 @@ const NOW = Date.now();
 
 const GRID = {
   floor: [5, 10, 15, 20],
-  stop: [3, 4, 5, 6, 8],
+  stop: [4, 6, 8, 10, 12, 15, 20],
   target: [6, 10, 15, 20],
   giveBack: [25, 40, 50],
 };
