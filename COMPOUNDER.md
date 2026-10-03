@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Sat, Oct 3, 08:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Sat, Oct 3, 09:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -12,8 +12,8 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 | Seed → bankroll → target | $100 → **$88.55** → $5,000 |
 | Run return | -11.5% |
 | Distance remaining | $4911.45 |
-| Days elapsed / left | 0.3 / 28.7 |
-| Even-pace bankroll today | $104.02 (behind) |
+| Days elapsed / left | 0.3 / 28.6 |
+| Even-pace bankroll today | $104.61 (behind) |
 | Daily net return needed: from the seed / from here | +14.5% / +15.1% |
 | Trades (wins / losses) | 2 (0 / 2) |
 | Win rate | 0% |
@@ -27,10 +27,10 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 Assumes up to 2 trades a day for the rest of the run, compounding the whole bankroll.
 
-| | Assumed win/loss (+10.0% / -4.5%) | Actual win/loss (n/a / -5.9%) |
+| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (n/a / -5.9%) |
 |---|---|---|
-| Whole run from the seed (57 trades) | 81% | n/a |
-| From the current bankroll (57 trades left) | 83% | n/a |
+| Whole run from the seed (57 trades) | 87% | n/a |
+| From the current bankroll (57 trades left) | 88% | n/a |
 | **Achieved** | 0% | 0% |
 
 ### Winner sizes and exits
@@ -54,8 +54,8 @@ Exit reasons: stop loss (2).
 ## Rules in effect
 
 - Entry: 1h change +10% to +60% (after a winning day: +20% and volume trend ≥ 1.5), 5-min and 15-min change positive, buys/sells 1.15–5, last 15 min volume ≥ 1× the hour's 15-min average, liquidity ≥ $25k and ≥ 50× the position, safety checks, round trip ≤ 4% at the real size.
-- Exit: stop −4% net (up to −6% for volatile tokens: 1.5× the average 5-min range), lock +6% at +10% net then trail giving back ≤ 40% of the peak gain, time stop 6h without the target, max hold 24h.
-- Paper fill 3 min after the decision; exits settled on 1-minute candles (stop checked before new highs within a minute).
+- Exit: stop −10% net (up to −15% for volatile tokens: 1.5× the average 5-min range), judged on 15-min closes so short wicks don't end a trade; emergency stop on any price at −20% net, rising with the stop. Lock +6% at +10% net then trail giving back ≤ 40% of the peak gain, time stop 6h without the target, max hold 24h.
+- Paper fill 3 min after the decision; exits settled on 1-minute candles (the stop is checked before any new high can raise it).
 - At most 2 entries a day (midnight America/New_York), one position at a time, no re-entry into a token traded that day.
 - Near the target the position is sized to need about +10% (with a 3% buffer); the finish line exits at $5,000 + 1%.
 

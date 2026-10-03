@@ -139,8 +139,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001099,
-   "lastSampleAt": "2026-10-03T12:00:22.476Z",
+   "lastPriceUsd": 0.001007,
+   "lastSampleAt": "2026-10-03T13:00:25.241Z",
    "bestPriceUsd": 0.00159,
    "worstPriceUsd": 0.0009202
   },
