@@ -44,7 +44,7 @@ jobs:
           key: snapshots-${{ github.run_id }}
           restore-keys: snapshots-
 
-      - name: Track alerts, screen, alert
+      - name: Track alerts, screen, alert, run the Compounder
         if: steps.guard.outputs.skip != 'true'
         run: node src/run.js
         env:
@@ -62,7 +62,7 @@ jobs:
         run: |
           git config user.name "fomo-monitor-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data RESULTS.md
+          git add data RESULTS.md COMPOUNDER.md
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Monitor run $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase

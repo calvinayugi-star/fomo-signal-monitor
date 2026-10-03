@@ -57,5 +57,44 @@
     "slippageBps": 300,
     "maxDexRoundTripPct": 3,
     "maxTotalCostPct": 7
+  },
+
+  "compounder": {
+    "enabled": true,
+    "startDate": "2026-10-03",
+    "seedUsd": 100,
+    "targetUsd": 5000,
+    "finishLineBufferPct": 1,
+    "bustBelowUsd": 25,
+    "momentum": {
+      "minChgH1Pct": 10,
+      "maxChgH1Pct": 60,
+      "logFromChgH1Pct": 5,
+      "minChgM5Pct": 0,
+      "minChg15mPct": 0,
+      "minBuySellRatioH1": 1.15,
+      "maxBuySellRatio": 5,
+      "minVolumeTrend": 1,
+      "minPairAgeHours": 1,
+      "maxCandleChecks": 6,
+      "maxSafetyChecks": 3
+    },
+    "liquidity": { "minUsd": 25000, "minMultipleOfPosition": 50 },
+    "costs": { "maxRoundTripPct": 4, "replayAssumedDexRoundTripPct": 1.5 },
+    "exits": {
+      "fillDelayMinutes": 3,
+      "stopNetPct": 4,
+      "maxStopNetPct": 6,
+      "atrStopMultiple": 1.5,
+      "minStopRoomPct": 1,
+      "targetNetPct": 10,
+      "lockNetPct": 6,
+      "trailGiveBackPct": 40,
+      "timeStopHours": 6,
+      "maxHoldHours": 24
+    },
+    "daily": { "maxEntries": 2, "goodDayNetPct": 8, "afterWin": { "minChgH1Pct": 20, "minVolumeTrend": 1.5 } },
+    "sizing": { "expectedNetPct": 10, "bufferPct": 3 },
+    "assumed": { "avgWinPct": 10, "avgLossPct": -4.5 }
   }
 }

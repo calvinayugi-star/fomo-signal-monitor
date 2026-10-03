@@ -61,6 +61,35 @@ Runner-ups build up several times faster than alerts, so these comparisons becom
 
 Stay in paper mode until about 50 alerts have closed and the numbers have been reviewed.
 
+## FOMO Daily Compounder (second strategy, paper mode)
+
+A separate paper strategy that runs in the same hourly job and shares the same candidate lists. It tests whether a
+small monthly seed can be compounded to a net target by trading strong momentum, one position at a time.
+It never trades; Telegram messages are marked PAPER MODE. Settings are under `compounder` in [config.json](config.json).
+
+- **Run:** a $100 seed on the 1st of each month (first run started 2026-10-03), 100% of the bankroll compounded, no money added.
+  The run ends when withdrawable value after costs reaches $5,000, at month end, or if the bankroll falls below $25.
+- **Entry (hourly):** 1h change between +10% and +60%; still rising over 5 and 15 minutes; buys/sells 1.15–5; last 15 minutes of volume at least
+  the hour's 15-minute average; liquidity ≥ $25k and ≥ 50× the position; the monitor's safety checks; a Jupiter round trip at the real
+  position size ≤ 4% including FOMO fees. The strongest token (1h change × volume trend) is bought; otherwise NO TRADE.
+- **Exit:** stop −4% net (up to −6% for volatile tokens), at +10% net the stop locks +6% and then trails giving back at most 40% of the peak gain,
+  6h time stop if the target isn't reached, 24h maximum hold. Paper fills happen 3 minutes after the alert and exits are settled on
+  1-minute candles, so stops work as if the price were watched continuously, even though the job runs hourly.
+- **Limits:** at most 2 entries a day (New York midnight), one position at a time, no re-entry into a token traded that day.
+  After a winning day (+8% or more) a second trade needs +20% 1h momentum and a volume trend of 1.5. Near $5,000 the position
+  is sized to need only about +10%.
+- **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger: every run and trade, never deleted.
+  [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision plus every token up 5% or more, traded or not.
+  [COMPOUNDER.md](COMPOUNDER.md) is regenerated every run: bankroll against an even-pace line, win rate, average win and loss,
+  the **win rate needed compared with the one achieved**, winner sizes, and every trade.
+- **Telegram:** BUY alerts in the hourly report format, a full report after each exit, and one line in the 8 AM daily summary.
+  Hourly NO TRADE decisions are logged only.
+- **Replay:** `node src/compounder-replay.js [--run 2026-10]` reruns the logged hours with other floors (5–20%), stops (−3 to −8%),
+  targets (+6 to +20%) and trailing give-backs (25–50%), and writes COMPOUNDER-REPLAY.md. Run it locally; candles are cached in `.cache/replay`.
+
+**Costs decide the stop.** The stop is measured after costs. With a 2% round trip, a −4% net stop sits only about 2% below the entry price,
+which fast-moving tokens can hit within minutes. Watch the stop-loss share in COMPOUNDER.md and the stop rows in the replay.
+
 ## Setup (one time)
 
 **1. Telegram bot**

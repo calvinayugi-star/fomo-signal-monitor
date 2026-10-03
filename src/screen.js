@@ -98,7 +98,7 @@ function demandScore(m, cfg) {
   );
 }
 
-async function safetyCheck(mint, cfg) {
+export async function safetyCheck(mint, cfg) {
   const s = cfg.safety;
   const risks = [];
   const info = (await getJson(`${GT}/networks/solana/tokens/${mint}/info`)).data?.attributes ?? {};
@@ -147,10 +147,10 @@ async function safetyCheck(mint, cfg) {
   return { ok: true, risks, holders, top10, devPct, decimals: info.decimals ?? null, gtScore: info.gt_score ?? null };
 }
 
-// Round-trip quote on Jupiter: $20 USDC -> token -> USDC. A missing sell route = treat as unsellable.
-async function costCheck(mint, cfg) {
+// Round-trip quote on Jupiter: $usd USDC -> token -> USDC (default: the monitor position). A missing sell route = treat as unsellable.
+export async function costCheck(mint, cfg, usd = cfg.positionUsd) {
   const c = cfg.costs;
-  const amount = Math.round(cfg.positionUsd * 1e6);
+  const amount = Math.round(usd * 1e6);
   const q = (inMint, outMint, amt) =>
     getJson(`${JUP}/quote?inputMint=${inMint}&outputMint=${outMint}&amount=${amt}&slippageBps=${c.slippageBps}`, {
       retries: 1,
@@ -170,18 +170,18 @@ async function costCheck(mint, cfg) {
   if (!sell?.outAmount || sell.outAmount === '0') return { ok: false, reason: 'no sell route (possible honeypot)' };
 
   const sellOutUsd = Number(sell.outAmount) / 1e6;
-  const dexRoundTripUsd = Math.max(0, cfg.positionUsd - sellOutUsd);
-  const buyFeeUsd = fomoFee(cfg.positionUsd, c);
+  const dexRoundTripUsd = Math.max(0, usd - sellOutUsd);
+  const buyFeeUsd = fomoFee(usd, c);
   const sellFeeUsd = fomoFee(sellOutUsd, c);
   const totalUsd = dexRoundTripUsd + buyFeeUsd + sellFeeUsd;
   const out = {
     tokensOutRaw: buy.outAmount,
     dexRoundTripUsd,
-    dexRoundTripPct: (dexRoundTripUsd / cfg.positionUsd) * 100,
+    dexRoundTripPct: (dexRoundTripUsd / usd) * 100,
     buyFeeUsd,
     sellFeeUsd,
     totalUsd,
-    totalPct: (totalUsd / cfg.positionUsd) * 100,
+    totalPct: (totalUsd / usd) * 100,
     route: buy.routePlan?.map((r) => r.swapInfo?.label).join(' > '),
   };
   if (out.dexRoundTripPct > c.maxDexRoundTripPct) return { ok: false, reason: 'slippage/pool costs too high' };
@@ -263,5 +263,5 @@ export async function screen(cfg, store, now, log) {
     rejects,
     topDemand: passed.slice(0, 5).map((c) => ({ symbol: c.pair.baseToken?.symbol, score: +c.demandScore.toFixed(1) })),
   });
-  return { best: qualified[0] ?? null, others: passed.filter((c) => c !== qualified[0]) };
+  return { best: qualified[0] ?? null, others: passed.filter((c) => c !== qualified[0]), candidates, pairs };
 }

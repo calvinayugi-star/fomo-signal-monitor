@@ -10,6 +10,7 @@ import { screen } from './screen.js';
 import { fomoFee } from './screen.js';
 import { updateOpen, stats, resultsMarkdown } from './tracker.js';
 import { sendTelegram, esc } from './telegram.js';
+import { runCompounder } from './compounder.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.resolve(process.env.DATA_DIR ?? path.join(ROOT, 'data'));
@@ -191,7 +192,7 @@ Passed demand checks: ${sum('passedDemand')} · Runner-ups recorded: ${sum('shad
 Top reasons tokens were rejected: ${top || 'n/a'}`;
 }
 
-function summaryMessage(alerts, shadows, closedSinceLast, log, now) {
+function summaryMessage(alerts, shadows, closedSinceLast, log, now, compounderLine) {
   const s = stats(alerts);
   const sh = stats(shadows);
   const f = (x, suffix = '%') => (x == null ? 'n/a' : `${x.toFixed(1)}${suffix}`);
@@ -207,7 +208,9 @@ Avg per alert after costs: ${f(s.avgNetPct)} vs runner-ups ${f(sh.avgNetPct)} ($
   return `📊 <b>Daily summary (${cfg.mode.toUpperCase()} MODE)</b>
 ${results}
 ${recent.length ? `\nClosed since last summary:\n${recent.join('\n')}\n` : ''}
-${activityLines(log, now)}${tokenReminder(now)}`;
+${compounderLine ? `${compounderLine}
+
+` : ''}${activityLines(log, now)}${tokenReminder(now)}`;
 }
 
 async function main() {
@@ -222,6 +225,7 @@ async function main() {
   const store = { alerts: readJson('alerts.json', []), shadows: readJson('shadows.json', []), snapshots };
   const state = readJson('state.json', {});
   const log = { t: now.toISOString(), errors: [] };
+  let shared = {}; // candidates and DEX pairs, reused by the Compounder
 
   try {
     log.closed = (await updateOpen(store.alerts, cfg, now, log)).map((a) => a.symbol);
@@ -231,7 +235,8 @@ async function main() {
   }
 
   try {
-    const { best, others } = await screen(cfg, store, now, log);
+    const { best, others, candidates, pairs } = await screen(cfg, store, now, log);
+    shared = { candidates, pairs };
     const recentShadow = new Set(
       store.shadows.filter((x) => now - Date.parse(x.alertedAt) < cfg.shadow.cooldownHours * 3600e3).map((x) => x.mint),
     );
@@ -248,11 +253,28 @@ async function main() {
     log.errors.push(`screen: ${e.message}`);
   }
 
+  // The Compounder (separate paper strategy) shares this run's candidates; its errors never stop the monitor.
+  let compounderLine = '';
+  if (cfg.compounder?.enabled) {
+    try {
+      compounderLine = await runCompounder({
+        cfg,
+        ...shared,
+        dryRun,
+        dataDir: DATA,
+        reportPath: path.join(process.env.DATA_DIR ? DATA : ROOT, 'COMPOUNDER.md'),
+        log,
+      });
+    } catch (e) {
+      log.errors.push(`compounder: ${e.message}`);
+    }
+  }
+
   // Once a day, at the first run at or after the summary hour (runs can be late), even with no alerts.
   if (localHour(now) >= cfg.dailySummaryHour && state.lastSummaryDate !== localDate(now)) {
     const since = Date.parse(state.lastSummaryAt ?? 0);
     const closedSince = store.alerts.filter((a) => a.result && Date.parse(a.result.closedAt) > since);
-    if (await sendTelegram(summaryMessage(store.alerts, store.shadows, closedSince, log, now), { dryRun })) {
+    if (await sendTelegram(summaryMessage(store.alerts, store.shadows, closedSince, log, now, compounderLine), { dryRun })) {
       state.lastSummaryAt = now.toISOString();
       state.lastSummaryDate = localDate(now);
     }
