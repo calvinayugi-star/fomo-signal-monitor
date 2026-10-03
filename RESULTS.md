@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 3, 01:00 EDT. 0 of ~50 tracked alerts needed before review.
+Updated Oct 3, 02:01 EDT. 1 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,18 +9,18 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 2 (2 / 0) |
-| Win rate after costs | n/a (plausible true range n/a) |
+| Alerts (open / closed) | 2 (1 / 1) |
+| Win rate after costs | 0% (plausible true range 0–79%) |
 | Average gain (winners, after costs) | n/a |
-| Average loss (losers, after costs) | n/a |
-| Average / median result per alert, after costs | n/a / n/a |
-| Profit factor (total won ÷ total lost; above 1 = profitable) | n/a |
-| Net result after costs | $0.00 |
-| Gross result before costs | $0.00 |
-| Total estimated costs | $0.00 |
-| Avg best / worst price during hold | n/a / n/a |
-| Share that were at some point up enough to cover costs | n/a |
-| Best / worst single alert | n/a / n/a |
+| Average loss (losers, after costs) | -13.4% |
+| Average / median result per alert, after costs | -13.4% / -13.4% |
+| Profit factor (total won ÷ total lost; above 1 = profitable) | 0.00 |
+| Net result after costs | -$2.68 |
+| Gross result before costs | -$1.94 |
+| Total estimated costs | $0.74 |
+| Avg best / worst price during hold | +1.9% / -12.4% |
+| Share that were at some point up enough to cover costs | 0% |
+| Best / worst single alert | -$2.68 / -$2.68 |
 
 ## Signal quality: alerts vs tokens not alerted
 
@@ -30,7 +30,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
-| **Alerts** | 0 | n/a | n/a | n/a | n/a | n/a |
+| **Alerts** | 1 | 0% | -9.7% | -13.4% | +1.9% | -12.4% |
 | All runner-ups & near misses | 2 | 0% | -5.5% | -10.4% | +20.2% | -24.0% |
 | ↳ runner-up | 0 | n/a | n/a | n/a | n/a | n/a |
 | ↳ below score bar | 2 | 0% | -5.5% | -10.4% | +20.2% | -24.0% |
@@ -43,6 +43,6 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
 | Oct 2, 18:00 EDT | HOTBOT | Trending | open | 0.0007706 | n/a | n/a | n/a | $1.18 | – |
-| Oct 2, 01:21 EDT | PENGU | Trending | open | 0.009884 | n/a | n/a | n/a | $0.74 | – |
+| Oct 2, 01:21 EDT | PENGU | Trending | closed | 0.009884 | 0.008927 | +1.9% | -12.4% | $0.74 | -$2.68 |
 
 Runner-up records are in [data/shadows.json](data/shadows.json).
