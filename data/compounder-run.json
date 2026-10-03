@@ -1,0 +1,16 @@
+{
+ "runs": [
+  {
+   "id": "2026-10",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetUsd": 5000,
+   "startedAt": "2026-10-03T05:00:32.030Z",
+   "endsAt": "2026-11-01T04:00:00.000Z",
+   "status": "active",
+   "cash": 100,
+   "position": null,
+   "trades": []
+  }
+ ]
+}
