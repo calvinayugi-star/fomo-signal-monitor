@@ -217,8 +217,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.1963,
-   "lastSampleAt": "2026-10-04T15:00:28.786Z",
+   "lastPriceUsd": 0.2062,
+   "lastSampleAt": "2026-10-04T16:00:22.765Z",
    "bestPriceUsd": 0.2221,
    "worstPriceUsd": 0.1873
   },
@@ -285,8 +285,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002736,
-   "lastSampleAt": "2026-10-04T15:00:28.786Z",
+   "lastPriceUsd": 0.000002785,
+   "lastSampleAt": "2026-10-04T16:00:22.765Z",
    "bestPriceUsd": 0.0008147,
    "worstPriceUsd": 0.000002726
   },
@@ -352,10 +352,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.007236,
-   "lastSampleAt": "2026-10-04T15:00:28.786Z",
+   "lastPriceUsd": 0.005966,
+   "lastSampleAt": "2026-10-04T16:00:22.765Z",
    "bestPriceUsd": 0.0211,
-   "worstPriceUsd": 0.007236
+   "worstPriceUsd": 0.005966
   },
   "result": null
  },
@@ -419,8 +419,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003687,
-   "lastSampleAt": "2026-10-04T15:00:28.786Z",
+   "lastPriceUsd": 0.0004864,
+   "lastSampleAt": "2026-10-04T16:00:22.765Z",
    "bestPriceUsd": 0.001083,
    "worstPriceUsd": 0.0003687
   },
@@ -486,9 +486,9 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00203,
-   "lastSampleAt": "2026-10-04T15:00:28.786Z",
-   "bestPriceUsd": 0.002162,
+   "lastPriceUsd": 0.002419,
+   "lastSampleAt": "2026-10-04T16:00:22.765Z",
+   "bestPriceUsd": 0.002419,
    "worstPriceUsd": 0.001751
   },
   "result": null
@@ -555,11 +555,74 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001766,
-   "lastSampleAt": "2026-10-04T15:00:28.786Z",
+   "lastPriceUsd": 0.0001276,
+   "lastSampleAt": "2026-10-04T16:00:22.765Z",
    "bestPriceUsd": 0.0001766,
-   "worstPriceUsd": 0.0001766
+   "worstPriceUsd": 0.0001276
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T16-Crawler",
+  "mode": "paper",
+  "mint": "2gafU5vS2nVKN4poA9zeQTDM5MXbwWJfcayeJBw5pump",
+  "symbol": "Crawler",
+  "name": "Web Crawler",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "3VF1KNPWuQijvKkGHrqfh4kyxM15e5E6MhjfuWcgdEnN",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-04T16:00:22.450Z",
+  "quoteExpiresAt": "2026-10-04T16:20:22.450Z",
+  "exitDeadline": "2026-10-05T16:00:22.450Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0004519,
+  "maxEntryPriceUsd": 0.000465457,
+  "effectiveEntryPriceUsd": 0.000463815973296923,
+  "score": 55.2,
+  "metrics": {
+   "priceUsd": 0.0005,
+   "liqUsd": 63828.09,
+   "mcapUsd": 423433,
+   "ageH": 17.6782,
+   "volH1": 312545.17,
+   "volH6": 511734.46,
+   "volH24": 1443272.71,
+   "buysH1": 1404,
+   "sellsH1": 974,
+   "ratioH1": 1.4415,
+   "ratioH6": 1.324,
+   "accel": 7.8454,
+   "chgH1": 9.03,
+   "chgH6": 224,
+   "chgH24": 814,
+   "liqGrowth": 0.0446
+  },
+  "safety": {
+   "holders": 920,
+   "top10Pct": 25.9446,
+   "devPct": 0,
+   "gtScore": 72.98701298701299
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4337,
+   "totalUsd": 1.1737,
+   "totalPct": 5.87,
+   "route": "Flux > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (17.7h old)",
+   "thin liquidity ($64k)",
+   "costs of 5.9% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
