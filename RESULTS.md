@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 4, 05:00 EDT. 2 of ~50 tracked alerts needed before review.
+Updated Oct 4, 06:01 EDT. 2 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 6 (4 / 2) |
+| Alerts (open / closed) | 7 (5 / 2) |
 | Win rate after costs | 50% (plausible true range 9–91%) |
 | Average gain (winners, after costs) | +16.2% |
 | Average loss (losers, after costs) | -13.4% |
@@ -31,17 +31,18 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
 | **Alerts** | 2 | 50% | +6.2% | +1.4% | +83.8% | -6.6% |
-| All runner-ups & near misses | 19 | 26% | -4.9% | -9.2% | +55.3% | -38.1% |
+| All runner-ups & near misses | 21 | 24% | -6.4% | -10.8% | +52.9% | -39.6% |
 | ↳ runner-up | 0 | n/a | n/a | n/a | n/a | n/a |
 | ↳ below score bar | 10 | 10% | -0.1% | -4.9% | +49.5% | -31.9% |
 | ↳ failed cost/sellability | 0 | n/a | n/a | n/a | n/a | n/a |
-| ↳ failed safety | 9 | 44% | -10.2% | -14.0% | +61.8% | -44.9% |
+| ↳ failed safety | 11 | 36% | -12.2% | -16.2% | +56.0% | -46.5% |
 | ↳ not checked | 0 | n/a | n/a | n/a | n/a | n/a |
 
 ## All alerts (newest first)
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 4, 06:00 EDT | SI | Trending+Graduated | open | 0.002511 | n/a | n/a | n/a | $1.20 | – |
 | Oct 4, 04:00 EDT | PAYR | Graduated | open | 0.0006592 | n/a | n/a | n/a | $1.15 | – |
 | Oct 3, 23:00 EDT | MISTAKE | Trending | open | 0.008592 | n/a | n/a | n/a | $0.92 | – |
 | Oct 3, 21:00 EDT | catius | Graduated | open | 0.0007811 | n/a | n/a | n/a | $1.15 | – |

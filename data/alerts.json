@@ -217,8 +217,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.1873,
-   "lastSampleAt": "2026-10-04T09:00:24.475Z",
+   "lastPriceUsd": 0.1925,
+   "lastSampleAt": "2026-10-04T10:00:24.975Z",
    "bestPriceUsd": 0.2221,
    "worstPriceUsd": 0.1873
   },
@@ -285,8 +285,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001465,
-   "lastSampleAt": "2026-10-04T09:00:24.475Z",
+   "lastPriceUsd": 0.0001546,
+   "lastSampleAt": "2026-10-04T10:00:24.975Z",
    "bestPriceUsd": 0.0008147,
    "worstPriceUsd": 0.0001465
   },
@@ -352,8 +352,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.01494,
-   "lastSampleAt": "2026-10-04T09:00:24.475Z",
+   "lastPriceUsd": 0.01242,
+   "lastSampleAt": "2026-10-04T10:00:24.975Z",
    "bestPriceUsd": 0.0211,
    "worstPriceUsd": 0.009932
   },
@@ -419,11 +419,73 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0006699,
-   "lastSampleAt": "2026-10-04T09:00:24.475Z",
+   "lastPriceUsd": 0.0006242,
+   "lastSampleAt": "2026-10-04T10:00:24.975Z",
    "bestPriceUsd": 0.0007095,
-   "worstPriceUsd": 0.0006699
+   "worstPriceUsd": 0.0006242
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T10-SI",
+  "mode": "paper",
+  "mint": "9aqmJjCnnMQv42TXLk921ceUkN35nea2QP969n1caqjj",
+  "symbol": "SI",
+  "name": "Super Intelligence",
+  "sources": [
+   "Trending",
+   "Graduated"
+  ],
+  "pairAddress": "7Nj7mBE7iVmjvnBHNvjgaz6G3ZktTHFNbf7aQDfZ7iNR",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-04T10:00:24.796Z",
+  "quoteExpiresAt": "2026-10-04T10:20:24.796Z",
+  "exitDeadline": "2026-10-05T10:00:24.796Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.002511,
+  "maxEntryPriceUsd": 0.0025863300000000004,
+  "effectiveEntryPriceUsd": 0.00222906042531406,
+  "score": 55.9,
+  "metrics": {
+   "priceUsd": 0.0025,
+   "liqUsd": 216242.51,
+   "mcapUsd": 2438597,
+   "ageH": 107.2633,
+   "volH1": 1139379.46,
+   "volH6": 2004853.86,
+   "volH24": 2885377.42,
+   "buysH1": 4441,
+   "sellsH1": 3388,
+   "ratioH1": 1.3108,
+   "ratioH6": 1.2887,
+   "accel": 6.5824,
+   "chgH1": 12.09,
+   "chgH6": 187,
+   "chgH24": 88.62,
+   "liqGrowth": 0.0903
+  },
+  "safety": {
+   "holders": 12615,
+   "top10Pct": 19.6987,
+   "devPct": 0,
+   "gtScore": 89.0909090909091
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4648,
+   "totalUsd": 1.2048,
+   "totalPct": 6.02,
+   "route": "BisonFi > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "costs of 6.0% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
