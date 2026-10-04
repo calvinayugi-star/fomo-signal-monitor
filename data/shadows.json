@@ -903,14 +903,26 @@
    "dexRoundTripUsd": 0,
    "estimated": false
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.2408,
    "lastSampleAt": "2026-10-04T11:00:23.123Z",
    "bestPriceUsd": 0.2424,
    "worstPriceUsd": 0.2311
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-04T12:00:23.588Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.2400292328168651,
+   "bestPriceUsd": 0.2459148678191926,
+   "worstPriceUsd": 0.22916305073363794,
+   "grossPct": 3.0610703378553428,
+   "bestPct": 5.588178539799316,
+   "worstPct": -1.60452952613227,
+   "costsUsd": 0.74,
+   "netUsd": -0.1277859324289332,
+   "netPct": -0.6389296621446661
+  }
  },
  {
   "id": "2026-10-03T12-WOTF",
@@ -933,14 +945,26 @@
    "dexRoundTripUsd": 0.2,
    "estimated": true
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.0001168,
    "lastSampleAt": "2026-10-04T11:00:23.123Z",
    "bestPriceUsd": 0.003202,
    "worstPriceUsd": 0.00007797
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-04T12:00:27.420Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.000125411772984177,
+   "bestPriceUsd": 0.0033312365638376628,
+   "worstPriceUsd": 0.00005508716550400052,
+   "grossPct": -93.92090290915284,
+   "bestPct": 61.47535452436561,
+   "worstPct": -97.32975445933104,
+   "costsUsd": 0.9400000000000001,
+   "netUsd": -19.72418058183057,
+   "netPct": -98.62090290915285
+  }
  },
  {
   "id": "2026-10-03T14-OTC",
@@ -965,8 +989,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.008003,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
+   "lastPriceUsd": 0.007905,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
    "bestPriceUsd": 0.009945,
    "worstPriceUsd": 0.005751
   },
@@ -995,9 +1019,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0004436,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
-   "bestPriceUsd": 0.0004436,
+   "lastPriceUsd": 0.0004482,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
+   "bestPriceUsd": 0.0004482,
    "worstPriceUsd": 0.0002806
   },
   "result": null
@@ -1026,8 +1050,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001703,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
+   "lastPriceUsd": 0.0001855,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
    "bestPriceUsd": 0.001175,
    "worstPriceUsd": 0.0001505
   },
@@ -1056,8 +1080,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005613,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
+   "lastPriceUsd": 0.0005485,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
    "bestPriceUsd": 0.0007095,
    "worstPriceUsd": 0.000459
   },
@@ -1087,8 +1111,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0007404,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
+   "lastPriceUsd": 0.0008234,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
    "bestPriceUsd": 0.002015,
    "worstPriceUsd": 0.0007404
   },
@@ -1117,8 +1141,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002407,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
+   "lastPriceUsd": 0.000002448,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
    "bestPriceUsd": 0.003205,
    "worstPriceUsd": 0.000002399
   },
@@ -1147,8 +1171,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005381,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
+   "lastPriceUsd": 0.006257,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
    "bestPriceUsd": 0.006472,
    "worstPriceUsd": 0.005381
   },
@@ -1177,10 +1201,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0008819,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
+   "lastPriceUsd": 0.000002498,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
    "bestPriceUsd": 0.0008819,
-   "worstPriceUsd": 0.0007248
+   "worstPriceUsd": 0.000002498
   },
   "result": null
  },
@@ -1207,10 +1231,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 159.25,
-   "lastSampleAt": "2026-10-04T11:00:23.123Z",
+   "lastPriceUsd": 159.12,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
    "bestPriceUsd": 159.25,
-   "worstPriceUsd": 159.25
+   "worstPriceUsd": 159.12
   },
   "result": null
  },
@@ -1236,7 +1260,12 @@
    "estimated": true
   },
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.00000236,
+   "lastSampleAt": "2026-10-04T12:00:23.122Z",
+   "bestPriceUsd": 0.00000236,
+   "worstPriceUsd": 0.00000236
+  },
   "result": null
  }
 ]
