@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 70.8384,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "MISTAKE",
+    "mint": "HKZDfZnkHZxd9agRDNPyDv4iT6LmAurJnpRtj9wpump",
+    "pairAddress": "867dKvaCcyRrUDP66bqNXbujXfjaxsNB9wTpc4CmBdAD",
+    "decidedAt": "2026-10-04T06:00:34.305Z",
+    "alertPriceUsd": 0.01705,
+    "sizeUsd": 70.8384,
+    "dexRoundTripPct": 0.6,
+    "roundTripPct": 1.65,
+    "stopNetPct": 15,
+    "atr5Pct": 20.9,
+    "chgH1": 40.83
+   },
    "trades": [
     {
      "n": 1,
