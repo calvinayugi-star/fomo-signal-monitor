@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 88.548,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "CRAWL",
+    "mint": "BXoHJddsWJLHtAopeiSbKUSELsu8hSFMs8baGMDkpump",
+    "pairAddress": "2B8tftZ5ww8TREMr3pgkgERLNjJyJxEAPWMENViGMsL4",
+    "decidedAt": "2026-10-04T04:00:28.634Z",
+    "alertPriceUsd": 0.003614,
+    "sizeUsd": 88.548,
+    "dexRoundTripPct": 1.56,
+    "roundTripPct": 2.55,
+    "stopNetPct": 15,
+    "atr5Pct": 15.34,
+    "chgH1": 43.62
+   },
    "trades": [
     {
      "n": 1,

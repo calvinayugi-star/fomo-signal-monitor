@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Sat, Oct 3, 23:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Sun, Oct 4, 00:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -12,8 +12,8 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 | Seed → bankroll → target | $100 → **$88.55** → $5,000 |
 | Run return | -11.5% |
 | Distance remaining | $4911.45 |
-| Days elapsed / left | 0.9 / 28.0 |
-| Even-pace bankroll today | $113.18 (behind) |
+| Days elapsed / left | 1.0 / 28.0 |
+| Even-pace bankroll today | $113.82 (behind) |
 | Daily net return needed: from the seed / from here | +14.5% / +15.5% |
 | Trades (wins / losses) | 2 (0 / 2) |
 | Win rate | 0% |
@@ -21,7 +21,7 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 | Average net per trade | -5.9% |
 | Total estimated costs | $6.06 |
 
-**Open position:** none (cash).
+**Open position:** $CRAWL, $88.55 decided Oct 4, 00:00, fill pending. Stop -15% net.
 
 ### Win rate needed vs achieved
 
@@ -30,7 +30,7 @@ Assumes up to 2 trades a day for the rest of the run, compounding the whole bank
 | | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (n/a / -5.9%) |
 |---|---|---|
 | Whole run from the seed (57 trades) | 87% | n/a |
-| From the current bankroll (56 trades left) | 88% | n/a |
+| From the current bankroll (55 trades left) | 89% | n/a |
 | **Achieved** | 0% | 0% |
 
 ### Winner sizes and exits
