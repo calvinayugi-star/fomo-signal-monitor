@@ -217,8 +217,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2062,
-   "lastSampleAt": "2026-10-04T16:00:22.765Z",
+   "lastPriceUsd": 0.204,
+   "lastSampleAt": "2026-10-04T17:01:00.897Z",
    "bestPriceUsd": 0.2221,
    "worstPriceUsd": 0.1873
   },
@@ -285,8 +285,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002785,
-   "lastSampleAt": "2026-10-04T16:00:22.765Z",
+   "lastPriceUsd": 0.000002774,
+   "lastSampleAt": "2026-10-04T17:01:00.897Z",
    "bestPriceUsd": 0.0008147,
    "worstPriceUsd": 0.000002726
   },
@@ -352,8 +352,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005966,
-   "lastSampleAt": "2026-10-04T16:00:22.765Z",
+   "lastPriceUsd": 0.005974,
+   "lastSampleAt": "2026-10-04T17:01:00.897Z",
    "bestPriceUsd": 0.0211,
    "worstPriceUsd": 0.005966
   },
@@ -419,10 +419,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0004864,
-   "lastSampleAt": "2026-10-04T16:00:22.765Z",
+   "lastPriceUsd": 0.0001496,
+   "lastSampleAt": "2026-10-04T17:01:00.897Z",
    "bestPriceUsd": 0.001083,
-   "worstPriceUsd": 0.0003687
+   "worstPriceUsd": 0.0001496
   },
   "result": null
  },
@@ -486,8 +486,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002419,
-   "lastSampleAt": "2026-10-04T16:00:22.765Z",
+   "lastPriceUsd": 0.002099,
+   "lastSampleAt": "2026-10-04T17:01:00.897Z",
    "bestPriceUsd": 0.002419,
    "worstPriceUsd": 0.001751
   },
@@ -555,8 +555,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001276,
-   "lastSampleAt": "2026-10-04T16:00:22.765Z",
+   "lastPriceUsd": 0.0001555,
+   "lastSampleAt": "2026-10-04T17:01:00.897Z",
    "bestPriceUsd": 0.0001766,
    "worstPriceUsd": 0.0001276
   },
@@ -622,7 +622,12 @@
   ],
   "delivered": true,
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.0003971,
+   "lastSampleAt": "2026-10-04T17:01:00.897Z",
+   "bestPriceUsd": 0.0003971,
+   "worstPriceUsd": 0.0003971
+  },
   "result": null
  }
 ]
