@@ -298,7 +298,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002767,
-   "lastSampleAt": "2026-10-04T22:00:23.857Z",
+   "lastSampleAt": "2026-10-04T23:00:24.429Z",
    "bestPriceUsd": 0.0008147,
    "worstPriceUsd": 0.000002726
   },
@@ -364,10 +364,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005973,
-   "lastSampleAt": "2026-10-04T22:00:23.857Z",
+   "lastPriceUsd": 0.005644,
+   "lastSampleAt": "2026-10-04T23:00:24.429Z",
    "bestPriceUsd": 0.0211,
-   "worstPriceUsd": 0.005703
+   "worstPriceUsd": 0.005644
   },
   "result": null
  },
@@ -431,10 +431,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000004132,
-   "lastSampleAt": "2026-10-04T22:00:23.857Z",
+   "lastPriceUsd": 0.00000402,
+   "lastSampleAt": "2026-10-04T23:00:24.429Z",
    "bestPriceUsd": 0.001083,
-   "worstPriceUsd": 0.000004081
+   "worstPriceUsd": 0.00000402
   },
   "result": null
  },
@@ -498,8 +498,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001353,
-   "lastSampleAt": "2026-10-04T22:00:23.857Z",
+   "lastPriceUsd": 0.001475,
+   "lastSampleAt": "2026-10-04T23:00:24.429Z",
    "bestPriceUsd": 0.002419,
    "worstPriceUsd": 0.001223
   },
@@ -567,10 +567,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001557,
-   "lastSampleAt": "2026-10-04T22:00:23.857Z",
+   "lastPriceUsd": 0.00005787,
+   "lastSampleAt": "2026-10-04T23:00:24.429Z",
    "bestPriceUsd": 0.0003506,
-   "worstPriceUsd": 0.0001276
+   "worstPriceUsd": 0.00005787
   },
   "result": null
  },
@@ -635,11 +635,73 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001241,
-   "lastSampleAt": "2026-10-04T22:00:23.857Z",
+   "lastPriceUsd": 0.00002705,
+   "lastSampleAt": "2026-10-04T23:00:24.429Z",
    "bestPriceUsd": 0.0003971,
-   "worstPriceUsd": 0.0001241
+   "worstPriceUsd": 0.00002705
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T23-AGENTCAT",
+  "mode": "paper",
+  "mint": "CZJfrAmMs5Cz4H22PWzfqTJu5FkP7Q2Vvx1oPVL9pump",
+  "symbol": "AGENTCAT",
+  "name": "Agent Cat",
+  "sources": [
+   "Trending",
+   "Graduated"
+  ],
+  "pairAddress": "HyLTPacbYR4V8yQw5bbWwAETZkjcsRw9xzCbayMnU45o",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-04T23:00:23.926Z",
+  "quoteExpiresAt": "2026-10-04T23:20:23.926Z",
+  "exitDeadline": "2026-10-05T23:00:23.926Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.01541,
+  "maxEntryPriceUsd": 0.0158723,
+  "effectiveEntryPriceUsd": 0.015367852934491364,
+  "score": 74.8,
+  "metrics": {
+   "priceUsd": 0.0154,
+   "liqUsd": 385305.38,
+   "mcapUsd": 15299107,
+   "ageH": 24.1241,
+   "volH1": 452155.91,
+   "volH6": 1866389.75,
+   "volH24": 4208912.64,
+   "buysH1": 2219,
+   "sellsH1": 577,
+   "ratioH1": 3.8458,
+   "ratioH6": 3.1463,
+   "accel": 1.5986,
+   "chgH1": 10.37,
+   "chgH6": 107,
+   "chgH24": 5124,
+   "liqGrowth": 0.2184
+  },
+  "safety": {
+   "holders": 2807,
+   "top10Pct": 4.3032,
+   "devPct": 0,
+   "gtScore": 82.85714285714285
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.1218,
+   "totalUsd": 0.8618,
+   "totalPct": 4.31,
+   "route": "GoonFi V2 > Meteora DLMM > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "costs of 4.3% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]

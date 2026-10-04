@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 4, 18:00 EDT. 3 of ~50 tracked alerts needed before review.
+Updated Oct 4, 19:00 EDT. 3 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 9 (6 / 3) |
+| Alerts (open / closed) | 10 (7 / 3) |
 | Win rate after costs | 33% (plausible true range 6–79%) |
 | Average gain (winners, after costs) | +16.2% |
 | Average loss (losers, after costs) | -11.5% |
@@ -31,17 +31,18 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
 | **Alerts** | 3 | 33% | +2.2% | -2.3% | +56.0% | -10.5% |
-| All runner-ups & near misses | 26 | 23% | -15.3% | -19.6% | +54.7% | -43.9% |
+| All runner-ups & near misses | 27 | 22% | -18.4% | -22.6% | +57.9% | -46.0% |
 | ↳ runner-up | 0 | n/a | n/a | n/a | n/a | n/a |
 | ↳ below score bar | 12 | 17% | +2.3% | -2.4% | +46.5% | -27.8% |
 | ↳ failed cost/sellability | 0 | n/a | n/a | n/a | n/a | n/a |
-| ↳ failed safety | 14 | 29% | -30.5% | -34.3% | +61.7% | -57.7% |
+| ↳ failed safety | 15 | 27% | -35.0% | -38.8% | +67.0% | -60.5% |
 | ↳ not checked | 0 | n/a | n/a | n/a | n/a | n/a |
 
 ## All alerts (newest first)
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 4, 19:00 EDT | AGENTCAT | Trending+Graduated | open | 0.01541 | n/a | n/a | n/a | $0.86 | – |
 | Oct 4, 12:00 EDT | Crawler | Graduated | open | 0.0004519 | n/a | n/a | n/a | $1.17 | – |
 | Oct 4, 10:00 EDT | DIT | Graduated | open | 0.0001547 | n/a | n/a | n/a | $1.26 | – |
 | Oct 4, 06:00 EDT | SI | Trending+Graduated | open | 0.002511 | n/a | n/a | n/a | $1.20 | – |
