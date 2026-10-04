@@ -217,11 +217,74 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2036,
-   "lastSampleAt": "2026-10-04T00:00:28.160Z",
+   "lastPriceUsd": 0.2042,
+   "lastSampleAt": "2026-10-04T01:00:23.564Z",
    "bestPriceUsd": 0.2221,
    "worstPriceUsd": 0.2036
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T01-catius",
+  "mode": "paper",
+  "mint": "9S2uxYgTDM1eM1Ryyc7D4dVKEFrb2F9m8NAygyQspump",
+  "symbol": "catius",
+  "name": "catius maximus",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "F9uqdTE7VVxEXnDREYfCpMeBUE2bL1yj74J78jXaM8C2",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-04T01:00:23.455Z",
+  "quoteExpiresAt": "2026-10-04T01:20:23.455Z",
+  "exitDeadline": "2026-10-05T01:00:23.455Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0007811,
+  "maxEntryPriceUsd": 0.000804533,
+  "effectiveEntryPriceUsd": 0.0008089392441110683,
+  "score": 63.5,
+  "metrics": {
+   "priceUsd": 0.0008,
+   "liqUsd": 82916.36,
+   "mcapUsd": 761211,
+   "ageH": 7.9971,
+   "volH1": 153292.81,
+   "volH6": 630075.85,
+   "volH24": 1220325.92,
+   "buysH1": 1230,
+   "sellsH1": 703,
+   "ratioH1": 1.7496,
+   "ratioH6": 1.9276,
+   "accel": 1.6076,
+   "chgH1": 32.62,
+   "chgH6": 65.13,
+   "chgH24": 982,
+   "liqGrowth": 0.1766
+  },
+  "safety": {
+   "holders": 9667,
+   "top10Pct": 6.9563,
+   "devPct": 0,
+   "gtScore": 79.22077922077922
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4099,
+   "totalUsd": 1.1499,
+   "totalPct": 5.75,
+   "route": "StepN > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (8.0h old)",
+   "already up 33% in the last hour; pullbacks are common",
+   "costs of 5.7% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]

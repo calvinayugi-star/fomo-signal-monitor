@@ -734,14 +734,26 @@
    "dexRoundTripUsd": 0.2,
    "estimated": true
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 1303.46,
    "lastSampleAt": "2026-10-04T00:00:28.415Z",
    "bestPriceUsd": 1325.17,
    "worstPriceUsd": 1293.29
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-04T01:00:24.185Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 1313.4817132339995,
+   "bestPriceUsd": 1368.4571890580096,
+   "worstPriceUsd": 1279.8330029082445,
+   "grossPct": -0.5518210412108426,
+   "bestPct": 3.610559677915881,
+   "worstPct": -3.099479628682933,
+   "costsUsd": 0.9400000000000001,
+   "netUsd": -1.0503642082421671,
+   "netPct": -5.251821041210835
+  }
  },
  {
   "id": "2026-10-03T02-Fartcoin ",
@@ -767,8 +779,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.1768,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
+   "lastPriceUsd": 0.1752,
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
    "bestPriceUsd": 0.1786,
    "worstPriceUsd": 0.1721
   },
@@ -798,7 +810,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.0003574,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
    "bestPriceUsd": 0.0003574,
    "worstPriceUsd": 0.0002209
   },
@@ -827,8 +839,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2926,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
+   "lastPriceUsd": 0.2921,
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
    "bestPriceUsd": 0.2946,
    "worstPriceUsd": 0.2892
   },
@@ -857,9 +869,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2405,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
-   "bestPriceUsd": 0.2405,
+   "lastPriceUsd": 0.2408,
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "bestPriceUsd": 0.2408,
    "worstPriceUsd": 0.2311
   },
   "result": null
@@ -887,9 +899,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002618,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
-   "bestPriceUsd": 0.00266,
+   "lastPriceUsd": 0.002705,
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "bestPriceUsd": 0.002705,
    "worstPriceUsd": 0.002201
   },
   "result": null
@@ -917,8 +929,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.006353,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
+   "lastPriceUsd": 0.006391,
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
    "bestPriceUsd": 0.006788,
    "worstPriceUsd": 0.005751
   },
@@ -947,9 +959,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000326,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
-   "bestPriceUsd": 0.000326,
+   "lastPriceUsd": 0.0003405,
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "bestPriceUsd": 0.0003405,
    "worstPriceUsd": 0.0002806
   },
   "result": null
@@ -978,10 +990,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005753,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
+   "lastPriceUsd": 0.0005504,
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
    "bestPriceUsd": 0.0005754,
-   "worstPriceUsd": 0.0005657
+   "worstPriceUsd": 0.0005504
   },
   "result": null
  },
@@ -1008,11 +1020,62 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000459,
-   "lastSampleAt": "2026-10-04T00:00:28.415Z",
-   "bestPriceUsd": 0.000459,
+   "lastPriceUsd": 0.0005193,
+   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "bestPriceUsd": 0.0005193,
    "worstPriceUsd": 0.000459
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T01-swordcat",
+  "mint": "5tCju6YNxHq5zrA6tGndr6F7TK42mpUFmeE31cSFpump",
+  "symbol": "swordcat",
+  "sources": [
+   "Trending",
+   "Graduated"
+  ],
+  "pairAddress": "8ewuF2o8ACro7fqWepZ3tKhkbBjndZU4Ldk9scRPw83d",
+  "alertedAt": "2026-10-04T01:00:23.455Z",
+  "exitDeadline": "2026-10-05T01:00:23.455Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.00295,
+  "group": "below score bar",
+  "outcome": "score 34.5",
+  "demandScore": 39.5,
+  "score": 34.5,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.3363,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
+  "result": null
+ },
+ {
+  "id": "2026-10-04T01-TOKEN2049",
+  "mint": "G7k8YPnJL6jKmA1H5Pt9sPLXhcd6YXjexHgmRQ4zpump",
+  "symbol": "TOKEN2049",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "8E1Zcg4VqnNetv4Pp6fVyYRFbDqUj3RueCcSyJM8sSSX",
+  "alertedAt": "2026-10-04T01:00:23.455Z",
+  "exitDeadline": "2026-10-05T01:00:23.455Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.002923,
+  "group": "failed safety",
+  "outcome": "developer holds too much",
+  "demandScore": 35.8,
+  "score": null,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2,
+   "estimated": true
+  },
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]

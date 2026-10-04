@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 3, 20:00 EDT. 2 of ~50 tracked alerts needed before review.
+Updated Oct 3, 21:01 EDT. 2 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 3 (1 / 2) |
+| Alerts (open / closed) | 4 (2 / 2) |
 | Win rate after costs | 50% (plausible true range 9–91%) |
 | Average gain (winners, after costs) | +16.2% |
 | Average loss (losers, after costs) | -13.4% |
@@ -31,17 +31,18 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
 | **Alerts** | 2 | 50% | +6.2% | +1.4% | +83.8% | -6.6% |
-| All runner-ups & near misses | 17 | 29% | -5.3% | -9.7% | +61.5% | -42.2% |
+| All runner-ups & near misses | 18 | 28% | -5.1% | -9.4% | +58.3% | -40.0% |
 | ↳ runner-up | 0 | n/a | n/a | n/a | n/a | n/a |
 | ↳ below score bar | 9 | 11% | +0.1% | -4.9% | +54.8% | -35.0% |
 | ↳ failed cost/sellability | 0 | n/a | n/a | n/a | n/a | n/a |
-| ↳ failed safety | 8 | 50% | -11.4% | -15.1% | +69.1% | -50.2% |
+| ↳ failed safety | 9 | 44% | -10.2% | -14.0% | +61.8% | -44.9% |
 | ↳ not checked | 0 | n/a | n/a | n/a | n/a | n/a |
 
 ## All alerts (newest first)
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 3, 21:00 EDT | catius | Graduated | open | 0.0007811 | n/a | n/a | n/a | $1.15 | – |
 | Oct 3, 15:00 EDT | STONK | Trending | open | 0.2215 | n/a | n/a | n/a | $0.76 | – |
 | Oct 2, 18:00 EDT | HOTBOT | Trending | closed | 0.0007706 | 0.0009412 | +165.6% | -0.7% | $1.18 | $3.25 |
 | Oct 2, 01:21 EDT | PENGU | Trending | closed | 0.009884 | 0.008927 | +1.9% | -12.4% | $0.74 | -$2.68 |
