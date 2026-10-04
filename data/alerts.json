@@ -217,10 +217,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.207,
-   "lastSampleAt": "2026-10-04T02:00:24.344Z",
+   "lastPriceUsd": 0.199,
+   "lastSampleAt": "2026-10-04T03:00:24.595Z",
    "bestPriceUsd": 0.2221,
-   "worstPriceUsd": 0.2036
+   "worstPriceUsd": 0.199
   },
   "result": null
  },
@@ -285,11 +285,73 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0008011,
-   "lastSampleAt": "2026-10-04T02:00:24.344Z",
+   "lastPriceUsd": 0.0007334,
+   "lastSampleAt": "2026-10-04T03:00:24.595Z",
    "bestPriceUsd": 0.0008011,
-   "worstPriceUsd": 0.0008011
+   "worstPriceUsd": 0.0007334
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T03-MISTAKE",
+  "mode": "paper",
+  "mint": "HKZDfZnkHZxd9agRDNPyDv4iT6LmAurJnpRtj9wpump",
+  "symbol": "MISTAKE",
+  "name": "Make No Mistakes",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "867dKvaCcyRrUDP66bqNXbujXfjaxsNB9wTpc4CmBdAD",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-04T03:00:24.352Z",
+  "quoteExpiresAt": "2026-10-04T03:20:24.352Z",
+  "exitDeadline": "2026-10-05T03:00:24.352Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.008592,
+  "maxEntryPriceUsd": 0.008849760000000002,
+  "effectiveEntryPriceUsd": 0.008706849689882867,
+  "score": 71.6,
+  "metrics": {
+   "priceUsd": 0.0086,
+   "liqUsd": 307461.48,
+   "mcapUsd": 8274768,
+   "ageH": 552.6815,
+   "volH1": 635532.16,
+   "volH6": 950308.17,
+   "volH24": 1155621.46,
+   "buysH1": 1800,
+   "sellsH1": 1266,
+   "ratioH1": 1.4218,
+   "ratioH6": 1.2373,
+   "accel": 10.095,
+   "chgH1": 31.03,
+   "chgH6": 113,
+   "chgH24": 130,
+   "liqGrowth": 0.1936
+  },
+  "safety": {
+   "holders": 6677,
+   "top10Pct": 5.996,
+   "devPct": 0,
+   "gtScore": 84.67532467532467
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.1773,
+   "totalUsd": 0.9173,
+   "totalPct": 4.59,
+   "route": "GoonFi V2 > Meteora DLMM > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "already up 31% in the last hour; pullbacks are common",
+   "costs of 4.6% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
