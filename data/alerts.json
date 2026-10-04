@@ -217,8 +217,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.1988,
-   "lastSampleAt": "2026-10-04T13:00:26.447Z",
+   "lastPriceUsd": 0.1974,
+   "lastSampleAt": "2026-10-04T14:00:26.546Z",
    "bestPriceUsd": 0.2221,
    "worstPriceUsd": 0.1873
   },
@@ -285,8 +285,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002726,
-   "lastSampleAt": "2026-10-04T13:00:26.447Z",
+   "lastPriceUsd": 0.000002736,
+   "lastSampleAt": "2026-10-04T14:00:26.546Z",
    "bestPriceUsd": 0.0008147,
    "worstPriceUsd": 0.000002726
   },
@@ -352,10 +352,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.01223,
-   "lastSampleAt": "2026-10-04T13:00:26.447Z",
+   "lastPriceUsd": 0.00778,
+   "lastSampleAt": "2026-10-04T14:00:26.546Z",
    "bestPriceUsd": 0.0211,
-   "worstPriceUsd": 0.009932
+   "worstPriceUsd": 0.00778
   },
   "result": null
  },
@@ -419,9 +419,9 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000647,
-   "lastSampleAt": "2026-10-04T13:00:26.447Z",
-   "bestPriceUsd": 0.0007095,
+   "lastPriceUsd": 0.001083,
+   "lastSampleAt": "2026-10-04T14:00:26.546Z",
+   "bestPriceUsd": 0.001083,
    "worstPriceUsd": 0.0005411
   },
   "result": null
@@ -486,11 +486,75 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002162,
-   "lastSampleAt": "2026-10-04T13:00:26.447Z",
+   "lastPriceUsd": 0.001805,
+   "lastSampleAt": "2026-10-04T14:00:26.546Z",
    "bestPriceUsd": 0.002162,
    "worstPriceUsd": 0.001751
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T14-DIT",
+  "mode": "paper",
+  "mint": "BgNZw6VxzYoS6AHjhpv2S54wGUv5MWeANPkoU2KPTM1G",
+  "symbol": "DIT",
+  "name": "Dead Internet Theory",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "GJL3SDXtChZf8rJFVPZJwZ6uDYhcRQDZ7ddQVFssY9Qy",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-04T14:00:26.168Z",
+  "quoteExpiresAt": "2026-10-04T14:20:26.168Z",
+  "exitDeadline": "2026-10-05T14:00:26.168Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0001547,
+  "maxEntryPriceUsd": 0.000159341,
+  "effectiveEntryPriceUsd": 0.0001495716485477726,
+  "score": 68.9,
+  "metrics": {
+   "priceUsd": 0.0002,
+   "liqUsd": 35193.01,
+   "mcapUsd": 144305,
+   "ageH": 7.1612,
+   "volH1": 272422.03,
+   "volH6": 419636.67,
+   "volH24": 512192.33,
+   "buysH1": 1886,
+   "sellsH1": 1378,
+   "ratioH1": 1.3687,
+   "ratioH6": 1.3007,
+   "accel": 9.2525,
+   "chgH1": 26.21,
+   "chgH6": 678,
+   "chgH24": 216,
+   "liqGrowth": 4.7325
+  },
+  "safety": {
+   "holders": 662,
+   "top10Pct": 30.6785,
+   "devPct": 0,
+   "gtScore": 63.116883116883116
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.5163,
+   "totalUsd": 1.2563,
+   "totalPct": 6.28,
+   "route": "BisonFi > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (7.2h old)",
+   "already up 26% in the last hour; pullbacks are common",
+   "thin liquidity ($35k)",
+   "costs of 6.3% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
