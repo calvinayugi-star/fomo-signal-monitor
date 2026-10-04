@@ -777,14 +777,26 @@
    "dexRoundTripUsd": 0.0217,
    "estimated": false
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.1752,
    "lastSampleAt": "2026-10-04T01:00:23.835Z",
    "bestPriceUsd": 0.1786,
    "worstPriceUsd": 0.1721
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-04T02:00:25.024Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.17421497306012082,
+   "bestPriceUsd": 0.18036658607729744,
+   "worstPriceUsd": 0.16962402669979093,
+   "grossPct": -1.4621193098864227,
+   "bestPct": 2.017299817475915,
+   "worstPct": -4.0588084277200736,
+   "costsUsd": 0.7617,
+   "netUsd": -1.0541238619772837,
+   "netPct": -5.270619309886419
+  }
  },
  {
   "id": "2026-10-03T10-제로",
@@ -810,7 +822,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.0003574,
-   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
    "bestPriceUsd": 0.0003574,
    "worstPriceUsd": 0.0002209
   },
@@ -839,8 +851,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2921,
-   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "lastPriceUsd": 0.2902,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
    "bestPriceUsd": 0.2946,
    "worstPriceUsd": 0.2892
   },
@@ -869,9 +881,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2408,
-   "lastSampleAt": "2026-10-04T01:00:23.835Z",
-   "bestPriceUsd": 0.2408,
+   "lastPriceUsd": 0.2409,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
+   "bestPriceUsd": 0.2409,
    "worstPriceUsd": 0.2311
   },
   "result": null
@@ -899,9 +911,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002705,
-   "lastSampleAt": "2026-10-04T01:00:23.835Z",
-   "bestPriceUsd": 0.002705,
+   "lastPriceUsd": 0.002868,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
+   "bestPriceUsd": 0.002868,
    "worstPriceUsd": 0.002201
   },
   "result": null
@@ -929,8 +941,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.006391,
-   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "lastPriceUsd": 0.006277,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
    "bestPriceUsd": 0.006788,
    "worstPriceUsd": 0.005751
   },
@@ -959,9 +971,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003405,
-   "lastSampleAt": "2026-10-04T01:00:23.835Z",
-   "bestPriceUsd": 0.0003405,
+   "lastPriceUsd": 0.0003532,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
+   "bestPriceUsd": 0.0003532,
    "worstPriceUsd": 0.0002806
   },
   "result": null
@@ -990,10 +1002,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005504,
-   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "lastPriceUsd": 0.0003986,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
    "bestPriceUsd": 0.0005754,
-   "worstPriceUsd": 0.0005504
+   "worstPriceUsd": 0.0003986
   },
   "result": null
  },
@@ -1020,8 +1032,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005193,
-   "lastSampleAt": "2026-10-04T01:00:23.835Z",
+   "lastPriceUsd": 0.0004961,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
    "bestPriceUsd": 0.0005193,
    "worstPriceUsd": 0.000459
   },
@@ -1050,7 +1062,12 @@
    "estimated": false
   },
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.001932,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
+   "bestPriceUsd": 0.001932,
+   "worstPriceUsd": 0.001932
+  },
   "result": null
  },
  {
@@ -1073,6 +1090,36 @@
    "buyFeeUsd": 0.37,
    "dexRoundTripUsd": 0.2,
    "estimated": true
+  },
+  "status": "open",
+  "track": {
+   "lastPriceUsd": 0.002918,
+   "lastSampleAt": "2026-10-04T02:00:24.549Z",
+   "bestPriceUsd": 0.002918,
+   "worstPriceUsd": 0.002918
+  },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T02-PUMP",
+  "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+  "symbol": "PUMP",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "2uF4Xh61rDwxnG9woyxsVQP7zuA6kLFpb3NvnRQeoiSd",
+  "alertedAt": "2026-10-04T02:00:24.150Z",
+  "exitDeadline": "2026-10-05T02:00:24.150Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.006269,
+  "group": "below score bar",
+  "outcome": "score 32.6",
+  "demandScore": 42.5,
+  "score": 32.6,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0,
+   "estimated": false
   },
   "status": "open",
   "track": {},

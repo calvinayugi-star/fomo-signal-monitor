@@ -217,8 +217,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2042,
-   "lastSampleAt": "2026-10-04T01:00:23.564Z",
+   "lastPriceUsd": 0.207,
+   "lastSampleAt": "2026-10-04T02:00:24.344Z",
    "bestPriceUsd": 0.2221,
    "worstPriceUsd": 0.2036
   },
@@ -284,7 +284,12 @@
   ],
   "delivered": true,
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.0008011,
+   "lastSampleAt": "2026-10-04T02:00:24.344Z",
+   "bestPriceUsd": 0.0008011,
+   "worstPriceUsd": 0.0008011
+  },
   "result": null
  }
 ]
