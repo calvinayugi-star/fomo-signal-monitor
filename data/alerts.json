@@ -217,8 +217,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.1979,
-   "lastSampleAt": "2026-10-04T07:00:22.065Z",
+   "lastPriceUsd": 0.1958,
+   "lastSampleAt": "2026-10-04T08:00:26.769Z",
    "bestPriceUsd": 0.2221,
    "worstPriceUsd": 0.1907
   },
@@ -285,10 +285,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000203,
-   "lastSampleAt": "2026-10-04T07:00:22.065Z",
+   "lastPriceUsd": 0.0001475,
+   "lastSampleAt": "2026-10-04T08:00:26.769Z",
    "bestPriceUsd": 0.0008147,
-   "worstPriceUsd": 0.0001936
+   "worstPriceUsd": 0.0001475
   },
   "result": null
  },
@@ -352,11 +352,73 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0211,
-   "lastSampleAt": "2026-10-04T07:00:22.065Z",
+   "lastPriceUsd": 0.01474,
+   "lastSampleAt": "2026-10-04T08:00:26.769Z",
    "bestPriceUsd": 0.0211,
    "worstPriceUsd": 0.009932
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-04T08-PAYR",
+  "mode": "paper",
+  "mint": "HmkiLg8BQnXMexzKJYFsMjbq82sFcqFXXfJ78CYypump",
+  "symbol": "PAYR",
+  "name": "Payr",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "BeS6PZpnnfuQruN7vdiy7T6HNtKBHp8rXoBojLfe7c4U",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-04T08:00:26.391Z",
+  "quoteExpiresAt": "2026-10-04T08:20:26.391Z",
+  "exitDeadline": "2026-10-05T08:00:26.391Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0006592,
+  "maxEntryPriceUsd": 0.000678976,
+  "effectiveEntryPriceUsd": 0.0006622154375099975,
+  "score": 56.1,
+  "metrics": {
+   "priceUsd": 0.0007,
+   "liqUsd": 82224.35,
+   "mcapUsd": 648619,
+   "ageH": 11.6107,
+   "volH1": 269371.08,
+   "volH6": 967112.82,
+   "volH24": 3586832.56,
+   "buysH1": 4263,
+   "sellsH1": 3040,
+   "ratioH1": 1.4023,
+   "ratioH6": 1.4547,
+   "accel": 1.9303,
+   "chgH1": 24.04,
+   "chgH6": 38.73,
+   "chgH24": 743,
+   "liqGrowth": 0.1388
+  },
+  "safety": {
+   "holders": 1985,
+   "top10Pct": 8.4929,
+   "devPct": 0,
+   "gtScore": 73.5064935064935
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4125,
+   "totalUsd": 1.1525,
+   "totalPct": 5.76,
+   "route": "HumidiFi > Whirlpool > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (11.6h old)",
+   "costs of 5.8% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
