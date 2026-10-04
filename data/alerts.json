@@ -215,14 +215,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.211,
    "lastSampleAt": "2026-10-04T19:00:22.240Z",
    "bestPriceUsd": 0.2221,
    "worstPriceUsd": 0.1873
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-04T20:00:25.060Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.20844659092257622,
+   "bestPriceUsd": 0.22290325248696627,
+   "worstPriceUsd": 0.1807669200762183,
+   "grossPct": -5.893186942403517,
+   "bestPct": 0.6335225674791278,
+   "worstPct": -18.389652335793095,
+   "costsUsd": 0.7633,
+   "netUsd": -1.941937388480702,
+   "netPct": -9.70968694240351
+  }
  },
  {
   "id": "2026-10-04T01-catius",
@@ -285,8 +297,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002772,
-   "lastSampleAt": "2026-10-04T19:00:22.240Z",
+   "lastPriceUsd": 0.000002803,
+   "lastSampleAt": "2026-10-04T20:00:24.650Z",
    "bestPriceUsd": 0.0008147,
    "worstPriceUsd": 0.000002726
   },
@@ -352,10 +364,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005969,
-   "lastSampleAt": "2026-10-04T19:00:22.240Z",
+   "lastPriceUsd": 0.005703,
+   "lastSampleAt": "2026-10-04T20:00:24.650Z",
    "bestPriceUsd": 0.0211,
-   "worstPriceUsd": 0.005865
+   "worstPriceUsd": 0.005703
   },
   "result": null
  },
@@ -419,10 +431,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00000516,
-   "lastSampleAt": "2026-10-04T19:00:22.240Z",
+   "lastPriceUsd": 0.00000502,
+   "lastSampleAt": "2026-10-04T20:00:24.650Z",
    "bestPriceUsd": 0.001083,
-   "worstPriceUsd": 0.00000516
+   "worstPriceUsd": 0.00000502
   },
   "result": null
  },
@@ -486,10 +498,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001425,
-   "lastSampleAt": "2026-10-04T19:00:22.240Z",
+   "lastPriceUsd": 0.001223,
+   "lastSampleAt": "2026-10-04T20:00:24.650Z",
    "bestPriceUsd": 0.002419,
-   "worstPriceUsd": 0.001425
+   "worstPriceUsd": 0.001223
   },
   "result": null
  },
@@ -555,8 +567,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003506,
-   "lastSampleAt": "2026-10-04T19:00:22.240Z",
+   "lastPriceUsd": 0.0002169,
+   "lastSampleAt": "2026-10-04T20:00:24.650Z",
    "bestPriceUsd": 0.0003506,
    "worstPriceUsd": 0.0001276
   },
@@ -623,10 +635,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003021,
-   "lastSampleAt": "2026-10-04T19:00:22.240Z",
+   "lastPriceUsd": 0.0001916,
+   "lastSampleAt": "2026-10-04T20:00:24.650Z",
    "bestPriceUsd": 0.0003971,
-   "worstPriceUsd": 0.0003021
+   "worstPriceUsd": 0.0001916
   },
   "result": null
  }
