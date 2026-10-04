@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Sun, Oct 4, 02:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Sun, Oct 4, 03:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,39 +9,40 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$70.84** → $5,000 |
-| Run return | -29.2% |
-| Distance remaining | $4929.16 |
-| Days elapsed / left | 1.0 / 27.9 |
-| Even-pace bankroll today | $115.11 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +16.5% |
-| Trades (wins / losses) | 3 (0 / 3) |
-| Win rate | 0% |
-| Average win / average loss (net) | n/a / -10.6% |
-| Average net per trade | -10.6% |
-| Total estimated costs | $7.92 |
+| Seed → bankroll → target | $100 → **$72.16** → $5,000 |
+| Run return | -27.8% |
+| Distance remaining | $4927.84 |
+| Days elapsed / left | 1.1 / 27.9 |
+| Even-pace bankroll today | $115.76 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +16.4% |
+| Trades (wins / losses) | 4 (1 / 3) |
+| Win rate | 25% |
+| Average win / average loss (net) | +1.9% / -10.6% |
+| Average net per trade | -7.5% |
+| Total estimated costs | $9.11 |
 
-**Open position:** $MISTAKE, $70.84 decided Oct 4, 02:00, fill pending. Stop -15% net.
+**Open position:** none (cash).
 
 ### Win rate needed vs achieved
 
 Assumes up to 2 trades a day for the rest of the run, compounding the whole bankroll.
 
-| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (n/a / -10.6%) |
+| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+1.9% / -10.6%) |
 |---|---|---|
-| Whole run from the seed (57 trades) | 87% | n/a |
-| From the current bankroll (55 trades left) | 91% | n/a |
-| **Achieved** | 0% | 0% |
+| Whole run from the seed (57 trades) | 87% | impossible (>100%) |
+| From the current bankroll (55 trades left) | 91% | impossible (>100%) |
+| **Achieved** | 25% | 25% |
 
 ### Winner sizes and exits
 
-Trades reaching the +10% target: 0. Net results of at least +10%: 0 · +15%: 0 · +20%: 0 · +30%: 0.
-Exit reasons: stop loss (2), emergency stop (1).
+Trades reaching the +10% target: 1. Net results of at least +10%: 0 · +15%: 0 · +20%: 0 · +30%: 0.
+Exit reasons: stop loss (2), emergency stop (2).
 
 ### Trades (newest first)
 
 | # | Entered | Token | Size | Entry $ | Exit $ | Gross | Costs | Net | Net $ | Bankroll after | Exit |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 4 | Oct 4, 02:03 | MISTAKE | $70.84 | 0.01843 | 0.01908 | +3.5% | $1.19 | +1.9% | $1.32 | $72.16 | emergency stop |
 | 3 | Oct 4, 00:03 | CRAWL | $88.55 | 0.003672 | 0.003014 | -17.9% | $1.85 | -20.0% | -$17.71 | $70.84 | emergency stop |
 | 2 | Oct 3, 07:04 | SOCKET | $94.20 | 0.0007626 | 0.0007390 | -3.1% | $2.74 | -6.0% | -$5.65 | $88.55 | stop loss |
 | 1 | Oct 3, 03:03 | HI | $100.00 | 0.0005868 | 0.0005723 | -2.5% | $3.33 | -5.8% | -$5.80 | $94.20 | stop loss |
