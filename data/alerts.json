@@ -374,14 +374,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.003503,
    "lastSampleAt": "2026-10-05T03:00:22.932Z",
    "bestPriceUsd": 0.0211,
    "worstPriceUsd": 0.003503
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-05T04:00:24.034Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.0035017979172707746,
+   "bestPriceUsd": 0.02603392487253483,
+   "worstPriceUsd": 0.003423098792559058,
+   "grossPct": -59.2435065494556,
+   "bestPct": 203.00191890752822,
+   "worstPct": -60.159464704852674,
+   "costsUsd": 0.9173,
+   "netUsd": -12.76600130989112,
+   "netPct": -63.8300065494556
+  }
  },
  {
   "id": "2026-10-04T08-PAYR",
@@ -443,8 +455,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00000399,
-   "lastSampleAt": "2026-10-05T03:00:22.932Z",
+   "lastPriceUsd": 0.000004037,
+   "lastSampleAt": "2026-10-05T04:00:23.527Z",
    "bestPriceUsd": 0.001083,
    "worstPriceUsd": 0.000003836
   },
@@ -510,8 +522,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001542,
-   "lastSampleAt": "2026-10-05T03:00:22.932Z",
+   "lastPriceUsd": 0.001403,
+   "lastSampleAt": "2026-10-05T04:00:23.527Z",
    "bestPriceUsd": 0.002419,
    "worstPriceUsd": 0.001223
   },
@@ -579,8 +591,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00005836,
-   "lastSampleAt": "2026-10-05T03:00:22.932Z",
+   "lastPriceUsd": 0.00007097,
+   "lastSampleAt": "2026-10-05T04:00:23.527Z",
    "bestPriceUsd": 0.0003506,
    "worstPriceUsd": 0.00004889
   },
@@ -647,8 +659,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00001944,
-   "lastSampleAt": "2026-10-05T03:00:22.932Z",
+   "lastPriceUsd": 0.00001642,
+   "lastSampleAt": "2026-10-05T04:00:23.527Z",
    "bestPriceUsd": 0.0003971,
    "worstPriceUsd": 0.00001593
   },
@@ -714,8 +726,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.02094,
-   "lastSampleAt": "2026-10-05T03:00:22.932Z",
+   "lastPriceUsd": 0.02056,
+   "lastSampleAt": "2026-10-05T04:00:23.527Z",
    "bestPriceUsd": 0.02094,
    "worstPriceUsd": 0.01482
   },

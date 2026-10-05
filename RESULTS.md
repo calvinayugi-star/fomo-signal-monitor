@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 4, 23:00 EDT. 4 of ~50 tracked alerts needed before review.
+Updated Oct 5, 00:01 EDT. 5 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,17 +9,17 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 10 (6 / 4) |
-| Win rate after costs | 25% (plausible true range 5–70%) |
+| Alerts (open / closed) | 10 (5 / 5) |
+| Win rate after costs | 20% (plausible true range 4–62%) |
 | Average gain (winners, after costs) | +16.2% |
-| Average loss (losers, after costs) | -41.6% |
-| Average / median result per alert, after costs | -27.2% / -13.4% |
-| Profit factor (total won ÷ total lost; above 1 = profitable) | 0.13 |
-| Net result after costs | -$21.74 |
-| Gross result before costs | -$18.62 |
-| Total estimated costs | $3.12 |
-| Avg best / worst price during hold | +49.6% / -32.8% |
-| Share that were at some point up enough to cover costs | 50% |
+| Average loss (losers, after costs) | -47.2% |
+| Average / median result per alert, after costs | -34.5% / -13.4% |
+| Profit factor (total won ÷ total lost; above 1 = profitable) | 0.09 |
+| Net result after costs | -$34.51 |
+| Gross result before costs | -$30.47 |
+| Total estimated costs | $4.04 |
+| Avg best / worst price during hold | +80.3% / -38.3% |
+| Share that were at some point up enough to cover costs | 60% |
 | Best / worst single alert | $3.25 / -$20.37 |
 
 ## Signal quality: alerts vs tokens not alerted
@@ -30,7 +30,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
-| **Alerts** | 4 | 25% | -23.3% | -27.2% | +49.6% | -32.8% |
+| **Alerts** | 5 | 20% | -30.5% | -34.5% | +80.3% | -38.3% |
 | All runner-ups & near misses | 30 | 20% | -21.7% | -25.9% | +52.7% | -48.0% |
 | ↳ runner-up | 0 | n/a | n/a | n/a | n/a | n/a |
 | ↳ below score bar | 14 | 14% | -1.9% | -6.6% | +40.5% | -30.8% |
@@ -47,7 +47,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Oct 4, 10:00 EDT | DIT | Graduated | open | 0.0001547 | n/a | n/a | n/a | $1.26 | – |
 | Oct 4, 06:00 EDT | SI | Trending+Graduated | open | 0.002511 | n/a | n/a | n/a | $1.20 | – |
 | Oct 4, 04:00 EDT | PAYR | Graduated | open | 0.0006592 | n/a | n/a | n/a | $1.15 | – |
-| Oct 3, 23:00 EDT | MISTAKE | Trending | open | 0.008592 | n/a | n/a | n/a | $0.92 | – |
+| Oct 3, 23:00 EDT | MISTAKE | Trending | closed | 0.008592 | 0.003502 | +203.0% | -60.2% | $0.92 | -$12.77 |
 | Oct 3, 21:00 EDT | catius | Graduated | closed | 0.0007811 | 0.000002726 | +30.1% | -99.7% | $0.44 | -$20.37 |
 | Oct 3, 15:00 EDT | STONK | Trending | closed | 0.2215 | 0.2084 | +0.6% | -18.4% | $0.76 | -$1.94 |
 | Oct 2, 18:00 EDT | HOTBOT | Trending | closed | 0.0007706 | 0.0009412 | +165.6% | -0.7% | $1.18 | $3.25 |
