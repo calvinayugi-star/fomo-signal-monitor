@@ -453,14 +453,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.00000455,
    "lastSampleAt": "2026-10-05T08:00:25.555Z",
    "bestPriceUsd": 0.001083,
    "worstPriceUsd": 0.000003836
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-05T09:00:26.931Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.0000044105771938129,
+   "bestPriceUsd": 0.0012799694007245774,
+   "worstPriceUsd": 0.00000377685567565657,
+   "grossPct": -99.33091972181236,
+   "bestPct": 94.17011540117983,
+   "worstPct": -99.42705466085306,
+   "costsUsd": 0.5038160556375278,
+   "netUsd": -20.37,
+   "netPct": -101.85
+  }
  },
  {
   "id": "2026-10-04T10-SI",
@@ -522,8 +534,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001614,
-   "lastSampleAt": "2026-10-05T08:00:25.555Z",
+   "lastPriceUsd": 0.002119,
+   "lastSampleAt": "2026-10-05T09:00:25.643Z",
    "bestPriceUsd": 0.002419,
    "worstPriceUsd": 0.001223
   },
@@ -591,8 +603,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00005957,
-   "lastSampleAt": "2026-10-05T08:00:25.555Z",
+   "lastPriceUsd": 0.00006006,
+   "lastSampleAt": "2026-10-05T09:00:25.643Z",
    "bestPriceUsd": 0.0003506,
    "worstPriceUsd": 0.00004889
   },
@@ -659,10 +671,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0000122,
-   "lastSampleAt": "2026-10-05T08:00:25.555Z",
+   "lastPriceUsd": 0.000008506,
+   "lastSampleAt": "2026-10-05T09:00:25.643Z",
    "bestPriceUsd": 0.0003971,
-   "worstPriceUsd": 0.0000122
+   "worstPriceUsd": 0.000008506
   },
   "result": null
  },
@@ -726,8 +738,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.03438,
-   "lastSampleAt": "2026-10-05T08:00:25.555Z",
+   "lastPriceUsd": 0.02419,
+   "lastSampleAt": "2026-10-05T09:00:25.643Z",
    "bestPriceUsd": 0.03438,
    "worstPriceUsd": 0.01482
   },
@@ -792,9 +804,9 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005871,
-   "lastSampleAt": "2026-10-05T08:00:25.555Z",
-   "bestPriceUsd": 0.0005871,
+   "lastPriceUsd": 0.0006853,
+   "lastSampleAt": "2026-10-05T09:00:25.643Z",
+   "bestPriceUsd": 0.0006853,
    "worstPriceUsd": 0.000528
   },
   "result": null
