@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 5, 12:01 EDT. 9 of ~50 tracked alerts needed before review.
+Updated Oct 5, 13:00 EDT. 9 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
