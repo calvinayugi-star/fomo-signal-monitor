@@ -298,7 +298,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002767,
-   "lastSampleAt": "2026-10-04T23:00:24.429Z",
+   "lastSampleAt": "2026-10-05T00:00:23.194Z",
    "bestPriceUsd": 0.0008147,
    "worstPriceUsd": 0.000002726
   },
@@ -364,8 +364,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005644,
-   "lastSampleAt": "2026-10-04T23:00:24.429Z",
+   "lastPriceUsd": 0.005692,
+   "lastSampleAt": "2026-10-05T00:00:23.194Z",
    "bestPriceUsd": 0.0211,
    "worstPriceUsd": 0.005644
   },
@@ -431,10 +431,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00000402,
-   "lastSampleAt": "2026-10-04T23:00:24.429Z",
+   "lastPriceUsd": 0.00000387,
+   "lastSampleAt": "2026-10-05T00:00:23.194Z",
    "bestPriceUsd": 0.001083,
-   "worstPriceUsd": 0.00000402
+   "worstPriceUsd": 0.00000387
   },
   "result": null
  },
@@ -498,8 +498,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001475,
-   "lastSampleAt": "2026-10-04T23:00:24.429Z",
+   "lastPriceUsd": 0.00144,
+   "lastSampleAt": "2026-10-05T00:00:23.194Z",
    "bestPriceUsd": 0.002419,
    "worstPriceUsd": 0.001223
   },
@@ -567,8 +567,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00005787,
-   "lastSampleAt": "2026-10-04T23:00:24.429Z",
+   "lastPriceUsd": 0.00007155,
+   "lastSampleAt": "2026-10-05T00:00:23.194Z",
    "bestPriceUsd": 0.0003506,
    "worstPriceUsd": 0.00005787
   },
@@ -635,10 +635,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00002705,
-   "lastSampleAt": "2026-10-04T23:00:24.429Z",
+   "lastPriceUsd": 0.00001866,
+   "lastSampleAt": "2026-10-05T00:00:23.194Z",
    "bestPriceUsd": 0.0003971,
-   "worstPriceUsd": 0.00002705
+   "worstPriceUsd": 0.00001866
   },
   "result": null
  },
@@ -701,7 +701,12 @@
   ],
   "delivered": true,
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.01509,
+   "lastSampleAt": "2026-10-05T00:00:23.194Z",
+   "bestPriceUsd": 0.01509,
+   "worstPriceUsd": 0.01509
+  },
   "result": null
  }
 ]
