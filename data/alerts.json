@@ -613,14 +613,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.00008247,
    "lastSampleAt": "2026-10-05T13:00:27.705Z",
    "bestPriceUsd": 0.0003506,
    "worstPriceUsd": 0.00004889
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-05T14:00:29.765Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.00009618603399931804,
+   "bestPriceUsd": 0.0004656283265134201,
+   "worstPriceUsd": 0.000041070334468092984,
+   "grossPct": -37.82415384659467,
+   "bestPct": 200.9879292265159,
+   "worstPct": -73.45162607104525,
+   "costsUsd": 1.2563,
+   "netUsd": -8.821130769318934,
+   "netPct": -44.10565384659467
+  }
  },
  {
   "id": "2026-10-04T16-Crawler",
@@ -683,10 +695,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00000826,
-   "lastSampleAt": "2026-10-05T13:00:27.705Z",
+   "lastPriceUsd": 0.000007892,
+   "lastSampleAt": "2026-10-05T14:00:29.181Z",
    "bestPriceUsd": 0.0003971,
-   "worstPriceUsd": 0.000007988
+   "worstPriceUsd": 0.000007892
   },
   "result": null
  },
@@ -750,8 +762,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.03412,
-   "lastSampleAt": "2026-10-05T13:00:27.705Z",
+   "lastPriceUsd": 0.02357,
+   "lastSampleAt": "2026-10-05T14:00:29.181Z",
    "bestPriceUsd": 0.03438,
    "worstPriceUsd": 0.01482
   },
@@ -816,11 +828,74 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0006404,
-   "lastSampleAt": "2026-10-05T13:00:27.705Z",
+   "lastPriceUsd": 0.0006793,
+   "lastSampleAt": "2026-10-05T14:00:29.181Z",
    "bestPriceUsd": 0.0008256,
    "worstPriceUsd": 0.000528
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-05T14-BATONROGUE",
+  "mode": "paper",
+  "mint": "8nKp4JkesNtDgu3PiSjdTdNSrtBt8YCHhW8BU14wpump",
+  "symbol": "BATONROGUE",
+  "name": "Baton Rogue",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "CGFDdPEpn1SfTJXDnRYb1BWS6aTAuWXBd4gCf1LddVt6",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-05T14:00:28.876Z",
+  "quoteExpiresAt": "2026-10-05T14:20:28.876Z",
+  "exitDeadline": "2026-10-06T14:00:28.876Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0009927,
+  "maxEntryPriceUsd": 0.001022481,
+  "effectiveEntryPriceUsd": 0.0008561740168754312,
+  "score": 86.5,
+  "metrics": {
+   "priceUsd": 0.001,
+   "liqUsd": 101498.49,
+   "mcapUsd": 982549,
+   "ageH": 16.393,
+   "volH1": 1046759.75,
+   "volH6": 1847686.66,
+   "volH24": 4942401.8,
+   "buysH1": 9348,
+   "sellsH1": 3327,
+   "ratioH1": 2.8097,
+   "ratioH6": 2.7431,
+   "accel": 6.5347,
+   "chgH1": 31.59,
+   "chgH6": 17.6,
+   "chgH24": 1375,
+   "liqGrowth": 0.175
+  },
+  "safety": {
+   "holders": 15248,
+   "top10Pct": 6.4678,
+   "devPct": 0,
+   "gtScore": 83.8961038961039
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.5993,
+   "totalUsd": 1.3393,
+   "totalPct": 6.7,
+   "route": "Kipseli > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (16.4h old)",
+   "already up 32% in the last hour; pullbacks are common",
+   "costs of 6.7% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]

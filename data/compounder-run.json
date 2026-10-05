@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 77.2143,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "SWAP",
+    "mint": "GYFLuEAZMDdpUsTmyGdHstuXQC3JB9ZqtZbfktpppump",
+    "pairAddress": "AgcjmdfxxoCJjnW5ZHQmJCoDqacEpeEQvbLpqpuBKne5",
+    "decidedAt": "2026-10-05T14:01:17.379Z",
+    "alertPriceUsd": 0.0003567,
+    "sizeUsd": 77.2143,
+    "dexRoundTripPct": 2.67,
+    "roundTripPct": 3.66,
+    "stopNetPct": 10,
+    "atr5Pct": 4.07,
+    "chgH1": 10.15
+   },
    "trades": [
     {
      "n": 1,
