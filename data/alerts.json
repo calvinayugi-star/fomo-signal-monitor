@@ -774,8 +774,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0009021,
-   "lastSampleAt": "2026-10-05T19:00:28.184Z",
+   "lastPriceUsd": 0.001144,
+   "lastSampleAt": "2026-10-05T20:06:56.004Z",
    "bestPriceUsd": 0.03438,
    "worstPriceUsd": 0.0009021
   },
@@ -840,10 +840,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005826,
-   "lastSampleAt": "2026-10-05T19:00:28.184Z",
+   "lastPriceUsd": 0.00046,
+   "lastSampleAt": "2026-10-05T20:06:56.004Z",
    "bestPriceUsd": 0.0008541,
-   "worstPriceUsd": 0.000528
+   "worstPriceUsd": 0.00046
   },
   "result": null
  },
@@ -908,8 +908,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005394,
-   "lastSampleAt": "2026-10-05T19:00:28.184Z",
+   "lastPriceUsd": 0.0005859,
+   "lastSampleAt": "2026-10-05T20:06:56.004Z",
    "bestPriceUsd": 0.0007266,
    "worstPriceUsd": 0.0004895
   },
@@ -978,11 +978,72 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000321,
-   "lastSampleAt": "2026-10-05T19:00:28.184Z",
-   "bestPriceUsd": 0.0003299,
+   "lastPriceUsd": 0.0004206,
+   "lastSampleAt": "2026-10-05T20:06:56.004Z",
+   "bestPriceUsd": 0.0004206,
    "worstPriceUsd": 0.0003187
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-05T20-PLAGUE",
+  "mode": "paper",
+  "mint": "CscZaq5twomhUkvCY8Jdd1tge32L4Yj9FbkFFEZQpump",
+  "symbol": "PLAGUE",
+  "name": "Yersinia pestis",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "9GBXHym9gxDZH3u6UnW71yXaixaBkG8K7EegywH2WQGg",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-05T20:06:55.822Z",
+  "quoteExpiresAt": "2026-10-05T20:26:55.822Z",
+  "exitDeadline": "2026-10-06T20:06:55.822Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.001983,
+  "maxEntryPriceUsd": 0.00204249,
+  "effectiveEntryPriceUsd": 0.0020279471391186042,
+  "score": 61.5,
+  "metrics": {
+   "priceUsd": 0.002,
+   "liqUsd": 141274.4,
+   "mcapUsd": 1907412,
+   "ageH": 56.5202,
+   "volH1": 740430.67,
+   "volH6": 2519408.85,
+   "volH24": 3717622.93,
+   "buysH1": 6904,
+   "sellsH1": 3963,
+   "ratioH1": 1.7421,
+   "ratioH6": 1.4386,
+   "accel": 2.0811,
+   "chgH1": 12.62,
+   "chgH6": 178,
+   "chgH24": 443,
+   "liqGrowth": 0.117
+  },
+  "safety": {
+   "holders": 1212,
+   "top10Pct": 25.2176,
+   "devPct": 0,
+   "gtScore": 76.36363636363636
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4474,
+   "totalUsd": 1.1874,
+   "totalPct": 5.94,
+   "route": "BisonFi > Meteora DLMM"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "costs of 5.9% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
