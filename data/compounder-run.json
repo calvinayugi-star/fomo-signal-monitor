@@ -8,34 +8,8 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "SWAP",
-    "mint": "GYFLuEAZMDdpUsTmyGdHstuXQC3JB9ZqtZbfktpppump",
-    "pairAddress": "AgcjmdfxxoCJjnW5ZHQmJCoDqacEpeEQvbLpqpuBKne5",
-    "decidedAt": "2026-10-05T14:01:17.379Z",
-    "alertPriceUsd": 0.0003567,
-    "sizeUsd": 77.2143,
-    "dexRoundTripPct": 2.67,
-    "roundTripPct": 3.66,
-    "stopNetPct": 10,
-    "atr5Pct": 4.07,
-    "chgH1": 10.15,
-    "fill": {
-     "rawPrice": 0.00036013477331550133,
-     "fillCandleT": 1791209040,
-     "at": "2026-10-05T14:04:17.379Z"
-    },
-    "mark": {
-     "at": "2026-10-05T15:00:00.000Z",
-     "price": 0.00043175748406768346,
-     "netPct": 15.56,
-     "proceeds": 89.23,
-     "stopPrice": 0.00041000342507262834,
-     "targetHit": true,
-     "peakNetPct": 16.24
-    }
-   },
+   "cash": 93.0718,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -151,6 +125,29 @@
      "peakNetPct": 15.4,
      "targetHit": true,
      "newBankroll": 77.2143
+    },
+    {
+     "n": 6,
+     "symbol": "SWAP",
+     "mint": "GYFLuEAZMDdpUsTmyGdHstuXQC3JB9ZqtZbfktpppump",
+     "pairAddress": "AgcjmdfxxoCJjnW5ZHQmJCoDqacEpeEQvbLpqpuBKne5",
+     "decidedAt": "2026-10-05T14:01:17.379Z",
+     "prevBankroll": 77.21,
+     "sizeUsd": 77.21,
+     "stopNetPct": 10,
+     "dexRoundTripPct": 2.67,
+     "fillAt": "2026-10-05T14:04:17.379Z",
+     "exitAt": "2026-10-05T15:45:00.000Z",
+     "reason": "trailing stop",
+     "entryPriceUsd": 0.00036013477331550133,
+     "exitPriceUsd": 0.00045033480014855737,
+     "grossPct": 25.05,
+     "costsUsd": 3.4818,
+     "netUsd": 15.8575,
+     "netPct": 20.54,
+     "peakNetPct": 35.65,
+     "targetHit": true,
+     "newBankroll": 93.0718
     }
    ]
   }

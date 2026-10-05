@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Mon, Oct 5, 11:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Mon, Oct 5, 12:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,39 +9,40 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$89.23** → $5,000 |
-| Run return | -10.8% |
-| Distance remaining | $4910.77 |
-| Days elapsed / left | 2.4 / 26.5 |
-| Even-pace bankroll today | $138.61 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +16.4% |
-| Trades (wins / losses) | 5 (2 / 3) |
-| Win rate | 40% |
-| Average win / average loss (net) | +4.4% / -10.6% |
-| Average net per trade | -4.6% |
-| Total estimated costs | $10.40 |
+| Seed → bankroll → target | $100 → **$93.07** → $5,000 |
+| Run return | -6.9% |
+| Distance remaining | $4906.93 |
+| Days elapsed / left | 2.5 / 26.5 |
+| Even-pace bankroll today | $139.39 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +16.2% |
+| Trades (wins / losses) | 6 (3 / 3) |
+| Win rate | 50% |
+| Average win / average loss (net) | +9.8% / -10.6% |
+| Average net per trade | -0.4% |
+| Total estimated costs | $13.88 |
 
-**Open position:** $SWAP, $77.21 decided Oct 5, 10:01, filled at $0.0003601; last mark +15.6% net at Oct 5, 11:00 (target reached, trailing). Stop -10% net.
+**Open position:** none (cash).
 
 ### Win rate needed vs achieved
 
 Assumes up to 2 trades a day for the rest of the run, compounding the whole bankroll.
 
-| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+4.4% / -10.6%) |
+| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+9.8% / -10.6%) |
 |---|---|---|
-| Whole run from the seed (57 trades) | 87% | impossible (>100%) |
-| From the current bankroll (53 trades left) | 90% | impossible (>100%) |
-| **Achieved** | 40% | 40% |
+| Whole run from the seed (57 trades) | 87% | 88% |
+| From the current bankroll (52 trades left) | 91% | 92% |
+| **Achieved** | 50% | 50% |
 
 ### Winner sizes and exits
 
-Trades reaching the +10% target: 2. Net results of at least +10%: 0 · +15%: 0 · +20%: 0 · +30%: 0.
-Exit reasons: stop loss (2), emergency stop (2), trailing stop (1).
+Trades reaching the +10% target: 3. Net results of at least +10%: 1 · +15%: 1 · +20%: 1 · +30%: 0.
+Exit reasons: stop loss (2), emergency stop (2), trailing stop (2).
 
 ### Trades (newest first)
 
 | # | Entered | Token | Size | Entry $ | Exit $ | Gross | Costs | Net | Net $ | Bankroll after | Exit |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 6 | Oct 5, 10:04 | SWAP | $77.21 | 0.0003601 | 0.0004503 | +25.1% | $3.48 | +20.5% | $15.86 | $93.07 | trailing stop |
 | 5 | Oct 5, 02:03 | AGENTCAT | $72.16 | 0.03131 | 0.03406 | +8.8% | $1.29 | +7.0% | $5.06 | $77.21 | trailing stop |
 | 4 | Oct 4, 02:03 | MISTAKE | $70.84 | 0.01843 | 0.01908 | +3.5% | $1.19 | +1.9% | $1.32 | $72.16 | emergency stop |
 | 3 | Oct 4, 00:03 | CRAWL | $88.55 | 0.003672 | 0.003014 | -17.9% | $1.85 | -20.0% | -$17.71 | $70.84 | emergency stop |

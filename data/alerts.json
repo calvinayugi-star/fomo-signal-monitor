@@ -693,14 +693,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.00000769,
    "lastSampleAt": "2026-10-05T15:00:25.784Z",
    "bestPriceUsd": 0.0003971,
    "worstPriceUsd": 0.00000769
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-05T16:00:25.418Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.0000075586861683483965,
+   "bestPriceUsd": 0.0007027692249581164,
+   "worstPriceUsd": 0.0000066649678109905056,
+   "grossPct": -98.32735424466732,
+   "bestPct": 55.51432284977127,
+   "worstPct": -98.52512329918333,
+   "costsUsd": 0.704529151066536,
+   "netUsd": -20.369999999999997,
+   "netPct": -101.85
+  }
  },
  {
   "id": "2026-10-04T23-AGENTCAT",
@@ -762,8 +774,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.02225,
-   "lastSampleAt": "2026-10-05T15:00:25.784Z",
+   "lastPriceUsd": 0.02602,
+   "lastSampleAt": "2026-10-05T16:00:24.863Z",
    "bestPriceUsd": 0.03438,
    "worstPriceUsd": 0.01482
   },
@@ -828,8 +840,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0006719,
-   "lastSampleAt": "2026-10-05T15:00:25.784Z",
+   "lastPriceUsd": 0.0007789,
+   "lastSampleAt": "2026-10-05T16:00:24.863Z",
    "bestPriceUsd": 0.0008256,
    "worstPriceUsd": 0.000528
   },
@@ -896,11 +908,76 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0007266,
-   "lastSampleAt": "2026-10-05T15:00:25.784Z",
+   "lastPriceUsd": 0.0006766,
+   "lastSampleAt": "2026-10-05T16:00:24.863Z",
    "bestPriceUsd": 0.0007266,
-   "worstPriceUsd": 0.0007266
+   "worstPriceUsd": 0.0006766
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-05T16-SWAP",
+  "mode": "paper",
+  "mint": "GYFLuEAZMDdpUsTmyGdHstuXQC3JB9ZqtZbfktpppump",
+  "symbol": "SWAP",
+  "name": "Swaply",
+  "sources": [
+   "Trending",
+   "Graduated"
+  ],
+  "pairAddress": "AgcjmdfxxoCJjnW5ZHQmJCoDqacEpeEQvbLpqpuBKne5",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-05T16:00:24.623Z",
+  "quoteExpiresAt": "2026-10-05T16:20:24.623Z",
+  "exitDeadline": "2026-10-06T16:00:24.623Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.000463,
+  "maxEntryPriceUsd": 0.00047689,
+  "effectiveEntryPriceUsd": 0.0004771080423575793,
+  "score": 58.8,
+  "metrics": {
+   "priceUsd": 0.0005,
+   "liqUsd": 65128.37,
+   "mcapUsd": 404632,
+   "ageH": 21.3535,
+   "volH1": 90711.19,
+   "volH6": 309633.34,
+   "volH24": 1723100.28,
+   "buysH1": 2619,
+   "sellsH1": 1000,
+   "ratioH1": 2.619,
+   "ratioH6": 2.0168,
+   "accel": 2.0718,
+   "chgH1": 9.11,
+   "chgH6": 45.31,
+   "chgH24": 826,
+   "liqGrowth": 0.0412
+  },
+  "safety": {
+   "holders": 1412,
+   "top10Pct": 25.1873,
+   "devPct": 3.16,
+   "gtScore": 78.7012987012987
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4359,
+   "totalUsd": 1.1759,
+   "totalPct": 5.88,
+   "route": "Deriverse > Raydium CLMM > Pump.fun Amm"
+  },
+  "risks": [
+   "developer wallet holds 3.2%",
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (21.4h old)",
+   "thin liquidity ($65k)",
+   "costs of 5.9% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
