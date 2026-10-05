@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Mon, Oct 5, 10:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Mon, Oct 5, 11:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,19 +9,19 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$77.21** → $5,000 |
-| Run return | -22.8% |
-| Distance remaining | $4922.79 |
-| Days elapsed / left | 2.4 / 26.6 |
-| Even-pace bankroll today | $137.84 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +17.0% |
+| Seed → bankroll → target | $100 → **$89.23** → $5,000 |
+| Run return | -10.8% |
+| Distance remaining | $4910.77 |
+| Days elapsed / left | 2.4 / 26.5 |
+| Even-pace bankroll today | $138.61 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +16.4% |
 | Trades (wins / losses) | 5 (2 / 3) |
 | Win rate | 40% |
 | Average win / average loss (net) | +4.4% / -10.6% |
 | Average net per trade | -4.6% |
 | Total estimated costs | $10.40 |
 
-**Open position:** $SWAP, $77.21 decided Oct 5, 10:01, fill pending. Stop -10% net.
+**Open position:** $SWAP, $77.21 decided Oct 5, 10:01, filled at $0.0003601; last mark +15.6% net at Oct 5, 11:00 (target reached, trailing). Stop -10% net.
 
 ### Win rate needed vs achieved
 
@@ -30,7 +30,7 @@ Assumes up to 2 trades a day for the rest of the run, compounding the whole bank
 | | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+4.4% / -10.6%) |
 |---|---|---|
 | Whole run from the seed (57 trades) | 87% | impossible (>100%) |
-| From the current bankroll (53 trades left) | 92% | impossible (>100%) |
+| From the current bankroll (53 trades left) | 90% | impossible (>100%) |
 | **Achieved** | 40% | 40% |
 
 ### Winner sizes and exits

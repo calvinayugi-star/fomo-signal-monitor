@@ -20,7 +20,21 @@
     "roundTripPct": 3.66,
     "stopNetPct": 10,
     "atr5Pct": 4.07,
-    "chgH1": 10.15
+    "chgH1": 10.15,
+    "fill": {
+     "rawPrice": 0.00036013477331550133,
+     "fillCandleT": 1791209040,
+     "at": "2026-10-05T14:04:17.379Z"
+    },
+    "mark": {
+     "at": "2026-10-05T15:00:00.000Z",
+     "price": 0.00043175748406768346,
+     "netPct": 15.56,
+     "proceeds": 89.23,
+     "stopPrice": 0.00041000342507262834,
+     "targetHit": true,
+     "peakNetPct": 16.24
+    }
    },
    "trades": [
     {
