@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 72.1566,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "AGENTCAT",
+    "mint": "CZJfrAmMs5Cz4H22PWzfqTJu5FkP7Q2Vvx1oPVL9pump",
+    "pairAddress": "HyLTPacbYR4V8yQw5bbWwAETZkjcsRw9xzCbayMnU45o",
+    "decidedAt": "2026-10-05T06:00:43.127Z",
+    "alertPriceUsd": 0.03071,
+    "sizeUsd": 72.1566,
+    "dexRoundTripPct": 0.64,
+    "roundTripPct": 1.67,
+    "stopNetPct": 11.5,
+    "atr5Pct": 7.68,
+    "chgH1": 38.26
+   },
    "trades": [
     {
      "n": 1,
