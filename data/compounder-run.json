@@ -8,34 +8,8 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "AGENTCAT",
-    "mint": "CZJfrAmMs5Cz4H22PWzfqTJu5FkP7Q2Vvx1oPVL9pump",
-    "pairAddress": "HyLTPacbYR4V8yQw5bbWwAETZkjcsRw9xzCbayMnU45o",
-    "decidedAt": "2026-10-05T06:00:43.127Z",
-    "alertPriceUsd": 0.03071,
-    "sizeUsd": 72.1566,
-    "dexRoundTripPct": 0.64,
-    "roundTripPct": 1.67,
-    "stopNetPct": 11.5,
-    "atr5Pct": 7.68,
-    "chgH1": 38.26,
-    "fill": {
-     "rawPrice": 0.03130974120967447,
-     "fillCandleT": 1791180180,
-     "at": "2026-10-05T06:03:43.127Z"
-    },
-    "mark": {
-     "at": "2026-10-05T07:00:00.000Z",
-     "price": 0.030343536258300254,
-     "netPct": -4.71,
-     "proceeds": 68.76,
-     "stopPrice": 0.02819317470347497,
-     "targetHit": false,
-     "peakNetPct": 3
-    }
-   },
+   "cash": 77.2143,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -128,6 +102,29 @@
      "peakNetPct": 13.66,
      "targetHit": true,
      "newBankroll": 72.1566
+    },
+    {
+     "n": 5,
+     "symbol": "AGENTCAT",
+     "mint": "CZJfrAmMs5Cz4H22PWzfqTJu5FkP7Q2Vvx1oPVL9pump",
+     "pairAddress": "HyLTPacbYR4V8yQw5bbWwAETZkjcsRw9xzCbayMnU45o",
+     "decidedAt": "2026-10-05T06:00:43.127Z",
+     "prevBankroll": 72.16,
+     "sizeUsd": 72.16,
+     "stopNetPct": 11.5,
+     "dexRoundTripPct": 0.64,
+     "fillAt": "2026-10-05T06:03:43.127Z",
+     "exitAt": "2026-10-05T08:00:00.000Z",
+     "reason": "trailing stop",
+     "entryPriceUsd": 0.03130974120967447,
+     "exitPriceUsd": 0.03406356028088819,
+     "grossPct": 8.8,
+     "costsUsd": 1.2888,
+     "netUsd": 5.0577,
+     "netPct": 7.01,
+     "peakNetPct": 15.4,
+     "targetHit": true,
+     "newBankroll": 77.2143
     }
    ]
   }
