@@ -850,14 +850,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.0003689,
    "lastSampleAt": "2026-10-06T05:00:25.409Z",
    "bestPriceUsd": 0.0008541,
    "worstPriceUsd": 0.0002835
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-06T07:00:29.839Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.0005415873392526575,
+   "bestPriceUsd": 0.001276156695565404,
+   "worstPriceUsd": 0.00025520578652264226,
+   "grossPct": -29.82802030932139,
+   "bestPct": 65.34810774363875,
+   "worstPct": -66.93368923002822,
+   "costsUsd": 1.1612,
+   "netUsd": -7.126804061864278,
+   "netPct": -35.63402030932139
+  }
  },
  {
   "id": "2026-10-05T14-BATONROGUE",
@@ -920,8 +932,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000003201,
-   "lastSampleAt": "2026-10-06T06:00:25.682Z",
+   "lastPriceUsd": 0.000003144,
+   "lastSampleAt": "2026-10-06T07:00:28.710Z",
    "bestPriceUsd": 0.0007266,
    "worstPriceUsd": 0.000003106
   },
@@ -990,8 +1002,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000007355,
-   "lastSampleAt": "2026-10-06T06:00:25.682Z",
+   "lastPriceUsd": 0.000007371,
+   "lastSampleAt": "2026-10-06T07:00:28.710Z",
    "bestPriceUsd": 0.0006486,
    "worstPriceUsd": 0.000007355
   },
@@ -1056,8 +1068,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001764,
-   "lastSampleAt": "2026-10-06T06:00:25.682Z",
+   "lastPriceUsd": 0.00175,
+   "lastSampleAt": "2026-10-06T07:00:28.710Z",
    "bestPriceUsd": 0.002333,
    "worstPriceUsd": 0.00147
   },
