@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 6, 16:00 EDT. 13 of ~50 tracked alerts needed before review.
+Updated Oct 6, 16:56 EDT. 14 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,17 +9,17 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 14 (1 / 13) |
-| Win rate after costs | 8% (plausible true range 1–33%) |
+| Alerts (open / closed) | 14 (0 / 14) |
+| Win rate after costs | 7% (plausible true range 1–31%) |
 | Average gain (winners, after costs) | +16.2% |
-| Average loss (losers, after costs) | -67.4% |
-| Average / median result per alert, after costs | -60.9% / -63.8% |
+| Average loss (losers, after costs) | -65.2% |
+| Average / median result per alert, after costs | -59.4% / -63.8% |
 | Profit factor (total won ÷ total lost; above 1 = profitable) | 0.02 |
-| Net result after costs | -$158.47 |
-| Gross result before costs | -$148.13 |
-| Total estimated costs | $10.34 |
-| Avg best / worst price during hold | +84.7% / -68.0% |
-| Share that were at some point up enough to cover costs | 85% |
+| Net result after costs | -$166.30 |
+| Gross result before costs | -$154.77 |
+| Total estimated costs | $11.53 |
+| Avg best / worst price during hold | +82.0% / -66.3% |
+| Share that were at some point up enough to cover costs | 86% |
 | Best / worst single alert | $3.25 / -$20.37 |
 
 ## Signal quality: alerts vs tokens not alerted
@@ -30,7 +30,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
-| **Alerts** | 13 | 8% | -57.0% | -60.9% | +84.7% | -68.0% |
+| **Alerts** | 14 | 7% | -55.3% | -59.4% | +82.0% | -66.3% |
 | All runner-ups & near misses | 53 | 21% | -19.5% | -23.6% | +6159.1% | -45.3% |
 | ↳ runner-up | 0 | n/a | n/a | n/a | n/a | n/a |
 | ↳ below score bar | 22 | 18% | -6.4% | -11.0% | +40.6% | -29.4% |
@@ -42,7 +42,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
-| Oct 5, 16:06 EDT | PLAGUE | Graduated | open | 0.001983 | n/a | n/a | n/a | $1.19 | – |
+| Oct 5, 16:06 EDT | PLAGUE | Graduated | closed | 0.001983 | 0.001324 | +47.3% | -45.2% | $1.19 | -$7.83 |
 | Oct 5, 12:00 EDT | SWAP | Trending+Graduated | closed | 0.0004630 | 0.000006483 | +66.0% | -98.9% | $0.65 | -$20.37 |
 | Oct 5, 10:00 EDT | BATONROGUE | Graduated | closed | 0.0009927 | 0.000003287 | +27.6% | -99.7% | $0.44 | -$20.37 |
 | Oct 5, 02:00 EDT | Cadence | Trending | closed | 0.0007718 | 0.0005416 | +65.3% | -66.9% | $1.16 | -$7.13 |
