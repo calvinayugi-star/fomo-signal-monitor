@@ -930,14 +930,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.000003283,
    "lastSampleAt": "2026-10-06T14:00:27.967Z",
    "bestPriceUsd": 0.0007266,
    "worstPriceUsd": 0.000003106
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-06T15:00:30.850Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.0000032866292592904603,
+   "bestPriceUsd": 0.001267058541756033,
+   "worstPriceUsd": 0.0000031049149378027255,
+   "grossPct": -99.66892019146869,
+   "bestPct": 27.637608719253848,
+   "worstPct": -99.68722525054872,
+   "costsUsd": 0.43621596170626187,
+   "netUsd": -20.369999999999997,
+   "netPct": -101.85
+  }
  },
  {
   "id": "2026-10-05T16-SWAP",
@@ -1002,8 +1014,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000006407,
-   "lastSampleAt": "2026-10-06T14:00:27.967Z",
+   "lastPriceUsd": 0.000006562,
+   "lastSampleAt": "2026-10-06T15:00:30.443Z",
    "bestPriceUsd": 0.0006486,
    "worstPriceUsd": 0.000006302
   },
@@ -1068,8 +1080,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002047,
-   "lastSampleAt": "2026-10-06T14:00:27.967Z",
+   "lastPriceUsd": 0.001923,
+   "lastSampleAt": "2026-10-06T15:00:30.443Z",
    "bestPriceUsd": 0.002566,
    "worstPriceUsd": 0.00147
   },
