@@ -1877,7 +1877,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.004873,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.8242,
    "worstPriceUsd": 0.0002479
   },
@@ -1907,7 +1907,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002429,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.03842,
    "worstPriceUsd": 0.000002429
   },
@@ -1936,8 +1936,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.006281,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastPriceUsd": 0.006339,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.006647,
    "worstPriceUsd": 0.006259
   },
@@ -1967,8 +1967,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.06211,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastPriceUsd": 0.06206,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.06699,
    "worstPriceUsd": 0.06124
   },
@@ -1997,8 +1997,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001909,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastPriceUsd": 0.001804,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.001909,
    "worstPriceUsd": 0.001295
   },
@@ -2027,10 +2027,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.006145,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastPriceUsd": 0.005978,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.007891,
-   "worstPriceUsd": 0.005987
+   "worstPriceUsd": 0.005978
   },
   "result": null
  },
@@ -2057,9 +2057,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003955,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
-   "bestPriceUsd": 0.0003955,
+   "lastPriceUsd": 0.0004136,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
+   "bestPriceUsd": 0.0004136,
    "worstPriceUsd": 0.0003111
   },
   "result": null
@@ -2088,8 +2088,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005585,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastPriceUsd": 0.0007447,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.0008953,
    "worstPriceUsd": 0.0004715
   },
@@ -2119,7 +2119,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.00000238,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.00000238,
    "worstPriceUsd": 0.000002375
   },
@@ -2149,10 +2149,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001381,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastPriceUsd": 0.001148,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.002476,
-   "worstPriceUsd": 0.001381
+   "worstPriceUsd": 0.001148
   },
   "result": null
  },
@@ -2180,7 +2180,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002604,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.000002653,
    "worstPriceUsd": 0.000002604
   },
@@ -2209,8 +2209,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.003729,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
+   "lastPriceUsd": 0.003834,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
    "bestPriceUsd": 0.004105,
    "worstPriceUsd": 0.003666
   },
@@ -2239,11 +2239,61 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000599,
-   "lastSampleAt": "2026-10-06T07:00:29.883Z",
-   "bestPriceUsd": 0.000599,
+   "lastPriceUsd": 0.0006073,
+   "lastSampleAt": "2026-10-06T08:00:26.509Z",
+   "bestPriceUsd": 0.0006073,
    "worstPriceUsd": 0.0005586
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-06T08-SI",
+  "mint": "DEW9dSN6QpWyNthphCpMmAbZP1Q4cEKR9xQXAri98WDP",
+  "symbol": "SI",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "B4VFURUHHzyt8YzBGBV9jiarBvjh1EbMAbRNBnNqaxUD",
+  "alertedAt": "2026-10-06T08:00:26.101Z",
+  "exitDeadline": "2026-10-07T08:00:26.101Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.03244,
+  "group": "failed safety",
+  "outcome": "has transfer fee",
+  "demandScore": 65.5,
+  "score": null,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2,
+   "estimated": true
+  },
+  "status": "open",
+  "track": {},
+  "result": null
+ },
+ {
+  "id": "2026-10-06T08-ZEC",
+  "mint": "A7bdiYdS5GjqGFtxf17ppRHtDKPkkRqbKtR27dxvQXaS",
+  "symbol": "ZEC",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "GTHKH8s82ZR8GTSFZ1dUu6wfdxhy59wpMShxzG5zjiPm",
+  "alertedAt": "2026-10-06T08:00:26.101Z",
+  "exitDeadline": "2026-10-07T08:00:26.101Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 1336.72,
+  "group": "failed safety",
+  "outcome": "supply can still be minted",
+  "demandScore": 44.8,
+  "score": null,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2,
+   "estimated": true
+  },
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
