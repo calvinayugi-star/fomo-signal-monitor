@@ -1663,14 +1663,26 @@
    "dexRoundTripUsd": 0.5869,
    "estimated": false
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.000003207,
    "lastSampleAt": "2026-10-06T03:00:25.324Z",
    "bestPriceUsd": 0.001116,
    "worstPriceUsd": 0.000003106
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-06T04:00:24.552Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.000003211627639115094,
+   "bestPriceUsd": 0.0022554939657380697,
+   "worstPriceUsd": 0.0000031049149378027255,
+   "grossPct": -99.7202414948506,
+   "bestPct": 96.47159980296776,
+   "worstPct": -99.7295370263238,
+   "costsUsd": 0.42595170102988156,
+   "netUsd": -20.369999999999997,
+   "netPct": -101.85
+  }
  },
  {
   "id": "2026-10-05T04-OTC",
@@ -1693,14 +1705,26 @@
    "dexRoundTripUsd": 0.2558,
    "estimated": false
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.009583,
    "lastSampleAt": "2026-10-06T03:00:25.324Z",
    "bestPriceUsd": 0.01032,
    "worstPriceUsd": 0.00724
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-06T04:00:29.430Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.008829618703914978,
+   "bestPriceUsd": 0.010840458582543145,
+   "worstPriceUsd": 0.007020324163323788,
+   "grossPct": 21.87189377384373,
+   "bestPct": 49.626757523024764,
+   "worstPct": -3.101115758125761,
+   "costsUsd": 0.9958,
+   "netUsd": 3.3785787547687454,
+   "netPct": 16.892893773843724
+  }
  },
  {
   "id": "2026-10-05T06-NVIDIA",
@@ -1725,9 +1749,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003493,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
-   "bestPriceUsd": 0.0003493,
+   "lastPriceUsd": 0.0003559,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
+   "bestPriceUsd": 0.0003559,
    "worstPriceUsd": 0.0001943
   },
   "result": null
@@ -1756,8 +1780,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.03113,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.03082,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.03173,
    "worstPriceUsd": 0.03075
   },
@@ -1787,7 +1811,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002808,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.0005131,
    "worstPriceUsd": 0.000002808
   },
@@ -1817,7 +1841,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.004873,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.8242,
    "worstPriceUsd": 0.0002479
   },
@@ -1847,7 +1871,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002429,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.03842,
    "worstPriceUsd": 0.000002429
   },
@@ -1876,8 +1900,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.006345,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.006309,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.006647,
    "worstPriceUsd": 0.006259
   },
@@ -1907,8 +1931,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.06339,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.06176,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.06699,
    "worstPriceUsd": 0.06168
   },
@@ -1937,8 +1961,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001295,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.001554,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.001797,
    "worstPriceUsd": 0.001295
   },
@@ -1967,8 +1991,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.006412,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.006881,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.007891,
    "worstPriceUsd": 0.006376
   },
@@ -1997,9 +2021,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003914,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
-   "bestPriceUsd": 0.0003914,
+   "lastPriceUsd": 0.0003935,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
+   "bestPriceUsd": 0.0003935,
    "worstPriceUsd": 0.0003111
   },
   "result": null
@@ -2028,8 +2052,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0006699,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.0005868,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.0008953,
    "worstPriceUsd": 0.0004715
   },
@@ -2059,7 +2083,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.00000238,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.00000238,
    "worstPriceUsd": 0.000002375
   },
@@ -2089,10 +2113,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002211,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.002155,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.002476,
-   "worstPriceUsd": 0.002211
+   "worstPriceUsd": 0.002155
   },
   "result": null
  },
@@ -2119,8 +2143,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002653,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.000002622,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.000002653,
    "worstPriceUsd": 0.000002621
   },
@@ -2149,10 +2173,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.003874,
-   "lastSampleAt": "2026-10-06T03:00:25.324Z",
+   "lastPriceUsd": 0.003666,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
    "bestPriceUsd": 0.003957,
-   "worstPriceUsd": 0.003874
+   "worstPriceUsd": 0.003666
   },
   "result": null
  },
@@ -2178,7 +2202,12 @@
    "estimated": true
   },
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.0005586,
+   "lastSampleAt": "2026-10-06T04:00:24.131Z",
+   "bestPriceUsd": 0.0005586,
+   "worstPriceUsd": 0.0005586
+  },
   "result": null
  }
 ]

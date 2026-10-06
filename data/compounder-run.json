@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 93.0718,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "Attention+",
+    "mint": "75gGuxuqKhQQiHae8JKDQaetK3XguKf1rUJ1csispump",
+    "pairAddress": "2QGRoYSrgEEPNC3GESizBikCkdV7fqsT86StY4D8xNdn",
+    "decidedAt": "2026-10-06T04:00:37.710Z",
+    "alertPriceUsd": 0.000206,
+    "sizeUsd": 93.0718,
+    "dexRoundTripPct": 2.98,
+    "roundTripPct": 3.97,
+    "stopNetPct": 11.7,
+    "atr5Pct": 7.79,
+    "chgH1": 18.94
+   },
    "trades": [
     {
      "n": 1,
