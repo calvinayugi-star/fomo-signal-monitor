@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 7, 02:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 7, 03:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,19 +9,19 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$80.84** → $5,000 |
-| Run return | -19.2% |
-| Distance remaining | $4919.16 |
-| Days elapsed / left | 4.0 / 24.9 |
-| Even-pace bankroll today | $172.64 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +18.0% |
+| Seed → bankroll → target | $100 → **$92.01** → $5,000 |
+| Run return | -8.0% |
+| Distance remaining | $4907.99 |
+| Days elapsed / left | 4.1 / 24.9 |
+| Even-pace bankroll today | $173.61 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +17.4% |
 | Trades (wins / losses) | 8 (3 / 5) |
 | Win rate | 38% |
 | Average win / average loss (net) | +9.8% / -12.7% |
 | Average net per trade | -4.3% |
 | Total estimated costs | $18.51 |
 
-**Open position:** $XRPN, $65.60 decided Oct 7, 00:00, filled at $0.004746; last mark +23.2% net at Oct 7, 02:00 (target reached, trailing). Stop -10% net.
+**Open position:** $XRPN, $65.60 decided Oct 7, 00:00, filled at $0.004746; last mark +40.3% net at Oct 7, 02:59 (target reached, trailing). Stop -10% net.
 
 ### Win rate needed vs achieved
 
@@ -30,7 +30,7 @@ Assumes up to 2 trades a day for the rest of the run, compounding the whole bank
 | | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+9.8% / -12.7%) |
 |---|---|---|
 | Whole run from the seed (57 trades) | 87% | 89% |
-| From the current bankroll (49 trades left) | 94% | 96% |
+| From the current bankroll (49 trades left) | 93% | 95% |
 | **Achieved** | 38% | 38% |
 
 ### Winner sizes and exits
