@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 73.4456,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "CATCRAFT",
+    "mint": "ADPN2aqzY5RhkBC7bNQWFhTFFEYKY4drHUQG887Cpump",
+    "pairAddress": "7mQDGteiaD4Tkupg9hStyPQNeSTNTRaUEhh1zJ1awp8x",
+    "decidedAt": "2026-10-07T12:00:35.841Z",
+    "alertPriceUsd": 0.002661,
+    "sizeUsd": 73.4456,
+    "dexRoundTripPct": 1.88,
+    "roundTripPct": 2.88,
+    "stopNetPct": 15,
+    "atr5Pct": 13.57,
+    "chgH1": 59.09
+   },
    "trades": [
     {
      "n": 1,
