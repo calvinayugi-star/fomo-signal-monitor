@@ -1171,6 +1171,74 @@
   ],
   "delivered": true,
   "status": "open",
+  "track": {
+   "lastPriceUsd": 0.003271,
+   "lastSampleAt": "2026-10-07T05:00:29.088Z",
+   "bestPriceUsd": 0.003271,
+   "worstPriceUsd": 0.003271
+  },
+  "result": null
+ },
+ {
+  "id": "2026-10-07T05-SNDWITCH",
+  "mode": "paper",
+  "mint": "J9qzFhTLYnmf3tZYvHBaF96rH3YKToELAAVMzz66pump",
+  "symbol": "SNDWITCH",
+  "name": "Sand Witch Kitten",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "HU22UBaTZa7AjMkDJaSyoDHtfFw6XVS6d9bSXLt9ugDB",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-07T05:00:28.859Z",
+  "quoteExpiresAt": "2026-10-07T05:20:28.859Z",
+  "exitDeadline": "2026-10-08T05:00:28.859Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0004502,
+  "maxEntryPriceUsd": 0.000463706,
+  "effectiveEntryPriceUsd": 0.00045358289519140533,
+  "score": 60.6,
+  "metrics": {
+   "priceUsd": 0.0005,
+   "liqUsd": 63933.77,
+   "mcapUsd": 446267,
+   "ageH": 9.3863,
+   "volH1": 119754.67,
+   "volH6": 547007.53,
+   "volH24": 2067166.15,
+   "buysH1": 6893,
+   "sellsH1": 2703,
+   "ratioH1": 2.5501,
+   "ratioH6": 3.415,
+   "accel": 1.4014,
+   "chgH1": 18.65,
+   "chgH6": 54.34,
+   "chgH24": 573,
+   "liqGrowth": 0.0912
+  },
+  "safety": {
+   "holders": 10307,
+   "top10Pct": 11.0762,
+   "devPct": 0,
+   "gtScore": 82.33766233766234
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4195,
+   "totalUsd": 1.1595,
+   "totalPct": 5.8,
+   "route": "Byreal > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (9.4h old)",
+   "thin liquidity ($64k)",
+   "costs of 5.8% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
   "track": {},
   "result": null
  }
