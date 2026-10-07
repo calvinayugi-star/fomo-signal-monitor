@@ -8,20 +8,8 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "CATCRAFT",
-    "mint": "ADPN2aqzY5RhkBC7bNQWFhTFFEYKY4drHUQG887Cpump",
-    "pairAddress": "7mQDGteiaD4Tkupg9hStyPQNeSTNTRaUEhh1zJ1awp8x",
-    "decidedAt": "2026-10-07T12:00:35.841Z",
-    "alertPriceUsd": 0.002661,
-    "sizeUsd": 73.4456,
-    "dexRoundTripPct": 1.88,
-    "roundTripPct": 2.88,
-    "stopNetPct": 15,
-    "atr5Pct": 13.57,
-    "chgH1": 59.09
-   },
+   "cash": 81.105,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -229,6 +217,29 @@
      "peakNetPct": 43.11,
      "targetHit": true,
      "newBankroll": 73.4456
+    },
+    {
+     "n": 10,
+     "symbol": "CATCRAFT",
+     "mint": "ADPN2aqzY5RhkBC7bNQWFhTFFEYKY4drHUQG887Cpump",
+     "pairAddress": "7mQDGteiaD4Tkupg9hStyPQNeSTNTRaUEhh1zJ1awp8x",
+     "decidedAt": "2026-10-07T12:00:35.841Z",
+     "prevBankroll": 73.45,
+     "sizeUsd": 73.45,
+     "stopNetPct": 15,
+     "dexRoundTripPct": 1.88,
+     "fillAt": "2026-10-07T12:03:35.841Z",
+     "exitAt": "2026-10-07T12:13:00.000Z",
+     "reason": "emergency stop",
+     "entryPriceUsd": 0.0022372546893834728,
+     "exitPriceUsd": 0.002542920760837789,
+     "grossPct": 13.66,
+     "costsUsd": 2.3751,
+     "netUsd": 7.6594,
+     "netPct": 10.43,
+     "peakNetPct": 28.81,
+     "targetHit": true,
+     "newBankroll": 81.105
     }
    ]
   }

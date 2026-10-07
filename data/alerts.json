@@ -1172,9 +1172,9 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.007947,
-   "lastSampleAt": "2026-10-07T12:00:27.028Z",
-   "bestPriceUsd": 0.007947,
+   "lastPriceUsd": 0.01197,
+   "lastSampleAt": "2026-10-07T13:00:29.759Z",
+   "bestPriceUsd": 0.01197,
    "worstPriceUsd": 0.003203
   },
   "result": null
@@ -1240,11 +1240,74 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0004648,
-   "lastSampleAt": "2026-10-07T12:00:27.028Z",
+   "lastPriceUsd": 0.000463,
+   "lastSampleAt": "2026-10-07T13:00:29.759Z",
    "bestPriceUsd": 0.000513,
    "worstPriceUsd": 0.0003991
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-07T13-CATCRAFT",
+  "mode": "paper",
+  "mint": "ADPN2aqzY5RhkBC7bNQWFhTFFEYKY4drHUQG887Cpump",
+  "symbol": "CATCRAFT",
+  "name": "CATCRAFT",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "7mQDGteiaD4Tkupg9hStyPQNeSTNTRaUEhh1zJ1awp8x",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-07T13:00:29.396Z",
+  "quoteExpiresAt": "2026-10-07T13:20:29.396Z",
+  "exitDeadline": "2026-10-08T13:00:29.396Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.003031,
+  "maxEntryPriceUsd": 0.0031219299999999998,
+  "effectiveEntryPriceUsd": 0.003128884427884002,
+  "score": 73,
+  "metrics": {
+   "priceUsd": 0.003,
+   "liqUsd": 165913.09,
+   "mcapUsd": 2983944,
+   "ageH": 15.0654,
+   "volH1": 255180.58,
+   "volH6": 816707.53,
+   "volH24": 2740212.19,
+   "buysH1": 6646,
+   "sellsH1": 2425,
+   "ratioH1": 2.7406,
+   "ratioH6": 2.2349,
+   "accel": 2.2722,
+   "chgH1": 40.51,
+   "chgH6": 81.84,
+   "chgH24": 3047,
+   "liqGrowth": 0.0678
+  },
+  "safety": {
+   "holders": 11234,
+   "top10Pct": 3.9154,
+   "devPct": 0.04,
+   "gtScore": 87.79220779220779
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2722,
+   "totalUsd": 1.0122,
+   "totalPct": 5.06,
+   "route": "Kipseli > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (15.1h old)",
+   "already up 41% in the last hour; pullbacks are common",
+   "costs of 5.1% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
