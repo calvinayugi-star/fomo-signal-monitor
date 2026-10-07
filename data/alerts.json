@@ -1172,8 +1172,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.02245,
-   "lastSampleAt": "2026-10-07T15:00:26.161Z",
+   "lastPriceUsd": 0.01993,
+   "lastSampleAt": "2026-10-07T16:00:26.195Z",
    "bestPriceUsd": 0.02245,
    "worstPriceUsd": 0.003203
   },
@@ -1240,8 +1240,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003871,
-   "lastSampleAt": "2026-10-07T15:00:26.161Z",
+   "lastPriceUsd": 0.0004189,
+   "lastSampleAt": "2026-10-07T16:00:26.195Z",
    "bestPriceUsd": 0.000513,
    "worstPriceUsd": 0.0003871
   },
@@ -1308,11 +1308,76 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001942,
-   "lastSampleAt": "2026-10-07T15:00:26.161Z",
+   "lastPriceUsd": 0.001276,
+   "lastSampleAt": "2026-10-07T16:00:26.195Z",
    "bestPriceUsd": 0.002831,
-   "worstPriceUsd": 0.001942
+   "worstPriceUsd": 0.001276
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-07T16-TON618",
+  "mode": "paper",
+  "mint": "CioPfvQWpVF2eTzpBj72x2zPyqgJRgvi36PqdLCCpump",
+  "symbol": "TON618",
+  "name": "TON 618",
+  "sources": [
+   "Trending",
+   "Graduated"
+  ],
+  "pairAddress": "34w9ReB7AX8DSv3hiZt28nXztKFWwttARW2NwCsXYqrx",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-07T16:00:25.836Z",
+  "quoteExpiresAt": "2026-10-07T16:20:25.836Z",
+  "exitDeadline": "2026-10-08T16:00:25.836Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0005152,
+  "maxEntryPriceUsd": 0.000530656,
+  "effectiveEntryPriceUsd": 0.0005230633635436027,
+  "score": 69.2,
+  "metrics": {
+   "priceUsd": 0.0005,
+   "liqUsd": 65850.8,
+   "mcapUsd": 491573,
+   "ageH": 20.5372,
+   "volH1": 120570.15,
+   "volH6": 307111.42,
+   "volH24": 780140.14,
+   "buysH1": 752,
+   "sellsH1": 507,
+   "ratioH1": 1.4832,
+   "ratioH6": 1.4805,
+   "accel": 3.2317,
+   "chgH1": 46.04,
+   "chgH6": 223,
+   "chgH24": 964,
+   "liqGrowth": 0.2013
+  },
+  "safety": {
+   "holders": 934,
+   "top10Pct": 25.5834,
+   "devPct": 0,
+   "gtScore": 69.87012987012987
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4362,
+   "totalUsd": 1.1762,
+   "totalPct": 5.88,
+   "route": "HumidiFi > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (20.5h old)",
+   "already up 46% in the last hour; pullbacks are common",
+   "thin liquidity ($66k)",
+   "costs of 5.9% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]

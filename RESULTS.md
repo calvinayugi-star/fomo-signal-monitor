@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 7, 11:00 EDT. 14 of ~50 tracked alerts needed before review.
+Updated Oct 7, 12:00 EDT. 14 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 17 (3 / 14) |
+| Alerts (open / closed) | 18 (4 / 14) |
 | Win rate after costs | 7% (plausible true range 1–31%) |
 | Average gain (winners, after costs) | +16.2% |
 | Average loss (losers, after costs) | -65.2% |
@@ -31,17 +31,18 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
 | **Alerts** | 14 | 7% | -55.3% | -59.4% | +82.0% | -66.3% |
-| All runner-ups & near misses | 61 | 20% | -23.1% | -27.1% | +5355.6% | -47.1% |
+| All runner-ups & near misses | 62 | 19% | -22.8% | -26.9% | +5269.3% | -46.6% |
 | ↳ runner-up | 0 | n/a | n/a | n/a | n/a | n/a |
 | ↳ below score bar | 24 | 21% | -7.3% | -12.0% | +43.2% | -31.0% |
 | ↳ failed cost/sellability | 2 | 50% | +98.2% | +93.5% | +191.3% | -44.9% |
-| ↳ failed safety | 35 | 17% | -40.8% | -44.4% | +9293.4% | -58.2% |
+| ↳ failed safety | 36 | 17% | -39.9% | -43.6% | +9035.5% | -57.2% |
 | ↳ not checked | 0 | n/a | n/a | n/a | n/a | n/a |
 
 ## All alerts (newest first)
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 7, 12:00 EDT | TON618 | Trending+Graduated | open | 0.0005152 | n/a | n/a | n/a | $1.18 | – |
 | Oct 7, 09:00 EDT | CATCRAFT | Graduated | open | 0.003031 | n/a | n/a | n/a | $1.01 | – |
 | Oct 7, 01:00 EDT | SNDWITCH | Graduated | open | 0.0004502 | n/a | n/a | n/a | $1.16 | – |
 | Oct 7, 00:00 EDT | swordinu | Trending+Graduated | open | 0.003091 | n/a | n/a | n/a | $1.12 | – |
