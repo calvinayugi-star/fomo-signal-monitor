@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 7, 03:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 7, 04:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,39 +9,40 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$92.01** → $5,000 |
-| Run return | -8.0% |
-| Distance remaining | $4907.99 |
-| Days elapsed / left | 4.1 / 24.9 |
-| Even-pace bankroll today | $173.61 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +17.4% |
-| Trades (wins / losses) | 8 (3 / 5) |
-| Win rate | 38% |
-| Average win / average loss (net) | +9.8% / -12.7% |
-| Average net per trade | -4.3% |
-| Total estimated costs | $18.51 |
+| Seed → bankroll → target | $100 → **$73.45** → $5,000 |
+| Run return | -26.6% |
+| Distance remaining | $4926.55 |
+| Days elapsed / left | 4.1 / 24.8 |
+| Even-pace bankroll today | $174.59 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +18.5% |
+| Trades (wins / losses) | 9 (4 / 5) |
+| Win rate | 44% |
+| Average win / average loss (net) | +10.3% / -12.7% |
+| Average net per trade | -2.5% |
+| Total estimated costs | $20.36 |
 
-**Open position:** $XRPN, $65.60 decided Oct 7, 00:00, filled at $0.004746; last mark +40.3% net at Oct 7, 02:59 (target reached, trailing). Stop -10% net.
+**Open position:** none (cash).
 
 ### Win rate needed vs achieved
 
 Assumes up to 2 trades a day for the rest of the run, compounding the whole bankroll.
 
-| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+9.8% / -12.7%) |
+| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.3% / -12.7%) |
 |---|---|---|
-| Whole run from the seed (57 trades) | 87% | 89% |
-| From the current bankroll (49 trades left) | 93% | 95% |
-| **Achieved** | 38% | 38% |
+| Whole run from the seed (57 trades) | 87% | 87% |
+| From the current bankroll (49 trades left) | 95% | 95% |
+| **Achieved** | 44% | 44% |
 
 ### Winner sizes and exits
 
-Trades reaching the +10% target: 3. Net results of at least +10%: 1 · +15%: 1 · +20%: 1 · +30%: 0.
-Exit reasons: stop loss (3), emergency stop (3), trailing stop (2).
+Trades reaching the +10% target: 4. Net results of at least +10%: 2 · +15%: 1 · +20%: 1 · +30%: 0.
+Exit reasons: stop loss (3), emergency stop (4), trailing stop (2).
 
 ### Trades (newest first)
 
 | # | Entered | Token | Size | Entry $ | Exit $ | Gross | Costs | Net | Net $ | Bankroll after | Exit |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 9 | Oct 7, 00:03 | XRPN | $65.60 | 0.004746 | 0.005448 | +14.8% | $1.85 | +12.0% | $7.85 | $73.45 | emergency stop |
 | 8 | Oct 6, 07:03 | MEMEAGENCY | $81.99 | 0.005995 | 0.004891 | -18.4% | $1.30 | -20.0% | -$16.40 | $65.60 | emergency stop |
 | 7 | Oct 6, 00:03 | Attention+ | $93.07 | 0.0002087 | 0.0001913 | -8.3% | $3.33 | -11.9% | -$11.08 | $81.99 | stop loss |
 | 6 | Oct 5, 10:04 | SWAP | $77.21 | 0.0003601 | 0.0004503 | +25.1% | $3.48 | +20.5% | $15.86 | $93.07 | trailing stop |

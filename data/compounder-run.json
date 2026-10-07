@@ -8,34 +8,8 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "XRPN",
-    "mint": "8pVqidKm59PyqxCN3hW3E2sq18C5e6heapqdGM2cpump",
-    "pairAddress": "FWuXdaoqdFiBwi5geo7RMqzeueCTRS9M4egALS5gxo1k",
-    "decidedAt": "2026-10-07T04:00:42.010Z",
-    "alertPriceUsd": 0.004687,
-    "sizeUsd": 65.5953,
-    "dexRoundTripPct": 1.42,
-    "roundTripPct": 2.55,
-    "stopNetPct": 10,
-    "atr5Pct": 2.06,
-    "chgH1": 16.68,
-    "fill": {
-     "rawPrice": 0.004746494843569887,
-     "fillCandleT": 1791345780,
-     "at": "2026-10-07T04:03:42.010Z"
-    },
-    "mark": {
-     "at": "2026-10-07T06:59:00.000Z",
-     "price": 0.006825248622032844,
-     "netPct": 40.26,
-     "proceeds": 92.01,
-     "stopPrice": 0.0060415561230818685,
-     "targetHit": true,
-     "peakNetPct": 40.26
-    }
-   },
+   "cash": 73.4456,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -220,6 +194,29 @@
      "peakNetPct": -1.88,
      "targetHit": false,
      "newBankroll": 65.5953
+    },
+    {
+     "n": 9,
+     "symbol": "XRPN",
+     "mint": "8pVqidKm59PyqxCN3hW3E2sq18C5e6heapqdGM2cpump",
+     "pairAddress": "FWuXdaoqdFiBwi5geo7RMqzeueCTRS9M4egALS5gxo1k",
+     "decidedAt": "2026-10-07T04:00:42.010Z",
+     "prevBankroll": 65.6,
+     "sizeUsd": 65.6,
+     "stopNetPct": 10,
+     "dexRoundTripPct": 1.42,
+     "fillAt": "2026-10-07T04:03:42.010Z",
+     "exitAt": "2026-10-07T07:06:00.000Z",
+     "reason": "emergency stop",
+     "entryPriceUsd": 0.004746494843569887,
+     "exitPriceUsd": 0.005448442776496307,
+     "grossPct": 14.79,
+     "costsUsd": 1.8504,
+     "netUsd": 7.8503,
+     "netPct": 11.97,
+     "peakNetPct": 43.11,
+     "targetHit": true,
+     "newBankroll": 73.4456
     }
    ]
   }
