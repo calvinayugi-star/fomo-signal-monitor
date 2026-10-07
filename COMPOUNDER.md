@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 7, 01:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 7, 02:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,19 +9,19 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$70.14** → $5,000 |
-| Run return | -29.9% |
-| Distance remaining | $4929.86 |
-| Days elapsed / left | 4.0 / 25.0 |
-| Even-pace bankroll today | $171.67 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +18.6% |
+| Seed → bankroll → target | $100 → **$80.84** → $5,000 |
+| Run return | -19.2% |
+| Distance remaining | $4919.16 |
+| Days elapsed / left | 4.0 / 24.9 |
+| Even-pace bankroll today | $172.64 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +18.0% |
 | Trades (wins / losses) | 8 (3 / 5) |
 | Win rate | 38% |
 | Average win / average loss (net) | +9.8% / -12.7% |
 | Average net per trade | -4.3% |
 | Total estimated costs | $18.51 |
 
-**Open position:** $XRPN, $65.60 decided Oct 7, 00:00, filled at $0.004746; last mark +6.9% net at Oct 7, 00:59. Stop -10% net.
+**Open position:** $XRPN, $65.60 decided Oct 7, 00:00, filled at $0.004746; last mark +23.2% net at Oct 7, 02:00 (target reached, trailing). Stop -10% net.
 
 ### Win rate needed vs achieved
 
@@ -30,7 +30,7 @@ Assumes up to 2 trades a day for the rest of the run, compounding the whole bank
 | | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+9.8% / -12.7%) |
 |---|---|---|
 | Whole run from the seed (57 trades) | 87% | 89% |
-| From the current bankroll (49 trades left) | 96% | 97% |
+| From the current bankroll (49 trades left) | 94% | 96% |
 | **Achieved** | 38% | 38% |
 
 ### Winner sizes and exits
