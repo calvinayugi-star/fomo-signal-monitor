@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 6, 23:00 EDT. 14 of ~50 tracked alerts needed before review.
+Updated Oct 7, 00:01 EDT. 14 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 14 (0 / 14) |
+| Alerts (open / closed) | 15 (1 / 14) |
 | Win rate after costs | 7% (plausible true range 1–31%) |
 | Average gain (winners, after costs) | +16.2% |
 | Average loss (losers, after costs) | -65.2% |
@@ -42,6 +42,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 7, 00:00 EDT | swordinu | Trending+Graduated | open | 0.003091 | n/a | n/a | n/a | $1.12 | – |
 | Oct 5, 16:06 EDT | PLAGUE | Graduated | closed | 0.001983 | 0.001324 | +47.3% | -45.2% | $1.19 | -$7.83 |
 | Oct 5, 12:00 EDT | SWAP | Trending+Graduated | closed | 0.0004630 | 0.000006483 | +66.0% | -98.9% | $0.65 | -$20.37 |
 | Oct 5, 10:00 EDT | BATONROGUE | Graduated | closed | 0.0009927 | 0.000003287 | +27.6% | -99.7% | $0.44 | -$20.37 |
