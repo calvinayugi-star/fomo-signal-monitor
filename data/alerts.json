@@ -1332,8 +1332,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002677,
-   "lastSampleAt": "2026-10-08T06:00:25.169Z",
+   "lastPriceUsd": 0.000002666,
+   "lastSampleAt": "2026-10-08T07:00:27.751Z",
    "bestPriceUsd": 0.002831,
    "worstPriceUsd": 0.000002581
   },
@@ -1402,8 +1402,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00007642,
-   "lastSampleAt": "2026-10-08T06:00:25.169Z",
+   "lastPriceUsd": 0.00009908,
+   "lastSampleAt": "2026-10-08T07:00:27.751Z",
    "bestPriceUsd": 0.0004367,
    "worstPriceUsd": 0.00007642
   },
@@ -1469,11 +1469,73 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0006468,
-   "lastSampleAt": "2026-10-08T06:00:25.169Z",
+   "lastPriceUsd": 0.000002681,
+   "lastSampleAt": "2026-10-08T07:00:27.751Z",
    "bestPriceUsd": 0.00166,
-   "worstPriceUsd": 0.0005634
+   "worstPriceUsd": 0.000002681
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-08T07-Buffet",
+  "mode": "paper",
+  "mint": "7MkXWqM9AhRcd7bxXJSsLUFtVFwwx2K7teADp1T5pump",
+  "symbol": "Buffet",
+  "name": "Warren Buffet",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "AydhgDU2WK4bkuqmTqBqBb8weu8B7AFNXgaYjAQjVfCW",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-08T07:00:27.519Z",
+  "quoteExpiresAt": "2026-10-08T07:20:27.519Z",
+  "exitDeadline": "2026-10-09T07:00:27.519Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.009402,
+  "maxEntryPriceUsd": 0.009684060000000001,
+  "effectiveEntryPriceUsd": 0.009451215935860775,
+  "score": 68.7,
+  "metrics": {
+   "priceUsd": 0.0094,
+   "liqUsd": 275692.8,
+   "mcapUsd": 9389037,
+   "ageH": 48.959,
+   "volH1": 49575.99,
+   "volH6": 136976.85,
+   "volH24": 171977.71,
+   "buysH1": 1750,
+   "sellsH1": 1281,
+   "ratioH1": 1.3661,
+   "ratioH6": 1.4915,
+   "accel": 2.8361,
+   "chgH1": 36.96,
+   "chgH6": 110,
+   "chgH24": 142,
+   "liqGrowth": 0.4555
+  },
+  "safety": {
+   "holders": 2111,
+   "top10Pct": 28.776,
+   "devPct": 0,
+   "gtScore": 68.15584415584416
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.162,
+   "totalUsd": 0.902,
+   "totalPct": 4.51,
+   "route": "Kipseli > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "already up 37% in the last hour; pullbacks are common",
+   "costs of 4.5% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
