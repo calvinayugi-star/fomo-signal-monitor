@@ -1412,14 +1412,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.00008837,
    "lastSampleAt": "2026-10-08T15:00:26.158Z",
    "bestPriceUsd": 0.0004367,
    "worstPriceUsd": 0.00007642
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-08T16:00:27.139Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.00011375477028636512,
+   "bestPriceUsd": 0.0007920535891612963,
+   "worstPriceUsd": 0.00007064216130002128,
+   "grossPct": -77.92026974255334,
+   "bestPct": 53.737109697456596,
+   "worstPct": -86.28840036878469,
+   "costsUsd": 1.1762000000000001,
+   "netUsd": -16.76025394851067,
+   "netPct": -83.80126974255336
+  }
  },
  {
   "id": "2026-10-08T01-RARINU",
@@ -1482,7 +1494,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002551,
-   "lastSampleAt": "2026-10-08T15:00:26.158Z",
+   "lastSampleAt": "2026-10-08T16:00:26.597Z",
    "bestPriceUsd": 0.00166,
    "worstPriceUsd": 0.000002545
   },
@@ -1548,10 +1560,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.009829,
-   "lastSampleAt": "2026-10-08T15:00:26.158Z",
+   "lastPriceUsd": 0.009224,
+   "lastSampleAt": "2026-10-08T16:00:26.597Z",
    "bestPriceUsd": 0.01031,
-   "worstPriceUsd": 0.00948
+   "worstPriceUsd": 0.009224
   },
   "result": null
  },
@@ -1616,7 +1628,12 @@
   ],
   "delivered": true,
   "status": "open",
-  "track": {},
+  "track": {
+   "lastPriceUsd": 0.000998,
+   "lastSampleAt": "2026-10-08T16:00:26.597Z",
+   "bestPriceUsd": 0.000998,
+   "worstPriceUsd": 0.000998
+  },
   "result": null
  }
 ]
