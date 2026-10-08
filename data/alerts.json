@@ -1172,8 +1172,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0174,
-   "lastSampleAt": "2026-10-08T00:00:24.780Z",
+   "lastPriceUsd": 0.01719,
+   "lastSampleAt": "2026-10-08T01:00:23.559Z",
    "bestPriceUsd": 0.02245,
    "worstPriceUsd": 0.003203
   },
@@ -1240,8 +1240,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000003775,
-   "lastSampleAt": "2026-10-08T00:00:24.780Z",
+   "lastPriceUsd": 0.000003714,
+   "lastSampleAt": "2026-10-08T01:00:23.559Z",
    "bestPriceUsd": 0.000513,
    "worstPriceUsd": 0.000003694
   },
@@ -1308,8 +1308,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002581,
-   "lastSampleAt": "2026-10-08T00:00:24.780Z",
+   "lastPriceUsd": 0.000002625,
+   "lastSampleAt": "2026-10-08T01:00:23.559Z",
    "bestPriceUsd": 0.002831,
    "worstPriceUsd": 0.000002581
   },
@@ -1378,11 +1378,73 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003647,
-   "lastSampleAt": "2026-10-08T00:00:24.780Z",
+   "lastPriceUsd": 0.0002548,
+   "lastSampleAt": "2026-10-08T01:00:23.559Z",
    "bestPriceUsd": 0.0004367,
-   "worstPriceUsd": 0.0002988
+   "worstPriceUsd": 0.0002548
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-08T01-RARINU",
+  "mode": "paper",
+  "mint": "45VHsie7CwFfPKWCw28PCdZdJWMA5Y6k56wDam9Hpump",
+  "symbol": "RARINU",
+  "name": "Ferrari Inu",
+  "sources": [
+   "Trending",
+   "Graduated"
+  ],
+  "pairAddress": "A2ASUorCeTj9KWkmzhF3PvSSLGzrNMNgHiQkU8UEGQmj",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-08T01:00:23.273Z",
+  "quoteExpiresAt": "2026-10-08T01:20:23.273Z",
+  "exitDeadline": "2026-10-09T01:00:23.273Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.003085,
+  "maxEntryPriceUsd": 0.0031775500000000003,
+  "effectiveEntryPriceUsd": 0.0029234464992914946,
+  "score": 63.8,
+  "metrics": {
+   "priceUsd": 0.0031,
+   "liqUsd": 171690.18,
+   "mcapUsd": 3052737,
+   "ageH": 27.4031,
+   "volH1": 180952.94,
+   "volH6": 850441.99,
+   "volH24": 3445611.48,
+   "buysH1": 3207,
+   "sellsH1": 1154,
+   "ratioH1": 2.779,
+   "ratioH6": 3.4039,
+   "accel": 1.3514,
+   "chgH1": 21.87,
+   "chgH6": 184,
+   "chgH24": 190,
+   "liqGrowth": 0.0884
+  },
+  "safety": {
+   "holders": 7961,
+   "top10Pct": 4.7935,
+   "devPct": 0,
+   "gtScore": 83.37662337662339
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.2784,
+   "totalUsd": 1.0184,
+   "totalPct": 5.09,
+   "route": "Kipseli > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "costs of 5.1% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]

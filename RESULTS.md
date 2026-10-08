@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 7, 20:01 EDT. 14 of ~50 tracked alerts needed before review.
+Updated Oct 7, 21:00 EDT. 14 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 18 (4 / 14) |
+| Alerts (open / closed) | 19 (5 / 14) |
 | Win rate after costs | 7% (plausible true range 1–31%) |
 | Average gain (winners, after costs) | +16.2% |
 | Average loss (losers, after costs) | -65.2% |
@@ -42,6 +42,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 7, 21:00 EDT | RARINU | Trending+Graduated | open | 0.003085 | n/a | n/a | n/a | $1.02 | – |
 | Oct 7, 12:00 EDT | TON618 | Trending+Graduated | open | 0.0005152 | n/a | n/a | n/a | $1.18 | – |
 | Oct 7, 09:00 EDT | CATCRAFT | Graduated | open | 0.003031 | n/a | n/a | n/a | $1.01 | – |
 | Oct 7, 01:00 EDT | SNDWITCH | Graduated | open | 0.0004502 | n/a | n/a | n/a | $1.16 | – |
