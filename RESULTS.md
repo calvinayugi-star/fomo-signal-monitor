@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 8, 13:00 EDT. 18 of ~50 tracked alerts needed before review.
+Updated Oct 8, 14:00 EDT. 18 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 21 (3 / 18) |
+| Alerts (open / closed) | 22 (4 / 18) |
 | Win rate after costs | 11% (plausible true range 3–33%) |
 | Average gain (winners, after costs) | +234.4% |
 | Average loss (losers, after costs) | -71.0% |
@@ -42,6 +42,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 8, 14:00 EDT | HOOKED | Trending | open | 0.01189 | n/a | n/a | n/a | $0.76 | – |
 | Oct 8, 11:00 EDT | ZKDARK | Trending+Graduated | open | 0.001177 | n/a | n/a | n/a | $1.13 | – |
 | Oct 8, 03:00 EDT | Buffet | Graduated | open | 0.009402 | n/a | n/a | n/a | $0.90 | – |
 | Oct 7, 21:00 EDT | RARINU | Trending+Graduated | open | 0.003085 | n/a | n/a | n/a | $1.02 | – |

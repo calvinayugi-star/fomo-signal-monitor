@@ -1493,10 +1493,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00000248,
-   "lastSampleAt": "2026-10-08T17:00:26.476Z",
+   "lastPriceUsd": 0.00000246,
+   "lastSampleAt": "2026-10-08T18:00:27.527Z",
    "bestPriceUsd": 0.00166,
-   "worstPriceUsd": 0.00000248
+   "worstPriceUsd": 0.00000246
   },
   "result": null
  },
@@ -1560,8 +1560,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.009667,
-   "lastSampleAt": "2026-10-08T17:00:26.476Z",
+   "lastPriceUsd": 0.009519,
+   "lastSampleAt": "2026-10-08T18:00:27.527Z",
    "bestPriceUsd": 0.01031,
    "worstPriceUsd": 0.009224
   },
@@ -1629,11 +1629,73 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0007688,
-   "lastSampleAt": "2026-10-08T17:00:26.476Z",
+   "lastPriceUsd": 0.0008244,
+   "lastSampleAt": "2026-10-08T18:00:27.527Z",
    "bestPriceUsd": 0.000998,
    "worstPriceUsd": 0.0007688
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-08T18-HOOKED",
+  "mode": "paper",
+  "mint": "C1mBfBoDkwWfd6uTFZp62ARHLjeVp3bDpCDMfMZtPngE",
+  "symbol": "HOOKED",
+  "name": "Hooked",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "C7r9jXWiVYmBYR2Jj5YSLiEitUGJPjQXWeg7HPU8NwUk",
+  "dexId": "meteora",
+  "alertedAt": "2026-10-08T18:00:27.203Z",
+  "quoteExpiresAt": "2026-10-08T18:20:27.203Z",
+  "exitDeadline": "2026-10-09T18:00:27.203Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.01189,
+  "maxEntryPriceUsd": 0.0122467,
+  "effectiveEntryPriceUsd": 0.01169218923280254,
+  "score": 69.5,
+  "metrics": {
+   "priceUsd": 0.0119,
+   "liqUsd": 371344.97,
+   "mcapUsd": 11162275,
+   "ageH": 237.9198,
+   "volH1": 103940.55,
+   "volH6": 373637.02,
+   "volH24": 1201747.78,
+   "buysH1": 163,
+   "sellsH1": 70,
+   "ratioH1": 2.3286,
+   "ratioH6": 1.5103,
+   "accel": 1.927,
+   "chgH1": 16.55,
+   "chgH6": 31.28,
+   "chgH24": 108,
+   "liqGrowth": 0.0677
+  },
+  "safety": {
+   "holders": 12083,
+   "top10Pct": 20.9472,
+   "devPct": 0.04,
+   "gtScore": 88.05194805194805
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.0173,
+   "totalUsd": 0.7573,
+   "totalPct": 3.79,
+   "route": "GoonFi V2 > Meteora DLMM > Meteora DLMM"
+  },
+  "risks": [
+   "token name/metadata can still be changed",
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "costs of 3.8% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
