@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 81.105,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "swordinu",
+    "mint": "2BVfJ4AHMvHdKtEZNHaBr48dQzTfZvYkjaaxbM6bpump",
+    "pairAddress": "69fyvgoTXQxBdv7Tazd99m1vycwoS3Pyjkj8RRFFzSzJ",
+    "decidedAt": "2026-10-08T08:00:34.147Z",
+    "alertPriceUsd": 0.006815,
+    "sizeUsd": 81.105,
+    "dexRoundTripPct": 1.17,
+    "roundTripPct": 2.16,
+    "stopNetPct": 10,
+    "atr5Pct": 6.47,
+    "chgH1": 15.07
+   },
    "trades": [
     {
      "n": 1,
