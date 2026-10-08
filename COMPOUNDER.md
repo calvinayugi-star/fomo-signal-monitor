@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Thu, Oct 8, 04:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Thu, Oct 8, 05:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,39 +9,40 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$81.11** → $5,000 |
-| Run return | -18.9% |
-| Distance remaining | $4918.90 |
-| Days elapsed / left | 5.1 / 23.8 |
-| Even-pace bankroll today | $199.84 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +18.9% |
-| Trades (wins / losses) | 10 (5 / 5) |
-| Win rate | 50% |
-| Average win / average loss (net) | +10.4% / -12.7% |
-| Average net per trade | -1.2% |
-| Total estimated costs | $22.74 |
+| Seed → bankroll → target | $100 → **$70.70** → $5,000 |
+| Run return | -29.3% |
+| Distance remaining | $4929.30 |
+| Days elapsed / left | 5.2 / 23.8 |
+| Even-pace bankroll today | $200.97 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +19.6% |
+| Trades (wins / losses) | 11 (5 / 6) |
+| Win rate | 45% |
+| Average win / average loss (net) | +10.4% / -12.8% |
+| Average net per trade | -2.2% |
+| Total estimated costs | $24.30 |
 
-**Open position:** $swordinu, $81.11 decided Oct 8, 04:00, fill pending. Stop -10% net.
+**Open position:** $ZKDARK, $70.70 decided Oct 8, 05:00, fill pending. Stop -11.1% net.
 
 ### Win rate needed vs achieved
 
 Assumes up to 2 trades a day for the rest of the run, compounding the whole bankroll.
 
-| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.4% / -12.7%) |
+| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.4% / -12.8%) |
 |---|---|---|
 | Whole run from the seed (57 trades) | 87% | 87% |
-| From the current bankroll (47 trades left) | 96% | 95% |
-| **Achieved** | 50% | 50% |
+| From the current bankroll (47 trades left) | 98% | 97% |
+| **Achieved** | 45% | 45% |
 
 ### Winner sizes and exits
 
 Trades reaching the +10% target: 5. Net results of at least +10%: 3 · +15%: 1 · +20%: 1 · +30%: 0.
-Exit reasons: stop loss (3), emergency stop (5), trailing stop (2).
+Exit reasons: stop loss (4), emergency stop (5), trailing stop (2).
 
 ### Trades (newest first)
 
 | # | Entered | Token | Size | Entry $ | Exit $ | Gross | Costs | Net | Net $ | Bankroll after | Exit |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 11 | Oct 8, 04:03 | swordinu | $81.11 | 0.006838 | 0.006093 | -10.9% | $1.57 | -12.8% | -$10.40 | $70.70 | stop loss |
 | 10 | Oct 7, 08:03 | CATCRAFT | $73.45 | 0.002237 | 0.002543 | +13.7% | $2.38 | +10.4% | $7.66 | $81.11 | emergency stop |
 | 9 | Oct 7, 00:03 | XRPN | $65.60 | 0.004746 | 0.005448 | +14.8% | $1.85 | +12.0% | $7.85 | $73.45 | emergency stop |
 | 8 | Oct 6, 07:03 | MEMEAGENCY | $81.99 | 0.005995 | 0.004891 | -18.4% | $1.30 | -20.0% | -$16.40 | $65.60 | emergency stop |

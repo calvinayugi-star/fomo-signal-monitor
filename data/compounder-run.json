@@ -10,17 +10,17 @@
    "status": "active",
    "cash": 0,
    "position": {
-    "symbol": "swordinu",
-    "mint": "2BVfJ4AHMvHdKtEZNHaBr48dQzTfZvYkjaaxbM6bpump",
-    "pairAddress": "69fyvgoTXQxBdv7Tazd99m1vycwoS3Pyjkj8RRFFzSzJ",
-    "decidedAt": "2026-10-08T08:00:34.147Z",
-    "alertPriceUsd": 0.006815,
-    "sizeUsd": 81.105,
-    "dexRoundTripPct": 1.17,
-    "roundTripPct": 2.16,
-    "stopNetPct": 10,
-    "atr5Pct": 6.47,
-    "chgH1": 15.07
+    "symbol": "ZKDARK",
+    "mint": "HXqxTwCzREUXNK4CbNDgNEUEh2jLzFKdC4tvTuojpump",
+    "pairAddress": "CR5dTgvTddGAqDjP8dGHTL51N6PKRaXqxFBp9FQ5PrKn",
+    "decidedAt": "2026-10-08T09:00:42.746Z",
+    "alertPriceUsd": 0.0008709,
+    "sizeUsd": 70.7035,
+    "dexRoundTripPct": 2.29,
+    "roundTripPct": 3.34,
+    "stopNetPct": 11.1,
+    "atr5Pct": 7.39,
+    "chgH1": 19.99
    },
    "trades": [
     {
@@ -252,6 +252,29 @@
      "peakNetPct": 28.81,
      "targetHit": true,
      "newBankroll": 81.105
+    },
+    {
+     "n": 11,
+     "symbol": "swordinu",
+     "mint": "2BVfJ4AHMvHdKtEZNHaBr48dQzTfZvYkjaaxbM6bpump",
+     "pairAddress": "69fyvgoTXQxBdv7Tazd99m1vycwoS3Pyjkj8RRFFzSzJ",
+     "decidedAt": "2026-10-08T08:00:34.147Z",
+     "prevBankroll": 81.11,
+     "sizeUsd": 81.11,
+     "stopNetPct": 10,
+     "dexRoundTripPct": 1.17,
+     "fillAt": "2026-10-08T08:03:34.147Z",
+     "exitAt": "2026-10-08T08:30:00.000Z",
+     "reason": "stop loss",
+     "entryPriceUsd": 0.006838163737011483,
+     "exitPriceUsd": 0.006093371905873433,
+     "grossPct": -10.89,
+     "costsUsd": 1.5678,
+     "netUsd": -10.4015,
+     "netPct": -12.82,
+     "peakNetPct": -0.5,
+     "targetHit": false,
+     "newBankroll": 70.7035
     }
    ]
   }
