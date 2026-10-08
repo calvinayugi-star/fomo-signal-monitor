@@ -1414,8 +1414,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001133,
-   "lastSampleAt": "2026-10-08T14:00:24.486Z",
+   "lastPriceUsd": 0.00008837,
+   "lastSampleAt": "2026-10-08T15:00:26.158Z",
    "bestPriceUsd": 0.0004367,
    "worstPriceUsd": 0.00007642
   },
@@ -1481,8 +1481,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002545,
-   "lastSampleAt": "2026-10-08T14:00:24.486Z",
+   "lastPriceUsd": 0.000002551,
+   "lastSampleAt": "2026-10-08T15:00:26.158Z",
    "bestPriceUsd": 0.00166,
    "worstPriceUsd": 0.000002545
   },
@@ -1548,11 +1548,75 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00948,
-   "lastSampleAt": "2026-10-08T14:00:24.486Z",
+   "lastPriceUsd": 0.009829,
+   "lastSampleAt": "2026-10-08T15:00:26.158Z",
    "bestPriceUsd": 0.01031,
    "worstPriceUsd": 0.00948
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-08T15-ZKDARK",
+  "mode": "paper",
+  "mint": "HXqxTwCzREUXNK4CbNDgNEUEh2jLzFKdC4tvTuojpump",
+  "symbol": "ZKDARK",
+  "name": "ZK Darkpool",
+  "sources": [
+   "Trending",
+   "Graduated"
+  ],
+  "pairAddress": "CR5dTgvTddGAqDjP8dGHTL51N6PKRaXqxFBp9FQ5PrKn",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-08T15:00:25.830Z",
+  "quoteExpiresAt": "2026-10-08T15:20:25.830Z",
+  "exitDeadline": "2026-10-09T15:00:25.830Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.001177,
+  "maxEntryPriceUsd": 0.00121231,
+  "effectiveEntryPriceUsd": 0.001214910601431806,
+  "score": 77,
+  "metrics": {
+   "priceUsd": 0.0012,
+   "liqUsd": 98902.59,
+   "mcapUsd": 1161008,
+   "ageH": 14.8394,
+   "volH1": 143676.09,
+   "volH6": 385575.32,
+   "volH24": 1515347.14,
+   "buysH1": 1001,
+   "sellsH1": 538,
+   "ratioH1": 1.8606,
+   "ratioH6": 2.0449,
+   "accel": 2.9698,
+   "chgH1": 32.12,
+   "chgH6": 38.41,
+   "chgH24": 1432,
+   "liqGrowth": 0.1701
+  },
+  "safety": {
+   "holders": 8980,
+   "top10Pct": 7.2339,
+   "devPct": 0,
+   "gtScore": 84.4155844155844
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.3901,
+   "totalUsd": 1.1301,
+   "totalPct": 5.65,
+   "route": "HumidiFi > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (14.8h old)",
+   "already up 32% in the last hour; pullbacks are common",
+   "costs of 5.7% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
