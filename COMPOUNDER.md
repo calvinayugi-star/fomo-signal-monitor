@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Thu, Oct 8, 05:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Thu, Oct 8, 06:01 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,19 +9,19 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$70.70** → $5,000 |
-| Run return | -29.3% |
-| Distance remaining | $4929.30 |
-| Days elapsed / left | 5.2 / 23.8 |
-| Even-pace bankroll today | $200.97 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +19.6% |
+| Seed → bankroll → target | $100 → **$65.09** → $5,000 |
+| Run return | -34.9% |
+| Distance remaining | $4934.91 |
+| Days elapsed / left | 5.2 / 23.7 |
+| Even-pace bankroll today | $202.11 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +20.1% |
 | Trades (wins / losses) | 11 (5 / 6) |
 | Win rate | 45% |
 | Average win / average loss (net) | +10.4% / -12.8% |
 | Average net per trade | -2.2% |
 | Total estimated costs | $24.30 |
 
-**Open position:** $ZKDARK, $70.70 decided Oct 8, 05:00, fill pending. Stop -11.1% net.
+**Open position:** $ZKDARK, $70.70 decided Oct 8, 05:00, filled at $0.0008248; last mark -7.9% net at Oct 8, 06:01. Stop -11.1% net.
 
 ### Win rate needed vs achieved
 
@@ -30,7 +30,7 @@ Assumes up to 2 trades a day for the rest of the run, compounding the whole bank
 | | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.4% / -12.8%) |
 |---|---|---|
 | Whole run from the seed (57 trades) | 87% | 87% |
-| From the current bankroll (47 trades left) | 98% | 97% |
+| From the current bankroll (47 trades left) | 99% | 97% |
 | **Achieved** | 45% | 45% |
 
 ### Winner sizes and exits
