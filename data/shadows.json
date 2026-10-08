@@ -3183,14 +3183,26 @@
    "dexRoundTripUsd": 0.2,
    "estimated": true
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 2.46,
    "lastSampleAt": "2026-10-08T11:00:26.948Z",
    "bestPriceUsd": 2.52,
    "worstPriceUsd": 2.41
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-08T12:00:34.983Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 2.474367096475388,
+   "bestPriceUsd": 2.608851653204901,
+   "worstPriceUsd": 2.3290960920106643,
+   "grossPct": 6.196012724265576,
+   "bestPct": 11.96788211179831,
+   "worstPct": -0.038794334306258005,
+   "costsUsd": 0.9400000000000001,
+   "netUsd": 0.29920254485311426,
+   "netPct": 1.4960127242655714
+  }
  },
  {
   "id": "2026-10-07T13-SI276",
@@ -3215,8 +3227,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0006217,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.0005871,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.0006217,
    "worstPriceUsd": 0.0002088
   },
@@ -3245,10 +3257,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00584,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.005733,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.006455,
-   "worstPriceUsd": 0.00584
+   "worstPriceUsd": 0.005733
   },
   "result": null
  },
@@ -3275,8 +3287,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.006615,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.006514,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.007425,
    "worstPriceUsd": 0.006204
   },
@@ -3305,10 +3317,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.2671,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.2605,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.2709,
-   "worstPriceUsd": 0.2627
+   "worstPriceUsd": 0.2605
   },
   "result": null
  },
@@ -3336,7 +3348,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002217,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.0004205,
    "worstPriceUsd": 0.000002194
   },
@@ -3365,8 +3377,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00251,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.002458,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.002559,
    "worstPriceUsd": 0.002258
   },
@@ -3395,9 +3407,9 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.01857,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
-   "bestPriceUsd": 0.01857,
+   "lastPriceUsd": 0.01881,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
+   "bestPriceUsd": 0.01881,
    "worstPriceUsd": 0.0152
   },
   "result": null
@@ -3426,8 +3438,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0007616,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.0007321,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.0007616,
    "worstPriceUsd": 0.0006239
   },
@@ -3456,8 +3468,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001066,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.001054,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.00107,
    "worstPriceUsd": 0.001054
   },
@@ -3487,10 +3499,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.03145,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.03067,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.03173,
-   "worstPriceUsd": 0.03145
+   "worstPriceUsd": 0.03067
   },
   "result": null
  },
@@ -3517,10 +3529,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.005001,
-   "lastSampleAt": "2026-10-08T11:00:26.948Z",
+   "lastPriceUsd": 0.004944,
+   "lastSampleAt": "2026-10-08T12:00:34.295Z",
    "bestPriceUsd": 0.005001,
-   "worstPriceUsd": 0.005001
+   "worstPriceUsd": 0.004944
   },
   "result": null
  }

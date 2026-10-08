@@ -8,34 +8,8 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "ZKDARK",
-    "mint": "HXqxTwCzREUXNK4CbNDgNEUEh2jLzFKdC4tvTuojpump",
-    "pairAddress": "CR5dTgvTddGAqDjP8dGHTL51N6PKRaXqxFBp9FQ5PrKn",
-    "decidedAt": "2026-10-08T09:00:42.746Z",
-    "alertPriceUsd": 0.0008709,
-    "sizeUsd": 70.7035,
-    "dexRoundTripPct": 2.29,
-    "roundTripPct": 3.34,
-    "stopNetPct": 11.1,
-    "atr5Pct": 7.39,
-    "chgH1": 19.99,
-    "fill": {
-     "rawPrice": 0.0008247657265788114,
-     "fillCandleT": 1791450180,
-     "at": "2026-10-08T09:03:42.746Z"
-    },
-    "mark": {
-     "at": "2026-10-08T10:59:00.000Z",
-     "price": 0.0008571469493722391,
-     "netPct": 0.52,
-     "proceeds": 71.07,
-     "stopPrice": 0.000758587738362389,
-     "targetHit": false,
-     "peakNetPct": 9.51
-    }
-   },
+   "cash": 61.5663,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -289,6 +263,29 @@
      "peakNetPct": -0.5,
      "targetHit": false,
      "newBankroll": 70.7035
+    },
+    {
+     "n": 12,
+     "symbol": "ZKDARK",
+     "mint": "HXqxTwCzREUXNK4CbNDgNEUEh2jLzFKdC4tvTuojpump",
+     "pairAddress": "CR5dTgvTddGAqDjP8dGHTL51N6PKRaXqxFBp9FQ5PrKn",
+     "decidedAt": "2026-10-08T09:00:42.746Z",
+     "prevBankroll": 70.7,
+     "sizeUsd": 70.7,
+     "stopNetPct": 11.1,
+     "dexRoundTripPct": 2.29,
+     "fillAt": "2026-10-08T09:03:42.746Z",
+     "exitAt": "2026-10-08T11:15:00.000Z",
+     "reason": "stop loss",
+     "entryPriceUsd": 0.0008247657265788114,
+     "exitPriceUsd": 0.000743120523240321,
+     "grossPct": -9.9,
+     "costsUsd": 2.1381,
+     "netUsd": -9.1372,
+     "netPct": -12.92,
+     "peakNetPct": 9.51,
+     "targetHit": false,
+     "newBankroll": 61.5663
     }
    ]
   }
