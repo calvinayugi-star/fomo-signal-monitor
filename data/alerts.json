@@ -1250,14 +1250,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.000003779,
    "lastSampleAt": "2026-10-08T05:00:24.891Z",
    "bestPriceUsd": 0.000513,
    "worstPriceUsd": 0.000003694
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-08T06:00:25.900Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.0000037564167064770134,
+   "bestPriceUsd": 0.0012577000253979442,
+   "worstPriceUsd": 0.0000034675379524490434,
+   "grossPct": -99.16561157119568,
+   "bestPct": 179.36473242957445,
+   "worstPct": -99.22977833130851,
+   "costsUsd": 0.5368776857608645,
+   "netUsd": -20.369999999999997,
+   "netPct": -101.85
+  }
  },
  {
   "id": "2026-10-07T13-CATCRAFT",
@@ -1320,8 +1332,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00000269,
-   "lastSampleAt": "2026-10-08T05:00:24.891Z",
+   "lastPriceUsd": 0.000002677,
+   "lastSampleAt": "2026-10-08T06:00:25.169Z",
    "bestPriceUsd": 0.002831,
    "worstPriceUsd": 0.000002581
   },
@@ -1390,10 +1402,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00008441,
-   "lastSampleAt": "2026-10-08T05:00:24.891Z",
+   "lastPriceUsd": 0.00007642,
+   "lastSampleAt": "2026-10-08T06:00:25.169Z",
    "bestPriceUsd": 0.0004367,
-   "worstPriceUsd": 0.00008441
+   "worstPriceUsd": 0.00007642
   },
   "result": null
  },
@@ -1457,8 +1469,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0005634,
-   "lastSampleAt": "2026-10-08T05:00:24.891Z",
+   "lastPriceUsd": 0.0006468,
+   "lastSampleAt": "2026-10-08T06:00:25.169Z",
    "bestPriceUsd": 0.00166,
    "worstPriceUsd": 0.0005634
   },
