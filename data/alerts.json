@@ -1493,8 +1493,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00000246,
-   "lastSampleAt": "2026-10-08T18:00:27.527Z",
+   "lastPriceUsd": 0.00000251,
+   "lastSampleAt": "2026-10-08T19:00:27.251Z",
    "bestPriceUsd": 0.00166,
    "worstPriceUsd": 0.00000246
   },
@@ -1560,8 +1560,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.009519,
-   "lastSampleAt": "2026-10-08T18:00:27.527Z",
+   "lastPriceUsd": 0.009791,
+   "lastSampleAt": "2026-10-08T19:00:27.251Z",
    "bestPriceUsd": 0.01031,
    "worstPriceUsd": 0.009224
   },
@@ -1629,10 +1629,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0008244,
-   "lastSampleAt": "2026-10-08T18:00:27.527Z",
+   "lastPriceUsd": 0.0007142,
+   "lastSampleAt": "2026-10-08T19:00:27.251Z",
    "bestPriceUsd": 0.000998,
-   "worstPriceUsd": 0.0007688
+   "worstPriceUsd": 0.0007142
   },
   "result": null
  },
@@ -1691,6 +1691,74 @@
    "token name/metadata can still be changed",
    "no independent honeypot verdict; sellability based on a live sell quote only",
    "costs of 3.8% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {
+   "lastPriceUsd": 0.01134,
+   "lastSampleAt": "2026-10-08T19:00:27.251Z",
+   "bestPriceUsd": 0.01134,
+   "worstPriceUsd": 0.01134
+  },
+  "result": null
+ },
+ {
+  "id": "2026-10-08T19-CYBERLEEK",
+  "mode": "paper",
+  "mint": "ApZuxdpzMrbEYTGEzeY9afh5pj9d6qPRJCTgQYiipbKg",
+  "symbol": "CYBERLEEK",
+  "name": "CyberLeek",
+  "sources": [
+   "Trending"
+  ],
+  "pairAddress": "G8kgi7aUpeX8EVR8VMkrth9SKEv5BietWC33UjAiiMGh",
+  "dexId": "raydium",
+  "alertedAt": "2026-10-08T19:00:27.033Z",
+  "quoteExpiresAt": "2026-10-08T19:20:27.033Z",
+  "exitDeadline": "2026-10-09T19:00:27.033Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.00267,
+  "maxEntryPriceUsd": 0.0027501,
+  "effectiveEntryPriceUsd": 0.0025850397887897795,
+  "score": 70.6,
+  "metrics": {
+   "priceUsd": 0.0027,
+   "liqUsd": 824915.49,
+   "mcapUsd": 1948845,
+   "ageH": 1293.8836,
+   "volH1": 226530.66,
+   "volH6": 599105.54,
+   "volH24": 1619050.01,
+   "buysH1": 879,
+   "sellsH1": 590,
+   "ratioH1": 1.4898,
+   "ratioH6": 1.3959,
+   "accel": 3.0401,
+   "chgH1": 33.76,
+   "chgH6": 14.81,
+   "chgH24": 97.21,
+   "liqGrowth": 0.1666
+  },
+  "safety": {
+   "holders": 49620,
+   "top10Pct": 34.5539,
+   "devPct": 0,
+   "gtScore": 90.64935064935065
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.0977,
+   "totalUsd": 0.8377,
+   "totalPct": 4.19,
+   "route": "Kipseli > Raydium CP"
+  },
+  "risks": [
+   "token name/metadata can still be changed",
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "already up 34% in the last hour; pullbacks are common",
+   "costs of 4.2% mean the price must rise at least that much just to break even",
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
