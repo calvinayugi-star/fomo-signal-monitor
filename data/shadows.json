@@ -3776,10 +3776,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0002227,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastPriceUsd": 0.0001041,
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.003192,
-   "worstPriceUsd": 0.0002227
+   "worstPriceUsd": 0.0001041
   },
   "result": null
  },
@@ -3807,7 +3807,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002089,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.0004483,
    "worstPriceUsd": 0.000002089
   },
@@ -3837,7 +3837,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002148,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.03723,
    "worstPriceUsd": 0.000001939
   },
@@ -3867,7 +3867,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000003915,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.02902,
    "worstPriceUsd": 0.000001934
   },
@@ -3897,7 +3897,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002234,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.0006511,
    "worstPriceUsd": 0.000002202
   },
@@ -3926,10 +3926,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002065,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastPriceUsd": 0.000001983,
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.02972,
-   "worstPriceUsd": 0.000002065
+   "worstPriceUsd": 0.000001983
   },
   "result": null
  },
@@ -3957,8 +3957,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001588,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastPriceUsd": 0.00009931,
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.0004783,
    "worstPriceUsd": 0.00005959
   },
@@ -3987,8 +3987,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001281,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastPriceUsd": 0.001483,
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.002012,
    "worstPriceUsd": 0.001281
   },
@@ -4018,8 +4018,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.06013,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastPriceUsd": 0.05997,
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.061,
    "worstPriceUsd": 0.05248
   },
@@ -4048,8 +4048,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0004585,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastPriceUsd": 0.0005264,
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.0008763,
    "worstPriceUsd": 0.0004346
   },
@@ -4079,7 +4079,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002884,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.1225,
    "worstPriceUsd": 0.000002828
   },
@@ -4108,10 +4108,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002228,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastPriceUsd": 0.001453,
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.002548,
-   "worstPriceUsd": 0.001914
+   "worstPriceUsd": 0.001453
   },
   "result": null
  },
@@ -4138,11 +4138,36 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002209,
-   "lastSampleAt": "2026-10-09T17:00:27.371Z",
+   "lastPriceUsd": 0.00000224,
+   "lastSampleAt": "2026-10-09T18:00:25.451Z",
    "bestPriceUsd": 0.000002245,
    "worstPriceUsd": 0.000002209
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-09T18-LOOP",
+  "mint": "HPcG2DDjb1Dk7dUrvNXka8ZcU5zwnRiSVXZE9bxGhhLZ",
+  "symbol": "LOOP",
+  "sources": [
+   "Graduated"
+  ],
+  "pairAddress": "3w61Gfbu58ZVTYHYyUyvdwag3TTCWEJP6qpimU5Domse",
+  "alertedAt": "2026-10-09T18:00:25.063Z",
+  "exitDeadline": "2026-10-10T18:00:25.063Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0003235,
+  "group": "below score bar",
+  "outcome": "score 48.7",
+  "demandScore": 57.5,
+  "score": 48.7,
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.4405,
+   "estimated": false
+  },
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]
