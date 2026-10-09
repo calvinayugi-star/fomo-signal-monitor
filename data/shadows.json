@@ -3776,10 +3776,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003998,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.0003118,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.003192,
-   "worstPriceUsd": 0.0003998
+   "worstPriceUsd": 0.0003118
   },
   "result": null
  },
@@ -3807,7 +3807,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002089,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.0004483,
    "worstPriceUsd": 0.000002089
   },
@@ -3837,7 +3837,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002148,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.03723,
    "worstPriceUsd": 0.000001939
   },
@@ -3866,10 +3866,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.02902,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.000001934,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.02902,
-   "worstPriceUsd": 0.0208
+   "worstPriceUsd": 0.000001934
   },
   "result": null
  },
@@ -3897,7 +3897,7 @@
   "status": "open",
   "track": {
    "lastPriceUsd": 0.000002234,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.0006511,
    "worstPriceUsd": 0.000002202
   },
@@ -3926,10 +3926,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.02972,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.000002331,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.02972,
-   "worstPriceUsd": 0.02307
+   "worstPriceUsd": 0.000002331
   },
   "result": null
  },
@@ -3957,8 +3957,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0001274,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.0001697,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.0004783,
    "worstPriceUsd": 0.00005959
   },
@@ -3987,10 +3987,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001665,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.001511,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.002012,
-   "worstPriceUsd": 0.001538
+   "worstPriceUsd": 0.001511
   },
   "result": null
  },
@@ -4018,8 +4018,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.05999,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.05835,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.061,
    "worstPriceUsd": 0.05248
   },
@@ -4048,10 +4048,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0004902,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.0004346,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.0008763,
-   "worstPriceUsd": 0.0004902
+   "worstPriceUsd": 0.0004346
   },
   "result": null
  },
@@ -4078,8 +4078,8 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00000287,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.000002884,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.1225,
    "worstPriceUsd": 0.000002828
   },
@@ -4108,10 +4108,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.001999,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.001914,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.002548,
-   "worstPriceUsd": 0.001999
+   "worstPriceUsd": 0.001914
   },
   "result": null
  },
@@ -4138,10 +4138,10 @@
   },
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000002236,
-   "lastSampleAt": "2026-10-09T15:00:27.790Z",
+   "lastPriceUsd": 0.000002209,
+   "lastSampleAt": "2026-10-09T16:00:30.560Z",
    "bestPriceUsd": 0.000002245,
-   "worstPriceUsd": 0.000002218
+   "worstPriceUsd": 0.000002209
   },
   "result": null
  }
