@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 49.253,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "HeeHaw",
+    "mint": "EEpng77ZPn9FbgbT4xsRjwuxNCcMBYq3HTwEscyTpump",
+    "pairAddress": "6QyYdc6jgeKnfP1FWhiexMYq3JQ3sidSYoubjWUTo3rm",
+    "decidedAt": "2026-10-09T14:00:36.905Z",
+    "alertPriceUsd": 0.00274,
+    "sizeUsd": 49.253,
+    "dexRoundTripPct": 1.76,
+    "roundTripPct": 3.27,
+    "stopNetPct": 10,
+    "atr5Pct": 6.22,
+    "chgH1": 18.98
+   },
    "trades": [
     {
      "n": 1,
