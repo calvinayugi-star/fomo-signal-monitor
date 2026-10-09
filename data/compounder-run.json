@@ -8,20 +8,8 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "OWLNIGHT",
-    "mint": "CmCHvr99aXrLDQB7jAtFtsBwg3DnXqq4spcTEMt7pump",
-    "pairAddress": "BGT9hRweDn8TjWHrw14zYsHXRG5SxHJMHRvSrTW1pdcy",
-    "decidedAt": "2026-10-09T05:00:42.832Z",
-    "alertPriceUsd": 0.001071,
-    "sizeUsd": 61.5663,
-    "dexRoundTripPct": 1.71,
-    "roundTripPct": 2.91,
-    "stopNetPct": 15,
-    "atr5Pct": 12.29,
-    "chgH1": 31.51
-   },
+   "cash": 49.253,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -298,6 +286,29 @@
      "peakNetPct": 9.51,
      "targetHit": false,
      "newBankroll": 61.5663
+    },
+    {
+     "n": 13,
+     "symbol": "OWLNIGHT",
+     "mint": "CmCHvr99aXrLDQB7jAtFtsBwg3DnXqq4spcTEMt7pump",
+     "pairAddress": "BGT9hRweDn8TjWHrw14zYsHXRG5SxHJMHRvSrTW1pdcy",
+     "decidedAt": "2026-10-09T05:00:42.832Z",
+     "prevBankroll": 61.57,
+     "sizeUsd": 61.57,
+     "stopNetPct": 15,
+     "dexRoundTripPct": 1.71,
+     "fillAt": "2026-10-09T05:03:42.832Z",
+     "exitAt": "2026-10-09T05:06:00.000Z",
+     "reason": "emergency stop",
+     "entryPriceUsd": 0.0011259589821682767,
+     "exitPriceUsd": 0.0009287683082795914,
+     "grossPct": -17.51,
+     "costsUsd": 1.5311,
+     "netUsd": -12.3133,
+     "netPct": -20,
+     "peakNetPct": 7.77,
+     "targetHit": false,
+     "newBankroll": 49.253
     }
    ]
   }

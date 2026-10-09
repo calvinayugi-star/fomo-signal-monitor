@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 9, 01:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 9, 02:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,39 +9,40 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$61.57** → $5,000 |
-| Run return | -38.4% |
-| Distance remaining | $4938.43 |
-| Days elapsed / left | 6.0 / 23.0 |
-| Even-pace bankroll today | $224.92 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +21.1% |
-| Trades (wins / losses) | 12 (5 / 7) |
-| Win rate | 42% |
-| Average win / average loss (net) | +10.4% / -12.8% |
-| Average net per trade | -3.1% |
-| Total estimated costs | $26.44 |
+| Seed → bankroll → target | $100 → **$49.25** → $5,000 |
+| Run return | -50.7% |
+| Distance remaining | $4950.75 |
+| Days elapsed / left | 6.0 / 22.9 |
+| Even-pace bankroll today | $226.19 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +22.3% |
+| Trades (wins / losses) | 13 (5 / 8) |
+| Win rate | 38% |
+| Average win / average loss (net) | +10.4% / -13.7% |
+| Average net per trade | -4.4% |
+| Total estimated costs | $27.97 |
 
-**Open position:** $OWLNIGHT, $61.57 decided Oct 9, 01:00, fill pending. Stop -15% net.
+**Open position:** none (cash).
 
 ### Win rate needed vs achieved
 
 Assumes up to 2 trades a day for the rest of the run, compounding the whole bankroll.
 
-| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.4% / -12.8%) |
+| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.4% / -13.7%) |
 |---|---|---|
-| Whole run from the seed (57 trades) | 87% | 87% |
-| From the current bankroll (45 trades left) | impossible (>100%) | 100% |
-| **Achieved** | 42% | 42% |
+| Whole run from the seed (57 trades) | 87% | 88% |
+| From the current bankroll (45 trades left) | impossible (>100%) | impossible (>100%) |
+| **Achieved** | 38% | 38% |
 
 ### Winner sizes and exits
 
 Trades reaching the +10% target: 5. Net results of at least +10%: 3 · +15%: 1 · +20%: 1 · +30%: 0.
-Exit reasons: stop loss (5), emergency stop (5), trailing stop (2).
+Exit reasons: stop loss (5), emergency stop (6), trailing stop (2).
 
 ### Trades (newest first)
 
 | # | Entered | Token | Size | Entry $ | Exit $ | Gross | Costs | Net | Net $ | Bankroll after | Exit |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 13 | Oct 9, 01:03 | OWLNIGHT | $61.57 | 0.001126 | 0.0009288 | -17.5% | $1.53 | -20.0% | -$12.31 | $49.25 | emergency stop |
 | 12 | Oct 8, 05:03 | ZKDARK | $70.70 | 0.0008248 | 0.0007431 | -9.9% | $2.14 | -12.9% | -$9.14 | $61.57 | stop loss |
 | 11 | Oct 8, 04:03 | swordinu | $81.11 | 0.006838 | 0.006093 | -10.9% | $1.57 | -12.8% | -$10.40 | $70.70 | stop loss |
 | 10 | Oct 7, 08:03 | CATCRAFT | $73.45 | 0.002237 | 0.002543 | +13.7% | $2.38 | +10.4% | $7.66 | $81.11 | emergency stop |
