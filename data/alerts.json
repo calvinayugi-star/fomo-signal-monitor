@@ -1572,9 +1572,9 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.01056,
-   "lastSampleAt": "2026-10-09T02:00:24.965Z",
-   "bestPriceUsd": 0.01056,
+   "lastPriceUsd": 0.01087,
+   "lastSampleAt": "2026-10-09T03:00:26.940Z",
+   "bestPriceUsd": 0.01087,
    "worstPriceUsd": 0.009224
   },
   "result": null
@@ -1641,10 +1641,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0002285,
-   "lastSampleAt": "2026-10-09T02:00:24.965Z",
+   "lastPriceUsd": 0.0001127,
+   "lastSampleAt": "2026-10-09T03:00:26.940Z",
    "bestPriceUsd": 0.000998,
-   "worstPriceUsd": 0.0002285
+   "worstPriceUsd": 0.0001127
   },
   "result": null
  },
@@ -1708,10 +1708,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.009243,
-   "lastSampleAt": "2026-10-09T02:00:24.965Z",
+   "lastPriceUsd": 0.00874,
+   "lastSampleAt": "2026-10-09T03:00:26.940Z",
    "bestPriceUsd": 0.01143,
-   "worstPriceUsd": 0.008797
+   "worstPriceUsd": 0.00874
   },
   "result": null
  },
@@ -1776,11 +1776,75 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002428,
-   "lastSampleAt": "2026-10-09T02:00:24.965Z",
+   "lastPriceUsd": 0.002209,
+   "lastSampleAt": "2026-10-09T03:00:26.940Z",
    "bestPriceUsd": 0.002496,
-   "worstPriceUsd": 0.002291
+   "worstPriceUsd": 0.002209
   },
+  "result": null
+ },
+ {
+  "id": "2026-10-09T03-OWLNIGHT",
+  "mode": "paper",
+  "mint": "CmCHvr99aXrLDQB7jAtFtsBwg3DnXqq4spcTEMt7pump",
+  "symbol": "OWLNIGHT",
+  "name": "Owl Nighter",
+  "sources": [
+   "Trending",
+   "Graduated"
+  ],
+  "pairAddress": "BGT9hRweDn8TjWHrw14zYsHXRG5SxHJMHRvSrTW1pdcy",
+  "dexId": "pumpswap",
+  "alertedAt": "2026-10-09T03:00:26.623Z",
+  "quoteExpiresAt": "2026-10-09T03:20:26.623Z",
+  "exitDeadline": "2026-10-10T03:00:26.623Z",
+  "positionUsd": 20,
+  "entryPriceUsd": 0.0009312,
+  "maxEntryPriceUsd": 0.000959136,
+  "effectiveEntryPriceUsd": 0.0009601005256280781,
+  "score": 87.4,
+  "metrics": {
+   "priceUsd": 0.0009,
+   "liqUsd": 91548.03,
+   "mcapUsd": 924243,
+   "ageH": 10.0302,
+   "volH1": 468565.03,
+   "volH6": 1281562.04,
+   "volH24": 3116059.38,
+   "buysH1": 11310,
+   "sellsH1": 3056,
+   "ratioH1": 3.7009,
+   "ratioH6": 2.9838,
+   "accel": 2.8817,
+   "chgH1": 47.01,
+   "chgH6": 42.82,
+   "chgH24": 1330,
+   "liqGrowth": 0.2308
+  },
+  "safety": {
+   "holders": 13197,
+   "top10Pct": 5.8194,
+   "devPct": 0,
+   "gtScore": 79.74025974025973
+  },
+  "costs": {
+   "buyFeeUsd": 0.37,
+   "estSellFeeUsd": 0.37,
+   "dexRoundTripUsd": 0.3635,
+   "totalUsd": 1.1035,
+   "totalPct": 5.52,
+   "route": "GoonFi V2 > Whirlpool > Pump.fun Amm"
+  },
+  "risks": [
+   "no independent honeypot verdict; sellability based on a live sell quote only",
+   "young pool (10.0h old)",
+   "already up 47% in the last hour; pullbacks are common",
+   "costs of 5.5% mean the price must rise at least that much just to break even",
+   "memecoins can go to zero within hours"
+  ],
+  "delivered": true,
+  "status": "open",
+  "track": {},
   "result": null
  }
 ]

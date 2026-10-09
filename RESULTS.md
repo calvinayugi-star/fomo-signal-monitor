@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 8, 22:00 EDT. 19 of ~50 tracked alerts needed before review.
+Updated Oct 8, 23:00 EDT. 19 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 23 (4 / 19) |
+| Alerts (open / closed) | 24 (5 / 19) |
 | Win rate after costs | 11% (plausible true range 3–31%) |
 | Average gain (winners, after costs) | +234.4% |
 | Average loss (losers, after costs) | -72.8% |
@@ -42,6 +42,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 8, 23:00 EDT | OWLNIGHT | Trending+Graduated | open | 0.0009312 | n/a | n/a | n/a | $1.10 | – |
 | Oct 8, 15:00 EDT | CYBERLEEK | Trending | open | 0.002670 | n/a | n/a | n/a | $0.84 | – |
 | Oct 8, 14:00 EDT | HOOKED | Trending | open | 0.01189 | n/a | n/a | n/a | $0.76 | – |
 | Oct 8, 11:00 EDT | ZKDARK | Trending+Graduated | open | 0.001177 | n/a | n/a | n/a | $1.13 | – |
