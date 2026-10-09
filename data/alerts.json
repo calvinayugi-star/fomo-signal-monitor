@@ -1491,14 +1491,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.000002565,
    "lastSampleAt": "2026-10-09T00:00:28.188Z",
    "bestPriceUsd": 0.00166,
    "worstPriceUsd": 0.00000246
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-09T01:00:26.504Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.000002565060462678239,
+   "bestPriceUsd": 0.003231289028174365,
+   "worstPriceUsd": 0.000002424029676819988,
+   "grossPct": -99.91685379375436,
+   "bestPct": 4.741945807921066,
+   "worstPct": -99.92142529410633,
+   "costsUsd": 0.3866292412491287,
+   "netUsd": -20.37,
+   "netPct": -101.85
+  }
  },
  {
   "id": "2026-10-08T07-Buffet",
@@ -1560,9 +1572,9 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.01037,
-   "lastSampleAt": "2026-10-09T00:00:28.188Z",
-   "bestPriceUsd": 0.01037,
+   "lastPriceUsd": 0.01049,
+   "lastSampleAt": "2026-10-09T01:00:26.061Z",
+   "bestPriceUsd": 0.01049,
    "worstPriceUsd": 0.009224
   },
   "result": null
@@ -1629,10 +1641,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0003497,
-   "lastSampleAt": "2026-10-09T00:00:28.188Z",
+   "lastPriceUsd": 0.0002787,
+   "lastSampleAt": "2026-10-09T01:00:26.061Z",
    "bestPriceUsd": 0.000998,
-   "worstPriceUsd": 0.0003478
+   "worstPriceUsd": 0.0002787
   },
   "result": null
  },
@@ -1696,8 +1708,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.008954,
-   "lastSampleAt": "2026-10-09T00:00:28.188Z",
+   "lastPriceUsd": 0.009485,
+   "lastSampleAt": "2026-10-09T01:00:26.061Z",
    "bestPriceUsd": 0.01143,
    "worstPriceUsd": 0.008797
   },
@@ -1764,8 +1776,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.002304,
-   "lastSampleAt": "2026-10-09T00:00:28.188Z",
+   "lastPriceUsd": 0.002389,
+   "lastSampleAt": "2026-10-09T01:00:26.061Z",
    "bestPriceUsd": 0.002496,
    "worstPriceUsd": 0.002291
   },
