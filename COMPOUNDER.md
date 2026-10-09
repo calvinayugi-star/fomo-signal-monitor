@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 9, 00:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 9, 01:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -13,7 +13,7 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 | Run return | -38.4% |
 | Distance remaining | $4938.43 |
 | Days elapsed / left | 6.0 / 23.0 |
-| Even-pace bankroll today | $223.65 (behind) |
+| Even-pace bankroll today | $224.92 (behind) |
 | Daily net return needed: from the seed / from here | +14.5% / +21.1% |
 | Trades (wins / losses) | 12 (5 / 7) |
 | Win rate | 42% |
@@ -21,7 +21,7 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 | Average net per trade | -3.1% |
 | Total estimated costs | $26.44 |
 
-**Open position:** none (cash).
+**Open position:** $OWLNIGHT, $61.57 decided Oct 9, 01:00, fill pending. Stop -15% net.
 
 ### Win rate needed vs achieved
 

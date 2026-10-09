@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 61.5663,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "OWLNIGHT",
+    "mint": "CmCHvr99aXrLDQB7jAtFtsBwg3DnXqq4spcTEMt7pump",
+    "pairAddress": "BGT9hRweDn8TjWHrw14zYsHXRG5SxHJMHRvSrTW1pdcy",
+    "decidedAt": "2026-10-09T05:00:42.832Z",
+    "alertPriceUsd": 0.001071,
+    "sizeUsd": 61.5663,
+    "dexRoundTripPct": 1.71,
+    "roundTripPct": 2.91,
+    "stopNetPct": 15,
+    "atr5Pct": 12.29,
+    "chgH1": 31.51
+   },
    "trades": [
     {
      "n": 1,
