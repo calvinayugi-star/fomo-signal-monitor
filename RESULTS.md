@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 9, 08:00 EDT. 20 of ~50 tracked alerts needed before review.
+Updated Oct 9, 09:01 EDT. 20 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,7 +9,7 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 24 (4 / 20) |
+| Alerts (open / closed) | 25 (5 / 20) |
 | Win rate after costs | 15% (plausible true range 5–36%) |
 | Average gain (winners, after costs) | +163.8% |
 | Average loss (losers, after costs) | -72.8% |
@@ -31,9 +31,9 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
 | **Alerts** | 20 | 15% | -33.2% | -37.3% | +107.7% | -66.2% |
-| All runner-ups & near misses | 87 | 17% | -26.0% | -30.1% | +3766.4% | -47.0% |
+| All runner-ups & near misses | 89 | 17% | -26.2% | -30.3% | +3682.1% | -46.9% |
 | ↳ runner-up | 1 | 100% | +58.2% | +52.2% | +109.6% | -42.0% |
-| ↳ below score bar | 36 | 14% | -18.2% | -22.7% | +44.7% | -37.0% |
+| ↳ below score bar | 38 | 13% | -19.0% | -23.5% | +43.4% | -37.3% |
 | ↳ failed cost/sellability | 4 | 25% | +31.0% | +26.3% | +112.0% | -52.1% |
 | ↳ failed safety | 46 | 17% | -38.9% | -42.6% | +7076.2% | -54.5% |
 | ↳ not checked | 0 | n/a | n/a | n/a | n/a | n/a |
@@ -42,6 +42,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
+| Oct 9, 09:00 EDT | TROLL | Trending+Graduated | open | 0.03882 | n/a | n/a | n/a | $0.79 | – |
 | Oct 8, 23:00 EDT | OWLNIGHT | Trending+Graduated | open | 0.0009312 | n/a | n/a | n/a | $1.10 | – |
 | Oct 8, 15:00 EDT | CYBERLEEK | Trending | open | 0.002670 | n/a | n/a | n/a | $0.84 | – |
 | Oct 8, 14:00 EDT | HOOKED | Trending | open | 0.01189 | n/a | n/a | n/a | $0.76 | – |
