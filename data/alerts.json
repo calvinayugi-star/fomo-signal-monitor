@@ -1810,14 +1810,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.002103,
    "lastSampleAt": "2026-10-09T18:52:38.610Z",
    "bestPriceUsd": 0.002496,
    "worstPriceUsd": 0.002001
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-09T20:00:26.378Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.0020928674459610355,
+   "bestPriceUsd": 0.002682105273579621,
+   "worstPriceUsd": 0.0019216751871097123,
+   "grossPct": -21.615451462133507,
+   "bestPct": 0.45338103294461085,
+   "worstPct": -28.027146550198047,
+   "costsUsd": 0.8377,
+   "netUsd": -5.160790292426702,
+   "netPct": -25.80395146213351
+  }
  },
  {
   "id": "2026-10-09T03-OWLNIGHT",
@@ -1881,10 +1893,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.000003908,
-   "lastSampleAt": "2026-10-09T19:00:27.121Z",
+   "lastPriceUsd": 0.000003898,
+   "lastSampleAt": "2026-10-09T20:00:25.883Z",
    "bestPriceUsd": 0.0009945,
-   "worstPriceUsd": 0.000003908
+   "worstPriceUsd": 0.000003898
   },
   "result": null
  },
@@ -1948,10 +1960,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.0386,
-   "lastSampleAt": "2026-10-09T19:00:27.121Z",
+   "lastPriceUsd": 0.038,
+   "lastSampleAt": "2026-10-09T20:00:25.883Z",
    "bestPriceUsd": 0.03902,
-   "worstPriceUsd": 0.03834
+   "worstPriceUsd": 0.038
   },
   "result": null
  },
@@ -2018,10 +2030,10 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00009139,
-   "lastSampleAt": "2026-10-09T19:00:27.121Z",
+   "lastPriceUsd": 0.00006914,
+   "lastSampleAt": "2026-10-09T20:00:25.883Z",
    "bestPriceUsd": 0.0002711,
-   "worstPriceUsd": 0.00007876
+   "worstPriceUsd": 0.00006914
   },
   "result": null
  },
@@ -2088,8 +2100,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00008417,
-   "lastSampleAt": "2026-10-09T19:00:27.121Z",
+   "lastPriceUsd": 0.00009244,
+   "lastSampleAt": "2026-10-09T20:00:25.883Z",
    "bestPriceUsd": 0.0001588,
    "worstPriceUsd": 0.00008417
   },
