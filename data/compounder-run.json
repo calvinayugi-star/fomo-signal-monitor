@@ -8,20 +8,8 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "HeeHaw",
-    "mint": "EEpng77ZPn9FbgbT4xsRjwuxNCcMBYq3HTwEscyTpump",
-    "pairAddress": "6QyYdc6jgeKnfP1FWhiexMYq3JQ3sidSYoubjWUTo3rm",
-    "decidedAt": "2026-10-09T14:00:36.905Z",
-    "alertPriceUsd": 0.00274,
-    "sizeUsd": 49.253,
-    "dexRoundTripPct": 1.76,
-    "roundTripPct": 3.27,
-    "stopNetPct": 10,
-    "atr5Pct": 6.22,
-    "chgH1": 18.98
-   },
+   "cash": 44.1851,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -321,6 +309,29 @@
      "peakNetPct": 7.77,
      "targetHit": false,
      "newBankroll": 49.253
+    },
+    {
+     "n": 14,
+     "symbol": "HeeHaw",
+     "mint": "EEpng77ZPn9FbgbT4xsRjwuxNCcMBYq3HTwEscyTpump",
+     "pairAddress": "6QyYdc6jgeKnfP1FWhiexMYq3JQ3sidSYoubjWUTo3rm",
+     "decidedAt": "2026-10-09T14:00:36.905Z",
+     "prevBankroll": 49.25,
+     "sizeUsd": 49.25,
+     "stopNetPct": 10,
+     "dexRoundTripPct": 1.76,
+     "fillAt": "2026-10-09T14:03:36.905Z",
+     "exitAt": "2026-10-09T14:30:00.000Z",
+     "reason": "stop loss",
+     "entryPriceUsd": 0.002663764504463513,
+     "exitPriceUsd": 0.0024710341301748427,
+     "grossPct": -7.24,
+     "costsUsd": 1.5044,
+     "netUsd": -5.0679,
+     "netPct": -10.29,
+     "peakNetPct": 6.82,
+     "targetHit": false,
+     "newBankroll": 44.1851
     }
    ]
   }

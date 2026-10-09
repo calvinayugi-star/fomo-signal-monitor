@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 9, 10:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 9, 11:01 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,39 +9,40 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$49.25** → $5,000 |
-| Run return | -50.7% |
-| Distance remaining | $4950.75 |
-| Days elapsed / left | 6.4 / 22.6 |
-| Even-pace bankroll today | $236.61 (behind) |
-| Daily net return needed: from the seed / from here | +14.5% / +22.7% |
-| Trades (wins / losses) | 13 (5 / 8) |
-| Win rate | 38% |
-| Average win / average loss (net) | +10.4% / -13.7% |
-| Average net per trade | -4.4% |
-| Total estimated costs | $27.97 |
+| Seed → bankroll → target | $100 → **$44.19** → $5,000 |
+| Run return | -55.8% |
+| Distance remaining | $4955.81 |
+| Days elapsed / left | 6.4 / 22.5 |
+| Even-pace bankroll today | $237.95 (behind) |
+| Daily net return needed: from the seed / from here | +14.5% / +23.3% |
+| Trades (wins / losses) | 14 (5 / 9) |
+| Win rate | 36% |
+| Average win / average loss (net) | +10.4% / -13.3% |
+| Average net per trade | -4.9% |
+| Total estimated costs | $29.48 |
 
-**Open position:** $HeeHaw, $49.25 decided Oct 9, 10:00, fill pending. Stop -10% net.
+**Open position:** none (cash).
 
 ### Win rate needed vs achieved
 
 Assumes up to 2 trades a day for the rest of the run, compounding the whole bankroll.
 
-| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.4% / -13.7%) |
+| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.4% / -13.3%) |
 |---|---|---|
 | Whole run from the seed (57 trades) | 87% | 88% |
 | From the current bankroll (45 trades left) | impossible (>100%) | impossible (>100%) |
-| **Achieved** | 38% | 38% |
+| **Achieved** | 36% | 36% |
 
 ### Winner sizes and exits
 
 Trades reaching the +10% target: 5. Net results of at least +10%: 3 · +15%: 1 · +20%: 1 · +30%: 0.
-Exit reasons: stop loss (5), emergency stop (6), trailing stop (2).
+Exit reasons: stop loss (6), emergency stop (6), trailing stop (2).
 
 ### Trades (newest first)
 
 | # | Entered | Token | Size | Entry $ | Exit $ | Gross | Costs | Net | Net $ | Bankroll after | Exit |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 14 | Oct 9, 10:03 | HeeHaw | $49.25 | 0.002664 | 0.002471 | -7.2% | $1.50 | -10.3% | -$5.07 | $44.19 | stop loss |
 | 13 | Oct 9, 01:03 | OWLNIGHT | $61.57 | 0.001126 | 0.0009288 | -17.5% | $1.53 | -20.0% | -$12.31 | $49.25 | emergency stop |
 | 12 | Oct 8, 05:03 | ZKDARK | $70.70 | 0.0008248 | 0.0007431 | -9.9% | $2.14 | -12.9% | -$9.14 | $61.57 | stop loss |
 | 11 | Oct 8, 04:03 | swordinu | $81.11 | 0.006838 | 0.006093 | -10.9% | $1.57 | -12.8% | -$10.40 | $70.70 | stop loss |
