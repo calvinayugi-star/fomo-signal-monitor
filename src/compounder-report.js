@@ -77,7 +77,7 @@ function v2Section(run, cfg, now, time) {
 | Average time to reach the target | ${hours(s.avgHoldHours)} |
 | Average worst point before the target | ${sf(s.avgWorstNetPct)} |
 | Profit banked / costs | ${usd(s.netUsd)} / ${usd(s.costsUsd)} |
-| Each +${run.targetNetPct}% sale multiplies the bankroll by | ${f(1 + run.targetNetPct / 100, 2)}× ($100 → $${(100 * 1.5 ** 5).toFixed(0)} after 5, $${(100 * 1.5 ** 10).toFixed(0)} after 10) |
+| Each +${run.targetNetPct}% sale multiplies the bankroll by | ${f(1 + run.targetNetPct / 100, 2)}× ($100 → $${(100 * (1 + run.targetNetPct / 100) ** 5).toFixed(0)} after 5, $${(100 * (1 + run.targetNetPct / 100) ** 10).toFixed(0)} after 10) |
 
 ${positionSection(run, now, time)}
 

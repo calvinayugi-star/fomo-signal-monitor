@@ -379,6 +379,11 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
     ledger.runs.push(run);
     await send(`${PAPER}\n🔁 <b>COMPOUNDER ${k.rules} STARTED</b> with $${k.seedUsd}: buy before the spike, hold until +${k.targetNetPct}% net, repeat. Graduated tokens preferred.`);
   }
+  // A target change in config applies to the run (and any open position) from this hour on.
+  if (run && run.targetNetPct !== k.targetNetPct) {
+    (run.targetChanges ??= []).push({ at: now.toISOString(), from: run.targetNetPct, to: k.targetNetPct });
+    run.targetNetPct = k.targetNetPct;
+  }
 
   // 2. Settle the open position: it closes only at the target (or if it never filled).
   if (run?.position) {

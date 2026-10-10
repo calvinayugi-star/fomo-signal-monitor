@@ -67,7 +67,7 @@ A separate paper strategy that runs in the same hourly job and shares the same c
 Telegram messages are marked PAPER MODE. Settings are under `compounder` in [config.json](config.json).
 
 **Rules v2 (since 2026-10-10).** Start with $100. Buy a token **before it spikes** with 100% of the bankroll, **hold it with no
-stop loss and no time limit until it is +50% net** (after fees and slippage), sell, and immediately look for the next one.
+stop loss and no time limit until it is +20% net** (after fees and slippage), sell, and immediately look for the next one.
 
 - **Lists:** Graduated tokens (graduated within 72h) are preferred (+10 score); Trending-only tokens need a much stronger setup (−15).
 - **Entry (hourly), "before the spike":** the price is still quiet (1h −5% to +15%, 6h −15% to +100%, 15 min −5% to +12%, 5 min ≤ +8%)
@@ -75,16 +75,17 @@ stop loss and no time limit until it is +50% net** (after fees and slippage), se
   liquidity not shrinking). Same quality bar as the monitor: liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, safety checks,
   round trip ≤ 4% at the real size. New: tokens under 72h whose top 10 wallets hold ≤ 8% are rejected (7 of 9 such alerts went to near zero).
   The score rewards volume acceleration, buying pressure and liquidity growth, not price already gained.
-- **Exit:** only at +50% net, checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
+- **Exit:** only at +20% net, checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
   If a held token has no trades for 24h a warning is sent (it may be dead), but it stays held.
 - **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
   is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the
   candidates that passed the quick checks. [COMPOUNDER.md](COMPOUNDER.md) shows the bankroll, the open position (value, best/worst, time held)
   and every completed position.
-- **Telegram:** a BUY alert, a SOLD report at +50%, a stale-token warning, and one line in the 8 AM daily summary.
+- **Telegram:** a BUY alert, a SOLD report at +20%, a stale-token warning, and one line in the 8 AM daily summary.
 
-**Risk of this design.** With no stop, a token that collapses before reaching +50% is held indefinitely and the whole bankroll is tied up in it.
-In the 2026-10 data, 20 of 45 Graduated-only tokens reached +50% net within 24h of being flagged, and 19 of the other 25 went to near zero.
+**Risk of this design.** With no stop, a token that collapses before reaching +20% is held indefinitely and the whole bankroll is tied up in it.
+In the 2026-10 data, 31 of 45 Graduated-only tokens (69%) reached +20% net within 24h of being flagged, and 12 of the other 14 went to near zero.
+The target was +50% when v2 started (2026-10-10) and was lowered to +20% the same day to favour hit rate.
 
 **v1 (2026-10-03 to 2026-10-10)** bought +10–60% 1h momentum with −10% stops and a +10% trailing target; it went from $100 to $44.19 in 14 trades.
 `node src/compounder-replay.js` still replays the v1 rules (settings under `compounderV1`).

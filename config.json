@@ -64,7 +64,7 @@
     "rules": "v2",
     "startDate": "2026-10-10",
     "seedUsd": 100,
-    "targetNetPct": 50,
+    "targetNetPct": 20,
     "fillDelayMinutes": 3,
     "noFillCancelHours": 6,
     "cooldownHours": 24,
