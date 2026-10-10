@@ -2,7 +2,7 @@
 
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 10, 13:00 EDT. 27 of ~50 tracked alerts needed before review.
+Updated Oct 10, 15:00 EDT. 27 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -33,11 +33,11 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
 | **Alerts** | 27 | 11% | -38.0% | -42.1% | +84.4% | -64.7% |
-| All runner-ups & near misses | 102 | 16% | -32.3% | -36.4% | +3218.1% | -51.1% |
+| All runner-ups & near misses | 105 | 15% | -32.8% | -36.9% | +3126.4% | -51.4% |
 | ↳ runner-up | 2 | 50% | -18.4% | -24.0% | +108.0% | -69.7% |
-| ↳ below score bar | 42 | 14% | -19.7% | -24.3% | +44.6% | -37.6% |
+| ↳ below score bar | 44 | 14% | -20.1% | -24.8% | +43.3% | -37.9% |
 | ↳ failed cost/sellability | 5 | 20% | +5.0% | +0.7% | +91.7% | -61.5% |
-| ↳ failed safety | 53 | 15% | -46.4% | -50.0% | +6145.1% | -60.2% |
+| ↳ failed safety | 54 | 15% | -47.2% | -50.7% | +6031.4% | -60.8% |
 | ↳ not checked | 0 | n/a | n/a | n/a | n/a | n/a |
 
 ## All alerts (newest first)

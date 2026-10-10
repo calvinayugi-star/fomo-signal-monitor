@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sat, Oct 10, 14:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Sat, Oct 10, 15:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it is +20% net**, sell, and look for the next one. Graduated tokens are preferred.
@@ -10,7 +10,7 @@ Updated Sat, Oct 10, 14:00 EDT. Paper trades only: nothing is bought or sold.
 | | |
 |---|---|
 | Start → now | $100 → **$100.00** (+0.0%) |
-| Running for | 0.0 days (since Oct 10, 13:00) |
+| Running for | 0.1 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 0 |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
