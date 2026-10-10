@@ -8,8 +8,20 @@
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
    "status": "active",
-   "cash": 44.1851,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "EXFIL",
+    "mint": "6FhVPctYg363pQbs4iSvqyHe2cJzfsvFD96gePy6pump",
+    "pairAddress": "2zPfdGd48k7B2U9yqZ4hJSPAPtoVU9uiEbFQYXEoeXkv",
+    "decidedAt": "2026-10-10T15:00:29.291Z",
+    "alertPriceUsd": 0.0004922,
+    "sizeUsd": 44.1851,
+    "dexRoundTripPct": 2.32,
+    "roundTripPct": 3.99,
+    "stopNetPct": 15,
+    "atr5Pct": 13.65,
+    "chgH1": 55.38
+   },
    "trades": [
     {
      "n": 1,
