@@ -7,7 +7,7 @@
    "targetUsd": 5000,
    "startedAt": "2026-10-03T05:00:32.030Z",
    "endsAt": "2026-11-01T04:00:00.000Z",
-   "status": "active",
+   "status": "ended",
    "cash": 45.2932,
    "position": null,
    "trades": [
@@ -356,7 +356,23 @@
      "targetHit": true,
      "newBankroll": 45.2932
     }
-   ]
+   ],
+   "endedAt": "2026-10-10T17:00:35.602Z",
+   "finalBankroll": 45.29,
+   "note": "rules changed to v2 on 2026-10-10"
+  },
+  {
+   "id": "v2-2026-10-10",
+   "rules": "v2",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetNetPct": 20,
+   "startedAt": "2026-10-10T17:00:35.602Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 100,
+   "position": null,
+   "trades": []
   }
  ]
 }
