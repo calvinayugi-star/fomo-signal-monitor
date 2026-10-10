@@ -1,4 +1,6 @@
-// Hourly entry point: track open alerts -> screen for a new candidate -> alert -> update results.
+// Hourly entry point: track open alerts -> screen for a new candidate -> alert -> update results -> Compounder.
+// With monitor.enabled false (since 2026-10-10) only the Compounder runs: the candidate lists and liquidity
+// snapshots are still collected for it, already-open monitor records are tracked to their deadline, nothing new is alerted.
 //   node src/run.js            normal run (sends Telegram if secrets are set, saves records)
 //   node src/run.js --dry-run  prints the message, saves nothing
 // Env: CONFIG (config path), DATA_DIR (records folder), CACHE_DIR (working data kept out of git),
@@ -6,8 +8,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { screen } from './screen.js';
-import { fomoFee } from './screen.js';
+import { screen, fomoFee, dexPairs } from './screen.js';
+import { collectCandidates } from './sources.js';
 import { updateOpen, stats, resultsMarkdown } from './tracker.js';
 import { sendTelegram, esc } from './telegram.js';
 import { runCompounder } from './compounder.js';
@@ -43,6 +45,7 @@ const localHour = (d) =>
   Number(new Intl.DateTimeFormat('en-US', { timeZone: cfg.displayTimezone, hour: 'numeric', hourCycle: 'h23' }).format(d));
 const localDate = (d) => new Intl.DateTimeFormat('en-CA', { timeZone: cfg.displayTimezone }).format(d); // YYYY-MM-DD
 const px = (x) => (x >= 1 ? x.toFixed(4) : x.toPrecision(4));
+const stoppedNote = '> **The Signal Monitor was stopped on 2026-10-10** (no new alerts). These are its final results; only the Compounder still runs ([COMPOUNDER.md](COMPOUNDER.md)).\n\n';
 const signed = (x, d = 0) => `${x >= 0 ? '+' : ''}${x.toFixed(d)}%`;
 
 function buildAlert(c, now) {
@@ -213,6 +216,21 @@ ${compounderLine ? `${compounderLine}
 ` : ''}${activityLines(log, now)}${tokenReminder(now)}`;
 }
 
+// Daily summary once the monitor is stopped: the Compounder line plus proof the job is alive.
+function compounderSummary(log, now, compounderLine) {
+  let runs = 1;
+  try {
+    for (const line of fs.readFileSync(path.join(DATA, 'runs.jsonl'), 'utf8').trim().split('\n'))
+      if (now - Date.parse(JSON.parse(line).t) <= 24 * 3600e3) runs++;
+  } catch {
+    /* no log yet */
+  }
+  return `📊 <b>Daily summary (PAPER MODE)</b>
+${compounderLine || 'Compounder: no data this run.'}
+
+<b>Last 24h:</b> ${runs} hourly runs${log.errors.length ? ` · errors this run: ${log.errors.length}` : ''}${tokenReminder(now)}`;
+}
+
 async function main() {
   fs.mkdirSync(DATA, { recursive: true });
   const now = new Date();
@@ -226,6 +244,7 @@ async function main() {
   const state = readJson('state.json', {});
   const log = { t: now.toISOString(), errors: [] };
   let shared = {}; // candidates and DEX pairs, reused by the Compounder
+  const monitorOn = cfg.monitor?.enabled !== false;
 
   try {
     log.closed = (await updateOpen(store.alerts, cfg, now, log)).map((a) => a.symbol);
@@ -234,7 +253,19 @@ async function main() {
     log.errors.push(`tracker: ${e.message}`);
   }
 
-  try {
+  if (!monitorOn) {
+    // Monitor stopped: only gather what the Compounder needs (lists, DEX pairs, liquidity history).
+    try {
+      const candidates = await collectCandidates(cfg, log);
+      const pairs = await dexPairs(candidates.map((c) => c.mint), log);
+      for (const [mint, p] of pairs)
+        (store.snapshots[mint] ??= []).push({ t: now.getTime(), liqUsd: p.liquidity?.usd ?? 0, priceUsd: Number(p.priceUsd) });
+      shared = { candidates, pairs };
+      log.candidates = candidates.length;
+    } catch (e) {
+      log.errors.push(`candidates: ${e.message}`);
+    }
+  } else try {
     const { best, others, candidates, pairs } = await screen(cfg, store, now, log);
     shared = { candidates, pairs };
     const recentShadow = new Set(
@@ -275,7 +306,10 @@ async function main() {
   if (localHour(now) >= cfg.dailySummaryHour && state.lastSummaryDate !== localDate(now)) {
     const since = Date.parse(state.lastSummaryAt ?? 0);
     const closedSince = store.alerts.filter((a) => a.result && Date.parse(a.result.closedAt) > since);
-    if (await sendTelegram(summaryMessage(store.alerts, store.shadows, closedSince, log, now, compounderLine), { dryRun })) {
+    const msg = monitorOn
+      ? summaryMessage(store.alerts, store.shadows, closedSince, log, now, compounderLine)
+      : compounderSummary(log, now, compounderLine);
+    if (await sendTelegram(msg, { dryRun })) {
       state.lastSummaryAt = now.toISOString();
       state.lastSummaryDate = localDate(now);
     }
@@ -293,6 +327,16 @@ async function main() {
   if (dryRun) return;
   writeJson('alerts.json', store.alerts);
   writeJson('shadows.json', store.shadows);
+  if (!monitorOn) {
+    // RESULTS.md keeps updating only while the last open monitor records close.
+    if (log.closed?.length || log.closedShadows)
+      fs.writeFileSync(path.join(process.env.DATA_DIR ? DATA : ROOT, 'RESULTS.md'), stoppedNote + resultsMarkdown(store.alerts, store.shadows, cfg));
+    fs.mkdirSync(path.dirname(SNAPSHOTS), { recursive: true });
+    fs.writeFileSync(SNAPSHOTS, JSON.stringify(store.snapshots));
+    writeJson('state.json', state);
+    fs.appendFileSync(path.join(DATA, 'runs.jsonl'), JSON.stringify(log) + '\n');
+    return;
+  }
   fs.mkdirSync(path.dirname(SNAPSHOTS), { recursive: true });
   fs.writeFileSync(SNAPSHOTS, JSON.stringify(store.snapshots));
   writeJson('state.json', state);

@@ -1,5 +1,10 @@
 # FOMO Signal Monitor
 
+> **Status (2026-10-10): the $20 Signal Monitor is stopped; only the [Compounder](#fomo-compounder-second-strategy-paper-mode) runs.**
+> `monitor.enabled` is `false` in config.json: the hourly job still collects the Trending/Graduated lists and liquidity history for the
+> Compounder, but sends no monitor alerts and records no new runner-ups. Its final results stay in [RESULTS.md](RESULTS.md) and data/alerts.json.
+> Set `monitor.enabled` to `true` to restart it.
+
 An hourly research monitor. Each hour it looks for the strongest new buy candidate among tokens on FOMO-style
 **Trending** and **Graduated** lists, sized for a **$20 spot position** that is **exited within 24 hours**, and sends at most one Telegram alert.
 Every alert is tracked automatically. It runs in **paper mode**: alerts only, no trading authority and no wallet access.

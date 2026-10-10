@@ -1,5 +1,6 @@
 {
   "mode": "paper",
+  "monitor": { "enabled": false, "stoppedOn": "2026-10-10" },
   "positionUsd": 20,
   "holdHours": 24,
   "displayTimezone": "America/New_York",

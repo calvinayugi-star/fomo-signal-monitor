@@ -1,3 +1,5 @@
+> **The Signal Monitor was stopped on 2026-10-10** (no new alerts). These are its final results; only the Compounder still runs ([COMPOUNDER.md](COMPOUNDER.md)).
+
 # FOMO Signal Monitor: Results (PAPER MODE)
 
 Updated Oct 10, 12:00 EDT. 26 of ~50 tracked alerts needed before review.
