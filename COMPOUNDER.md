@@ -1,6 +1,6 @@
 # FOMO Daily Compounder: Results (PAPER MODE)
 
-Updated Sat, Oct 10, 11:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Sat, Oct 10, 12:00 EDT. Paper trades only: nothing is bought or sold.
 
 Each run starts with a $100 seed on the 1st of the month (first run: 2026-10-03), compounds 100% of the bankroll one
 position at a time, and stops when withdrawable value after costs reaches $5,000, at month end, or below $25.
@@ -9,39 +9,40 @@ position at a time, and stops when withdrawable value after costs reaches $5,000
 
 | | |
 |---|---|
-| Seed → bankroll → target | $100 → **$44.19** → $5,000 |
-| Run return | -55.8% |
-| Distance remaining | $4955.81 |
-| Days elapsed / left | 7.4 / 21.5 |
-| Even-pace bankroll today | $272.36 (behind) |
+| Seed → bankroll → target | $100 → **$45.29** → $5,000 |
+| Run return | -54.7% |
+| Distance remaining | $4954.71 |
+| Days elapsed / left | 7.5 / 21.5 |
+| Even-pace bankroll today | $273.89 (behind) |
 | Daily net return needed: from the seed / from here | +14.5% / +24.5% |
-| Trades (wins / losses) | 14 (5 / 9) |
-| Win rate | 36% |
-| Average win / average loss (net) | +10.4% / -13.3% |
-| Average net per trade | -4.9% |
-| Total estimated costs | $29.48 |
+| Trades (wins / losses) | 15 (6 / 9) |
+| Win rate | 40% |
+| Average win / average loss (net) | +9.1% / -13.3% |
+| Average net per trade | -4.4% |
+| Total estimated costs | $31.31 |
 
-**Open position:** $EXFIL, $44.19 decided Oct 10, 11:00, fill pending. Stop -15% net.
+**Open position:** none (cash).
 
 ### Win rate needed vs achieved
 
 Assumes up to 2 trades a day for the rest of the run, compounding the whole bankroll.
 
-| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+10.4% / -13.3%) |
+| | Assumed win/loss (+10.0% / -10.0%) | Actual win/loss (+9.1% / -13.3%) |
 |---|---|---|
-| Whole run from the seed (57 trades) | 87% | 88% |
-| From the current bankroll (43 trades left) | impossible (>100%) | impossible (>100%) |
-| **Achieved** | 36% | 36% |
+| Whole run from the seed (57 trades) | 87% | 92% |
+| From the current bankroll (42 trades left) | impossible (>100%) | impossible (>100%) |
+| **Achieved** | 40% | 40% |
 
 ### Winner sizes and exits
 
-Trades reaching the +10% target: 5. Net results of at least +10%: 3 · +15%: 1 · +20%: 1 · +30%: 0.
-Exit reasons: stop loss (6), emergency stop (6), trailing stop (2).
+Trades reaching the +10% target: 6. Net results of at least +10%: 3 · +15%: 1 · +20%: 1 · +30%: 0.
+Exit reasons: stop loss (6), emergency stop (7), trailing stop (2).
 
 ### Trades (newest first)
 
 | # | Entered | Token | Size | Entry $ | Exit $ | Gross | Costs | Net | Net $ | Bankroll after | Exit |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 15 | Oct 10, 11:03 | EXFIL | $44.19 | 0.0004618 | 0.0004926 | +6.7% | $1.84 | +2.5% | $1.11 | $45.29 | emergency stop |
 | 14 | Oct 9, 10:03 | HeeHaw | $49.25 | 0.002664 | 0.002471 | -7.2% | $1.50 | -10.3% | -$5.07 | $44.19 | stop loss |
 | 13 | Oct 9, 01:03 | OWLNIGHT | $61.57 | 0.001126 | 0.0009288 | -17.5% | $1.53 | -20.0% | -$12.31 | $49.25 | emergency stop |
 | 12 | Oct 8, 05:03 | ZKDARK | $70.70 | 0.0008248 | 0.0007431 | -9.9% | $2.14 | -12.9% | -$9.14 | $61.57 | stop loss |

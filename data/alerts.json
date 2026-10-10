@@ -2052,14 +2052,26 @@
    "memecoins can go to zero within hours"
   ],
   "delivered": true,
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.00005627,
    "lastSampleAt": "2026-10-10T15:00:23.456Z",
    "bestPriceUsd": 0.0002711,
    "worstPriceUsd": 0.00004173
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-10T16:00:23.684Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.00005465530488772491,
+   "bestPriceUsd": 0.0003317420268311673,
+   "worstPriceUsd": 0.00003799544045751379,
+   "grossPct": -76.10174687900091,
+   "bestPct": 45.055542995700606,
+   "worstPct": -83.38633998359694,
+   "costsUsd": 1.2275,
+   "netUsd": -16.447849375800182,
+   "netPct": -82.2392468790009
+  }
  },
  {
   "id": "2026-10-09T16-vamp",
@@ -2124,8 +2136,8 @@
   "delivered": true,
   "status": "open",
   "track": {
-   "lastPriceUsd": 0.00008487,
-   "lastSampleAt": "2026-10-10T15:00:23.456Z",
+   "lastPriceUsd": 0.0001227,
+   "lastSampleAt": "2026-10-10T16:00:23.394Z",
    "bestPriceUsd": 0.0001588,
    "worstPriceUsd": 0.00004473
   },

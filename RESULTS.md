@@ -1,6 +1,6 @@
 # FOMO Signal Monitor: Results (PAPER MODE)
 
-Updated Oct 10, 11:00 EDT. 25 of ~50 tracked alerts needed before review.
+Updated Oct 10, 12:00 EDT. 26 of ~50 tracked alerts needed before review.
 
 Each alert is a hypothetical $20 buy at the alert price, sold at the 24h exit deadline.
 Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees.
@@ -9,17 +9,17 @@ Costs = FOMO fees (0.5% or $0.37 minimum, each side) + quoted slippage/pool fees
 
 | Metric | Value |
 |---|---|
-| Alerts (open / closed) | 27 (2 / 25) |
-| Win rate after costs | 12% (plausible true range 4–30%) |
+| Alerts (open / closed) | 27 (1 / 26) |
+| Win rate after costs | 12% (plausible true range 4–29%) |
 | Average gain (winners, after costs) | +163.8% |
-| Average loss (losers, after costs) | -68.4% |
-| Average / median result per alert, after costs | -40.6% / -63.8% |
-| Profit factor (total won ÷ total lost; above 1 = profitable) | 0.33 |
-| Net result after costs | -$202.91 |
-| Gross result before costs | -$183.43 |
-| Total estimated costs | $19.48 |
-| Avg best / worst price during hold | +88.6% / -63.6% |
-| Share that were at some point up enough to cover costs | 80% |
+| Average loss (losers, after costs) | -69.0% |
+| Average / median result per alert, after costs | -42.2% / -82.2% |
+| Profit factor (total won ÷ total lost; above 1 = profitable) | 0.31 |
+| Net result after costs | -$219.36 |
+| Gross result before costs | -$198.65 |
+| Total estimated costs | $20.71 |
+| Avg best / worst price during hold | +86.9% / -64.3% |
+| Share that were at some point up enough to cover costs | 81% |
 | Best / worst single alert | $90.52 / -$20.37 |
 
 ## Signal quality: alerts vs tokens not alerted
@@ -30,7 +30,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 
 | Group | Closed | Win rate after costs | Avg before costs | Avg after costs | Avg best | Avg worst |
 |---|---|---|---|---|---|---|
-| **Alerts** | 25 | 12% | -36.7% | -40.6% | +88.6% | -63.6% |
+| **Alerts** | 26 | 12% | -38.2% | -42.2% | +86.9% | -64.3% |
 | All runner-ups & near misses | 102 | 16% | -32.3% | -36.4% | +3218.1% | -51.1% |
 | ↳ runner-up | 2 | 50% | -18.4% | -24.0% | +108.0% | -69.7% |
 | ↳ below score bar | 42 | 14% | -19.7% | -24.3% | +44.6% | -37.6% |
@@ -43,7 +43,7 @@ Costs for tokens without a live quote assume 1% slippage plus FOMO fees.
 | Alerted | Token | List | Status | Entry $ | Exit $ | Best | Worst | Costs | Net |
 |---|---|---|---|---|---|---|---|---|---|
 | Oct 9, 12:00 EDT | vamp | Trending+Graduated | open | 0.0001697 | n/a | n/a | n/a | $1.25 | – |
-| Oct 9, 11:00 EDT | open/acc | Trending | open | 0.0002287 | n/a | n/a | n/a | $1.23 | – |
+| Oct 9, 11:00 EDT | open/acc | Trending | closed | 0.0002287 | 0.00005466 | +45.1% | -83.4% | $1.23 | -$16.45 |
 | Oct 9, 09:00 EDT | TROLL | Trending+Graduated | closed | 0.03882 | 0.03668 | +1.2% | -6.5% | $0.79 | -$1.90 |
 | Oct 8, 23:00 EDT | OWLNIGHT | Trending+Graduated | closed | 0.0009312 | 0.000003432 | +34.1% | -99.6% | $0.44 | -$20.37 |
 | Oct 8, 15:00 EDT | CYBERLEEK | Trending | closed | 0.002670 | 0.002093 | +0.5% | -28.0% | $0.84 | -$5.16 |
