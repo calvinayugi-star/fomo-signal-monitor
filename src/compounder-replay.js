@@ -17,9 +17,9 @@ import { makeTime } from './time.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const cfg = JSON.parse(fs.readFileSync(process.env.CONFIG ?? path.join(ROOT, 'config.json'), 'utf8'));
-const k = cfg.compounder;
+const k = cfg.compounderV1 ?? cfg.compounder; // the replay covers the v1 rules (momentum entry, stops) used until 2026-10-10
 const time = makeTime(cfg.displayTimezone);
-const runArg = process.argv.includes('--run') ? process.argv[process.argv.indexOf('--run') + 1] : null;
+const runArg = process.argv.includes('--run') ? process.argv[process.argv.indexOf('--run') + 1] : '2026-10';
 const DATA = path.resolve(process.env.DATA_DIR ?? path.join(ROOT, 'data'));
 const OUT = path.join(process.env.DATA_DIR ? DATA : ROOT, 'COMPOUNDER-REPLAY.md');
 const CACHE = path.join(path.resolve(process.env.CACHE_DIR ?? path.join(ROOT, '.cache')), 'replay');

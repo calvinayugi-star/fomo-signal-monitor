@@ -260,6 +260,7 @@ async function main() {
       compounderLine = await runCompounder({
         cfg,
         ...shared,
+        snapshots: store.snapshots,
         dryRun,
         dataDir: DATA,
         reportPath: path.join(process.env.DATA_DIR ? DATA : ROOT, 'COMPOUNDER.md'),

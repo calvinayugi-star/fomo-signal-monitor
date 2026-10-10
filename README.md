@@ -61,37 +61,33 @@ Runner-ups build up several times faster than alerts, so these comparisons becom
 
 Stay in paper mode until about 50 alerts have closed and the numbers have been reviewed.
 
-## FOMO Daily Compounder (second strategy, paper mode)
+## FOMO Compounder (second strategy, paper mode)
 
-A separate paper strategy that runs in the same hourly job and shares the same candidate lists. It tests whether a
-small monthly seed can be compounded to a net target by trading strong momentum, one position at a time.
-It never trades; Telegram messages are marked PAPER MODE. Settings are under `compounder` in [config.json](config.json).
+A separate paper strategy that runs in the same hourly job and shares the same candidate lists. It never trades;
+Telegram messages are marked PAPER MODE. Settings are under `compounder` in [config.json](config.json).
 
-- **Run:** a $100 seed on the 1st of each month (first run started 2026-10-03), 100% of the bankroll compounded, no money added.
-  The run ends when withdrawable value after costs reaches $5,000, at month end, or if the bankroll falls below $25.
-- **Entry (hourly):** 1h change between +10% and +60%; still rising over 5 and 15 minutes; buys/sells 1.15–5; last 15 minutes of volume at least
-  the hour's 15-minute average; liquidity ≥ $25k and ≥ 50× the position; the monitor's safety checks; a Jupiter round trip at the real
-  position size ≤ 4% including FOMO fees. The strongest token (1h change × volume trend) is bought; otherwise NO TRADE.
-- **Exit:** stop −10% net (up to −15% for volatile tokens), judged on 15-minute closes so short wicks don't end a trade, plus an emergency
-  stop on any price at −20% net that rises with the stop. At +10% net the stop locks +6% and then trails giving back at most 40% of the peak gain,
-  6h time stop if the target isn't reached, 24h maximum hold. Paper fills happen 3 minutes after the alert and exits are settled on
-  1-minute candles, so stops work as if the price were watched continuously, even though the job runs hourly.
-- **Limits:** at most 2 entries a day (New York midnight), one position at a time, no re-entry into a token traded that day.
-  After a winning day (+8% or more) a second trade needs +20% 1h momentum and a volume trend of 1.5. Near $5,000 the position
-  is sized to need only about +10%.
-- **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger: every run and trade, never deleted.
-  [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision plus every token up 5% or more, traded or not.
-  [COMPOUNDER.md](COMPOUNDER.md) is regenerated every run: bankroll against an even-pace line, win rate, average win and loss,
-  the **win rate needed compared with the one achieved**, winner sizes, and every trade.
-- **Telegram:** BUY alerts in the hourly report format, a full report after each exit, and one line in the 8 AM daily summary.
-  Hourly NO TRADE decisions are logged only.
-- **Replay:** `node src/compounder-replay.js [--run 2026-10]` reruns the logged hours with other floors (5–20%), stops (−3 to −8%),
-  targets (+6 to +20%) and trailing give-backs (25–50%), and writes COMPOUNDER-REPLAY.md. Run it locally; candles are cached in `.cache/replay`.
+**Rules v2 (since 2026-10-10).** Start with $100. Buy a token **before it spikes** with 100% of the bankroll, **hold it with no
+stop loss and no time limit until it is +50% net** (after fees and slippage), sell, and immediately look for the next one.
 
-**Why the stop is wide.** The first version stopped at −4 to −6% net on any 1-minute low. With 2–4% round-trip costs that was only 2–3% below
-the entry price, and both trades on 2026-10-03 were stopped out within 4 minutes; one of them (HI) then rose 81% within the hour.
-Since 2026-10-03 the stop is −10% net on 15-minute closes. The trade-off: losers lose about −10% instead of −6%, so the strategy
-needs bigger winners or a higher win rate. COMPOUNDER.md shows the win rate needed against the one achieved, and the replay's stop rows show which width works.
+- **Lists:** Graduated tokens (graduated within 72h) are preferred (+10 score); Trending-only tokens need a much stronger setup (−15).
+- **Entry (hourly), "before the spike":** the price is still quiet (1h −5% to +15%, 6h −15% to +100%, 15 min −5% to +12%, 5 min ≤ +8%)
+  while demand builds (last hour's volume ≥ 1.5× the hours before, last 15 min ≥ 1.2× the hour's average, buys/sells 1.15–5 over 1h and ≥ 1 over 6h,
+  liquidity not shrinking). Same quality bar as the monitor: liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, safety checks,
+  round trip ≤ 4% at the real size. New: tokens under 72h whose top 10 wallets hold ≤ 8% are rejected (7 of 9 such alerts went to near zero).
+  The score rewards volume acceleration, buying pressure and liquidity growth, not price already gained.
+- **Exit:** only at +50% net, checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
+  If a held token has no trades for 24h a warning is sent (it may be dead), but it stays held.
+- **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
+  is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the
+  candidates that passed the quick checks. [COMPOUNDER.md](COMPOUNDER.md) shows the bankroll, the open position (value, best/worst, time held)
+  and every completed position.
+- **Telegram:** a BUY alert, a SOLD report at +50%, a stale-token warning, and one line in the 8 AM daily summary.
+
+**Risk of this design.** With no stop, a token that collapses before reaching +50% is held indefinitely and the whole bankroll is tied up in it.
+In the 2026-10 data, 20 of 45 Graduated-only tokens reached +50% net within 24h of being flagged, and 19 of the other 25 went to near zero.
+
+**v1 (2026-10-03 to 2026-10-10)** bought +10–60% 1h momentum with −10% stops and a +10% trailing target; it went from $100 to $44.19 in 14 trades.
+`node src/compounder-replay.js` still replays the v1 rules (settings under `compounderV1`).
 
 ## Setup (one time)
 

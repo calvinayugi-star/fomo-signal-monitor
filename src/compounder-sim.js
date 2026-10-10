@@ -119,3 +119,22 @@ export function replayExit(p, candles, r, costs, { fillAt, now, hardEndAt = Infi
     ...netAt(p, lastPrice, costs),
   };
 }
+
+// v2 exit: hold with no stop and no time limit; sell the first minute the price reaches the +targetNetPct
+// net price (at that price, or at the open if the candle gapped above it). Also tracks the best and worst
+// net mark seen, for the report. candles: only those after the last checked candle.
+export function replayTarget(p, candles, targetNetPct, costs) {
+  const targetPrice = priceForNet(p, targetNetPct, costs);
+  let hi = -Infinity;
+  let lo = Infinity;
+  for (const [t, o, h, l] of candles) {
+    lo = Math.min(lo, l);
+    if (h >= targetPrice) {
+      const rawExit = Math.max(o, targetPrice);
+      return { closed: true, rawExit, exitAt: t * 1000, reason: `+${targetNetPct}% target`, targetHit: true, high: Math.max(hi, rawExit), low: lo, ...netAt(p, rawExit, costs) };
+    }
+    hi = Math.max(hi, h);
+  }
+  const last = candles.at(-1);
+  return { closed: false, targetPrice, high: hi, low: lo, lastPrice: last?.[4] ?? null, lastAt: last ? last[0] * 1000 : null };
+}

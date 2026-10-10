@@ -28,7 +28,7 @@ export async function dexPairs(mints, log) {
   return best;
 }
 
-function metrics(pair, now) {
+export function metrics(pair, now) {
   const volH1 = pair.volume?.h1 ?? 0;
   const volH6 = pair.volume?.h6 ?? 0;
   const t = pair.txns ?? {};
@@ -56,7 +56,7 @@ function metrics(pair, now) {
 }
 
 // Liquidity growth vs the most recent earlier snapshot (40 min - 8 h window, since scheduled runs can be late).
-function liquidityGrowth(snapshots, mint, liqUsd, now) {
+export function liquidityGrowth(snapshots, mint, liqUsd, now) {
   const prev = (snapshots[mint] ?? [])
     .filter((s) => now - s.t >= 40 * 60e3 && now - s.t <= 8 * HOUR)
     .sort((a, b) => b.t - a.t)[0];
