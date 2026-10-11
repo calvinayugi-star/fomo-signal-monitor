@@ -74,11 +74,20 @@ Telegram messages are marked PAPER MODE. Settings are under `compounder` in [con
 **Rules v2 (since 2026-10-10).** Start with $100. Buy a token **before it spikes** with 100% of the bankroll, **hold it with no
 stop loss and no time limit until it is +20% net** (after fees and slippage), sell, and immediately look for the next one.
 
-**Two variants run side by side** (`compounder.variants`): a **+20%** and a **+10%** sell target, each with its own $100 run and bankroll,
-identical entry rules and the same hourly candidates (API results are shared, so the second variant adds almost no calls).
+**Four variants run side by side** (`compounder.variants`), each with its own $100 run and bankroll:
+
+| | +20% | +10% |
+|---|---|---|
+| **Per trade** | sell at +20%, buy again right away | sell at +10%, buy again right away |
+| **Per day** (added 2026-10-11) | sell at +20%; once the day is up +20%, no new buys until midnight ET | same with +10% |
+
+Per-day runs never sell below the target either: a position held overnight still waits for +X% from its buy price. The day's goal is measured
+from the bankroll at the first hourly run after midnight ET and counts only banked gains. All four use
+identical entry rules and the same hourly candidates (API results are shared, so extra variants add almost no calls).
 The +10% run was added on 2026-10-11 as a copy of the +20% run (same start, same open Fartcoin position, re-checked against +10% from the fill),
 since with identical rules it would have made the same decisions until then. COMPOUNDER.md opens with a side-by-side table, and every
-Telegram message is labelled COMPOUNDER +20% or COMPOUNDER +10%.
+Telegram message is labelled with its variant, e.g. COMPOUNDER +20%/trade or COMPOUNDER +10%/day; per-day runs also send a "daily goal met" message.
+The per-day runs were added the same way, as copies of the +20% run (same start and open position).
 
 - **Lists:** Graduated tokens (graduated within 72h) are preferred (+10 score); Trending-only tokens need a much stronger setup (−15).
 - **Entry (hourly), "before the spike":** the price is still quiet (1h −5% to +15%, 6h −15% to +100%, 15 min −5% to +12%, 5 min ≤ +8%)

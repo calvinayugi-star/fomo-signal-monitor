@@ -66,8 +66,10 @@
     "startDate": "2026-10-10",
     "seedUsd": 100,
     "variants": [
-      { "id": "t20", "targetNetPct": 20 },
-      { "id": "t10", "targetNetPct": 10 }
+      { "id": "t20", "targetNetPct": 20, "per": "trade" },
+      { "id": "t10", "targetNetPct": 10, "per": "trade" },
+      { "id": "d20", "targetNetPct": 20, "per": "day" },
+      { "id": "d10", "targetNetPct": 10, "per": "day" }
     ],
     "fillDelayMinutes": 3,
     "noFillCancelHours": 6,

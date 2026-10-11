@@ -29,6 +29,20 @@ export function runStats(run) {
 }
 
 const heldHours = (pos, now) => (pos.fill ? (now - Date.parse(pos.fill.at)) / HOUR : null);
+const label = (run) => `+${run.targetNetPct}% per ${run.per === 'day' ? 'day' : 'trade'}`;
+const paused = (run) => run.per === 'day' && !run.position && run.day?.goalMetAt;
+// Per-day runs: days on which the daily goal was met, out of the days the run has been active.
+function dayGoals(run) {
+  if (run.per !== 'day') return '–';
+  const days = [...(run.days ?? []), ...(run.day ? [run.day] : [])];
+  return `${days.filter((d) => d.goalMetAt).length} of ${days.length}`;
+}
+const nowText = (run, now) =>
+  run.position
+    ? `holding $${run.position.symbol} (${sf(run.position.mark?.netPct)}, ${hours(heldHours(run.position, now))})`
+    : paused(run)
+      ? 'daily goal met, paused until midnight'
+      : 'in cash, searching';
 
 export function summaryLine(run, now) {
   if (!run) return '';
@@ -39,8 +53,10 @@ export function summaryLine(run, now) {
   const pos = run.position;
   const state = pos
     ? `holding $${pos.symbol} (${pos.mark ? `${sf(pos.mark.netPct)} now` : 'fill pending'}${pos.fill ? `, ${hours(heldHours(pos, now))}` : ''}${pos.stale ? ', no trades 24h+' : ''})`
-    : 'in cash, searching';
-  return `🔁 <b>Compounder +${run.targetNetPct}% (paper):</b> $${run.seedUsd} → ${usd(b)} · ${s.trades} sold · ${state}`;
+    : paused(run)
+      ? 'daily goal met, paused until midnight'
+      : 'in cash, searching';
+  return `🔁 <b>Compounder ${label(run)} (paper):</b> $${run.seedUsd} → ${usd(b)} · ${s.trades} sold · ${state}`;
 }
 
 function positionSection(run, now, time) {
@@ -65,7 +81,7 @@ function comparisonSection(runs, now) {
   const row = (label, fn) => `| ${label} | ${cols.map(fn).join(' | ')} |`;
   return `## Side by side
 
-${row('', ({ r }) => `**+${r.targetNetPct}% target**`)}
+${row('', ({ r }) => `**${label(r)}**`)}
 |---|${cols.map(() => '---|').join('')}
 ${row('Bankroll now (open position at its last mark)', ({ b }) => `**${usd(b)}**`)}
 ${row('Return since the $100 start', ({ r, b }) => sf((b / r.seedUsd - 1) * 100))}
@@ -73,9 +89,12 @@ ${row('Positions sold at the target', ({ s }) => s.trades)}
 ${row('Average time to reach the target', ({ s }) => hours(s.avgHoldHours))}
 ${row('Average worst point before the target', ({ s }) => sf(s.avgWorstNetPct))}
 ${row('Profit banked / costs', ({ s }) => `${usd(s.netUsd)} / ${usd(s.costsUsd)}`)}
-${row('Now', ({ r }) => (r.position ? `holding $${r.position.symbol} (${sf(r.position.mark?.netPct)}, ${hours(heldHours(r.position, now))})` : 'in cash, searching'))}
+${row('Days the daily goal was met (per-day runs)', ({ r }) => dayGoals(r))}
+${row('Now', ({ r }) => nowText(r, now))}
 
-Both use identical entry rules and the same hourly candidates; only the sell target differs. When both are in cash they usually buy the same token.
+All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
+**Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
+bankroll is up the target versus its value at the start of the day. When several runs are in cash they usually buy the same token.
 `;
 }
 
@@ -88,7 +107,10 @@ function v2Section(run, cfg, now, time) {
       ? `| ${t.n} | ${time.short(new Date(t.decidedAt))} | ${t.symbol} | ${t.list ?? ''} | ${usd(t.sizeUsd)} | – | – | – | – | – | – | ${usd(t.newBankroll)} |`
       : `| ${t.n} | ${time.short(new Date(t.fillAt))} | ${t.symbol} | ${t.list ?? ''} | ${usd(t.sizeUsd)} | ${hours(t.holdHours)} | ${sf(t.worstNetPct)} | ${price(t.entryPriceUsd)} → ${price(t.exitPriceUsd)} | ${usd(t.costsUsd)} | ${sf(t.netPct)} | ${usd(t.netUsd)} | ${usd(t.newBankroll)} |`,
   );
-  return `## +${run.targetNetPct}% target: run ${run.id} (${run.status.toUpperCase()})
+  const dayRow = run.per === 'day'
+    ? `\n| Days the daily goal was met | ${dayGoals(run)}${run.day ? ` · today started at ${usd(run.day.startBankroll)}${run.day.goalMetAt ? ', goal met, paused until midnight' : ''}` : ''} |`
+    : '';
+  return `## ${label(run)}: run ${run.id} (${run.status.toUpperCase()})
 
 | | |
 |---|---|
@@ -97,7 +119,7 @@ function v2Section(run, cfg, now, time) {
 | Positions sold at +${run.targetNetPct}% | ${s.trades} |
 | Average time to reach the target | ${hours(s.avgHoldHours)} |
 | Average worst point before the target | ${sf(s.avgWorstNetPct)} |
-| Profit banked / costs | ${usd(s.netUsd)} / ${usd(s.costsUsd)} |
+| Profit banked / costs | ${usd(s.netUsd)} / ${usd(s.costsUsd)} |${dayRow}
 | Each +${run.targetNetPct}% sale multiplies the bankroll by | ${f(1 + run.targetNetPct / 100, 2)}× ($100 → $${(100 * (1 + run.targetNetPct / 100) ** 5).toFixed(0)} after 5, $${(100 * (1 + run.targetNetPct / 100) ** 10).toFixed(0)} after 10) |
 
 ${positionSection(run, now, time)}
@@ -114,7 +136,7 @@ export function compounderMarkdown(ledger, cfg, now, time) {
   const k = cfg.compounder;
   const e = k.entry;
   const runs = [...ledger.runs].reverse();
-  const current = runs.filter((r) => r.status === 'active' && r.rules === k.rules).sort((a, b) => b.targetNetPct - a.targetNetPct);
+  const current = runs.filter((r) => r.status === 'active' && r.rules === k.rules).sort((a, b) => (a.per === 'day') - (b.per === 'day') || b.targetNetPct - a.targetNetPct);
   const past = runs.filter((r) => !current.includes(r)).map((r) => {
     const s = runStats(r);
     return `| ${r.id} | ${r.rules ?? 'v1'} | $${r.seedUsd} | ${usd(r.finalBankroll ?? r.cash)} | ${s.trades} | ${f(s.winRate, 0, '%')} | ${r.status}${r.note ? ` (${r.note})` : ''} |`;
@@ -124,7 +146,7 @@ export function compounderMarkdown(ledger, cfg, now, time) {
 Updated ${time.when(now)}. Paper trades only: nothing is bought or sold.
 
 **Rules ${k.rules} (since ${k.startDate}):** start with $${k.seedUsd}, buy a token **before it spikes** with 100% of the bankroll,
-**hold with no stop and no time limit until it reaches the sell target** (${k.variants.map((v) => `+${v.targetNetPct}%`).join(' and ')} net, run side by side), sell, and look for the next one. Graduated tokens are preferred.
+**hold with no stop and no time limit until it reaches the sell target** (${k.variants.map((v) => `+${v.targetNetPct}% per ${v.per ?? 'trade'}`).join(', ')}: run side by side), sell, and look for the next one. Graduated tokens are preferred.
 
 ${comparisonSection(current, now)}
 ${current.length ? current.map((r) => v2Section(r, cfg, now, time)).join('\n') : 'No run has started yet.'}

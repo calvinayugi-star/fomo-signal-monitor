@@ -219,6 +219,7 @@ function newRun(now, k, time, v) {
     id: `v2-${v.id}-${time.localDate(now)}`,
     rules: k.rules,
     variant: v.id,
+    per: v.per ?? 'trade',
     mode: 'paper',
     seedUsd: k.seedUsd,
     targetNetPct: v.targetNetPct,
@@ -317,7 +318,7 @@ function finishRun(run, status, now, note) {
 // --- messages ------------------------------------------------------------------------------------
 
 const PAPER = '📝 <b>PAPER MODE: tracking only, do not trade</b>';
-const tag = (run) => `COMPOUNDER +${run.targetNetPct}%`;
+const tag = (run) => `COMPOUNDER +${run.targetNetPct}%/${run.per === 'day' ? 'day' : 'trade'}`;
 
 function buyMessage(run, r, pos, k, cfg, time, now) {
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: r.priceUsd, dexRoundTripPct: r.dexRoundTripPct, costs: cfg.costs });
@@ -354,7 +355,7 @@ Fees/slippage: ${usd(t.costsUsd)}
 Profit: <b>+${usd(t.netUsd)}</b> (${signed(t.netPct)} net)
 Worst point while held: ${signed(t.worstNetPct)}
 Bankroll: ${usd(t.prevBankroll)} → <b>${usd(t.newBankroll)}</b> (${signed((t.newBankroll / run.seedUsd - 1) * 100, 0)} since the $${run.seedUsd} start)
-Completed: ${s.trades} · Searching for the next pre-spike token now.`;
+Completed: ${s.trades} · ${run.per === 'day' ? "Searching again unless today's goal is met." : 'Searching for the next pre-spike token now.'}`;
 }
 
 function staleMessage(run, k, time) {
@@ -413,7 +414,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
       }
       ledger.runs.push(run);
       const same = twin ? ` (same start${twin.position ? ` and same open position, $${esc(twin.position.symbol)},` : ''} as ${esc(twin.id)})` : '';
-      await send(`${PAPER}\n🔁 <b>${tag(run)} STARTED</b> with $${k.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net, repeat.`);
+      await send(`${PAPER}\n🔁 <b>${tag(run)} STARTED</b> with $${k.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net, repeat${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new buys until midnight ET` : ''}.`);
     }
     if (!run) continue;
     if (run.targetNetPct !== v.targetNetPct) {
@@ -421,6 +422,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
       (run.targetChanges ??= []).push({ at: now.toISOString(), from: run.targetNetPct, to: v.targetNetPct });
       run.targetNetPct = v.targetNetPct;
     }
+    run.per = v.per ?? 'trade';
     runs.push(run);
   }
 
@@ -430,6 +432,12 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
   for (const run of runs) {
     const h = { errors: [] };
     hourly.variants[run.variant] = h;
+    // Per-day runs: the day's starting bankroll is its value at the first run after midnight (open position at its last mark).
+    const today = time.localDate(now);
+    if (run.per === 'day' && run.day?.date !== today) {
+      if (run.day) (run.days ??= []).push({ ...run.day, endBankroll: round(bankrollOf(run)) });
+      run.day = { date: today, startBankroll: round(bankrollOf(run)) };
+    }
     if (run.position) {
       try {
         const wasStale = run.position.stale;
@@ -445,11 +453,17 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
         h.errors.push(`settle: ${err.message}`);
       }
     }
+    // The daily goal counts only banked gains (in cash after a sale), never an open position's mark.
+    if (run.per === 'day' && !run.position && !run.day.goalMetAt && run.cash >= run.day.startBankroll * (1 + run.targetNetPct / 100) - 0.005) {
+      run.day.goalMetAt = now.toISOString();
+      await send(`${PAPER}\n🎯 <b>${tag(run)}: daily goal met</b>: ${usd(run.day.startBankroll)} → ${usd(run.cash)} today (${signed((run.cash / run.day.startBankroll - 1) * 100)}). No new buys until midnight ET.`);
+    }
 
     const rows = [];
     const rejects = {};
     try {
       if (run.position) h.decision = 'HOLD';
+      else if (run.per === 'day' && run.day.goalMetAt) h.decision = 'NO TRADE (daily goal met)';
       else {
         if (!candidates) candidates = await collectCandidates(cfg, log);
         if (!allPairs) {
