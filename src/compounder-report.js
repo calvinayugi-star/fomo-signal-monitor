@@ -40,7 +40,7 @@ export function summaryLine(run, now) {
   const state = pos
     ? `holding $${pos.symbol} (${pos.mark ? `${sf(pos.mark.netPct)} now` : 'fill pending'}${pos.fill ? `, ${hours(heldHours(pos, now))}` : ''}${pos.stale ? ', no trades 24h+' : ''})`
     : 'in cash, searching';
-  return `🔁 <b>Compounder v2 (paper):</b> $${run.seedUsd} → ${usd(b)} · ${s.trades} sold at +${run.targetNetPct}% · ${state}`;
+  return `🔁 <b>Compounder +${run.targetNetPct}% (paper):</b> $${run.seedUsd} → ${usd(b)} · ${s.trades} sold · ${state}`;
 }
 
 function positionSection(run, now, time) {
@@ -58,6 +58,27 @@ function positionSection(run, now, time) {
   return `### Open position\n\n| | |\n|---|---|\n${rows.map(([a, b]) => `| ${a} | ${b} |`).join('\n')}`;
 }
 
+// Side-by-side view of the active variants (same rules, different sell targets).
+function comparisonSection(runs, now) {
+  if (runs.length < 2) return '';
+  const cols = runs.map((r) => ({ r, s: runStats(r), b: bankrollOf(r) }));
+  const row = (label, fn) => `| ${label} | ${cols.map(fn).join(' | ')} |`;
+  return `## Side by side
+
+${row('', ({ r }) => `**+${r.targetNetPct}% target**`)}
+|---|${cols.map(() => '---|').join('')}
+${row('Bankroll now (open position at its last mark)', ({ b }) => `**${usd(b)}**`)}
+${row('Return since the $100 start', ({ r, b }) => sf((b / r.seedUsd - 1) * 100))}
+${row('Positions sold at the target', ({ s }) => s.trades)}
+${row('Average time to reach the target', ({ s }) => hours(s.avgHoldHours))}
+${row('Average worst point before the target', ({ s }) => sf(s.avgWorstNetPct))}
+${row('Profit banked / costs', ({ s }) => `${usd(s.netUsd)} / ${usd(s.costsUsd)}`)}
+${row('Now', ({ r }) => (r.position ? `holding $${r.position.symbol} (${sf(r.position.mark?.netPct)}, ${hours(heldHours(r.position, now))})` : 'in cash, searching'))}
+
+Both use identical entry rules and the same hourly candidates; only the sell target differs. When both are in cash they usually buy the same token.
+`;
+}
+
 function v2Section(run, cfg, now, time) {
   const s = runStats(run);
   const b = bankrollOf(run);
@@ -67,12 +88,12 @@ function v2Section(run, cfg, now, time) {
       ? `| ${t.n} | ${time.short(new Date(t.decidedAt))} | ${t.symbol} | ${t.list ?? ''} | ${usd(t.sizeUsd)} | – | – | – | – | – | – | ${usd(t.newBankroll)} |`
       : `| ${t.n} | ${time.short(new Date(t.fillAt))} | ${t.symbol} | ${t.list ?? ''} | ${usd(t.sizeUsd)} | ${hours(t.holdHours)} | ${sf(t.worstNetPct)} | ${price(t.entryPriceUsd)} → ${price(t.exitPriceUsd)} | ${usd(t.costsUsd)} | ${sf(t.netPct)} | ${usd(t.netUsd)} | ${usd(t.newBankroll)} |`,
   );
-  return `## Run ${run.id} (${run.status.toUpperCase()})
+  return `## +${run.targetNetPct}% target: run ${run.id} (${run.status.toUpperCase()})
 
 | | |
 |---|---|
 | Start → now | $${run.seedUsd} → **${usd(b)}** (${sf((b / run.seedUsd - 1) * 100)}) |
-| Running for | ${f(days)} days (since ${time.short(new Date(run.startedAt))}) |
+| Running for | ${f(days)} days (since ${time.short(new Date(run.startedAt))})${run.copiedFrom ? `; started as a copy of ${run.copiedFrom}` : ''} |
 | Positions sold at +${run.targetNetPct}% | ${s.trades} |
 | Average time to reach the target | ${hours(s.avgHoldHours)} |
 | Average worst point before the target | ${sf(s.avgWorstNetPct)} |
@@ -93,8 +114,8 @@ export function compounderMarkdown(ledger, cfg, now, time) {
   const k = cfg.compounder;
   const e = k.entry;
   const runs = [...ledger.runs].reverse();
-  const current = runs.find((r) => r.status === 'active' && r.rules === k.rules);
-  const past = runs.filter((r) => r !== current).map((r) => {
+  const current = runs.filter((r) => r.status === 'active' && r.rules === k.rules).sort((a, b) => b.targetNetPct - a.targetNetPct);
+  const past = runs.filter((r) => !current.includes(r)).map((r) => {
     const s = runStats(r);
     return `| ${r.id} | ${r.rules ?? 'v1'} | $${r.seedUsd} | ${usd(r.finalBankroll ?? r.cash)} | ${s.trades} | ${f(s.winRate, 0, '%')} | ${r.status}${r.note ? ` (${r.note})` : ''} |`;
   });
@@ -103,9 +124,10 @@ export function compounderMarkdown(ledger, cfg, now, time) {
 Updated ${time.when(now)}. Paper trades only: nothing is bought or sold.
 
 **Rules ${k.rules} (since ${k.startDate}):** start with $${k.seedUsd}, buy a token **before it spikes** with 100% of the bankroll,
-**hold with no stop and no time limit until it is +${k.targetNetPct}% net**, sell, and look for the next one. Graduated tokens are preferred.
+**hold with no stop and no time limit until it reaches the sell target** (${k.variants.map((v) => `+${v.targetNetPct}%`).join(' and ')} net, run side by side), sell, and look for the next one. Graduated tokens are preferred.
 
-${current ? v2Section(current, cfg, now, time) : 'No run has started yet.'}
+${comparisonSection(current, now)}
+${current.length ? current.map((r) => v2Section(r, cfg, now, time)).join('\n') : 'No run has started yet.'}
 ## Past runs
 
 | Run | Rules | Seed | Final bankroll | Trades | Win rate | Result |
@@ -118,7 +140,7 @@ ${past.join('\n') || '| – | – | – | – | – | – | – |'}
 - **Before the spike (price still quiet):** 1h change ${e.minChgH1Pct}% to +${e.maxChgH1Pct}%, 6h ${e.minChgH6Pct}% to +${e.maxChgH6Pct}%, 15 min ${e.minChg15mPct}% to +${e.maxChg15mPct}%, 5 min ≤ +${e.maxChgM5Pct}%.
 - **Demand building:** last hour's volume ≥ ${e.minVolumeAcceleration}× the hours before, last 15 min ≥ ${e.minVolumeTrend15m}× the hour's 15-min average, buys/sells ≥ ${e.minBuySellRatioH1} (1h) and ≥ ${e.minBuySellRatioH6} (6h) but ≤ ${e.maxBuySellRatio} (bots), ≥ ${e.minBuysH1} buys and $${e.minVolumeH1Usd / 1000}k volume in the hour, liquidity not shrinking.
 - **Quality:** liquidity ≥ $${e.minLiquidityUsd / 1000}k and ≥ ${e.minLiquidityMultipleOfPosition}× the position, market cap ≥ $${e.minMarketCapUsd / 1000}k, pair ≥ ${e.minPairAgeHours}h old, the monitor's safety checks, no top-10 share ≤ ${e.youngMinTop10Pct}% on tokens under ${e.youngMaxAgeHours}h (bundled wallets), round trip ≤ ${e.maxRoundTripPct}% at the real size, score ≥ ${e.minScore}.
-- **Exit:** only at +${k.targetNetPct}% net (after fees and slippage), checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
+- **Exit:** only at the variant's target (${k.variants.map((v) => `+${v.targetNetPct}%`).join(' or ')} net, after fees and slippage), checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
 - Paper fill ${k.fillDelayMinutes} min after the decision (cancelled if the token doesn't trade for ${k.noFillCancelHours}h). No re-buy of a token within ${k.cooldownHours}h of selling it. A warning is sent if a held token has no trades for ${k.staleAfterHours}h.
 
 Every hourly decision, the reject counts and the candidates that passed the quick checks are logged in [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl).

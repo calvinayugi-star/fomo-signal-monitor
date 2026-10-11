@@ -74,19 +74,25 @@ Telegram messages are marked PAPER MODE. Settings are under `compounder` in [con
 **Rules v2 (since 2026-10-10).** Start with $100. Buy a token **before it spikes** with 100% of the bankroll, **hold it with no
 stop loss and no time limit until it is +20% net** (after fees and slippage), sell, and immediately look for the next one.
 
+**Two variants run side by side** (`compounder.variants`): a **+20%** and a **+10%** sell target, each with its own $100 run and bankroll,
+identical entry rules and the same hourly candidates (API results are shared, so the second variant adds almost no calls).
+The +10% run was added on 2026-10-11 as a copy of the +20% run (same start, same open Fartcoin position, re-checked against +10% from the fill),
+since with identical rules it would have made the same decisions until then. COMPOUNDER.md opens with a side-by-side table, and every
+Telegram message is labelled COMPOUNDER +20% or COMPOUNDER +10%.
+
 - **Lists:** Graduated tokens (graduated within 72h) are preferred (+10 score); Trending-only tokens need a much stronger setup (−15).
 - **Entry (hourly), "before the spike":** the price is still quiet (1h −5% to +15%, 6h −15% to +100%, 15 min −5% to +12%, 5 min ≤ +8%)
   while demand builds (last hour's volume ≥ 1.5× the hours before, last 15 min ≥ 1.2× the hour's average, buys/sells 1.15–5 over 1h and ≥ 1 over 6h,
   liquidity not shrinking). Same quality bar as the monitor: liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, safety checks,
   round trip ≤ 4% at the real size. New: tokens under 72h whose top 10 wallets hold ≤ 8% are rejected (7 of 9 such alerts went to near zero).
   The score rewards volume acceleration, buying pressure and liquidity growth, not price already gained.
-- **Exit:** only at +20% net, checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
+- **Exit:** only at the variant's target (+20% or +10% net), checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
   If a held token has no trades for 24h a warning is sent (it may be dead), but it stays held.
 - **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
   is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the
   candidates that passed the quick checks. [COMPOUNDER.md](COMPOUNDER.md) shows the bankroll, the open position (value, best/worst, time held)
   and every completed position.
-- **Telegram:** a BUY alert, a SOLD report at +20%, a stale-token warning, and one line in the 8 AM daily summary.
+- **Telegram:** a BUY alert, a SOLD report at the target, a stale-token warning, and one line in the 8 AM daily summary.
 
 **Risk of this design.** With no stop, a token that collapses before reaching +20% is held indefinitely and the whole bankroll is tied up in it.
 In the 2026-10 data, 31 of 45 Graduated-only tokens (69%) reached +20% net within 24h of being flagged, and 12 of the other 14 went to near zero.

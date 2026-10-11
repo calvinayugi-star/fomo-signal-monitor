@@ -1,7 +1,8 @@
 // FOMO Compounder v2 (paper mode, since 2026-10-10): one position at a time, 100% of the bankroll.
 // Goal: buy a token BEFORE it spikes (volume and buying building while the price is still flat),
-// hold it with no stop and no time limit until it is +targetNetPct net (+50%), sell, and look for the next one.
-// Graduated tokens are preferred over Trending ones. Runs inside the hourly monitor job:
+// hold it with no stop and no time limit until it is +targetNetPct net, sell, and look for the next one.
+// Graduated tokens are preferred over Trending ones. Several variants (config compounder.variants, e.g. +20% and +10%)
+// run side by side with the same rules and the same hourly candidates; each has its own run and bankroll. Runs inside the hourly monitor job:
 //   settle the open position on 1-minute candles -> screen for pre-spike setups -> BUY / HOLD / NO TRADE.
 // Records: data/compounder-run.json (ledger, never deleted; the v1 October run stays in it),
 // data/compounder-hourly.jsonl (every hourly decision and the candidates that passed the cheap checks), COMPOUNDER.md.
@@ -120,7 +121,21 @@ function preScore(r, e) {
   );
 }
 
-async function screenPreSpike({ rows, sizeUsd, cfg, nowMs, log }) {
+// API results shared by all variants within one hourly run, so running several variants doesn't multiply calls.
+function makeCache(cfg, nowMs) {
+  const memo = new Map();
+  const once = (key, fn) => {
+    if (!memo.has(key)) memo.set(key, fn().catch((err) => (memo.delete(key), Promise.reject(err))));
+    return memo.get(key);
+  };
+  return {
+    fiveMinuteStats: (r) => once(`5m|${r.mint}`, () => fiveMinuteStats(r.pairAddress, r.mint, nowMs)),
+    safetyCheck: (r) => once(`safety|${r.mint}`, () => safetyCheck(r.mint, cfg)),
+    costCheck: (r, usd) => once(`cost|${r.mint}|${Math.round(usd)}`, () => costCheck(r.mint, cfg, usd)),
+  };
+}
+
+async function screenPreSpike({ rows, sizeUsd, cfg, cache, log }) {
   const e = cfg.compounder.entry;
   const open = rows.filter((r) => !r.reason);
   for (const r of open) r.score = round(preScore(r, e), 1);
@@ -133,7 +148,7 @@ async function screenPreSpike({ rows, sizeUsd, cfg, nowMs, log }) {
       continue;
     }
     try {
-      const s = await fiveMinuteStats(r.pairAddress, r.mint, nowMs);
+      const s = await cache.fiveMinuteStats(r);
       if (!s) {
         r.reason = 'under 1h of 5-min candles';
         continue;
@@ -166,7 +181,7 @@ async function screenPreSpike({ rows, sizeUsd, cfg, nowMs, log }) {
       continue;
     }
     try {
-      const safety = await safetyCheck(r.mint, cfg);
+      const safety = await cache.safetyCheck(r);
       if (!safety.ok) {
         Object.assign(r, { reason: safety.reason, unsafe: true });
         continue;
@@ -178,7 +193,7 @@ async function screenPreSpike({ rows, sizeUsd, cfg, nowMs, log }) {
         Object.assign(r, { reason: 'holder spread suspiciously even (likely bundled wallets)', unsafe: true });
         continue;
       }
-      const cost = await costCheck(r.mint, cfg, sizeUsd);
+      const cost = await cache.costCheck(r, sizeUsd);
       if (!cost.ok) {
         Object.assign(r, { reason: cost.reason, unsafe: true });
         continue;
@@ -199,13 +214,14 @@ async function screenPreSpike({ rows, sizeUsd, cfg, nowMs, log }) {
 
 // --- run lifecycle -------------------------------------------------------------------------------
 
-function newRun(now, k, time) {
+function newRun(now, k, time, v) {
   return {
-    id: `v2-${time.localDate(now)}`,
+    id: `v2-${v.id}-${time.localDate(now)}`,
     rules: k.rules,
+    variant: v.id,
     mode: 'paper',
     seedUsd: k.seedUsd,
-    targetNetPct: k.targetNetPct,
+    targetNetPct: v.targetNetPct,
     startedAt: now.toISOString(),
     endsAt: null, // open-ended: positions are never sold below the target
     status: 'active',
@@ -235,7 +251,7 @@ async function settle(run, cfg, now) {
   }
   const after = candles.filter((c) => c[0] > pos.fill.fillCandleT);
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: pos.fill.rawPrice, dexRoundTripPct: pos.dexRoundTripPct, costs: cfg.costs });
-  const res = replayTarget(p, after, k.targetNetPct, cfg.costs);
+  const res = replayTarget(p, after, run.targetNetPct, cfg.costs);
   if (Number.isFinite(res.high)) pos.peakNetPct = round(Math.max(pos.peakNetPct ?? -100, netAt(p, res.high, cfg.costs).netPct));
   if (Number.isFinite(res.low)) pos.worstNetPct = round(Math.min(pos.worstNetPct ?? 0, netAt(p, res.low, cfg.costs).netPct));
   if (res.closed) return res;
@@ -301,18 +317,19 @@ function finishRun(run, status, now, note) {
 // --- messages ------------------------------------------------------------------------------------
 
 const PAPER = '📝 <b>PAPER MODE: tracking only, do not trade</b>';
+const tag = (run) => `COMPOUNDER +${run.targetNetPct}%`;
 
 function buyMessage(run, r, pos, k, cfg, time, now) {
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: r.priceUsd, dexRoundTripPct: r.dexRoundTripPct, costs: cfg.costs });
-  const targetPx = priceForNet(p, k.targetNetPct, cfg.costs);
+  const targetPx = priceForNet(p, run.targetNetPct, cfg.costs);
   return `${PAPER}
-🔁 <b>COMPOUNDER: BUY $${esc(r.symbol)}</b> (${esc(listOf(r.sources))})
+🔁 <b>${tag(run)}: BUY $${esc(r.symbol)}</b> (${esc(listOf(r.sources))})
 <code>${r.mint}</code>
 
 <b>TIME:</b> ${time.when(now)}
 <b>BANKROLL:</b> ${usd(bankrollOf(run))} · <b>POSITION:</b> ${usd(pos.sizeUsd)} (100%)
 <b>ENTRY:</b> ~$${price(r.priceUsd)} (paper fill ${k.fillDelayMinutes} min after this alert)
-<b>SELL TARGET:</b> +${k.targetNetPct}% net ≈ $${price(targetPx)} (${signed(pctChange(targetPx, r.priceUsd), 0)} in price) → ~${usd(pos.sizeUsd * (1 + k.targetNetPct / 100))}
+<b>SELL TARGET:</b> +${run.targetNetPct}% net ≈ $${price(targetPx)} (${signed(pctChange(targetPx, r.priceUsd), 0)} in price) → ~${usd(pos.sizeUsd * (1 + run.targetNetPct / 100))}
 <b>STOP:</b> none. Held until the target is reached, however long that takes.
 
 <b>WHY (pre-spike setup):</b>
@@ -328,9 +345,9 @@ ${r.risks?.length ? `\nRisks: ${r.risks.map(esc).join('; ')}; memecoins can go t
 function tradeReport(run, t) {
   const s = runStats(run);
   if (t.noFill)
-    return `${PAPER}\n🔁 <b>COMPOUNDER: $${esc(t.symbol)} not filled</b>: no trades after the decision. Bankroll unchanged at ${usd(t.newBankroll)}.`;
+    return `${PAPER}\n🔁 <b>${tag(run)}: $${esc(t.symbol)} not filled</b>: no trades after the decision. Bankroll unchanged at ${usd(t.newBankroll)}.`;
   return `${PAPER}
-✅ <b>COMPOUNDER: SOLD $${esc(t.symbol)} at the +${run.targetNetPct}% target</b> after ${t.holdHours}h
+✅ <b>${tag(run)}: SOLD $${esc(t.symbol)} at the +${run.targetNetPct}% target</b> after ${t.holdHours}h
 
 Entry → exit: $${price(t.entryPriceUsd)} → $${price(t.exitPriceUsd)} (${signed(t.grossPct)} gross)
 Fees/slippage: ${usd(t.costsUsd)}
@@ -340,10 +357,11 @@ Bankroll: ${usd(t.prevBankroll)} → <b>${usd(t.newBankroll)}</b> (${signed((t.n
 Completed: ${s.trades} · Searching for the next pre-spike token now.`;
 }
 
-function staleMessage(pos, k, time) {
+function staleMessage(run, k, time) {
+  const pos = run.position;
   return `${PAPER}
-⚠️ <b>COMPOUNDER: $${esc(pos.symbol)} has had no trades for ${k.staleAfterHours}h+</b> (last trade ${time.when(new Date(pos.lastTradeAt ?? pos.fill.at))}).
-It may be dead (liquidity pulled). Per the rules it is still held until +${k.targetNetPct}%; last mark ${signed(pos.mark?.netPct)}.`;
+⚠️ <b>${tag(run)}: $${esc(pos.symbol)} has had no trades for ${k.staleAfterHours}h+</b> (last trade ${time.when(new Date(pos.lastTradeAt ?? pos.fill.at))}).
+It may be dead (liquidity pulled). Per the rules it is still held until +${run.targetNetPct}%; last mark ${signed(pos.mark?.netPct)}.`;
 }
 
 // --- hourly entry point --------------------------------------------------------------------------
@@ -361,7 +379,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
     /* first run */
   }
   const send = (html) => sendTelegram(html, { dryRun });
-  const hourly = { t: now.toISOString(), rules: k.rules, errors: [] };
+  const hourly = { t: now.toISOString(), rules: k.rules, errors: [], variants: {} };
 
   // 1. A run under older rules is closed (kept in the ledger) before the current rules start.
   for (const old of ledger.runs.filter((r) => r.status === 'active' && r.rules !== k.rules)) {
@@ -373,100 +391,129 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
     }
     finishRun(old, 'ended', now, `rules changed to ${k.rules} on ${time.localDate(now)}`);
   }
-  let run = ledger.runs.find((r) => r.status === 'active' && r.rules === k.rules);
-  if (!run && time.localDate(now) >= k.startDate && !ledger.runs.some((r) => r.rules === k.rules)) {
-    run = newRun(now, k, time);
-    ledger.runs.push(run);
-    await send(`${PAPER}\n🔁 <b>COMPOUNDER ${k.rules} STARTED</b> with $${k.seedUsd}: buy before the spike, hold until +${k.targetNetPct}% net, repeat. Graduated tokens preferred.`);
-  }
-  // A target change in config applies to the run (and any open position) from this hour on.
-  if (run && run.targetNetPct !== k.targetNetPct) {
-    (run.targetChanges ??= []).push({ at: now.toISOString(), from: run.targetNetPct, to: k.targetNetPct });
-    run.targetNetPct = k.targetNetPct;
+
+  // 2. One active run per variant. The single v2 run from before variants existed becomes the variant with its target.
+  const v2 = () => ledger.runs.filter((r) => r.rules === k.rules);
+  for (const r of v2()) if (!r.variant) r.variant = k.variants.find((v) => v.targetNetPct === r.targetNetPct)?.id ?? 't20';
+  const runs = [];
+  for (const v of k.variants) {
+    let run = v2().find((r) => r.status === 'active' && r.variant === v.id);
+    if (!run && time.localDate(now) >= k.startDate && !v2().some((r) => r.variant === v.id)) {
+      // A variant added later copies a sibling run that has no completed trades yet (same start, same open position):
+      // with identical rules it would have made exactly the same decisions so far. Otherwise it starts fresh now.
+      const twin = v2().find((r) => r.status === 'active' && r.trades.length === 0);
+      run = newRun(now, k, time, v);
+      if (twin) {
+        Object.assign(run, { startedAt: twin.startedAt, cash: twin.cash, copiedFrom: twin.id });
+        if (twin.position) {
+          const { mark, peakNetPct, worstNetPct, lastTradeAt, stale, targetPriceUsd, ...pos } = structuredClone(twin.position);
+          if (pos.fill) pos.checkedThrough = pos.fill.fillCandleT; // re-checked from the fill against this variant's target
+          run.position = pos;
+        }
+      }
+      ledger.runs.push(run);
+      const same = twin ? ` (same start${twin.position ? ` and same open position, $${esc(twin.position.symbol)},` : ''} as ${esc(twin.id)})` : '';
+      await send(`${PAPER}\n🔁 <b>${tag(run)} STARTED</b> with $${k.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net, repeat.`);
+    }
+    if (!run) continue;
+    if (run.targetNetPct !== v.targetNetPct) {
+      // A target change in config applies to the run (and any open position) from this hour on.
+      (run.targetChanges ??= []).push({ at: now.toISOString(), from: run.targetNetPct, to: v.targetNetPct });
+      run.targetNetPct = v.targetNetPct;
+    }
+    runs.push(run);
   }
 
-  // 2. Settle the open position: it closes only at the target (or if it never filled).
-  if (run?.position) {
+  // 3. Per variant: settle the open position (it closes only at its target), or screen for a new one when in cash.
+  const cache = makeCache(cfg, now.getTime());
+  let allPairs = null;
+  for (const run of runs) {
+    const h = { errors: [] };
+    hourly.variants[run.variant] = h;
+    if (run.position) {
+      try {
+        const wasStale = run.position.stale;
+        const res = await settle(run, cfg, now);
+        if (res?.closed || res?.noFill) {
+          const t = recordClose(run, res, now);
+          h.exit = { symbol: t.symbol, reason: t.reason, netPct: t.netPct, netUsd: t.netUsd, holdHours: t.holdHours };
+          await send(tradeReport(run, t));
+        } else if (run.position.stale && !wasStale) {
+          await send(staleMessage(run, k, time));
+        }
+      } catch (err) {
+        h.errors.push(`settle: ${err.message}`);
+      }
+    }
+
+    const rows = [];
+    const rejects = {};
     try {
-      const wasStale = run.position.stale;
-      const res = await settle(run, cfg, now);
-      if (res?.closed || res?.noFill) {
-        const t = recordClose(run, res, now);
-        hourly.exit = { symbol: t.symbol, reason: t.reason, netPct: t.netPct, netUsd: t.netUsd, holdHours: t.holdHours };
-        await send(tradeReport(run, t));
-      } else if (run.position.stale && !wasStale) {
-        await send(staleMessage(run.position, k, time));
+      if (run.position) h.decision = 'HOLD';
+      else {
+        if (!candidates) candidates = await collectCandidates(cfg, log);
+        if (!allPairs) {
+          const missing = candidates.filter((c) => !pairs?.has(c.mint)).map((c) => c.mint);
+          allPairs = new Map([...(pairs ?? []), ...(missing.length ? await dexPairs(missing, log) : [])]);
+        }
+        const cooldownMs = k.cooldownHours * HOUR;
+        const blocked = new Set(run.trades.filter((t) => now - Date.parse(t.exitAt ?? t.decidedAt) < cooldownMs).map((t) => t.mint));
+        const sizeUsd = run.cash;
+        for (const c of candidates) {
+          const pair = allPairs.get(c.mint);
+          if (!pair) continue;
+          const r = entryRow(c, pair, now.getTime(), snapshots);
+          const why = entryFailure(r, sizeUsd, blocked, e);
+          if (why) rejects[why] = (rejects[why] ?? 0) + 1;
+          else rows.push(r);
+        }
+        const best = await screenPreSpike({ rows, sizeUsd, cfg, cache, log: h });
+        if (best) {
+          run.position = {
+            symbol: best.symbol,
+            mint: best.mint,
+            pairAddress: best.pairAddress,
+            list: listOf(best.sources),
+            decidedAt: now.toISOString(),
+            alertPriceUsd: best.priceUsd,
+            sizeUsd: round(sizeUsd, 4),
+            dexRoundTripPct: best.dexRoundTripPct,
+            roundTripPct: best.roundTripPct,
+            score: best.score,
+            entry: { chgH1: best.chgH1, chgH6: best.chgH6, chg15: best.chg15, accel: best.accel, volTrend: best.volTrend, ratioH1: best.ratioH1, ageH: best.ageH, top10Pct: best.top10Pct },
+          };
+          run.cash = round(run.cash - sizeUsd, 4);
+          h.decision = 'BUY';
+          h.best = best.symbol;
+          await send(buyMessage(run, best, run.position, k, cfg, time, now));
+        } else {
+          h.decision = 'NO TRADE (cash)';
+        }
       }
     } catch (err) {
-      hourly.errors.push(`settle: ${err.message}`);
+      h.errors.push(`screen: ${err.message}`);
+      h.decision ??= 'NO TRADE (error)';
     }
+    Object.assign(h, {
+      run: run.id,
+      bankroll: round(bankrollOf(run)),
+      position: run.position ? { symbol: run.position.symbol, mark: run.position.mark?.netPct ?? null, stale: !!run.position.stale } : null,
+      rejects,
+      candidates: rows,
+    });
+    hourly.errors.push(...h.errors.map((x) => `${run.variant} ${x}`));
   }
+  if (!runs.length) hourly.decision = 'IDLE (no active run)';
 
-  // 3. Screen (only when in cash) and decide.
-  let rows = [];
-  const rejects = {};
-  try {
-    if (!run) hourly.decision = 'IDLE (no active run)';
-    else if (run.position) hourly.decision = 'HOLD';
-    else {
-      if (!candidates) candidates = await collectCandidates(cfg, log);
-      const missing = candidates.filter((c) => !pairs?.has(c.mint)).map((c) => c.mint);
-      const allPairs = new Map([...(pairs ?? []), ...(missing.length ? await dexPairs(missing, log) : [])]);
-      const cooldownMs = k.cooldownHours * HOUR;
-      const blocked = new Set(run.trades.filter((t) => now - Date.parse(t.exitAt ?? t.decidedAt) < cooldownMs).map((t) => t.mint));
-      const sizeUsd = run.cash;
-      for (const c of candidates) {
-        const pair = allPairs.get(c.mint);
-        if (!pair) continue;
-        const r = entryRow(c, pair, now.getTime(), snapshots);
-        const why = entryFailure(r, sizeUsd, blocked, e);
-        if (why) rejects[why] = (rejects[why] ?? 0) + 1;
-        else rows.push(r);
-      }
-      const best = await screenPreSpike({ rows, sizeUsd, cfg, nowMs: now.getTime(), log: hourly });
-      if (best) {
-        run.position = {
-          symbol: best.symbol,
-          mint: best.mint,
-          pairAddress: best.pairAddress,
-          list: listOf(best.sources),
-          decidedAt: now.toISOString(),
-          alertPriceUsd: best.priceUsd,
-          sizeUsd: round(sizeUsd, 4),
-          dexRoundTripPct: best.dexRoundTripPct,
-          roundTripPct: best.roundTripPct,
-          score: best.score,
-          entry: { chgH1: best.chgH1, chgH6: best.chgH6, chg15: best.chg15, accel: best.accel, volTrend: best.volTrend, ratioH1: best.ratioH1, ageH: best.ageH, top10Pct: best.top10Pct },
-        };
-        run.cash = round(run.cash - sizeUsd, 4);
-        hourly.decision = 'BUY';
-        hourly.best = best.symbol;
-        await send(buyMessage(run, best, run.position, k, cfg, time, now));
-      } else {
-        hourly.decision = 'NO TRADE (cash)';
-      }
-    }
-  } catch (err) {
-    hourly.errors.push(`screen: ${err.message}`);
-    hourly.decision ??= 'NO TRADE (error)';
-  }
-
-  Object.assign(hourly, {
-    run: run?.id ?? null,
-    bankroll: run ? round(bankrollOf(run)) : null,
-    position: run?.position ? { symbol: run.position.symbol, mark: run.position.mark?.netPct ?? null, stale: !!run.position.stale } : null,
-    rejects,
-    candidates: rows,
-  });
-  log.compounder = { decision: hourly.decision, bankroll: hourly.bankroll, logged: rows.length, errors: hourly.errors.length };
+  log.compounder = Object.fromEntries(Object.entries(hourly.variants).map(([id, h]) => [id, { decision: h.decision, bankroll: h.bankroll }]));
   log.errors.push(...hourly.errors.map((x) => `compounder ${x}`));
-  console.log(`Compounder: ${hourly.decision}; bankroll ${hourly.bankroll}; ${rows.length} candidates passed the cheap checks`);
+  for (const [id, h] of Object.entries(hourly.variants))
+    console.log(`Compounder ${id}: ${h.decision}; bankroll ${h.bankroll}; ${h.candidates.length} candidates passed the cheap checks`);
 
-  const shown = run ?? ledger.runs.at(-1);
   if (!dryRun) {
     fs.writeFileSync(ledgerFile, JSON.stringify(ledger, null, 1) + '\n');
     fs.appendFileSync(path.join(dataDir, 'compounder-hourly.jsonl'), JSON.stringify(hourly) + '\n');
     fs.writeFileSync(reportPath, compounderMarkdown(ledger, cfg, now, time));
   }
-  return summaryLine(shown, now, time);
+  return (runs.length ? runs : ledger.runs.slice(-1)).map((r) => summaryLine(r, now)).join('\n');
 }
