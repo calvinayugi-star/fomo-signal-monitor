@@ -397,21 +397,22 @@
      "fillCandleT": 1791702000,
      "at": "2026-10-11T07:03:32.752Z"
     },
-    "checkedThrough": 1791755880,
+    "checkedThrough": 1791759240,
     "peakNetPct": 4.93,
     "worstNetPct": -2.13,
-    "lastTradeAt": "2026-10-11T21:58:00.000Z",
+    "lastTradeAt": "2026-10-11T22:54:00.000Z",
     "mark": {
-     "at": "2026-10-11T21:58:00.000Z",
-     "price": 0.1687937277591322,
-     "netPct": 1.44,
-     "proceeds": 101.44
+     "at": "2026-10-11T22:54:00.000Z",
+     "price": 0.16841763502544324,
+     "netPct": 1.22,
+     "proceeds": 101.22
     },
     "targetPriceUsd": 0.19967274255052042,
     "stale": false
    },
    "trades": [],
-   "variant": "t20"
+   "variant": "t20",
+   "per": "trade"
   },
   {
    "id": "v2-t10-2026-10-11",
@@ -450,21 +451,138 @@
      "fillCandleT": 1791702000,
      "at": "2026-10-11T07:03:32.752Z"
     },
-    "checkedThrough": 1791755880,
+    "checkedThrough": 1791759240,
     "peakNetPct": 4.93,
     "worstNetPct": -2.13,
-    "lastTradeAt": "2026-10-11T21:58:00.000Z",
+    "lastTradeAt": "2026-10-11T22:54:00.000Z",
     "mark": {
-     "at": "2026-10-11T21:58:00.000Z",
-     "price": 0.1687937277591322,
-     "netPct": 1.44,
-     "proceeds": 101.44
+     "at": "2026-10-11T22:54:00.000Z",
+     "price": 0.16841763502544324,
+     "netPct": 1.22,
+     "proceeds": 101.22
     },
     "targetPriceUsd": 0.18303334733797705,
     "stale": false
    },
    "trades": [],
-   "copiedFrom": "v2-2026-10-10"
+   "copiedFrom": "v2-2026-10-10",
+   "per": "trade"
+  },
+  {
+   "id": "v2-d20-2026-10-11",
+   "rules": "v2",
+   "variant": "d20",
+   "per": "day",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetNetPct": 20,
+   "startedAt": "2026-10-10T17:00:35.602Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "Fartcoin ",
+    "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+    "pairAddress": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+    "list": "Both",
+    "decidedAt": "2026-10-11T07:00:32.752Z",
+    "alertPriceUsd": 0.1643,
+    "sizeUsd": 100,
+    "dexRoundTripPct": 0.22,
+    "roundTripPct": 1.21,
+    "score": 84.6,
+    "entry": {
+     "chgH1": 1.24,
+     "chgH6": 1.44,
+     "chg15": 0.27,
+     "accel": 5.73,
+     "volTrend": 1.64,
+     "ratioH1": 2.22,
+     "ageH": 17352.8,
+     "top10Pct": 36.6
+    },
+    "fill": {
+     "rawPrice": 0.1643721554922427,
+     "fillCandleT": 1791702000,
+     "at": "2026-10-11T07:03:32.752Z"
+    },
+    "checkedThrough": 1791759240,
+    "peakNetPct": 4.93,
+    "worstNetPct": -2.13,
+    "lastTradeAt": "2026-10-11T22:54:00.000Z",
+    "mark": {
+     "at": "2026-10-11T22:54:00.000Z",
+     "price": 0.16841763502544324,
+     "netPct": 1.22,
+     "proceeds": 101.22
+    },
+    "targetPriceUsd": 0.19967274255052042,
+    "stale": false
+   },
+   "trades": [],
+   "copiedFrom": "v2-2026-10-10",
+   "day": {
+    "date": "2026-10-11",
+    "startBankroll": 100
+   }
+  },
+  {
+   "id": "v2-d10-2026-10-11",
+   "rules": "v2",
+   "variant": "d10",
+   "per": "day",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetNetPct": 10,
+   "startedAt": "2026-10-10T17:00:35.602Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "Fartcoin ",
+    "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+    "pairAddress": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+    "list": "Both",
+    "decidedAt": "2026-10-11T07:00:32.752Z",
+    "alertPriceUsd": 0.1643,
+    "sizeUsd": 100,
+    "dexRoundTripPct": 0.22,
+    "roundTripPct": 1.21,
+    "score": 84.6,
+    "entry": {
+     "chgH1": 1.24,
+     "chgH6": 1.44,
+     "chg15": 0.27,
+     "accel": 5.73,
+     "volTrend": 1.64,
+     "ratioH1": 2.22,
+     "ageH": 17352.8,
+     "top10Pct": 36.6
+    },
+    "fill": {
+     "rawPrice": 0.1643721554922427,
+     "fillCandleT": 1791702000,
+     "at": "2026-10-11T07:03:32.752Z"
+    },
+    "checkedThrough": 1791759240,
+    "peakNetPct": 4.93,
+    "worstNetPct": -2.13,
+    "lastTradeAt": "2026-10-11T22:54:00.000Z",
+    "mark": {
+     "at": "2026-10-11T22:54:00.000Z",
+     "price": 0.16841763502544324,
+     "netPct": 1.22,
+     "proceeds": 101.22
+    },
+    "targetPriceUsd": 0.18303334733797705,
+    "stale": false
+   },
+   "trades": [],
+   "copiedFrom": "v2-2026-10-10",
+   "day": {
+    "date": "2026-10-11",
+    "startBankroll": 100
+   }
   }
  ]
 }
