@@ -370,8 +370,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 100,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "Fartcoin ",
+    "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+    "pairAddress": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+    "list": "Both",
+    "decidedAt": "2026-10-11T07:00:32.752Z",
+    "alertPriceUsd": 0.1643,
+    "sizeUsd": 100,
+    "dexRoundTripPct": 0.22,
+    "roundTripPct": 1.21,
+    "score": 84.6,
+    "entry": {
+     "chgH1": 1.24,
+     "chgH6": 1.44,
+     "chg15": 0.27,
+     "accel": 5.73,
+     "volTrend": 1.64,
+     "ratioH1": 2.22,
+     "ageH": 17352.8,
+     "top10Pct": 36.6
+    }
+   },
    "trades": []
   }
  ]
