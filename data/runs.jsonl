@@ -247,3 +247,4 @@
 {"t":"2026-10-11T08:00:24.709Z","errors":[],"closed":[],"closedShadows":0,"candidates":112,"compounder":{"decision":"HOLD","bankroll":98.86,"logged":0,"errors":0}}
 {"t":"2026-10-11T09:00:24.083Z","errors":[],"closed":[],"closedShadows":0,"candidates":107,"compounder":{"decision":"HOLD","bankroll":99.12,"logged":0,"errors":0}}
 {"t":"2026-10-11T10:00:24.993Z","errors":[],"closed":[],"closedShadows":0,"candidates":111,"compounder":{"decision":"HOLD","bankroll":99.48,"logged":0,"errors":0}}
+{"t":"2026-10-11T11:00:25.986Z","errors":[],"closed":[],"closedShadows":3,"candidates":114,"compounder":{"decision":"HOLD","bankroll":98.92,"logged":0,"errors":0}}

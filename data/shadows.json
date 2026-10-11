@@ -4532,14 +4532,26 @@
    "dexRoundTripUsd": 0.2,
    "estimated": true
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.03664,
    "lastSampleAt": "2026-10-11T10:00:25.203Z",
    "bestPriceUsd": 0.07927,
    "worstPriceUsd": 0.02481
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-11T11:00:26.352Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.036786447241559966,
+   "bestPriceUsd": 0.0796533400769764,
+   "worstPriceUsd": 0.02430982699839546,
+   "grossPct": -52.063529786864784,
+   "bestPct": 3.7963774784680604,
+   "worstPct": -68.32183085953159,
+   "costsUsd": 0.9400000000000001,
+   "netUsd": -11.352705957372956,
+   "netPct": -56.76352978686479
+  }
  },
  {
   "id": "2026-10-10T10-SPCX",
@@ -4562,14 +4574,26 @@
    "dexRoundTripUsd": 0.2,
    "estimated": true
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 163.84,
    "lastSampleAt": "2026-10-11T10:00:25.203Z",
    "bestPriceUsd": 163.84,
    "worstPriceUsd": 162.95
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-11T11:00:30.190Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 163.9709754171226,
+   "bestPriceUsd": 167.69070641950373,
+   "worstPriceUsd": 156.45953793486942,
+   "grossPct": 0.6265574821249453,
+   "bestPct": 2.9093012700237786,
+   "worstPct": -3.983100377496518,
+   "costsUsd": 0.9400000000000001,
+   "netUsd": -0.8146885035750119,
+   "netPct": -4.073442517875059
+  }
  },
  {
   "id": "2026-10-10T11-PUMP",
@@ -4592,13 +4616,25 @@
    "dexRoundTripUsd": 0.2,
    "estimated": true
   },
-  "status": "open",
+  "status": "closed",
   "track": {
    "lastPriceUsd": 0.005578,
    "lastSampleAt": "2026-10-11T10:00:25.203Z",
    "bestPriceUsd": 0.005709,
    "worstPriceUsd": 0.005381
   },
-  "result": null
+  "result": {
+   "closedAt": "2026-10-11T11:00:34.672Z",
+   "priceSource": "candles",
+   "exitPriceUsd": 0.005605185182325079,
+   "bestPriceUsd": 0.005754323908879485,
+   "worstPriceUsd": 0.005354012439868268,
+   "grossPct": -0.12143295928226383,
+   "bestPct": 2.5360639500977333,
+   "worstPct": -4.597069852668067,
+   "costsUsd": 0.9400000000000001,
+   "netUsd": -0.9642865918564519,
+   "netPct": -4.82143295928226
+  }
  }
 ]
