@@ -208,3 +208,4 @@
 {"t":"2026-10-11T11:00:43.747Z","rules":"v2","errors":[],"decision":"HOLD","run":"v2-2026-10-10","bankroll":98.92,"position":{"symbol":"Fartcoin ","mark":-1.08,"stale":false},"rejects":{},"candidates":[]}
 {"t":"2026-10-11T12:00:30.205Z","rules":"v2","errors":[],"decision":"HOLD","run":"v2-2026-10-10","bankroll":98.85,"position":{"symbol":"Fartcoin ","mark":-1.15,"stale":false},"rejects":{},"candidates":[]}
 {"t":"2026-10-11T13:00:32.773Z","rules":"v2","errors":[],"decision":"HOLD","run":"v2-2026-10-10","bankroll":99.18,"position":{"symbol":"Fartcoin ","mark":-0.82,"stale":false},"rejects":{},"candidates":[]}
+{"t":"2026-10-11T14:00:30.175Z","rules":"v2","errors":[],"decision":"HOLD","run":"v2-2026-10-10","bankroll":98.13,"position":{"symbol":"Fartcoin ","mark":-1.87,"stale":false},"rejects":{},"candidates":[]}
