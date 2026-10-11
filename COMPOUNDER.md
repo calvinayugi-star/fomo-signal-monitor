@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sun, Oct 11, 11:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Sun, Oct 11, 12:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it is +20% net**, sell, and look for the next one. Graduated tokens are preferred.
@@ -9,8 +9,8 @@ Updated Sun, Oct 11, 11:00 EDT. Paper trades only: nothing is bought or sold.
 
 | | |
 |---|---|
-| Start → now | $100 → **$98.92** (-1.1%) |
-| Running for | 0.9 days (since Oct 10, 13:00) |
+| Start → now | $100 → **$101.11** (+1.1%) |
+| Running for | 1.0 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 0 |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
@@ -24,9 +24,9 @@ Updated Sun, Oct 11, 11:00 EDT. Paper trades only: nothing is bought or sold.
 | Token | $Fartcoin  (Both) · [DexScreener](https://dexscreener.com/solana/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw) |
 | Bought | Oct 11, 03:00 · $100.00 at $0.1644 |
 | Sell target | $0.1997 (+20% net) |
-| Current value | $98.92 (-1.1% net, at Oct 11, 10:54) |
-| Best / worst while held | +0.1% / -2.1% |
-| Held for | 7.9h |
+| Current value | $101.11 (+1.1% net, at Oct 11, 11:59) |
+| Best / worst while held | +1.5% / -2.1% |
+| Held for | 8.9h |
 
 ### Completed positions (newest first)
 
