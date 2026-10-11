@@ -250,12 +250,20 @@ async function settle(run, cfg, now) {
     pos.fill = { rawPrice: fill.rawPrice, fillCandleT: fill.fillCandleT, at: new Date(fillAt).toISOString() };
     pos.checkedThrough = fill.fillCandleT;
   }
-  const after = candles.filter((c) => c[0] > pos.fill.fillCandleT);
+  // A one-off exit the user asked for (config oneOffExits) applies only to the matching position: if the target
+  // isn't reached within afterHours of the fill, it is sold at the last price before that time.
+  const oneOff = (k.oneOffExits ?? []).find((x) => x.mint === pos.mint && x.decidedAt === pos.decidedAt);
+  const closeAtMs = oneOff ? Date.parse(pos.fill.at) + oneOff.afterHours * HOUR : Infinity;
+  const after = candles.filter((c) => c[0] > pos.fill.fillCandleT && c[0] * 1000 < closeAtMs);
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: pos.fill.rawPrice, dexRoundTripPct: pos.dexRoundTripPct, costs: cfg.costs });
   const res = replayTarget(p, after, run.targetNetPct, cfg.costs);
   if (Number.isFinite(res.high)) pos.peakNetPct = round(Math.max(pos.peakNetPct ?? -100, netAt(p, res.high, cfg.costs).netPct));
   if (Number.isFinite(res.low)) pos.worstNetPct = round(Math.min(pos.worstNetPct ?? 0, netAt(p, res.low, cfg.costs).netPct));
   if (res.closed) return res;
+  if (now >= closeAtMs) {
+    const rawExit = res.lastPrice ?? pos.mark?.price ?? pos.fill.rawPrice;
+    return { closed: true, rawExit, exitAt: closeAtMs, reason: `one-off ${oneOff.afterHours}h exit (target not reached)`, targetHit: false, ...netAt(p, rawExit, cfg.costs) };
+  }
 
   if (after.length) {
     pos.checkedThrough = after.at(-1)[0];
@@ -301,7 +309,7 @@ function recordClose(run, res, now) {
       netUsd: round(res.netUsd, 4),
       netPct: round(res.netPct),
       worstNetPct: pos.worstNetPct ?? null,
-      targetHit: true,
+      targetHit: res.targetHit !== false,
       newBankroll: round(run.cash + res.proceeds, 4),
     };
   }
@@ -348,11 +356,11 @@ function tradeReport(run, t) {
   if (t.noFill)
     return `${PAPER}\n🔁 <b>${tag(run)}: $${esc(t.symbol)} not filled</b>: no trades after the decision. Bankroll unchanged at ${usd(t.newBankroll)}.`;
   return `${PAPER}
-✅ <b>${tag(run)}: SOLD $${esc(t.symbol)} at the +${run.targetNetPct}% target</b> after ${t.holdHours}h
+${t.targetHit ? `✅ <b>${tag(run)}: SOLD $${esc(t.symbol)} at the +${run.targetNetPct}% target</b>` : `⏹ <b>${tag(run)}: SOLD $${esc(t.symbol)}</b>: ${esc(t.reason)},`} after ${t.holdHours}h
 
 Entry → exit: $${price(t.entryPriceUsd)} → $${price(t.exitPriceUsd)} (${signed(t.grossPct)} gross)
 Fees/slippage: ${usd(t.costsUsd)}
-Profit: <b>+${usd(t.netUsd)}</b> (${signed(t.netPct)} net)
+${t.netUsd >= 0 ? 'Profit' : 'Loss'}: <b>${t.netUsd >= 0 ? '+' : ''}${usd(t.netUsd)}</b> (${signed(t.netPct)} net)
 Worst point while held: ${signed(t.worstNetPct)}
 Bankroll: ${usd(t.prevBankroll)} → <b>${usd(t.newBankroll)}</b> (${signed((t.newBankroll / run.seedUsd - 1) * 100, 0)} since the $${run.seedUsd} start)
 Completed: ${s.trades} · ${run.per === 'day' ? "Searching again unless today's goal is met." : 'Searching for the next pre-spike token now.'}`;

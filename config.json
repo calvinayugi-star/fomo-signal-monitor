@@ -75,6 +75,14 @@
     "noFillCancelHours": 6,
     "cooldownHours": 24,
     "staleAfterHours": 24,
+    "oneOffExits": [
+      {
+        "note": "User request 2026-10-11: close the Fartcoin position bought 2026-10-11 07:00 UTC in every run if no target is hit within 24h of the fill; applies only to that position.",
+        "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "decidedAt": "2026-10-11T07:00:32.752Z",
+        "afterHours": 24
+      }
+    ],
     "entry": {
       "graduatedMaxAgeHours": 72,
       "minPairAgeHours": 2,

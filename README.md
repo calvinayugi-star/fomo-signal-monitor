@@ -97,6 +97,8 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   The score rewards volume acceleration, buying pressure and liquidity growth, not price already gained.
 - **Exit:** only at the variant's target (+20% or +10% net), checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
   If a held token has no trades for 24h a warning is sent (it may be dead), but it stays held.
+  One-off exception (user request, 2026-10-11): `compounder.oneOffExits` closes the Fartcoin position bought 2026-10-11 07:00 UTC in all runs
+  if no target is hit within 24h of the fill (2026-10-12 07:03 UTC), at the last price before then. It matches only that position.
 - **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
   is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the
   candidates that passed the quick checks. [COMPOUNDER.md](COMPOUNDER.md) shows the bankroll, the open position (value, best/worst, time held)

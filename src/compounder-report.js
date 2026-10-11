@@ -21,8 +21,10 @@ export function runStats(run) {
     losses: trades.length - wins.length,
     winRate: trades.length ? (wins.length / trades.length) * 100 : null,
     avgNetPct: avg(trades.map((t) => t.netPct)),
-    avgHoldHours: avg(trades.filter((t) => t.holdHours != null).map((t) => t.holdHours)),
-    avgWorstNetPct: avg(trades.filter((t) => t.worstNetPct != null).map((t) => t.worstNetPct)),
+    targetHits: trades.filter((t) => t.targetHit).length,
+    early: trades.filter((t) => t.targetHit === false && t.holdHours != null).length, // one-off exits before the target
+    avgHoldHours: avg(trades.filter((t) => t.targetHit && t.holdHours != null).map((t) => t.holdHours)),
+    avgWorstNetPct: avg(trades.filter((t) => t.targetHit && t.worstNetPct != null).map((t) => t.worstNetPct)),
     netUsd: trades.reduce((s, t) => s + t.netUsd, 0),
     costsUsd: trades.reduce((s, t) => s + (t.costsUsd ?? 0), 0),
   };
@@ -56,7 +58,7 @@ export function summaryLine(run, now) {
     : paused(run)
       ? 'daily goal met, paused until midnight'
       : 'in cash, searching';
-  return `🔁 <b>Compounder ${label(run)} (paper):</b> $${run.seedUsd} → ${usd(b)} · ${s.trades} sold · ${state}`;
+  return `🔁 <b>Compounder ${label(run)} (paper):</b> $${run.seedUsd} → ${usd(b)} · ${s.targetHits} sold at target${s.early ? `, ${s.early} closed early` : ''} · ${state}`;
 }
 
 function positionSection(run, now, time) {
@@ -85,7 +87,7 @@ ${row('', ({ r }) => `**${label(r)}**`)}
 |---|${cols.map(() => '---|').join('')}
 ${row('Bankroll now (open position at its last mark)', ({ b }) => `**${usd(b)}**`)}
 ${row('Return since the $100 start', ({ r, b }) => sf((b / r.seedUsd - 1) * 100))}
-${row('Positions sold at the target', ({ s }) => s.trades)}
+${row('Positions sold at the target', ({ s }) => `${s.targetHits}${s.early ? ` (+${s.early} closed early)` : ''}`)}
 ${row('Average time to reach the target', ({ s }) => hours(s.avgHoldHours))}
 ${row('Average worst point before the target', ({ s }) => sf(s.avgWorstNetPct))}
 ${row('Profit banked / costs', ({ s }) => `${usd(s.netUsd)} / ${usd(s.costsUsd)}`)}
@@ -116,7 +118,7 @@ function v2Section(run, cfg, now, time) {
 |---|---|
 | Start → now | $${run.seedUsd} → **${usd(b)}** (${sf((b / run.seedUsd - 1) * 100)}) |
 | Running for | ${f(days)} days (since ${time.short(new Date(run.startedAt))})${run.copiedFrom ? `; started as a copy of ${run.copiedFrom}` : ''} |
-| Positions sold at +${run.targetNetPct}% | ${s.trades} |
+| Positions sold at +${run.targetNetPct}% | ${s.targetHits}${s.early ? ` (+${s.early} closed early by a one-off exit)` : ''} |
 | Average time to reach the target | ${hours(s.avgHoldHours)} |
 | Average worst point before the target | ${sf(s.avgWorstNetPct)} |
 | Profit banked / costs | ${usd(s.netUsd)} / ${usd(s.costsUsd)} |${dayRow}
