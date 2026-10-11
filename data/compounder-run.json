@@ -397,20 +397,74 @@
      "fillCandleT": 1791702000,
      "at": "2026-10-11T07:03:32.752Z"
     },
-    "checkedThrough": 1791752280,
+    "checkedThrough": 1791755880,
     "peakNetPct": 4.93,
     "worstNetPct": -2.13,
-    "lastTradeAt": "2026-10-11T20:58:00.000Z",
+    "lastTradeAt": "2026-10-11T21:58:00.000Z",
     "mark": {
-     "at": "2026-10-11T20:58:00.000Z",
-     "price": 0.16995253455072754,
-     "netPct": 2.14,
-     "proceeds": 102.14
+     "at": "2026-10-11T21:58:00.000Z",
+     "price": 0.1687937277591322,
+     "netPct": 1.44,
+     "proceeds": 101.44
     },
     "targetPriceUsd": 0.19967274255052042,
     "stale": false
    },
-   "trades": []
+   "trades": [],
+   "variant": "t20"
+  },
+  {
+   "id": "v2-t10-2026-10-11",
+   "rules": "v2",
+   "variant": "t10",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetNetPct": 10,
+   "startedAt": "2026-10-10T17:00:35.602Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "Fartcoin ",
+    "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+    "pairAddress": "Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw",
+    "list": "Both",
+    "decidedAt": "2026-10-11T07:00:32.752Z",
+    "alertPriceUsd": 0.1643,
+    "sizeUsd": 100,
+    "dexRoundTripPct": 0.22,
+    "roundTripPct": 1.21,
+    "score": 84.6,
+    "entry": {
+     "chgH1": 1.24,
+     "chgH6": 1.44,
+     "chg15": 0.27,
+     "accel": 5.73,
+     "volTrend": 1.64,
+     "ratioH1": 2.22,
+     "ageH": 17352.8,
+     "top10Pct": 36.6
+    },
+    "fill": {
+     "rawPrice": 0.1643721554922427,
+     "fillCandleT": 1791702000,
+     "at": "2026-10-11T07:03:32.752Z"
+    },
+    "checkedThrough": 1791755880,
+    "peakNetPct": 4.93,
+    "worstNetPct": -2.13,
+    "lastTradeAt": "2026-10-11T21:58:00.000Z",
+    "mark": {
+     "at": "2026-10-11T21:58:00.000Z",
+     "price": 0.1687937277591322,
+     "netPct": 1.44,
+     "proceeds": 101.44
+    },
+    "targetPriceUsd": 0.18303334733797705,
+    "stale": false
+   },
+   "trades": [],
+   "copiedFrom": "v2-2026-10-10"
   }
  ]
 }
