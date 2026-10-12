@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Mon, Oct 12, 03:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Mon, Oct 12, 04:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one. Graduated tokens are preferred.
@@ -9,14 +9,14 @@ Updated Mon, Oct 12, 03:00 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$101.19** | **$101.19** | **$101.19** | **$101.19** |
+| Bankroll now (open position at its last mark) | **$101.18** | **$101.18** | **$101.18** | **$101.18** |
 | Return since the $100 start | +1.2% | +1.2% | +1.2% | +1.2% |
-| Positions sold at the target | 0 | 0 | 0 | 0 |
+| Positions sold at the target | 0 (+1 closed early) | 0 (+1 closed early) | 0 (+1 closed early) | 0 (+1 closed early) |
 | Average time to reach the target | n/a | n/a | n/a | n/a |
 | Average worst point before the target | n/a | n/a | n/a | n/a |
-| Profit banked / costs | $0.00 / $0.00 | $0.00 / $0.00 | $0.00 / $0.00 | $0.00 / $0.00 |
+| Profit banked / costs | $1.18 / $1.24 | $1.18 / $1.24 | $1.18 / $1.24 | $1.18 / $1.24 |
 | Days the daily goal was met (per-day runs) | – | – | 0 of 2 | 0 of 2 |
-| Now | holding $Fartcoin  (+1.2%, 23.9h) | holding $Fartcoin  (+1.2%, 23.9h) | holding $Fartcoin  (+1.2%, 23.9h) | holding $Fartcoin  (+1.2%, 23.9h) |
+| Now | in cash, searching | in cash, searching | in cash, searching | in cash, searching |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -26,119 +26,83 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$101.19** (+1.2%) |
+| Start → now | $100 → **$101.18** (+1.2%) |
 | Running for | 1.6 days (since Oct 10, 13:00) |
-| Positions sold at +20% | 0 |
+| Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
-| Profit banked / costs | $0.00 / $0.00 |
+| Profit banked / costs | $1.18 / $1.24 |
 | Each +20% sale multiplies the bankroll by | 1.20× ($100 → $249 after 5, $619 after 10) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $Fartcoin  (Both) · [DexScreener](https://dexscreener.com/solana/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw) |
-| Bought | Oct 11, 03:00 · $100.00 at $0.1644 |
-| Sell target | $0.1997 (+20% net) |
-| Current value | $101.19 (+1.2% net, at Oct 12, 02:58) |
-| Best / worst while held | +4.9% / -2.1% |
-| Held for | 23.9h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – | – | – |
+| 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
 
 ## +10% per trade: run v2-t10-2026-10-11 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $100 → **$101.19** (+1.2%) |
+| Start → now | $100 → **$101.18** (+1.2%) |
 | Running for | 1.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
-| Positions sold at +10% | 0 |
+| Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
-| Profit banked / costs | $0.00 / $0.00 |
+| Profit banked / costs | $1.18 / $1.24 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $Fartcoin  (Both) · [DexScreener](https://dexscreener.com/solana/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw) |
-| Bought | Oct 11, 03:00 · $100.00 at $0.1644 |
-| Sell target | $0.1830 (+10% net) |
-| Current value | $101.19 (+1.2% net, at Oct 12, 02:58) |
-| Best / worst while held | +4.9% / -2.1% |
-| Held for | 23.9h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – | – | – |
+| 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
 
 ## +20% per day: run v2-d20-2026-10-11 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $100 → **$101.19** (+1.2%) |
+| Start → now | $100 → **$101.18** (+1.2%) |
 | Running for | 1.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
-| Positions sold at +20% | 0 |
+| Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
-| Profit banked / costs | $0.00 / $0.00 |
+| Profit banked / costs | $1.18 / $1.24 |
 | Days the daily goal was met | 0 of 2 · today started at $101.78 |
 | Each +20% sale multiplies the bankroll by | 1.20× ($100 → $249 after 5, $619 after 10) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $Fartcoin  (Both) · [DexScreener](https://dexscreener.com/solana/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw) |
-| Bought | Oct 11, 03:00 · $100.00 at $0.1644 |
-| Sell target | $0.1997 (+20% net) |
-| Current value | $101.19 (+1.2% net, at Oct 12, 02:58) |
-| Best / worst while held | +4.9% / -2.1% |
-| Held for | 23.9h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – | – | – |
+| 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
 
 ## +10% per day: run v2-d10-2026-10-11 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $100 → **$101.19** (+1.2%) |
+| Start → now | $100 → **$101.18** (+1.2%) |
 | Running for | 1.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
-| Positions sold at +10% | 0 |
+| Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
-| Profit banked / costs | $0.00 / $0.00 |
+| Profit banked / costs | $1.18 / $1.24 |
 | Days the daily goal was met | 0 of 2 · today started at $101.78 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $Fartcoin  (Both) · [DexScreener](https://dexscreener.com/solana/Bzc9NZfMqkXR6fz1DBph7BDf9BroyEf6pnzESP7v5iiw) |
-| Bought | Oct 11, 03:00 · $100.00 at $0.1644 |
-| Sell target | $0.1830 (+10% net) |
-| Current value | $101.19 (+1.2% net, at Oct 12, 02:58) |
-| Best / worst while held | +4.9% / -2.1% |
-| Held for | 23.9h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – | – | – |
+| 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
 
 ## Past runs
 
