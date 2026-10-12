@@ -397,15 +397,15 @@
      "fillCandleT": 1791702000,
      "at": "2026-10-11T07:03:32.752Z"
     },
-    "checkedThrough": 1791759240,
+    "checkedThrough": 1791763020,
     "peakNetPct": 4.93,
     "worstNetPct": -2.13,
-    "lastTradeAt": "2026-10-11T22:54:00.000Z",
+    "lastTradeAt": "2026-10-11T23:57:00.000Z",
     "mark": {
-     "at": "2026-10-11T22:54:00.000Z",
-     "price": 0.16841763502544324,
-     "netPct": 1.22,
-     "proceeds": 101.22
+     "at": "2026-10-11T23:57:00.000Z",
+     "price": 0.16845217711219163,
+     "netPct": 1.24,
+     "proceeds": 101.24
     },
     "targetPriceUsd": 0.19967274255052042,
     "stale": false
@@ -451,15 +451,15 @@
      "fillCandleT": 1791702000,
      "at": "2026-10-11T07:03:32.752Z"
     },
-    "checkedThrough": 1791759240,
+    "checkedThrough": 1791763020,
     "peakNetPct": 4.93,
     "worstNetPct": -2.13,
-    "lastTradeAt": "2026-10-11T22:54:00.000Z",
+    "lastTradeAt": "2026-10-11T23:57:00.000Z",
     "mark": {
-     "at": "2026-10-11T22:54:00.000Z",
-     "price": 0.16841763502544324,
-     "netPct": 1.22,
-     "proceeds": 101.22
+     "at": "2026-10-11T23:57:00.000Z",
+     "price": 0.16845217711219163,
+     "netPct": 1.24,
+     "proceeds": 101.24
     },
     "targetPriceUsd": 0.18303334733797705,
     "stale": false
@@ -506,15 +506,15 @@
      "fillCandleT": 1791702000,
      "at": "2026-10-11T07:03:32.752Z"
     },
-    "checkedThrough": 1791759240,
+    "checkedThrough": 1791763020,
     "peakNetPct": 4.93,
     "worstNetPct": -2.13,
-    "lastTradeAt": "2026-10-11T22:54:00.000Z",
+    "lastTradeAt": "2026-10-11T23:57:00.000Z",
     "mark": {
-     "at": "2026-10-11T22:54:00.000Z",
-     "price": 0.16841763502544324,
-     "netPct": 1.22,
-     "proceeds": 101.22
+     "at": "2026-10-11T23:57:00.000Z",
+     "price": 0.16845217711219163,
+     "netPct": 1.24,
+     "proceeds": 101.24
     },
     "targetPriceUsd": 0.19967274255052042,
     "stale": false
@@ -564,15 +564,15 @@
      "fillCandleT": 1791702000,
      "at": "2026-10-11T07:03:32.752Z"
     },
-    "checkedThrough": 1791759240,
+    "checkedThrough": 1791763020,
     "peakNetPct": 4.93,
     "worstNetPct": -2.13,
-    "lastTradeAt": "2026-10-11T22:54:00.000Z",
+    "lastTradeAt": "2026-10-11T23:57:00.000Z",
     "mark": {
-     "at": "2026-10-11T22:54:00.000Z",
-     "price": 0.16841763502544324,
-     "netPct": 1.22,
-     "proceeds": 101.22
+     "at": "2026-10-11T23:57:00.000Z",
+     "price": 0.16845217711219163,
+     "netPct": 1.24,
+     "proceeds": 101.24
     },
     "targetPriceUsd": 0.18303334733797705,
     "stale": false
