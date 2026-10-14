@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Tue, Oct 13, 23:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 14, 00:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one. Graduated tokens are preferred.
@@ -15,7 +15,7 @@ Updated Tue, Oct 13, 23:00 EDT. Paper trades only: nothing is bought or sold.
 | Average time to reach the target | n/a | n/a | n/a | n/a |
 | Average worst point before the target | n/a | n/a | n/a | n/a |
 | Profit banked / costs | $1.18 / $1.24 | $1.18 / $1.24 | $1.18 / $1.24 | $1.18 / $1.24 |
-| Days the daily goal was met (per-day runs) | – | – | 0 of 3 | 0 of 3 |
+| Days the daily goal was met (per-day runs) | – | – | 0 of 4 | 0 of 4 |
 | Now | in cash, searching | in cash, searching | in cash, searching | in cash, searching |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
@@ -27,7 +27,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 3.4 days (since Oct 10, 13:00) |
+| Running for | 3.5 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
@@ -47,7 +47,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 3.4 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 3.5 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
@@ -67,12 +67,12 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 3.4 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 3.5 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
 | Profit banked / costs | $1.18 / $1.24 |
-| Days the daily goal was met | 0 of 3 · today started at $101.18 |
+| Days the daily goal was met | 0 of 4 · today started at $101.18 |
 | Each +20% sale multiplies the bankroll by | 1.20× ($100 → $249 after 5, $619 after 10) |
 
 **Open position:** none (cash, searching for the next pre-spike token).
@@ -88,12 +88,12 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 3.4 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 3.5 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
 | Profit banked / costs | $1.18 / $1.24 |
-| Days the daily goal was met | 0 of 3 · today started at $101.18 |
+| Days the daily goal was met | 0 of 4 · today started at $101.18 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
 **Open position:** none (cash, searching for the next pre-spike token).
