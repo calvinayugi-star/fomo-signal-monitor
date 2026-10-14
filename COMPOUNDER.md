@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 14, 07:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 14, 08:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one. Graduated tokens are preferred.
@@ -27,7 +27,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 3.7 days (since Oct 10, 13:00) |
+| Running for | 3.8 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
@@ -47,7 +47,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 3.7 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 3.8 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
@@ -67,7 +67,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 3.7 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 3.8 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
@@ -88,7 +88,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 3.7 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 3.8 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
