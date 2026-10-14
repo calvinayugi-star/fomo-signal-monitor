@@ -90,10 +90,11 @@ Telegram message is labelled with its variant, e.g. COMPOUNDER +20%/trade or COM
 The per-day runs were added the same way, as copies of the +20% run (same start and open position).
 
 - **Lists:** Graduated tokens (graduated within 72h) are preferred (+10 score); Trending-only tokens need a much stronger setup (−15).
-- **Entry (hourly), "before the spike":** the price is still quiet (1h −5% to +15%, 6h −15% to +100%, 15 min −5% to +12%, 5 min ≤ +8%)
-  while demand builds (last hour's volume ≥ 1.5× the hours before, last 15 min ≥ 1.2× the hour's average, buys/sells 1.15–5 over 1h and ≥ 1 over 6h,
+- **Entry (hourly), "before the spike":** the price is still quiet (1h −5% to +15%, 6h −15% to +100%, 15 min −10% to +12%, 5 min ≤ +8%)
+  while demand builds (last hour's volume ≥ 1.25× the hours before, last 15 min ≥ 0.9× the hour's average, buys/sells 1.15–5 over 1h and ≥ 1 over 6h,
   liquidity not shrinking). Same quality bar as the monitor: liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, safety checks,
   round trip ≤ 4% at the real size. New: tokens under 72h whose top 10 wallets hold ≤ 8% are rejected (7 of 9 such alerts went to near zero).
+  Loosened 2026-10-14 (no buys for 2.5 days): volume acceleration 1.5× → 1.25×, 15-min volume trend 1.2× → 0.9×, 15-min floor −5% → −10%. Score bar (50) and bot filters unchanged.
   The score rewards volume acceleration, buying pressure and liquidity growth, not price already gained.
 - **Exit:** only at the variant's target (+20% or +10% net), checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
   If a held token has no trades for 24h a warning is sent (it may be dead), but it stays held.
