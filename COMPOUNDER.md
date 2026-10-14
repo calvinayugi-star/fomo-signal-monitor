@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 14, 00:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 14, 01:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one. Graduated tokens are preferred.
@@ -113,8 +113,8 @@ bankroll is up the target versus its value at the start of the day. When several
 ## Rules in effect
 
 - **Lists:** Graduated (pump.fun, graduated within 72h) and Trending (GeckoTerminal). Graduated tokens get +10 score; Trending-only tokens −15.
-- **Before the spike (price still quiet):** 1h change -5% to +15%, 6h -15% to +100%, 15 min -5% to +12%, 5 min ≤ +8%.
-- **Demand building:** last hour's volume ≥ 1.5× the hours before, last 15 min ≥ 1.2× the hour's 15-min average, buys/sells ≥ 1.15 (1h) and ≥ 1 (6h) but ≤ 5 (bots), ≥ 60 buys and $15k volume in the hour, liquidity not shrinking.
+- **Before the spike (price still quiet):** 1h change -5% to +15%, 6h -15% to +100%, 15 min -10% to +12%, 5 min ≤ +8%.
+- **Demand building:** last hour's volume ≥ 1.25× the hours before, last 15 min ≥ 0.9× the hour's 15-min average, buys/sells ≥ 1.15 (1h) and ≥ 1 (6h) but ≤ 5 (bots), ≥ 60 buys and $15k volume in the hour, liquidity not shrinking.
 - **Quality:** liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, pair ≥ 2h old, the monitor's safety checks, no top-10 share ≤ 8% on tokens under 72h (bundled wallets), round trip ≤ 4% at the real size, score ≥ 50.
 - **Exit:** only at the variant's target (+20% or +10% or +20% or +10% net, after fees and slippage), checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
 - Paper fill 3 min after the decision (cancelled if the token doesn't trade for 6h). No re-buy of a token within 24h of selling it. A warning is sent if a held token has no trades for 24h.
