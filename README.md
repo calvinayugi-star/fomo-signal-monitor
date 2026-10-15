@@ -16,7 +16,7 @@ Each run rebuilds the two lists from public data. Solana only, because FOMO's gr
 | List | Source |
 |---|---|
 | Trending | GeckoTerminal Solana trending pools (1h and 6h) |
-| Graduated | pump.fun tokens that completed their bonding curve, pool created within the last 72h. Falls back to new PumpSwap pools if pump.fun is unreachable. |
+| Graduated | pump.fun tokens that completed their bonding curve, pool created within the last 72h. Falls back to the most-traded PumpSwap pools (pump.fun mints only) if pump.fun is unreachable. |
 
 Tokens alerted in the last 7 days are skipped. Every remaining token must pass all of the checks below. All thresholds live in [config.json](config.json).
 

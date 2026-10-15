@@ -1,6 +1,6 @@
 // Rebuilds FOMO-style "Trending" and "Graduated" lists from public data (Solana only).
 //   Trending  = GeckoTerminal trending pools on Solana
-//   Graduated = pump.fun tokens that completed their bonding curve (falls back to new PumpSwap pools)
+//   Graduated = pump.fun tokens that completed their bonding curve (falls back to the most-traded PumpSwap pools)
 import { getJson } from './http.js';
 
 export const GT = 'https://api.geckoterminal.com/api/v2';
@@ -53,12 +53,14 @@ export async function collectCandidates(cfg, log) {
   }
 
   if (!pumpOk) {
-    // Fallback: newest PumpSwap pools, which is where pump.fun tokens land when they graduate.
-    for (const page of [1, 2]) {
+    // Fallback: the most-traded PumpSwap pools, which is where pump.fun tokens land when they graduate.
+    // Only pump.fun mints (address ends in "pump"); PumpSwap's top pools are otherwise mostly bot clones.
+    for (let page = 1; page <= cfg.sources.graduatedFallbackPages; page++) {
       try {
-        const j = await getJson(`${GT}/networks/solana/new_pools?include=dex&page=${page}`);
+        const j = await getJson(`${GT}/networks/solana/dexes/pumpswap/pools?sort=h24_tx_count_desc&page=${page}`);
         for (const pool of j.data ?? []) {
-          if (pool.relationships?.dex?.data?.id === 'pumpswap') add(map, memeMintOfPool(pool), 'Graduated');
+          const mint = memeMintOfPool(pool);
+          if (mint?.endsWith('pump')) add(map, mint, 'Graduated');
         }
       } catch (e) {
         log.errors.push(`graduated fallback p${page}: ${e.message}`);

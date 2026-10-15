@@ -19,6 +19,7 @@
   "sources": {
     "trendingDurations": ["1h", "6h"],
     "pumpfunSorts": ["last_trade_timestamp", "market_cap"],
+    "graduatedFallbackPages": 6,
     "graduatedMaxAgeHours": 72
   },
 
