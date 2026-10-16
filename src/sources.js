@@ -37,7 +37,7 @@ export async function collectCandidates(cfg, log) {
     }
   }
 
-  let pumpOk = false;
+  let pumpFailed = false;
   for (const sort of cfg.sources.pumpfunSorts) {
     try {
       const coins = await getJson(
@@ -46,14 +46,14 @@ export async function collectCandidates(cfg, log) {
       for (const c of coins ?? []) {
         if (c.complete && !c.is_banned) add(map, c.mint, 'Graduated');
       }
-      pumpOk = true;
     } catch (e) {
+      pumpFailed = true;
       log.errors.push(`pump.fun ${sort}: ${e.message}`);
     }
   }
 
-  if (!pumpOk) {
-    // Fallback: the most-traded PumpSwap pools, which is where pump.fun tokens land when they graduate.
+  if (pumpFailed) {
+    // Fallback (also when only one sort fails): the most-traded PumpSwap pools, which is where pump.fun tokens land when they graduate.
     // Only pump.fun mints (address ends in "pump"); PumpSwap's top pools are otherwise mostly bot clones.
     for (let page = 1; page <= cfg.sources.graduatedFallbackPages; page++) {
       try {
