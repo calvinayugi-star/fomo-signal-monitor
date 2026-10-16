@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 16, 02:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 16, 03:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -16,7 +16,7 @@ Updated Fri, Oct 16, 02:01 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | n/a | n/a | n/a | n/a |
 | Profit banked / costs | $1.18 / $1.24 | $1.18 / $1.24 | $1.18 / $1.24 | $1.18 / $1.24 |
 | Days the daily goal was met (per-day runs) | – | – | 0 of 6 | 0 of 6 |
-| Now | in cash, searching | in cash, searching | in cash, searching | in cash, searching |
+| Now | holding $OWLDACITY (n/a, n/a) | holding $OWLDACITY (n/a, n/a) | holding $OWLDACITY (n/a, n/a) | holding $OWLDACITY (n/a, n/a) |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -27,14 +27,23 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 5.5 days (since Oct 10, 13:00) |
+| Running for | 5.6 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
 | Profit banked / costs | $1.18 / $1.24 |
 | Each +20% sale multiplies the bankroll by | 1.20× ($100 → $249 after 5, $619 after 10) |
 
-**Open position:** none (cash, searching for the next pre-spike token).
+### Open position
+
+| | |
+|---|---|
+| Token | $OWLDACITY (Both) · [DexScreener](https://dexscreener.com/solana/GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1) |
+| Bought | Oct 16, 03:01 · $101.18 (fill pending) |
+| Sell target | +20% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
@@ -47,14 +56,23 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 5.5 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 5.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
 | Profit banked / costs | $1.18 / $1.24 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
-**Open position:** none (cash, searching for the next pre-spike token).
+### Open position
+
+| | |
+|---|---|
+| Token | $OWLDACITY (Both) · [DexScreener](https://dexscreener.com/solana/GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1) |
+| Bought | Oct 16, 03:01 · $101.18 (fill pending) |
+| Sell target | +10% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
@@ -67,7 +85,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 5.5 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 5.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
@@ -75,7 +93,16 @@ bankroll is up the target versus its value at the start of the day. When several
 | Days the daily goal was met | 0 of 6 · today started at $101.18 |
 | Each +20% sale multiplies the bankroll by | 1.20× ($100 → $249 after 5, $619 after 10) |
 
-**Open position:** none (cash, searching for the next pre-spike token).
+### Open position
+
+| | |
+|---|---|
+| Token | $OWLDACITY (Both) · [DexScreener](https://dexscreener.com/solana/GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1) |
+| Bought | Oct 16, 03:01 · $101.18 (fill pending) |
+| Sell target | +20% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
@@ -88,7 +115,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$101.18** (+1.2%) |
-| Running for | 5.5 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Running for | 5.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
@@ -96,7 +123,16 @@ bankroll is up the target versus its value at the start of the day. When several
 | Days the daily goal was met | 0 of 6 · today started at $101.18 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
-**Open position:** none (cash, searching for the next pre-spike token).
+### Open position
+
+| | |
+|---|---|
+| Token | $OWLDACITY (Both) · [DexScreener](https://dexscreener.com/solana/GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1) |
+| Bought | Oct 16, 03:01 · $101.18 (fill pending) |
+| Sell target | +10% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 

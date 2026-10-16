@@ -370,8 +370,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 101.1766,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "OWLDACITY",
+    "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
+    "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
+    "list": "Both",
+    "decidedAt": "2026-10-16T07:01:28.082Z",
+    "alertPriceUsd": 0.0008374,
+    "sizeUsd": 101.1766,
+    "dexRoundTripPct": 2.45,
+    "roundTripPct": 3.43,
+    "score": 54.8,
+    "entry": {
+     "chgH1": 11.62,
+     "chgH6": 10.42,
+     "chg15": 1.2,
+     "accel": 1,
+     "volTrend": 0.96,
+     "ratioH1": 2.1,
+     "ageH": 10.5,
+     "top10Pct": 8.9
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -411,8 +432,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 101.1766,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "OWLDACITY",
+    "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
+    "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
+    "list": "Both",
+    "decidedAt": "2026-10-16T07:01:28.082Z",
+    "alertPriceUsd": 0.0008374,
+    "sizeUsd": 101.1766,
+    "dexRoundTripPct": 2.45,
+    "roundTripPct": 3.43,
+    "score": 54.8,
+    "entry": {
+     "chgH1": 11.62,
+     "chgH6": 10.42,
+     "chg15": 1.2,
+     "accel": 1,
+     "volTrend": 0.96,
+     "ratioH1": 2.1,
+     "ageH": 10.5,
+     "top10Pct": 8.9
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -453,8 +495,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 101.1766,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "OWLDACITY",
+    "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
+    "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
+    "list": "Both",
+    "decidedAt": "2026-10-16T07:01:28.082Z",
+    "alertPriceUsd": 0.0008374,
+    "sizeUsd": 101.1766,
+    "dexRoundTripPct": 2.45,
+    "roundTripPct": 3.43,
+    "score": 54.8,
+    "entry": {
+     "chgH1": 11.62,
+     "chgH6": 10.42,
+     "chg15": 1.2,
+     "accel": 1,
+     "volTrend": 0.96,
+     "ratioH1": 2.1,
+     "ageH": 10.5,
+     "top10Pct": 8.9
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -525,8 +588,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 101.1766,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "OWLDACITY",
+    "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
+    "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
+    "list": "Both",
+    "decidedAt": "2026-10-16T07:01:28.082Z",
+    "alertPriceUsd": 0.0008374,
+    "sizeUsd": 101.1766,
+    "dexRoundTripPct": 2.45,
+    "roundTripPct": 3.43,
+    "score": 54.8,
+    "entry": {
+     "chgH1": 11.62,
+     "chgH6": 10.42,
+     "chg15": 1.2,
+     "accel": 1,
+     "volTrend": 0.96,
+     "ratioH1": 2.1,
+     "ageH": 10.5,
+     "top10Pct": 8.9
+    }
+   },
    "trades": [
     {
      "n": 1,
