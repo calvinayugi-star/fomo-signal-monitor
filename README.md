@@ -91,14 +91,15 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
 
 - **Lists:** Graduated tokens are preferred: +10 score if they graduated within 72h, 0 if older (no age limit since 2026-10-16); Trending-only tokens need a much stronger setup (−15).
 - **Entry (hourly), "before the spike":** the price is still quiet (1h −10% to +25%, 15 min −20% to +12%)
-  while demand builds (last hour's volume ≥ 1.1× the hours before, buys/sells 1.15–5 over 1h and ≥ 1 over 6h,
+  while demand builds (last hour's volume ≥ 1.0× the hours before, buys/sells 1.15–5 over 1h and ≥ 1 over 6h,
   liquidity not shrinking). Same quality bar as the monitor: liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, safety checks,
   round trip ≤ 4% at the real size. New: tokens under 72h whose top 10 wallets hold ≤ 8% are rejected (7 of 9 such alerts went to near zero).
   Loosened 2026-10-14 (no buys for 2.5 days): volume acceleration 1.5× → 1.25×, 15-min volume trend 1.2× → 0.9×, 15-min floor −5% → −10%. Score bar (50) and bot filters unchanged.
   Loosened 2026-10-16 (user review, no buys in ~4 days): volume acceleration 1.25× → 1.1× (bot clones sit at ~1.00×), 15-min volume trend rule removed (0),
   15-min floor −10% → −20% (3 of 3 tokens rejected for a 15-min dip hit +20% within 11h), 1h window −5..+15% → −10..+25%. Score bar (50) and bot filters unchanged.
   Also 2026-10-16: 72h graduated limit removed (old Monitor alerts: tokens ≥72h old 0 of 8 fell 80%+, under 72h 13 of 19), Graduated bonus now only
-  for graduates under 72h; 6h window (−15..+100%) and 5-min spike limit (≤ +8%) removed.
+  for graduates under 72h; 6h window (−15..+100%) and 5-min spike limit (≤ +8%) removed. Volume acceleration 1.1× → 1.0× (user choice; clones at ~1.00×
+  are still held back by the 1h volume, bot-ratio and score rules). Reviewed and kept: pair ≥ 2h, buys/sells ≥ 1.15 (1h) / ≥ 1 (6h) / ≤ 5, liquidity, round trip ≤ 4%.
   The score rewards volume acceleration, buying pressure and liquidity growth, not price already gained.
 - **Exit:** only at the variant's target (+20% or +10% net), checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
   If a held token has no trades for 24h a warning is sent (it may be dead), but it stays held.
