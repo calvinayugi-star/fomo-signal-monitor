@@ -370,8 +370,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 121.4119,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "VEIL",
+    "mint": "HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump",
+    "pairAddress": "4MWjp1aBQqE9Y6iC5cd3NrVvWWcHsN2LgpjWYMDK7u7E",
+    "list": "Trending",
+    "decidedAt": "2026-10-16T11:01:39.924Z",
+    "alertPriceUsd": 0.004612,
+    "sizeUsd": 121.4119,
+    "dexRoundTripPct": 1.03,
+    "roundTripPct": 2.02,
+    "score": 65.2,
+    "entry": {
+     "chgH1": 13.92,
+     "chgH6": 2.61,
+     "chg15": -2.04,
+     "accel": 2.75,
+     "volTrend": 0.25,
+     "ratioH1": 1.87,
+     "ageH": 88,
+     "top10Pct": 13.2
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -435,8 +456,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 111.2943,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "VEIL",
+    "mint": "HgTGdc29D5bDMrDvsCLnorxz899VyDj7ZN7FPa6vpump",
+    "pairAddress": "4MWjp1aBQqE9Y6iC5cd3NrVvWWcHsN2LgpjWYMDK7u7E",
+    "list": "Trending",
+    "decidedAt": "2026-10-16T11:01:39.924Z",
+    "alertPriceUsd": 0.004612,
+    "sizeUsd": 111.2943,
+    "dexRoundTripPct": 1.02,
+    "roundTripPct": 2.02,
+    "score": 65.2,
+    "entry": {
+     "chgH1": 13.92,
+     "chgH6": 2.61,
+     "chg15": -2.04,
+     "accel": 2.75,
+     "volTrend": 0.25,
+     "ratioH1": 1.87,
+     "ageH": 88,
+     "top10Pct": 13.2
+    }
+   },
    "trades": [
     {
      "n": 1,
