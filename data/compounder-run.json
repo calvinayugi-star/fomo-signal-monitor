@@ -370,46 +370,8 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "OWLDACITY",
-    "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
-    "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
-    "list": "Both",
-    "decidedAt": "2026-10-16T07:01:28.082Z",
-    "alertPriceUsd": 0.0008374,
-    "sizeUsd": 101.1766,
-    "dexRoundTripPct": 2.45,
-    "roundTripPct": 3.43,
-    "score": 54.8,
-    "entry": {
-     "chgH1": 11.62,
-     "chgH6": 10.42,
-     "chg15": 1.2,
-     "accel": 1,
-     "volTrend": 0.96,
-     "ratioH1": 2.1,
-     "ageH": 10.5,
-     "top10Pct": 8.9
-    },
-    "fill": {
-     "rawPrice": 0.0008748849073929378,
-     "fillCandleT": 1792134240,
-     "at": "2026-10-16T07:04:28.082Z"
-    },
-    "checkedThrough": 1792141200,
-    "peakNetPct": 1.15,
-    "worstNetPct": -23.14,
-    "lastTradeAt": "2026-10-16T09:00:00.000Z",
-    "mark": {
-     "at": "2026-10-16T09:00:00.000Z",
-     "price": 0.0007664012656950579,
-     "netPct": -15.37,
-     "proceeds": 85.62
-    },
-    "targetPriceUsd": 0.0010867427617160005,
-    "stale": false
-   },
+   "cash": 121.4119,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -434,6 +396,30 @@
      "worstNetPct": -2.13,
      "targetHit": false,
      "newBankroll": 101.1766
+    },
+    {
+     "n": 2,
+     "symbol": "OWLDACITY",
+     "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
+     "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
+     "list": "Both",
+     "decidedAt": "2026-10-16T07:01:28.082Z",
+     "prevBankroll": 101.18,
+     "sizeUsd": 101.18,
+     "dexRoundTripPct": 2.45,
+     "fillAt": "2026-10-16T07:04:28.082Z",
+     "exitAt": "2026-10-16T09:50:00.000Z",
+     "holdHours": 2.8,
+     "reason": "+20% target",
+     "entryPriceUsd": 0.0008748849073929378,
+     "exitPriceUsd": 0.0010867427617160005,
+     "grossPct": 24.22,
+     "costsUsd": 4.2651,
+     "netUsd": 20.2353,
+     "netPct": 20,
+     "worstNetPct": -27.34,
+     "targetHit": true,
+     "newBankroll": 121.4119
     }
    ],
    "variant": "t20",
@@ -449,46 +435,8 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "OWLDACITY",
-    "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
-    "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
-    "list": "Both",
-    "decidedAt": "2026-10-16T07:01:28.082Z",
-    "alertPriceUsd": 0.0008374,
-    "sizeUsd": 101.1766,
-    "dexRoundTripPct": 2.45,
-    "roundTripPct": 3.43,
-    "score": 54.8,
-    "entry": {
-     "chgH1": 11.62,
-     "chgH6": 10.42,
-     "chg15": 1.2,
-     "accel": 1,
-     "volTrend": 0.96,
-     "ratioH1": 2.1,
-     "ageH": 10.5,
-     "top10Pct": 8.9
-    },
-    "fill": {
-     "rawPrice": 0.0008748849073929378,
-     "fillCandleT": 1792134240,
-     "at": "2026-10-16T07:04:28.082Z"
-    },
-    "checkedThrough": 1792141200,
-    "peakNetPct": 1.15,
-    "worstNetPct": -23.14,
-    "lastTradeAt": "2026-10-16T09:00:00.000Z",
-    "mark": {
-     "at": "2026-10-16T09:00:00.000Z",
-     "price": 0.0007664012656950579,
-     "netPct": -15.37,
-     "proceeds": 85.62
-    },
-    "targetPriceUsd": 0.0009961808649063338,
-    "stale": false
-   },
+   "cash": 111.2943,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -513,6 +461,30 @@
      "worstNetPct": -2.13,
      "targetHit": false,
      "newBankroll": 101.1766
+    },
+    {
+     "n": 2,
+     "symbol": "OWLDACITY",
+     "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
+     "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
+     "list": "Both",
+     "decidedAt": "2026-10-16T07:01:28.082Z",
+     "prevBankroll": 101.18,
+     "sizeUsd": 101.18,
+     "dexRoundTripPct": 2.45,
+     "fillAt": "2026-10-16T07:04:28.082Z",
+     "exitAt": "2026-10-16T09:38:00.000Z",
+     "holdHours": 2.6,
+     "reason": "+10% target",
+     "entryPriceUsd": 0.0008748849073929378,
+     "exitPriceUsd": 0.0009961808649063338,
+     "grossPct": 13.86,
+     "costsUsd": 3.9097,
+     "netUsd": 10.1177,
+     "netPct": 10,
+     "worstNetPct": -27.34,
+     "targetHit": true,
+     "newBankroll": 111.2943
     }
    ],
    "copiedFrom": "v2-2026-10-10",
@@ -529,46 +501,8 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "OWLDACITY",
-    "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
-    "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
-    "list": "Both",
-    "decidedAt": "2026-10-16T07:01:28.082Z",
-    "alertPriceUsd": 0.0008374,
-    "sizeUsd": 101.1766,
-    "dexRoundTripPct": 2.45,
-    "roundTripPct": 3.43,
-    "score": 54.8,
-    "entry": {
-     "chgH1": 11.62,
-     "chgH6": 10.42,
-     "chg15": 1.2,
-     "accel": 1,
-     "volTrend": 0.96,
-     "ratioH1": 2.1,
-     "ageH": 10.5,
-     "top10Pct": 8.9
-    },
-    "fill": {
-     "rawPrice": 0.0008748849073929378,
-     "fillCandleT": 1792134240,
-     "at": "2026-10-16T07:04:28.082Z"
-    },
-    "checkedThrough": 1792141200,
-    "peakNetPct": 1.15,
-    "worstNetPct": -23.14,
-    "lastTradeAt": "2026-10-16T09:00:00.000Z",
-    "mark": {
-     "at": "2026-10-16T09:00:00.000Z",
-     "price": 0.0007664012656950579,
-     "netPct": -15.37,
-     "proceeds": 85.62
-    },
-    "targetPriceUsd": 0.0010867427617160005,
-    "stale": false
-   },
+   "cash": 121.4119,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -593,12 +527,37 @@
      "worstNetPct": -2.13,
      "targetHit": false,
      "newBankroll": 101.1766
+    },
+    {
+     "n": 2,
+     "symbol": "OWLDACITY",
+     "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
+     "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
+     "list": "Both",
+     "decidedAt": "2026-10-16T07:01:28.082Z",
+     "prevBankroll": 101.18,
+     "sizeUsd": 101.18,
+     "dexRoundTripPct": 2.45,
+     "fillAt": "2026-10-16T07:04:28.082Z",
+     "exitAt": "2026-10-16T09:50:00.000Z",
+     "holdHours": 2.8,
+     "reason": "+20% target",
+     "entryPriceUsd": 0.0008748849073929378,
+     "exitPriceUsd": 0.0010867427617160005,
+     "grossPct": 24.22,
+     "costsUsd": 4.2651,
+     "netUsd": 20.2353,
+     "netPct": 20,
+     "worstNetPct": -27.34,
+     "targetHit": true,
+     "newBankroll": 121.4119
     }
    ],
    "copiedFrom": "v2-2026-10-10",
    "day": {
     "date": "2026-10-16",
-    "startBankroll": 101.18
+    "startBankroll": 101.18,
+    "goalMetAt": "2026-10-16T09:58:24.448Z"
    },
    "days": [
     {
@@ -639,46 +598,8 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "OWLDACITY",
-    "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
-    "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
-    "list": "Both",
-    "decidedAt": "2026-10-16T07:01:28.082Z",
-    "alertPriceUsd": 0.0008374,
-    "sizeUsd": 101.1766,
-    "dexRoundTripPct": 2.45,
-    "roundTripPct": 3.43,
-    "score": 54.8,
-    "entry": {
-     "chgH1": 11.62,
-     "chgH6": 10.42,
-     "chg15": 1.2,
-     "accel": 1,
-     "volTrend": 0.96,
-     "ratioH1": 2.1,
-     "ageH": 10.5,
-     "top10Pct": 8.9
-    },
-    "fill": {
-     "rawPrice": 0.0008748849073929378,
-     "fillCandleT": 1792134240,
-     "at": "2026-10-16T07:04:28.082Z"
-    },
-    "checkedThrough": 1792141200,
-    "peakNetPct": 1.15,
-    "worstNetPct": -23.14,
-    "lastTradeAt": "2026-10-16T09:00:00.000Z",
-    "mark": {
-     "at": "2026-10-16T09:00:00.000Z",
-     "price": 0.0007664012656950579,
-     "netPct": -15.37,
-     "proceeds": 85.62
-    },
-    "targetPriceUsd": 0.0009961808649063338,
-    "stale": false
-   },
+   "cash": 111.2943,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -703,12 +624,37 @@
      "worstNetPct": -2.13,
      "targetHit": false,
      "newBankroll": 101.1766
+    },
+    {
+     "n": 2,
+     "symbol": "OWLDACITY",
+     "mint": "D61pTaTqR93axxVvu7AX5TW6c3a4vhffPPMfCnsYpump",
+     "pairAddress": "GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1",
+     "list": "Both",
+     "decidedAt": "2026-10-16T07:01:28.082Z",
+     "prevBankroll": 101.18,
+     "sizeUsd": 101.18,
+     "dexRoundTripPct": 2.45,
+     "fillAt": "2026-10-16T07:04:28.082Z",
+     "exitAt": "2026-10-16T09:38:00.000Z",
+     "holdHours": 2.6,
+     "reason": "+10% target",
+     "entryPriceUsd": 0.0008748849073929378,
+     "exitPriceUsd": 0.0009961808649063338,
+     "grossPct": 13.86,
+     "costsUsd": 3.9097,
+     "netUsd": 10.1177,
+     "netPct": 10,
+     "worstNetPct": -27.34,
+     "targetHit": true,
+     "newBankroll": 111.2943
     }
    ],
    "copiedFrom": "v2-2026-10-10",
    "day": {
     "date": "2026-10-16",
-    "startBankroll": 101.18
+    "startBankroll": 101.18,
+    "goalMetAt": "2026-10-16T09:58:24.448Z"
    },
    "days": [
     {
