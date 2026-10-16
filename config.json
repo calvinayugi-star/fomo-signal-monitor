@@ -96,8 +96,6 @@
       "minBuySellRatioH6": 1.0,
       "maxBuySellRatio": 5,
       "minVolumeAcceleration": 1.0,
-      "minChgH1Pct": -10,
-      "maxChgH1Pct": 25,
       "minLiquidityGrowthPct": 0,
       "minVolumeTrend15m": 0,
       "minChg15mPct": -20,
