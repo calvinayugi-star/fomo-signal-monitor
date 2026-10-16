@@ -1,9 +1,9 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 16, 01:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 16, 02:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
-**hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one. Graduated tokens are preferred.
+**hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
 
 ## Side by side
 
@@ -112,10 +112,11 @@ bankroll is up the target versus its value at the start of the day. When several
 
 ## Rules in effect
 
-- **Lists:** Graduated (pump.fun) and Trending (GeckoTerminal). Tokens that graduated within 72h get +10 score, older graduates 0, Trending-only tokens −15.
-- **Before the spike (price still quiet):** 1h change -10% to +25%, 15 min -20% to +12% (no 6h or 5-min limit since 2026-10-16).
-- **Demand building:** last hour's volume ≥ 1× the hours before, buys/sells ≥ 1.15 (1h) and ≥ 1 (6h) but ≤ 5 (bots), ≥ 60 buys and $15k volume in the hour, liquidity not shrinking.
-- **Quality:** liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, pair ≥ 2h old, the monitor's safety checks, no top-10 share ≤ 8% on tokens under 72h (bundled wallets), round trip ≤ 4% at the real size, score ≥ 50.
+- **Lists:** Graduated (pump.fun) and Trending (GeckoTerminal). Tokens that graduated within 72h get +0 score, older graduates 0, Trending-only tokens −0; market cap ≥ 50M −15.
+- **Score (0–100 before adjustments):** 1h buys/sells 30, price rise in the hour (up to +10%) 15, 6h buys/sells 15, last 15 min volume vs the hour 15, volume acceleration 15, liquidity growth 10; minus 3 per 1% DEX round trip.
+- **Price:** no price-change limits since 2026-10-16 (1h, 6h, 15-min and 5-min rules removed); the score rewards a 1h rise up to +10%.
+- **Demand building:** last hour's volume ≥ 1× the hours before, buys/sells ≥ 1.15 (1h) and ≥ 1 (6h) but ≤ 5 (bots), ≥ 30 buys and $5k volume in the hour, liquidity not shrinking.
+- **Quality:** liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, pair ≥ 2h old, the monitor's safety checks, no top-10 share ≤ 8% on tokens under 72h (bundled wallets), round trip ≤ 4% at the real size, score ≥ 45.
 - **Exit:** only at the variant's target (+20% or +10% or +20% or +10% net, after fees and slippage), checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
 - Paper fill 3 min after the decision (cancelled if the token doesn't trade for 6h). No re-buy of a token within 24h of selling it. A warning is sent if a held token has no trades for 24h.
 
