@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 16, 03:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 16, 04:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -9,14 +9,14 @@ Updated Fri, Oct 16, 03:01 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$101.18** | **$101.18** | **$101.18** | **$101.18** |
-| Return since the $100 start | +1.2% | +1.2% | +1.2% | +1.2% |
+| Bankroll now (open position at its last mark) | **$85.21** | **$85.21** | **$85.21** | **$85.21** |
+| Return since the $100 start | -14.8% | -14.8% | -14.8% | -14.8% |
 | Positions sold at the target | 0 (+1 closed early) | 0 (+1 closed early) | 0 (+1 closed early) | 0 (+1 closed early) |
 | Average time to reach the target | n/a | n/a | n/a | n/a |
 | Average worst point before the target | n/a | n/a | n/a | n/a |
 | Profit banked / costs | $1.18 / $1.24 | $1.18 / $1.24 | $1.18 / $1.24 | $1.18 / $1.24 |
 | Days the daily goal was met (per-day runs) | – | – | 0 of 6 | 0 of 6 |
-| Now | holding $OWLDACITY (n/a, n/a) | holding $OWLDACITY (n/a, n/a) | holding $OWLDACITY (n/a, n/a) | holding $OWLDACITY (n/a, n/a) |
+| Now | holding $OWLDACITY (-15.8%, 1.0h) | holding $OWLDACITY (-15.8%, 1.0h) | holding $OWLDACITY (-15.8%, 1.0h) | holding $OWLDACITY (-15.8%, 1.0h) |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -26,7 +26,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$101.18** (+1.2%) |
+| Start → now | $100 → **$85.21** (-14.8%) |
 | Running for | 5.6 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
@@ -39,11 +39,11 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Token | $OWLDACITY (Both) · [DexScreener](https://dexscreener.com/solana/GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1) |
-| Bought | Oct 16, 03:01 · $101.18 (fill pending) |
-| Sell target | +20% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+| Bought | Oct 16, 03:01 · $101.18 at $0.0008749 |
+| Sell target | $0.001087 (+20% net) |
+| Current value | $85.21 (-15.8% net, at Oct 16, 04:00) |
+| Best / worst while held | +1.1% / -19.1% |
+| Held for | 1.0h |
 
 ### Completed positions (newest first)
 
@@ -55,7 +55,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$101.18** (+1.2%) |
+| Start → now | $100 → **$85.21** (-14.8%) |
 | Running for | 5.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
@@ -68,11 +68,11 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Token | $OWLDACITY (Both) · [DexScreener](https://dexscreener.com/solana/GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1) |
-| Bought | Oct 16, 03:01 · $101.18 (fill pending) |
-| Sell target | +10% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+| Bought | Oct 16, 03:01 · $101.18 at $0.0008749 |
+| Sell target | $0.0009962 (+10% net) |
+| Current value | $85.21 (-15.8% net, at Oct 16, 04:00) |
+| Best / worst while held | +1.1% / -19.1% |
+| Held for | 1.0h |
 
 ### Completed positions (newest first)
 
@@ -84,7 +84,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$101.18** (+1.2%) |
+| Start → now | $100 → **$85.21** (-14.8%) |
 | Running for | 5.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +20% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
@@ -98,11 +98,11 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Token | $OWLDACITY (Both) · [DexScreener](https://dexscreener.com/solana/GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1) |
-| Bought | Oct 16, 03:01 · $101.18 (fill pending) |
-| Sell target | +20% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+| Bought | Oct 16, 03:01 · $101.18 at $0.0008749 |
+| Sell target | $0.001087 (+20% net) |
+| Current value | $85.21 (-15.8% net, at Oct 16, 04:00) |
+| Best / worst while held | +1.1% / -19.1% |
+| Held for | 1.0h |
 
 ### Completed positions (newest first)
 
@@ -114,7 +114,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$101.18** (+1.2%) |
+| Start → now | $100 → **$85.21** (-14.8%) |
 | Running for | 5.6 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 0 (+1 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
@@ -128,11 +128,11 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Token | $OWLDACITY (Both) · [DexScreener](https://dexscreener.com/solana/GGM3WPy8Mtxx7AFvS1RsxbZTbnz9KK1HEG9MbFMyADA1) |
-| Bought | Oct 16, 03:01 · $101.18 (fill pending) |
-| Sell target | +10% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+| Bought | Oct 16, 03:01 · $101.18 at $0.0008749 |
+| Sell target | $0.0009962 (+10% net) |
+| Current value | $85.21 (-15.8% net, at Oct 16, 04:00) |
+| Best / worst while held | +1.1% / -19.1% |
+| Held for | 1.0h |
 
 ### Completed positions (newest first)
 
