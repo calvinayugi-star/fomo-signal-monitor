@@ -483,7 +483,7 @@
    ],
    "copiedFrom": "v2-2026-10-10",
    "day": {
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "startBankroll": 101.18
    },
    "days": [
@@ -504,6 +504,11 @@
     },
     {
      "date": "2026-10-14",
+     "startBankroll": 101.18,
+     "endBankroll": 101.18
+    },
+    {
+     "date": "2026-10-15",
      "startBankroll": 101.18,
      "endBankroll": 101.18
     }
@@ -550,7 +555,7 @@
    ],
    "copiedFrom": "v2-2026-10-10",
    "day": {
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "startBankroll": 101.18
    },
    "days": [
@@ -571,6 +576,11 @@
     },
     {
      "date": "2026-10-14",
+     "startBankroll": 101.18,
+     "endBankroll": 101.18
+    },
+    {
+     "date": "2026-10-15",
      "startBankroll": 101.18,
      "endBankroll": 101.18
     }
