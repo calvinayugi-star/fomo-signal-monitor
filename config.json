@@ -98,8 +98,6 @@
       "minVolumeAcceleration": 1.0,
       "minLiquidityGrowthPct": 0,
       "minVolumeTrend15m": 0,
-      "minChg15mPct": -20,
-      "maxChg15mPct": 12,
       "youngMaxAgeHours": 72,
       "youngMinTop10Pct": 8,
       "maxRoundTripPct": 4,

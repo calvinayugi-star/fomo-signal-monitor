@@ -151,9 +151,8 @@ async function screenPreSpike({ rows, sizeUsd, cfg, cache, log }) {
         continue;
       }
       Object.assign(r, { chg15: round(s.chg15), volTrend: round(s.volTrend) });
-      if (s.chg15 > e.maxChg15mPct) r.reason = 'spiking over the last 15 min';
-      else if (s.chg15 < e.minChg15mPct) r.reason = 'falling over the last 15 min';
-      else if (!(s.volTrend >= e.minVolumeTrend15m)) r.reason = 'volume not building (15 min)';
+      // No 15-min price limits since 2026-10-16 (user choice); chg15 is still recorded.
+      if (!(s.volTrend >= e.minVolumeTrend15m)) r.reason = 'volume not building (15 min)';
       else r.score = round(r.score + 15 * clamp01((s.volTrend - 1) / 2), 1); // 3x the hour's 15-min average = full marks
     } catch (err) {
       r.reason = 'candle data unavailable';
@@ -339,7 +338,7 @@ function buyMessage(run, r, pos, k, cfg, time, now) {
 <b>STOP:</b> none. Held until the target is reached, however long that takes.
 
 <b>WHY (pre-spike setup):</b>
-• Price still quiet: 1h ${signed(r.chgH1)}, 6h ${signed(r.chgH6)}, 15 min ${signed(r.chg15)}
+• Price: 1h ${signed(r.chgH1)}, 6h ${signed(r.chgH6)}, 15 min ${signed(r.chg15)}
 • Volume building: last hour ${r.accel.toFixed(1)}× the hours before; last 15 min ${r.volTrend.toFixed(1)}× the hour's average
 • Buying: ${r.ratioH1.toFixed(2)} buys per sell (1h), ${r.ratioH6.toFixed(2)} (6h)
 • Liquidity $${Math.round(r.liqUsd / 1000)}k${r.liqGrowth != null ? ` (${signed(r.liqGrowth * 100, 0)} vs last check)` : ''}, ${r.holders ?? 'n/a'} holders, top 10 hold ${r.top10Pct ?? 'n/a'}%
