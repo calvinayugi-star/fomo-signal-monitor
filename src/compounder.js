@@ -87,8 +87,6 @@ function entryRow(c, pair, nowMs, snapshots) {
 
 // Checks that need no extra API calls: real, building demand while the price has not moved much yet.
 function entryFailure(r, sizeUsd, blocked, e) {
-  const gradOnly = r.sources.length === 1 && r.sources[0] === 'Graduated';
-  if (gradOnly && r.ageH > e.graduatedMaxAgeHours) return 'graduated too long ago';
   if (r.priceUsd == null) return 'no price';
   if (r.ageH == null || r.ageH < e.minPairAgeHours) return 'pair too new';
   if (r.liqUsd < Math.max(e.minLiquidityUsd, e.minLiquidityMultipleOfPosition * sizeUsd)) return 'liquidity too thin for the position';
@@ -101,17 +99,14 @@ function entryFailure(r, sizeUsd, blocked, e) {
   if (r.accel == null || r.accel < e.minVolumeAcceleration) return 'volume not building';
   if (r.chgH1 < e.minChgH1Pct) return 'falling (1h)';
   if (r.chgH1 > e.maxChgH1Pct) return `already moving (>${e.maxChgH1Pct}% 1h)`;
-  if (r.chgM5 > e.maxChgM5Pct) return 'spiking right now (5 min)';
-  if (r.chgH6 < e.minChgH6Pct) return 'falling over 6h';
-  if (r.chgH6 > e.maxChgH6Pct) return `already spiked (>${e.maxChgH6Pct}% 6h)`;
   if (r.liqGrowth != null && r.liqGrowth * 100 < e.minLiquidityGrowthPct) return 'liquidity shrinking';
   if (blocked.has(r.mint)) return 'held or sold in the cooldown window';
   return null;
 }
 
-// 0-100 plus the list adjustment. Rewards accelerating volume and buying pressure, not price already gained.
+// 0-100 plus the list adjustment (Graduated bonus only within graduatedBonusMaxAgeHours; older graduates score neutrally). Rewards accelerating volume and buying pressure, not price already gained.
 function preScore(r, e) {
-  const list = r.sources.includes('Graduated') ? e.graduatedBonus : -e.trendingOnlyPenalty;
+  const list = !r.sources.includes('Graduated') ? -e.trendingOnlyPenalty : r.ageH <= e.graduatedBonusMaxAgeHours ? e.graduatedBonus : 0;
   return (
     30 * clamp01(Math.log2(r.accel) / 2) + // 4x volume acceleration = full marks
     25 * clamp01(r.ratioH1 - 1) + // 2 buys per sell = full marks
