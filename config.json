@@ -105,9 +105,11 @@
       "youngMaxAgeHours": 72,
       "youngMinTop10Pct": 8,
       "maxRoundTripPct": 4,
-      "graduatedBonus": 10,
-      "trendingOnlyPenalty": 15,
-      "minScore": 50,
+      "graduatedBonus": 0,
+      "trendingOnlyPenalty": 0,
+      "largeMcapUsd": 50000000,
+      "largeMcapPenalty": 15,
+      "minScore": 45,
       "maxCandleChecks": 8,
       "maxSafetyChecks": 3
     }

@@ -1,7 +1,7 @@
 // FOMO Compounder v2 (paper mode, since 2026-10-10): one position at a time, 100% of the bankroll.
 // Goal: buy a token BEFORE it spikes (volume and buying building while the price is still flat),
 // hold it with no stop and no time limit until it is +targetNetPct net, sell, and look for the next one.
-// Graduated tokens are preferred over Trending ones. Several variants (config compounder.variants, e.g. +20% and +10%)
+// Since 2026-10-16 Graduated and Trending tokens are scored alike (list adjustments 0). Several variants (config compounder.variants, e.g. +20% and +10%)
 // run side by side with the same rules and the same hourly candidates; each has its own run and bankroll. Runs inside the hourly monitor job:
 //   settle the open position on 1-minute candles -> screen for pre-spike setups -> BUY / HOLD / NO TRADE.
 // Records: data/compounder-run.json (ledger, never deleted; the v1 October run stays in it),
@@ -104,15 +104,19 @@ function entryFailure(r, sizeUsd, blocked, e) {
   return null;
 }
 
-// 0-100 plus the list adjustment (Graduated bonus only within graduatedBonusMaxAgeHours; older graduates score neutrally). Rewards accelerating volume and buying pressure, not price already gained.
+// 0-85 plus the list adjustment (Graduated bonus only within graduatedBonusMaxAgeHours) minus the large-cap penalty; stage 2 adds up to 15 for the
+// 15-min volume trend. Weights re-set 2026-10-16 from 36 stage-2 near-misses: strong 1h buying and an hour already rising +5..15% hit +20% most often,
+// volume acceleration barely separated (the filter already requires it), and tokens over $50M market cap almost never rose enough (1 of 12).
 function preScore(r, e) {
   const list = !r.sources.includes('Graduated') ? -e.trendingOnlyPenalty : r.ageH <= e.graduatedBonusMaxAgeHours ? e.graduatedBonus : 0;
   return (
-    30 * clamp01(Math.log2(r.accel) / 2) + // 4x volume acceleration = full marks
-    25 * clamp01(r.ratioH1 - 1) + // 2 buys per sell = full marks
+    15 * clamp01(Math.log2(r.accel) / 2) + // 4x volume acceleration = full marks
+    30 * clamp01(r.ratioH1 - 1) + // 2 buys per sell = full marks
     15 * clamp01((r.ratioH6 - 1) / 0.5) +
-    15 * clamp01((r.liqGrowth ?? 0) / 0.25) + // +25% liquidity in ~1h = full marks
-    list
+    10 * clamp01((r.liqGrowth ?? 0) / 0.25) + // +25% liquidity in ~1h = full marks
+    15 * clamp01(r.chgH1 / 10) + // price up 10% in the hour = full marks
+    list -
+    (r.mcapUsd >= e.largeMcapUsd ? e.largeMcapPenalty : 0)
   );
 }
 

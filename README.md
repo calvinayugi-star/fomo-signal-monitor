@@ -89,7 +89,7 @@ since with identical rules it would have made the same decisions until then. COM
 Telegram message is labelled with its variant, e.g. COMPOUNDER +20%/trade or COMPOUNDER +10%/day; per-day runs also send a "daily goal met" message.
 The per-day runs were added the same way, as copies of the +20% run (same start and open position).
 
-- **Lists:** Graduated tokens are preferred: +10 score if they graduated within 72h, 0 if older (no age limit since 2026-10-16); Trending-only tokens need a much stronger setup (−15).
+- **Lists:** since 2026-10-16 Graduated and Trending tokens are scored alike (before: +10 for graduates under 72h, −15 for Trending-only); no graduation age limit.
 - **Entry (hourly), "before the spike":** the price is still quiet (1h −10% to +25%, 15 min −20% to +12%)
   while demand builds (last hour's volume ≥ 1.0× the hours before, buys/sells 1.15–5 over 1h and ≥ 1 over 6h,
   liquidity not shrinking). Same quality bar as the monitor: liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, safety checks,
@@ -100,7 +100,9 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   Also 2026-10-16: 72h graduated limit removed (old Monitor alerts: tokens ≥72h old 0 of 8 fell 80%+, under 72h 13 of 19), Graduated bonus now only
   for graduates under 72h; 6h window (−15..+100%) and 5-min spike limit (≤ +8%) removed. Volume acceleration 1.1× → 1.0× (user choice; clones at ~1.00×
   are still held back by the 1h volume, bot-ratio and score rules). Reviewed and kept: pair ≥ 2h, buys/sells ≥ 1.15 (1h) / ≥ 1 (6h) / ≤ 5, liquidity, round trip ≤ 4%.
-  The score rewards volume acceleration, buying pressure and liquidity growth, not price already gained.
+  Score re-weighted 2026-10-16 (user choice, from 36 stage-2 near-misses Oct 10–16): 1h buys/sells 30, 1h price rise up to +10% 15, 6h buys/sells 15,
+  15-min volume trend 15, volume acceleration 15 (was 30), liquidity growth 10 (was 15), −15 for market cap ≥ $50M, list adjustments 0, bar 50 → 45.
+  On those 36 tokens: 11 entries, 7 hit +20%, 0 crashed (current score at 50: 10 entries, 7 hit, 1 crashed). Fitted on the same data, so expect worse live.
 - **Exit:** only at the variant's target (+20% or +10% net), checked on 1-minute candles, so the paper sale happens the first minute the price gets there. Nothing else ends a position.
   If a held token has no trades for 24h a warning is sent (it may be dead), but it stays held.
   One-off exception (user request, 2026-10-11): `compounder.oneOffExits` closes the Fartcoin position bought 2026-10-11 07:00 UTC in all runs
