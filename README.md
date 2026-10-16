@@ -99,7 +99,8 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   15-min floor −10% → −20% (3 of 3 tokens rejected for a 15-min dip hit +20% within 11h), 1h window −5..+15% → −10..+25%. Score bar (50) and bot filters unchanged.
   Also 2026-10-16: 72h graduated limit removed (old Monitor alerts: tokens ≥72h old 0 of 8 fell 80%+, under 72h 13 of 19), Graduated bonus now only
   for graduates under 72h; 6h window (−15..+100%) and 5-min spike limit (≤ +8%) removed. Volume acceleration 1.1× → 1.0× (user choice; clones at ~1.00×
-  are still held back by the 1h volume, bot-ratio and score rules). 1h price window (−10..+25%) and 15-min window (−20..+12%) removed (user choice). Reviewed and kept: pair ≥ 2h, buys/sells ≥ 1.15 (1h) / ≥ 1 (6h) / ≤ 5, liquidity, round trip ≤ 4%.
+  are still held back by the 1h volume, bot-ratio and score rules). 1h price window (−10..+25%) and 15-min window (−20..+12%) removed (user choice). 1h volume floor $15k → $5k and buys 60 → 30
+  (user choice; ATFS-type bot clones at $5–8k/h may now reach the score). Liquidity floor kept. Reviewed and kept: pair ≥ 2h, buys/sells ≥ 1.15 (1h) / ≥ 1 (6h) / ≤ 5, liquidity, round trip ≤ 4%.
   Score re-weighted 2026-10-16 (user choice, from 36 stage-2 near-misses Oct 10–16): 1h buys/sells 30, 1h price rise up to +10% 15, 6h buys/sells 15,
   15-min volume trend 15, volume acceleration 15 (was 30), liquidity growth 10 (was 15), −15 for market cap ≥ $50M, list adjustments 0, bar 50 → 45.
   On those 36 tokens: 11 entries, 7 hit +20%, 0 crashed (current score at 50: 10 entries, 7 hit, 1 crashed). Fitted on the same data, so expect worse live.
