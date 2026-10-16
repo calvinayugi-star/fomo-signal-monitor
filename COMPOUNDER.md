@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 16, 10:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 16, 11:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -9,14 +9,14 @@ Updated Fri, Oct 16, 10:01 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$117.84** | **$108.03** | **$121.41** | **$111.29** |
-| Return since the $100 start | +17.8% | +8.0% | +21.4% | +11.3% |
-| Positions sold at the target | 1 (+1 closed early) | 1 (+1 closed early) | 1 (+1 closed early) | 1 (+1 closed early) |
-| Average time to reach the target | 2.8h | 2.6h | 2.8h | 2.6h |
-| Average worst point before the target | -27.3% | -27.3% | -27.3% | -27.3% |
-| Profit banked / costs | $21.41 / $5.51 | $11.29 / $5.15 | $21.41 / $5.51 | $11.29 / $5.15 |
+| Bankroll now (open position at its last mark) | **$145.69** | **$122.42** | **$121.41** | **$111.29** |
+| Return since the $100 start | +45.7% | +22.4% | +21.4% | +11.3% |
+| Positions sold at the target | 2 (+1 closed early) | 2 (+1 closed early) | 1 (+1 closed early) | 1 (+1 closed early) |
+| Average time to reach the target | 3.3h | 2.8h | 2.8h | 2.6h |
+| Average worst point before the target | -19.4% | -19.4% | -27.3% | -27.3% |
+| Profit banked / costs | $45.69 / $8.50 | $22.42 / $7.66 | $21.41 / $5.51 | $11.29 / $5.15 |
 | Days the daily goal was met (per-day runs) | – | – | 1 of 6 | 1 of 6 |
-| Now | holding $VEIL (-3.0%, 3.0h) | holding $VEIL (-2.9%, 3.0h) | daily goal met, paused until midnight | daily goal met, paused until midnight |
+| Now | holding $FTR (n/a, n/a) | holding $FTR (n/a, n/a) | daily goal met, paused until midnight | daily goal met, paused until midnight |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -26,29 +26,30 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$117.84** (+17.8%) |
+| Start → now | $100 → **$145.69** (+45.7%) |
 | Running for | 5.9 days (since Oct 10, 13:00) |
-| Positions sold at +20% | 1 (+1 closed early by a one-off exit) |
-| Average time to reach the target | 2.8h |
-| Average worst point before the target | -27.3% |
-| Profit banked / costs | $21.41 / $5.51 |
+| Positions sold at +20% | 2 (+1 closed early by a one-off exit) |
+| Average time to reach the target | 3.3h |
+| Average worst point before the target | -19.4% |
+| Profit banked / costs | $45.69 / $8.50 |
 | Each +20% sale multiplies the bankroll by | 1.20× ($100 → $249 after 5, $619 after 10) |
 
 ### Open position
 
 | | |
 |---|---|
-| Token | $VEIL (Trending) · [DexScreener](https://dexscreener.com/solana/4MWjp1aBQqE9Y6iC5cd3NrVvWWcHsN2LgpjWYMDK7u7E) |
-| Bought | Oct 16, 07:01 · $121.41 at $0.004671 |
-| Sell target | $0.005720 (+20% net) |
-| Current value | $117.84 (-3.0% net, at Oct 16, 10:00) |
-| Best / worst while held | +3.2% / -11.4% |
-| Held for | 3.0h |
+| Token | $FTR (Both) · [DexScreener](https://dexscreener.com/solana/Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y) |
+| Bought | Oct 16, 11:01 · $145.69 (fill pending) |
+| Sell target | +20% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 3 | Oct 16, 07:04 | VEIL | Trending | $121.41 | 3.9h | -11.4% | 0.004671 → 0.005720 | $2.99 | +20.0% | $24.28 | $145.69 |
 | 2 | Oct 16, 03:04 | OWLDACITY | Both | $101.18 | 2.8h | -27.3% | 0.0008749 → 0.001087 | $4.27 | +20.0% | $20.24 | $121.41 |
 | 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
 
@@ -56,29 +57,30 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$108.03** (+8.0%) |
+| Start → now | $100 → **$122.42** (+22.4%) |
 | Running for | 5.9 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
-| Positions sold at +10% | 1 (+1 closed early by a one-off exit) |
-| Average time to reach the target | 2.6h |
-| Average worst point before the target | -27.3% |
-| Profit banked / costs | $11.29 / $5.15 |
+| Positions sold at +10% | 2 (+1 closed early by a one-off exit) |
+| Average time to reach the target | 2.8h |
+| Average worst point before the target | -19.4% |
+| Profit banked / costs | $22.42 / $7.66 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
 ### Open position
 
 | | |
 |---|---|
-| Token | $VEIL (Trending) · [DexScreener](https://dexscreener.com/solana/4MWjp1aBQqE9Y6iC5cd3NrVvWWcHsN2LgpjWYMDK7u7E) |
-| Bought | Oct 16, 07:01 · $111.29 at $0.004671 |
-| Sell target | $0.005243 (+10% net) |
-| Current value | $108.03 (-2.9% net, at Oct 16, 10:00) |
-| Best / worst while held | +3.2% / -11.4% |
-| Held for | 3.0h |
+| Token | $FTR (Both) · [DexScreener](https://dexscreener.com/solana/Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y) |
+| Bought | Oct 16, 11:01 · $122.42 (fill pending) |
+| Sell target | +10% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 3 | Oct 16, 07:04 | VEIL | Trending | $111.29 | 3.0h | -11.4% | 0.004671 → 0.005243 | $2.50 | +10.0% | $11.13 | $122.42 |
 | 2 | Oct 16, 03:04 | OWLDACITY | Both | $101.18 | 2.6h | -27.3% | 0.0008749 → 0.0009962 | $3.91 | +10.0% | $10.12 | $111.29 |
 | 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
 
