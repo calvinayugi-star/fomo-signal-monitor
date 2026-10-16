@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 16, 08:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 16, 09:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -9,14 +9,14 @@ Updated Fri, Oct 16, 08:01 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$120.24** | **$110.23** | **$121.41** | **$111.29** |
-| Return since the $100 start | +20.2% | +10.2% | +21.4% | +11.3% |
+| Bankroll now (open position at its last mark) | **$112.23** | **$102.89** | **$121.41** | **$111.29** |
+| Return since the $100 start | +12.2% | +2.9% | +21.4% | +11.3% |
 | Positions sold at the target | 1 (+1 closed early) | 1 (+1 closed early) | 1 (+1 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 2.8h | 2.6h | 2.8h | 2.6h |
 | Average worst point before the target | -27.3% | -27.3% | -27.3% | -27.3% |
 | Profit banked / costs | $21.41 / $5.51 | $11.29 / $5.15 | $21.41 / $5.51 | $11.29 / $5.15 |
 | Days the daily goal was met (per-day runs) | – | – | 1 of 6 | 1 of 6 |
-| Now | holding $VEIL (-1.0%, 0.9h) | holding $VEIL (-0.9%, 0.9h) | daily goal met, paused until midnight | daily goal met, paused until midnight |
+| Now | holding $VEIL (-7.6%, 1.9h) | holding $VEIL (-7.5%, 1.9h) | daily goal met, paused until midnight | daily goal met, paused until midnight |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -26,7 +26,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$120.24** (+20.2%) |
+| Start → now | $100 → **$112.23** (+12.2%) |
 | Running for | 5.8 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 1 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 2.8h |
@@ -41,9 +41,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $VEIL (Trending) · [DexScreener](https://dexscreener.com/solana/4MWjp1aBQqE9Y6iC5cd3NrVvWWcHsN2LgpjWYMDK7u7E) |
 | Bought | Oct 16, 07:01 · $121.41 at $0.004671 |
 | Sell target | $0.005720 (+20% net) |
-| Current value | $120.24 (-1.0% net, at Oct 16, 08:00) |
-| Best / worst while held | -0.6% / -4.7% |
-| Held for | 0.9h |
+| Current value | $112.23 (-7.6% net, at Oct 16, 09:00) |
+| Best / worst while held | +3.2% / -11.4% |
+| Held for | 1.9h |
 
 ### Completed positions (newest first)
 
@@ -56,7 +56,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$110.23** (+10.2%) |
+| Start → now | $100 → **$102.89** (+2.9%) |
 | Running for | 5.8 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 1 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 2.6h |
@@ -71,9 +71,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $VEIL (Trending) · [DexScreener](https://dexscreener.com/solana/4MWjp1aBQqE9Y6iC5cd3NrVvWWcHsN2LgpjWYMDK7u7E) |
 | Bought | Oct 16, 07:01 · $111.29 at $0.004671 |
 | Sell target | $0.005243 (+10% net) |
-| Current value | $110.23 (-0.9% net, at Oct 16, 08:00) |
-| Best / worst while held | -0.6% / -4.7% |
-| Held for | 0.9h |
+| Current value | $102.89 (-7.5% net, at Oct 16, 09:00) |
+| Best / worst while held | +3.2% / -11.4% |
+| Held for | 1.9h |
 
 ### Completed positions (newest first)
 
