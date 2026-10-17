@@ -397,15 +397,15 @@
      "fillCandleT": 1792163040,
      "at": "2026-10-16T15:04:28.218Z"
     },
-    "checkedThrough": 1792206000,
+    "checkedThrough": 1792209600,
     "peakNetPct": 3.75,
     "worstNetPct": -49.38,
-    "lastTradeAt": "2026-10-17T03:00:00.000Z",
+    "lastTradeAt": "2026-10-17T04:00:00.000Z",
     "mark": {
-     "at": "2026-10-17T03:00:00.000Z",
-     "price": 0.003779311643902908,
-     "netPct": -35.59,
-     "proceeds": 93.84
+     "at": "2026-10-17T04:00:00.000Z",
+     "price": 0.003929655738725513,
+     "netPct": -33.03,
+     "proceeds": 97.57
     },
     "targetPriceUsd": 0.007041486131565023,
     "stale": false
@@ -524,15 +524,15 @@
      "fillCandleT": 1792163040,
      "at": "2026-10-16T15:04:28.218Z"
     },
-    "checkedThrough": 1792206000,
+    "checkedThrough": 1792209600,
     "peakNetPct": 3.86,
     "worstNetPct": -49.37,
-    "lastTradeAt": "2026-10-17T03:00:00.000Z",
+    "lastTradeAt": "2026-10-17T04:00:00.000Z",
     "mark": {
-     "at": "2026-10-17T03:00:00.000Z",
-     "price": 0.003779311643902908,
-     "netPct": -35.52,
-     "proceeds": 78.94
+     "at": "2026-10-17T04:00:00.000Z",
+     "price": 0.003929655738725513,
+     "netPct": -32.96,
+     "proceeds": 82.08
     },
     "targetPriceUsd": 0.006447599223144393,
     "stale": false
@@ -679,9 +679,8 @@
    ],
    "copiedFrom": "v2-2026-10-10",
    "day": {
-    "date": "2026-10-16",
-    "startBankroll": 101.18,
-    "goalMetAt": "2026-10-16T09:58:24.448Z"
+    "date": "2026-10-17",
+    "startBankroll": 121.41
    },
    "days": [
     {
@@ -708,6 +707,12 @@
      "date": "2026-10-15",
      "startBankroll": 101.18,
      "endBankroll": 101.18
+    },
+    {
+     "date": "2026-10-16",
+     "startBankroll": 101.18,
+     "goalMetAt": "2026-10-16T09:58:24.448Z",
+     "endBankroll": 121.41
     }
    ]
   },
@@ -776,9 +781,8 @@
    ],
    "copiedFrom": "v2-2026-10-10",
    "day": {
-    "date": "2026-10-16",
-    "startBankroll": 101.18,
-    "goalMetAt": "2026-10-16T09:58:24.448Z"
+    "date": "2026-10-17",
+    "startBankroll": 111.29
    },
    "days": [
     {
@@ -805,6 +809,12 @@
      "date": "2026-10-15",
      "startBankroll": 101.18,
      "endBankroll": 101.18
+    },
+    {
+     "date": "2026-10-16",
+     "startBankroll": 101.18,
+     "goalMetAt": "2026-10-16T09:58:24.448Z",
+     "endBankroll": 111.29
     }
    ]
   }
