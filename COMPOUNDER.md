@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sat, Oct 17, 00:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Sat, Oct 17, 01:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -9,14 +9,14 @@ Updated Sat, Oct 17, 00:01 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$97.57** | **$82.08** | **$121.41** | **$111.29** |
-| Return since the $100 start | -2.4% | -17.9% | +21.4% | +11.3% |
+| Bankroll now (open position at its last mark) | **$90.86** | **$76.43** | **$121.41** | **$111.29** |
+| Return since the $100 start | -9.1% | -23.6% | +21.4% | +11.3% |
 | Positions sold at the target | 2 (+1 closed early) | 2 (+1 closed early) | 1 (+1 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 3.3h | 2.8h | 2.8h | 2.6h |
 | Average worst point before the target | -19.4% | -19.4% | -27.3% | -27.3% |
 | Profit banked / costs | $45.69 / $8.50 | $22.42 / $7.66 | $21.41 / $5.51 | $11.29 / $5.15 |
 | Days the daily goal was met (per-day runs) | – | – | 1 of 7 | 1 of 7 |
-| Now | holding $FTR (-33.0%, 13.0h) | holding $FTR (-33.0%, 13.0h) | in cash, searching | in cash, searching |
+| Now | holding $FTR (-37.6%, 14.0h) | holding $FTR (-37.6%, 14.0h) | in cash, searching | in cash, searching |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -26,7 +26,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$97.57** (-2.4%) |
+| Start → now | $100 → **$90.86** (-9.1%) |
 | Running for | 6.5 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 2 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 3.3h |
@@ -41,9 +41,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $FTR (Both) · [DexScreener](https://dexscreener.com/solana/Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y) |
 | Bought | Oct 16, 11:01 · $145.69 at $0.005756 |
 | Sell target | $0.007041 (+20% net) |
-| Current value | $97.57 (-33.0% net, at Oct 17, 00:00) |
+| Current value | $90.86 (-37.6% net, at Oct 17, 01:00) |
 | Best / worst while held | +3.8% / -49.4% |
-| Held for | 13.0h |
+| Held for | 14.0h |
 
 ### Completed positions (newest first)
 
@@ -57,7 +57,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$82.08** (-17.9%) |
+| Start → now | $100 → **$76.43** (-23.6%) |
 | Running for | 6.5 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 2 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 2.8h |
@@ -72,9 +72,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $FTR (Both) · [DexScreener](https://dexscreener.com/solana/Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y) |
 | Bought | Oct 16, 11:01 · $122.42 at $0.005756 |
 | Sell target | $0.006448 (+10% net) |
-| Current value | $82.08 (-33.0% net, at Oct 17, 00:00) |
+| Current value | $76.43 (-37.6% net, at Oct 17, 01:00) |
 | Best / worst while held | +3.9% / -49.4% |
-| Held for | 13.0h |
+| Held for | 14.0h |
 
 ### Completed positions (newest first)
 
