@@ -397,15 +397,15 @@
      "fillCandleT": 1792163040,
      "at": "2026-10-16T15:04:28.218Z"
     },
-    "checkedThrough": 1792227600,
+    "checkedThrough": 1792231200,
     "peakNetPct": 3.75,
     "worstNetPct": -49.38,
-    "lastTradeAt": "2026-10-17T09:00:00.000Z",
+    "lastTradeAt": "2026-10-17T10:00:00.000Z",
     "mark": {
-     "at": "2026-10-17T09:00:00.000Z",
-     "price": 0.0033517318670524734,
-     "netPct": -42.88,
-     "proceeds": 83.22
+     "at": "2026-10-17T10:00:00.000Z",
+     "price": 0.003371991301556751,
+     "netPct": -42.54,
+     "proceeds": 83.72
     },
     "targetPriceUsd": 0.007041486131565023,
     "stale": false
@@ -524,15 +524,15 @@
      "fillCandleT": 1792163040,
      "at": "2026-10-16T15:04:28.218Z"
     },
-    "checkedThrough": 1792227600,
+    "checkedThrough": 1792231200,
     "peakNetPct": 3.86,
     "worstNetPct": -49.37,
-    "lastTradeAt": "2026-10-17T09:00:00.000Z",
+    "lastTradeAt": "2026-10-17T10:00:00.000Z",
     "mark": {
-     "at": "2026-10-17T09:00:00.000Z",
-     "price": 0.0033517318670524734,
-     "netPct": -42.83,
-     "proceeds": 69.99
+     "at": "2026-10-17T10:00:00.000Z",
+     "price": 0.003371991301556751,
+     "netPct": -42.48,
+     "proceeds": 70.41
     },
     "targetPriceUsd": 0.006447599223144393,
     "stale": false
@@ -625,8 +625,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 121.4119,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "Eternia",
+    "mint": "CY27QvCQBCmLBuz3V7c8snEeD4z67iyoSTkwo35Ypump",
+    "pairAddress": "ABqXgS5c78P8Nix49kqsBTNQjAmMAhCBH2mvjq1zqQZ2",
+    "list": "Graduated",
+    "decidedAt": "2026-10-17T10:01:37.702Z",
+    "alertPriceUsd": 0.003645,
+    "sizeUsd": 121.4119,
+    "dexRoundTripPct": 1.71,
+    "roundTripPct": 2.7,
+    "score": 68.6,
+    "entry": {
+     "chgH1": 184,
+     "chgH6": 830,
+     "chg15": -18.09,
+     "accel": 1.29,
+     "volTrend": 1.13,
+     "ratioH1": 2.25,
+     "ageH": 7.2,
+     "top10Pct": 8.8
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -727,8 +748,29 @@
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
    "status": "active",
-   "cash": 111.2943,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "Eternia",
+    "mint": "CY27QvCQBCmLBuz3V7c8snEeD4z67iyoSTkwo35Ypump",
+    "pairAddress": "ABqXgS5c78P8Nix49kqsBTNQjAmMAhCBH2mvjq1zqQZ2",
+    "list": "Graduated",
+    "decidedAt": "2026-10-17T10:01:37.702Z",
+    "alertPriceUsd": 0.003645,
+    "sizeUsd": 111.2943,
+    "dexRoundTripPct": 1.71,
+    "roundTripPct": 2.7,
+    "score": 68.6,
+    "entry": {
+     "chgH1": 184,
+     "chgH6": 830,
+     "chg15": -18.09,
+     "accel": 1.29,
+     "volTrend": 1.13,
+     "ratioH1": 2.25,
+     "ageH": 7.2,
+     "top10Pct": 8.8
+    }
+   },
    "trades": [
     {
      "n": 1,
