@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sat, Oct 17, 16:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Sat, Oct 17, 16:56 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -9,14 +9,14 @@ Updated Sat, Oct 17, 16:01 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$69.40** | **$58.32** | **$6.59** | **$6.01** |
-| Return since the $100 start | -30.6% | -41.7% | -93.4% | -94.0% |
+| Bankroll now (open position at its last mark) | **$67.46** | **$56.68** | **$6.46** | **$5.89** |
+| Return since the $100 start | -32.5% | -43.3% | -93.5% | -94.1% |
 | Positions sold at the target | 2 (+1 closed early) | 2 (+1 closed early) | 1 (+1 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 3.3h | 2.8h | 2.8h | 2.6h |
 | Average worst point before the target | -19.4% | -19.4% | -27.3% | -27.3% |
 | Profit banked / costs | $45.69 / $8.50 | $22.42 / $7.66 | $21.41 / $5.51 | $11.29 / $5.15 |
 | Days the daily goal was met (per-day runs) | – | – | 1 of 7 | 1 of 7 |
-| Now | holding $FTR (-52.4%, 29.0h) | holding $FTR (-52.4%, 29.0h) | holding $Eternia (-94.6%, 10.0h) | holding $Eternia (-94.6%, 10.0h) |
+| Now | holding $FTR (-53.7%, 29.9h) | holding $FTR (-53.7%, 29.9h) | holding $Eternia (-94.7%, 10.9h) | holding $Eternia (-94.7%, 10.9h) |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -26,8 +26,8 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$69.40** (-30.6%) |
-| Running for | 7.1 days (since Oct 10, 13:00) |
+| Start → now | $100 → **$67.46** (-32.5%) |
+| Running for | 7.2 days (since Oct 10, 13:00) |
 | Positions sold at +20% | 2 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 3.3h |
 | Average worst point before the target | -19.4% |
@@ -41,9 +41,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $FTR (Both) · [DexScreener](https://dexscreener.com/solana/Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y) |
 | Bought | Oct 16, 11:01 · $145.69 at $0.005756 |
 | Sell target | $0.007041 (+20% net) |
-| Current value | $69.40 (-52.4% net, at Oct 17, 16:00) |
+| Current value | $67.46 (-53.7% net, at Oct 17, 16:55) |
 | Best / worst while held | +3.8% / -61.6% |
-| Held for | 29.0h |
+| Held for | 29.9h |
 
 ### Completed positions (newest first)
 
@@ -57,8 +57,8 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$58.32** (-41.7%) |
-| Running for | 7.1 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Start → now | $100 → **$56.68** (-43.3%) |
+| Running for | 7.2 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 2 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 2.8h |
 | Average worst point before the target | -19.4% |
@@ -72,9 +72,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $FTR (Both) · [DexScreener](https://dexscreener.com/solana/Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y) |
 | Bought | Oct 16, 11:01 · $122.42 at $0.005756 |
 | Sell target | $0.006448 (+10% net) |
-| Current value | $58.32 (-52.4% net, at Oct 17, 16:00) |
+| Current value | $56.68 (-53.7% net, at Oct 17, 16:55) |
 | Best / worst while held | +3.9% / -61.6% |
-| Held for | 29.0h |
+| Held for | 29.9h |
 
 ### Completed positions (newest first)
 
@@ -88,8 +88,8 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$6.59** (-93.4%) |
-| Running for | 7.1 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Start → now | $100 → **$6.46** (-93.5%) |
+| Running for | 7.2 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +20% | 1 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 2.8h |
 | Average worst point before the target | -27.3% |
@@ -104,9 +104,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $Eternia (Graduated) · [DexScreener](https://dexscreener.com/solana/ABqXgS5c78P8Nix49kqsBTNQjAmMAhCBH2mvjq1zqQZ2) |
 | Bought | Oct 17, 06:01 · $121.41 at $0.003803 |
 | Sell target | $0.004689 (+20% net) |
-| Current value | $6.59 (-94.6% net, at Oct 17, 16:00) |
+| Current value | $6.46 (-94.7% net, at Oct 17, 16:55) |
 | Best / worst while held | +2.8% / -94.9% |
-| Held for | 10.0h |
+| Held for | 10.9h |
 
 ### Completed positions (newest first)
 
@@ -119,8 +119,8 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$6.01** (-94.0%) |
-| Running for | 7.1 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
+| Start → now | $100 → **$5.89** (-94.1%) |
+| Running for | 7.2 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
 | Positions sold at +10% | 1 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 2.6h |
 | Average worst point before the target | -27.3% |
@@ -135,9 +135,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $Eternia (Graduated) · [DexScreener](https://dexscreener.com/solana/ABqXgS5c78P8Nix49kqsBTNQjAmMAhCBH2mvjq1zqQZ2) |
 | Bought | Oct 17, 06:01 · $111.29 at $0.003803 |
 | Sell target | $0.004298 (+10% net) |
-| Current value | $6.01 (-94.6% net, at Oct 17, 16:00) |
+| Current value | $5.89 (-94.7% net, at Oct 17, 16:55) |
 | Best / worst while held | +2.8% / -94.9% |
-| Held for | 10.0h |
+| Held for | 10.9h |
 
 ### Completed positions (newest first)
 
