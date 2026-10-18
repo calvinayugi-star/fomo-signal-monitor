@@ -369,47 +369,9 @@
    "targetNetPct": 20,
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
-   "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "FTR",
-    "mint": "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump",
-    "pairAddress": "Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y",
-    "list": "Both",
-    "decidedAt": "2026-10-16T15:01:28.218Z",
-    "alertPriceUsd": 0.006135,
-    "sizeUsd": 145.6943,
-    "dexRoundTripPct": 0.93,
-    "roundTripPct": 1.93,
-    "score": 49.4,
-    "entry": {
-     "chgH1": 7.62,
-     "chgH6": 6.35,
-     "chg15": -3.03,
-     "accel": 2.04,
-     "volTrend": 0.53,
-     "ratioH1": 1.64,
-     "ageH": 36.9,
-     "top10Pct": 13.6
-    },
-    "fill": {
-     "rawPrice": 0.005755595653065941,
-     "fillCandleT": 1792163040,
-     "at": "2026-10-16T15:04:28.218Z"
-    },
-    "checkedThrough": 1792346400,
-    "peakNetPct": 3.75,
-    "worstNetPct": -71.96,
-    "lastTradeAt": "2026-10-18T18:00:00.000Z",
-    "mark": {
-     "at": "2026-10-18T18:00:00.000Z",
-     "price": 0.0018651211382011714,
-     "netPct": -68.31,
-     "proceeds": 46.17
-    },
-    "targetPriceUsd": 0.007041486131565023,
-    "stale": false
-   },
+   "status": "ended",
+   "cash": 46.17,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -482,10 +444,24 @@
      "worstNetPct": -11.37,
      "targetHit": true,
      "newBankroll": 145.6943
+    },
+    {
+     "n": 4,
+     "symbol": "FTR",
+     "decidedAt": "2026-10-16T15:01:28.218Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": -68.31,
+     "netUsd": -99.5243,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 46.17
     }
    ],
    "variant": "t20",
-   "per": "trade"
+   "per": "trade",
+   "endedAt": "2026-10-18T19:01:39.344Z",
+   "finalBankroll": 46.17,
+   "note": "restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark"
   },
   {
    "id": "v2-t10-2026-10-11",
@@ -496,47 +472,9 @@
    "targetNetPct": 10,
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
-   "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "FTR",
-    "mint": "DFMt2FyLpB6ekPNAzVErLXgpSnJ9CRf1VnxBAkTLpump",
-    "pairAddress": "Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y",
-    "list": "Both",
-    "decidedAt": "2026-10-16T15:01:28.218Z",
-    "alertPriceUsd": 0.006135,
-    "sizeUsd": 122.4237,
-    "dexRoundTripPct": 0.82,
-    "roundTripPct": 1.81,
-    "score": 49.7,
-    "entry": {
-     "chgH1": 7.62,
-     "chgH6": 6.35,
-     "chg15": -3.03,
-     "accel": 2.04,
-     "volTrend": 0.53,
-     "ratioH1": 1.64,
-     "ageH": 36.9,
-     "top10Pct": 13.6
-    },
-    "fill": {
-     "rawPrice": 0.005755595653065941,
-     "fillCandleT": 1792163040,
-     "at": "2026-10-16T15:04:28.218Z"
-    },
-    "checkedThrough": 1792346400,
-    "peakNetPct": 3.86,
-    "worstNetPct": -71.97,
-    "lastTradeAt": "2026-10-18T18:00:00.000Z",
-    "mark": {
-     "at": "2026-10-18T18:00:00.000Z",
-     "price": 0.0018651211382011714,
-     "netPct": -68.32,
-     "proceeds": 38.78
-    },
-    "targetPriceUsd": 0.006447599223144393,
-    "stale": false
-   },
+   "status": "ended",
+   "cash": 38.78,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -609,10 +547,24 @@
      "worstNetPct": -11.36,
      "targetHit": true,
      "newBankroll": 122.4237
+    },
+    {
+     "n": 4,
+     "symbol": "FTR",
+     "decidedAt": "2026-10-16T15:01:28.218Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": -68.32,
+     "netUsd": -83.6437,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 38.78
     }
    ],
    "copiedFrom": "v2-2026-10-10",
-   "per": "trade"
+   "per": "trade",
+   "endedAt": "2026-10-18T19:01:39.344Z",
+   "finalBankroll": 38.78,
+   "note": "restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark"
   },
   {
    "id": "v2-d20-2026-10-11",
@@ -624,47 +576,9 @@
    "targetNetPct": 20,
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
-   "status": "active",
+   "status": "ended",
    "cash": 0,
-   "position": {
-    "symbol": "Eternia",
-    "mint": "CY27QvCQBCmLBuz3V7c8snEeD4z67iyoSTkwo35Ypump",
-    "pairAddress": "ABqXgS5c78P8Nix49kqsBTNQjAmMAhCBH2mvjq1zqQZ2",
-    "list": "Graduated",
-    "decidedAt": "2026-10-17T10:01:37.702Z",
-    "alertPriceUsd": 0.003645,
-    "sizeUsd": 121.4119,
-    "dexRoundTripPct": 1.71,
-    "roundTripPct": 2.7,
-    "score": 68.6,
-    "entry": {
-     "chgH1": 184,
-     "chgH6": 830,
-     "chg15": -18.09,
-     "accel": 1.29,
-     "volTrend": 1.13,
-     "ratioH1": 2.25,
-     "ageH": 7.2,
-     "top10Pct": 8.8
-    },
-    "fill": {
-     "rawPrice": 0.003802984608716287,
-     "fillCandleT": 1792231440,
-     "at": "2026-10-17T10:04:37.702Z"
-    },
-    "checkedThrough": 1792344060,
-    "peakNetPct": 2.82,
-    "worstNetPct": -100,
-    "lastTradeAt": "2026-10-18T17:21:00.000Z",
-    "mark": {
-     "at": "2026-10-18T17:21:00.000Z",
-     "price": 0.000003811565133122635,
-     "netPct": -100,
-     "proceeds": 0
-    },
-    "targetPriceUsd": 0.004689065172073096,
-    "stale": false
-   },
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -713,6 +627,17 @@
      "worstNetPct": -27.34,
      "targetHit": true,
      "newBankroll": 121.4119
+    },
+    {
+     "n": 3,
+     "symbol": "Eternia",
+     "decidedAt": "2026-10-17T10:01:37.702Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": -100,
+     "netUsd": -121.4119,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 0
     }
    ],
    "copiedFrom": "v2-2026-10-10",
@@ -757,7 +682,10 @@
      "startBankroll": 121.41,
      "endBankroll": 10.55
     }
-   ]
+   ],
+   "endedAt": "2026-10-18T19:01:39.344Z",
+   "finalBankroll": 0,
+   "note": "restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark"
   },
   {
    "id": "v2-d10-2026-10-11",
@@ -769,47 +697,9 @@
    "targetNetPct": 10,
    "startedAt": "2026-10-10T17:00:35.602Z",
    "endsAt": null,
-   "status": "active",
+   "status": "ended",
    "cash": 0,
-   "position": {
-    "symbol": "Eternia",
-    "mint": "CY27QvCQBCmLBuz3V7c8snEeD4z67iyoSTkwo35Ypump",
-    "pairAddress": "ABqXgS5c78P8Nix49kqsBTNQjAmMAhCBH2mvjq1zqQZ2",
-    "list": "Graduated",
-    "decidedAt": "2026-10-17T10:01:37.702Z",
-    "alertPriceUsd": 0.003645,
-    "sizeUsd": 111.2943,
-    "dexRoundTripPct": 1.71,
-    "roundTripPct": 2.7,
-    "score": 68.6,
-    "entry": {
-     "chgH1": 184,
-     "chgH6": 830,
-     "chg15": -18.09,
-     "accel": 1.29,
-     "volTrend": 1.13,
-     "ratioH1": 2.25,
-     "ageH": 7.2,
-     "top10Pct": 8.8
-    },
-    "fill": {
-     "rawPrice": 0.003802984608716287,
-     "fillCandleT": 1792231440,
-     "at": "2026-10-17T10:04:37.702Z"
-    },
-    "checkedThrough": 1792344060,
-    "peakNetPct": 2.82,
-    "worstNetPct": -100,
-    "lastTradeAt": "2026-10-18T17:21:00.000Z",
-    "mark": {
-     "at": "2026-10-18T17:21:00.000Z",
-     "price": 0.000003811565133122635,
-     "netPct": -100,
-     "proceeds": 0
-    },
-    "targetPriceUsd": 0.004298309741067006,
-    "stale": false
-   },
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -858,6 +748,17 @@
      "worstNetPct": -27.34,
      "targetHit": true,
      "newBankroll": 111.2943
+    },
+    {
+     "n": 3,
+     "symbol": "Eternia",
+     "decidedAt": "2026-10-17T10:01:37.702Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": -100,
+     "netUsd": -111.2943,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 0
     }
    ],
    "copiedFrom": "v2-2026-10-10",
@@ -902,7 +803,162 @@
      "startBankroll": 111.29,
      "endBankroll": 9.64
     }
-   ]
+   ],
+   "endedAt": "2026-10-18T19:01:39.344Z",
+   "finalBankroll": 0,
+   "note": "restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark"
+  },
+  {
+   "id": "v2-t20-2026-10-18",
+   "rules": "v2",
+   "variant": "t20",
+   "per": "trade",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetNetPct": 20,
+   "startedAt": "2026-10-18T19:01:39.344Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "USDF",
+    "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
+    "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
+    "list": "Graduated",
+    "decidedAt": "2026-10-18T19:01:39.344Z",
+    "alertPriceUsd": 0.004365,
+    "sizeUsd": 100,
+    "dexRoundTripPct": 1.51,
+    "roundTripPct": 2.5,
+    "score": 45.2,
+    "entry": {
+     "chgH1": 1.67,
+     "chgH6": 26.36,
+     "chg15": 1.17,
+     "accel": 1.2,
+     "volTrend": 0.81,
+     "ratioH1": 2.07,
+     "ageH": 209.7,
+     "top10Pct": 3.4
+    }
+   },
+   "trades": []
+  },
+  {
+   "id": "v2-t10-2026-10-18",
+   "rules": "v2",
+   "variant": "t10",
+   "per": "trade",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetNetPct": 10,
+   "startedAt": "2026-10-18T19:01:39.344Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "USDF",
+    "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
+    "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
+    "list": "Graduated",
+    "decidedAt": "2026-10-18T19:01:39.344Z",
+    "alertPriceUsd": 0.004365,
+    "sizeUsd": 100,
+    "dexRoundTripPct": 1.51,
+    "roundTripPct": 2.5,
+    "score": 45.2,
+    "entry": {
+     "chgH1": 1.67,
+     "chgH6": 26.36,
+     "chg15": 1.17,
+     "accel": 1.2,
+     "volTrend": 0.81,
+     "ratioH1": 2.07,
+     "ageH": 209.7,
+     "top10Pct": 3.4
+    }
+   },
+   "trades": []
+  },
+  {
+   "id": "v2-d20-2026-10-18",
+   "rules": "v2",
+   "variant": "d20",
+   "per": "day",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetNetPct": 20,
+   "startedAt": "2026-10-18T19:01:39.344Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "USDF",
+    "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
+    "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
+    "list": "Graduated",
+    "decidedAt": "2026-10-18T19:01:39.344Z",
+    "alertPriceUsd": 0.004365,
+    "sizeUsd": 100,
+    "dexRoundTripPct": 1.51,
+    "roundTripPct": 2.5,
+    "score": 45.2,
+    "entry": {
+     "chgH1": 1.67,
+     "chgH6": 26.36,
+     "chg15": 1.17,
+     "accel": 1.2,
+     "volTrend": 0.81,
+     "ratioH1": 2.07,
+     "ageH": 209.7,
+     "top10Pct": 3.4
+    }
+   },
+   "trades": [],
+   "day": {
+    "date": "2026-10-18",
+    "startBankroll": 100
+   }
+  },
+  {
+   "id": "v2-d10-2026-10-18",
+   "rules": "v2",
+   "variant": "d10",
+   "per": "day",
+   "mode": "paper",
+   "seedUsd": 100,
+   "targetNetPct": 10,
+   "startedAt": "2026-10-18T19:01:39.344Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "USDF",
+    "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
+    "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
+    "list": "Graduated",
+    "decidedAt": "2026-10-18T19:01:39.344Z",
+    "alertPriceUsd": 0.004365,
+    "sizeUsd": 100,
+    "dexRoundTripPct": 1.51,
+    "roundTripPct": 2.5,
+    "score": 45.2,
+    "entry": {
+     "chgH1": 1.67,
+     "chgH6": 26.36,
+     "chg15": 1.17,
+     "accel": 1.2,
+     "volTrend": 0.81,
+     "ratioH1": 2.07,
+     "ageH": 209.7,
+     "top10Pct": 3.4
+    }
+   },
+   "trades": [],
+   "day": {
+    "date": "2026-10-18",
+    "startBankroll": 100
+   }
   }
  ]
 }

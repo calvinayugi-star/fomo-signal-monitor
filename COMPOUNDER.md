@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sun, Oct 18, 14:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Sun, Oct 18, 15:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -9,154 +9,152 @@ Updated Sun, Oct 18, 14:01 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$46.17** | **$38.78** | **$0.00** | **$0.00** |
-| Return since the $100 start | -53.8% | -61.2% | -100.0% | -100.0% |
-| Positions sold at the target | 2 (+1 closed early) | 2 (+1 closed early) | 1 (+1 closed early) | 1 (+1 closed early) |
-| Average time to reach the target | 3.3h | 2.8h | 2.8h | 2.6h |
-| Average worst point before the target | -19.4% | -19.4% | -27.3% | -27.3% |
-| Profit banked / costs | $45.69 / $8.50 | $22.42 / $7.66 | $21.41 / $5.51 | $11.29 / $5.15 |
-| Days the daily goal was met (per-day runs) | – | – | 1 of 8 | 1 of 8 |
-| Now | holding $FTR (-68.3%, 2.1 days) | holding $FTR (-68.3%, 2.1 days) | holding $Eternia (-100.0%, 32.0h) | holding $Eternia (-100.0%, 32.0h) |
+| Bankroll now (open position at its last mark) | **$100.00** | **$100.00** | **$100.00** | **$100.00** |
+| Return since the $100 start | +0.0% | +0.0% | +0.0% | +0.0% |
+| Positions sold at the target | 0 | 0 | 0 | 0 |
+| Average time to reach the target | n/a | n/a | n/a | n/a |
+| Average worst point before the target | n/a | n/a | n/a | n/a |
+| Profit banked / costs | $0.00 / $0.00 | $0.00 / $0.00 | $0.00 / $0.00 | $0.00 / $0.00 |
+| Days the daily goal was met (per-day runs) | – | – | 0 of 1 | 0 of 1 |
+| Now | holding $USDF (n/a, n/a) | holding $USDF (n/a, n/a) | holding $USDF (n/a, n/a) | holding $USDF (n/a, n/a) |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
 bankroll is up the target versus its value at the start of the day. When several runs are in cash they usually buy the same token.
 
-## +20% per trade: run v2-2026-10-10 (ACTIVE)
+## +20% per trade: run v2-t20-2026-10-18 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $100 → **$46.17** (-53.8%) |
-| Running for | 8.0 days (since Oct 10, 13:00) |
-| Positions sold at +20% | 2 (+1 closed early by a one-off exit) |
-| Average time to reach the target | 3.3h |
-| Average worst point before the target | -19.4% |
-| Profit banked / costs | $45.69 / $8.50 |
+| Start → now | $100 → **$100.00** (+0.0%) |
+| Running for | 0.0 days (since Oct 18, 15:01) |
+| Positions sold at +20% | 0 |
+| Average time to reach the target | n/a |
+| Average worst point before the target | n/a |
+| Profit banked / costs | $0.00 / $0.00 |
 | Each +20% sale multiplies the bankroll by | 1.20× ($100 → $249 after 5, $619 after 10) |
 
 ### Open position
 
 | | |
 |---|---|
-| Token | $FTR (Both) · [DexScreener](https://dexscreener.com/solana/Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y) |
-| Bought | Oct 16, 11:01 · $145.69 at $0.005756 |
-| Sell target | $0.007041 (+20% net) |
-| Current value | $46.17 (-68.3% net, at Oct 18, 14:00) |
-| Best / worst while held | +3.8% / -72.0% |
-| Held for | 2.1 days |
+| Token | $USDF (Graduated) · [DexScreener](https://dexscreener.com/solana/6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md) |
+| Bought | Oct 18, 15:01 · $100.00 (fill pending) |
+| Sell target | +20% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 3 | Oct 16, 07:04 | VEIL | Trending | $121.41 | 3.9h | -11.4% | 0.004671 → 0.005720 | $2.99 | +20.0% | $24.28 | $145.69 |
-| 2 | Oct 16, 03:04 | OWLDACITY | Both | $101.18 | 2.8h | -27.3% | 0.0008749 → 0.001087 | $4.27 | +20.0% | $20.24 | $121.41 |
-| 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
+| – | – | – | – | – | – | – | – | – | – | – | – |
 
-## +10% per trade: run v2-t10-2026-10-11 (ACTIVE)
+## +10% per trade: run v2-t10-2026-10-18 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $100 → **$38.78** (-61.2%) |
-| Running for | 8.0 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
-| Positions sold at +10% | 2 (+1 closed early by a one-off exit) |
-| Average time to reach the target | 2.8h |
-| Average worst point before the target | -19.4% |
-| Profit banked / costs | $22.42 / $7.66 |
+| Start → now | $100 → **$100.00** (+0.0%) |
+| Running for | 0.0 days (since Oct 18, 15:01) |
+| Positions sold at +10% | 0 |
+| Average time to reach the target | n/a |
+| Average worst point before the target | n/a |
+| Profit banked / costs | $0.00 / $0.00 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
 ### Open position
 
 | | |
 |---|---|
-| Token | $FTR (Both) · [DexScreener](https://dexscreener.com/solana/Fk5MuGv2H3Qpt6AxdhS2KHgDL2os424BvfEoqFNTdv9Y) |
-| Bought | Oct 16, 11:01 · $122.42 at $0.005756 |
-| Sell target | $0.006448 (+10% net) |
-| Current value | $38.78 (-68.3% net, at Oct 18, 14:00) |
-| Best / worst while held | +3.9% / -72.0% |
-| Held for | 2.1 days |
+| Token | $USDF (Graduated) · [DexScreener](https://dexscreener.com/solana/6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md) |
+| Bought | Oct 18, 15:01 · $100.00 (fill pending) |
+| Sell target | +10% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 3 | Oct 16, 07:04 | VEIL | Trending | $111.29 | 3.0h | -11.4% | 0.004671 → 0.005243 | $2.50 | +10.0% | $11.13 | $122.42 |
-| 2 | Oct 16, 03:04 | OWLDACITY | Both | $101.18 | 2.6h | -27.3% | 0.0008749 → 0.0009962 | $3.91 | +10.0% | $10.12 | $111.29 |
-| 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
+| – | – | – | – | – | – | – | – | – | – | – | – |
 
-## +20% per day: run v2-d20-2026-10-11 (ACTIVE)
+## +20% per day: run v2-d20-2026-10-18 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $100 → **$0.00** (-100.0%) |
-| Running for | 8.0 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
-| Positions sold at +20% | 1 (+1 closed early by a one-off exit) |
-| Average time to reach the target | 2.8h |
-| Average worst point before the target | -27.3% |
-| Profit banked / costs | $21.41 / $5.51 |
-| Days the daily goal was met | 1 of 8 · today started at $10.55 |
+| Start → now | $100 → **$100.00** (+0.0%) |
+| Running for | 0.0 days (since Oct 18, 15:01) |
+| Positions sold at +20% | 0 |
+| Average time to reach the target | n/a |
+| Average worst point before the target | n/a |
+| Profit banked / costs | $0.00 / $0.00 |
+| Days the daily goal was met | 0 of 1 · today started at $100.00 |
 | Each +20% sale multiplies the bankroll by | 1.20× ($100 → $249 after 5, $619 after 10) |
 
 ### Open position
 
 | | |
 |---|---|
-| Token | $Eternia (Graduated) · [DexScreener](https://dexscreener.com/solana/ABqXgS5c78P8Nix49kqsBTNQjAmMAhCBH2mvjq1zqQZ2) |
-| Bought | Oct 17, 06:01 · $121.41 at $0.003803 |
-| Sell target | $0.004689 (+20% net) |
-| Current value | $0.00 (-100.0% net, at Oct 18, 13:21) |
-| Best / worst while held | +2.8% / -100.0% |
-| Held for | 32.0h |
+| Token | $USDF (Graduated) · [DexScreener](https://dexscreener.com/solana/6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md) |
+| Bought | Oct 18, 15:01 · $100.00 (fill pending) |
+| Sell target | +20% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2 | Oct 16, 03:04 | OWLDACITY | Both | $101.18 | 2.8h | -27.3% | 0.0008749 → 0.001087 | $4.27 | +20.0% | $20.24 | $121.41 |
-| 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
+| – | – | – | – | – | – | – | – | – | – | – | – |
 
-## +10% per day: run v2-d10-2026-10-11 (ACTIVE)
+## +10% per day: run v2-d10-2026-10-18 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $100 → **$0.00** (-100.0%) |
-| Running for | 8.0 days (since Oct 10, 13:00); started as a copy of v2-2026-10-10 |
-| Positions sold at +10% | 1 (+1 closed early by a one-off exit) |
-| Average time to reach the target | 2.6h |
-| Average worst point before the target | -27.3% |
-| Profit banked / costs | $11.29 / $5.15 |
-| Days the daily goal was met | 1 of 8 · today started at $9.64 |
+| Start → now | $100 → **$100.00** (+0.0%) |
+| Running for | 0.0 days (since Oct 18, 15:01) |
+| Positions sold at +10% | 0 |
+| Average time to reach the target | n/a |
+| Average worst point before the target | n/a |
+| Profit banked / costs | $0.00 / $0.00 |
+| Days the daily goal was met | 0 of 1 · today started at $100.00 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
 ### Open position
 
 | | |
 |---|---|
-| Token | $Eternia (Graduated) · [DexScreener](https://dexscreener.com/solana/ABqXgS5c78P8Nix49kqsBTNQjAmMAhCBH2mvjq1zqQZ2) |
-| Bought | Oct 17, 06:01 · $111.29 at $0.003803 |
-| Sell target | $0.004298 (+10% net) |
-| Current value | $0.00 (-100.0% net, at Oct 18, 13:21) |
-| Best / worst while held | +2.8% / -100.0% |
-| Held for | 32.0h |
+| Token | $USDF (Graduated) · [DexScreener](https://dexscreener.com/solana/6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md) |
+| Bought | Oct 18, 15:01 · $100.00 (fill pending) |
+| Sell target | +10% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 2 | Oct 16, 03:04 | OWLDACITY | Both | $101.18 | 2.6h | -27.3% | 0.0008749 → 0.0009962 | $3.91 | +10.0% | $10.12 | $111.29 |
-| 1 | Oct 11, 03:03 | Fartcoin  | Both | $100.00 | 24.0h | -2.1% | 0.1644 → 0.1684 | $1.24 | +1.2% | $1.18 | $101.18 |
+| – | – | – | – | – | – | – | – | – | – | – | – |
 
 ## Past runs
 
 | Run | Rules | Seed | Final bankroll | Trades | Win rate | Result |
 |---|---|---|---|---|---|---|
+| v2-d10-2026-10-11 | v2 | $100 | $0.00 | 3 | 67% | ended (restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark) |
+| v2-d20-2026-10-11 | v2 | $100 | $0.00 | 3 | 67% | ended (restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark) |
+| v2-t10-2026-10-11 | v2 | $100 | $38.78 | 4 | 75% | ended (restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark) |
+| v2-2026-10-10 | v2 | $100 | $46.17 | 4 | 75% | ended (restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark) |
 | 2026-10 | v1 | $100 | $45.29 | 15 | 40% | ended (rules changed to v2 on 2026-10-10) |
 
 ## Rules in effect
 
 - **Lists:** Graduated (pump.fun) and Trending (GeckoTerminal). Tokens that graduated within 72h get +0 score, older graduates 0, Trending-only tokens −0; market cap ≥ 50M −15.
 - **Score (0–100 before adjustments):** 1h buys/sells 30, price rise in the hour (up to +10%) 15, 6h buys/sells 15, last 15 min volume vs the hour 15, volume acceleration 15, liquidity growth 10; minus 3 per 1% DEX round trip.
-- **Price:** no price-change limits since 2026-10-16 (1h, 6h, 15-min and 5-min rules removed); the score rewards a 1h rise up to +10%.
+- **Price:** 1h change -10% to +25% and 6h -15% to +100% (restored 2026-10-18 after the Eternia chase entry); no 15-min or 5-min limits since 2026-10-16. The score rewards a 1h rise up to +10%.
 - **Demand building:** last hour's volume ≥ 1× the hours before, buys/sells ≥ 1.15 (1h) and ≥ 1 (6h) but ≤ 5 (bots), ≥ 30 buys and $5k volume in the hour, liquidity not shrinking.
 - **Quality:** liquidity ≥ $25k and ≥ 50× the position, market cap ≥ $100k, pair ≥ 2h old, the monitor's safety checks, no top-10 share ≤ 8% on tokens under 72h (bundled wallets), round trip ≤ 4% at the real size, score ≥ 45.
 - **Exit:** only at the variant's target (+20% or +10% or +20% or +10% net, after fees and slippage), checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
