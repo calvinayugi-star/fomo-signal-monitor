@@ -846,15 +846,15 @@
      "fillCandleT": 1792350240,
      "at": "2026-10-18T19:04:39.344Z"
     },
-    "checkedThrough": 1792357200,
-    "peakNetPct": 7.06,
+    "checkedThrough": 1792360800,
+    "peakNetPct": 13.14,
     "worstNetPct": -2.48,
-    "lastTradeAt": "2026-10-18T21:00:00.000Z",
+    "lastTradeAt": "2026-10-18T22:00:00.000Z",
     "mark": {
-     "at": "2026-10-18T21:00:00.000Z",
-     "price": 0.004761923374844582,
-     "netPct": 7.06,
-     "proceeds": 107.06
+     "at": "2026-10-18T22:00:00.000Z",
+     "price": 0.0050325396022828615,
+     "netPct": 13.14,
+     "proceeds": 113.14
     },
     "targetPriceUsd": 0.005337532499091515,
     "stale": false
@@ -872,47 +872,34 @@
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "USDF",
-    "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
-    "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
-    "list": "Graduated",
-    "decidedAt": "2026-10-18T19:01:39.344Z",
-    "alertPriceUsd": 0.004365,
-    "sizeUsd": 100,
-    "dexRoundTripPct": 1.51,
-    "roundTripPct": 2.5,
-    "score": 45.2,
-    "entry": {
-     "chgH1": 1.67,
-     "chgH6": 26.36,
-     "chg15": 1.17,
-     "accel": 1.2,
-     "volTrend": 0.81,
-     "ratioH1": 2.07,
-     "ageH": 209.7,
-     "top10Pct": 3.4
-    },
-    "fill": {
-     "rawPrice": 0.004337579787842918,
-     "fillCandleT": 1792350240,
-     "at": "2026-10-18T19:04:39.344Z"
-    },
-    "checkedThrough": 1792357200,
-    "peakNetPct": 7.06,
-    "worstNetPct": -2.48,
-    "lastTradeAt": "2026-10-18T21:00:00.000Z",
-    "mark": {
-     "at": "2026-10-18T21:00:00.000Z",
-     "price": 0.004761923374844582,
-     "netPct": 7.06,
-     "proceeds": 107.06
-    },
-    "targetPriceUsd": 0.004892738124167221,
-    "stale": false
-   },
-   "trades": []
+   "cash": 110,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
+     "symbol": "USDF",
+     "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
+     "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
+     "list": "Graduated",
+     "decidedAt": "2026-10-18T19:01:39.344Z",
+     "prevBankroll": 100,
+     "sizeUsd": 100,
+     "dexRoundTripPct": 1.51,
+     "fillAt": "2026-10-18T19:04:39.344Z",
+     "exitAt": "2026-10-18T21:44:00.000Z",
+     "holdHours": 2.7,
+     "reason": "+10% target",
+     "entryPriceUsd": 0.004337579787842918,
+     "exitPriceUsd": 0.004892738124167221,
+     "grossPct": 12.8,
+     "costsUsd": 2.7988,
+     "netUsd": 10,
+     "netPct": 10,
+     "worstNetPct": -2.48,
+     "targetHit": true,
+     "newBankroll": 110
+    }
+   ]
   },
   {
    "id": "v2-d20-2026-10-18",
@@ -952,15 +939,15 @@
      "fillCandleT": 1792350240,
      "at": "2026-10-18T19:04:39.344Z"
     },
-    "checkedThrough": 1792357200,
-    "peakNetPct": 7.06,
+    "checkedThrough": 1792360800,
+    "peakNetPct": 13.27,
     "worstNetPct": -2.48,
-    "lastTradeAt": "2026-10-18T21:00:00.000Z",
+    "lastTradeAt": "2026-10-18T22:00:00.000Z",
     "mark": {
-     "at": "2026-10-18T21:00:00.000Z",
-     "price": 0.004761923374844582,
-     "netPct": 7.06,
-     "proceeds": 107.06
+     "at": "2026-10-18T22:00:00.000Z",
+     "price": 0.005038271960666,
+     "netPct": 13.27,
+     "proceeds": 113.27
     },
     "targetPriceUsd": 0.005337532499091515,
     "stale": false
@@ -982,50 +969,38 @@
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "USDF",
-    "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
-    "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
-    "list": "Graduated",
-    "decidedAt": "2026-10-18T19:01:39.344Z",
-    "alertPriceUsd": 0.004365,
-    "sizeUsd": 100,
-    "dexRoundTripPct": 1.51,
-    "roundTripPct": 2.5,
-    "score": 45.2,
-    "entry": {
-     "chgH1": 1.67,
-     "chgH6": 26.36,
-     "chg15": 1.17,
-     "accel": 1.2,
-     "volTrend": 0.81,
-     "ratioH1": 2.07,
-     "ageH": 209.7,
-     "top10Pct": 3.4
-    },
-    "fill": {
-     "rawPrice": 0.004337579787842918,
-     "fillCandleT": 1792350240,
-     "at": "2026-10-18T19:04:39.344Z"
-    },
-    "checkedThrough": 1792357200,
-    "peakNetPct": 7.06,
-    "worstNetPct": -2.48,
-    "lastTradeAt": "2026-10-18T21:00:00.000Z",
-    "mark": {
-     "at": "2026-10-18T21:00:00.000Z",
-     "price": 0.004761923374844582,
-     "netPct": 7.06,
-     "proceeds": 107.06
-    },
-    "targetPriceUsd": 0.004892738124167221,
-    "stale": false
-   },
-   "trades": [],
+   "cash": 110,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
+     "symbol": "USDF",
+     "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
+     "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
+     "list": "Graduated",
+     "decidedAt": "2026-10-18T19:01:39.344Z",
+     "prevBankroll": 100,
+     "sizeUsd": 100,
+     "dexRoundTripPct": 1.51,
+     "fillAt": "2026-10-18T19:04:39.344Z",
+     "exitAt": "2026-10-18T21:44:00.000Z",
+     "holdHours": 2.7,
+     "reason": "+10% target",
+     "entryPriceUsd": 0.004337579787842918,
+     "exitPriceUsd": 0.004892738124167221,
+     "grossPct": 12.8,
+     "costsUsd": 2.7988,
+     "netUsd": 10,
+     "netPct": 10,
+     "worstNetPct": -2.48,
+     "targetHit": true,
+     "newBankroll": 110
+    }
+   ],
    "day": {
     "date": "2026-10-18",
-    "startBankroll": 100
+    "startBankroll": 100,
+    "goalMetAt": "2026-10-18T22:01:37.626Z"
    }
   }
  ]

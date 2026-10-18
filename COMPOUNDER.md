@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sun, Oct 18, 17:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Sun, Oct 18, 18:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -9,14 +9,14 @@ Updated Sun, Oct 18, 17:01 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$107.06** | **$107.06** | **$107.06** | **$107.06** |
-| Return since the $100 start | +7.1% | +7.1% | +7.1% | +7.1% |
-| Positions sold at the target | 0 | 0 | 0 | 0 |
-| Average time to reach the target | n/a | n/a | n/a | n/a |
-| Average worst point before the target | n/a | n/a | n/a | n/a |
-| Profit banked / costs | $0.00 / $0.00 | $0.00 / $0.00 | $0.00 / $0.00 | $0.00 / $0.00 |
-| Days the daily goal was met (per-day runs) | – | – | 0 of 1 | 0 of 1 |
-| Now | holding $USDF (+7.1%, 2.0h) | holding $USDF (+7.1%, 2.0h) | holding $USDF (+7.1%, 2.0h) | holding $USDF (+7.1%, 2.0h) |
+| Bankroll now (open position at its last mark) | **$113.14** | **$110.00** | **$113.27** | **$110.00** |
+| Return since the $100 start | +13.1% | +10.0% | +13.3% | +10.0% |
+| Positions sold at the target | 0 | 1 | 0 | 1 |
+| Average time to reach the target | n/a | 2.7h | n/a | 2.7h |
+| Average worst point before the target | n/a | -2.5% | n/a | -2.5% |
+| Profit banked / costs | $0.00 / $0.00 | $10.00 / $2.80 | $0.00 / $0.00 | $10.00 / $2.80 |
+| Days the daily goal was met (per-day runs) | – | – | 0 of 1 | 1 of 1 |
+| Now | holding $USDF (+13.1%, 2.9h) | in cash, searching | holding $USDF (+13.3%, 2.9h) | daily goal met, paused until midnight |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -26,7 +26,7 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$107.06** (+7.1%) |
+| Start → now | $100 → **$113.14** (+13.1%) |
 | Running for | 0.1 days (since Oct 18, 15:01) |
 | Positions sold at +20% | 0 |
 | Average time to reach the target | n/a |
@@ -41,9 +41,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $USDF (Graduated) · [DexScreener](https://dexscreener.com/solana/6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md) |
 | Bought | Oct 18, 15:01 · $100.00 at $0.004338 |
 | Sell target | $0.005338 (+20% net) |
-| Current value | $107.06 (+7.1% net, at Oct 18, 17:00) |
-| Best / worst while held | +7.1% / -2.5% |
-| Held for | 2.0h |
+| Current value | $113.14 (+13.1% net, at Oct 18, 18:00) |
+| Best / worst while held | +13.1% / -2.5% |
+| Held for | 2.9h |
 
 ### Completed positions (newest first)
 
@@ -55,36 +55,27 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$107.06** (+7.1%) |
+| Start → now | $100 → **$110.00** (+10.0%) |
 | Running for | 0.1 days (since Oct 18, 15:01) |
-| Positions sold at +10% | 0 |
-| Average time to reach the target | n/a |
-| Average worst point before the target | n/a |
-| Profit banked / costs | $0.00 / $0.00 |
+| Positions sold at +10% | 1 |
+| Average time to reach the target | 2.7h |
+| Average worst point before the target | -2.5% |
+| Profit banked / costs | $10.00 / $2.80 |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $USDF (Graduated) · [DexScreener](https://dexscreener.com/solana/6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md) |
-| Bought | Oct 18, 15:01 · $100.00 at $0.004338 |
-| Sell target | $0.004893 (+10% net) |
-| Current value | $107.06 (+7.1% net, at Oct 18, 17:00) |
-| Best / worst while held | +7.1% / -2.5% |
-| Held for | 2.0h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – | – | – |
+| 1 | Oct 18, 15:04 | USDF | Graduated | $100.00 | 2.7h | -2.5% | 0.004338 → 0.004893 | $2.80 | +10.0% | $10.00 | $110.00 |
 
 ## +20% per day: run v2-d20-2026-10-18 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $100 → **$107.06** (+7.1%) |
+| Start → now | $100 → **$113.27** (+13.3%) |
 | Running for | 0.1 days (since Oct 18, 15:01) |
 | Positions sold at +20% | 0 |
 | Average time to reach the target | n/a |
@@ -100,9 +91,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $USDF (Graduated) · [DexScreener](https://dexscreener.com/solana/6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md) |
 | Bought | Oct 18, 15:01 · $100.00 at $0.004338 |
 | Sell target | $0.005338 (+20% net) |
-| Current value | $107.06 (+7.1% net, at Oct 18, 17:00) |
-| Best / worst while held | +7.1% / -2.5% |
-| Held for | 2.0h |
+| Current value | $113.27 (+13.3% net, at Oct 18, 18:00) |
+| Best / worst while held | +13.3% / -2.5% |
+| Held for | 2.9h |
 
 ### Completed positions (newest first)
 
@@ -114,31 +105,22 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$107.06** (+7.1%) |
+| Start → now | $100 → **$110.00** (+10.0%) |
 | Running for | 0.1 days (since Oct 18, 15:01) |
-| Positions sold at +10% | 0 |
-| Average time to reach the target | n/a |
-| Average worst point before the target | n/a |
-| Profit banked / costs | $0.00 / $0.00 |
-| Days the daily goal was met | 0 of 1 · today started at $100.00 |
+| Positions sold at +10% | 1 |
+| Average time to reach the target | 2.7h |
+| Average worst point before the target | -2.5% |
+| Profit banked / costs | $10.00 / $2.80 |
+| Days the daily goal was met | 1 of 1 · today started at $100.00, goal met, paused until midnight |
 | Each +10% sale multiplies the bankroll by | 1.10× ($100 → $161 after 5, $259 after 10) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $USDF (Graduated) · [DexScreener](https://dexscreener.com/solana/6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md) |
-| Bought | Oct 18, 15:01 · $100.00 at $0.004338 |
-| Sell target | $0.004893 (+10% net) |
-| Current value | $107.06 (+7.1% net, at Oct 18, 17:00) |
-| Best / worst while held | +7.1% / -2.5% |
-| Held for | 2.0h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – | – | – |
+| 1 | Oct 18, 15:04 | USDF | Graduated | $100.00 | 2.7h | -2.5% | 0.004338 → 0.004893 | $2.80 | +10.0% | $10.00 | $110.00 |
 
 ## Past runs
 
