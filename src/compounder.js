@@ -97,6 +97,10 @@ function entryFailure(r, sizeUsd, blocked, e) {
   if (r.ratioH6 < e.minBuySellRatioH6) return 'buying not sustained (6h)';
   if (Math.max(r.ratioH1, r.ratioH6) > e.maxBuySellRatio) return 'unnatural buy/sell pattern (likely bots)';
   if (r.accel == null || r.accel < e.minVolumeAcceleration) return 'volume not building';
+  if (r.chgH1 < e.minChgH1Pct) return 'falling (1h)';
+  if (r.chgH1 > e.maxChgH1Pct) return `already moving (>${e.maxChgH1Pct}% 1h)`;
+  if (r.chgH6 < e.minChgH6Pct) return 'falling over 6h';
+  if (r.chgH6 > e.maxChgH6Pct) return `already spiked (>${e.maxChgH6Pct}% 6h)`;
   if (r.liqGrowth != null && r.liqGrowth * 100 < e.minLiquidityGrowthPct) return 'liquidity shrinking';
   if (blocked.has(r.mint)) return 'held or sold in the cooldown window';
   return null;
