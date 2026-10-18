@@ -66,6 +66,7 @@
     "rules": "v2",
     "startDate": "2026-10-10",
     "seedUsd": 100,
+    "restart": { "at": "2026-10-18T18:00:00Z", "note": "restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark" },
     "variants": [
       { "id": "t20", "targetNetPct": 20, "per": "trade" },
       { "id": "t10", "targetNetPct": 10, "per": "trade" },

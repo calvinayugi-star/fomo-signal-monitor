@@ -386,19 +386,25 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
   const send = (html) => sendTelegram(html, { dryRun });
   const hourly = { t: now.toISOString(), rules: k.rules, errors: [], variants: {} };
 
-  // 1. A run under older rules is closed (kept in the ledger) before the current rules start.
-  for (const old of ledger.runs.filter((r) => r.status === 'active' && r.rules !== k.rules)) {
+  // 1. A run under older rules, or started before a restart the user asked for (config restart.at), is closed
+  // (kept in the ledger) and the current rules start again from the seed.
+  const beforeRestart = (r) => k.restart && r.startedAt < k.restart.at;
+  for (const old of ledger.runs.filter((r) => r.status === 'active' && (r.rules !== k.rules || beforeRestart(r)))) {
+    const restarted = old.rules === k.rules;
+    const closed = old.position?.symbol;
     if (old.position) {
       const m = old.position.mark;
-      old.trades.push({ n: old.trades.length + 1, symbol: old.position.symbol, decidedAt: old.position.decidedAt, reason: 'rules changed (closed at last mark)', netPct: m?.netPct ?? 0, netUsd: m ? m.proceeds - old.position.sizeUsd : 0, costsUsd: 0, newBankroll: round(old.cash + (m?.proceeds ?? old.position.sizeUsd)) });
+      old.trades.push({ n: old.trades.length + 1, symbol: old.position.symbol, decidedAt: old.position.decidedAt, reason: `${restarted ? 'restart' : 'rules changed'} (closed at last mark)`, netPct: m?.netPct ?? 0, netUsd: m ? m.proceeds - old.position.sizeUsd : 0, costsUsd: 0, targetHit: false, newBankroll: round(old.cash + (m?.proceeds ?? old.position.sizeUsd)) });
       old.cash = old.trades.at(-1).newBankroll;
       old.position = null;
     }
-    finishRun(old, 'ended', now, `rules changed to ${k.rules} on ${time.localDate(now)}`);
+    finishRun(old, 'ended', now, restarted ? k.restart.note : `rules changed to ${k.rules} on ${time.localDate(now)}`);
+    if (restarted)
+      await send(`${PAPER}\n⏹ <b>${tag(old)} ENDED</b> (restart)${closed ? `: $${esc(closed)} closed at its last mark (${signed(old.trades.at(-1).netPct)})` : ''}. Final bankroll ${usd(old.cash)} from $${old.seedUsd}.`);
   }
 
   // 2. One active run per variant. The single v2 run from before variants existed becomes the variant with its target.
-  const v2 = () => ledger.runs.filter((r) => r.rules === k.rules);
+  const v2 = () => ledger.runs.filter((r) => r.rules === k.rules && !beforeRestart(r));
   for (const r of v2()) if (!r.variant) r.variant = k.variants.find((v) => v.targetNetPct === r.targetNetPct)?.id ?? 't20';
   const runs = [];
   for (const v of k.variants) {
@@ -406,7 +412,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
     if (!run && time.localDate(now) >= k.startDate && !v2().some((r) => r.variant === v.id)) {
       // A variant added later copies a sibling run that has no completed trades yet (same start, same open position):
       // with identical rules it would have made exactly the same decisions so far. Otherwise it starts fresh now.
-      const twin = v2().find((r) => r.status === 'active' && r.trades.length === 0);
+      const twin = v2().find((r) => r.status === 'active' && r.trades.length === 0 && r.startedAt < now.toISOString());
       run = newRun(now, k, time, v);
       if (twin) {
         Object.assign(run, { startedAt: twin.startedAt, cash: twin.cash, copiedFrom: twin.id });
