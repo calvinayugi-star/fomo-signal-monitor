@@ -819,47 +819,34 @@
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "USDF",
-    "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
-    "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
-    "list": "Graduated",
-    "decidedAt": "2026-10-18T19:01:39.344Z",
-    "alertPriceUsd": 0.004365,
-    "sizeUsd": 100,
-    "dexRoundTripPct": 1.51,
-    "roundTripPct": 2.5,
-    "score": 45.2,
-    "entry": {
-     "chgH1": 1.67,
-     "chgH6": 26.36,
-     "chg15": 1.17,
-     "accel": 1.2,
-     "volTrend": 0.81,
-     "ratioH1": 2.07,
-     "ageH": 209.7,
-     "top10Pct": 3.4
-    },
-    "fill": {
-     "rawPrice": 0.004337579787842918,
-     "fillCandleT": 1792350240,
-     "at": "2026-10-18T19:04:39.344Z"
-    },
-    "checkedThrough": 1792364400,
-    "peakNetPct": 17.97,
-    "worstNetPct": -2.48,
-    "lastTradeAt": "2026-10-18T23:00:00.000Z",
-    "mark": {
-     "at": "2026-10-18T23:00:00.000Z",
-     "price": 0.005247438894591689,
-     "netPct": 17.97,
-     "proceeds": 117.97
-    },
-    "targetPriceUsd": 0.005337532499091515,
-    "stale": false
-   },
-   "trades": []
+   "cash": 120,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
+     "symbol": "USDF",
+     "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
+     "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
+     "list": "Graduated",
+     "decidedAt": "2026-10-18T19:01:39.344Z",
+     "prevBankroll": 100,
+     "sizeUsd": 100,
+     "dexRoundTripPct": 1.51,
+     "fillAt": "2026-10-18T19:04:39.344Z",
+     "exitAt": "2026-10-18T23:27:00.000Z",
+     "holdHours": 4.4,
+     "reason": "+20% target",
+     "entryPriceUsd": 0.004337579787842918,
+     "exitPriceUsd": 0.005337532499091515,
+     "grossPct": 23.05,
+     "costsUsd": 3.0532,
+     "netUsd": 20,
+     "netPct": 20,
+     "worstNetPct": -2.48,
+     "targetHit": true,
+     "newBankroll": 120
+    }
+   ]
   },
   {
    "id": "v2-t10-2026-10-18",
@@ -912,50 +899,38 @@
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "USDF",
-    "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
-    "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
-    "list": "Graduated",
-    "decidedAt": "2026-10-18T19:01:39.344Z",
-    "alertPriceUsd": 0.004365,
-    "sizeUsd": 100,
-    "dexRoundTripPct": 1.51,
-    "roundTripPct": 2.5,
-    "score": 45.2,
-    "entry": {
-     "chgH1": 1.67,
-     "chgH6": 26.36,
-     "chg15": 1.17,
-     "accel": 1.2,
-     "volTrend": 0.81,
-     "ratioH1": 2.07,
-     "ageH": 209.7,
-     "top10Pct": 3.4
-    },
-    "fill": {
-     "rawPrice": 0.004337579787842918,
-     "fillCandleT": 1792350240,
-     "at": "2026-10-18T19:04:39.344Z"
-    },
-    "checkedThrough": 1792364400,
-    "peakNetPct": 17.97,
-    "worstNetPct": -2.48,
-    "lastTradeAt": "2026-10-18T23:00:00.000Z",
-    "mark": {
-     "at": "2026-10-18T23:00:00.000Z",
-     "price": 0.005247438894591689,
-     "netPct": 17.97,
-     "proceeds": 117.97
-    },
-    "targetPriceUsd": 0.005337532499091515,
-    "stale": false
-   },
-   "trades": [],
+   "cash": 120,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
+     "symbol": "USDF",
+     "mint": "u7XNK4pbxXgWzBwqidDV2TtsXwLqqxtjmGfw1H8pump",
+     "pairAddress": "6FBnZzRtdMrjxEPdLK4UGP9Xm2hsYwLY3xp6EWB1e2md",
+     "list": "Graduated",
+     "decidedAt": "2026-10-18T19:01:39.344Z",
+     "prevBankroll": 100,
+     "sizeUsd": 100,
+     "dexRoundTripPct": 1.51,
+     "fillAt": "2026-10-18T19:04:39.344Z",
+     "exitAt": "2026-10-18T23:27:00.000Z",
+     "holdHours": 4.4,
+     "reason": "+20% target",
+     "entryPriceUsd": 0.004337579787842918,
+     "exitPriceUsd": 0.005337532499091515,
+     "grossPct": 23.05,
+     "costsUsd": 3.0532,
+     "netUsd": 20,
+     "netPct": 20,
+     "worstNetPct": -2.48,
+     "targetHit": true,
+     "newBankroll": 120
+    }
+   ],
    "day": {
     "date": "2026-10-18",
-    "startBankroll": 100
+    "startBankroll": 100,
+    "goalMetAt": "2026-10-19T00:01:38.643Z"
    }
   },
   {
