@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Mon, Oct 19, 13:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Mon, Oct 19, 14:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -16,7 +16,7 @@ Updated Mon, Oct 19, 13:01 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | -2.5% | -2.5% | -2.5% | -2.5% |
 | Profit banked / costs | $20.00 / $3.05 | $10.00 / $2.80 | $20.00 / $3.05 | $10.00 / $2.80 |
 | Days the daily goal was met (per-day runs) | – | – | 1 of 2 | 1 of 2 |
-| Now | holding $ZBCN (-3.2%, 13.0h) | holding $ZBCN (-3.2%, 13.0h) | holding $ZBCN (-3.2%, 13.0h) | holding $ZBCN (-3.2%, 13.0h) |
+| Now | holding $ZBCN (-3.2%, 13.9h) | holding $ZBCN (-3.2%, 13.9h) | holding $ZBCN (-3.2%, 13.9h) | holding $ZBCN (-3.2%, 13.9h) |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -27,7 +27,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$116.11** (+16.1%) |
-| Running for | 0.9 days (since Oct 18, 15:01) |
+| Running for | 1.0 days (since Oct 18, 15:01) |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 4.4h |
 | Average worst point before the target | -2.5% |
@@ -43,7 +43,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | Sell target | $0.002578 (+20% net) |
 | Current value | $116.11 (-3.2% net, at Oct 19, 12:11) |
 | Best / worst while held | -0.0% / -3.2% |
-| Held for | 13.0h |
+| Held for | 13.9h |
 
 ### Completed positions (newest first)
 
@@ -56,7 +56,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$106.44** (+6.4%) |
-| Running for | 0.9 days (since Oct 18, 15:01) |
+| Running for | 1.0 days (since Oct 18, 15:01) |
 | Positions sold at +10% | 1 |
 | Average time to reach the target | 2.7h |
 | Average worst point before the target | -2.5% |
@@ -72,7 +72,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | Sell target | $0.002363 (+10% net) |
 | Current value | $106.44 (-3.2% net, at Oct 19, 12:11) |
 | Best / worst while held | -0.0% / -3.2% |
-| Held for | 13.0h |
+| Held for | 13.9h |
 
 ### Completed positions (newest first)
 
@@ -85,7 +85,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$116.11** (+16.1%) |
-| Running for | 0.9 days (since Oct 18, 15:01) |
+| Running for | 1.0 days (since Oct 18, 15:01) |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 4.4h |
 | Average worst point before the target | -2.5% |
@@ -102,7 +102,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | Sell target | $0.002578 (+20% net) |
 | Current value | $116.11 (-3.2% net, at Oct 19, 12:11) |
 | Best / worst while held | -0.0% / -3.2% |
-| Held for | 13.0h |
+| Held for | 13.9h |
 
 ### Completed positions (newest first)
 
@@ -115,7 +115,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$106.44** (+6.4%) |
-| Running for | 0.9 days (since Oct 18, 15:01) |
+| Running for | 1.0 days (since Oct 18, 15:01) |
 | Positions sold at +10% | 1 |
 | Average time to reach the target | 2.7h |
 | Average worst point before the target | -2.5% |
@@ -132,7 +132,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | Sell target | $0.002363 (+10% net) |
 | Current value | $106.44 (-3.2% net, at Oct 19, 12:11) |
 | Best / worst while held | -0.0% / -3.2% |
-| Held for | 13.0h |
+| Held for | 13.9h |
 
 ### Completed positions (newest first)
 
