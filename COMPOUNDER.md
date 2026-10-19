@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Mon, Oct 19, 03:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Mon, Oct 19, 04:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -16,7 +16,7 @@ Updated Mon, Oct 19, 03:01 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | -2.5% | -2.5% | -2.5% | -2.5% |
 | Profit banked / costs | $20.00 / $3.05 | $10.00 / $2.80 | $20.00 / $3.05 | $10.00 / $2.80 |
 | Days the daily goal was met (per-day runs) | – | – | 1 of 2 | 1 of 2 |
-| Now | holding $ZBCN (-2.1%, 3.0h) | holding $ZBCN (-2.1%, 3.0h) | holding $ZBCN (-2.1%, 3.0h) | holding $ZBCN (-2.1%, 3.0h) |
+| Now | holding $ZBCN (-2.1%, 3.9h) | holding $ZBCN (-2.1%, 3.9h) | holding $ZBCN (-2.1%, 3.9h) | holding $ZBCN (-2.1%, 3.9h) |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -43,7 +43,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | Sell target | $0.002578 (+20% net) |
 | Current value | $117.45 (-2.1% net, at Oct 19, 01:35) |
 | Best / worst while held | -1.0% / -2.1% |
-| Held for | 3.0h |
+| Held for | 3.9h |
 
 ### Completed positions (newest first)
 
@@ -72,7 +72,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | Sell target | $0.002363 (+10% net) |
 | Current value | $107.66 (-2.1% net, at Oct 19, 01:35) |
 | Best / worst while held | -1.0% / -2.1% |
-| Held for | 3.0h |
+| Held for | 3.9h |
 
 ### Completed positions (newest first)
 
@@ -102,7 +102,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | Sell target | $0.002578 (+20% net) |
 | Current value | $117.45 (-2.1% net, at Oct 19, 01:35) |
 | Best / worst while held | -1.0% / -2.1% |
-| Held for | 3.0h |
+| Held for | 3.9h |
 
 ### Completed positions (newest first)
 
@@ -132,7 +132,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | Sell target | $0.002363 (+10% net) |
 | Current value | $107.66 (-2.1% net, at Oct 19, 01:35) |
 | Best / worst while held | -1.0% / -2.1% |
-| Held for | 3.0h |
+| Held for | 3.9h |
 
 ### Completed positions (newest first)
 
