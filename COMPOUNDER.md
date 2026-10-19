@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Mon, Oct 19, 04:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Mon, Oct 19, 05:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -9,14 +9,14 @@ Updated Mon, Oct 19, 04:00 EDT. Paper trades only: nothing is bought or sold.
 
 |  | **+20% per trade** | **+10% per trade** | **+20% per day** | **+10% per day** |
 |---|---|---|---|---|
-| Bankroll now (open position at its last mark) | **$117.45** | **$107.66** | **$117.45** | **$107.66** |
-| Return since the $100 start | +17.5% | +7.7% | +17.5% | +7.7% |
+| Bankroll now (open position at its last mark) | **$119.95** | **$109.96** | **$119.95** | **$109.96** |
+| Return since the $100 start | +20.0% | +10.0% | +20.0% | +10.0% |
 | Positions sold at the target | 1 | 1 | 1 | 1 |
 | Average time to reach the target | 4.4h | 2.7h | 4.4h | 2.7h |
 | Average worst point before the target | -2.5% | -2.5% | -2.5% | -2.5% |
 | Profit banked / costs | $20.00 / $3.05 | $10.00 / $2.80 | $20.00 / $3.05 | $10.00 / $2.80 |
 | Days the daily goal was met (per-day runs) | – | – | 1 of 2 | 1 of 2 |
-| Now | holding $ZBCN (-2.1%, 3.9h) | holding $ZBCN (-2.1%, 3.9h) | holding $ZBCN (-2.1%, 3.9h) | holding $ZBCN (-2.1%, 3.9h) |
+| Now | holding $ZBCN (-0.0%, 5.0h) | holding $ZBCN (-0.0%, 5.0h) | holding $ZBCN (-0.0%, 5.0h) | holding $ZBCN (-0.0%, 5.0h) |
 
 All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
 **Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
@@ -26,8 +26,8 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$117.45** (+17.5%) |
-| Running for | 0.5 days (since Oct 18, 15:01) |
+| Start → now | $100 → **$119.95** (+20.0%) |
+| Running for | 0.6 days (since Oct 18, 15:01) |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 4.4h |
 | Average worst point before the target | -2.5% |
@@ -41,9 +41,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $ZBCN (Trending) · [DexScreener](https://dexscreener.com/solana/FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w) |
 | Bought | Oct 19, 00:01 · $120.00 at $0.002114 |
 | Sell target | $0.002578 (+20% net) |
-| Current value | $117.45 (-2.1% net, at Oct 19, 01:35) |
-| Best / worst while held | -1.0% / -2.1% |
-| Held for | 3.9h |
+| Current value | $119.95 (-0.0% net, at Oct 19, 04:52) |
+| Best / worst while held | -0.0% / -2.1% |
+| Held for | 5.0h |
 
 ### Completed positions (newest first)
 
@@ -55,8 +55,8 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$107.66** (+7.7%) |
-| Running for | 0.5 days (since Oct 18, 15:01) |
+| Start → now | $100 → **$109.96** (+10.0%) |
+| Running for | 0.6 days (since Oct 18, 15:01) |
 | Positions sold at +10% | 1 |
 | Average time to reach the target | 2.7h |
 | Average worst point before the target | -2.5% |
@@ -70,9 +70,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $ZBCN (Trending) · [DexScreener](https://dexscreener.com/solana/FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w) |
 | Bought | Oct 19, 00:01 · $110.00 at $0.002114 |
 | Sell target | $0.002363 (+10% net) |
-| Current value | $107.66 (-2.1% net, at Oct 19, 01:35) |
-| Best / worst while held | -1.0% / -2.1% |
-| Held for | 3.9h |
+| Current value | $109.96 (-0.0% net, at Oct 19, 04:52) |
+| Best / worst while held | -0.0% / -2.1% |
+| Held for | 5.0h |
 
 ### Completed positions (newest first)
 
@@ -84,8 +84,8 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$117.45** (+17.5%) |
-| Running for | 0.5 days (since Oct 18, 15:01) |
+| Start → now | $100 → **$119.95** (+20.0%) |
+| Running for | 0.6 days (since Oct 18, 15:01) |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 4.4h |
 | Average worst point before the target | -2.5% |
@@ -100,9 +100,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $ZBCN (Trending) · [DexScreener](https://dexscreener.com/solana/FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w) |
 | Bought | Oct 19, 00:01 · $120.00 at $0.002114 |
 | Sell target | $0.002578 (+20% net) |
-| Current value | $117.45 (-2.1% net, at Oct 19, 01:35) |
-| Best / worst while held | -1.0% / -2.1% |
-| Held for | 3.9h |
+| Current value | $119.95 (-0.0% net, at Oct 19, 04:52) |
+| Best / worst while held | -0.0% / -2.1% |
+| Held for | 5.0h |
 
 ### Completed positions (newest first)
 
@@ -114,8 +114,8 @@ bankroll is up the target versus its value at the start of the day. When several
 
 | | |
 |---|---|
-| Start → now | $100 → **$107.66** (+7.7%) |
-| Running for | 0.5 days (since Oct 18, 15:01) |
+| Start → now | $100 → **$109.96** (+10.0%) |
+| Running for | 0.6 days (since Oct 18, 15:01) |
 | Positions sold at +10% | 1 |
 | Average time to reach the target | 2.7h |
 | Average worst point before the target | -2.5% |
@@ -130,9 +130,9 @@ bankroll is up the target versus its value at the start of the day. When several
 | Token | $ZBCN (Trending) · [DexScreener](https://dexscreener.com/solana/FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w) |
 | Bought | Oct 19, 00:01 · $110.00 at $0.002114 |
 | Sell target | $0.002363 (+10% net) |
-| Current value | $107.66 (-2.1% net, at Oct 19, 01:35) |
-| Best / worst while held | -1.0% / -2.1% |
-| Held for | 3.9h |
+| Current value | $109.96 (-0.0% net, at Oct 19, 04:52) |
+| Best / worst while held | -0.0% / -2.1% |
+| Held for | 5.0h |
 
 ### Completed positions (newest first)
 
