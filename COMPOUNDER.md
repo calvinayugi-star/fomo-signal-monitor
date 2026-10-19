@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sun, Oct 18, 20:01 EDT. Paper trades only: nothing is bought or sold.
+Updated Sun, Oct 18, 21:01 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10):** start with $100, buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target** (+20% per trade, +10% per trade, +20% per day, +10% per day: run side by side), sell, and look for the next one.
@@ -27,7 +27,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$120.00** (+20.0%) |
-| Running for | 0.2 days (since Oct 18, 15:01) |
+| Running for | 0.3 days (since Oct 18, 15:01) |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 4.4h |
 | Average worst point before the target | -2.5% |
@@ -47,7 +47,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$110.00** (+10.0%) |
-| Running for | 0.2 days (since Oct 18, 15:01) |
+| Running for | 0.3 days (since Oct 18, 15:01) |
 | Positions sold at +10% | 1 |
 | Average time to reach the target | 2.7h |
 | Average worst point before the target | -2.5% |
@@ -67,7 +67,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$120.00** (+20.0%) |
-| Running for | 0.2 days (since Oct 18, 15:01) |
+| Running for | 0.3 days (since Oct 18, 15:01) |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 4.4h |
 | Average worst point before the target | -2.5% |
@@ -88,7 +88,7 @@ bankroll is up the target versus its value at the start of the day. When several
 | | |
 |---|---|
 | Start → now | $100 → **$110.00** (+10.0%) |
-| Running for | 0.2 days (since Oct 18, 15:01) |
+| Running for | 0.3 days (since Oct 18, 15:01) |
 | Positions sold at +10% | 1 |
 | Average time to reach the target | 2.7h |
 | Average worst point before the target | -2.5% |
