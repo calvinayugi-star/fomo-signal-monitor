@@ -819,8 +819,29 @@
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
    "status": "active",
-   "cash": 120,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "ZBCN",
+    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
+    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
+    "list": "Trending",
+    "decidedAt": "2026-10-19T04:01:28.703Z",
+    "alertPriceUsd": 0.002116,
+    "sizeUsd": 120,
+    "dexRoundTripPct": 0.62,
+    "roundTripPct": 1.62,
+    "score": 51.3,
+    "entry": {
+     "chgH1": 2.78,
+     "chgH6": 5.07,
+     "chg15": -1.01,
+     "accel": 28.98,
+     "volTrend": 1.53,
+     "ratioH1": 2.9,
+     "ageH": 12278.1,
+     "top10Pct": 53.4
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -859,8 +880,29 @@
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
    "status": "active",
-   "cash": 110,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "ZBCN",
+    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
+    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
+    "list": "Trending",
+    "decidedAt": "2026-10-19T04:01:28.703Z",
+    "alertPriceUsd": 0.002116,
+    "sizeUsd": 110,
+    "dexRoundTripPct": 0.62,
+    "roundTripPct": 1.62,
+    "score": 51.3,
+    "entry": {
+     "chgH1": 2.78,
+     "chgH6": 5.07,
+     "chg15": -1.01,
+     "accel": 28.98,
+     "volTrend": 1.53,
+     "ratioH1": 2.9,
+     "ageH": 12278.1,
+     "top10Pct": 53.4
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -899,8 +941,29 @@
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
    "status": "active",
-   "cash": 120,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "ZBCN",
+    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
+    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
+    "list": "Trending",
+    "decidedAt": "2026-10-19T04:01:28.703Z",
+    "alertPriceUsd": 0.002116,
+    "sizeUsd": 120,
+    "dexRoundTripPct": 0.62,
+    "roundTripPct": 1.62,
+    "score": 51.3,
+    "entry": {
+     "chgH1": 2.78,
+     "chgH6": 5.07,
+     "chg15": -1.01,
+     "accel": 28.98,
+     "volTrend": 1.53,
+     "ratioH1": 2.9,
+     "ageH": 12278.1,
+     "top10Pct": 53.4
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -928,10 +991,17 @@
     }
    ],
    "day": {
-    "date": "2026-10-18",
-    "startBankroll": 100,
-    "goalMetAt": "2026-10-19T00:01:38.643Z"
-   }
+    "date": "2026-10-19",
+    "startBankroll": 120
+   },
+   "days": [
+    {
+     "date": "2026-10-18",
+     "startBankroll": 100,
+     "goalMetAt": "2026-10-19T00:01:38.643Z",
+     "endBankroll": 120
+    }
+   ]
   },
   {
    "id": "v2-d10-2026-10-18",
@@ -944,8 +1014,29 @@
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
    "status": "active",
-   "cash": 110,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "ZBCN",
+    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
+    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
+    "list": "Trending",
+    "decidedAt": "2026-10-19T04:01:28.703Z",
+    "alertPriceUsd": 0.002116,
+    "sizeUsd": 110,
+    "dexRoundTripPct": 0.62,
+    "roundTripPct": 1.62,
+    "score": 51.3,
+    "entry": {
+     "chgH1": 2.78,
+     "chgH6": 5.07,
+     "chg15": -1.01,
+     "accel": 28.98,
+     "volTrend": 1.53,
+     "ratioH1": 2.9,
+     "ageH": 12278.1,
+     "top10Pct": 53.4
+    }
+   },
    "trades": [
     {
      "n": 1,
@@ -973,10 +1064,17 @@
     }
    ],
    "day": {
-    "date": "2026-10-18",
-    "startBankroll": 100,
-    "goalMetAt": "2026-10-18T22:01:37.626Z"
-   }
+    "date": "2026-10-19",
+    "startBankroll": 110
+   },
+   "days": [
+    {
+     "date": "2026-10-18",
+     "startBankroll": 100,
+     "goalMetAt": "2026-10-18T22:01:37.626Z",
+     "endBankroll": 110
+    }
+   ]
   }
  ]
 }
