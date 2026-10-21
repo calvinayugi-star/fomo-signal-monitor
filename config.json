@@ -66,6 +66,7 @@
     "rules": "v2",
     "startDate": "2026-10-10",
     "seedUsd": 100,
+    "reportUrl": "https://github.com/calvinayugi-star/fomo-signal-monitor/blob/main/COMPOUNDER.md",
     "restart": { "at": "2026-10-20T23:59:00Z", "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders" },
     "_variants": "Since 2026-10-20 two runs. They never hold the same token at the same time; when both are in cash the Conservative Compounder (listed first) picks first. A run stops for good once its bankroll reaches goalUsd (a held position is sold as soon as it is worth goalUsd, even below its target).",
     "variants": [
