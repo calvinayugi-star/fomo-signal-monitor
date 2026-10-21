@@ -42,7 +42,8 @@ export async function minuteCandles(pairAddress, mint, fromMs, toMs, pages = 3) 
   return [...out.values()].filter((c) => c[0] * 1000 >= fromMs - 5 * 60e3).sort((a, b) => a[0] - b[0]);
 }
 
-// The last hour on completed 5-minute candles: 15-minute change and volume trend (last 15 min vs the hour's 15-min average).
+// Up to the last hour on completed 5-minute candles (at least 15 min, since entries are 15-60 min old tokens from 2026-10-21):
+// 15-minute change and volume trend (last 15 min vs the average 15 min over the candles available).
 async function fiveMinuteStats(pairAddress, mint, nowMs) {
   const j = await getJson(
     `${GT}/networks/solana/pools/${pairAddress}/ohlcv/minute?aggregate=5&limit=16&currency=usd&token=${mint}`,
@@ -51,11 +52,11 @@ async function fiveMinuteStats(pairAddress, mint, nowMs) {
     .filter((c) => (c[0] + 300) * 1000 <= nowMs)
     .sort((a, b) => a[0] - b[0])
     .slice(-12);
-  if (done.length < 12) return null;
+  if (done.length < 3) return null;
   const vol = (cs) => cs.reduce((s, c) => s + c[5], 0);
   return {
-    chg15: pctChange(done.at(-1)[4], done.at(-4)[4]),
-    volTrend: vol(done.slice(-3)) / Math.max(vol(done) / 4, 1e-9),
+    chg15: pctChange(done.at(-1)[4], done.at(-4)?.[4] ?? done[0][1]),
+    volTrend: vol(done.slice(-3)) / Math.max(vol(done) / (done.length / 3), 1e-9),
   };
 }
 
@@ -98,7 +99,8 @@ function entryFailure(r, sizeUsd, blocked, taken, e) {
   if (r.ratioH1 < e.minBuySellRatioH1) return 'buying not dominant (1h)';
   if (r.ratioH6 < e.minBuySellRatioH6) return 'buying not sustained (6h)';
   if (Math.max(r.ratioH1, r.ratioH6) > e.maxBuySellRatio) return 'unnatural buy/sell pattern (likely bots)';
-  if (r.accel == null || r.accel < e.minVolumeAcceleration) return 'volume not building';
+  // A pair under ~1.5h old has no earlier hours to compare with (accel null), so this check only applies to older pairs.
+  if (r.accel != null && r.accel < e.minVolumeAcceleration) return 'volume not building';
   if (r.chgH1 < e.minChgH1Pct) return 'falling (1h)';
   if (r.chgH1 > e.maxChgH1Pct) return `already moving (>${e.maxChgH1Pct}% 1h)`;
   if (r.chgH6 < e.minChgH6Pct) return 'falling over 6h';
@@ -154,7 +156,7 @@ async function screenPreSpike({ rows, sizeUsd, cfg, cache, log }) {
     try {
       const s = await cache.fiveMinuteStats(r);
       if (!s) {
-        r.reason = 'under 1h of 5-min candles';
+        r.reason = 'under 15 min of 5-min candles';
         continue;
       }
       Object.assign(r, { chg15: round(s.chg15), volTrend: round(s.volTrend) });
@@ -351,7 +353,7 @@ function buyMessage(run, r, pos, k, cfg, time, now) {
 
 <b>WHY (pre-spike setup):</b>
 • Price: 1h ${signed(r.chgH1)}, 6h ${signed(r.chgH6)}, 15 min ${signed(r.chg15)}
-• Volume building: last hour ${r.accel.toFixed(1)}× the hours before; last 15 min ${r.volTrend.toFixed(1)}× the hour's average
+• Volume: ${r.accel != null ? `last hour ${r.accel.toFixed(1)}× the hours before; ` : ''}last 15 min ${r.volTrend.toFixed(1)}× the average 15 min · pair ${Math.round(r.ageH * 60)} min old
 • Buying: ${r.ratioH1.toFixed(2)} buys per sell (1h), ${r.ratioH6.toFixed(2)} (6h)
 • Liquidity $${Math.round(r.liqUsd / 1000)}k${r.liqGrowth != null ? ` (${signed(r.liqGrowth * 100, 0)} vs last check)` : ''}, ${r.holders ?? 'n/a'} holders, top 10 hold ${r.top10Pct ?? 'n/a'}%
 • Round trip costs ~${r.roundTripPct}% at this size · score ${r.score}

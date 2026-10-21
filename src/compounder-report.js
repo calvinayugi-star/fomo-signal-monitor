@@ -152,7 +152,7 @@ export function compounderMarkdown(ledger, cfg, now, time) {
 
 Updated ${time.when(now)}. Paper trades only: nothing is bought or sold.
 
-**Rules ${k.rules} (since ${k.startDate}; two runs since 2026-10-20):** buy a token under ${e.maxPairAgeHours}h old **before it spikes** with 100% of the bankroll,
+**Rules ${k.rules} (since ${k.startDate}; two runs since 2026-10-20):** buy a token ${e.minPairAgeHours * 60}–${e.maxPairAgeHours * 60} minutes after its pool opened (graduation for pump.fun tokens) **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. ${k.variants.map((v) => `**${v.name ?? v.id}:** ${v.seedUsd ?? k.seedUsd} seed, +${v.targetNetPct}% per ${v.per ?? 'trade'}${v.goalUsd ? `, stops at ${usd(v.goalUsd)}` : ''}`).join('. ')}.
 
 ${comparisonSection(current, now)}
@@ -166,10 +166,10 @@ ${past.join('\n') || '| – | – | – | – | – | – | – |'}
 ## Rules in effect
 
 - **Lists:** Graduated (pump.fun) and Trending (GeckoTerminal). Tokens that graduated within ${e.graduatedBonusMaxAgeHours}h get +${e.graduatedBonus} score, older graduates 0, Trending-only tokens −${e.trendingOnlyPenalty}; market cap ≥ ${e.largeMcapUsd / 1e6}M −${e.largeMcapPenalty}.
-- **Score (0–100 before adjustments):** 1h buys/sells 30, price rise in the hour (up to +10%) 15, 6h buys/sells 15, last 15 min volume vs the hour 15, volume acceleration 15, liquidity growth 10; minus 3 per 1% DEX round trip.
+- **Score (0–100 before adjustments):** 1h buys/sells 30, price rise in the hour (up to +10%) 15, 6h buys/sells 15, last 15 min volume vs the average 15 min 15, volume acceleration 15 (0 for pairs under ~1.5h), liquidity growth 10; minus 3 per 1% DEX round trip.
 - **Price:** 1h change ${e.minChgH1Pct}% to +${e.maxChgH1Pct}% and 6h ${e.minChgH6Pct}% to +${e.maxChgH6Pct}% (restored 2026-10-18 after the Eternia chase entry); no 15-min or 5-min limits since 2026-10-16. The score rewards a 1h rise up to +10%.
 - **Demand building:** last hour's volume ≥ ${e.minVolumeAcceleration}× the hours before${e.minVolumeTrend15m > 0 ? `, last 15 min ≥ ${e.minVolumeTrend15m}× the hour's 15-min average` : ''}, buys/sells ≥ ${e.minBuySellRatioH1} (1h) and ≥ ${e.minBuySellRatioH6} (6h) but ≤ ${e.maxBuySellRatio} (bots), ≥ ${e.minBuysH1} buys and $${e.minVolumeH1Usd / 1000}k volume in the hour, liquidity not shrinking.
-- **Quality:** liquidity ≥ $${e.minLiquidityUsd / 1000}k and ≥ ${e.minLiquidityMultipleOfPosition}× the position, market cap ≥ ${e.minMarketCapUsd / 1000}k, pair ${e.minPairAgeHours}–${e.maxPairAgeHours}h old (under 24h only since 2026-10-20), the monitor's safety checks, no top-10 share ≤ ${e.youngMinTop10Pct}% on tokens under ${e.youngMaxAgeHours}h (bundled wallets), round trip ≤ ${e.maxRoundTripPct}% at the real size, score ≥ ${e.minScore}.
+- **Quality:** liquidity ≥ $${e.minLiquidityUsd / 1000}k and ≥ ${e.minLiquidityMultipleOfPosition}× the position, market cap ≥ ${e.minMarketCapUsd / 1000}k, pair ${e.minPairAgeHours * 60}–${e.maxPairAgeHours * 60} min old since 2026-10-21 (time since graduation for pump.fun tokens; the volume-acceleration check is skipped for pairs under ~1.5h, which have no earlier hours), the monitor's safety checks, no top-10 share ≤ ${e.youngMinTop10Pct}% on tokens under ${e.youngMaxAgeHours}h (bundled wallets), round trip ≤ ${e.maxRoundTripPct}% at the real size, score ≥ ${e.minScore}.
 - **Exit:** only at the run's target (${k.variants.map((v) => `+${v.targetNetPct}%`).join(' or ')} net, after fees and slippage) or at the run's goal, checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
 - Paper fill ${k.fillDelayMinutes} min after the decision (cancelled if the token doesn't trade for ${k.noFillCancelHours}h). No re-buy of a token within ${k.cooldownHours}h of selling it. A warning is sent if a held token has no trades for ${k.staleAfterHours}h.
 

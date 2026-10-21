@@ -17,7 +17,7 @@
   },
 
   "sources": {
-    "trendingDurations": ["1h", "6h"],
+    "trendingDurations": ["5m", "1h", "6h"],
     "pumpfunSorts": ["last_trade_timestamp", "market_cap"],
     "graduatedFallbackPages": 6,
     "graduatedMaxAgeHours": 72
@@ -86,8 +86,8 @@
     ],
     "entry": {
       "graduatedBonusMaxAgeHours": 72,
-      "minPairAgeHours": 2,
-      "maxPairAgeHours": 24,
+      "minPairAgeHours": 0.25,
+      "maxPairAgeHours": 1,
       "minLiquidityUsd": 25000,
       "minLiquidityMultipleOfPosition": 50,
       "minMarketCapUsd": 100000,
