@@ -176,3 +176,32 @@ ${past.join('\n') || '| – | – | – | – | – | – | – |'}
 Every hourly decision, the reject counts and the candidates that passed the quick checks are logged in [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl).
 `;
 }
+
+// Daily Telegram report per run: P&L over the last 24h (bankroll now vs its marked value 24h ago, from the hourly log),
+// sales in that window, the open position, and progress to the goal. Runs that reached their goal in the window are included.
+export function dailyReport(runs, hourly, now, time) {
+  const dayAgo = now - 24 * HOUR;
+  const blocks = runs.map((run) => {
+    const b = bankrollOf(run);
+    const then = Date.parse(run.startedAt) >= dayAgo ? null : hourly.find((h) => Date.parse(h.t) >= dayAgo && h.variants?.[run.variant]?.run === run.id);
+    const startB = then ? then.variants[run.variant].bankroll : run.seedUsd;
+    const pnl = b - startB;
+    const sold = run.trades.filter((t) => !t.noFill && Date.parse(t.exitAt ?? t.decidedAt) >= dayAgo);
+    const banked = sold.reduce((s, t) => s + t.netUsd, 0);
+    const pos = run.position;
+    const state = run.status === 'completed'
+      ? `🏁 goal reached, stopped for good at ${usd(run.finalBankroll ?? run.cash)}`
+      : pos
+        ? `holding $${pos.symbol}${pos.fill ? ` since ${time.short(new Date(pos.fill.at))}` : ' (fill pending)'}: ${pos.mark ? `${sf(pos.mark.netPct)} now` : 'not marked yet'}, target +${run.targetNetPct}%${pos.stale ? ' ⚠️ no trades 24h+' : ''}`
+        : paused(run)
+          ? "in cash, today's goal met: paused until midnight ET"
+          : 'in cash, searching';
+    const days = run.per === 'day' ? (run.days ?? []).slice(-1)[0] : null;
+    return `<b>${(run.name ?? label(run)).toUpperCase()}</b> (+${run.targetNetPct}% per ${run.per === 'day' ? 'day' : 'trade'})
+24h P&amp;L: <b>${pnl >= 0 ? '+' : ''}${usd(pnl)}</b> (${sf(startB > 0 ? (pnl / startB) * 100 : null)})${then ? '' : ' since the start'} · bankroll ${usd(startB)} → <b>${usd(b)}</b>
+Banked in 24h: ${sold.length ? `${usd(banked)} from ${sold.length} sale${sold.length > 1 ? 's' : ''} (${sold.map((t) => `$${t.symbol} ${sf(t.netPct)}${t.holdHours != null ? ` in ${hours(t.holdHours)}` : ''}`).join(', ')})` : 'none'}
+Now: ${state}${days ? `\nYesterday's daily goal: ${days.goalMetAt ? 'met ✅' : 'not met'}` : ''}
+Since start: $${run.seedUsd} → ${usd(b)} (${sf((b / run.seedUsd - 1) * 100)}) · ${runStats(run).targetHits} target sales${run.goalUsd && run.status !== 'completed' ? ` · ${usd(run.goalUsd)} goal: ${f((b / run.goalUsd) * 100)}%, ~${salesToGoal(run, b)} sales to go` : ''}`;
+  });
+  return `💰 <b>Compounders: daily P&amp;L (paper)</b>\n\n${blocks.join('\n\n')}`;
+}

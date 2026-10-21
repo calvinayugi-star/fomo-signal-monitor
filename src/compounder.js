@@ -14,7 +14,7 @@ import { collectCandidates, GT } from './sources.js';
 import { dexPairs, safetyCheck, costCheck, metrics, liquidityGrowth } from './screen.js';
 import { sendTelegram, esc } from './telegram.js';
 import { openPosition, findFill, replayTarget, priceForNet, netAt } from './compounder-sim.js';
-import { compounderMarkdown, summaryLine, runStats, bankrollOf, usd, price } from './compounder-report.js';
+import { compounderMarkdown, summaryLine, dailyReport, runStats, bankrollOf, usd, price } from './compounder-report.js';
 import { makeTime } from './time.js';
 
 const HOUR = 3600e3;
@@ -558,10 +558,23 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
   for (const [id, h] of Object.entries(hourly.variants))
     console.log(`Compounder ${id}: ${h.decision}; bankroll ${h.bankroll}; ${h.candidates.length} candidates passed the cheap checks`);
 
+  // Daily report: the active runs plus any that reached their goal in the last 24h, with a link to the full report.
+  let hourlyLog = [];
+  try {
+    hourlyLog = fs.readFileSync(path.join(dataDir, 'compounder-hourly.jsonl'), 'utf8').trim().split('\n').slice(-30).map((l) => JSON.parse(l));
+  } catch {
+    /* no log yet */
+  }
+  const reportRuns = v2().filter((r) => r.status === 'active' || (r.status === 'completed' && now - Date.parse(r.endedAt) < 24 * HOUR));
+  reportRuns.sort((a, b) => k.variants.findIndex((v) => v.id === a.variant) - k.variants.findIndex((v) => v.id === b.variant));
+  const daily = reportRuns.length
+    ? `${dailyReport(reportRuns, hourlyLog, now, time)}${k.reportUrl ? `\n\n<a href="${k.reportUrl}">Full report</a>` : ''}`
+    : '';
+
   if (!dryRun) {
     fs.writeFileSync(ledgerFile, JSON.stringify(ledger, null, 1) + '\n');
     fs.appendFileSync(path.join(dataDir, 'compounder-hourly.jsonl'), JSON.stringify(hourly) + '\n');
     fs.writeFileSync(reportPath, compounderMarkdown(ledger, cfg, now, time));
   }
-  return (runs.length ? runs : ledger.runs.slice(-1)).map((r) => summaryLine(r, now)).join('\n');
+  return daily || (runs.length ? runs : ledger.runs.slice(-1)).map((r) => summaryLine(r, now)).join('\n');
 }
