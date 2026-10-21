@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Tue, Oct 20, 21:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Tue, Oct 20, 22:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token 15–60 minutes after its pool opened (graduation for pump.fun tokens) **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, stops at $5000.00. **Aggressive Compounder:** 25 seed, +20% per trade, stops at $5000.00.
