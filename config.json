@@ -101,6 +101,7 @@
       "maxChgH1Pct": 25,
       "minChgH6Pct": -15,
       "maxChgH6Pct": 100,
+      "priceWindowsMinAgeHours": 1,
       "minLiquidityGrowthPct": 0,
       "minVolumeTrend15m": 0,
       "youngMaxAgeHours": 72,
