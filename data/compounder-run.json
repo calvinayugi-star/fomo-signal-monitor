@@ -818,47 +818,9 @@
    "targetNetPct": 20,
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
-   "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "ZBCN",
-    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
-    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
-    "list": "Trending",
-    "decidedAt": "2026-10-19T04:01:28.703Z",
-    "alertPriceUsd": 0.002116,
-    "sizeUsd": 120,
-    "dexRoundTripPct": 0.62,
-    "roundTripPct": 1.62,
-    "score": 51.3,
-    "entry": {
-     "chgH1": 2.78,
-     "chgH6": 5.07,
-     "chg15": -1.01,
-     "accel": 28.98,
-     "volTrend": 1.53,
-     "ratioH1": 2.9,
-     "ageH": 12278.1,
-     "top10Pct": 53.4
-    },
-    "fill": {
-     "rawPrice": 0.0021137321737854696,
-     "fillCandleT": 1792385039,
-     "at": "2026-10-19T04:04:28.703Z"
-    },
-    "checkedThrough": 1792539060,
-    "peakNetPct": 2.75,
-    "worstNetPct": -4.14,
-    "lastTradeAt": "2026-10-20T23:31:00.000Z",
-    "mark": {
-     "at": "2026-10-20T23:31:00.000Z",
-     "price": 0.002155365408197616,
-     "netPct": 0.33,
-     "proceeds": 120.39
-    },
-    "targetPriceUsd": 0.002577968918595801,
-    "stale": false
-   },
+   "status": "ended",
+   "cash": 120.39,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -883,8 +845,22 @@
      "worstNetPct": -2.48,
      "targetHit": true,
      "newBankroll": 120
+    },
+    {
+     "n": 2,
+     "symbol": "ZBCN",
+     "decidedAt": "2026-10-19T04:01:28.703Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": 0.33,
+     "netUsd": 0.39000000000000057,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 120.39
     }
-   ]
+   ],
+   "endedAt": "2026-10-21T01:00:34.620Z",
+   "finalBankroll": 120.39,
+   "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders"
   },
   {
    "id": "v2-t10-2026-10-18",
@@ -896,47 +872,9 @@
    "targetNetPct": 10,
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
-   "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "ZBCN",
-    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
-    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
-    "list": "Trending",
-    "decidedAt": "2026-10-19T04:01:28.703Z",
-    "alertPriceUsd": 0.002116,
-    "sizeUsd": 110,
-    "dexRoundTripPct": 0.62,
-    "roundTripPct": 1.62,
-    "score": 51.3,
-    "entry": {
-     "chgH1": 2.78,
-     "chgH6": 5.07,
-     "chg15": -1.01,
-     "accel": 28.98,
-     "volTrend": 1.53,
-     "ratioH1": 2.9,
-     "ageH": 12278.1,
-     "top10Pct": 53.4
-    },
-    "fill": {
-     "rawPrice": 0.0021137321737854696,
-     "fillCandleT": 1792385039,
-     "at": "2026-10-19T04:04:28.703Z"
-    },
-    "checkedThrough": 1792539060,
-    "peakNetPct": 2.75,
-    "worstNetPct": -4.14,
-    "lastTradeAt": "2026-10-20T23:31:00.000Z",
-    "mark": {
-     "at": "2026-10-20T23:31:00.000Z",
-     "price": 0.002155365408197616,
-     "netPct": 0.33,
-     "proceeds": 110.36
-    },
-    "targetPriceUsd": 0.002363138175379484,
-    "stale": false
-   },
+   "status": "ended",
+   "cash": 110.36,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -961,8 +899,22 @@
      "worstNetPct": -2.48,
      "targetHit": true,
      "newBankroll": 110
+    },
+    {
+     "n": 2,
+     "symbol": "ZBCN",
+     "decidedAt": "2026-10-19T04:01:28.703Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": 0.33,
+     "netUsd": 0.35999999999999943,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 110.36
     }
-   ]
+   ],
+   "endedAt": "2026-10-21T01:00:34.620Z",
+   "finalBankroll": 110.36,
+   "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders"
   },
   {
    "id": "v2-d20-2026-10-18",
@@ -974,47 +926,9 @@
    "targetNetPct": 20,
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
-   "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "ZBCN",
-    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
-    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
-    "list": "Trending",
-    "decidedAt": "2026-10-19T04:01:28.703Z",
-    "alertPriceUsd": 0.002116,
-    "sizeUsd": 120,
-    "dexRoundTripPct": 0.62,
-    "roundTripPct": 1.62,
-    "score": 51.3,
-    "entry": {
-     "chgH1": 2.78,
-     "chgH6": 5.07,
-     "chg15": -1.01,
-     "accel": 28.98,
-     "volTrend": 1.53,
-     "ratioH1": 2.9,
-     "ageH": 12278.1,
-     "top10Pct": 53.4
-    },
-    "fill": {
-     "rawPrice": 0.0021137321737854696,
-     "fillCandleT": 1792385039,
-     "at": "2026-10-19T04:04:28.703Z"
-    },
-    "checkedThrough": 1792539060,
-    "peakNetPct": 2.75,
-    "worstNetPct": -4.14,
-    "lastTradeAt": "2026-10-20T23:31:00.000Z",
-    "mark": {
-     "at": "2026-10-20T23:31:00.000Z",
-     "price": 0.002155365408197616,
-     "netPct": 0.33,
-     "proceeds": 120.39
-    },
-    "targetPriceUsd": 0.002577968918595801,
-    "stale": false
-   },
+   "status": "ended",
+   "cash": 120.39,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1039,6 +953,17 @@
      "worstNetPct": -2.48,
      "targetHit": true,
      "newBankroll": 120
+    },
+    {
+     "n": 2,
+     "symbol": "ZBCN",
+     "decidedAt": "2026-10-19T04:01:28.703Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": 0.33,
+     "netUsd": 0.39000000000000057,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 120.39
     }
    ],
    "day": {
@@ -1057,7 +982,10 @@
      "startBankroll": 120,
      "endBankroll": 117.38
     }
-   ]
+   ],
+   "endedAt": "2026-10-21T01:00:34.620Z",
+   "finalBankroll": 120.39,
+   "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders"
   },
   {
    "id": "v2-d10-2026-10-18",
@@ -1069,47 +997,9 @@
    "targetNetPct": 10,
    "startedAt": "2026-10-18T19:01:39.344Z",
    "endsAt": null,
-   "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "ZBCN",
-    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
-    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
-    "list": "Trending",
-    "decidedAt": "2026-10-19T04:01:28.703Z",
-    "alertPriceUsd": 0.002116,
-    "sizeUsd": 110,
-    "dexRoundTripPct": 0.62,
-    "roundTripPct": 1.62,
-    "score": 51.3,
-    "entry": {
-     "chgH1": 2.78,
-     "chgH6": 5.07,
-     "chg15": -1.01,
-     "accel": 28.98,
-     "volTrend": 1.53,
-     "ratioH1": 2.9,
-     "ageH": 12278.1,
-     "top10Pct": 53.4
-    },
-    "fill": {
-     "rawPrice": 0.0021137321737854696,
-     "fillCandleT": 1792385039,
-     "at": "2026-10-19T04:04:28.703Z"
-    },
-    "checkedThrough": 1792539060,
-    "peakNetPct": 2.75,
-    "worstNetPct": -4.14,
-    "lastTradeAt": "2026-10-20T23:31:00.000Z",
-    "mark": {
-     "at": "2026-10-20T23:31:00.000Z",
-     "price": 0.002155365408197616,
-     "netPct": 0.33,
-     "proceeds": 110.36
-    },
-    "targetPriceUsd": 0.002363138175379484,
-    "stale": false
-   },
+   "status": "ended",
+   "cash": 110.36,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1134,6 +1024,17 @@
      "worstNetPct": -2.48,
      "targetHit": true,
      "newBankroll": 110
+    },
+    {
+     "n": 2,
+     "symbol": "ZBCN",
+     "decidedAt": "2026-10-19T04:01:28.703Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": 0.33,
+     "netUsd": 0.35999999999999943,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 110.36
     }
    ],
    "day": {
@@ -1152,7 +1053,48 @@
      "startBankroll": 110,
      "endBankroll": 107.6
     }
-   ]
+   ],
+   "endedAt": "2026-10-21T01:00:34.620Z",
+   "finalBankroll": 110.36,
+   "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders"
+  },
+  {
+   "id": "v2-conservative-2026-10-20",
+   "rules": "v2",
+   "variant": "conservative",
+   "name": "Conservative Compounder",
+   "per": "day",
+   "mode": "paper",
+   "seedUsd": 110,
+   "goalUsd": 5000,
+   "targetNetPct": 13.93,
+   "startedAt": "2026-10-21T01:00:34.620Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 110,
+   "position": null,
+   "trades": [],
+   "day": {
+    "date": "2026-10-20",
+    "startBankroll": 110
+   }
+  },
+  {
+   "id": "v2-aggressive-2026-10-20",
+   "rules": "v2",
+   "variant": "aggressive",
+   "name": "Aggressive Compounder",
+   "per": "trade",
+   "mode": "paper",
+   "seedUsd": 25,
+   "goalUsd": 5000,
+   "targetNetPct": 20,
+   "startedAt": "2026-10-21T01:00:34.620Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 25,
+   "position": null,
+   "trades": []
   }
  ]
 }
