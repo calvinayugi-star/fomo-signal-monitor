@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 21, 07:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 21, 08:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token 15–60 minutes after its pool opened (graduation for pump.fun tokens) **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Wed, Oct 21, 07:00 EDT. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$110.00** | **$25.00** |
-| Return since the start | +0.0% (from 110) | +0.0% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.2% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.5% there, ~30 more target sales |
+| Bankroll now (open position at its last mark) | **$0.00** | **$25.00** |
+| Return since the start | -100.0% (from 110) | +0.0% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 0.0% there, ~Infinity more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.5% there, ~30 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at the target | 0 | 0 |
 | Average time to reach the target | n/a | n/a |
 | Average worst point before the target | n/a | n/a |
 | Profit banked / costs | $0.00 / $0.00 | $0.00 / $0.00 |
 | Days the daily goal was met (per-day runs) | 0 of 2 | – |
-| Now | holding $Coca Cola (n/a, n/a) | in cash, searching |
+| Now | holding $Coca Cola (-100.0%, 0.9h) | in cash, searching |
 
 Both runs use identical entry rules and the same hourly candidates, and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
@@ -29,26 +29,26 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$110.00** (+0.0%) |
-| Running for | 0.4 days (since Oct 20, 21:00) |
+| Start → now | $110 → **$0.00** (-100.0%) |
+| Running for | 0.5 days (since Oct 20, 21:00) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 0 |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
 | Profit banked / costs | $0.00 / $0.00 |
 | Days the daily goal was met | 0 of 2 · today started at $110.00 |
-| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 30 more target sales from here (30 from the 110 seed) |
+| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: Infinity more target sales from here (30 from the 110 seed) |
 
 ### Open position
 
 | | |
 |---|---|
 | Token | $Coca Cola (Graduated) · [DexScreener](https://dexscreener.com/solana/AtbbLAoTNX2EUCiL8Yd2VswHDN6EAn1EwLNBoqimLY8p) |
-| Bought | Oct 21, 07:00 · $110.00 (fill pending) |
-| Sell target | +13.93% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+| Bought | Oct 21, 07:00 · $110.00 at $0.0006504 |
+| Sell target | $0.0007682 (+13.93% net) |
+| Current value | $0.00 (-100.0% net, at Oct 21, 07:17) |
+| Best / worst while held | +8.3% / -100.0% |
+| Held for | 0.9h |
 
 ### Completed positions (newest first)
 
@@ -61,7 +61,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Start → now | $25 → **$25.00** (+0.0%) |
-| Running for | 0.4 days (since Oct 20, 21:00) |
+| Running for | 0.5 days (since Oct 20, 21:00) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +20% | 0 |
 | Average time to reach the target | n/a |
