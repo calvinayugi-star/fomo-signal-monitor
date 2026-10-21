@@ -3,7 +3,8 @@
 // hold it with no stop and no time limit until it is +targetNetPct net, sell, and look for the next one.
 // Since 2026-10-16 Graduated and Trending tokens are scored alike (list adjustments 0). Since 2026-10-20 two variants (config compounder.variants):
 // the Conservative Compounder (+13.93% per day, $110 seed) and the Aggressive Compounder (+20% per trade, $25 seed). Same rules and hourly candidates,
-// each its own run and bankroll; they never hold the same token at once, and a run stops for good at its goalUsd ($5,000). Runs inside the hourly monitor job:
+// each its own run and bankroll; they never hold the same token at once. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd ($5,000) + its seed,
+// it is all cash, $5,000+ is cashed out, and a new cycle starts from the seed at the next hourly run (one ledger run per cycle). Runs inside the hourly monitor job:
 //   settle the open position on 1-minute candles -> screen for pre-spike setups -> BUY / HOLD / NO TRADE.
 // Records: data/compounder-run.json (ledger, never deleted; the v1 October run stays in it),
 // data/compounder-hourly.jsonl (every hourly decision and the candidates that passed the cheap checks), COMPOUNDER.md.
@@ -14,7 +15,7 @@ import { collectCandidates, GT } from './sources.js';
 import { dexPairs, safetyCheck, costCheck, metrics, liquidityGrowth } from './screen.js';
 import { sendTelegram, esc } from './telegram.js';
 import { openPosition, findFill, replayTarget, priceForNet, netAt } from './compounder-sim.js';
-import { compounderMarkdown, summaryLine, dailyReport, runStats, bankrollOf, usd, price } from './compounder-report.js';
+import { compounderMarkdown, summaryLine, dailyReport, runStats, bankrollOf, goalBankroll, usd, price } from './compounder-report.js';
 import { makeTime } from './time.js';
 
 const HOUR = 3600e3;
@@ -221,16 +222,18 @@ async function screenPreSpike({ rows, sizeUsd, cfg, cache, log }) {
 
 // --- run lifecycle -------------------------------------------------------------------------------
 
-function newRun(now, k, time, v) {
+// prev: the variant's last cycle when it reached its goal; the new cycle carries the cycle number and the total cashed out so far.
+function newRun(now, k, time, v, prev) {
+  const cycle = prev ? (prev.cycle ?? 1) + 1 : 1;
   return {
-    id: `v2-${v.id}-${time.localDate(now)}`,
+    id: `v2-${v.id}-${time.localDate(now)}${cycle > 1 ? `-c${cycle}` : ''}`,
     rules: k.rules,
     variant: v.id,
     ...(v.name ? { name: v.name } : {}),
     per: v.per ?? 'trade',
     mode: 'paper',
     seedUsd: v.seedUsd ?? k.seedUsd,
-    ...(v.goalUsd ? { goalUsd: v.goalUsd } : {}),
+    ...(v.goalUsd ? { goalUsd: v.goalUsd, cycle, cashedOutBeforeUsd: prev ? round((prev.cashedOutBeforeUsd ?? 0) + (prev.cashOutUsd ?? 0)) : 0 } : {}),
     targetNetPct: v.targetNetPct,
     startedAt: now.toISOString(),
     endsAt: null, // open-ended: positions are never sold below the target
@@ -265,10 +268,11 @@ async function settle(run, cfg, now) {
   const closeAtMs = oneOff ? Date.parse(pos.fill.at) + oneOff.afterHours * HOUR : Infinity;
   const after = candles.filter((c) => c[0] > pos.fill.fillCandleT && c[0] * 1000 < closeAtMs);
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: pos.fill.rawPrice, dexRoundTripPct: pos.dexRoundTripPct, costs: cfg.costs });
-  // Near the goal, the position is sold as soon as the bankroll would reach it (always a gain: the position is the whole bankroll and below the goal).
-  const goalNetPct = run.goalUsd ? ((run.goalUsd - run.cash) / pos.sizeUsd - 1) * 100 : Infinity;
+  // Near the goal (goalUsd to cash out + the seed kept for the next cycle), the position is sold as soon as the bankroll would reach it
+  // (always a gain: the position is the whole bankroll and below the goal).
+  const goalNetPct = run.goalUsd ? ((goalBankroll(run) - run.cash) / pos.sizeUsd - 1) * 100 : Infinity;
   const res = replayTarget(p, after, Math.min(run.targetNetPct, goalNetPct), cfg.costs);
-  if (res.closed && goalNetPct < run.targetNetPct) res.reason = `${usd(run.goalUsd)} goal reached`;
+  if (res.closed && goalNetPct < run.targetNetPct) res.reason = `${usd(goalBankroll(run))} goal reached`;
   if (Number.isFinite(res.high)) pos.peakNetPct = round(Math.max(pos.peakNetPct ?? -100, netAt(p, res.high, cfg.costs).netPct));
   if (Number.isFinite(res.low)) pos.worstNetPct = round(Math.min(pos.worstNetPct ?? 0, netAt(p, res.low, cfg.costs).netPct));
   if (res.closed) return res;
@@ -425,11 +429,14 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
   const runs = [];
   for (const v of k.variants) {
     let run = v2().find((r) => r.status === 'active' && r.variant === v.id);
-    if (!run && time.localDate(now) >= k.startDate && !v2().some((r) => r.variant === v.id)) {
+    // A run that reached its goal is followed by a new cycle from the seed (the loop the user asked for on 2026-10-21).
+    const last = v2().filter((r) => r.variant === v.id).at(-1);
+    const prev = last?.status === 'completed' && last.goalUsd ? last : null;
+    if (!run && time.localDate(now) >= k.startDate && (!last || prev)) {
       // A variant added later copies a sibling run that has no completed trades yet (same start, same open position):
       // with identical rules it would have made exactly the same decisions so far. Otherwise it starts fresh now.
-      const twin = v2().find((r) => r.status === 'active' && r.trades.length === 0 && r.startedAt < now.toISOString() && r.seedUsd === (v.seedUsd ?? k.seedUsd));
-      run = newRun(now, k, time, v);
+      const twin = !prev && v2().find((r) => r.status === 'active' && r.trades.length === 0 && r.startedAt < now.toISOString() && r.seedUsd === (v.seedUsd ?? k.seedUsd));
+      run = newRun(now, k, time, v, prev);
       if (twin) {
         Object.assign(run, { startedAt: twin.startedAt, cash: twin.cash, copiedFrom: twin.id });
         if (twin.position) {
@@ -440,7 +447,8 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
       }
       ledger.runs.push(run);
       const same = twin ? ` (same start${twin.position ? ` and same open position, $${esc(twin.position.symbol)},` : ''} as ${esc(twin.id)})` : '';
-      await send(`${PAPER}\n🔁 <b>${tag(run)} STARTED</b> with $${run.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net, repeat${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new buys until midnight ET` : ''}${run.goalUsd ? `; stops for good at ${usd(run.goalUsd)}` : ''}.`);
+      const cyc = prev ? ` cycle ${run.cycle}` : '';
+      await send(`${PAPER}\n🔁 <b>${tag(run)}${cyc} STARTED</b> with $${run.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net, repeat${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new buys until midnight ET` : ''}${run.goalUsd ? `; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}` : ''}${prev ? `. Cashed out so far: ${usd(run.cashedOutBeforeUsd)}` : ''}.`);
     }
     if (!run) continue;
     if (run.targetNetPct !== v.targetNetPct) {
@@ -472,10 +480,14 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
           const t = recordClose(run, res, now);
           h.exit = { symbol: t.symbol, reason: t.reason, netPct: t.netPct, netUsd: t.netUsd, holdHours: t.holdHours };
           await send(tradeReport(run, t));
-          if (run.goalUsd && run.cash >= run.goalUsd - 0.005) {
-            finishRun(run, 'completed', now, `goal ${usd(run.goalUsd)} reached`);
-            h.decision = 'GOAL REACHED (stopped)';
-            await send(`${PAPER}\n🏁 <b>${tag(run)}: ${usd(run.goalUsd)} GOAL REACHED</b>: $${run.seedUsd} → <b>${usd(run.cash)}</b> in ${run.trades.length} trades. This run has stopped for good.`);
+          if (run.goalUsd && run.cash >= goalBankroll(run) - 0.005) {
+            // All cash: everything above the seed is cashed out; the seed starts the next cycle at the next hourly run.
+            run.cashOutUsd = round(run.cash - run.seedUsd);
+            finishRun(run, 'completed', now, `goal reached: cashed out ${usd(run.cashOutUsd)}, ${usd(run.seedUsd)} kept for the next cycle`);
+            h.decision = 'GOAL REACHED (cashed out)';
+            await send(`${PAPER}\n🏁 <b>${tag(run)}${run.cycle > 1 ? ` cycle ${run.cycle}` : ''}: GOAL REACHED</b>: $${run.seedUsd} → <b>${usd(run.cash)}</b> in ${run.trades.length} trades.
+💵 Cash out <b>${usd(run.cashOutUsd)}</b> and keep $${run.seedUsd}. Total cashed out: ${usd((run.cashedOutBeforeUsd ?? 0) + run.cashOutUsd)}.
+A new cycle starts from $${run.seedUsd} at the next hourly run.`);
           }
         } else if (run.position.stale && !wasStale) {
           await send(staleMessage(run, k, time));
@@ -493,7 +505,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
     const rows = [];
     const rejects = {};
     try {
-      if (run.status === 'completed') h.decision ??= 'GOAL REACHED (stopped)';
+      if (run.status === 'completed') h.decision ??= 'GOAL REACHED (cashed out)';
       else if (run.position) h.decision = 'HOLD';
       else if (run.per === 'day' && run.day.goalMetAt) h.decision = 'NO TRADE (daily goal met)';
       else {
@@ -503,7 +515,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
           allPairs = new Map([...(pairs ?? []), ...(missing.length ? await dexPairs(missing, log) : [])]);
         }
         const cooldownMs = k.cooldownHours * HOUR;
-        const blocked = new Set(run.trades.filter((t) => now - Date.parse(t.exitAt ?? t.decidedAt) < cooldownMs).map((t) => t.mint));
+        const blocked = new Set(v2().filter((r) => r.variant === run.variant).flatMap((r) => r.trades).filter((t) => now - Date.parse(t.exitAt ?? t.decidedAt) < cooldownMs).map((t) => t.mint));
         // The runs never hold the same token at the same time (runs earlier in config order pick first in a shared hour).
         const taken = new Set(runs.filter((o) => o !== run && o.position && o.status === 'active').map((o) => o.position.mint));
         const sizeUsd = run.cash;

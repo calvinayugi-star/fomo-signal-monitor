@@ -32,8 +32,11 @@ export function runStats(run) {
 
 const heldHours = (pos, now) => (pos.fill ? (now - Date.parse(pos.fill.at)) / HOUR : null);
 const label = (run) => run.name ?? `+${run.targetNetPct}% per ${run.per === 'day' ? 'day' : 'trade'}`;
+// Bankroll at which a run reaches its goal: goalUsd to cash out plus the seed kept for the next cycle (since 2026-10-21).
+export const goalBankroll = (run) => (run.goalUsd ? run.goalUsd + run.seedUsd : null);
 // Sales at the target still needed to reach the goal from the current bankroll.
-const salesToGoal = (run, b) => (run.goalUsd ? Math.max(0, Math.ceil(Math.log(run.goalUsd / b) / Math.log(1 + run.targetNetPct / 100))) : null);
+const salesToGoal = (run, b) => (run.goalUsd ? Math.max(0, Math.ceil(Math.log(goalBankroll(run) / b) / Math.log(1 + run.targetNetPct / 100))) : null);
+const cycleText = (run) => (run.goalUsd ? `cycle ${run.cycle ?? 1}, ${usd(run.cashedOutBeforeUsd ?? 0)} cashed out in earlier cycles` : '–');
 const paused = (run) => run.per === 'day' && !run.position && run.day?.goalMetAt;
 // Per-day runs: days on which the daily goal was met, out of the days the run has been active.
 function dayGoals(run) {
@@ -90,7 +93,8 @@ ${row('Rule', ({ r }) => `+${r.targetNetPct}% per ${r.per === 'day' ? 'day (one 
 |---|${cols.map(() => '---|').join('')}
 ${row('Bankroll now (open position at its last mark)', ({ b }) => `**${usd(b)}**`)}
 ${row('Return since the start', ({ r, b }) => `${sf((b / r.seedUsd - 1) * 100)} (from ${r.seedUsd})`)}
-${row('Goal', ({ r, b }) => (r.goalUsd ? `${usd(r.goalUsd)}: ${f((b / r.goalUsd) * 100)}% there, ~${salesToGoal(r, b)} more target sales` : '–'))}
+${row('Goal', ({ r, b }) => (r.goalUsd ? `${usd(goalBankroll(r))} (${usd(r.goalUsd)} to cash out + ${r.seedUsd} kept): ${f((b / goalBankroll(r)) * 100)}% there, ~${salesToGoal(r, b)} more target sales` : '–'))}
+${row('Cycle', ({ r }) => cycleText(r))}
 ${row('Positions sold at the target', ({ s }) => `${s.targetHits}${s.early ? ` (+${s.early} closed early)` : ''}`)}
 ${row('Average time to reach the target', ({ s }) => hours(s.avgHoldHours))}
 ${row('Average worst point before the target', ({ s }) => sf(s.avgWorstNetPct))}
@@ -100,7 +104,7 @@ ${row('Now', ({ r }) => nowText(r, now))}
 
 Both runs use identical entry rules and the same hourly candidates, and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
-A run stops for good once its bankroll reaches its goal (a held position is sold as soon as it is worth the goal, even below its target).
+Each run loops: once its bankroll reaches the goal it is all cash (a held position is sold as soon as it is worth the goal, even below its target), the goal amount or more is cashed out, and a new cycle starts from the seed.
 `;
 }
 
@@ -121,12 +125,12 @@ function v2Section(run, cfg, now, time) {
 | | |
 |---|---|
 | Start → now | $${run.seedUsd} → **${usd(b)}** (${sf((b / run.seedUsd - 1) * 100)}) |
-| Running for | ${f(days)} days (since ${time.short(new Date(run.startedAt))})${run.copiedFrom ? `; started as a copy of ${run.copiedFrom}` : ''} |
+| Running for | ${f(days)} days (since ${time.short(new Date(run.startedAt))})${run.copiedFrom ? `; started as a copy of ${run.copiedFrom}` : ''} |${run.goalUsd ? `\n| Cycle | ${cycleText(run)} |` : ''}
 | Positions sold at +${run.targetNetPct}% | ${s.targetHits}${s.early ? ` (+${s.early} closed early by a one-off exit)` : ''} |
 | Average time to reach the target | ${hours(s.avgHoldHours)} |
 | Average worst point before the target | ${sf(s.avgWorstNetPct)} |
 | Profit banked / costs | ${usd(s.netUsd)} / ${usd(s.costsUsd)} |${dayRow}
-| Each +${run.targetNetPct}% sale multiplies the bankroll by | ${f(1 + run.targetNetPct / 100, 4)}×${run.goalUsd ? `; ${usd(run.goalUsd)} goal: ${salesToGoal(run, b)} more target sales from here (${salesToGoal(run, run.seedUsd)} from the ${run.seedUsd} seed)` : ''} |
+| Each +${run.targetNetPct}% sale multiplies the bankroll by | ${f(1 + run.targetNetPct / 100, 4)}×${run.goalUsd ? `; ${usd(goalBankroll(run))} goal: ${salesToGoal(run, b)} more target sales from here (${salesToGoal(run, run.seedUsd)} from the ${run.seedUsd} seed)` : ''} |
 
 ${positionSection(run, now, time)}
 
@@ -146,14 +150,14 @@ export function compounderMarkdown(ledger, cfg, now, time) {
   const current = runs.filter((r) => r.status === 'active' && r.rules === k.rules).sort((a, b) => order(a) - order(b));
   const past = runs.filter((r) => !current.includes(r)).map((r) => {
     const s = runStats(r);
-    return `| ${r.id} | ${r.rules ?? 'v1'} | $${r.seedUsd} | ${usd(r.finalBankroll ?? r.cash)} | ${s.trades} | ${f(s.winRate, 0, '%')} | ${r.status}${r.note ? ` (${r.note})` : ''} |`;
+    return `| ${r.id} | ${r.rules ?? 'v1'} | $${r.seedUsd} | ${usd(r.finalBankroll ?? r.cash)}${r.cashOutUsd != null ? ` (${usd(r.cashOutUsd)} cashed out)` : ''} | ${s.trades} | ${f(s.winRate, 0, '%')} | ${r.status}${r.note ? ` (${r.note})` : ''} |`;
   });
   return `# FOMO Compounder: Results (PAPER MODE)
 
 Updated ${time.when(now)}. Paper trades only: nothing is bought or sold.
 
 **Rules ${k.rules} (since ${k.startDate}; two runs since 2026-10-20):** buy a token ${e.minPairAgeHours * 60}–${e.maxPairAgeHours * 60} minutes after its pool opened (graduation for pump.fun tokens) **before it spikes** with 100% of the bankroll,
-**hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. ${k.variants.map((v) => `**${v.name ?? v.id}:** ${v.seedUsd ?? k.seedUsd} seed, +${v.targetNetPct}% per ${v.per ?? 'trade'}${v.goalUsd ? `, stops at ${usd(v.goalUsd)}` : ''}`).join('. ')}.
+**hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. ${k.variants.map((v) => `**${v.name ?? v.id}:** ${v.seedUsd ?? k.seedUsd} seed, +${v.targetNetPct}% per ${v.per ?? 'trade'}${v.goalUsd ? `, at ${usd(v.goalUsd + (v.seedUsd ?? k.seedUsd))} cashes out ${usd(v.goalUsd)}+ and starts again from ${v.seedUsd ?? k.seedUsd}` : ''}`).join('. ')}.
 
 ${comparisonSection(current, now)}
 ${current.length ? current.map((r) => v2Section(r, cfg, now, time)).join('\n') : 'No run has started yet.'}
@@ -190,7 +194,7 @@ export function dailyReport(runs, hourly, now, time) {
     const banked = sold.reduce((s, t) => s + t.netUsd, 0);
     const pos = run.position;
     const state = run.status === 'completed'
-      ? `🏁 goal reached, stopped for good at ${usd(run.finalBankroll ?? run.cash)}`
+      ? `🏁 goal reached at ${usd(run.finalBankroll ?? run.cash)}: ${usd(run.cashOutUsd)} cashed out, new cycle from $${run.seedUsd}`
       : pos
         ? `holding $${pos.symbol}${pos.fill ? ` since ${time.short(new Date(pos.fill.at))}` : ' (fill pending)'}: ${pos.mark ? `${sf(pos.mark.netPct)} now` : 'not marked yet'}, target +${run.targetNetPct}%${pos.stale ? ' ⚠️ no trades 24h+' : ''}`
         : paused(run)
@@ -201,7 +205,7 @@ export function dailyReport(runs, hourly, now, time) {
 24h P&amp;L: <b>${pnl >= 0 ? '+' : ''}${usd(pnl)}</b> (${sf(startB > 0 ? (pnl / startB) * 100 : null)})${then ? '' : ' since the start'} · bankroll ${usd(startB)} → <b>${usd(b)}</b>
 Banked in 24h: ${sold.length ? `${usd(banked)} from ${sold.length} sale${sold.length > 1 ? 's' : ''} (${sold.map((t) => `$${t.symbol} ${sf(t.netPct)}${t.holdHours != null ? ` in ${hours(t.holdHours)}` : ''}`).join(', ')})` : 'none'}
 Now: ${state}${days ? `\nYesterday's daily goal: ${days.goalMetAt ? 'met ✅' : 'not met'}` : ''}
-Since start: $${run.seedUsd} → ${usd(b)} (${sf((b / run.seedUsd - 1) * 100)}) · ${runStats(run).targetHits} target sales${run.goalUsd && run.status !== 'completed' ? ` · ${usd(run.goalUsd)} goal: ${f((b / run.goalUsd) * 100)}%, ~${salesToGoal(run, b)} sales to go` : ''}`;
+Since start: $${run.seedUsd} → ${usd(b)} (${sf((b / run.seedUsd - 1) * 100)}) · ${runStats(run).targetHits} target sales${run.goalUsd && run.status !== 'completed' ? ` · ${usd(goalBankroll(run))} goal: ${f((b / goalBankroll(run)) * 100)}%, ~${salesToGoal(run, b)} sales to go` : ''}${run.goalUsd ? `\nCycle ${run.cycle ?? 1} · total cashed out: ${usd((run.cashedOutBeforeUsd ?? 0) + (run.cashOutUsd ?? 0))}` : ''}`;
   });
   return `💰 <b>Compounders: daily P&amp;L (paper)</b>\n\n${blocks.join('\n\n')}`;
 }
