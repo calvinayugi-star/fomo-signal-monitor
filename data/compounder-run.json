@@ -1075,9 +1075,16 @@
    "position": null,
    "trades": [],
    "day": {
-    "date": "2026-10-20",
+    "date": "2026-10-21",
     "startBankroll": 110
-   }
+   },
+   "days": [
+    {
+     "date": "2026-10-20",
+     "startBankroll": 110,
+     "endBankroll": 110
+    }
+   ]
   },
   {
    "id": "v2-aggressive-2026-10-20",
