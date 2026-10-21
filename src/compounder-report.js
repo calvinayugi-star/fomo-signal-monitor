@@ -31,7 +31,9 @@ export function runStats(run) {
 }
 
 const heldHours = (pos, now) => (pos.fill ? (now - Date.parse(pos.fill.at)) / HOUR : null);
-const label = (run) => `+${run.targetNetPct}% per ${run.per === 'day' ? 'day' : 'trade'}`;
+const label = (run) => run.name ?? `+${run.targetNetPct}% per ${run.per === 'day' ? 'day' : 'trade'}`;
+// Sales at the target still needed to reach the goal from the current bankroll.
+const salesToGoal = (run, b) => (run.goalUsd ? Math.max(0, Math.ceil(Math.log(run.goalUsd / b) / Math.log(1 + run.targetNetPct / 100))) : null);
 const paused = (run) => run.per === 'day' && !run.position && run.day?.goalMetAt;
 // Per-day runs: days on which the daily goal was met, out of the days the run has been active.
 function dayGoals(run) {
@@ -84,9 +86,11 @@ function comparisonSection(runs, now) {
   return `## Side by side
 
 ${row('', ({ r }) => `**${label(r)}**`)}
+${row('Rule', ({ r }) => `+${r.targetNetPct}% per ${r.per === 'day' ? 'day (one sale, then wait for midnight ET)' : 'trade (search again right after a sale)'}`)}
 |---|${cols.map(() => '---|').join('')}
 ${row('Bankroll now (open position at its last mark)', ({ b }) => `**${usd(b)}**`)}
-${row('Return since the $100 start', ({ r, b }) => sf((b / r.seedUsd - 1) * 100))}
+${row('Return since the start', ({ r, b }) => `${sf((b / r.seedUsd - 1) * 100)} (from ${r.seedUsd})`)}
+${row('Goal', ({ r, b }) => (r.goalUsd ? `${usd(r.goalUsd)}: ${f((b / r.goalUsd) * 100)}% there, ~${salesToGoal(r, b)} more target sales` : '–'))}
 ${row('Positions sold at the target', ({ s }) => `${s.targetHits}${s.early ? ` (+${s.early} closed early)` : ''}`)}
 ${row('Average time to reach the target', ({ s }) => hours(s.avgHoldHours))}
 ${row('Average worst point before the target', ({ s }) => sf(s.avgWorstNetPct))}
@@ -94,9 +98,9 @@ ${row('Profit banked / costs', ({ s }) => `${usd(s.netUsd)} / ${usd(s.costsUsd)}
 ${row('Days the daily goal was met (per-day runs)', ({ r }) => dayGoals(r))}
 ${row('Now', ({ r }) => nowText(r, now))}
 
-All runs use identical entry rules and the same hourly candidates; each sells only when its position is up the target from the buy price.
-**Per trade** runs buy again right after a sale. **Per day** runs stop buying for the rest of the day (until midnight ET) once the
-bankroll is up the target versus its value at the start of the day. When several runs are in cash they usually buy the same token.
+Both runs use identical entry rules and the same hourly candidates, and each sells only when its position is up its target from the buy price.
+They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
+A run stops for good once its bankroll reaches its goal (a held position is sold as soon as it is worth the goal, even below its target).
 `;
 }
 
@@ -122,7 +126,7 @@ function v2Section(run, cfg, now, time) {
 | Average time to reach the target | ${hours(s.avgHoldHours)} |
 | Average worst point before the target | ${sf(s.avgWorstNetPct)} |
 | Profit banked / costs | ${usd(s.netUsd)} / ${usd(s.costsUsd)} |${dayRow}
-| Each +${run.targetNetPct}% sale multiplies the bankroll by | ${f(1 + run.targetNetPct / 100, 2)}× ($100 → $${(100 * (1 + run.targetNetPct / 100) ** 5).toFixed(0)} after 5, $${(100 * (1 + run.targetNetPct / 100) ** 10).toFixed(0)} after 10) |
+| Each +${run.targetNetPct}% sale multiplies the bankroll by | ${f(1 + run.targetNetPct / 100, 4)}×${run.goalUsd ? `; ${usd(run.goalUsd)} goal: ${salesToGoal(run, b)} more target sales from here (${salesToGoal(run, run.seedUsd)} from the ${run.seedUsd} seed)` : ''} |
 
 ${positionSection(run, now, time)}
 
@@ -138,7 +142,8 @@ export function compounderMarkdown(ledger, cfg, now, time) {
   const k = cfg.compounder;
   const e = k.entry;
   const runs = [...ledger.runs].reverse();
-  const current = runs.filter((r) => r.status === 'active' && r.rules === k.rules).sort((a, b) => (a.per === 'day') - (b.per === 'day') || b.targetNetPct - a.targetNetPct);
+  const order = (r) => k.variants.findIndex((v) => v.id === r.variant);
+  const current = runs.filter((r) => r.status === 'active' && r.rules === k.rules).sort((a, b) => order(a) - order(b));
   const past = runs.filter((r) => !current.includes(r)).map((r) => {
     const s = runStats(r);
     return `| ${r.id} | ${r.rules ?? 'v1'} | $${r.seedUsd} | ${usd(r.finalBankroll ?? r.cash)} | ${s.trades} | ${f(s.winRate, 0, '%')} | ${r.status}${r.note ? ` (${r.note})` : ''} |`;
@@ -147,8 +152,8 @@ export function compounderMarkdown(ledger, cfg, now, time) {
 
 Updated ${time.when(now)}. Paper trades only: nothing is bought or sold.
 
-**Rules ${k.rules} (since ${k.startDate}):** start with $${k.seedUsd}, buy a token **before it spikes** with 100% of the bankroll,
-**hold with no stop and no time limit until it reaches the sell target** (${k.variants.map((v) => `+${v.targetNetPct}% per ${v.per ?? 'trade'}`).join(', ')}: run side by side), sell, and look for the next one.
+**Rules ${k.rules} (since ${k.startDate}; two runs since 2026-10-20):** buy a token under ${e.maxPairAgeHours}h old **before it spikes** with 100% of the bankroll,
+**hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. ${k.variants.map((v) => `**${v.name ?? v.id}:** ${v.seedUsd ?? k.seedUsd} seed, +${v.targetNetPct}% per ${v.per ?? 'trade'}${v.goalUsd ? `, stops at ${usd(v.goalUsd)}` : ''}`).join('. ')}.
 
 ${comparisonSection(current, now)}
 ${current.length ? current.map((r) => v2Section(r, cfg, now, time)).join('\n') : 'No run has started yet.'}
@@ -164,8 +169,8 @@ ${past.join('\n') || '| – | – | – | – | – | – | – |'}
 - **Score (0–100 before adjustments):** 1h buys/sells 30, price rise in the hour (up to +10%) 15, 6h buys/sells 15, last 15 min volume vs the hour 15, volume acceleration 15, liquidity growth 10; minus 3 per 1% DEX round trip.
 - **Price:** 1h change ${e.minChgH1Pct}% to +${e.maxChgH1Pct}% and 6h ${e.minChgH6Pct}% to +${e.maxChgH6Pct}% (restored 2026-10-18 after the Eternia chase entry); no 15-min or 5-min limits since 2026-10-16. The score rewards a 1h rise up to +10%.
 - **Demand building:** last hour's volume ≥ ${e.minVolumeAcceleration}× the hours before${e.minVolumeTrend15m > 0 ? `, last 15 min ≥ ${e.minVolumeTrend15m}× the hour's 15-min average` : ''}, buys/sells ≥ ${e.minBuySellRatioH1} (1h) and ≥ ${e.minBuySellRatioH6} (6h) but ≤ ${e.maxBuySellRatio} (bots), ≥ ${e.minBuysH1} buys and $${e.minVolumeH1Usd / 1000}k volume in the hour, liquidity not shrinking.
-- **Quality:** liquidity ≥ $${e.minLiquidityUsd / 1000}k and ≥ ${e.minLiquidityMultipleOfPosition}× the position, market cap ≥ $${e.minMarketCapUsd / 1000}k, pair ≥ ${e.minPairAgeHours}h old, the monitor's safety checks, no top-10 share ≤ ${e.youngMinTop10Pct}% on tokens under ${e.youngMaxAgeHours}h (bundled wallets), round trip ≤ ${e.maxRoundTripPct}% at the real size, score ≥ ${e.minScore}.
-- **Exit:** only at the variant's target (${k.variants.map((v) => `+${v.targetNetPct}%`).join(' or ')} net, after fees and slippage), checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
+- **Quality:** liquidity ≥ $${e.minLiquidityUsd / 1000}k and ≥ ${e.minLiquidityMultipleOfPosition}× the position, market cap ≥ ${e.minMarketCapUsd / 1000}k, pair ${e.minPairAgeHours}–${e.maxPairAgeHours}h old (under 24h only since 2026-10-20), the monitor's safety checks, no top-10 share ≤ ${e.youngMinTop10Pct}% on tokens under ${e.youngMaxAgeHours}h (bundled wallets), round trip ≤ ${e.maxRoundTripPct}% at the real size, score ≥ ${e.minScore}.
+- **Exit:** only at the run's target (${k.variants.map((v) => `+${v.targetNetPct}%`).join(' or ')} net, after fees and slippage) or at the run's goal, checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
 - Paper fill ${k.fillDelayMinutes} min after the decision (cancelled if the token doesn't trade for ${k.noFillCancelHours}h). No re-buy of a token within ${k.cooldownHours}h of selling it. A warning is sent if a held token has no trades for ${k.staleAfterHours}h.
 
 Every hourly decision, the reject counts and the candidates that passed the quick checks are logged in [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl).

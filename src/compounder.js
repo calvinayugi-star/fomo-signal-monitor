@@ -1,8 +1,9 @@
 // FOMO Compounder v2 (paper mode, since 2026-10-10): one position at a time, 100% of the bankroll.
 // Goal: buy a token BEFORE it spikes (volume and buying building while the price is still flat),
 // hold it with no stop and no time limit until it is +targetNetPct net, sell, and look for the next one.
-// Since 2026-10-16 Graduated and Trending tokens are scored alike (list adjustments 0). Several variants (config compounder.variants, e.g. +20% and +10%)
-// run side by side with the same rules and the same hourly candidates; each has its own run and bankroll. Runs inside the hourly monitor job:
+// Since 2026-10-16 Graduated and Trending tokens are scored alike (list adjustments 0). Since 2026-10-20 two variants (config compounder.variants):
+// the Conservative Compounder (+13.93% per day, $110 seed) and the Aggressive Compounder (+20% per trade, $25 seed). Same rules and hourly candidates,
+// each its own run and bankroll; they never hold the same token at once, and a run stops for good at its goalUsd ($5,000). Runs inside the hourly monitor job:
 //   settle the open position on 1-minute candles -> screen for pre-spike setups -> BUY / HOLD / NO TRADE.
 // Records: data/compounder-run.json (ledger, never deleted; the v1 October run stays in it),
 // data/compounder-hourly.jsonl (every hourly decision and the candidates that passed the cheap checks), COMPOUNDER.md.
@@ -86,9 +87,10 @@ function entryRow(c, pair, nowMs, snapshots) {
 }
 
 // Checks that need no extra API calls: real, building demand while the price has not moved much yet.
-function entryFailure(r, sizeUsd, blocked, e) {
+function entryFailure(r, sizeUsd, blocked, taken, e) {
   if (r.priceUsd == null) return 'no price';
   if (r.ageH == null || r.ageH < e.minPairAgeHours) return 'pair too new';
+  if (e.maxPairAgeHours && r.ageH > e.maxPairAgeHours) return `older than ${e.maxPairAgeHours}h`;
   if (r.liqUsd < Math.max(e.minLiquidityUsd, e.minLiquidityMultipleOfPosition * sizeUsd)) return 'liquidity too thin for the position';
   if (r.mcapUsd < e.minMarketCapUsd) return 'market cap too low';
   if (r.volH1 < e.minVolumeH1Usd) return '1h volume too low';
@@ -103,6 +105,7 @@ function entryFailure(r, sizeUsd, blocked, e) {
   if (r.chgH6 > e.maxChgH6Pct) return `already spiked (>${e.maxChgH6Pct}% 6h)`;
   if (r.liqGrowth != null && r.liqGrowth * 100 < e.minLiquidityGrowthPct) return 'liquidity shrinking';
   if (blocked.has(r.mint)) return 'held or sold in the cooldown window';
+  if (taken.has(r.mint)) return 'held by the other compounder';
   return null;
 }
 
@@ -219,14 +222,16 @@ function newRun(now, k, time, v) {
     id: `v2-${v.id}-${time.localDate(now)}`,
     rules: k.rules,
     variant: v.id,
+    ...(v.name ? { name: v.name } : {}),
     per: v.per ?? 'trade',
     mode: 'paper',
-    seedUsd: k.seedUsd,
+    seedUsd: v.seedUsd ?? k.seedUsd,
+    ...(v.goalUsd ? { goalUsd: v.goalUsd } : {}),
     targetNetPct: v.targetNetPct,
     startedAt: now.toISOString(),
     endsAt: null, // open-ended: positions are never sold below the target
     status: 'active',
-    cash: k.seedUsd,
+    cash: v.seedUsd ?? k.seedUsd,
     position: null,
     trades: [],
   };
@@ -256,7 +261,10 @@ async function settle(run, cfg, now) {
   const closeAtMs = oneOff ? Date.parse(pos.fill.at) + oneOff.afterHours * HOUR : Infinity;
   const after = candles.filter((c) => c[0] > pos.fill.fillCandleT && c[0] * 1000 < closeAtMs);
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: pos.fill.rawPrice, dexRoundTripPct: pos.dexRoundTripPct, costs: cfg.costs });
-  const res = replayTarget(p, after, run.targetNetPct, cfg.costs);
+  // Near the goal, the position is sold as soon as the bankroll would reach it (always a gain: the position is the whole bankroll and below the goal).
+  const goalNetPct = run.goalUsd ? ((run.goalUsd - run.cash) / pos.sizeUsd - 1) * 100 : Infinity;
+  const res = replayTarget(p, after, Math.min(run.targetNetPct, goalNetPct), cfg.costs);
+  if (res.closed && goalNetPct < run.targetNetPct) res.reason = `${usd(run.goalUsd)} goal reached`;
   if (Number.isFinite(res.high)) pos.peakNetPct = round(Math.max(pos.peakNetPct ?? -100, netAt(p, res.high, cfg.costs).netPct));
   if (Number.isFinite(res.low)) pos.worstNetPct = round(Math.min(pos.worstNetPct ?? 0, netAt(p, res.low, cfg.costs).netPct));
   if (res.closed) return res;
@@ -326,7 +334,7 @@ function finishRun(run, status, now, note) {
 // --- messages ------------------------------------------------------------------------------------
 
 const PAPER = '📝 <b>PAPER MODE: tracking only, do not trade</b>';
-const tag = (run) => `COMPOUNDER +${run.targetNetPct}%/${run.per === 'day' ? 'day' : 'trade'}`;
+const tag = (run) => (run.name ? run.name.toUpperCase() : `COMPOUNDER +${run.targetNetPct}%/${run.per === 'day' ? 'day' : 'trade'}`);
 
 function buyMessage(run, r, pos, k, cfg, time, now) {
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: r.priceUsd, dexRoundTripPct: r.dexRoundTripPct, costs: cfg.costs });
@@ -416,7 +424,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
     if (!run && time.localDate(now) >= k.startDate && !v2().some((r) => r.variant === v.id)) {
       // A variant added later copies a sibling run that has no completed trades yet (same start, same open position):
       // with identical rules it would have made exactly the same decisions so far. Otherwise it starts fresh now.
-      const twin = v2().find((r) => r.status === 'active' && r.trades.length === 0 && r.startedAt < now.toISOString());
+      const twin = v2().find((r) => r.status === 'active' && r.trades.length === 0 && r.startedAt < now.toISOString() && r.seedUsd === (v.seedUsd ?? k.seedUsd));
       run = newRun(now, k, time, v);
       if (twin) {
         Object.assign(run, { startedAt: twin.startedAt, cash: twin.cash, copiedFrom: twin.id });
@@ -428,7 +436,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
       }
       ledger.runs.push(run);
       const same = twin ? ` (same start${twin.position ? ` and same open position, $${esc(twin.position.symbol)},` : ''} as ${esc(twin.id)})` : '';
-      await send(`${PAPER}\n🔁 <b>${tag(run)} STARTED</b> with $${k.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net, repeat${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new buys until midnight ET` : ''}.`);
+      await send(`${PAPER}\n🔁 <b>${tag(run)} STARTED</b> with $${run.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net, repeat${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new buys until midnight ET` : ''}${run.goalUsd ? `; stops for good at ${usd(run.goalUsd)}` : ''}.`);
     }
     if (!run) continue;
     if (run.targetNetPct !== v.targetNetPct) {
@@ -460,6 +468,11 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
           const t = recordClose(run, res, now);
           h.exit = { symbol: t.symbol, reason: t.reason, netPct: t.netPct, netUsd: t.netUsd, holdHours: t.holdHours };
           await send(tradeReport(run, t));
+          if (run.goalUsd && run.cash >= run.goalUsd - 0.005) {
+            finishRun(run, 'completed', now, `goal ${usd(run.goalUsd)} reached`);
+            h.decision = 'GOAL REACHED (stopped)';
+            await send(`${PAPER}\n🏁 <b>${tag(run)}: ${usd(run.goalUsd)} GOAL REACHED</b>: $${run.seedUsd} → <b>${usd(run.cash)}</b> in ${run.trades.length} trades. This run has stopped for good.`);
+          }
         } else if (run.position.stale && !wasStale) {
           await send(staleMessage(run, k, time));
         }
@@ -476,7 +489,8 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
     const rows = [];
     const rejects = {};
     try {
-      if (run.position) h.decision = 'HOLD';
+      if (run.status === 'completed') h.decision ??= 'GOAL REACHED (stopped)';
+      else if (run.position) h.decision = 'HOLD';
       else if (run.per === 'day' && run.day.goalMetAt) h.decision = 'NO TRADE (daily goal met)';
       else {
         if (!candidates) candidates = await collectCandidates(cfg, log);
@@ -486,12 +500,14 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
         }
         const cooldownMs = k.cooldownHours * HOUR;
         const blocked = new Set(run.trades.filter((t) => now - Date.parse(t.exitAt ?? t.decidedAt) < cooldownMs).map((t) => t.mint));
+        // The runs never hold the same token at the same time (runs earlier in config order pick first in a shared hour).
+        const taken = new Set(runs.filter((o) => o !== run && o.position && o.status === 'active').map((o) => o.position.mint));
         const sizeUsd = run.cash;
         for (const c of candidates) {
           const pair = allPairs.get(c.mint);
           if (!pair) continue;
           const r = entryRow(c, pair, now.getTime(), snapshots);
-          const why = entryFailure(r, sizeUsd, blocked, e);
+          const why = entryFailure(r, sizeUsd, blocked, taken, e);
           if (why) rejects[why] = (rejects[why] ?? 0) + 1;
           else rows.push(r);
         }

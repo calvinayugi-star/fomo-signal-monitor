@@ -66,12 +66,11 @@
     "rules": "v2",
     "startDate": "2026-10-10",
     "seedUsd": 100,
-    "restart": { "at": "2026-10-18T18:00:00Z", "note": "restarted 2026-10-18 at the user's request: frozen positions (FTR, Eternia) closed at last mark" },
+    "restart": { "at": "2026-10-20T23:59:00Z", "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders" },
+    "_variants": "Since 2026-10-20 two runs. They never hold the same token at the same time; when both are in cash the Conservative Compounder (listed first) picks first. A run stops for good once its bankroll reaches goalUsd (a held position is sold as soon as it is worth goalUsd, even below its target).",
     "variants": [
-      { "id": "t20", "targetNetPct": 20, "per": "trade" },
-      { "id": "t10", "targetNetPct": 10, "per": "trade" },
-      { "id": "d20", "targetNetPct": 20, "per": "day" },
-      { "id": "d10", "targetNetPct": 10, "per": "day" }
+      { "id": "conservative", "name": "Conservative Compounder", "targetNetPct": 13.93, "per": "day", "seedUsd": 110, "goalUsd": 5000 },
+      { "id": "aggressive", "name": "Aggressive Compounder", "targetNetPct": 20, "per": "trade", "seedUsd": 25, "goalUsd": 5000 }
     ],
     "fillDelayMinutes": 3,
     "noFillCancelHours": 6,
@@ -88,6 +87,7 @@
     "entry": {
       "graduatedBonusMaxAgeHours": 72,
       "minPairAgeHours": 2,
+      "maxPairAgeHours": 24,
       "minLiquidityUsd": 25000,
       "minLiquidityMultipleOfPosition": 50,
       "minMarketCapUsd": 100000,
