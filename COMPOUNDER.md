@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 21, 15:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 21, 16:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token 15–60 minutes after its pool opened (graduation for pump.fun tokens) **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -19,7 +19,7 @@ Updated Wed, Oct 21, 15:00 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | n/a | n/a |
 | Profit banked / costs | $0.00 / $0.00 | $0.00 / $0.00 |
 | Days the daily goal was met (per-day runs) | 0 of 2 | – |
-| Now | holding $Coca Cola (-100.0%, 7.9h) | in cash, searching |
+| Now | holding $Coca Cola (-100.0%, 8.9h) | in cash, searching |
 
 Both runs use identical entry rules and the same hourly candidates, and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
@@ -46,9 +46,9 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Token | $Coca Cola (Graduated) · [DexScreener](https://dexscreener.com/solana/AtbbLAoTNX2EUCiL8Yd2VswHDN6EAn1EwLNBoqimLY8p) |
 | Bought | Oct 21, 07:00 · $110.00 at $0.0006504 |
 | Sell target | $0.0007682 (+13.93% net) |
-| Current value | $0.00 (-100.0% net, at Oct 21, 11:49) |
+| Current value | $0.00 (-100.0% net, at Oct 21, 15:11) |
 | Best / worst while held | +8.3% / -100.0% |
-| Held for | 7.9h |
+| Held for | 8.9h |
 
 ### Completed positions (newest first)
 
