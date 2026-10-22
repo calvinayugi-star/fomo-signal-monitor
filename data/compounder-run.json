@@ -1113,14 +1113,19 @@
    },
    "trades": [],
    "day": {
-    "date": "2026-10-21",
-    "startBankroll": 110
+    "date": "2026-10-22",
+    "startBankroll": 0
    },
    "days": [
     {
      "date": "2026-10-20",
      "startBankroll": 110,
      "endBankroll": 110
+    },
+    {
+     "date": "2026-10-21",
+     "startBankroll": 110,
+     "endBankroll": 0
     }
    ]
   },
