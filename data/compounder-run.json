@@ -1109,7 +1109,7 @@
      "proceeds": 0
     },
     "targetPriceUsd": 0.0007681795093448419,
-    "stale": false
+    "stale": true
    },
    "trades": [],
    "day": {
