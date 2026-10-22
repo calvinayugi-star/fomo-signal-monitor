@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Thu, Oct 22, 06:00 EDT. Paper trades only: nothing is bought or sold.
+Updated Thu, Oct 22, 07:00 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token 15–60 minutes after its pool opened (graduation for pump.fun tokens) **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Thu, Oct 22, 06:00 EDT. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$0.00** | **$25.00** |
-| Return since the start | -100.0% (from 110) | +0.0% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 0.0% there, ~Infinity more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.5% there, ~30 more target sales |
+| Bankroll now (open position at its last mark) | **$0.00** | **$30.00** |
+| Return since the start | -100.0% (from 110) | +20.0% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 0.0% there, ~Infinity more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.6% there, ~29 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at the target | 0 | 0 |
-| Average time to reach the target | n/a | n/a |
-| Average worst point before the target | n/a | n/a |
-| Profit banked / costs | $0.00 / $0.00 | $0.00 / $0.00 |
+| Positions sold at the target | 0 | 1 |
+| Average time to reach the target | n/a | 0.3h |
+| Average worst point before the target | n/a | -20.6% |
+| Profit banked / costs | $0.00 / $0.00 | $5.00 / $0.83 |
 | Days the daily goal was met (per-day runs) | 0 of 3 | – |
-| Now | holding $Coca Cola (-100.0%, 22.9h) | holding $CYBERDACITY (n/a, n/a) |
+| Now | holding $Coca Cola (-100.0%, 24.0h) | in cash, searching |
 
 Both runs use identical entry rules and the same hourly candidates, and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
@@ -48,7 +48,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Sell target | $0.0007682 (+13.93% net) |
 | Current value | $0.00 (-100.0% net, at Oct 21, 15:11) |
 | Best / worst while held | +8.3% / -100.0% |
-| Held for | 22.9h |
+| Held for | 24.0h |
 
 ### Completed positions (newest first)
 
@@ -60,31 +60,22 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $25 → **$25.00** (+0.0%) |
+| Start → now | $25 → **$30.00** (+20.0%) |
 | Running for | 1.4 days (since Oct 20, 21:00) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at +20% | 0 |
-| Average time to reach the target | n/a |
-| Average worst point before the target | n/a |
-| Profit banked / costs | $0.00 / $0.00 |
-| Each +20% sale multiplies the bankroll by | 1.2000×; $5025.00 goal: 30 more target sales from here (30 from the 25 seed) |
+| Positions sold at +20% | 1 |
+| Average time to reach the target | 0.3h |
+| Average worst point before the target | -20.6% |
+| Profit banked / costs | $5.00 / $0.83 |
+| Each +20% sale multiplies the bankroll by | 1.2000×; $5025.00 goal: 29 more target sales from here (30 from the 25 seed) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $CYBERDACITY (Both) · [DexScreener](https://dexscreener.com/solana/F2PrFvWSCuC9aVRv6G1VeZmYpAocg5tpPJxVisF634Cr) |
-| Bought | Oct 22, 06:00 · $25.00 (fill pending) |
-| Sell target | +20% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – | – | – |
+| 1 | Oct 22, 06:03 | CYBERDACITY | Both | $25.00 | 0.3h | -20.6% | 0.0002456 → 0.0003028 | $0.83 | +20.0% | $5.00 | $30.00 |
 
 ## Past runs
 

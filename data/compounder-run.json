@@ -1142,30 +1142,34 @@
    "startedAt": "2026-10-21T01:00:34.620Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "CYBERDACITY",
-    "mint": "Bg3chyjU7jrBTAN1HcVceZiQS6dYJ1n5WD1GBTGjpump",
-    "pairAddress": "F2PrFvWSCuC9aVRv6G1VeZmYpAocg5tpPJxVisF634Cr",
-    "list": "Both",
-    "decidedAt": "2026-10-22T10:00:36.234Z",
-    "alertPriceUsd": 0.0002197,
-    "sizeUsd": 25,
-    "dexRoundTripPct": 0,
-    "roundTripPct": 2.96,
-    "score": 60,
-    "entry": {
-     "chgH1": 383,
-     "chgH6": 383,
-     "chg15": -5.59,
-     "accel": null,
-     "volTrend": 0.63,
-     "ratioH1": 3.47,
-     "ageH": 0.7,
-     "top10Pct": 17.6
+   "cash": 30,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
+     "symbol": "CYBERDACITY",
+     "mint": "Bg3chyjU7jrBTAN1HcVceZiQS6dYJ1n5WD1GBTGjpump",
+     "pairAddress": "F2PrFvWSCuC9aVRv6G1VeZmYpAocg5tpPJxVisF634Cr",
+     "list": "Both",
+     "decidedAt": "2026-10-22T10:00:36.234Z",
+     "prevBankroll": 25,
+     "sizeUsd": 25,
+     "dexRoundTripPct": 0,
+     "fillAt": "2026-10-22T10:03:36.234Z",
+     "exitAt": "2026-10-22T10:24:00.000Z",
+     "holdHours": 0.3,
+     "reason": "+20% target",
+     "entryPriceUsd": 0.0002455911880485274,
+     "exitPriceUsd": 0.00030282600004197236,
+     "grossPct": 23.3,
+     "costsUsd": 0.8262,
+     "netUsd": 5,
+     "netPct": 20,
+     "worstNetPct": -20.64,
+     "targetHit": true,
+     "newBankroll": 30
     }
-   },
-   "trades": []
+   ]
   }
  ]
 }
