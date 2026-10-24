@@ -3,7 +3,8 @@
 // hold it with no stop and no time limit until it is +targetNetPct net, sell, and look for the next one.
 // Since 2026-10-16 Graduated and Trending tokens are scored alike (list adjustments 0). Since 2026-10-20 two variants (config compounder.variants):
 // the Conservative Compounder (+13.93% per day, $110 seed) and the Aggressive Compounder (+20% per trade, $25 seed). Same rules and hourly candidates,
-// each its own run and bankroll; they never hold the same token at once. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd ($5,000) + its seed,
+// each its own run and bankroll; they never hold the same token at once. Since 2026-10-24 entry rules can differ per variant (Conservative: pairs 72h+ old,
+// Aggressive: 15-60 min) and neither buys a token up more than 25% in the last 15 min. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd ($5,000) + its seed,
 // it is all cash, $5,000+ is cashed out, and a new cycle starts from the seed at the next hourly run (one ledger run per cycle). Runs inside the hourly monitor job:
 //   settle the open position on 1-minute candles -> screen for pre-spike setups -> BUY / HOLD / NO TRADE.
 // Records: data/compounder-run.json (ledger, never deleted; the v1 October run stays in it),
@@ -15,7 +16,7 @@ import { collectCandidates, GT } from './sources.js';
 import { dexPairs, safetyCheck, costCheck, metrics, liquidityGrowth } from './screen.js';
 import { sendTelegram, esc } from './telegram.js';
 import { openPosition, findFill, replayTarget, priceForNet, netAt } from './compounder-sim.js';
-import { compounderMarkdown, summaryLine, dailyReport, runStats, bankrollOf, goalBankroll, usd, price } from './compounder-report.js';
+import { compounderMarkdown, summaryLine, dailyReport, runStats, bankrollOf, goalBankroll, entryFor, usd, price } from './compounder-report.js';
 import { makeTime } from './time.js';
 
 const HOUR = 3600e3;
@@ -64,6 +65,7 @@ async function fiveMinuteStats(pairAddress, mint, nowMs) {
 // --- entry screen --------------------------------------------------------------------------------
 
 const listOf = (sources) => (sources.length > 1 ? 'Both' : sources[0]);
+const ageText = (h) => (h < 2 ? `${Math.round(h * 60)} min` : h < 72 ? `${Math.round(h)}h` : `${Math.round(h / 24)} days`);
 
 function entryRow(c, pair, nowMs, snapshots) {
   const m = metrics(pair, nowMs);
@@ -144,8 +146,7 @@ function makeCache(cfg, nowMs) {
   };
 }
 
-async function screenPreSpike({ rows, sizeUsd, cfg, cache, log }) {
-  const e = cfg.compounder.entry;
+async function screenPreSpike({ rows, sizeUsd, e, cache, log }) {
   const open = rows.filter((r) => !r.reason);
   for (const r of open) r.score = round(preScore(r, e), 1);
   open.sort((a, b) => b.score - a.score);
@@ -163,8 +164,9 @@ async function screenPreSpike({ rows, sizeUsd, cfg, cache, log }) {
         continue;
       }
       Object.assign(r, { chg15: round(s.chg15), volTrend: round(s.volTrend) });
-      // No 15-min price limits since 2026-10-16 (user choice); chg15 is still recorded.
-      if (!(s.volTrend >= e.minVolumeTrend15m)) r.reason = 'volume not building (15 min)';
+      // 15-min spike cap restored 2026-10-24 (user choice): Coca Cola was bought +65% in 15 min and rugged; CYBERDACITY (−6%) hit +20%.
+      if (e.maxChg15mPct != null && s.chg15 > e.maxChg15mPct) r.reason = `spiking (>${e.maxChg15mPct}% in 15 min)`;
+      else if (!(s.volTrend >= e.minVolumeTrend15m)) r.reason = 'volume not building (15 min)';
       else r.score = round(r.score + 15 * clamp01((s.volTrend - 1) / 2), 1); // 3x the hour's 15-min average = full marks
     } catch (err) {
       r.reason = 'candle data unavailable';
@@ -359,7 +361,7 @@ function buyMessage(run, r, pos, k, cfg, time, now) {
 
 <b>WHY (pre-spike setup):</b>
 • Price: 1h ${signed(r.chgH1)}, 6h ${signed(r.chgH6)}, 15 min ${signed(r.chg15)}
-• Volume: ${r.accel != null ? `last hour ${r.accel.toFixed(1)}× the hours before; ` : ''}last 15 min ${r.volTrend.toFixed(1)}× the average 15 min · pair ${Math.round(r.ageH * 60)} min old
+• Volume: ${r.accel != null ? `last hour ${r.accel.toFixed(1)}× the hours before; ` : ''}last 15 min ${r.volTrend.toFixed(1)}× the average 15 min · pair ${ageText(r.ageH)} old
 • Buying: ${r.ratioH1.toFixed(2)} buys per sell (1h), ${r.ratioH6.toFixed(2)} (6h)
 • Liquidity $${Math.round(r.liqUsd / 1000)}k${r.liqGrowth != null ? ` (${signed(r.liqGrowth * 100, 0)} vs last check)` : ''}, ${r.holders ?? 'n/a'} holders, top 10 hold ${r.top10Pct ?? 'n/a'}%
 • Round trip costs ~${r.roundTripPct}% at this size · score ${r.score}
@@ -393,7 +395,6 @@ It may be dead (liquidity pulled). Per the rules it is still held until +${run.t
 
 export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun, dataDir, reportPath, log }) {
   const k = cfg.compounder;
-  const e = k.entry;
   const time = makeTime(cfg.displayTimezone);
   const now = new Date();
   const ledgerFile = path.join(dataDir, 'compounder-run.json');
@@ -408,7 +409,9 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
 
   // 1. A run under older rules, or started before a restart the user asked for (config restart.at), is closed
   // (kept in the ledger) and the current rules start again from the seed.
-  const beforeRestart = (r) => k.restart && r.startedAt < k.restart.at;
+  // A restart can name the variants it applies to (2026-10-24: only the Conservative Compounder).
+  const restartOf = (r) => [].concat(k.restart ?? []).find((x) => r.startedAt < x.at && (!x.variants || x.variants.includes(r.variant)));
+  const beforeRestart = (r) => !!restartOf(r);
   for (const old of ledger.runs.filter((r) => r.status === 'active' && (r.rules !== k.rules || beforeRestart(r)))) {
     const restarted = old.rules === k.rules;
     const closed = old.position?.symbol;
@@ -418,7 +421,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
       old.cash = old.trades.at(-1).newBankroll;
       old.position = null;
     }
-    finishRun(old, 'ended', now, restarted ? k.restart.note : `rules changed to ${k.rules} on ${time.localDate(now)}`);
+    finishRun(old, 'ended', now, restarted ? restartOf(old).note : `rules changed to ${k.rules} on ${time.localDate(now)}`);
     if (restarted)
       await send(`${PAPER}\n⏹ <b>${tag(old)} ENDED</b> (restart)${closed ? `: $${esc(closed)} closed at its last mark (${signed(old.trades.at(-1).netPct)})` : ''}. Final bankroll ${usd(old.cash)} from $${old.seedUsd}.`);
   }
@@ -519,6 +522,7 @@ A new cycle starts from $${run.seedUsd} at the next hourly run.`);
         // The runs never hold the same token at the same time (runs earlier in config order pick first in a shared hour).
         const taken = new Set(runs.filter((o) => o !== run && o.position && o.status === 'active').map((o) => o.position.mint));
         const sizeUsd = run.cash;
+        const e = entryFor(k, run.variant);
         for (const c of candidates) {
           const pair = allPairs.get(c.mint);
           if (!pair) continue;
@@ -527,7 +531,7 @@ A new cycle starts from $${run.seedUsd} at the next hourly run.`);
           if (why) rejects[why] = (rejects[why] ?? 0) + 1;
           else rows.push(r);
         }
-        const best = await screenPreSpike({ rows, sizeUsd, cfg, cache, log: h });
+        const best = await screenPreSpike({ rows, sizeUsd, e, cache, log: h });
         if (best) {
           run.position = {
             symbol: best.symbol,

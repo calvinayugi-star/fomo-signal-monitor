@@ -67,10 +67,14 @@
     "startDate": "2026-10-10",
     "seedUsd": 100,
     "reportUrl": "https://github.com/calvinayugi-star/fomo-signal-monitor/blob/main/COMPOUNDER.md",
-    "restart": { "at": "2026-10-20T23:59:00Z", "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders" },
-    "_variants": "Since 2026-10-20 two runs. They never hold the same token at the same time; when both are in cash the Conservative Compounder (listed first) picks first. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd + seedUsd ($5,110 / $5,025) it is all cash (a held position is sold as soon as it is worth that, even below its target), at least goalUsd is cashed out, seedUsd is kept, and a new cycle starts from seedUsd at the next hourly run.",
+    "_restart": "Every run started before a restart's `at` (only the listed variants, if `variants` is given) is ended at its last mark and starts again from its seed.",
+    "restart": [
+      { "at": "2026-10-20T23:59:00Z", "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders" },
+      { "at": "2026-10-24T00:40:00Z", "variants": ["conservative"], "note": "restarted 2026-10-24 at the user's request: Coca Cola rugged to $0; now buys tokens 72h+ old" }
+    ],
+    "_variants": "Since 2026-10-20 two runs; a variant's `entry` overrides compounder.entry for that run only (since 2026-10-24 the Conservative Compounder buys pairs 72h+ old, the Aggressive one 15-60 min). They never hold the same token at the same time; when both are in cash the Conservative Compounder (listed first) picks first. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd + seedUsd ($5,110 / $5,025) it is all cash (a held position is sold as soon as it is worth that, even below its target), at least goalUsd is cashed out, seedUsd is kept, and a new cycle starts from seedUsd at the next hourly run.",
     "variants": [
-      { "id": "conservative", "name": "Conservative Compounder", "targetNetPct": 13.93, "per": "day", "seedUsd": 110, "goalUsd": 5000 },
+      { "id": "conservative", "name": "Conservative Compounder", "targetNetPct": 13.93, "per": "day", "seedUsd": 110, "goalUsd": 5000, "entry": { "minPairAgeHours": 72, "maxPairAgeHours": null } },
       { "id": "aggressive", "name": "Aggressive Compounder", "targetNetPct": 20, "per": "trade", "seedUsd": 25, "goalUsd": 5000 }
     ],
     "fillDelayMinutes": 3,
@@ -103,6 +107,7 @@
       "minChgH6Pct": -15,
       "maxChgH6Pct": 100,
       "priceWindowsMinAgeHours": 1,
+      "maxChg15mPct": 25,
       "minLiquidityGrowthPct": 0,
       "minVolumeTrend15m": 0,
       "youngMaxAgeHours": 72,

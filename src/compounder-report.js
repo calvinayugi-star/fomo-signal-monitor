@@ -6,6 +6,10 @@ const f = (x, d = 1, suffix = '') => (x == null || !Number.isFinite(x) ? 'n/a' :
 const sf = (x, d = 1) => (x == null || !Number.isFinite(x) ? 'n/a' : `${x >= 0 ? '+' : ''}${x.toFixed(d)}%`);
 export const usd = (x) => (x == null || !Number.isFinite(x) ? 'n/a' : `${x < 0 ? '-' : ''}$${Math.abs(x).toFixed(2)}`);
 export const price = (x) => (x == null ? 'n/a' : x >= 1 ? x.toFixed(4) : x.toPrecision(4));
+// compounder.entry with the variant's own overrides (since 2026-10-24 the Conservative Compounder buys pairs 72h+ old instead of 15-60 min).
+export const entryFor = (k, variantId) => ({ ...k.entry, ...(k.variants.find((v) => v.id === variantId)?.entry ?? {}) });
+// Pair age window of a variant's entry rules, e.g. "15–60 min" or "72h+".
+const ageWindow = (e) => (e.maxPairAgeHours ? `${e.minPairAgeHours * 60}–${e.maxPairAgeHours * 60} min` : `${e.minPairAgeHours}h+`);
 const hours = (h) => (h == null ? 'n/a' : h < 48 ? `${h.toFixed(1)}h` : `${(h / 24).toFixed(1)} days`);
 
 // Bankroll right now: cash plus the open position at its last marked net value (at cost if not marked yet).
@@ -102,7 +106,7 @@ ${row('Profit banked / costs', ({ s }) => `${usd(s.netUsd)} / ${usd(s.costsUsd)}
 ${row('Days the daily goal was met (per-day runs)', ({ r }) => dayGoals(r))}
 ${row('Now', ({ r }) => nowText(r, now))}
 
-Both runs use identical entry rules and the same hourly candidates, and each sells only when its position is up its target from the buy price.
+Both runs screen the same hourly candidates with the same rules except token age (since 2026-10-24, see Rules in effect), and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
 Each run loops: once its bankroll reaches the goal it is all cash (a held position is sold as soon as it is worth the goal, even below its target), the goal amount or more is cashed out, and a new cycle starts from the seed.
 `;
@@ -156,8 +160,8 @@ export function compounderMarkdown(ledger, cfg, now, time) {
 
 Updated ${time.when(now)}. Paper trades only: nothing is bought or sold.
 
-**Rules ${k.rules} (since ${k.startDate}; two runs since 2026-10-20):** buy a token ${e.minPairAgeHours * 60}–${e.maxPairAgeHours * 60} minutes after its pool opened (graduation for pump.fun tokens) **before it spikes** with 100% of the bankroll,
-**hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. ${k.variants.map((v) => `**${v.name ?? v.id}:** ${v.seedUsd ?? k.seedUsd} seed, +${v.targetNetPct}% per ${v.per ?? 'trade'}${v.goalUsd ? `, at ${usd(v.goalUsd + (v.seedUsd ?? k.seedUsd))} cashes out ${usd(v.goalUsd)}+ and starts again from ${v.seedUsd ?? k.seedUsd}` : ''}`).join('. ')}.
+**Rules ${k.rules} (since ${k.startDate}; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
+**hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. ${k.variants.map((v) => `**${v.name ?? v.id}:** ${v.seedUsd ?? k.seedUsd} seed, +${v.targetNetPct}% per ${v.per ?? 'trade'}, tokens ${ageWindow(entryFor(k, v.id))} since the pool opened${v.goalUsd ? `, at ${usd(v.goalUsd + (v.seedUsd ?? k.seedUsd))} cashes out ${usd(v.goalUsd)}+ and starts again from ${v.seedUsd ?? k.seedUsd}` : ''}`).join('. ')}.
 
 ${comparisonSection(current, now)}
 ${current.length ? current.map((r) => v2Section(r, cfg, now, time)).join('\n') : 'No run has started yet.'}
@@ -171,9 +175,9 @@ ${past.join('\n') || '| – | – | – | – | – | – | – |'}
 
 - **Lists:** Graduated (pump.fun) and Trending (GeckoTerminal). Tokens that graduated within ${e.graduatedBonusMaxAgeHours}h get +${e.graduatedBonus} score, older graduates 0, Trending-only tokens −${e.trendingOnlyPenalty}; market cap ≥ ${e.largeMcapUsd / 1e6}M −${e.largeMcapPenalty}.
 - **Score (0–100 before adjustments):** 1h buys/sells 30, price rise in the hour (up to +10%) 15, 6h buys/sells 15, last 15 min volume vs the average 15 min 15, volume acceleration 15 (0 for pairs under ~1.5h), liquidity growth 10; minus 3 per 1% DEX round trip.
-- **Price:** none for pairs under ${e.priceWindowsMinAgeHours}h old (since 2026-10-21; their 1h/6h change is the change since the pool opened), otherwise 1h change ${e.minChgH1Pct}% to +${e.maxChgH1Pct}% and 6h ${e.minChgH6Pct}% to +${e.maxChgH6Pct}%; no 15-min or 5-min limits since 2026-10-16. The score rewards a 1h rise up to +10%.
+- **Price:** none for pairs under ${e.priceWindowsMinAgeHours}h old (since 2026-10-21; their 1h/6h change is the change since the pool opened), otherwise 1h change ${e.minChgH1Pct}% to +${e.maxChgH1Pct}% and 6h ${e.minChgH6Pct}% to +${e.maxChgH6Pct}%; no buy if up more than ${e.maxChg15mPct}% in the last 15 min (since 2026-10-24), no 5-min limit. The score rewards a 1h rise up to +10%.
 - **Demand building:** last hour's volume ≥ ${e.minVolumeAcceleration}× the hours before${e.minVolumeTrend15m > 0 ? `, last 15 min ≥ ${e.minVolumeTrend15m}× the hour's 15-min average` : ''}, buys/sells ≥ ${e.minBuySellRatioH1} (1h) and ≥ ${e.minBuySellRatioH6} (6h) but ≤ ${e.maxBuySellRatio} (bots), ≥ ${e.minBuysH1} buys and $${e.minVolumeH1Usd / 1000}k volume in the hour, liquidity not shrinking.
-- **Quality:** liquidity ≥ $${e.minLiquidityUsd / 1000}k and ≥ ${e.minLiquidityMultipleOfPosition}× the position, market cap ≥ ${e.minMarketCapUsd / 1000}k, pair ${e.minPairAgeHours * 60}–${e.maxPairAgeHours * 60} min old since 2026-10-21 (time since graduation for pump.fun tokens; the volume-acceleration check is skipped for pairs under ~1.5h, which have no earlier hours), the monitor's safety checks, no top-10 share ≤ ${e.youngMinTop10Pct}% on tokens under ${e.youngMaxAgeHours}h (bundled wallets), round trip ≤ ${e.maxRoundTripPct}% at the real size, score ≥ ${e.minScore}.
+- **Quality:** liquidity ≥ $${e.minLiquidityUsd / 1000}k and ≥ ${e.minLiquidityMultipleOfPosition}× the position, market cap ≥ ${e.minMarketCapUsd / 1000}k, pair age since the pool opened (time since graduation for pump.fun tokens): ${k.variants.map((v) => `${v.name ?? v.id} ${ageWindow(entryFor(k, v.id))}`).join(', ')} (since 2026-10-24; the volume-acceleration check is skipped for pairs under ~1.5h, which have no earlier hours), the monitor's safety checks, no top-10 share ≤ ${e.youngMinTop10Pct}% on tokens under ${e.youngMaxAgeHours}h (bundled wallets), round trip ≤ ${e.maxRoundTripPct}% at the real size, score ≥ ${e.minScore}.
 - **Exit:** only at the run's target (${k.variants.map((v) => `+${v.targetNetPct}%`).join(' or ')} net, after fees and slippage) or at the run's goal, checked on 1-minute candles, so the sale happens at the first minute the price gets there even though the job runs hourly. No stop loss, no time limit.
 - Paper fill ${k.fillDelayMinutes} min after the decision (cancelled if the token doesn't trade for ${k.noFillCancelHours}h). No re-buy of a token within ${k.cooldownHours}h of selling it. A warning is sent if a held token has no trades for ${k.staleAfterHours}h.
 

@@ -108,6 +108,10 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   If a held token has no trades for 24h a warning is sent (it may be dead), but it stays held.
   One-off exception (user request, 2026-10-11): `compounder.oneOffExits` closes the Fartcoin position bought 2026-10-11 07:00 UTC in all runs
   if no target is hit within 24h of the fill (2026-10-12 07:03 UTC), at the last price before then. It matches only that position.
+- **2026-10-24 (user choice):** the Conservative Compounder restarted at $110 (Coca Cola, bought 18 min after graduation at +65% in 15 min, rugged to $0)
+  and now buys only pairs 72h+ old (old Monitor alerts: 0 of 8 tokens ≥72h fell 80%+); the Aggressive Compounder keeps 15–60 min. A variant's `entry` in config
+  overrides `compounder.entry` for that run; `compounder.restart` is a list and an entry with `variants` restarts only those runs.
+  Both runs again skip tokens up more than 25% in the last 15 min (`maxChg15mPct`). No stop loss (unchanged).
 - **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
   is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the
   candidates that passed the quick checks. [COMPOUNDER.md](COMPOUNDER.md) shows the bankroll, the open position (value, best/worst, time held)
