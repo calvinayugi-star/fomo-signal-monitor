@@ -2,7 +2,7 @@
 //   Trending  = GeckoTerminal trending pools on Solana
 //   Graduated = pump.fun tokens that completed their bonding curve (falls back to the most-traded PumpSwap pools)
 // Since 2026-10-24 (user: "as many tokens to search through as possible") two more lists feed the Compounder:
-//   Jupiter     = Jupiter's top trending / top traded / top organic-score tokens over 5m-24h (stocks, RWAs and similar excluded by tag)
+//   Jupiter     = Jupiter's top trending / top traded / top organic-score tokens over 5m-24h (tokenized stocks and other non-meme assets included since 2026-10-24; config jupiterExcludeTags can drop tags)
 //   DexScreener = DexScreener's latest and top boosted tokens and latest token profiles (Solana only)
 import { getJson } from './http.js';
 

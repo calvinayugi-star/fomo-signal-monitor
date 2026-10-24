@@ -112,7 +112,7 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   and now buys only pairs 72h+ old (old Monitor alerts: 0 of 8 tokens ≥72h fell 80%+); the Aggressive Compounder keeps 15–60 min. A variant's `entry` in config
   overrides `compounder.entry` for that run; `compounder.restart` is a list and an entry with `variants` restarts only those runs.
   Both runs again skip tokens up more than 25% in the last 15 min (`maxChg15mPct`). No stop loss (unchanged).
-- **More lists (2026-10-24, user: as many tokens as possible):** besides Trending and Graduated, candidates now also come from Jupiter (top trending, top traded and top organic-score tokens over 5m/1h/6h/24h, stocks/RWA/LST tags excluded) and DexScreener (latest and top boosted tokens, latest token profiles): ~400 more tokens per run, mostly 72h+ old. A token on several lists shows them all, e.g. Trending + Jupiter.
+- **More lists (2026-10-24, user: as many tokens as possible):** besides Trending and Graduated, candidates now also come from Jupiter (top trending, top traded and top organic-score tokens over 5m/1h/6h/24h, tokenized stocks and other non-meme assets included) and DexScreener (latest and top boosted tokens, latest token profiles): ~400 more tokens per run, mostly 72h+ old. A token on several lists shows them all, e.g. Trending + Jupiter.
 - **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
   is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the
   candidates that passed the quick checks. [COMPOUNDER.md](COMPOUNDER.md) shows the bankroll, the open position (value, best/worst, time held)
