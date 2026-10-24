@@ -1070,48 +1070,22 @@
    "targetNetPct": 13.93,
    "startedAt": "2026-10-21T01:00:34.620Z",
    "endsAt": null,
-   "status": "active",
+   "status": "ended",
    "cash": 0,
-   "position": {
-    "symbol": "Coca Cola",
-    "mint": "C5H2mUUgEXzKmmh5h1e8ZZVsSKuM5BWYf4kwGhEpump",
-    "pairAddress": "AtbbLAoTNX2EUCiL8Yd2VswHDN6EAn1EwLNBoqimLY8p",
-    "list": "Graduated",
-    "decidedAt": "2026-10-21T11:00:36.785Z",
-    "alertPriceUsd": 0.0005752,
-    "sizeUsd": 110,
-    "dexRoundTripPct": 2.6,
-    "roundTripPct": 3.59,
-    "score": 51.6,
-    "entry": {
-     "chgH1": 1203,
-     "chgH6": 1203,
-     "chg15": 65.02,
-     "accel": null,
-     "volTrend": 0.59,
-     "ratioH1": 1.98,
-     "ageH": 0.3,
-     "top10Pct": 20.4
-    },
-    "fill": {
-     "rawPrice": 0.0006503969408793544,
-     "fillCandleT": 1792580580,
-     "at": "2026-10-21T11:03:36.785Z"
-    },
-    "checkedThrough": 1792754580,
-    "peakNetPct": 8.34,
-    "worstNetPct": -100,
-    "lastTradeAt": "2026-10-23T11:23:00.000Z",
-    "mark": {
-     "at": "2026-10-23T11:23:00.000Z",
-     "price": 0.000001848791533898139,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
+     "symbol": "Coca Cola",
+     "decidedAt": "2026-10-21T11:00:36.785Z",
+     "reason": "restart (closed at last mark)",
      "netPct": -100,
-     "proceeds": 0
-    },
-    "targetPriceUsd": 0.0007681795093448419,
-    "stale": false
-   },
-   "trades": [],
+     "netUsd": -110,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 0
+    }
+   ],
    "day": {
     "date": "2026-10-23",
     "startBankroll": 0
@@ -1132,7 +1106,10 @@
      "startBankroll": 0,
      "endBankroll": 0
     }
-   ]
+   ],
+   "endedAt": "2026-10-24T01:01:43.553Z",
+   "finalBankroll": 0,
+   "note": "restarted 2026-10-24 at the user's request: Coca Cola rugged to $0; now buys tokens 72h+ old"
   },
   {
    "id": "v2-aggressive-2026-10-20",
@@ -1175,6 +1152,50 @@
      "newBankroll": 30
     }
    ]
+  },
+  {
+   "id": "v2-conservative-2026-10-23",
+   "rules": "v2",
+   "variant": "conservative",
+   "name": "Conservative Compounder",
+   "per": "day",
+   "mode": "paper",
+   "seedUsd": 110,
+   "goalUsd": 5000,
+   "cycle": 1,
+   "cashedOutBeforeUsd": 0,
+   "targetNetPct": 13.93,
+   "startedAt": "2026-10-24T01:01:43.553Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "TROLL",
+    "mint": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
+    "pairAddress": "4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama",
+    "list": "Trending",
+    "decidedAt": "2026-10-24T01:01:43.553Z",
+    "alertPriceUsd": 0.02942,
+    "sizeUsd": 110,
+    "dexRoundTripPct": 0.61,
+    "roundTripPct": 1.6,
+    "score": 58.2,
+    "entry": {
+     "chgH1": -4.97,
+     "chgH6": -8.24,
+     "chg15": -0.51,
+     "accel": 11.69,
+     "volTrend": 0.17,
+     "ratioH1": 3.03,
+     "ageH": 13230.5,
+     "top10Pct": 30.1
+    }
+   },
+   "trades": [],
+   "day": {
+    "date": "2026-10-23",
+    "startBankroll": 110
+   }
   }
  ]
 }
