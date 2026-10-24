@@ -64,7 +64,7 @@ async function fiveMinuteStats(pairAddress, mint, nowMs) {
 
 // --- entry screen --------------------------------------------------------------------------------
 
-const listOf = (sources) => (sources.length > 1 ? 'Both' : sources[0]);
+const listOf = (sources) => sources.join(' + ');
 const ageText = (h) => (h < 2 ? `${Math.round(h * 60)} min` : h < 72 ? `${Math.round(h)}h` : `${Math.round(h / 24)} days`);
 
 function entryRow(c, pair, nowMs, snapshots) {

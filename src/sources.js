@@ -1,6 +1,9 @@
 // Rebuilds FOMO-style "Trending" and "Graduated" lists from public data (Solana only).
 //   Trending  = GeckoTerminal trending pools on Solana
 //   Graduated = pump.fun tokens that completed their bonding curve (falls back to the most-traded PumpSwap pools)
+// Since 2026-10-24 (user: "as many tokens to search through as possible") two more lists feed the Compounder:
+//   Jupiter     = Jupiter's top trending / top traded / top organic-score tokens over 5m-24h (stocks, RWAs and similar excluded by tag)
+//   DexScreener = DexScreener's latest and top boosted tokens and latest token profiles (Solana only)
 import { getJson } from './http.js';
 
 export const GT = 'https://api.geckoterminal.com/api/v2';
@@ -65,6 +68,27 @@ export async function collectCandidates(cfg, log) {
       } catch (e) {
         log.errors.push(`graduated fallback p${page}: ${e.message}`);
       }
+    }
+  }
+
+  const skipTags = new Set(cfg.sources.jupiterExcludeTags ?? []);
+  for (const list of cfg.sources.jupiterLists ?? []) {
+    for (const interval of cfg.sources.jupiterIntervals ?? []) {
+      try {
+        const tokens = await getJson(`https://lite-api.jup.ag/tokens/v2/${list}/${interval}?limit=${cfg.sources.jupiterLimit ?? 100}`);
+        for (const t of Array.isArray(tokens) ? tokens : []) if (!(t.tags ?? []).some((x) => skipTags.has(x))) add(map, t.id, 'Jupiter');
+      } catch (e) {
+        log.errors.push(`jupiter ${list} ${interval}: ${e.message}`);
+      }
+    }
+  }
+
+  for (const list of cfg.sources.dexscreenerLists ?? []) {
+    try {
+      const rows = await getJson(`https://api.dexscreener.com/${list}`);
+      for (const r of Array.isArray(rows) ? rows : []) if (r.chainId === 'solana') add(map, r.tokenAddress, 'DexScreener');
+    } catch (e) {
+      log.errors.push(`dexscreener ${list}: ${e.message}`);
     }
   }
 

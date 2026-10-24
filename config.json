@@ -20,7 +20,12 @@
     "trendingDurations": ["5m", "1h", "6h"],
     "pumpfunSorts": ["last_trade_timestamp", "market_cap"],
     "graduatedFallbackPages": 6,
-    "graduatedMaxAgeHours": 72
+    "graduatedMaxAgeHours": 72,
+    "jupiterLists": ["toptrending", "toptraded", "toporganicscore"],
+    "jupiterIntervals": ["5m", "1h", "6h", "24h"],
+    "jupiterLimit": 100,
+    "jupiterExcludeTags": ["stocks", "xstocks", "prestocks", "equities", "rwa", "commodities", "lst", "stablecoin"],
+    "dexscreenerLists": ["token-boosts/latest/v1", "token-boosts/top/v1", "token-profiles/latest/v1"]
   },
 
   "demand": {
