@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sat, Oct 24, 23:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Sun, Oct 25, 00:02 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 72h+ since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Sat, Oct 24, 23:02 EDT. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$112.95** | **$30.00** |
-| Return since the start | +2.7% (from 110) | +20.0% (from 25) |
+| Bankroll now (open position at its last mark) | **$112.60** | **$30.00** |
+| Return since the start | +2.4% (from 110) | +20.0% (from 25) |
 | Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.2% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.6% there, ~29 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at the target | 0 | 1 |
 | Average time to reach the target | n/a | 0.3h |
 | Average worst point before the target | n/a | -20.6% |
 | Profit banked / costs | $0.00 / $0.00 | $5.00 / $0.83 |
-| Days the daily goal was met (per-day runs) | 0 of 2 | – |
-| Now | holding $TROLL (+2.7%, 26.0h) | in cash, searching |
+| Days the daily goal was met (per-day runs) | 0 of 3 | – |
+| Now | holding $TROLL (+2.4%, 27.0h) | holding $Marvin (n/a, n/a) |
 
 Both runs screen the same hourly candidates with the same rules except token age (since 2026-10-24, see Rules in effect), and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
@@ -29,14 +29,14 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$112.95** (+2.7%) |
+| Start → now | $110 → **$112.60** (+2.4%) |
 | Running for | 1.1 days (since Oct 23, 21:01) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 0 |
 | Average time to reach the target | n/a |
 | Average worst point before the target | n/a |
 | Profit banked / costs | $0.00 / $0.00 |
-| Days the daily goal was met | 0 of 2 · today started at $109.55 |
+| Days the daily goal was met | 0 of 3 · today started at $112.95 |
 | Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 30 more target sales from here (30 from the 110 seed) |
 
 ### Open position
@@ -46,9 +46,9 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Token | $TROLL (Trending) · [DexScreener](https://dexscreener.com/solana/4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama) |
 | Bought | Oct 23, 21:01 · $110.00 at $0.02946 |
 | Sell target | $0.03411 (+13.93% net) |
-| Current value | $112.95 (+2.7% net, at Oct 24, 23:00) |
+| Current value | $112.60 (+2.4% net, at Oct 25, 00:00) |
 | Best / worst while held | +5.8% / -4.6% |
-| Held for | 26.0h |
+| Held for | 27.0h |
 
 ### Completed positions (newest first)
 
@@ -69,7 +69,16 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Profit banked / costs | $5.00 / $0.83 |
 | Each +20% sale multiplies the bankroll by | 1.2000×; $5025.00 goal: 29 more target sales from here (30 from the 25 seed) |
 
-**Open position:** none (cash, searching for the next pre-spike token).
+### Open position
+
+| | |
+|---|---|
+| Token | $Marvin (Trending + DexScreener) · [DexScreener](https://dexscreener.com/solana/7bBSeYUZBEFxmkB9YoAwZQpqs5EtgJU2yv2CPr1BH4cr) |
+| Bought | Oct 25, 00:02 · $30.00 (fill pending) |
+| Sell target | +20% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
