@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Mon, Oct 26, 03:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Mon, Oct 26, 04:02 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop and no time limit until it reaches the sell target**, sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 72h+ since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -19,7 +19,7 @@ Updated Mon, Oct 26, 03:02 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | n/a | -20.6% |
 | Profit banked / costs | $0.00 / $0.00 | $5.00 / $0.83 |
 | Days the daily goal was met (per-day runs) | 0 of 4 | – |
-| Now | holding $TROLL (+2.1%, 2.2 days) | holding $Marvin (-100.0%, 26.9h) |
+| Now | holding $TROLL (+2.1%, 2.3 days) | holding $Marvin (-100.0%, 27.9h) |
 
 Both runs screen the same hourly candidates with the same rules except token age (since 2026-10-24, see Rules in effect), and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
@@ -46,9 +46,9 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Token | $TROLL (Trending) · [DexScreener](https://dexscreener.com/solana/4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama) |
 | Bought | Oct 23, 21:01 · $110.00 at $0.02946 |
 | Sell target | $0.03411 (+13.93% net) |
-| Current value | $112.29 (+2.1% net, at Oct 26, 03:00) |
+| Current value | $112.29 (+2.1% net, at Oct 26, 04:00) |
 | Best / worst while held | +5.8% / -4.6% |
-| Held for | 2.2 days |
+| Held for | 2.3 days |
 
 ### Completed positions (newest first)
 
@@ -78,7 +78,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Sell target | $0.0003272 (+20% net) |
 | Current value | $0.00 (-100.0% net, at Oct 25, 13:00) |
 | Best / worst while held | +19.3% / -100.0% |
-| Held for | 26.9h |
+| Held for | 27.9h |
 
 ### Completed positions (newest first)
 
