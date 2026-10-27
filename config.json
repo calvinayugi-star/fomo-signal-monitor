@@ -75,7 +75,8 @@
     "_restart": "Every run started before a restart's `at` (only the listed variants, if `variants` is given) is ended at its last mark and starts again from its seed.",
     "restart": [
       { "at": "2026-10-20T23:59:00Z", "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders" },
-      { "at": "2026-10-24T00:40:00Z", "variants": ["conservative"], "note": "restarted 2026-10-24 at the user's request: Coca Cola rugged to $0; now buys tokens 72h+ old" }
+      { "at": "2026-10-24T00:40:00Z", "variants": ["conservative"], "note": "restarted 2026-10-24 at the user's request: Coca Cola rugged to $0; now buys tokens 72h+ old" },
+      { "at": "2026-10-27T03:20:00Z", "note": "restarted 2026-10-27 at the user's request: TROLL (flat 3 days) and Marvin (rugged) closed at their last mark; 6h time limit added" }
     ],
     "_variants": "Since 2026-10-20 two runs; a variant's `entry` overrides compounder.entry for that run only (since 2026-10-24 the Conservative Compounder buys pairs 72h+ old, the Aggressive one 15-60 min). They never hold the same token at the same time; when both are in cash the Conservative Compounder (listed first) picks first. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd + seedUsd ($5,110 / $5,025) it is all cash (a held position is sold as soon as it is worth that, even below its target), at least goalUsd is cashed out, seedUsd is kept, and a new cycle starts from seedUsd at the next hourly run.",
     "variants": [
@@ -86,6 +87,8 @@
     "noFillCancelHours": 6,
     "cooldownHours": 24,
     "staleAfterHours": 24,
+    "_maxHoldHours": "Since 2026-10-27 (user request): a position that hasn't reached its target this many hours after the fill is sold at the last price before then, and the run searches again. A variant can override it with its own maxHoldHours.",
+    "maxHoldHours": 6,
     "oneOffExits": [
       {
         "note": "User request 2026-10-11: close the Fartcoin position bought 2026-10-11 07:00 UTC in every run if no target is hit within 24h of the fill; applies only to that position.",

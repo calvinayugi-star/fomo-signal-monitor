@@ -112,6 +112,10 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   and now buys only pairs 72h+ old (old Monitor alerts: 0 of 8 tokens ≥72h fell 80%+); the Aggressive Compounder keeps 15–60 min. A variant's `entry` in config
   overrides `compounder.entry` for that run; `compounder.restart` is a list and an entry with `variants` restarts only those runs.
   Both runs again skip tokens up more than 25% in the last 15 min (`maxChg15mPct`). No stop loss (unchanged).
+- **2026-10-27 (user choice): 6-hour time limit and restart.** A position that hasn't reached its target 6h after the fill is sold at the last price before then
+  and the run searches again (`compounder.maxHoldHours`, a variant can override it). Evidence: every target sale so far landed within 4.4h, and no position
+  held past 5h ever reached its target (Fartcoin, FTR, ZBCN and TROLL tied runs up for 1–3 days). Both runs restarted from their seeds ($110 / $25, 100% positions):
+  TROLL (Conservative, −1.9% after 3 days) and Marvin (Aggressive, rugged to $0) were closed at their last mark. Still no stop loss.
 - **More lists (2026-10-24, user: as many tokens as possible):** besides Trending and Graduated, candidates now also come from Jupiter (top trending, top traded and top organic-score tokens over 5m/1h/6h/24h, tokenized stocks and other non-meme assets included) and DexScreener (latest and top boosted tokens, latest token profiles): ~400 more tokens per run, mostly 72h+ old. A token on several lists shows them all, e.g. Trending + Jupiter.
 - **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
   is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the
@@ -119,7 +123,8 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   and every completed position.
 - **Telegram:** a BUY alert, a SOLD report at the target, a stale-token warning, and one line in the 8 AM daily summary.
 
-**Risk of this design.** With no stop, a token that collapses before reaching +20% is held indefinitely and the whole bankroll is tied up in it.
+**Risk of this design.** With no stop, a token that collapses before reaching its target loses most of the bankroll before the 6h time limit sells it
+(until 2026-10-27 such a token was held indefinitely).
 In the 2026-10 data, 31 of 45 Graduated-only tokens (69%) reached +20% net within 24h of being flagged, and 12 of the other 14 went to near zero.
 The target was +50% when v2 started (2026-10-10) and was lowered to +20% the same day to favour hit rate.
 

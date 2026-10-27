@@ -1,6 +1,7 @@
 // FOMO Compounder v2 (paper mode, since 2026-10-10): one position at a time, 100% of the bankroll.
 // Goal: buy a token BEFORE it spikes (volume and buying building while the price is still flat),
-// hold it with no stop and no time limit until it is +targetNetPct net, sell, and look for the next one.
+// hold it with no stop until it is +targetNetPct net, sell, and look for the next one. Since 2026-10-27 a position that hasn't
+// reached its target maxHoldHours (6) after the fill is sold at its last price and the run searches again.
 // Since 2026-10-16 Graduated and Trending tokens are scored alike (list adjustments 0). Since 2026-10-20 two variants (config compounder.variants):
 // the Conservative Compounder (+13.93% per day, $110 seed) and the Aggressive Compounder (+20% per trade, $25 seed). Same rules and hourly candidates,
 // each its own run and bankroll; they never hold the same token at once. Since 2026-10-24 entry rules can differ per variant (Conservative: pairs 72h+ old,
@@ -264,10 +265,12 @@ async function settle(run, cfg, now) {
     pos.fill = { rawPrice: fill.rawPrice, fillCandleT: fill.fillCandleT, at: new Date(fillAt).toISOString() };
     pos.checkedThrough = fill.fillCandleT;
   }
-  // A one-off exit the user asked for (config oneOffExits) applies only to the matching position: if the target
-  // isn't reached within afterHours of the fill, it is sold at the last price before that time.
+  // Time limit (since 2026-10-27, config maxHoldHours, per-variant override): if the target isn't reached within that many hours
+  // of the fill, the position is sold at the last price before that time. A one-off exit the user asked for (config oneOffExits)
+  // applies the same way to the matching position only.
   const oneOff = (k.oneOffExits ?? []).find((x) => x.mint === pos.mint && x.decidedAt === pos.decidedAt);
-  const closeAtMs = oneOff ? Date.parse(pos.fill.at) + oneOff.afterHours * HOUR : Infinity;
+  const limitH = oneOff?.afterHours ?? holdLimit(run, k);
+  const closeAtMs = limitH ? Date.parse(pos.fill.at) + limitH * HOUR : Infinity;
   const after = candles.filter((c) => c[0] > pos.fill.fillCandleT && c[0] * 1000 < closeAtMs);
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: pos.fill.rawPrice, dexRoundTripPct: pos.dexRoundTripPct, costs: cfg.costs });
   // Near the goal (goalUsd to cash out + the seed kept for the next cycle), the position is sold as soon as the bankroll would reach it
@@ -280,7 +283,7 @@ async function settle(run, cfg, now) {
   if (res.closed) return res;
   if (now >= closeAtMs) {
     const rawExit = res.lastPrice ?? pos.mark?.price ?? pos.fill.rawPrice;
-    return { closed: true, rawExit, exitAt: closeAtMs, reason: `one-off ${oneOff.afterHours}h exit (target not reached)`, targetHit: false, ...netAt(p, rawExit, cfg.costs) };
+    return { closed: true, rawExit, exitAt: closeAtMs, reason: `${oneOff ? 'one-off ' : ''}${limitH}h ${oneOff ? 'exit' : 'time limit'} (target not reached)`, targetHit: false, ...netAt(p, rawExit, cfg.costs) };
   }
 
   if (after.length) {
@@ -344,7 +347,8 @@ function finishRun(run, status, now, note) {
 // --- messages ------------------------------------------------------------------------------------
 
 const PAPER = '📝 <b>PAPER MODE: tracking only, do not trade</b>';
-const tag = (run) => (run.name ? run.name.toUpperCase() : `COMPOUNDER +${run.targetNetPct}%/${run.per === 'day' ? 'day' : 'trade'}`);
+const holdLimit = (run, k) => k.variants.find((v) => v.id === run.variant)?.maxHoldHours ?? k.maxHoldHours;
+const tag = (run) =>(run.name ? run.name.toUpperCase() : `COMPOUNDER +${run.targetNetPct}%/${run.per === 'day' ? 'day' : 'trade'}`);
 
 function buyMessage(run, r, pos, k, cfg, time, now) {
   const p = openPosition({ sizeUsd: pos.sizeUsd, rawEntry: r.priceUsd, dexRoundTripPct: r.dexRoundTripPct, costs: cfg.costs });
@@ -357,7 +361,7 @@ function buyMessage(run, r, pos, k, cfg, time, now) {
 <b>BANKROLL:</b> ${usd(bankrollOf(run))} · <b>POSITION:</b> ${usd(pos.sizeUsd)} (100%)
 <b>ENTRY:</b> ~$${price(r.priceUsd)} (paper fill ${k.fillDelayMinutes} min after this alert)
 <b>SELL TARGET:</b> +${run.targetNetPct}% net ≈ $${price(targetPx)} (${signed(pctChange(targetPx, r.priceUsd), 0)} in price) → ~${usd(pos.sizeUsd * (1 + run.targetNetPct / 100))}
-<b>STOP:</b> none. Held until the target is reached, however long that takes.
+<b>STOP:</b> none.${holdLimit(run, k) ? ` <b>TIME LIMIT:</b> sold at its last price if the target isn't reached ${holdLimit(run, k)}h after the fill.` : ' Held until the target is reached, however long that takes.'}
 
 <b>WHY (pre-spike setup):</b>
 • Price: 1h ${signed(r.chgH1)}, 6h ${signed(r.chgH6)}, 15 min ${signed(r.chg15)}
@@ -365,7 +369,7 @@ function buyMessage(run, r, pos, k, cfg, time, now) {
 • Buying: ${r.ratioH1.toFixed(2)} buys per sell (1h), ${r.ratioH6.toFixed(2)} (6h)
 • Liquidity $${Math.round(r.liqUsd / 1000)}k${r.liqGrowth != null ? ` (${signed(r.liqGrowth * 100, 0)} vs last check)` : ''}, ${r.holders ?? 'n/a'} holders, top 10 hold ${r.top10Pct ?? 'n/a'}%
 • Round trip costs ~${r.roundTripPct}% at this size · score ${r.score}
-${r.risks?.length ? `\nRisks: ${r.risks.map(esc).join('; ')}; memecoins can go to zero and a position with no stop can be held at a loss indefinitely` : ''}
+${r.risks?.length ? `\nRisks: ${r.risks.map(esc).join('; ')}; memecoins can go to zero before the target or the time limit` : ''}
 <a href="https://dexscreener.com/solana/${r.pairAddress}">DexScreener</a>`;
 }
 
@@ -451,7 +455,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
       ledger.runs.push(run);
       const same = twin ? ` (same start${twin.position ? ` and same open position, $${esc(twin.position.symbol)},` : ''} as ${esc(twin.id)})` : '';
       const cyc = prev ? ` cycle ${run.cycle}` : '';
-      await send(`${PAPER}\n🔁 <b>${tag(run)}${cyc} STARTED</b> with $${run.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net, repeat${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new buys until midnight ET` : ''}${run.goalUsd ? `; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}` : ''}${prev ? `. Cashed out so far: ${usd(run.cashedOutBeforeUsd)}` : ''}.`);
+      await send(`${PAPER}\n🔁 <b>${tag(run)}${cyc} STARTED</b> with $${run.seedUsd}${same}: buy before the spike, hold until +${v.targetNetPct}% net${holdLimit(run, k) ? ` (or sell at its last price after ${holdLimit(run, k)}h)` : ''}, repeat${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new buys until midnight ET` : ''}${run.goalUsd ? `; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}` : ''}${prev ? `. Cashed out so far: ${usd(run.cashedOutBeforeUsd)}` : ''}.`);
     }
     if (!run) continue;
     if (run.targetNetPct !== v.targetNetPct) {
