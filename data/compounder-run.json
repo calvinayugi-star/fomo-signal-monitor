@@ -1123,47 +1123,9 @@
    "targetNetPct": 20,
    "startedAt": "2026-10-21T01:00:34.620Z",
    "endsAt": null,
-   "status": "active",
+   "status": "ended",
    "cash": 0,
-   "position": {
-    "symbol": "Marvin",
-    "mint": "2Qm9Pgq23GNAdxZRpzb5WHCNxRNLMjeWSr6uULvwpump",
-    "pairAddress": "7bBSeYUZBEFxmkB9YoAwZQpqs5EtgJU2yv2CPr1BH4cr",
-    "list": "Trending + DexScreener",
-    "decidedAt": "2026-10-25T04:02:36.302Z",
-    "alertPriceUsd": 0.0004606,
-    "sizeUsd": 30,
-    "dexRoundTripPct": 0,
-    "roundTripPct": 2.47,
-    "score": 57.8,
-    "entry": {
-     "chgH1": 967,
-     "chgH6": 967,
-     "chg15": 21.94,
-     "accel": null,
-     "volTrend": 1.3,
-     "ratioH1": 1.85,
-     "ageH": 0.6,
-     "top10Pct": 11.8
-    },
-    "fill": {
-     "rawPrice": 0.00026660481828454146,
-     "fillCandleT": 1792901100,
-     "at": "2026-10-25T04:05:36.302Z"
-    },
-    "checkedThrough": 1792947600,
-    "peakNetPct": 19.27,
-    "worstNetPct": -100,
-    "lastTradeAt": "2026-10-25T17:00:00.000Z",
-    "mark": {
-     "at": "2026-10-25T17:00:00.000Z",
-     "price": 0.0000020144219441658763,
-     "netPct": -100,
-     "proceeds": 0
-    },
-    "targetPriceUsd": 0.0003272499912591554,
-    "stale": true
-   },
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1188,8 +1150,22 @@
      "worstNetPct": -20.64,
      "targetHit": true,
      "newBankroll": 30
+    },
+    {
+     "n": 2,
+     "symbol": "Marvin",
+     "decidedAt": "2026-10-25T04:02:36.302Z",
+     "reason": "restart (closed at last mark)",
+     "netPct": -100,
+     "netUsd": -30,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 0
     }
-   ]
+   ],
+   "endedAt": "2026-10-27T04:02:30.109Z",
+   "finalBankroll": 0,
+   "note": "restarted 2026-10-27 at the user's request: TROLL (flat 3 days) and Marvin (rugged) closed at their last mark; 6h time limit added"
   },
   {
    "id": "v2-conservative-2026-10-23",
@@ -1205,48 +1181,22 @@
    "targetNetPct": 13.93,
    "startedAt": "2026-10-24T01:01:43.553Z",
    "endsAt": null,
-   "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "TROLL",
-    "mint": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
-    "pairAddress": "4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama",
-    "list": "Trending",
-    "decidedAt": "2026-10-24T01:01:43.553Z",
-    "alertPriceUsd": 0.02942,
-    "sizeUsd": 110,
-    "dexRoundTripPct": 0.61,
-    "roundTripPct": 1.6,
-    "score": 58.2,
-    "entry": {
-     "chgH1": -4.97,
-     "chgH6": -8.24,
-     "chg15": -0.51,
-     "accel": 11.69,
-     "volTrend": 0.17,
-     "ratioH1": 3.03,
-     "ageH": 13230.5,
-     "top10Pct": 30.1
-    },
-    "fill": {
-     "rawPrice": 0.029462068966258942,
-     "fillCandleT": 1792803720,
-     "at": "2026-10-24T01:04:43.553Z"
-    },
-    "checkedThrough": 1793069940,
-    "peakNetPct": 5.81,
-    "worstNetPct": -4.59,
-    "lastTradeAt": "2026-10-27T02:59:00.000Z",
-    "mark": {
-     "at": "2026-10-27T02:59:00.000Z",
-     "price": 0.02968376409684013,
+   "status": "ended",
+   "cash": 109.05,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
+     "symbol": "TROLL",
+     "decidedAt": "2026-10-24T01:01:43.553Z",
+     "reason": "restart (closed at last mark)",
      "netPct": -0.86,
-     "proceeds": 109.05
-    },
-    "targetPriceUsd": 0.03411178001192545,
-    "stale": false
-   },
-   "trades": [],
+     "netUsd": -0.9500000000000028,
+     "costsUsd": 0,
+     "targetHit": false,
+     "newBankroll": 109.05
+    }
+   ],
    "day": {
     "date": "2026-10-26",
     "startBankroll": 111.96
@@ -1267,7 +1217,73 @@
      "startBankroll": 112.95,
      "endBankroll": 111.96
     }
-   ]
+   ],
+   "endedAt": "2026-10-27T04:02:30.109Z",
+   "finalBankroll": 109.05,
+   "note": "restarted 2026-10-27 at the user's request: TROLL (flat 3 days) and Marvin (rugged) closed at their last mark; 6h time limit added"
+  },
+  {
+   "id": "v2-conservative-2026-10-27",
+   "rules": "v2",
+   "variant": "conservative",
+   "name": "Conservative Compounder",
+   "per": "day",
+   "mode": "paper",
+   "seedUsd": 110,
+   "goalUsd": 5000,
+   "cycle": 1,
+   "cashedOutBeforeUsd": 0,
+   "targetNetPct": 13.93,
+   "startedAt": "2026-10-27T04:02:30.109Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 0,
+   "position": {
+    "symbol": "ZBCN",
+    "mint": "ZBCNpuD7YMXzTHB2fhGkGi78MNsHGLRXUhRewNRm9RU",
+    "pairAddress": "FaoZEZFsRS2jJAzg5PXwNjDdA1hDAjDGAkDf4xRfY79w",
+    "list": "Jupiter",
+    "decidedAt": "2026-10-27T04:02:30.109Z",
+    "alertPriceUsd": 0.002209,
+    "sizeUsd": 110,
+    "dexRoundTripPct": 0.69,
+    "roundTripPct": 1.68,
+    "score": 68.4,
+    "entry": {
+     "chgH1": 6.02,
+     "chgH6": 4.37,
+     "chg15": 5.72,
+     "accel": 174.75,
+     "volTrend": 3.78,
+     "ratioH1": 2.36,
+     "ageH": 12470.2,
+     "top10Pct": 53.2
+    }
+   },
+   "trades": [],
+   "day": {
+    "date": "2026-10-27",
+    "startBankroll": 110
+   }
+  },
+  {
+   "id": "v2-aggressive-2026-10-27",
+   "rules": "v2",
+   "variant": "aggressive",
+   "name": "Aggressive Compounder",
+   "per": "trade",
+   "mode": "paper",
+   "seedUsd": 25,
+   "goalUsd": 5000,
+   "cycle": 1,
+   "cashedOutBeforeUsd": 0,
+   "targetNetPct": 20,
+   "startedAt": "2026-10-27T04:02:30.109Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 25,
+   "position": null,
+   "trades": []
   }
  ]
 }
