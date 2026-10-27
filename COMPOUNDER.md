@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Tue, Oct 27, 18:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Tue, Oct 27, 19:02 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 6h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 72h+ since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,8 +10,8 @@ Updated Tue, Oct 27, 18:02 EDT. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$89.15** | **$25.00** |
-| Return since the start | -19.0% (from 110) | +0.0% (from 25) |
+| Bankroll now (open position at its last mark) | **$88.28** | **$25.00** |
+| Return since the start | -19.7% (from 110) | +0.0% (from 25) |
 | Goal | $5110.00 ($5000.00 to cash out + 110 kept): 1.7% there, ~32 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.5% there, ~30 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at the target | 0 (+2 closed early) | 0 |
@@ -19,7 +19,7 @@ Updated Tue, Oct 27, 18:02 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | n/a | n/a |
 | Profit banked / costs | -$11.06 / $4.73 | $0.00 / $0.00 |
 | Days the daily goal was met (per-day runs) | 0 of 1 | – |
-| Now | holding $ZAUTH (-9.9%, 3.9h) | in cash, searching |
+| Now | holding $ZAUTH (-10.8%, 5.0h) | in cash, searching |
 
 Both runs screen the same hourly candidates with the same rules except token age (since 2026-10-24, see Rules in effect), and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
@@ -29,7 +29,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$89.15** (-19.0%) |
+| Start → now | $110 → **$88.28** (-19.7%) |
 | Running for | 0.8 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 0 (+2 closed early by a one-off exit) |
@@ -46,9 +46,9 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Token | $ZAUTH (Jupiter) · [DexScreener](https://dexscreener.com/solana/5XbRDoL7YpKYwUKSfBZBFiJaipUtVXrFVtyVXoVSeKsQ) |
 | Bought | Oct 27, 14:02 · $98.94 at $0.002031 |
 | Sell target | $0.002382 (+13.93% net) |
-| Current value | $89.15 (-9.9% net, at Oct 27, 18:00) |
-| Best / worst while held | -1.4% / -13.3% |
-| Held for | 3.9h |
+| Current value | $88.28 (-10.8% net, at Oct 27, 19:01) |
+| Best / worst while held | -1.4% / -14.7% |
+| Held for | 5.0h |
 
 ### Completed positions (newest first)
 
