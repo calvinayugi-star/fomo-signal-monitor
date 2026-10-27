@@ -1239,43 +1239,26 @@
    "status": "active",
    "cash": 0,
    "position": {
-    "symbol": "GLITCH",
-    "mint": "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump",
-    "pairAddress": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7",
-    "list": "Jupiter + DexScreener",
-    "decidedAt": "2026-10-27T11:02:31.773Z",
-    "alertPriceUsd": 0.002476,
-    "sizeUsd": 104.8309,
-    "dexRoundTripPct": 1.93,
-    "roundTripPct": 2.92,
-    "score": 55.7,
+    "symbol": "ZAUTH",
+    "mint": "DNhQZ1CE9qZ2FNrVhsCXwQJ2vZG8ufZkcYakTS5Jpump",
+    "pairAddress": "5XbRDoL7YpKYwUKSfBZBFiJaipUtVXrFVtyVXoVSeKsQ",
+    "list": "Jupiter",
+    "decidedAt": "2026-10-27T18:02:32.010Z",
+    "alertPriceUsd": 0.002036,
+    "sizeUsd": 98.9414,
+    "dexRoundTripPct": 1.92,
+    "roundTripPct": 2.91,
+    "score": 74.8,
     "entry": {
-     "chgH1": -0.11,
-     "chgH6": -14.68,
-     "chg15": 1.22,
-     "accel": 2.2,
-     "volTrend": 2.05,
-     "ratioH1": 2.88,
-     "ageH": 259.5,
-     "top10Pct": 27.8
-    },
-    "fill": {
-     "rawPrice": 0.00250175021785576,
-     "fillCandleT": 1793099100,
-     "at": "2026-10-27T11:05:31.773Z"
-    },
-    "checkedThrough": 1793120400,
-    "peakNetPct": 6.51,
-    "worstNetPct": -13.6,
-    "lastTradeAt": "2026-10-27T17:00:00.000Z",
-    "mark": {
-     "at": "2026-10-27T17:00:00.000Z",
-     "price": 0.0024355690786142248,
-     "netPct": -5.46,
-     "proceeds": 99.11
-    },
-    "targetPriceUsd": 0.0029350670428583605,
-    "stale": false
+     "chgH1": 9.94,
+     "chgH6": 17.82,
+     "chg15": 2.73,
+     "accel": 7.01,
+     "volTrend": 1.52,
+     "ratioH1": 2.17,
+     "ageH": 7729,
+     "top10Pct": 31.6
+    }
    },
    "trades": [
     {
@@ -1301,6 +1284,30 @@
      "worstNetPct": -4.7,
      "targetHit": false,
      "newBankroll": 104.8309
+    },
+    {
+     "n": 2,
+     "symbol": "GLITCH",
+     "mint": "8Xg89xT8Ve34sKiYqYuMs46mycREsCA2F362UscRpump",
+     "pairAddress": "Em6RvzGXhd35pZ7CVUjCTPEnv4jAztScaVHaXBXCBcG7",
+     "list": "Jupiter + DexScreener",
+     "decidedAt": "2026-10-27T11:02:31.773Z",
+     "prevBankroll": 104.83,
+     "sizeUsd": 104.83,
+     "dexRoundTripPct": 1.93,
+     "fillAt": "2026-10-27T11:05:31.773Z",
+     "exitAt": "2026-10-27T17:05:31.773Z",
+     "holdHours": 6,
+     "reason": "6h time limit (target not reached)",
+     "entryPriceUsd": 0.00250175021785576,
+     "exitPriceUsd": 0.00243146791236827,
+     "grossPct": -2.81,
+     "costsUsd": 2.9445,
+     "netUsd": -5.8895,
+     "netPct": -5.62,
+     "worstNetPct": -13.6,
+     "targetHit": false,
+     "newBankroll": 98.9414
     }
    ],
    "day": {
