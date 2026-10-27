@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Tue, Oct 27, 02:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Tue, Oct 27, 03:02 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 6h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 72h+ since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -19,7 +19,7 @@ Updated Tue, Oct 27, 02:02 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | n/a | n/a |
 | Profit banked / costs | $0.00 / $0.00 | $0.00 / $0.00 |
 | Days the daily goal was met (per-day runs) | 0 of 1 | – |
-| Now | holding $ZBCN (-3.3%, 2.0h) | in cash, searching |
+| Now | holding $ZBCN (-3.3%, 3.0h) | in cash, searching |
 
 Both runs screen the same hourly candidates with the same rules except token age (since 2026-10-24, see Rules in effect), and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
@@ -48,7 +48,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Sell target | $0.002563 (+13.93% net) |
 | Current value | $106.34 (-3.3% net, at Oct 27, 01:41) |
 | Best / worst while held | +0.0% / -3.6% |
-| Held for | 2.0h |
+| Held for | 3.0h |
 
 ### Completed positions (newest first)
 
