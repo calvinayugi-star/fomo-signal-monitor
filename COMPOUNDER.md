@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 28, 06:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 28, 07:02 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -30,7 +30,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Start → now | $110 → **$87.58** (-20.4%) |
-| Running for | 1.2 days (since Oct 27, 00:02) |
+| Running for | 1.3 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 0 (+4 closed early by a one-off exit) |
 | Average time to reach the target | n/a |
@@ -55,7 +55,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Start → now | $25 → **$30.00** (+20.0%) |
-| Running for | 1.2 days (since Oct 27, 00:02) |
+| Running for | 1.3 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 0.0h |
