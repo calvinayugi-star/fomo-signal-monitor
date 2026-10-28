@@ -80,15 +80,17 @@
     ],
     "_variants": "Since 2026-10-20 two runs; a variant's `entry` overrides compounder.entry for that run only (since 2026-10-24 the Conservative Compounder buys pairs 72h+ old, the Aggressive one 15-60 min). They never hold the same token at the same time; when both are in cash the Conservative Compounder (listed first) picks first. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd + seedUsd ($5,110 / $5,025) it is all cash (a held position is sold as soon as it is worth that, even below its target), at least goalUsd is cashed out, seedUsd is kept, and a new cycle starts from seedUsd at the next hourly run.",
     "variants": [
-      { "id": "conservative", "name": "Conservative Compounder", "targetNetPct": 13.93, "per": "day", "seedUsd": 110, "goalUsd": 5000, "entry": { "minPairAgeHours": 72, "maxPairAgeHours": null } },
+      { "id": "conservative", "name": "Conservative Compounder", "targetNetPct": 13.93, "per": "day", "seedUsd": 110, "goalUsd": 5000, "entry": { "minPairAgeHours": 1, "maxPairAgeHours": 72 } },
       { "id": "aggressive", "name": "Aggressive Compounder", "targetNetPct": 20, "per": "trade", "seedUsd": 25, "goalUsd": 5000 }
     ],
     "fillDelayMinutes": 3,
     "noFillCancelHours": 6,
     "cooldownHours": 24,
     "staleAfterHours": 24,
-    "_maxHoldHours": "Since 2026-10-27 (user request): a position that hasn't reached its target this many hours after the fill is sold at the last price before then, and the run searches again. A variant can override it with its own maxHoldHours.",
-    "maxHoldHours": 6,
+    "_maxHoldHours": "Since 2026-10-27 (user request; 6h, then 1h from 2026-10-28): a position that hasn't reached its target this many hours after the fill is sold at the last price before then, and the run searches again. A variant can override it with its own maxHoldHours.",
+    "maxHoldHours": 1,
+    "_outcomes": "Since 2026-10-28: every token a run evaluates inside its age window (bought or rejected, with the reason) is re-priced this many minutes later (data/candidate-outcomes.jsonl); a token is tracked again only after trackEveryHours.",
+    "outcomes": { "afterMinutes": [15, 60], "trackEveryHours": 6 },
     "oneOffExits": [
       {
         "note": "User request 2026-10-11: close the Fartcoin position bought 2026-10-11 07:00 UTC in every run if no target is hit within 24h of the fill; applies only to that position.",
@@ -127,7 +129,14 @@
       "largeMcapPenalty": 15,
       "minScore": 45,
       "maxCandleChecks": 8,
-      "maxSafetyChecks": 3
+      "maxSafetyChecks": 3,
+      "_crash": "Crash filters added 2026-10-28 (user choice, starting values): no buy if sells beat buys in the last 5 min (when at least minTxnsM5 trades), liquidity under minLiqToMcapPct of market cap, or, compared with an earlier holder reading 10 min to 3h old, holders falling, the developer's share down by maxDevDropPts or more, or the top-10 share down by maxTop10DropPts or more.",
+      "minBuySellRatioM5": 1,
+      "minTxnsM5": 10,
+      "minLiqToMcapPct": 5,
+      "maxHolderDropPct": 0,
+      "maxDevDropPts": 0.5,
+      "maxTop10DropPts": 5
     }
   },
 

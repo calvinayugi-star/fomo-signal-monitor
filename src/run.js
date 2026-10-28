@@ -228,7 +228,7 @@ function compounderSummary(log, now, compounderLine) {
   return `📊 <b>Daily summary (PAPER MODE)</b>
 ${compounderLine || 'Compounder: no data this run.'}
 
-<b>Last 24h:</b> ${runs} hourly runs${log.errors.length ? ` · errors this run: ${log.errors.length}` : ''}${tokenReminder(now)}`;
+<b>Last 24h:</b> ${runs} runs (every 15 min)${log.errors.length ? ` · errors this run: ${log.errors.length}` : ''}${tokenReminder(now)}`;
 }
 
 async function main() {
@@ -294,6 +294,7 @@ async function main() {
         snapshots: store.snapshots,
         dryRun,
         dataDir: DATA,
+        cacheDir: path.dirname(SNAPSHOTS),
         reportPath: path.join(process.env.DATA_DIR ? DATA : ROOT, 'COMPOUNDER.md'),
         log,
       });

@@ -116,6 +116,13 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   and the run searches again (`compounder.maxHoldHours`, a variant can override it). Evidence: every target sale so far landed within 4.4h, and no position
   held past 5h ever reached its target (Fartcoin, FTR, ZBCN and TROLL tied runs up for 1–3 days). Both runs restarted from their seeds ($110 / $25, 100% positions):
   TROLL (Conservative, −1.9% after 3 days) and Marvin (Aggressive, rugged to $0) were closed at their last mark. Still no stop loss.
+- **2026-10-28 (user choice):** time limit 6h → **1h**; the job runs **every 15 minutes** (cron-job.org dispatch; GitHub's backup schedule skips if a run
+  happened in the last 12 min); the **Conservative Compounder buys pairs 1–72h old** (was 72h+: its first four 72h+ buys under the 6h limit lost 2–10% each).
+  **Crash filters** (starting values in `compounder.entry`): no buy if sells beat buys in the last 5 min (10+ trades), liquidity under 5% of market cap, or,
+  against a holder reading 10 min–3h old (kept in the Actions cache), holders falling, the developer's share down 0.5+ points, or the top-10 share down 5+ points.
+  A token seen for the first time has no earlier reading and passes the holder checks.
+  **Outcome tracker:** every token a run evaluates inside its age window (bought or rejected, with the reason and its entry numbers) is re-priced
+  15 and 60 min later on DexScreener: pending in `data/outcomes-pending.json`, complete in `data/candidate-outcomes.jsonl`.
 - **More lists (2026-10-24, user: as many tokens as possible):** besides Trending and Graduated, candidates now also come from Jupiter (top trending, top traded and top organic-score tokens over 5m/1h/6h/24h, tokenized stocks and other non-meme assets included) and DexScreener (latest and top boosted tokens, latest token profiles): ~400 more tokens per run, mostly 72h+ old. A token on several lists shows them all, e.g. Trending + Jupiter.
 - **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
   is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the

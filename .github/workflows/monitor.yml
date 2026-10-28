@@ -2,8 +2,8 @@ name: FOMO Signal Monitor
 
 on:
   schedule:
-    # GitHub skips many scheduled runs, so offer 4 chances an hour; the guard below
-    # makes sure the monitor itself still runs at most about once an hour.
+    # The main trigger is cron-job.org every 15 min (workflow_dispatch). GitHub's own schedule is a backup:
+    # it skips many runs, and the guard below skips it when the monitor ran in the last 12 minutes.
     - cron: '7,22,37,52 * * * *'
   workflow_dispatch: # "Run workflow" button for manual runs (always runs)
 
@@ -21,13 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
 
-      - name: Skip if the monitor ran in the last 50 minutes
+      - name: Skip if the monitor ran in the last 12 minutes
         id: guard
         run: |
           last=$(tail -n 1 data/runs.jsonl 2>/dev/null | sed -E 's/^\{"t":"([^"]+)".*/\1/')
           age=$(( ( $(date -u +%s) - $(date -u -d "${last:-1970-01-01}" +%s) ) / 60 ))
           echo "Last run ${last:-never} (${age} min ago)"
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$age" -lt 50 ]; then
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$age" -lt 12 ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
 

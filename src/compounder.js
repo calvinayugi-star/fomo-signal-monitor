@@ -19,6 +19,7 @@ import { sendTelegram, esc } from './telegram.js';
 import { openPosition, findFill, replayTarget, priceForNet, netAt } from './compounder-sim.js';
 import { compounderMarkdown, summaryLine, dailyReport, runStats, bankrollOf, goalBankroll, entryFor, usd, price } from './compounder-report.js';
 import { makeTime } from './time.js';
+import { trackNew, dueMints, recordDue } from './outcomes.js';
 
 const HOUR = 3600e3;
 const pctChange = (a, b) => (b > 0 ? (a / b - 1) * 100 : null);
@@ -85,6 +86,8 @@ function entryRow(c, pair, nowMs, snapshots) {
     ratioH6: round(m.ratioH6),
     accel: round(m.accel),
     chgM5: pair.priceChange?.m5 ?? 0,
+    buysM5: pair.txns?.m5?.buys ?? 0,
+    sellsM5: pair.txns?.m5?.sells ?? 0,
     chgH1: m.chgH1,
     chgH6: m.chgH6,
     liqGrowth: round(liquidityGrowth(snapshots ?? {}, c.mint, m.liqUsd, nowMs), 3),
@@ -98,6 +101,9 @@ function entryFailure(r, sizeUsd, blocked, taken, e) {
   if (e.maxPairAgeHours && r.ageH > e.maxPairAgeHours) return `older than ${e.maxPairAgeHours}h`;
   if (r.liqUsd < Math.max(e.minLiquidityUsd, e.minLiquidityMultipleOfPosition * sizeUsd)) return 'liquidity too thin for the position';
   if (r.mcapUsd < e.minMarketCapUsd) return 'market cap too low';
+  // Crash filters (2026-10-28): liquidity thin for the market cap, sellers in control of the last 5 minutes.
+  if (e.minLiqToMcapPct && (r.liqUsd / r.mcapUsd) * 100 < e.minLiqToMcapPct) return `liquidity under ${e.minLiqToMcapPct}% of market cap`;
+  if (e.minBuySellRatioM5 && r.buysM5 + r.sellsM5 >= e.minTxnsM5 && r.buysM5 < e.minBuySellRatioM5 * r.sellsM5) return 'sells beat buys (5 min)';
   if (r.volH1 < e.minVolumeH1Usd) return '1h volume too low';
   if (r.buysH1 < e.minBuysH1) return 'too few buys (1h)';
   if (r.ratioH1 < e.minBuySellRatioH1) return 'buying not dominant (1h)';
@@ -147,7 +153,17 @@ function makeCache(cfg, nowMs) {
   };
 }
 
-async function screenPreSpike({ rows, sizeUsd, e, cache, log }) {
+// Holder trend vs the most recent earlier reading 10 min - 3h old (crash filters, 2026-10-28). A token seen for the first time has none, so it passes.
+function holderTrendFailure(readings, safety, nowMs, e) {
+  const prev = (readings ?? []).filter((x) => nowMs - x.t >= 10 * 60e3 && nowMs - x.t <= 3 * HOUR).at(-1);
+  if (!prev) return null;
+  if (prev.holders > 0 && (safety.holders / prev.holders - 1) * 100 < -(e.maxHolderDropPct ?? Infinity)) return 'holders falling';
+  if (prev.devPct != null && safety.devPct != null && prev.devPct - safety.devPct >= (e.maxDevDropPts ?? Infinity)) return 'developer selling';
+  if (prev.top10 != null && prev.top10 - safety.top10 >= (e.maxTop10DropPts ?? Infinity)) return 'top-10 wallets selling';
+  return null;
+}
+
+async function screenPreSpike({ rows, sizeUsd, e, cache, holderLog, nowMs, log }) {
   const open = rows.filter((r) => !r.reason);
   for (const r of open) r.score = round(preScore(r, e), 1);
   open.sort((a, b) => b.score - a.score);
@@ -197,7 +213,14 @@ async function screenPreSpike({ rows, sizeUsd, e, cache, log }) {
         Object.assign(r, { reason: safety.reason, unsafe: true });
         continue;
       }
-      Object.assign(r, { holders: safety.holders, top10Pct: round(safety.top10, 1), risks: safety.risks });
+      Object.assign(r, { holders: safety.holders, top10Pct: round(safety.top10, 1), devPct: round(safety.devPct, 2), risks: safety.risks });
+      const trend = holderTrendFailure(holderLog[r.mint], safety, nowMs, e);
+      const prev = (holderLog[r.mint] ??= []);
+      if (prev.at(-1)?.t !== nowMs) prev.push({ t: nowMs, holders: safety.holders, top10: safety.top10, devPct: safety.devPct });
+      if (trend) {
+        Object.assign(r, { reason: trend, unsafe: true });
+        continue;
+      }
       // On young tokens a very even holder spread usually means one party split supply across many wallets:
       // 7 of 9 such alerts went to near zero (2026-10 evaluation).
       if (r.ageH < e.youngMaxAgeHours && safety.top10 <= e.youngMinTop10Pct) {
@@ -397,7 +420,7 @@ It may be dead (liquidity pulled). Per the rules it is still held until +${run.t
 
 // --- hourly entry point --------------------------------------------------------------------------
 
-export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun, dataDir, reportPath, log }) {
+export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun, dataDir, cacheDir, reportPath, log }) {
   const k = cfg.compounder;
   const time = makeTime(cfg.displayTimezone);
   const now = new Date();
@@ -409,6 +432,18 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
     /* first run */
   }
   const send = (html) => sendTelegram(html, { dryRun });
+  const readOr = (file, fallback) => {
+    try {
+      return JSON.parse(fs.readFileSync(file, 'utf8'));
+    } catch {
+      return fallback;
+    }
+  };
+  // Holder readings from earlier runs (working data, Actions cache) for the holder-trend crash filters; outcome tracker state (records, git).
+  const holdersFile = path.join(cacheDir ?? path.join(dataDir, '..', '.cache'), 'holders.json');
+  const holderLog = readOr(holdersFile, {});
+  const outcomesFile = path.join(dataDir, 'outcomes-pending.json');
+  const outcomes = readOr(outcomesFile, { pending: [], lastTracked: {} });
   const hourly = { t: now.toISOString(), rules: k.rules, errors: [], variants: {} };
 
   // 1. A run under older rules, or started before a restart the user asked for (config restart.at), is closed
@@ -494,7 +529,7 @@ export async function runCompounder({ cfg, candidates, pairs, snapshots, dryRun,
             h.decision = 'GOAL REACHED (cashed out)';
             await send(`${PAPER}\n🏁 <b>${tag(run)}${run.cycle > 1 ? ` cycle ${run.cycle}` : ''}: GOAL REACHED</b>: $${run.seedUsd} → <b>${usd(run.cash)}</b> in ${run.trades.length} trades.
 💵 Cash out <b>${usd(run.cashOutUsd)}</b> and keep $${run.seedUsd}. Total cashed out: ${usd((run.cashedOutBeforeUsd ?? 0) + run.cashOutUsd)}.
-A new cycle starts from $${run.seedUsd} at the next hourly run.`);
+A new cycle starts from $${run.seedUsd} at the next run.`);
           }
         } else if (run.position.stale && !wasStale) {
           await send(staleMessage(run, k, time));
@@ -510,6 +545,7 @@ A new cycle starts from $${run.seedUsd} at the next hourly run.`);
     }
 
     const rows = [];
+    const seen = [];
     const rejects = {};
     try {
       if (run.status === 'completed') h.decision ??= 'GOAL REACHED (cashed out)';
@@ -534,8 +570,11 @@ A new cycle starts from $${run.seedUsd} at the next hourly run.`);
           const why = entryFailure(r, sizeUsd, blocked, taken, e);
           if (why) rejects[why] = (rejects[why] ?? 0) + 1;
           else rows.push(r);
+          // Outcome tracker: tokens inside this run's age window, rejected here (with the reason) or screened further below.
+          if (why && why !== 'no price' && why !== 'pair too new' && !why.startsWith('older than')) seen.push(Object.assign(r, { reason: why }));
         }
-        const best = await screenPreSpike({ rows, sizeUsd, e, cache, log: h });
+        const best = await screenPreSpike({ rows, sizeUsd, e, cache, holderLog, nowMs: now.getTime(), log: h });
+        if (k.outcomes) trackNew(outcomes, [...seen, ...rows], { variant: run.variant, bestMint: best?.mint, nowMs: now.getTime(), cfg });
         if (best) {
           run.position = {
             symbol: best.symbol,
@@ -573,6 +612,25 @@ A new cycle starts from $${run.seedUsd} at the next hourly run.`);
   }
   if (!runs.length) hourly.decision = 'IDLE (no active run)';
 
+  // Outcome tracker: re-price tokens whose 15/60-min horizon has passed (this run's DexScreener pairs, the rest fetched in batches of 30).
+  let finished = [];
+  if (k.outcomes) {
+    try {
+      const known = allPairs ?? pairs ?? new Map();
+      const missing = dueMints(outcomes, now.getTime(), cfg).filter((m) => !known.has(m));
+      const fetched = missing.length ? await dexPairs(missing, log) : new Map();
+      finished = recordDue(outcomes, new Map([...known, ...fetched]), now.getTime(), cfg);
+      hourly.outcomes = { tracking: outcomes.pending.length, completed: finished.length };
+    } catch (err) {
+      hourly.errors.push(`outcomes: ${err.message}`);
+    }
+  }
+  for (const [mint, list] of Object.entries(holderLog)) {
+    const kept = list.filter((x) => now - x.t <= 26 * HOUR);
+    if (kept.length) holderLog[mint] = kept;
+    else delete holderLog[mint];
+  }
+
   log.compounder = Object.fromEntries(Object.entries(hourly.variants).map(([id, h]) => [id, { decision: h.decision, bankroll: h.bankroll }]));
   log.errors.push(...hourly.errors.map((x) => `compounder ${x}`));
   for (const [id, h] of Object.entries(hourly.variants))
@@ -581,7 +639,7 @@ A new cycle starts from $${run.seedUsd} at the next hourly run.`);
   // Daily report: the active runs plus any that reached their goal in the last 24h, with a link to the full report.
   let hourlyLog = [];
   try {
-    hourlyLog = fs.readFileSync(path.join(dataDir, 'compounder-hourly.jsonl'), 'utf8').trim().split('\n').slice(-30).map((l) => JSON.parse(l));
+    hourlyLog = fs.readFileSync(path.join(dataDir, 'compounder-hourly.jsonl'), 'utf8').trim().split('\n').slice(-110).map((l) => JSON.parse(l));
   } catch {
     /* no log yet */
   }
@@ -595,6 +653,10 @@ A new cycle starts from $${run.seedUsd} at the next hourly run.`);
     fs.writeFileSync(ledgerFile, JSON.stringify(ledger, null, 1) + '\n');
     fs.appendFileSync(path.join(dataDir, 'compounder-hourly.jsonl'), JSON.stringify(hourly) + '\n');
     fs.writeFileSync(reportPath, compounderMarkdown(ledger, cfg, now, time));
+    fs.writeFileSync(outcomesFile, JSON.stringify(outcomes) + '\n');
+    if (finished.length) fs.appendFileSync(path.join(dataDir, 'candidate-outcomes.jsonl'), finished.map((x) => JSON.stringify(x)).join('\n') + '\n');
+    fs.mkdirSync(path.dirname(holdersFile), { recursive: true });
+    fs.writeFileSync(holdersFile, JSON.stringify(holderLog));
   }
   return daily || (runs.length ? runs : ledger.runs.slice(-1)).map((r) => summaryLine(r, now)).join('\n');
 }
