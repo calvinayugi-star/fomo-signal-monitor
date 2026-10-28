@@ -1237,46 +1237,8 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "ZAUTH",
-    "mint": "DNhQZ1CE9qZ2FNrVhsCXwQJ2vZG8ufZkcYakTS5Jpump",
-    "pairAddress": "5XbRDoL7YpKYwUKSfBZBFiJaipUtVXrFVtyVXoVSeKsQ",
-    "list": "Jupiter",
-    "decidedAt": "2026-10-27T18:02:32.010Z",
-    "alertPriceUsd": 0.002036,
-    "sizeUsd": 98.9414,
-    "dexRoundTripPct": 1.92,
-    "roundTripPct": 2.91,
-    "score": 74.8,
-    "entry": {
-     "chgH1": 9.94,
-     "chgH6": 17.82,
-     "chg15": 2.73,
-     "accel": 7.01,
-     "volTrend": 1.52,
-     "ratioH1": 2.17,
-     "ageH": 7729,
-     "top10Pct": 31.6
-    },
-    "fill": {
-     "rawPrice": 0.0020306016078235323,
-     "fillCandleT": 1793124300,
-     "at": "2026-10-27T18:05:32.010Z"
-    },
-    "checkedThrough": 1793145660,
-    "peakNetPct": -1.35,
-    "worstNetPct": -14.65,
-    "lastTradeAt": "2026-10-28T00:01:00.000Z",
-    "mark": {
-     "at": "2026-10-28T00:01:00.000Z",
-     "price": 0.0019175393810134948,
-     "netPct": -8.29,
-     "proceeds": 90.74
-    },
-    "targetPriceUsd": 0.0023820746744276657,
-    "stale": false
-   },
+   "cash": 89.1937,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1325,6 +1287,30 @@
      "worstNetPct": -13.6,
      "targetHit": false,
      "newBankroll": 98.9414
+    },
+    {
+     "n": 3,
+     "symbol": "ZAUTH",
+     "mint": "DNhQZ1CE9qZ2FNrVhsCXwQJ2vZG8ufZkcYakTS5Jpump",
+     "pairAddress": "5XbRDoL7YpKYwUKSfBZBFiJaipUtVXrFVtyVXoVSeKsQ",
+     "list": "Jupiter",
+     "decidedAt": "2026-10-27T18:02:32.010Z",
+     "prevBankroll": 98.94,
+     "sizeUsd": 98.94,
+     "dexRoundTripPct": 1.92,
+     "fillAt": "2026-10-27T18:05:32.010Z",
+     "exitAt": "2026-10-28T00:05:32.010Z",
+     "holdHours": 6,
+     "reason": "6h time limit (target not reached)",
+     "entryPriceUsd": 0.0020306016078235323,
+     "exitPriceUsd": 0.001884834327866182,
+     "grossPct": -7.18,
+     "costsUsd": 2.6452,
+     "netUsd": -9.7477,
+     "netPct": -9.85,
+     "worstNetPct": -14.65,
+     "targetHit": false,
+     "newBankroll": 89.1937
     }
    ],
    "day": {
@@ -1347,30 +1333,34 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "CATUS",
-    "mint": "B4XWhKBUon2Tam1fAM1Umy1Bx34V4opSh9kKspyMpump",
-    "pairAddress": "rgYVAM22WjBfMszK2jTb3rx1Sab9B7uxtSgr6y4NfWM",
-    "list": "Trending",
-    "decidedAt": "2026-10-28T00:02:29.769Z",
-    "alertPriceUsd": 0.0001227,
-    "sizeUsd": 25,
-    "dexRoundTripPct": 0,
-    "roundTripPct": 2.96,
-    "score": 50.7,
-    "entry": {
-     "chgH1": 145,
-     "chgH6": 145,
-     "chg15": -64.97,
-     "accel": null,
-     "volTrend": 1.13,
-     "ratioH1": 1.66,
-     "ageH": 0.5,
-     "top10Pct": 46
+   "cash": 30,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
+     "symbol": "CATUS",
+     "mint": "B4XWhKBUon2Tam1fAM1Umy1Bx34V4opSh9kKspyMpump",
+     "pairAddress": "rgYVAM22WjBfMszK2jTb3rx1Sab9B7uxtSgr6y4NfWM",
+     "list": "Trending",
+     "decidedAt": "2026-10-28T00:02:29.769Z",
+     "prevBankroll": 25,
+     "sizeUsd": 25,
+     "dexRoundTripPct": 0,
+     "fillAt": "2026-10-28T00:05:29.769Z",
+     "exitAt": "2026-10-28T00:08:00.000Z",
+     "holdHours": 0,
+     "reason": "+20% target",
+     "entryPriceUsd": 0.00012152639132126573,
+     "exitPriceUsd": 0.00014984801073596594,
+     "grossPct": 23.3,
+     "costsUsd": 0.8262,
+     "netUsd": 5,
+     "netPct": 20,
+     "worstNetPct": -35.34,
+     "targetHit": true,
+     "newBankroll": 30
     }
-   },
-   "trades": []
+   ]
   }
  ]
 }
