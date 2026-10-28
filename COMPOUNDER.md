@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Tue, Oct 27, 21:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Tue, Oct 27, 22:02 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 6h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 72h+ since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -19,7 +19,7 @@ Updated Tue, Oct 27, 21:02 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | n/a | -35.3% |
 | Profit banked / costs | -$20.81 / $7.38 | $5.00 / $0.83 |
 | Days the daily goal was met (per-day runs) | 0 of 1 | – |
-| Now | in cash, searching | in cash, searching |
+| Now | holding $MOODENG (n/a, n/a) | in cash, searching |
 
 Both runs screen the same hourly candidates with the same rules except token age (since 2026-10-24, see Rules in effect), and each sells only when its position is up its target from the buy price.
 They never hold the same token at the same time: when both are in cash in the same hour, the first column picks first and the other takes its next best.
@@ -39,7 +39,16 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Days the daily goal was met | 0 of 1 · today started at $110.00 |
 | Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 32 more target sales from here (30 from the 110 seed) |
 
-**Open position:** none (cash, searching for the next pre-spike token).
+### Open position
+
+| | |
+|---|---|
+| Token | $MOODENG (Jupiter) · [DexScreener](https://dexscreener.com/solana/22WrmyTj8x2TRVQen3fxxi2r4Rn6JDHWoMTpsSmn8RUd) |
+| Bought | Oct 27, 22:02 · $89.19 (fill pending) |
+| Sell target | +13.93% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
