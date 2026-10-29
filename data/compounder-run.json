@@ -1237,29 +1237,8 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "Kimchi",
-    "mint": "78ThnYbKk5dquDUbMEwg4XURvK1RdkctiHivyeUEpump",
-    "pairAddress": "DbwMfPUF98HU127XA6T667ijBmh13PKTzG7LrYnoJnXP",
-    "list": "Graduated",
-    "decidedAt": "2026-10-29T02:02:29.465Z",
-    "alertPriceUsd": 0.001044,
-    "sizeUsd": 87.579,
-    "dexRoundTripPct": 2.26,
-    "roundTripPct": 3.25,
-    "score": 66.8,
-    "entry": {
-     "chgH1": 12.75,
-     "chgH6": -11.35,
-     "chg15": 15.1,
-     "accel": 6.05,
-     "volTrend": 3.83,
-     "ratioH1": 1.38,
-     "ageH": 23.4,
-     "top10Pct": 24.3
-    }
-   },
+   "cash": 99.7788,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1356,6 +1335,30 @@
      "worstNetPct": -2.24,
      "targetHit": false,
      "newBankroll": 87.579
+    },
+    {
+     "n": 5,
+     "symbol": "Kimchi",
+     "mint": "78ThnYbKk5dquDUbMEwg4XURvK1RdkctiHivyeUEpump",
+     "pairAddress": "DbwMfPUF98HU127XA6T667ijBmh13PKTzG7LrYnoJnXP",
+     "list": "Graduated",
+     "decidedAt": "2026-10-29T02:02:29.465Z",
+     "prevBankroll": 87.58,
+     "sizeUsd": 87.58,
+     "dexRoundTripPct": 2.26,
+     "fillAt": "2026-10-29T02:05:29.465Z",
+     "exitAt": "2026-10-29T02:14:00.000Z",
+     "holdHours": 0.1,
+     "reason": "+13.93% target",
+     "entryPriceUsd": 0.0010342879852442643,
+     "exitPriceUsd": 0.0012174437058273082,
+     "grossPct": 17.71,
+     "costsUsd": 3.3091,
+     "netUsd": 12.1998,
+     "netPct": 13.93,
+     "worstNetPct": -3.54,
+     "targetHit": true,
+     "newBankroll": 99.7788
     }
    ],
    "day": {

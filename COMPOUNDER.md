@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Wed, Oct 28, 22:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Wed, Oct 28, 23:02 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Wed, Oct 28, 22:02 EDT. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$87.58** | **$30.00** |
-| Return since the start | -20.4% (from 110) | +20.0% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 1.7% there, ~32 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.6% there, ~29 more target sales |
+| Bankroll now (open position at its last mark) | **$99.78** | **$30.00** |
+| Return since the start | -9.3% (from 110) | +20.0% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.0% there, ~31 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.6% there, ~29 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at the target | 0 (+4 closed early) | 1 |
-| Average time to reach the target | n/a | 0.0h |
-| Average worst point before the target | n/a | -35.3% |
-| Profit banked / costs | -$22.42 / $8.72 | $5.00 / $0.83 |
+| Positions sold at the target | 1 (+4 closed early) | 1 |
+| Average time to reach the target | 0.1h | 0.0h |
+| Average worst point before the target | -3.5% | -35.3% |
+| Profit banked / costs | -$10.22 / $12.03 | $5.00 / $0.83 |
 | Days the daily goal was met (per-day runs) | 0 of 2 | – |
-| Now | holding $Kimchi (n/a, n/a) | in cash, searching |
+| Now | in cash, searching | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,31 +29,23 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$87.58** (-20.4%) |
-| Running for | 1.9 days (since Oct 27, 00:02) |
+| Start → now | $110 → **$99.78** (-9.3%) |
+| Running for | 2.0 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at +13.93% | 0 (+4 closed early by a one-off exit) |
-| Average time to reach the target | n/a |
-| Average worst point before the target | n/a |
-| Profit banked / costs | -$22.42 / $8.72 |
+| Positions sold at +13.93% | 1 (+4 closed early by a one-off exit) |
+| Average time to reach the target | 0.1h |
+| Average worst point before the target | -3.5% |
+| Profit banked / costs | -$10.22 / $12.03 |
 | Days the daily goal was met | 0 of 2 · today started at $87.72 |
-| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 32 more target sales from here (30 from the 110 seed) |
+| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 31 more target sales from here (30 from the 110 seed) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $Kimchi (Graduated) · [DexScreener](https://dexscreener.com/solana/DbwMfPUF98HU127XA6T667ijBmh13PKTzG7LrYnoJnXP) |
-| Bought | Oct 28, 22:02 · $87.58 (fill pending) |
-| Sell target | +13.93% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 5 | Oct 28, 22:05 | Kimchi | Graduated | $87.58 | 0.1h | -3.5% | 0.001034 → 0.001217 | $3.31 | +13.9% | $12.20 | $99.78 |
 | 4 | Oct 27, 22:05 | MOODENG | Jupiter | $89.19 | 1.0h | -2.2% | 0.03886 → 0.03874 | $1.34 | -1.8% | -$1.61 | $87.58 |
 | 3 | Oct 27, 14:05 | ZAUTH | Jupiter | $98.94 | 6.0h | -14.7% | 0.002031 → 0.001885 | $2.65 | -9.8% | -$9.75 | $89.19 |
 | 2 | Oct 27, 07:05 | GLITCH | Jupiter + DexScreener | $104.83 | 6.0h | -13.6% | 0.002502 → 0.002431 | $2.94 | -5.6% | -$5.89 | $98.94 |
@@ -64,7 +56,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Start → now | $25 → **$30.00** (+20.0%) |
-| Running for | 1.9 days (since Oct 27, 00:02) |
+| Running for | 2.0 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 0.0h |
