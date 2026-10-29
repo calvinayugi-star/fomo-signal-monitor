@@ -1237,46 +1237,8 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "TRUMPKIN",
-    "mint": "BLAytV5xTVEkYJYS1RoFR5Ypgm3JZ44CvVdZHTExpump",
-    "pairAddress": "EdQzwtmWkH5iB5Q6KPWQbQUYo1NPaCfY3zNCpoW9NDpV",
-    "list": "Jupiter",
-    "decidedAt": "2026-10-29T17:02:33.075Z",
-    "alertPriceUsd": 0.0003216,
-    "sizeUsd": 99.7788,
-    "dexRoundTripPct": 2.94,
-    "roundTripPct": 3.93,
-    "score": 48,
-    "entry": {
-     "chgH1": 2.63,
-     "chgH6": 29.3,
-     "chg15": 8.16,
-     "accel": 1.29,
-     "volTrend": 2.4,
-     "ratioH1": 2,
-     "ageH": 22.2,
-     "top10Pct": 19.8
-    },
-    "fill": {
-     "rawPrice": 0.0003276980201652238,
-     "fillCandleT": 1793293500,
-     "at": "2026-10-29T17:05:33.075Z"
-    },
-    "checkedThrough": 1793296860,
-    "peakNetPct": 0.02,
-    "worstNetPct": -6.51,
-    "lastTradeAt": "2026-10-29T18:01:00.000Z",
-    "mark": {
-     "at": "2026-10-29T18:01:00.000Z",
-     "price": 0.0003300176794048639,
-     "netPct": -3.19,
-     "proceeds": 96.6
-    },
-    "targetPriceUsd": 0.0003883603922060141,
-    "stale": false
-   },
+   "cash": 96.6398,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1397,6 +1359,30 @@
      "worstNetPct": -3.54,
      "targetHit": true,
      "newBankroll": 99.7788
+    },
+    {
+     "n": 6,
+     "symbol": "TRUMPKIN",
+     "mint": "BLAytV5xTVEkYJYS1RoFR5Ypgm3JZ44CvVdZHTExpump",
+     "pairAddress": "EdQzwtmWkH5iB5Q6KPWQbQUYo1NPaCfY3zNCpoW9NDpV",
+     "list": "Jupiter",
+     "decidedAt": "2026-10-29T17:02:33.075Z",
+     "prevBankroll": 99.78,
+     "sizeUsd": 99.78,
+     "dexRoundTripPct": 2.94,
+     "fillAt": "2026-10-29T17:05:33.075Z",
+     "exitAt": "2026-10-29T18:05:33.075Z",
+     "holdHours": 1,
+     "reason": "1h time limit (target not reached)",
+     "entryPriceUsd": 0.0003276980201652238,
+     "exitPriceUsd": 0.0003301523853549216,
+     "grossPct": 0.75,
+     "costsUsd": 3.8863,
+     "netUsd": -3.139,
+     "netPct": -3.15,
+     "worstNetPct": -6.51,
+     "targetHit": false,
+     "newBankroll": 96.6398
     }
    ],
    "day": {

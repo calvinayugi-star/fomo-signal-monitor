@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Thu, Oct 29, 14:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Thu, Oct 29, 14:17 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Thu, Oct 29, 14:02 EDT. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$96.60** | **$30.00** |
-| Return since the start | -12.2% (from 110) | +20.0% (from 25) |
+| Bankroll now (open position at its last mark) | **$96.64** | **$30.00** |
+| Return since the start | -12.1% (from 110) | +20.0% (from 25) |
 | Goal | $5110.00 ($5000.00 to cash out + 110 kept): 1.9% there, ~31 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.6% there, ~29 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at the target | 1 (+4 closed early) | 1 |
+| Positions sold at the target | 1 (+5 closed early) | 1 |
 | Average time to reach the target | 0.1h | 0.0h |
 | Average worst point before the target | -3.5% | -35.3% |
-| Profit banked / costs | -$10.22 / $12.03 | $5.00 / $0.83 |
+| Profit banked / costs | -$13.36 / $15.92 | $5.00 / $0.83 |
 | Days the daily goal was met (per-day runs) | 0 of 3 | – |
-| Now | holding $TRUMPKIN (-3.2%, 0.9h) | in cash, searching |
+| Now | in cash, searching | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,31 +29,23 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$96.60** (-12.2%) |
+| Start → now | $110 → **$96.64** (-12.1%) |
 | Running for | 2.6 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at +13.93% | 1 (+4 closed early by a one-off exit) |
+| Positions sold at +13.93% | 1 (+5 closed early by a one-off exit) |
 | Average time to reach the target | 0.1h |
 | Average worst point before the target | -3.5% |
-| Profit banked / costs | -$10.22 / $12.03 |
+| Profit banked / costs | -$13.36 / $15.92 |
 | Days the daily goal was met | 0 of 3 · today started at $99.78 |
 | Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 31 more target sales from here (30 from the 110 seed) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $TRUMPKIN (Jupiter) · [DexScreener](https://dexscreener.com/solana/EdQzwtmWkH5iB5Q6KPWQbQUYo1NPaCfY3zNCpoW9NDpV) |
-| Bought | Oct 29, 13:02 · $99.78 at $0.0003277 |
-| Sell target | $0.0003884 (+13.93% net) |
-| Current value | $96.60 (-3.2% net, at Oct 29, 14:01) |
-| Best / worst while held | +0.0% / -6.5% |
-| Held for | 0.9h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 6 | Oct 29, 13:05 | TRUMPKIN | Jupiter | $99.78 | 1.0h | -6.5% | 0.0003277 → 0.0003302 | $3.89 | -3.1% | -$3.14 | $96.64 |
 | 5 | Oct 28, 22:05 | Kimchi | Graduated | $87.58 | 0.1h | -3.5% | 0.001034 → 0.001217 | $3.31 | +13.9% | $12.20 | $99.78 |
 | 4 | Oct 27, 22:05 | MOODENG | Jupiter | $89.19 | 1.0h | -2.2% | 0.03886 → 0.03874 | $1.34 | -1.8% | -$1.61 | $87.58 |
 | 3 | Oct 27, 14:05 | ZAUTH | Jupiter | $98.94 | 6.0h | -14.7% | 0.002031 → 0.001885 | $2.65 | -9.8% | -$9.75 | $89.19 |
