@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 99.7788,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "TRUMPKIN",
+    "mint": "BLAytV5xTVEkYJYS1RoFR5Ypgm3JZ44CvVdZHTExpump",
+    "pairAddress": "EdQzwtmWkH5iB5Q6KPWQbQUYo1NPaCfY3zNCpoW9NDpV",
+    "list": "Jupiter",
+    "decidedAt": "2026-10-29T17:02:33.075Z",
+    "alertPriceUsd": 0.0003216,
+    "sizeUsd": 99.7788,
+    "dexRoundTripPct": 2.94,
+    "roundTripPct": 3.93,
+    "score": 48,
+    "entry": {
+     "chgH1": 2.63,
+     "chgH6": 29.3,
+     "chg15": 8.16,
+     "accel": 1.29,
+     "volTrend": 2.4,
+     "ratioH1": 2,
+     "ageH": 22.2,
+     "top10Pct": 19.8
+    }
+   },
    "trades": [
     {
      "n": 1,
