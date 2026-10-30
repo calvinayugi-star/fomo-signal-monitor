@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Thu, Oct 29, 23:47 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 30, 00:02 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -18,7 +18,7 @@ Updated Thu, Oct 29, 23:47 EDT. Paper trades only: nothing is bought or sold.
 | Average time to reach the target | 0.1h | 0.0h |
 | Average worst point before the target | -3.5% | -35.3% |
 | Profit banked / costs | -$13.36 / $15.92 | $5.00 / $0.83 |
-| Days the daily goal was met (per-day runs) | 0 of 3 | – |
+| Days the daily goal was met (per-day runs) | 0 of 4 | – |
 | Now | in cash, searching | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
@@ -36,7 +36,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Average time to reach the target | 0.1h |
 | Average worst point before the target | -3.5% |
 | Profit banked / costs | -$13.36 / $15.92 |
-| Days the daily goal was met | 0 of 3 · today started at $99.78 |
+| Days the daily goal was met | 0 of 4 · today started at $96.64 |
 | Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 31 more target sales from here (30 from the 110 seed) |
 
 **Open position:** none (cash, searching for the next pre-spike token).
