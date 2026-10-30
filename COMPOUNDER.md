@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Fri, Oct 30, 01:02 EDT. Paper trades only: nothing is bought or sold.
+Updated Fri, Oct 30, 01:17 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,8 +10,8 @@ Updated Fri, Oct 30, 01:02 EDT. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$96.64** | **$30.00** |
-| Return since the start | -12.1% (from 110) | +20.0% (from 25) |
+| Bankroll now (open position at its last mark) | **$95.81** | **$30.00** |
+| Return since the start | -12.9% (from 110) | +20.0% (from 25) |
 | Goal | $5110.00 ($5000.00 to cash out + 110 kept): 1.9% there, ~31 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.6% there, ~29 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at the target | 1 (+5 closed early) | 1 |
@@ -19,7 +19,7 @@ Updated Fri, Oct 30, 01:02 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | -3.5% | -35.3% |
 | Profit banked / costs | -$13.36 / $15.92 | $5.00 / $0.83 |
 | Days the daily goal was met (per-day runs) | 0 of 4 | – |
-| Now | holding $MOGZ (n/a, n/a) | in cash, searching |
+| Now | holding $MOGZ (-0.9%, 0.2h) | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,8 +29,8 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$96.64** (-12.1%) |
-| Running for | 3.0 days (since Oct 27, 00:02) |
+| Start → now | $110 → **$95.81** (-12.9%) |
+| Running for | 3.1 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 1 (+5 closed early by a one-off exit) |
 | Average time to reach the target | 0.1h |
@@ -44,11 +44,11 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Token | $MOGZ (Jupiter) · [DexScreener](https://dexscreener.com/solana/7j13CapqLC4dGaGYFCxgL8t31R7B1Gt93uBh8EdoRp9H) |
-| Bought | Oct 30, 01:02 · $96.64 (fill pending) |
-| Sell target | +13.93% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+| Bought | Oct 30, 01:02 · $96.64 at $0.0001884 |
+| Sell target | $0.0002212 (+13.93% net) |
+| Current value | $95.81 (-0.9% net, at Oct 30, 01:16) |
+| Best / worst while held | -0.9% / -3.0% |
+| Held for | 0.2h |
 
 ### Completed positions (newest first)
 
@@ -66,7 +66,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Start → now | $25 → **$30.00** (+20.0%) |
-| Running for | 3.0 days (since Oct 27, 00:02) |
+| Running for | 3.1 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +20% | 1 |
 | Average time to reach the target | 0.0h |
