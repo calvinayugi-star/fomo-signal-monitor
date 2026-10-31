@@ -1452,8 +1452,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 30,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "发发",
+    "mint": "CcSRXUReR3VVG92C4rE8FqsLomzwmH6Dn1WhTGebpump",
+    "pairAddress": "3rHxNXeg6SEdkdWFFWQD9bZjELWm8xynWWeYoEE5fmqy",
+    "list": "Jupiter + DexScreener",
+    "decidedAt": "2026-10-31T09:32:27.733Z",
+    "alertPriceUsd": 0.0002705,
+    "sizeUsd": 30,
+    "dexRoundTripPct": 1.27,
+    "roundTripPct": 3.73,
+    "score": 48.8,
+    "entry": {
+     "chgH1": 497,
+     "chgH6": 497,
+     "chg15": 17.18,
+     "accel": null,
+     "volTrend": 0.93,
+     "ratioH1": 1.46,
+     "ageH": 0.9,
+     "top10Pct": 33.3
+    }
+   },
    "trades": [
     {
      "n": 1,

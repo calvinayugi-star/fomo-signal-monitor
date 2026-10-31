@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sat, Oct 31, 05:17 EDT. Paper trades only: nothing is bought or sold.
+Updated Sat, Oct 31, 05:32 EDT. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -19,7 +19,7 @@ Updated Sat, Oct 31, 05:17 EDT. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | -3.2% | -35.3% |
 | Profit banked / costs | $0.10 / $19.26 | $5.00 / $0.83 |
 | Days the daily goal was met (per-day runs) | 1 of 5 | – |
-| Now | in cash, searching | in cash, searching |
+| Now | in cash, searching | holding $发发 (n/a, n/a) |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -66,7 +66,16 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Profit banked / costs | $5.00 / $0.83 |
 | Each +20% sale multiplies the bankroll by | 1.2000×; $5025.00 goal: 29 more target sales from here (30 from the 25 seed) |
 
-**Open position:** none (cash, searching for the next pre-spike token).
+### Open position
+
+| | |
+|---|---|
+| Token | $发发 (Jupiter + DexScreener) · [DexScreener](https://dexscreener.com/solana/3rHxNXeg6SEdkdWFFWQD9bZjELWm8xynWWeYoEE5fmqy) |
+| Bought | Oct 31, 05:32 · $30.00 (fill pending) |
+| Sell target | +20% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
