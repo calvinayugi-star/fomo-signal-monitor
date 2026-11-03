@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 110.1017,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "HAMSTER",
+    "mint": "7gCND4jhgJ8Mq1XxNhRdercinXh7fcCDPjA9uEQLk3f2",
+    "pairAddress": "EkHWcjpNiu8N368E9f4Hkzab3nVdAAg6BLWtVmZGL2t8",
+    "list": "Trending + Jupiter",
+    "decidedAt": "2026-11-03T11:47:38.504Z",
+    "alertPriceUsd": 0.0001919,
+    "sizeUsd": 110.1017,
+    "dexRoundTripPct": 2.46,
+    "roundTripPct": 3.45,
+    "score": 58.5,
+    "entry": {
+     "chgH1": 18.87,
+     "chgH6": 13.89,
+     "chg15": 23.79,
+     "accel": 1.68,
+     "volTrend": 2.67,
+     "ratioH1": 1.79,
+     "ageH": 13.2,
+     "top10Pct": 48.3
+    }
+   },
    "trades": [
     {
      "n": 1,
