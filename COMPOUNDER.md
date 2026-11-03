@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Tue, Nov 3, 10:47 EST. Paper trades only: nothing is bought or sold.
+Updated Tue, Nov 3, 11:02 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Tue, Nov 3, 10:47 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$108.84** | **$5.30** |
-| Return since the start | -1.1% (from 110) | -78.8% (from 25) |
+| Bankroll now (open position at its last mark) | **$108.43** | **$5.30** |
+| Return since the start | -1.4% (from 110) | -78.8% (from 25) |
 | Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.1% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at the target | 2 (+6 closed early) | 1 (+1 closed early) |
+| Positions sold at the target | 2 (+7 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 0.3h | 0.0h |
 | Average worst point before the target | -3.2% | -35.3% |
-| Profit banked / costs | -$6.97 / $22.89 | -$19.70 / $1.34 |
+| Profit banked / costs | -$1.57 / $26.47 | -$19.70 / $1.34 |
 | Days the daily goal was met (per-day runs) | 1 of 8 | – |
-| Now | holding $CAPY (+5.6%, 0.9h) | in cash, searching |
+| Now | in cash, searching | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,31 +29,23 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$108.84** (-1.1%) |
+| Start → now | $110 → **$108.43** (-1.4%) |
 | Running for | 7.5 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at +13.93% | 2 (+6 closed early by a one-off exit) |
+| Positions sold at +13.93% | 2 (+7 closed early by a one-off exit) |
 | Average time to reach the target | 0.3h |
 | Average worst point before the target | -3.2% |
-| Profit banked / costs | -$6.97 / $22.89 |
+| Profit banked / costs | -$1.57 / $26.47 |
 | Days the daily goal was met | 1 of 8 · today started at $110.10 |
 | Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 30 more target sales from here (30 from the 110 seed) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $CAPY (Trending + Jupiter) · [DexScreener](https://dexscreener.com/solana/4WutFjFujupWJm5UUidXouMgUPauXG4sAEjVaYqjrMBW) |
-| Bought | Nov 3, 09:47 · $103.03 at $0.0006536 |
-| Sell target | $0.0007692 (+13.93% net) |
-| Current value | $108.84 (+5.6% net, at Nov 3, 10:46) |
-| Best / worst while held | +11.6% / -15.7% |
-| Held for | 0.9h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 9 | Nov 3, 09:50 | CAPY | Trending + Jupiter | $103.03 | 1.0h | -15.7% | 0.0006536 → 0.0007104 | $3.57 | +5.2% | $5.39 | $108.43 |
 | 8 | Nov 3, 06:50 | HAMSTER | Trending + Jupiter | $110.10 | 1.0h | -14.8% | 0.0002064 → 0.0002000 | $3.63 | -6.4% | -$7.07 | $103.03 |
 | 7 | Oct 30, 01:05 | MOGZ | Jupiter | $96.64 | 0.4h | -3.0% | 0.0001884 → 0.0002212 | $3.34 | +13.9% | $13.46 | $110.10 |
 | 6 | Oct 29, 13:05 | TRUMPKIN | Jupiter | $99.78 | 1.0h | -6.5% | 0.0003277 → 0.0003302 | $3.89 | -3.1% | -$3.14 | $96.64 |
