@@ -1410,7 +1410,7 @@
     }
    ],
    "day": {
-    "date": "2026-11-02",
+    "date": "2026-11-03",
     "startBankroll": 110.1
    },
    "days": [
@@ -1442,6 +1442,11 @@
     },
     {
      "date": "2026-11-01",
+     "startBankroll": 110.1,
+     "endBankroll": 110.1
+    },
+    {
+     "date": "2026-11-02",
      "startBankroll": 110.1,
      "endBankroll": 110.1
     }
