@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Tue, Nov 3, 06:47 EST. Paper trades only: nothing is bought or sold.
+Updated Tue, Nov 3, 07:02 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,7 +10,7 @@ Updated Tue, Nov 3, 06:47 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$110.10** | **$5.30** |
+| Bankroll now (open position at its last mark) | **$110.14** | **$5.30** |
 | Return since the start | +0.1% (from 110) | -78.8% (from 25) |
 | Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.2% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
@@ -19,7 +19,7 @@ Updated Tue, Nov 3, 06:47 EST. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | -3.2% | -35.3% |
 | Profit banked / costs | $0.10 / $19.26 | -$19.70 / $1.34 |
 | Days the daily goal was met (per-day runs) | 1 of 8 | – |
-| Now | holding $HAMSTER (n/a, n/a) | in cash, searching |
+| Now | holding $HAMSTER (+0.0%, 0.2h) | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,7 +29,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$110.10** (+0.1%) |
+| Start → now | $110 → **$110.14** (+0.1%) |
 | Running for | 7.3 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 2 (+5 closed early by a one-off exit) |
@@ -44,11 +44,11 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Token | $HAMSTER (Trending + Jupiter) · [DexScreener](https://dexscreener.com/solana/EkHWcjpNiu8N368E9f4Hkzab3nVdAAg6BLWtVmZGL2t8) |
-| Bought | Nov 3, 06:47 · $110.10 (fill pending) |
-| Sell target | +13.93% net |
-| Current value | n/a |
-| Best / worst while held | n/a / n/a |
-| Held for | n/a |
+| Bought | Nov 3, 06:47 · $110.10 at $0.0002064 |
+| Sell target | $0.0002435 (+13.93% net) |
+| Current value | $110.14 (+0.0% net, at Nov 3, 07:01) |
+| Best / worst while held | +9.9% / -4.3% |
+| Held for | 0.2h |
 
 ### Completed positions (newest first)
 
