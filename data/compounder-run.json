@@ -1258,7 +1258,24 @@
      "ratioH1": 1.68,
      "ageH": 19.1,
      "top10Pct": 31.2
-    }
+    },
+    "fill": {
+     "rawPrice": 0.0006535681694388337,
+     "fillCandleT": 1793717400,
+     "at": "2026-11-03T14:50:39.053Z"
+    },
+    "checkedThrough": 1793718060,
+    "peakNetPct": -0.04,
+    "worstNetPct": -9.75,
+    "lastTradeAt": "2026-11-03T15:01:00.000Z",
+    "mark": {
+     "at": "2026-11-03T15:01:00.000Z",
+     "price": 0.0006585620435724316,
+     "netPct": -2.45,
+     "proceeds": 100.51
+    },
+    "targetPriceUsd": 0.0007691506861185164,
+    "stale": false
    },
    "trades": [
     {
