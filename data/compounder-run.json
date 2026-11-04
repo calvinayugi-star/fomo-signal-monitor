@@ -1237,46 +1237,8 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "HIGH",
-    "mint": "7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
-    "pairAddress": "CqvMZmWDvEufa5rzkubidyR4zMDqDPoLjAtsW6wGsPMu",
-    "list": "Jupiter",
-    "decidedAt": "2026-11-04T05:32:25.848Z",
-    "alertPriceUsd": 0.0001471,
-    "sizeUsd": 108.4252,
-    "dexRoundTripPct": 2.12,
-    "roundTripPct": 3.1,
-    "score": 46.9,
-    "entry": {
-     "chgH1": 23.53,
-     "chgH6": 37.14,
-     "chg15": 24.43,
-     "accel": 1.53,
-     "volTrend": 3.44,
-     "ratioH1": 1.18,
-     "ageH": 12.3,
-     "top10Pct": 34.4
-    },
-    "fill": {
-     "rawPrice": 0.00014790179541008446,
-     "fillCandleT": 1793770500,
-     "at": "2026-11-04T05:35:25.848Z"
-    },
-    "checkedThrough": 1793773860,
-    "peakNetPct": 6,
-    "worstNetPct": -9.22,
-    "lastTradeAt": "2026-11-04T06:31:00.000Z",
-    "mark": {
-     "at": "2026-11-04T06:31:00.000Z",
-     "price": 0.00015977044411696843,
-     "netPct": 4.7,
-     "proceeds": 113.53
-    },
-    "targetPriceUsd": 0.00017384922932012212,
-    "stale": false
-   },
+   "cash": 114.4852,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1493,6 +1455,30 @@
      "worstNetPct": -15.7,
      "targetHit": false,
      "newBankroll": 108.4252
+    },
+    {
+     "n": 10,
+     "symbol": "HIGH",
+     "mint": "7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
+     "pairAddress": "CqvMZmWDvEufa5rzkubidyR4zMDqDPoLjAtsW6wGsPMu",
+     "list": "Jupiter",
+     "decidedAt": "2026-11-04T05:32:25.848Z",
+     "prevBankroll": 108.43,
+     "sizeUsd": 108.43,
+     "dexRoundTripPct": 2.12,
+     "fillAt": "2026-11-04T05:35:25.848Z",
+     "exitAt": "2026-11-04T06:35:25.848Z",
+     "holdHours": 1,
+     "reason": "1h time limit (target not reached)",
+     "entryPriceUsd": 0.00014790179541008446,
+     "exitPriceUsd": 0.00016112154376270085,
+     "grossPct": 8.94,
+     "costsUsd": 3.6313,
+     "netUsd": 6.06,
+     "netPct": 5.59,
+     "worstNetPct": -9.22,
+     "targetHit": false,
+     "newBankroll": 114.4852
     }
    ],
    "day": {
