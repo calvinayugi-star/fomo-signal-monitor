@@ -654,7 +654,8 @@ A new cycle starts from $${run.seedUsd} at the next run.`);
     fs.appendFileSync(path.join(dataDir, 'compounder-hourly.jsonl'), JSON.stringify(hourly) + '\n');
     fs.writeFileSync(reportPath, compounderMarkdown(ledger, cfg, now, time));
     fs.writeFileSync(outcomesFile, JSON.stringify(outcomes) + '\n');
-    if (finished.length) fs.appendFileSync(path.join(dataDir, 'candidate-outcomes.jsonl'), finished.map((x) => JSON.stringify(x)).join('\n') + '\n');
+    for (const month of new Set(finished.map((x) => x.t.slice(0, 7))))
+      fs.appendFileSync(path.join(dataDir, `candidate-outcomes-${month}.jsonl`), finished.filter((x) => x.t.startsWith(month)).map((x) => JSON.stringify(x)).join('\n') + '\n');
     fs.mkdirSync(path.dirname(holdersFile), { recursive: true });
     fs.writeFileSync(holdersFile, JSON.stringify(holderLog));
   }

@@ -1,7 +1,8 @@
 // Candidate outcome tracker (since 2026-10-28, user request): every token a Compounder run evaluates inside its age window,
 // bought or rejected (with the reason), is re-priced 15 and 60 minutes later (config compounder.outcomes.afterMinutes), so the
 // entry rules and crash filters can be judged on the current sources. Pending tokens live in data/outcomes-pending.json;
-// a token whose horizons are all recorded is appended to data/candidate-outcomes.jsonl. Prices come from DexScreener
+// a token whose horizons are all recorded is appended to data/candidate-outcomes-YYYY-MM.jsonl (one file per month of the
+// sighting, ~25 MB a month, kept under GitHub's 100 MB file limit). Prices come from DexScreener
 // (30 tokens per call), at the first run after each horizon; `min` is the real time elapsed, which can be late if runs were missed.
 
 const round = (x, d = 2) => (typeof x === 'number' && Number.isFinite(x) ? +x.toFixed(d) : x ?? null);
@@ -15,10 +16,12 @@ export function trackNew(state, rows, { variant, bestMint, nowMs, cfg }) {
   state.lastTracked ??= {};
   for (const [mint, t] of Object.entries(state.lastTracked)) if (nowMs - t > o.trackEveryHours * 3600e3) delete state.lastTracked[mint];
   for (const r of rows) {
-    if (r.priceUsd == null || state.lastTracked[r.mint]) continue;
+    // The bought token is always tracked from its buy, even if it was tracked (as a reject) within trackEveryHours.
+    const bought = r.mint === bestMint;
+    if (r.priceUsd == null || (state.lastTracked[r.mint] && !bought)) continue;
     state.lastTracked[r.mint] = nowMs;
     const row = Object.fromEntries(FIELDS.map((f) => [f, r[f] ?? null]));
-    state.pending.push({ t: new Date(nowMs).toISOString(), variant, list: r.sources.join(' + '), bought: r.mint === bestMint, ...row, after: {} });
+    state.pending.push({ t: new Date(nowMs).toISOString(), variant, list: r.sources.join(' + '), bought, ...row, after: {} });
   }
 }
 

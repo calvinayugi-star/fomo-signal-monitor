@@ -122,7 +122,7 @@ The per-day runs were added the same way, as copies of the +20% run (same start 
   against a holder reading 10 min–3h old (kept in the Actions cache), holders falling, the developer's share down 0.5+ points, or the top-10 share down 5+ points.
   A token seen for the first time has no earlier reading and passes the holder checks.
   **Outcome tracker:** every token a run evaluates inside its age window (bought or rejected, with the reason and its entry numbers) is re-priced
-  15 and 60 min later on DexScreener: pending in `data/outcomes-pending.json`, complete in `data/candidate-outcomes.jsonl`.
+  15 and 60 min later on DexScreener: pending in `data/outcomes-pending.json`, complete in `data/candidate-outcomes-YYYY-MM.jsonl` (one file per month, since 2026-11-04).
 - **More lists (2026-10-24, user: as many tokens as possible):** besides Trending and Graduated, candidates now also come from Jupiter (top trending, top traded and top organic-score tokens over 5m/1h/6h/24h, tokenized stocks and other non-meme assets included) and DexScreener (latest and top boosted tokens, latest token profiles): ~400 more tokens per run, mostly 72h+ old. A token on several lists shows them all, e.g. Trending + Jupiter.
 - **Records:** [data/compounder-run.json](data/compounder-run.json) is the ledger (every run and trade, never deleted; the v1 October run
   is kept there, ended at $44.19). [data/compounder-hourly.jsonl](data/compounder-hourly.jsonl) has every hourly decision, reject counts and the
