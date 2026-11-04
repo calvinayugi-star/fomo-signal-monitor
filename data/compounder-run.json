@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 96.6328,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "FOBET",
+    "mint": "4gMXHewBS7B4qbUuNw9LLeq1DjBCuuZy3B76VJq6pump",
+    "pairAddress": "9oKbruCw9ot3yUMNPirvMMAkuzvpKqCcTAt8YzE3gs14",
+    "list": "Graduated",
+    "decidedAt": "2026-11-04T23:32:26.017Z",
+    "alertPriceUsd": 0.0004538,
+    "sizeUsd": 96.6328,
+    "dexRoundTripPct": 2.63,
+    "roundTripPct": 3.62,
+    "score": 70.6,
+    "entry": {
+     "chgH1": 2.16,
+     "chgH6": 9.07,
+     "chg15": -0.27,
+     "accel": 34.82,
+     "volTrend": 4,
+     "ratioH1": 2.49,
+     "ageH": 57.8,
+     "top10Pct": 27.5
+    }
+   },
    "trades": [
     {
      "n": 1,
