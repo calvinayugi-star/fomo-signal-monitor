@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 108.4252,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "HIGH",
+    "mint": "7ymF66Z6VhgNiwadtVhjTtT6U7iQRpSxeiRrhfufhigh",
+    "pairAddress": "CqvMZmWDvEufa5rzkubidyR4zMDqDPoLjAtsW6wGsPMu",
+    "list": "Jupiter",
+    "decidedAt": "2026-11-04T05:32:25.848Z",
+    "alertPriceUsd": 0.0001471,
+    "sizeUsd": 108.4252,
+    "dexRoundTripPct": 2.12,
+    "roundTripPct": 3.1,
+    "score": 46.9,
+    "entry": {
+     "chgH1": 23.53,
+     "chgH6": 37.14,
+     "chg15": 24.43,
+     "accel": 1.53,
+     "volTrend": 3.44,
+     "ratioH1": 1.18,
+     "ageH": 12.3,
+     "top10Pct": 34.4
+    }
+   },
    "trades": [
     {
      "n": 1,
