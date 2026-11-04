@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 114.4852,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "XDG",
+    "mint": "J1pZjNKh4BnbXBsroE4acJv3TYzCGxTn46VrZii6orEZ",
+    "pairAddress": "6USsjkXpEneqTH9eG63VWFz3oP7MvUArSWA5tFDnqdAo",
+    "list": "Jupiter",
+    "decidedAt": "2026-11-04T07:17:37.267Z",
+    "alertPriceUsd": 0.0001703,
+    "sizeUsd": 114.4852,
+    "dexRoundTripPct": 2.56,
+    "roundTripPct": 3.55,
+    "score": 51.5,
+    "entry": {
+     "chgH1": 5.44,
+     "chgH6": 28.86,
+     "chg15": 2.02,
+     "accel": 1.06,
+     "volTrend": 1.56,
+     "ratioH1": 2.19,
+     "ageH": 25,
+     "top10Pct": 39.7
+    }
+   },
    "trades": [
     {
      "n": 1,
