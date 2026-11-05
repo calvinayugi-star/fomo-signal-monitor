@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 95.8473,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "CHICKPOT",
+    "mint": "8B6ZZAC2FQ7AJrZPz7veXJrod5t2MG1C5MZBLNbUpump",
+    "pairAddress": "4jAPU7rXQ26g4A56uQY73n3FAef5UZYpV7nx28HWuCkv",
+    "list": "Graduated",
+    "decidedAt": "2026-11-05T01:32:26.675Z",
+    "alertPriceUsd": 0.001217,
+    "sizeUsd": 95.8473,
+    "dexRoundTripPct": 0.89,
+    "roundTripPct": 1.89,
+    "score": 54.8,
+    "entry": {
+     "chgH1": 11.97,
+     "chgH6": 13.95,
+     "chg15": 16.76,
+     "accel": 464.53,
+     "volTrend": 3.48,
+     "ratioH1": 1.17,
+     "ageH": 21.2,
+     "top10Pct": 17.8
+    }
+   },
    "trades": [
     {
      "n": 1,
