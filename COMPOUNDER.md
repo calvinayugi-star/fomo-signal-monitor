@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Wed, Nov 4, 19:17 EST. Paper trades only: nothing is bought or sold.
+Updated Wed, Nov 4, 19:32 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -19,7 +19,7 @@ Updated Wed, Nov 4, 19:17 EST. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | -5.0% | -35.3% |
 | Profit banked / costs | -$13.37 / $39.36 | -$19.70 / $1.34 |
 | Days the daily goal was met (per-day runs) | 1 of 9 | – |
-| Now | holding $FOBET (-0.9%, 0.7h) | in cash, searching |
+| Now | holding $FOBET (-0.9%, 0.9h) | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -30,7 +30,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Start → now | $110 → **$95.76** (-12.9%) |
-| Running for | 8.8 days (since Oct 27, 00:02) |
+| Running for | 8.9 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 3 (+10 closed early by a one-off exit) |
 | Average time to reach the target | 0.5h |
@@ -48,7 +48,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Sell target | $0.0005319 (+13.93% net) |
 | Current value | $95.76 (-0.9% net, at Nov 4, 18:45) |
 | Best / worst while held | -0.8% / -4.8% |
-| Held for | 0.7h |
+| Held for | 0.9h |
 
 ### Completed positions (newest first)
 
@@ -73,7 +73,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Start → now | $25 → **$5.30** (-78.8%) |
-| Running for | 8.8 days (since Oct 27, 00:02) |
+| Running for | 8.9 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +20% | 1 (+1 closed early by a one-off exit) |
 | Average time to reach the target | 0.0h |
