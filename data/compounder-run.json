@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 109.1988,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "MINTED",
+    "mint": "8crRRo8zpxJaUhnV81hzyqh4JU5RpuvVaP7iCfV2aXVV",
+    "pairAddress": "9u7XfTZnCUjQ2NLExE4LZ93Z8dBuzWaRJvPAaeezEbpK",
+    "list": "Jupiter + DexScreener",
+    "decidedAt": "2026-11-05T15:17:25.458Z",
+    "alertPriceUsd": 0.0001784,
+    "sizeUsd": 109.1988,
+    "dexRoundTripPct": 1.81,
+    "roundTripPct": 2.8,
+    "score": 76.3,
+    "entry": {
+     "chgH1": 7.25,
+     "chgH6": 9.51,
+     "chg15": -0.55,
+     "accel": 3.97,
+     "volTrend": 2.37,
+     "ratioH1": 2.6,
+     "ageH": 12.6,
+     "top10Pct": 31.7
+    }
+   },
    "trades": [
     {
      "n": 1,
