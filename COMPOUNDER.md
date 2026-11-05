@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Wed, Nov 4, 20:47 EST. Paper trades only: nothing is bought or sold.
+Updated Wed, Nov 4, 21:02 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Wed, Nov 4, 20:47 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$98.80** | **$5.30** |
-| Return since the start | -10.2% (from 110) | -78.8% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 1.9% there, ~31 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
+| Bankroll now (open position at its last mark) | **$80.44** | **$5.30** |
+| Return since the start | -26.9% (from 110) | -78.8% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 1.6% there, ~32 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at the target | 3 (+11 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 0.5h | 0.0h |
 | Average worst point before the target | -5.0% | -35.3% |
 | Profit banked / costs | -$14.15 / $42.90 | -$19.70 / $1.34 |
 | Days the daily goal was met (per-day runs) | 1 of 9 | – |
-| Now | holding $CHICKPOT (+3.1%, 0.2h) | in cash, searching |
+| Now | holding $CHICKPOT (-16.1%, 0.5h) | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,7 +29,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$98.80** (-10.2%) |
+| Start → now | $110 → **$80.44** (-26.9%) |
 | Running for | 8.9 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 3 (+11 closed early by a one-off exit) |
@@ -37,7 +37,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Average worst point before the target | -5.0% |
 | Profit banked / costs | -$14.15 / $42.90 |
 | Days the daily goal was met | 1 of 9 · today started at $108.43 |
-| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 31 more target sales from here (30 from the 110 seed) |
+| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 32 more target sales from here (30 from the 110 seed) |
 
 ### Open position
 
@@ -46,9 +46,9 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Token | $CHICKPOT (Graduated) · [DexScreener](https://dexscreener.com/solana/4jAPU7rXQ26g4A56uQY73n3FAef5UZYpV7nx28HWuCkv) |
 | Bought | Nov 4, 20:32 · $95.85 at $0.001050 |
 | Sell target | $0.001219 (+13.93% net) |
-| Current value | $98.80 (+3.1% net, at Nov 4, 20:46) |
-| Best / worst while held | +4.3% / -3.1% |
-| Held for | 0.2h |
+| Current value | $80.44 (-16.1% net, at Nov 4, 21:01) |
+| Best / worst while held | +4.3% / -26.4% |
+| Held for | 0.5h |
 
 ### Completed positions (newest first)
 
