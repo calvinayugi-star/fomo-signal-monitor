@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Thu, Nov 5, 10:47 EST. Paper trades only: nothing is bought or sold.
+Updated Thu, Nov 5, 11:32 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Thu, Nov 5, 10:47 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$105.77** | **$5.30** |
-| Return since the start | -3.8% (from 110) | -78.8% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.1% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
+| Bankroll now (open position at its last mark) | **$100.67** | **$5.30** |
+| Return since the start | -8.5% (from 110) | -78.8% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.0% there, ~31 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at the target | 4 (+11 closed early) | 1 (+1 closed early) |
+| Positions sold at the target | 4 (+12 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 0.6h | 0.0h |
 | Average worst point before the target | -10.8% | -35.3% |
-| Profit banked / costs | -$0.80 / $44.99 | -$19.70 / $1.34 |
+| Profit banked / costs | -$9.33 / $47.86 | -$19.70 / $1.34 |
 | Days the daily goal was met (per-day runs) | 1 of 10 | – |
-| Now | holding $MINTED (-3.1%, 0.5h) | in cash, searching |
+| Now | in cash, searching | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,31 +29,23 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$105.77** (-3.8%) |
+| Start → now | $110 → **$100.67** (-8.5%) |
 | Running for | 9.5 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at +13.93% | 4 (+11 closed early by a one-off exit) |
+| Positions sold at +13.93% | 4 (+12 closed early by a one-off exit) |
 | Average time to reach the target | 0.6h |
 | Average worst point before the target | -10.8% |
-| Profit banked / costs | -$0.80 / $44.99 |
+| Profit banked / costs | -$9.33 / $47.86 |
 | Days the daily goal was met | 1 of 10 · today started at $109.20 |
-| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 30 more target sales from here (30 from the 110 seed) |
+| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 31 more target sales from here (30 from the 110 seed) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $MINTED (Jupiter + DexScreener) · [DexScreener](https://dexscreener.com/solana/9u7XfTZnCUjQ2NLExE4LZ93Z8dBuzWaRJvPAaeezEbpK) |
-| Bought | Nov 5, 10:17 · $109.20 at $0.0001799 |
-| Sell target | $0.0002108 (+13.93% net) |
-| Current value | $105.77 (-3.1% net, at Nov 5, 10:45) |
-| Best / worst while held | -2.8% / -4.5% |
-| Held for | 0.5h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 16 | Nov 5, 10:20 | MINTED | Jupiter + DexScreener | $109.20 | 1.0h | -13.1% | 0.0001799 → 0.0001706 | $2.87 | -7.8% | -$8.53 | $100.67 |
 | 15 | Nov 4, 20:35 | CHICKPOT | Graduated | $95.85 | 0.8h | -28.3% | 0.001050 → 0.001219 | $2.09 | +13.9% | $13.35 | $109.20 |
 | 14 | Nov 4, 18:35 | FOBET | Graduated | $96.63 | 1.0h | -4.8% | 0.0004503 → 0.0004631 | $3.55 | -0.8% | -$0.79 | $95.85 |
 | 13 | Nov 4, 08:50 | RICO | Jupiter + DexScreener | $84.82 | 0.9h | -8.6% | 0.0005046 → 0.0005954 | $3.44 | +13.9% | $11.82 | $96.63 |
