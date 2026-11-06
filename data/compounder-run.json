@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 100.6717,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "WEALTH",
+    "mint": "8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump",
+    "pairAddress": "5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro",
+    "list": "Trending + Jupiter",
+    "decidedAt": "2026-11-06T19:47:40.743Z",
+    "alertPriceUsd": 0.0003939,
+    "sizeUsd": 100.6717,
+    "dexRoundTripPct": 2.66,
+    "roundTripPct": 3.64,
+    "score": 45.7,
+    "entry": {
+     "chgH1": 20.76,
+     "chgH6": 37.53,
+     "chg15": 17.4,
+     "accel": 1.51,
+     "volTrend": 1.52,
+     "ratioH1": 1.41,
+     "ageH": 28.7,
+     "top10Pct": 29.9
+    }
+   },
    "trades": [
     {
      "n": 1,
