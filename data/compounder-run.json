@@ -1237,46 +1237,8 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "WEALTH",
-    "mint": "8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump",
-    "pairAddress": "5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro",
-    "list": "Trending + Jupiter",
-    "decidedAt": "2026-11-06T19:47:40.743Z",
-    "alertPriceUsd": 0.0003939,
-    "sizeUsd": 100.6717,
-    "dexRoundTripPct": 2.66,
-    "roundTripPct": 3.64,
-    "score": 45.7,
-    "entry": {
-     "chgH1": 20.76,
-     "chgH6": 37.53,
-     "chg15": 17.4,
-     "accel": 1.51,
-     "volTrend": 1.52,
-     "ratioH1": 1.41,
-     "ageH": 28.7,
-     "top10Pct": 29.9
-    },
-    "fill": {
-     "rawPrice": 0.00035589490629965977,
-     "fillCandleT": 1793994600,
-     "at": "2026-11-06T19:50:40.743Z"
-    },
-    "checkedThrough": 1793996160,
-    "peakNetPct": 4.44,
-    "worstNetPct": -10.45,
-    "lastTradeAt": "2026-11-06T20:16:00.000Z",
-    "mark": {
-     "at": "2026-11-06T20:16:00.000Z",
-     "price": 0.00034376340305274094,
-     "netPct": -6.88,
-     "proceeds": 93.74
-    },
-    "targetPriceUsd": 0.00042059743768652996,
-    "stale": false
-   },
+   "cash": 114.6953,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1661,11 +1623,36 @@
      "worstNetPct": -13.14,
      "targetHit": false,
      "newBankroll": 100.6717
+    },
+    {
+     "n": 17,
+     "symbol": "WEALTH",
+     "mint": "8Mi9E1V2bdPeAaRkR5yxUsAvpzP6UBUEEUrYmgKNpump",
+     "pairAddress": "5n8V68fCaNTRQvaXzrmBryDe5jFLrgm65pFfsmia6Nro",
+     "list": "Trending + Jupiter",
+     "decidedAt": "2026-11-06T19:47:40.743Z",
+     "prevBankroll": 100.67,
+     "sizeUsd": 100.67,
+     "dexRoundTripPct": 2.66,
+     "fillAt": "2026-11-06T19:50:40.743Z",
+     "exitAt": "2026-11-06T20:23:00.000Z",
+     "holdHours": 0.5,
+     "reason": "+13.93% target",
+     "entryPriceUsd": 0.00035589490629965977,
+     "exitPriceUsd": 0.00042059743768652996,
+     "grossPct": 18.18,
+     "costsUsd": 4.2788,
+     "netUsd": 14.0236,
+     "netPct": 13.93,
+     "worstNetPct": -10.45,
+     "targetHit": true,
+     "newBankroll": 114.6953
     }
    ],
    "day": {
     "date": "2026-11-06",
-    "startBankroll": 100.67
+    "startBankroll": 100.67,
+    "goalMetAt": "2026-11-06T20:32:27.681Z"
    },
    "days": [
     {
