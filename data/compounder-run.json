@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 114.6953,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "FUSE",
+    "mint": "CzwzQw6eGr9RjF3ZLmEPxcxspSk6csRg9Gpvsnycz5eD",
+    "pairAddress": "B5oZhRDmdazrJoDSJSL9EQw6Fe9M46aG98bvXH3h1QNi",
+    "list": "Jupiter",
+    "decidedAt": "2026-11-07T13:47:37.217Z",
+    "alertPriceUsd": 0.0003864,
+    "sizeUsd": 114.6953,
+    "dexRoundTripPct": 2.35,
+    "roundTripPct": 3.34,
+    "score": 74.2,
+    "entry": {
+     "chgH1": 11.44,
+     "chgH6": 45.19,
+     "chg15": -0.64,
+     "accel": 2.21,
+     "volTrend": 2.18,
+     "ratioH1": 2.32,
+     "ageH": 17.4,
+     "top10Pct": 36.2
+    }
+   },
    "trades": [
     {
      "n": 1,
