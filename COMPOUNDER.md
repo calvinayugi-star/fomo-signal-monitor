@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sun, Nov 8, 07:32 EST. Paper trades only: nothing is bought or sold.
+Updated Sun, Nov 8, 07:47 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Sun, Nov 8, 07:32 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$125.87** | **$5.30** |
-| Return since the start | +14.4% (from 110) | -78.8% (from 25) |
+| Bankroll now (open position at its last mark) | **$125.42** | **$5.30** |
+| Return since the start | +14.0% (from 110) | -78.8% (from 25) |
 | Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.5% there, ~29 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at the target | 7 (+12 closed early) | 1 (+1 closed early) |
+| Positions sold at the target | 7 (+13 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 0.5h | 0.0h |
 | Average worst point before the target | -9.8% | -35.3% |
-| Profit banked / costs | $38.88 / $61.79 | -$19.70 / $1.34 |
+| Profit banked / costs | $15.42 / $65.37 | -$19.70 / $1.34 |
 | Days the daily goal was met (per-day runs) | 3 of 13 | – |
-| Now | holding $HEREWEGO (-15.4%, 0.9h) | in cash, searching |
+| Now | in cash, searching | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,31 +29,23 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$125.87** (+14.4%) |
+| Start → now | $110 → **$125.42** (+14.0%) |
 | Running for | 12.4 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at +13.93% | 7 (+12 closed early by a one-off exit) |
+| Positions sold at +13.93% | 7 (+13 closed early by a one-off exit) |
 | Average time to reach the target | 0.5h |
 | Average worst point before the target | -9.8% |
-| Profit banked / costs | $38.88 / $61.79 |
+| Profit banked / costs | $15.42 / $65.37 |
 | Days the daily goal was met | 3 of 13 · today started at $148.88 |
 | Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 29 more target sales from here (30 from the 110 seed) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $HEREWEGO (Trending + Graduated) · [DexScreener](https://dexscreener.com/solana/67BwjNjSjbdPP3KPi6GDeevK25QGrprwFTTmQE4wSziR) |
-| Bought | Nov 8, 06:32 · $148.88 at $0.002043 |
-| Sell target | $0.002394 (+13.93% net) |
-| Current value | $125.87 (-15.4% net, at Nov 8, 07:31) |
-| Best / worst while held | +8.2% / -15.9% |
-| Held for | 0.9h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 20 | Nov 8, 06:35 | HEREWEGO | Trending + Graduated | $148.88 | 1.0h | -19.0% | 0.002043 → 0.001770 | $3.58 | -15.8% | -$23.46 | $125.42 |
 | 19 | Nov 7, 09:05 | PIRATE | Trending + Jupiter | $130.67 | 0.5h | -6.5% | 0.0003571 → 0.0004210 | $5.20 | +13.9% | $18.20 | $148.88 |
 | 18 | Nov 7, 08:50 | FUSE | Jupiter | $114.70 | 0.2h | -8.5% | 0.0004547 → 0.0005357 | $4.46 | +13.9% | $15.98 | $130.67 |
 | 17 | Nov 6, 14:50 | WEALTH | Trending + Jupiter | $100.67 | 0.5h | -10.4% | 0.0003559 → 0.0004206 | $4.28 | +13.9% | $14.02 | $114.70 |
