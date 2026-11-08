@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sun, Nov 8, 06:47 EST. Paper trades only: nothing is bought or sold.
+Updated Sun, Nov 8, 07:02 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Sun, Nov 8, 06:47 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$145.46** | **$5.30** |
-| Return since the start | +32.2% (from 110) | -78.8% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.8% there, ~28 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
+| Bankroll now (open position at its last mark) | **$137.53** | **$5.30** |
+| Return since the start | +25.0% (from 110) | -78.8% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.7% there, ~28 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at the target | 7 (+12 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 0.5h | 0.0h |
 | Average worst point before the target | -9.8% | -35.3% |
 | Profit banked / costs | $38.88 / $61.79 | -$19.70 / $1.34 |
 | Days the daily goal was met (per-day runs) | 3 of 13 | – |
-| Now | holding $HEREWEGO (-2.3%, 0.2h) | in cash, searching |
+| Now | holding $HEREWEGO (-7.6%, 0.5h) | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,7 +29,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$145.46** (+32.2%) |
+| Start → now | $110 → **$137.53** (+25.0%) |
 | Running for | 12.3 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 7 (+12 closed early by a one-off exit) |
@@ -46,9 +46,9 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Token | $HEREWEGO (Trending + Graduated) · [DexScreener](https://dexscreener.com/solana/67BwjNjSjbdPP3KPi6GDeevK25QGrprwFTTmQE4wSziR) |
 | Bought | Nov 8, 06:32 · $148.88 at $0.002043 |
 | Sell target | $0.002394 (+13.93% net) |
-| Current value | $145.46 (-2.3% net, at Nov 8, 06:44) |
-| Best / worst while held | +8.2% / -4.6% |
-| Held for | 0.2h |
+| Current value | $137.53 (-7.6% net, at Nov 8, 07:01) |
+| Best / worst while held | +8.2% / -13.5% |
+| Held for | 0.5h |
 
 ### Completed positions (newest first)
 
