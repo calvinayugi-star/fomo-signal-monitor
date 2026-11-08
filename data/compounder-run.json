@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 148.8751,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "HEREWEGO",
+    "mint": "483nprwoMSoGQgrojSHWiePMbKPre7ZRDy4f8YNSpump",
+    "pairAddress": "67BwjNjSjbdPP3KPi6GDeevK25QGrprwFTTmQE4wSziR",
+    "list": "Trending + Graduated",
+    "decidedAt": "2026-11-08T11:32:27.076Z",
+    "alertPriceUsd": 0.001946,
+    "sizeUsd": 148.8751,
+    "dexRoundTripPct": 1.81,
+    "roundTripPct": 2.8,
+    "score": 63.1,
+    "entry": {
+     "chgH1": 24.78,
+     "chgH6": 71.39,
+     "chg15": 4.82,
+     "accel": 1.06,
+     "volTrend": 1.14,
+     "ratioH1": 2.23,
+     "ageH": 9.8,
+     "top10Pct": 12.1
+    }
+   },
    "trades": [
     {
      "n": 1,
