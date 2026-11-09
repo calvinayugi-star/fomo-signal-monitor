@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Mon, Nov 9, 08:02 EST. Paper trades only: nothing is bought or sold.
+Updated Mon, Nov 9, 08:17 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 15–60 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Mon, Nov 9, 08:02 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$108.37** | **$5.30** |
-| Return since the start | -1.5% (from 110) | -78.8% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.1% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
+| Bankroll now (open position at its last mark) | **$113.10** | **$5.30** |
+| Return since the start | +2.8% (from 110) | -78.8% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.2% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.1% there, ~38 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at the target | 7 (+13 closed early) | 1 (+1 closed early) |
 | Average time to reach the target | 0.5h | 0.0h |
 | Average worst point before the target | -9.8% | -35.3% |
 | Profit banked / costs | $15.42 / $65.37 | -$19.70 / $1.34 |
 | Days the daily goal was met (per-day runs) | 3 of 14 | – |
-| Now | holding $PUSSY (-13.6%, 0.7h) | in cash, searching |
+| Now | holding $PUSSY (-9.8%, 1.0h) | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,7 +29,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$108.37** (-1.5%) |
+| Start → now | $110 → **$113.10** (+2.8%) |
 | Running for | 13.4 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 7 (+13 closed early by a one-off exit) |
@@ -46,9 +46,9 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Token | $PUSSY (Trending + Jupiter) · [DexScreener](https://dexscreener.com/solana/4HHcEXZvCYQjSpLrGei5GpRwaZPUmNqFs6eh1BXssfsj) |
 | Bought | Nov 9, 07:17 · $125.42 at $0.002580 |
 | Sell target | $0.003011 (+13.93% net) |
-| Current value | $108.37 (-13.6% net, at Nov 9, 08:01) |
-| Best / worst while held | +8.7% / -13.7% |
-| Held for | 0.7h |
+| Current value | $113.10 (-9.8% net, at Nov 9, 08:16) |
+| Best / worst while held | +8.7% / -25.1% |
+| Held for | 1.0h |
 
 ### Completed positions (newest first)
 
