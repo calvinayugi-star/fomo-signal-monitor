@@ -1264,15 +1264,15 @@
      "fillCandleT": 1794226800,
      "at": "2026-11-09T12:20:26.981Z"
     },
-    "checkedThrough": 1794228360,
+    "checkedThrough": 1794229260,
     "peakNetPct": 8.66,
-    "worstNetPct": -2.4,
-    "lastTradeAt": "2026-11-09T12:46:00.000Z",
+    "worstNetPct": -13.73,
+    "lastTradeAt": "2026-11-09T13:01:00.000Z",
     "mark": {
-     "at": "2026-11-09T12:46:00.000Z",
-     "price": 0.0026078460002508515,
-     "netPct": -1.34,
-     "proceeds": 123.74
+     "at": "2026-11-09T13:01:00.000Z",
+     "price": 0.0022839000025059123,
+     "netPct": -13.59,
+     "proceeds": 108.37
     },
     "targetPriceUsd": 0.0030113791422748015,
     "stale": false
