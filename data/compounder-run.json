@@ -1746,8 +1746,8 @@
     }
    ],
    "day": {
-    "date": "2026-11-09",
-    "startBankroll": 125.42
+    "date": "2026-11-10",
+    "startBankroll": 109.55
    },
    "days": [
     {
@@ -1817,6 +1817,11 @@
      "date": "2026-11-08",
      "startBankroll": 148.88,
      "endBankroll": 125.42
+    },
+    {
+     "date": "2026-11-09",
+     "startBankroll": 125.42,
+     "endBankroll": 109.55
     }
    ]
   },
