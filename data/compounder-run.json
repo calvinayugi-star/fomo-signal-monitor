@@ -1868,7 +1868,7 @@
    "targetNetPct": 20,
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
-   "status": "active",
+   "status": "ended",
    "cash": 5.2959,
    "position": null,
    "trades": [
@@ -1920,7 +1920,29 @@
      "targetHit": false,
      "newBankroll": 5.2959
     }
-   ]
+   ],
+   "endedAt": "2026-11-11T05:32:28.480Z",
+   "finalBankroll": 5.3,
+   "note": "restarted 2026-11-11 at the user's request: no buy since 2026-10-31 on 15-60 min tokens ($5.30); now buys 1-72h tokens like the Conservative Compounder"
+  },
+  {
+   "id": "v2-aggressive-2026-11-11",
+   "rules": "v2",
+   "variant": "aggressive",
+   "name": "Aggressive Compounder",
+   "per": "trade",
+   "mode": "paper",
+   "seedUsd": 25,
+   "goalUsd": 5000,
+   "cycle": 1,
+   "cashedOutBeforeUsd": 0,
+   "targetNetPct": 20,
+   "startedAt": "2026-11-11T05:32:28.480Z",
+   "endsAt": null,
+   "status": "active",
+   "cash": 25,
+   "position": null,
+   "trades": []
   }
  ]
 }
