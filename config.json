@@ -76,12 +76,13 @@
     "restart": [
       { "at": "2026-10-20T23:59:00Z", "note": "restarted 2026-10-20 at the user's request: ZBCN sold at its last mark, 4 test runs replaced by the Conservative and Aggressive Compounders" },
       { "at": "2026-10-24T00:40:00Z", "variants": ["conservative"], "note": "restarted 2026-10-24 at the user's request: Coca Cola rugged to $0; now buys tokens 72h+ old" },
-      { "at": "2026-10-27T03:20:00Z", "note": "restarted 2026-10-27 at the user's request: TROLL (flat 3 days) and Marvin (rugged) closed at their last mark; 6h time limit added" }
+      { "at": "2026-10-27T03:20:00Z", "note": "restarted 2026-10-27 at the user's request: TROLL (flat 3 days) and Marvin (rugged) closed at their last mark; 6h time limit added" },
+      { "at": "2026-11-11T05:20:00Z", "variants": ["aggressive"], "note": "restarted 2026-11-11 at the user's request: no buy since 2026-10-31 on 15-60 min tokens ($5.30); now buys 1-72h tokens like the Conservative Compounder" }
     ],
-    "_variants": "Since 2026-10-20 two runs; a variant's `entry` overrides compounder.entry for that run only (since 2026-10-24 the Conservative Compounder buys pairs 72h+ old, the Aggressive one 15-60 min). They never hold the same token at the same time; when both are in cash the Conservative Compounder (listed first) picks first. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd + seedUsd ($5,110 / $5,025) it is all cash (a held position is sold as soon as it is worth that, even below its target), at least goalUsd is cashed out, seedUsd is kept, and a new cycle starts from seedUsd at the next hourly run.",
+    "_variants": "Since 2026-10-20 two runs; a variant's `entry` overrides compounder.entry for that run only (since 2026-11-11 both buy pairs 1-72h old; before that the Aggressive one bought 15-60 min). They never hold the same token at the same time; when both are in cash the Conservative Compounder (listed first) picks first. Since 2026-10-21 the runs loop: once a run's bankroll reaches goalUsd + seedUsd ($5,110 / $5,025) it is all cash (a held position is sold as soon as it is worth that, even below its target), at least goalUsd is cashed out, seedUsd is kept, and a new cycle starts from seedUsd at the next hourly run.",
     "variants": [
       { "id": "conservative", "name": "Conservative Compounder", "targetNetPct": 13.93, "per": "day", "seedUsd": 110, "goalUsd": 5000, "entry": { "minPairAgeHours": 1, "maxPairAgeHours": 72 } },
-      { "id": "aggressive", "name": "Aggressive Compounder", "targetNetPct": 20, "per": "trade", "seedUsd": 25, "goalUsd": 5000 }
+      { "id": "aggressive", "name": "Aggressive Compounder", "targetNetPct": 20, "per": "trade", "seedUsd": 25, "goalUsd": 5000, "entry": { "minPairAgeHours": 1, "maxPairAgeHours": 72 } }
     ],
     "fillDelayMinutes": 3,
     "noFillCancelHours": 6,
@@ -103,7 +104,8 @@
       "graduatedBonusMaxAgeHours": 72,
       "minPairAgeHours": 0.25,
       "maxPairAgeHours": 1,
-      "minLiquidityUsd": 25000,
+      "_minLiquidityUsd": "25000 until 2026-11-11; lowered to 10000 (user choice): in the 1-72h pool, tokens rejected only for liquidity under $25k crashed 2% of the time (tracker, Oct 28 - Nov 4).",
+      "minLiquidityUsd": 10000,
       "minLiquidityMultipleOfPosition": 50,
       "minMarketCapUsd": 100000,
       "minVolumeH1Usd": 5000,
@@ -131,7 +133,8 @@
       "maxCandleChecks": 8,
       "maxSafetyChecks": 3,
       "_crash": "Crash filters added 2026-10-28 (user choice, starting values): no buy if sells beat buys in the last 5 min (when at least minTxnsM5 trades), liquidity under minLiqToMcapPct of market cap, or, compared with an earlier holder reading 10 min to 3h old, holders falling, the developer's share down by maxDevDropPts or more, or the top-10 share down by maxTop10DropPts or more.",
-      "minBuySellRatioM5": 1,
+      "_minBuySellRatioM5": "1 from 2026-10-28; 0 (off) since 2026-11-11 (user choice): in the 1-72h pool it blocked more winners than crashes (18% hit vs 5% crash, tracker Oct 28 - Nov 4).",
+      "minBuySellRatioM5": 0,
       "minTxnsM5": 10,
       "minLiqToMcapPct": 5,
       "maxHolderDropPct": 0,
