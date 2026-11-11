@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 109.5516,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "MYWAY",
+    "mint": "tx41eAXzN6jHH22LSgF7eSxpTNvJXwcbrcGsbDrpump",
+    "pairAddress": "CV3MT2sZ4kfzc6GpBhw9esoz2dCfKkz5ZGS8uZP85p32",
+    "list": "Trending",
+    "decidedAt": "2026-11-11T03:47:26.498Z",
+    "alertPriceUsd": 0.0008004,
+    "sizeUsd": 109.5516,
+    "dexRoundTripPct": 2.56,
+    "roundTripPct": 3.55,
+    "score": 64.6,
+    "entry": {
+     "chgH1": 24.44,
+     "chgH6": 7.5,
+     "chg15": -29.18,
+     "accel": 45.51,
+     "volTrend": 3.08,
+     "ratioH1": 1.48,
+     "ageH": 61.1,
+     "top10Pct": 49.7
+    }
+   },
    "trades": [
     {
      "n": 1,
