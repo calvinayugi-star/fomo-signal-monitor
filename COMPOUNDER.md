@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sun, Nov 15, 05:17 EST. Paper trades only: nothing is bought or sold.
+Updated Sun, Nov 15, 05:32 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 60–4320 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Sun, Nov 15, 05:17 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$103.08** | **$25.00** |
-| Return since the start | -6.3% (from 110) | +0.0% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.0% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.5% there, ~30 more target sales |
+| Bankroll now (open position at its last mark) | **$92.36** | **$25.00** |
+| Return since the start | -16.0% (from 110) | +0.0% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 1.8% there, ~31 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.5% there, ~30 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at the target | 8 (+15 closed early) | 0 |
 | Average time to reach the target | 0.5h | n/a |
 | Average worst point before the target | -9.5% | n/a |
 | Profit banked / costs | -$4.90 / $75.70 | $0.00 / $0.00 |
 | Days the daily goal was met (per-day runs) | 4 of 20 | – |
-| Now | holding $WANTED (-1.9%, 0.5h) | in cash, searching |
+| Now | holding $WANTED (-12.1%, 0.7h) | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,7 +29,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$103.08** (-6.3%) |
+| Start → now | $110 → **$92.36** (-16.0%) |
 | Running for | 19.3 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 8 (+15 closed early by a one-off exit) |
@@ -37,7 +37,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Average worst point before the target | -9.5% |
 | Profit banked / costs | -$4.90 / $75.70 |
 | Days the daily goal was met | 4 of 20 · today started at $105.10 |
-| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 30 more target sales from here (30 from the 110 seed) |
+| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 31 more target sales from here (30 from the 110 seed) |
 
 ### Open position
 
@@ -46,9 +46,9 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Token | $WANTED (Graduated) · [DexScreener](https://dexscreener.com/solana/2FivK3QNhBAGz2pK9LdfHWFJvSTnzjMpCrL469VZhUyf) |
 | Bought | Nov 15, 04:47 · $105.10 at $0.001359 |
 | Sell target | $0.001600 (+13.93% net) |
-| Current value | $103.08 (-1.9% net, at Nov 15, 05:16) |
-| Best / worst while held | +0.2% / -13.9% |
-| Held for | 0.5h |
+| Current value | $92.36 (-12.1% net, at Nov 15, 05:31) |
+| Best / worst while held | +2.8% / -18.1% |
+| Held for | 0.7h |
 
 ### Completed positions (newest first)
 
