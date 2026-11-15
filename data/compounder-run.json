@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 90.7854,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "Busted",
+    "mint": "G69C53wwbhRDCpAkkoqBGWjeBfPoUsRMbNg3jmU8pump",
+    "pairAddress": "9RLEfEQgGXEKnmxvnhgFcvzCYRCPiXRJBSehB1MP1YGk",
+    "list": "Graduated",
+    "decidedAt": "2026-11-15T17:47:37.604Z",
+    "alertPriceUsd": 0.0006354,
+    "sizeUsd": 90.7854,
+    "dexRoundTripPct": 1.35,
+    "roundTripPct": 2.34,
+    "score": 66.7,
+    "entry": {
+     "chgH1": 19.38,
+     "chgH6": 21.66,
+     "chg15": -21.07,
+     "accel": 1.69,
+     "volTrend": 1.17,
+     "ratioH1": 2.18,
+     "ageH": 7.9,
+     "top10Pct": 11.8
+    }
+   },
    "trades": [
     {
      "n": 1,
