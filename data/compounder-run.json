@@ -1237,46 +1237,8 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 0,
-   "position": {
-    "symbol": "WOHAIHAO",
-    "mint": "4B1mCGeSjTadzH7okALwdFm8taxoHbZBFCTA1nZRpump",
-    "pairAddress": "9Xvu6Bt8nVKcEeJKx15cU6f5t8szWxyL1X13y6gLHQe8",
-    "list": "Graduated",
-    "decidedAt": "2026-11-15T03:02:30.415Z",
-    "alertPriceUsd": 0.001142,
-    "sizeUsd": 92.2512,
-    "dexRoundTripPct": 2.99,
-    "roundTripPct": 3.98,
-    "score": 67.1,
-    "entry": {
-     "chgH1": 8.93,
-     "chgH6": 45.48,
-     "chg15": -12.59,
-     "accel": 12.36,
-     "volTrend": 1.05,
-     "ratioH1": 3.82,
-     "ageH": 25.7,
-     "top10Pct": 21.5
-    },
-    "fill": {
-     "rawPrice": 0.0012851964052728853,
-     "fillCandleT": 1794711900,
-     "at": "2026-11-15T03:05:30.415Z"
-    },
-    "checkedThrough": 1794713460,
-    "peakNetPct": 12.88,
-    "worstNetPct": -7.07,
-    "lastTradeAt": "2026-11-15T03:31:00.000Z",
-    "mark": {
-     "at": "2026-11-15T03:31:00.000Z",
-     "price": 0.0013916954364065458,
-     "netPct": 4.05,
-     "proceeds": 95.99
-    },
-    "targetPriceUsd": 0.0015238696185630623,
-    "stale": false
-   },
+   "cash": 105.1018,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -1805,11 +1767,36 @@
      "worstNetPct": -21.97,
      "targetHit": false,
      "newBankroll": 92.2512
+    },
+    {
+     "n": 23,
+     "symbol": "WOHAIHAO",
+     "mint": "4B1mCGeSjTadzH7okALwdFm8taxoHbZBFCTA1nZRpump",
+     "pairAddress": "9Xvu6Bt8nVKcEeJKx15cU6f5t8szWxyL1X13y6gLHQe8",
+     "list": "Graduated",
+     "decidedAt": "2026-11-15T03:02:30.415Z",
+     "prevBankroll": 92.25,
+     "sizeUsd": 92.25,
+     "dexRoundTripPct": 2.99,
+     "fillAt": "2026-11-15T03:05:30.415Z",
+     "exitAt": "2026-11-15T03:39:00.000Z",
+     "holdHours": 0.6,
+     "reason": "+13.93% target",
+     "entryPriceUsd": 0.0012851964052728853,
+     "exitPriceUsd": 0.0015238696185630623,
+     "grossPct": 18.57,
+     "costsUsd": 4.2813,
+     "netUsd": 12.8506,
+     "netPct": 13.93,
+     "worstNetPct": -7.07,
+     "targetHit": true,
+     "newBankroll": 105.1018
     }
    ],
    "day": {
     "date": "2026-11-14",
-    "startBankroll": 92.25
+    "startBankroll": 92.25,
+    "goalMetAt": "2026-11-15T03:47:38.752Z"
    },
    "days": [
     {

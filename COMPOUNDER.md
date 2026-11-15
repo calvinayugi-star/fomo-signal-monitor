@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sat, Nov 14, 22:32 EST. Paper trades only: nothing is bought or sold.
+Updated Sat, Nov 14, 22:47 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 60–4320 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -10,16 +10,16 @@ Updated Sat, Nov 14, 22:32 EST. Paper trades only: nothing is bought or sold.
 |  | **Conservative Compounder** | **Aggressive Compounder** |
 | Rule | +13.93% per day (one sale, then wait for midnight ET) | +20% per trade (search again right after a sale) |
 |---|---|---|
-| Bankroll now (open position at its last mark) | **$95.99** | **$25.00** |
-| Return since the start | -12.7% (from 110) | +0.0% (from 25) |
-| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 1.9% there, ~31 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.5% there, ~30 more target sales |
+| Bankroll now (open position at its last mark) | **$105.10** | **$25.00** |
+| Return since the start | -4.5% (from 110) | +0.0% (from 25) |
+| Goal | $5110.00 ($5000.00 to cash out + 110 kept): 2.1% there, ~30 more target sales | $5025.00 ($5000.00 to cash out + 25 kept): 0.5% there, ~30 more target sales |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at the target | 7 (+15 closed early) | 0 |
+| Positions sold at the target | 8 (+15 closed early) | 0 |
 | Average time to reach the target | 0.5h | n/a |
-| Average worst point before the target | -9.8% | n/a |
-| Profit banked / costs | -$17.75 / $71.42 | $0.00 / $0.00 |
-| Days the daily goal was met (per-day runs) | 3 of 19 | – |
-| Now | holding $WOHAIHAO (+4.0%, 0.4h) | in cash, searching |
+| Average worst point before the target | -9.5% | n/a |
+| Profit banked / costs | -$4.90 / $75.70 | $0.00 / $0.00 |
+| Days the daily goal was met (per-day runs) | 4 of 19 | – |
+| Now | daily goal met, paused until midnight | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -29,31 +29,23 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 
 | | |
 |---|---|
-| Start → now | $110 → **$95.99** (-12.7%) |
+| Start → now | $110 → **$105.10** (-4.5%) |
 | Running for | 19.0 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
-| Positions sold at +13.93% | 7 (+15 closed early by a one-off exit) |
+| Positions sold at +13.93% | 8 (+15 closed early by a one-off exit) |
 | Average time to reach the target | 0.5h |
-| Average worst point before the target | -9.8% |
-| Profit banked / costs | -$17.75 / $71.42 |
-| Days the daily goal was met | 3 of 19 · today started at $92.25 |
-| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 31 more target sales from here (30 from the 110 seed) |
+| Average worst point before the target | -9.5% |
+| Profit banked / costs | -$4.90 / $75.70 |
+| Days the daily goal was met | 4 of 19 · today started at $92.25, goal met, paused until midnight |
+| Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 30 more target sales from here (30 from the 110 seed) |
 
-### Open position
-
-| | |
-|---|---|
-| Token | $WOHAIHAO (Graduated) · [DexScreener](https://dexscreener.com/solana/9Xvu6Bt8nVKcEeJKx15cU6f5t8szWxyL1X13y6gLHQe8) |
-| Bought | Nov 14, 22:02 · $92.25 at $0.001285 |
-| Sell target | $0.001524 (+13.93% net) |
-| Current value | $95.99 (+4.0% net, at Nov 14, 22:31) |
-| Best / worst while held | +12.9% / -7.1% |
-| Held for | 0.4h |
+**Open position:** none (cash, searching for the next pre-spike token).
 
 ### Completed positions (newest first)
 
 | # | Bought | Token | List | Size | Held | Worst | Entry → exit $ | Costs | Net | Net $ | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|---|---|
+| 23 | Nov 14, 22:05 | WOHAIHAO | Graduated | $92.25 | 0.6h | -7.1% | 0.001285 → 0.001524 | $4.28 | +13.9% | $12.85 | $105.10 |
 | 22 | Nov 10, 22:50 | MYWAY | Trending | $109.55 | 1.0h | -22.0% | 0.0006006 → 0.0005241 | $3.35 | -15.8% | -$17.30 | $92.25 |
 | 21 | Nov 9, 07:20 | PUSSY | Trending + Jupiter | $125.42 | 1.0h | -25.1% | 0.002580 → 0.002309 | $2.70 | -12.7% | -$15.87 | $109.55 |
 | 20 | Nov 8, 06:35 | HEREWEGO | Trending + Graduated | $148.88 | 1.0h | -19.0% | 0.002043 → 0.001770 | $3.58 | -15.8% | -$23.46 | $125.42 |
