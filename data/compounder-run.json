@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 92.2512,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "WOHAIHAO",
+    "mint": "4B1mCGeSjTadzH7okALwdFm8taxoHbZBFCTA1nZRpump",
+    "pairAddress": "9Xvu6Bt8nVKcEeJKx15cU6f5t8szWxyL1X13y6gLHQe8",
+    "list": "Graduated",
+    "decidedAt": "2026-11-15T03:02:30.415Z",
+    "alertPriceUsd": 0.001142,
+    "sizeUsd": 92.2512,
+    "dexRoundTripPct": 2.99,
+    "roundTripPct": 3.98,
+    "score": 67.1,
+    "entry": {
+     "chgH1": 8.93,
+     "chgH6": 45.48,
+     "chg15": -12.59,
+     "accel": 12.36,
+     "volTrend": 1.05,
+     "ratioH1": 3.82,
+     "ageH": 25.7,
+     "top10Pct": 21.5
+    }
+   },
    "trades": [
     {
      "n": 1,

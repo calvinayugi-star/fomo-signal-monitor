@@ -1,6 +1,6 @@
 # FOMO Compounder: Results (PAPER MODE)
 
-Updated Sat, Nov 14, 21:47 EST. Paper trades only: nothing is bought or sold.
+Updated Sat, Nov 14, 22:02 EST. Paper trades only: nothing is bought or sold.
 
 **Rules v2 (since 2026-10-10; two runs since 2026-10-20):** buy a token **before it spikes** with 100% of the bankroll,
 **hold with no stop until it reaches the sell target** (or sell at its last price after 1h, since 2026-10-27), sell, and look for the next one. **Conservative Compounder:** 110 seed, +13.93% per day, tokens 60–4320 min since the pool opened, at $5110.00 cashes out $5000.00+ and starts again from 110. **Aggressive Compounder:** 25 seed, +20% per trade, tokens 60–4320 min since the pool opened, at $5025.00 cashes out $5000.00+ and starts again from 25.
@@ -19,7 +19,7 @@ Updated Sat, Nov 14, 21:47 EST. Paper trades only: nothing is bought or sold.
 | Average worst point before the target | -9.8% | n/a |
 | Profit banked / costs | -$17.75 / $71.42 | $0.00 / $0.00 |
 | Days the daily goal was met (per-day runs) | 3 of 19 | – |
-| Now | in cash, searching | in cash, searching |
+| Now | holding $WOHAIHAO (n/a, n/a) | in cash, searching |
 
 Both runs screen the same candidates (every 15 min since 2026-10-28) with the same rules except token age (see Rules in effect), and each sells at its target or at the time limit.
 They never hold the same token at the same time: when both are in cash in the same run, the first column picks first and the other takes its next best.
@@ -30,7 +30,7 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | | |
 |---|---|
 | Start → now | $110 → **$92.25** (-16.1%) |
-| Running for | 18.9 days (since Oct 27, 00:02) |
+| Running for | 19.0 days (since Oct 27, 00:02) |
 | Cycle | cycle 1, $0.00 cashed out in earlier cycles |
 | Positions sold at +13.93% | 7 (+15 closed early by a one-off exit) |
 | Average time to reach the target | 0.5h |
@@ -39,7 +39,16 @@ Each run loops: once its bankroll reaches the goal it is all cash (a held positi
 | Days the daily goal was met | 3 of 19 · today started at $92.25 |
 | Each +13.93% sale multiplies the bankroll by | 1.1393×; $5110.00 goal: 31 more target sales from here (30 from the 110 seed) |
 
-**Open position:** none (cash, searching for the next pre-spike token).
+### Open position
+
+| | |
+|---|---|
+| Token | $WOHAIHAO (Graduated) · [DexScreener](https://dexscreener.com/solana/9Xvu6Bt8nVKcEeJKx15cU6f5t8szWxyL1X13y6gLHQe8) |
+| Bought | Nov 14, 22:02 · $92.25 (fill pending) |
+| Sell target | +13.93% net |
+| Current value | n/a |
+| Best / worst while held | n/a / n/a |
+| Held for | n/a |
 
 ### Completed positions (newest first)
 
