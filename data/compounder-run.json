@@ -1237,8 +1237,29 @@
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
    "status": "active",
-   "cash": 103.4318,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "symbol": "HOGE",
+    "mint": "FVzqGqRmr4UH1Fif6dewmwbJ1p4YUZCu8dcw4Efopump",
+    "pairAddress": "7CNC9gGegzEfFK8fLXiYUhdtMEeFPQZoND56U1Mxhnor",
+    "list": "Trending + Graduated + Jupiter",
+    "decidedAt": "2026-11-16T16:02:19.151Z",
+    "alertPriceUsd": 0.0007547,
+    "sizeUsd": 103.4318,
+    "dexRoundTripPct": 2.5,
+    "roundTripPct": 3.49,
+    "score": 46.1,
+    "entry": {
+     "chgH1": 18.15,
+     "chgH6": 99.18,
+     "chg15": -13.42,
+     "accel": 2.46,
+     "volTrend": 0.61,
+     "ratioH1": 1.46,
+     "ageH": 33.1,
+     "top10Pct": 21.9
+    }
+   },
    "trades": [
     {
      "n": 1,
