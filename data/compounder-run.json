@@ -1236,7 +1236,7 @@
    "targetNetPct": 13.93,
    "startedAt": "2026-10-27T04:02:30.109Z",
    "endsAt": null,
-   "status": "active",
+   "status": "ended",
    "cash": 80.9315,
    "position": null,
    "trades": [
@@ -1974,7 +1974,10 @@
      "startBankroll": 105.1,
      "endBankroll": 103.43
     }
-   ]
+   ],
+   "endedAt": "2026-11-17T00:54:41.505Z",
+   "finalBankroll": 80.93,
+   "note": "ended 2026-11-17 at the user's request: system overhaul to perp futures (spot memecoin Compounders retired)"
   },
   {
    "id": "v2-aggressive-2026-10-27",
@@ -2061,10 +2064,13 @@
    "targetNetPct": 20,
    "startedAt": "2026-11-11T05:32:28.480Z",
    "endsAt": null,
-   "status": "active",
+   "status": "ended",
    "cash": 25,
    "position": null,
-   "trades": []
+   "trades": [],
+   "endedAt": "2026-11-17T00:54:41.505Z",
+   "finalBankroll": 25,
+   "note": "ended 2026-11-17 at the user's request: system overhaul to perp futures (spot memecoin Compounders retired)"
   }
  ]
 }

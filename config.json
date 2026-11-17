@@ -67,7 +67,8 @@
   },
 
   "compounder": {
-    "enabled": true,
+    "_enabled": "Switched off 2026-11-17 (user request): the spot memecoin Compounders are retired while the system is rebuilt for perp futures.",
+    "enabled": false,
     "rules": "v2",
     "startDate": "2026-10-10",
     "seedUsd": 100,

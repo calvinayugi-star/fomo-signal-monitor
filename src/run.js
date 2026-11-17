@@ -245,6 +245,11 @@ async function main() {
   const log = { t: now.toISOString(), errors: [] };
   let shared = {}; // candidates and DEX pairs, reused by the Compounder
   const monitorOn = cfg.monitor?.enabled !== false;
+  // Nothing enabled (since 2026-11-17, while the system is rebuilt for perps): exit before any API call or record, so scheduled runs stay idle.
+  if (!monitorOn && !cfg.compounder?.enabled) {
+    console.log('Monitor and Compounder are both switched off: nothing to do.');
+    return;
+  }
 
   try {
     log.closed = (await updateOpen(store.alerts, cfg, now, log)).map((a) => a.symbol);
