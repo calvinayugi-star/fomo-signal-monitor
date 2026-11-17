@@ -7,7 +7,9 @@
 //   loss = the stop at 90% of the way to liquidation is reached first (also when both fall inside the same hour: cautious).
 // Features use only candles up to the decision hour, signed by the side ("move in the trade's direction").
 // Train on the older months, test on the latest ~30% the model never saw (training rows that resolve after the cut are dropped).
-//   node research/direction-study.js [--targets=c,a] [--drop=weekday,hourUtc]   (--drop leaves inputs out of the model, a robustness check)
+//   node research/direction-study.js [--targets=c,a] [--drop=weekday,hourUtc] [--cut=0.7] [--end=1]
+//   --drop leaves inputs out of the model (a robustness check); --cut/--end place the test window as fractions of the rows in time
+//   (default: train on the first 70%, test on the rest; e.g. --cut=0.45 --end=0.7 tests an earlier market phase).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -97,9 +99,12 @@ const pick = (x) => KEEP.map((f) => x[f]);
 if (DROP.size) console.log(`inputs left out: ${[...DROP].join(', ')}`);
 for (const key of KEYS) {
   const R = rows[key].sort((p, q) => p.t - q.t);
-  const cut = R[Math.floor(R.length * 0.7)].t;
+  const cut = R[Math.floor(R.length * Number(opt.cut ?? 0.7))].t;
+  const endT = Number(opt.end ?? 1) >= 1 ? Infinity : R[Math.floor(R.length * Number(opt.end))].t;
   const train = R.filter((r) => r.t + r.hours * H <= cut && (r.t / H) % 2 === 0); // resolved before the cut; every 2nd hour (neighbours are near-copies)
-  const test = R.filter((r) => r.t >= cut);
+  const test = R.filter((r) => r.t >= cut && r.t < endT);
+  const b0 = btc[btcAt.get(test[0].t)]?.c, b1 = btc[btcAt.get(test.at(-1).t)]?.c;
+  console.log(`   test window ${new Date(test[0].t).toISOString().slice(0, 10)} → ${new Date(test.at(-1).t).toISOString().slice(0, 10)}: BTC ${b0 && b1 ? `${((b1 / b0 - 1) * 100).toFixed(1)}%` : 'n/a'}`);
   const name = key === 'c' ? `Conservative (+${TARGETS.c}%)` : `Aggressive (+${TARGETS.a}%)`;
   const t0 = Date.now();
   const model = fit(train.map((r) => pick(r.x)), train.map((r) => r.win), KEEP.map((f) => NAMES[f]));
