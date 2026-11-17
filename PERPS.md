@@ -1,21 +1,21 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Tue, Nov 17, 01:45 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Tue, Nov 17, 02:00 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
-Close at the run's net target (a resting limit order, maker fee) or at market after the run's time limit. **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
-**Conservative Perps:** $110 seed, +13.93% net per day (no new trades after its first target sale of the day until midnight ET), 2h time limit, trades only in the direction of the last 4h, needs a 1.45% price move. **Aggressive Perps:** $25 seed, +20% net per trade (searching again right after each sale), 4h time limit, needs a 2.06% price move.
+Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
+**Conservative Perps:** $110 seed, +13.93% net per day (no new trades after its first target sale of the day until midnight ET), no time limit, trades only in the direction of the last 4h, needs a 1.45% price move. **Aggressive Perps:** $25 seed, +20% net per trade (searching again right after each sale), no time limit, needs a 2.06% price move.
 At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed. The runs never hold the same coin; no coin twice within 24h.
 
 ## Conservative Perps: perps-conservative-2026-11-16 (ACTIVE)
 
 | | |
 |---|---|
-| Start → now | $110 → **$114.80** (+4.4%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$121.23** (+10.2%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 1: 1 at target, 0 at the time limit, 0 stopped, 0 liquidated |
 | Days the daily goal was met | 1 of 2 |
-| Open | **LONG WLD** 10x, margin $125.32, entry $0.2671, target $0.2710, liquidation $0.2530, now -8.4%, held 1.2h |
+| Open | **LONG WLD** 10x, margin $125.32, entry $0.2671, target $0.2710, liquidation $0.2530, now -3.3%, held 1.5h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
