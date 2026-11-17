@@ -61,7 +61,7 @@ for (let t = Math.ceil(from / (15 * 60e3)) * 15 * 60e3; t < now - 3 * H; t += 15
       if (i == null || i < 287 || taken.has(m.coin) || t - (run.lastTraded.get(m.coin) ?? -Infinity) < k.cooldownHours * H) continue;
       const w = quick(cs, i);
       if (!w) continue;
-      const r = evaluate({ ...m, markPx: w.at(-1).c, fundingPctPerHour: 0 }, w, { e, leverage: k.leverage, fees: k.fees, targetNetPct: run.v.targetNetPct });
+      const r = evaluate({ ...m, markPx: w.at(-1).c, fundingPctPerHour: 0 }, w, { e: { ...e, ...(run.v.entry ?? {}), ...entryArgs }, leverage: k.leverage, fees: k.fees, targetNetPct: run.v.targetNetPct });
       if (!r.reason && (!best || r.score > best.r.score)) best = { r, m, cs, i };
     }
     if (!best) continue;

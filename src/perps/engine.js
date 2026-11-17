@@ -28,6 +28,8 @@ const readOr = (file, fallback) => {
 export const goalBankroll = (run) => run.goalUsd + run.seedUsd;
 // Time limit of a variant (since 2026-11-17 the Aggressive run has 4h, the default is perps.maxHoldHours).
 export const holdOf = (k, v) => v?.maxHoldHours ?? k.maxHoldHours;
+// Entry rules of a variant: perps.entry plus the variant's own `entry` (since 2026-11-17 Conservative adds the 4h trend filter).
+export const entryOf = (k, v) => ({ ...k.entry, ...(v?.entry ?? {}) });
 export const bankrollOf = (run) => run.cash + (run.position ? run.position.mark?.proceeds ?? run.position.marginUsd : 0);
 
 function newRun(now, k, time, v, prev) {
@@ -238,13 +240,13 @@ export async function runPerps({ cfg, dryRun, dataDir, cacheDir, reportPath, log
         const goalNetPct = (goalBankroll(run) / run.cash - 1) * 100;
         const targetNetPct = Math.min(run.targetNetPct, goalNetPct);
         for (const m of mkts) {
-          const why = marketFailure(m, k.entry, k.leverage) ?? (cooldown.has(m.coin) ? 'traded in the cooldown window' : taken.has(m.coin) ? 'held by the other run' : null);
+          const why = marketFailure(m, entryOf(k, v), k.leverage) ??(cooldown.has(m.coin) ? 'traded in the cooldown window' : taken.has(m.coin) ? 'held by the other run' : null);
           if (why) {
             rejects[why] = (rejects[why] ?? 0) + 1;
             continue;
           }
           try {
-            rows.push(evaluate(m, await c5Of(m.coin), { e: k.entry, leverage: k.leverage, fees: k.fees, targetNetPct: v.targetNetPct, oiPrevUsd: oiPrev(m.coin) }));
+            rows.push(evaluate(m, await c5Of(m.coin), { e: entryOf(k, v), leverage: k.leverage, fees: k.fees, targetNetPct: v.targetNetPct, oiPrevUsd: oiPrev(m.coin) }));
           } catch (err) {
             rows.push({ coin: m.coin, reason: 'candle data unavailable' });
             h.errors.push(`candles ${m.coin}: ${err.message}`);

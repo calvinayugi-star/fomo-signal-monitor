@@ -3,7 +3,7 @@
   "monitor": { "enabled": false, "stoppedOn": "2026-10-10" },
 
   "_perps": "Perps Compounders (since 2026-11-17, user's spec): paper trading on Hyperliquid's public data, 10x isolated, 100% of the bankroll as margin, longs and shorts, no stop-loss, 2h time limit. Conservative $110 +13.93%/day, Aggressive $25 +20%/trade, $5,000 cash-out then a new cycle from the seed. Fees: Hyperliquid base tier (taker 0.045%, maker 0.015%).",
-  "_perpsVariants": "Since 2026-11-17 (user choice after the 16-day backtest): Conservative stops for the day after its first target sale (dayStop firstTarget, even if earlier trades that day lost), Aggressive has a 4h time limit (maxHoldHours overrides the 2h default).",
+  "_perpsVariants": "Since 2026-11-17 (user choice after the 16-day backtest): Conservative stops for the day after its first target sale (dayStop firstTarget, even if earlier trades that day lost), Aggressive has a 4h time limit (maxHoldHours overrides the 2h default). A variant's `entry` overrides perps.entry: Conservative also requires the last 4h to move the same way as the trade (user choice, same day; best single change in the backtest).",
   "perps": {
     "enabled": true,
     "venue": "hyperliquid",
@@ -16,7 +16,7 @@
     "goalUsd": 5000,
     "minBankrollUsd": 1,
     "variants": [
-      { "id": "conservative", "name": "Conservative Perps", "targetNetPct": 13.93, "per": "day", "dayStop": "firstTarget", "seedUsd": 110 },
+      { "id": "conservative", "name": "Conservative Perps", "targetNetPct": 13.93, "per": "day", "dayStop": "firstTarget", "seedUsd": 110, "entry": { "requireTrend4hAgreement": true } },
       { "id": "aggressive", "name": "Aggressive Perps", "targetNetPct": 20, "per": "trade", "maxHoldHours": 4, "seedUsd": 25 }
     ],
     "restart": [],

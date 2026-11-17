@@ -79,7 +79,8 @@ two runs on **Hyperliquid perpetual futures**, paper-traded on Hyperliquid's fre
   Liquidation is simulated with Hyperliquid's maintenance margin (half the margin at the coin's max leverage): about 5% against the
   position on coins capped at 10x, 7.5% at 20x, 8.75% for BTC. Never both runs on the same coin; no coin twice within 24h.
 - **Conservative Perps:** $110 seed, +13.93% net (a 1.45% price move), 2h time limit; after its **first target sale of the day** no new
-  trades until midnight ET (earlier losing trades that day don't matter).
+  trades until midnight ET (earlier losing trades that day don't matter). Since 2026-11-17 it also trades only in the direction of
+  the last 4h (`variants[].entry.requireTrend4hAgreement`), the best single change in the backtest.
 - **Aggressive Perps:** $25 seed, +20% net per trade (a 2.06% price move), **4h time limit**, searching again right after each sale.
 - **Started 2026-11-17** in paper mode with the strict entry rules (a lax version took both runs under $1 in the backtest). 16-day backtest
   of these exact settings: Conservative $110 → $152.84 (33 trades, 45% at target), Aggressive $25 → $15.92 (39 trades, 46% at target).
