@@ -28,6 +28,7 @@ export function evaluate(m, c5, { e, leverage, fees, targetNetPct, oiPrevUsd = n
   const close = c5.at(-1).c;
   const chg15 = pct(close, c5.at(-4).c);
   const chg60 = pct(close, c5.at(-13).c);
+  const chg4h = pct(close, c5.at(-49).c);
   const usdVol = c5.map((k) => k.v * k.c);
   const vol15 = usdVol.slice(-3).reduce((s, v) => s + v, 0);
   const avg15 = (usdVol.reduce((s, v) => s + v, 0) / usdVol.length) * 3;
@@ -52,7 +53,7 @@ export function evaluate(m, c5, { e, leverage, fees, targetNetPct, oiPrevUsd = n
   const oiChgPct = oiPrevUsd ? pct(m.openInterestUsd, oiPrevUsd) : null;
   const adverseFunding = d * m.fundingPctPerHour; // > 0: this side pays funding
 
-  Object.assign(row, { side, chg15: round(chg15), chg60: round(chg60), surge: round(surge), typical2hPct: round(typical2h), targetMovePct: round(move), worstAdverse2hPct: round(worstAdverse), liqDistPct: round(liqDistPct), oiChgPct: round(oiChgPct) });
+  Object.assign(row, { side, chg15: round(chg15), chg60: round(chg60), chg4h: round(chg4h), surge: round(surge), typical2hPct: round(typical2h), targetMovePct: round(move), worstAdverse2hPct: round(worstAdverse), liqDistPct: round(liqDistPct), oiChgPct: round(oiChgPct) });
 
   const absMove = Math.abs(chg15);
   let reason = null;
@@ -62,6 +63,7 @@ export function evaluate(m, c5, { e, leverage, fees, targetNetPct, oiPrevUsd = n
   else if (absMove < e.minMove15Pct) reason = 'no move yet (15 min)';
   else if (absMove > e.maxMove15Pct) reason = `already moved >${e.maxMove15Pct}% in 15 min`;
   else if (e.requireTrendAgreement && Math.sign(chg60) !== d) reason = '1h trend against the move';
+  else if (e.requireTrend4hAgreement && Math.sign(chg4h) !== d) reason = '4h trend against the move';
   else if (adverseFunding > e.maxAdverseFundingPctPerHour) reason = 'funding against this side';
   else if (typical2h < e.minRangeToTarget * move) reason = 'moves too little to reach the target in 2h';
   else if (worstAdverse >= e.liqSafety * liqDistPct) reason = 'recent swings too close to liquidation';

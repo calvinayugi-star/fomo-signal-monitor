@@ -13,7 +13,12 @@ import { openPerp, replayPerp } from '../src/perps/sim.js';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.json'), 'utf8'));
 const k = cfg.perps;
-const e = { ...k.entry, ...Object.fromEntries(process.argv.slice(3).map((a) => a.split('=')).map(([key, v]) => [key, v === 'true' ? true : v === 'false' ? false : Number(v)])) };
+// Overrides: hold=H (time limit in hours), dayMode=goal|firstTarget|oneTrade (Conservative: stop for the day when the day is up
+// the target / after the first target sale / after any one trade), any other key=value goes to perps.entry.
+const args = Object.fromEntries(process.argv.slice(3).map((a) => a.split('=')).map(([key, v]) => [key, v === 'true' ? true : v === 'false' ? false : isNaN(Number(v)) ? v : Number(v)]));
+const { hold, dayMode = 'goal', ...entryArgs } = args;
+if (hold) k.maxHoldHours = hold;
+const e = { ...k.entry, ...entryArgs };
 const M5 = 5 * 60e3, H = 3600e3;
 const FUNDING_PER_HOUR = 0.0000125; // 0.00125%/h, Hyperliquid's usual baseline, charged against the position
 const days = Number(process.argv[2] ?? 16);
@@ -73,7 +78,13 @@ for (let t = Math.ceil(from / (15 * 60e3)) * 15 * 60e3; t < now - 3 * H; t += 15
     run.pos = m.coin;
     run.lastTraded.set(m.coin, t);
     run.busyUntil = Math.ceil((res.exitAt + 1) / (15 * 60e3)) * 15 * 60e3;
-    if (run.v.per === 'day' && run.cash >= run.day.start * (1 + run.v.targetNetPct / 100) - 0.005) (run.day.met = true), run.daysMet++;
+    if (run.v.per === 'day') {
+      run.day.trades = (run.day.trades ?? 0) + 1;
+      (run.tradesPerDay ??= {})[run.day.date] = run.day.trades;
+      const goal = run.cash >= run.day.start * (1 + run.v.targetNetPct / 100) - 0.005;
+      if (goal) run.daysMet++;
+      if (goal || (dayMode === 'firstTarget' && res.targetHit) || dayMode === 'oneTrade') run.day.met = true;
+    }
   }
 }
 
@@ -82,6 +93,7 @@ for (const run of runs) {
   const hit = T.filter((x) => x.reason.startsWith('+')), liq = T.filter((x) => x.reason === 'liquidated'), tl = T.filter((x) => x.reason.startsWith('time')), stop = T.filter((x) => x.reason.startsWith('stop'));
   const avg = (a) => (a.length ? (a.reduce((s, x) => s + x.netPct, 0) / a.length).toFixed(1) : '-');
   console.log(`== ${run.v.name}: $${run.v.seedUsd} → $${run.cash.toFixed(2)} · ${T.length} trades (${(T.length / days).toFixed(1)}/day) · target ${hit.length} (median ${hit.length ? hit.map((x) => x.mins).sort((a, b) => a - b)[hit.length >> 1] : '-'} min) · time limit ${tl.length} (avg ${avg(tl)}%) · stopped ${stop.length} (avg ${avg(stop)}%) · liquidated ${liq.length}${run.v.per === 'day' ? ` · daily goal met ${run.daysMet} of ${run.dayCount} days` : ''}`);
+  if (run.tradesPerDay) console.log(`   trades per day: ${Object.entries(run.tradesPerDay).map(([d, n]) => `${d.slice(5)}:${n}`).join(' ')}`);
   console.log(`   longs ${T.filter((x) => x.side === 'long').length} (${T.filter((x) => x.side === 'long' && x.reason.startsWith('+')).length} hit) · shorts ${T.filter((x) => x.side === 'short').length} (${T.filter((x) => x.side === 'short' && x.reason.startsWith('+')).length} hit)`);
   for (const x of T) console.log(`   ${x.t} ${x.side.padEnd(5)} ${x.coin.padEnd(9)} score ${String(x.score).padStart(5)} → ${x.reason.padEnd(32)} ${x.netPct.toFixed(1).padStart(7)}% in ${x.mins} min`);
 }
