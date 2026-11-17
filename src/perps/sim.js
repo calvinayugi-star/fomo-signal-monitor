@@ -4,13 +4,16 @@
 // is a market order (taker) that also pays the spread. Funding is paid (or received) on the hour while the position is open.
 
 // mmrPct: maintenance margin as % of the position, = half the margin at the coin's max leverage (Hyperliquid's rule).
-export function openPerp({ marginUsd, leverage, side, entryPx, takerPct, mmrPct }) {
+// stopFraction (since 2026-11-17, user request): a stop-loss market order this far along the way to the liquidation price
+// (0.9 = 90% of the distance), so the run keeps the margin a liquidation would take; null = no stop.
+export function openPerp({ marginUsd, leverage, side, entryPx, takerPct, mmrPct, stopFraction = null }) {
   const notional = marginUsd * leverage;
   const d = side === 'long' ? 1 : -1;
   const mmr = mmrPct / 100;
   // Liquidated when margin + PnL falls to the maintenance margin of the position's current value.
   const liqRel = d === 1 ? (1 - 1 / leverage) / (1 - mmr) : (1 + 1 / leverage) / (1 + mmr);
-  return { marginUsd, leverage, side, d, entryPx, notional, entryFee: (notional * takerPct) / 100, liqPx: entryPx * liqRel };
+  const stopPx = stopFraction ? entryPx * (1 + (liqRel - 1) * stopFraction) : null;
+  return { marginUsd, leverage, side, d, entryPx, notional, entryFee: (notional * takerPct) / 100, liqPx: entryPx * liqRel, stopPx };
 }
 
 // Result if closed at px paying exitFeePct on the exit value, after the entry fee and the funding paid so far.
@@ -32,7 +35,7 @@ export function targetPx(p, targetNetPct, makerPct, fundingUsd = 0) {
 // state carries what earlier checks found: fundingUsd, fundedThrough (last funding hour paid), peakNetPct, worstNetPct.
 // Inside one candle the adverse extreme is checked first (liquidation before the take-profit): the cautious reading.
 // Returns { closed, reason, exitAt, exitPx, netUsd, netPct, proceeds, targetHit } or { closed: false, lastPx, lastAt }.
-export function replayPerp(p, candles, state, { targetNetPct, makerPct, takerPct, slipPct, fundingRatePerHour, closeAtMs, nowMs }) {
+export function replayPerp(p, candles, state, { targetNetPct, makerPct, takerPct, slipPct, stopSlipPct = 0, fundingRatePerHour, closeAtMs, nowMs }) {
   let lastPx = state.lastPx ?? p.entryPx;
   let lastAt = state.lastAt ?? null;
   for (const c of candles) {
@@ -44,8 +47,16 @@ export function replayPerp(p, candles, state, { targetNetPct, makerPct, takerPct
     }
     const adverse = p.d === 1 ? c.l : c.h;
     const favorable = p.d === 1 ? c.h : c.l;
-    state.worstNetPct = Math.min(state.worstNetPct ?? 0, netAt(p, adverse, takerPct, state.fundingUsd).netPct);
-    if (p.d === 1 ? adverse <= p.liqPx : adverse >= p.liqPx) {
+    const beyond = (px, level) => (p.d === 1 ? px <= level : px >= level);
+    const worstPx = p.stopPx != null && beyond(adverse, p.stopPx) ? p.stopPx : adverse; // a stopped position never sees past its stop
+    state.worstNetPct = Math.min(state.worstNetPct ?? 0, netAt(p, worstPx, takerPct, state.fundingUsd).netPct);
+    // Stop-loss before liquidation: a market order once the price touches the stop, paying the taker fee, the spread and
+    // stopSlipPct extra. Only a minute that opens already past the liquidation price (a gap) still liquidates.
+    if (p.stopPx != null && beyond(adverse, p.stopPx) && !beyond(c.o, p.liqPx)) {
+      const exitPx = (beyond(c.o, p.stopPx) ? c.o : p.stopPx) * (1 - (p.d * (slipPct + stopSlipPct)) / 100);
+      return { closed: true, reason: 'stop-loss before liquidation', exitAt: c.t + 30e3, exitPx, ...netAt(p, exitPx, takerPct, state.fundingUsd), targetHit: false };
+    }
+    if (beyond(adverse, p.liqPx)) {
       return { closed: true, reason: 'liquidated', exitAt: c.t + 30e3, exitPx: p.liqPx, netUsd: -p.marginUsd, netPct: -100, proceeds: 0, targetHit: false };
     }
     const tp = targetPx(p, targetNetPct, makerPct, state.fundingUsd);

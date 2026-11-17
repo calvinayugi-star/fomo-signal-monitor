@@ -22,7 +22,7 @@ export function buyMessage(run, pos, k, time, now) {
 <b>MARGIN:</b> ${usd(pos.marginUsd)} (100% of the bankroll) · <b>POSITION:</b> ${usd(pos.marginUsd * k.leverage)}
 <b>ENTRY:</b> ~$${px(pos.markPxAtDecision)} (market order, paper fill at the next minute)
 <b>TAKE-PROFIT:</b> ~$${px(pos.markPxAtDecision * (1 + (dir * move) / 100))} (${dir > 0 ? '+' : '−'}${move.toFixed(2)}% in price = +${pos.targetNetPct.toFixed(2)}% net)
-<b>LIQUIDATION:</b> ~$${px(pos.markPxAtDecision * (1 - (dir * e.liqDistPct) / 100))} (${dir > 0 ? '−' : '+'}${e.liqDistPct}% in price). No stop-loss.
+${k.stopLoss ? `<b>STOP-LOSS:</b> ~$${px(pos.markPxAtDecision * (1 - (dir * e.liqDistPct * k.stopLoss.beforeLiquidationFraction) / 100))} (${dir > 0 ? '−' : '+'}${(e.liqDistPct * k.stopLoss.beforeLiquidationFraction).toFixed(2)}% in price, just before liquidation)\n` : ''}<b>LIQUIDATION:</b> ~$${px(pos.markPxAtDecision * (1 - (dir * e.liqDistPct) / 100))} (${dir > 0 ? '−' : '+'}${e.liqDistPct}% in price).${k.stopLoss ? '' : ' No stop-loss.'}
 <b>TIME LIMIT:</b> closed at market after ${k.maxHoldHours}h if the target isn't reached.
 
 <b>WHY:</b> ${dir > 0 ? 'up' : 'down'} ${Math.abs(e.chg15)}% in 15 min, ${sf(e.chg60)} in 1h · volume ${e.surge}× the usual 15 min${e.oiChgPct != null ? ` · open interest ${sf(e.oiChgPct)}` : ''}
@@ -70,7 +70,7 @@ function runSection(run, now, time) {
 |---|---|
 | Start → now | $${run.seedUsd} → **${usd(bankroll(run))}** (${sf((bankroll(run) / run.seedUsd - 1) * 100)}) since ${time.when(new Date(run.startedAt))} |
 | Cycle | ${run.cycle}, ${usd(run.cashedOutBeforeUsd)} cashed out in earlier cycles; goal ${usd(run.goalUsd + run.seedUsd)} |
-| Trades | ${trades.length}: ${trades.filter((t) => t.targetHit).length} at target, ${trades.filter((t) => t.reason?.startsWith('time limit')).length} at the time limit, ${trades.filter((t) => t.reason === 'liquidated').length} liquidated |
+| Trades | ${trades.length}: ${trades.filter((t) => t.targetHit).length} at target, ${trades.filter((t) => t.reason?.startsWith('time limit')).length} at the time limit, ${trades.filter((t) => t.reason?.startsWith('stop-loss')).length} stopped, ${trades.filter((t) => t.reason === 'liquidated').length} liquidated |
 ${run.per === 'day' ? `| Days the daily goal was met | ${[...(run.days ?? []), run.day].filter((d) => d?.goalMetAt).length} of ${(run.days?.length ?? 0) + (run.day ? 1 : 0)} |\n` : ''}${pos ? `| Open | **${pos.side.toUpperCase()} ${pos.coin}** ${pos.leverage}x, margin ${usd(pos.marginUsd)}, entry ${pos.fill ? `$${px(pos.fill.px)}` : 'pending'}, target ${pos.targetPx ? `$${px(pos.targetPx)}` : 'n/a'}, liquidation ${pos.liqPx ? `$${px(pos.liqPx)}` : 'n/a'}, now ${pos.mark ? sf(pos.mark.netPct) : 'n/a'}, held ${held(pos, now)} |\n` : ''}
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -88,7 +88,7 @@ export function perpsMarkdown(ledger, cfg, now, time) {
 Updated ${time.when(now)}. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, ${k.leverage}x isolated with 100% of the bankroll as margin**.
-Close at the run's net target (a resting limit order, maker fee) or at market after **${k.maxHoldHours}h**. **No stop-loss**: liquidation (about 5–9% against the position, depending on the coin) is the worst case.
+Close at the run's net target (a resting limit order, maker fee) or at market after **${k.maxHoldHours}h**. ${k.stopLoss ? `**Stop-loss at ${k.stopLoss.beforeLiquidationFraction * 100}% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.` : '**No stop-loss**: liquidation (about 5–9% against the position, depending on the coin) is the worst case.'}
 ${k.variants.map((v) => `**${v.name}:** $${v.seedUsd} seed, +${v.targetNetPct}% net per ${v.per}${v.per === 'day' ? ' (no new trades after the daily goal until midnight ET)' : ' (searching again right after each sale)'}, needs a ${targetMovePct(v.targetNetPct, k.leverage, k.fees).toFixed(2)}% price move.`).join(' ')}
 At ${usd(k.goalUsd)} + the seed a run cashes out ${usd(k.goalUsd)}+ and starts again from the seed. The runs never hold the same coin; no coin twice within ${k.cooldownHours}h.
 
@@ -96,7 +96,7 @@ ${current.map((r) => runSection(r, now, time)).join('\n')}
 ## Rules in effect
 
 - **Universe:** perps allowing ${k.leverage}x, 24h volume ≥ $${e.minDayVolumeUsd / 1e6}M, open interest ≥ $${e.minOpenInterestUsd / 1e6}M, spread ≤ ${e.maxSpreadPct}%.
-- **Entry:** last 15 min volume ≥ ${e.minVolumeSurge}× the day's average 15 min; price moved ${e.minMove15Pct}–${e.maxMove15Pct}% in 15 min (long if up, short if down)${e.requireTrendAgreement ? ', with the last hour the same way' : ''}; this side pays at most ${e.maxAdverseFundingPctPerHour}%/h funding; a typical 2h range ≥ ${e.minRangeToTarget}× the needed move; the worst 2h swing against this side in the last day < ${e.liqSafety * 100}% of the distance to liquidation; score ≥ ${e.minScore}.
+- **Entry:** ${e.lax ? `as lax as possible (since 2026-11-17, user request): no entry filters; whenever a run is in cash it takes the highest-scoring coin, long if its last 15 min went up, short if down.` : `last 15 min volume ≥ ${e.minVolumeSurge}× the day's average 15 min; price moved ${e.minMove15Pct}–${e.maxMove15Pct}% in 15 min (long if up, short if down)${e.requireTrendAgreement ? ', with the last hour the same way' : ''}; this side pays at most ${e.maxAdverseFundingPctPerHour}%/h funding; a typical 2h range ≥ ${e.minRangeToTarget}× the needed move; the worst 2h swing against this side in the last day < ${e.liqSafety * 100}% of the distance to liquidation; score ≥ ${e.minScore}.`}
 - **Score:** volume surge 30, 15-min move 20, 1h trend 15, open interest rising 15, room to reach the target 10, funding 10.
 - **Costs:** taker ${k.fees.takerPct}% on the entry and time-limit exits (plus half the spread), maker ${k.fees.makerPct}% on the take-profit, hourly funding at the rate seen at entry.
 - **Fills:** paper fill at the open of the first minute after the decision; exits checked minute by minute (liquidation before the take-profit inside a minute).

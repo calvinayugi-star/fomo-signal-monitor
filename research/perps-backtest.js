@@ -35,7 +35,7 @@ function quick(cs, i) {
   const chg15 = (close / w.at(-4).c - 1) * 100;
   const vol = w.map((c) => c.v * c.c);
   const surge = vol.slice(-3).reduce((s, v) => s + v, 0) / ((vol.reduce((s, v) => s + v, 0) / vol.length) * 3);
-  return surge >= e.minVolumeSurge && Math.abs(chg15) >= e.minMove15Pct && Math.abs(chg15) <= e.maxMove15Pct ? w : null;
+  return e.lax || (surge >= e.minVolumeSurge && Math.abs(chg15) >= e.minMove15Pct && Math.abs(chg15) <= e.maxMove15Pct) ? w : null;
 }
 
 const runs = k.variants.map((v) => ({ v, cash: v.seedUsd, busyUntil: 0, pos: null, trades: [], day: null, daysMet: 0, dayCount: 0, lastTraded: new Map() }));
@@ -65,9 +65,9 @@ for (let t = Math.ceil(from / (15 * 60e3)) * 15 * 60e3; t < now - 3 * H; t += 15
     const fill = cs[i + 1];
     if (!fill) continue;
     const d = r.side === 'long' ? 1 : -1;
-    const p = openPerp({ marginUsd: run.cash, leverage: k.leverage, side: r.side, entryPx: fill.o * (1 + (d * m.spreadPct) / 200), takerPct: k.fees.takerPct, mmrPct: m.mmrPct });
+    const p = openPerp({ marginUsd: run.cash, leverage: k.leverage, side: r.side, entryPx: fill.o * (1 + (d * m.spreadPct) / 200), takerPct: k.fees.takerPct, mmrPct: m.mmrPct, stopFraction: k.stopLoss?.beforeLiquidationFraction ?? null });
     const closeAt = fill.t + k.maxHoldHours * H;
-    const res = replayPerp(p, cs.slice(i + 1, i + 1 + k.maxHoldHours * 12 + 1), {}, { targetNetPct: run.v.targetNetPct, ...k.fees, slipPct: m.spreadPct / 2, fundingRatePerHour: FUNDING_PER_HOUR * d, closeAtMs: closeAt, nowMs: closeAt });
+    const res = replayPerp(p, cs.slice(i + 1, i + 1 + k.maxHoldHours * 12 + 1), {}, { targetNetPct: run.v.targetNetPct, ...k.fees, slipPct: m.spreadPct / 2, stopSlipPct: k.stopLoss?.extraSlipPct ?? 0, fundingRatePerHour: FUNDING_PER_HOUR * d, closeAtMs: closeAt, nowMs: closeAt });
     run.trades.push({ t: new Date(t).toISOString().slice(5, 16), coin: m.coin, side: r.side, score: r.score, reason: res.reason, netPct: res.netPct, mins: Math.round((res.exitAt - fill.t) / 60e3) });
     run.cash = res.proceeds;
     run.pos = m.coin;
@@ -79,9 +79,9 @@ for (let t = Math.ceil(from / (15 * 60e3)) * 15 * 60e3; t < now - 3 * H; t += 15
 
 for (const run of runs) {
   const T = run.trades;
-  const hit = T.filter((x) => x.reason.startsWith('+')), liq = T.filter((x) => x.reason === 'liquidated'), tl = T.filter((x) => x.reason.startsWith('time'));
+  const hit = T.filter((x) => x.reason.startsWith('+')), liq = T.filter((x) => x.reason === 'liquidated'), tl = T.filter((x) => x.reason.startsWith('time')), stop = T.filter((x) => x.reason.startsWith('stop'));
   const avg = (a) => (a.length ? (a.reduce((s, x) => s + x.netPct, 0) / a.length).toFixed(1) : '-');
-  console.log(`== ${run.v.name}: $${run.v.seedUsd} → $${run.cash.toFixed(2)} · ${T.length} trades (${(T.length / days).toFixed(1)}/day) · target ${hit.length} (median ${hit.length ? hit.map((x) => x.mins).sort((a, b) => a - b)[hit.length >> 1] : '-'} min) · time limit ${tl.length} (avg ${avg(tl)}%) · liquidated ${liq.length}${run.v.per === 'day' ? ` · daily goal met ${run.daysMet} of ${run.dayCount} days` : ''}`);
+  console.log(`== ${run.v.name}: $${run.v.seedUsd} → $${run.cash.toFixed(2)} · ${T.length} trades (${(T.length / days).toFixed(1)}/day) · target ${hit.length} (median ${hit.length ? hit.map((x) => x.mins).sort((a, b) => a - b)[hit.length >> 1] : '-'} min) · time limit ${tl.length} (avg ${avg(tl)}%) · stopped ${stop.length} (avg ${avg(stop)}%) · liquidated ${liq.length}${run.v.per === 'day' ? ` · daily goal met ${run.daysMet} of ${run.dayCount} days` : ''}`);
   console.log(`   longs ${T.filter((x) => x.side === 'long').length} (${T.filter((x) => x.side === 'long' && x.reason.startsWith('+')).length} hit) · shorts ${T.filter((x) => x.side === 'short').length} (${T.filter((x) => x.side === 'short' && x.reason.startsWith('+')).length} hit)`);
   for (const x of T) console.log(`   ${x.t} ${x.side.padEnd(5)} ${x.coin.padEnd(9)} score ${String(x.score).padStart(5)} → ${x.reason.padEnd(32)} ${x.netPct.toFixed(1).padStart(7)}% in ${x.mins} min`);
 }

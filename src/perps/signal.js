@@ -56,7 +56,9 @@ export function evaluate(m, c5, { e, leverage, fees, targetNetPct, oiPrevUsd = n
 
   const absMove = Math.abs(chg15);
   let reason = null;
-  if (surge < e.minVolumeSurge) reason = 'volume not surging';
+  // e.lax (since 2026-11-17, user request "as lax as possible"): no entry filters, the score alone ranks the coins.
+  if (e.lax) reason = null;
+  else if (surge < e.minVolumeSurge) reason = 'volume not surging';
   else if (absMove < e.minMove15Pct) reason = 'no move yet (15 min)';
   else if (absMove > e.maxMove15Pct) reason = `already moved >${e.maxMove15Pct}% in 15 min`;
   else if (e.requireTrendAgreement && Math.sign(chg60) !== d) reason = '1h trend against the move';
@@ -72,6 +74,6 @@ export function evaluate(m, c5, { e, leverage, fees, targetNetPct, oiPrevUsd = n
     10 * clamp01(typical2h / move - 1) + // a typical 2h range of twice the needed move = full marks
     10 * (adverseFunding <= 0 ? 1 : 0.5); // this side is paid (or pays nothing) in funding
   row.score = round(score, 1);
-  if (!reason && score < e.minScore) reason = 'score below bar';
+  if (!reason && !e.lax && score < e.minScore) reason = 'score below bar';
   return { ...row, reason };
 }

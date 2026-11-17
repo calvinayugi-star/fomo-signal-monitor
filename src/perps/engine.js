@@ -1,5 +1,6 @@
 // Perps Compounders (paper mode, since 2026-11-17; replace the spot memecoin Compounders): two runs on Hyperliquid perps,
-// 10x isolated, 100% of the bankroll as margin, longs and shorts, no stop-loss, a take-profit at the run's net target and a 2h time limit.
+// 10x isolated, 100% of the bankroll as margin, longs and shorts, a take-profit at the run's net target, a 2h time limit, and
+// (since 2026-11-17, user request) a stop-loss just before liquidation (config perps.stopLoss).
 //   Conservative: $110 seed, +13.93% net once per day (then no new trades until midnight ET).
 //   Aggressive:   $25 seed, +20% net per trade, searching again right after each sale.
 // Each loops: when the bankroll reaches goalUsd + seed it is cashed out (all but the seed) and a new cycle starts from the seed.
@@ -63,8 +64,9 @@ async function settle(pos, k, now) {
     // Market entry at the open of the first minute after the decision, paying half the spread.
     pos.fill = { at: new Date(f.t).toISOString(), px: f.o * (1 + (d * pos.slipPct) / 100), candleT: f.t };
   }
-  const p = openPerp({ marginUsd: pos.marginUsd, leverage: pos.leverage, side: pos.side, entryPx: pos.fill.px, takerPct: k.fees.takerPct, mmrPct: pos.mmrPct });
+  const p = openPerp({ marginUsd: pos.marginUsd, leverage: pos.leverage, side: pos.side, entryPx: pos.fill.px, takerPct: k.fees.takerPct, mmrPct: pos.mmrPct, stopFraction: k.stopLoss?.beforeLiquidationFraction ?? null });
   pos.liqPx = p.liqPx;
+  pos.stopPx = p.stopPx;
   pos.targetPx = targetPx(p, pos.targetNetPct, k.fees.makerPct, pos.state.fundingUsd ?? 0);
   const todo = cs.filter((c) => c.t >= pos.fill.candleT && c.t > (pos.checkedThrough ?? -Infinity));
   const res = replayPerp(p, todo, pos.state, {
@@ -72,6 +74,7 @@ async function settle(pos, k, now) {
     makerPct: k.fees.makerPct,
     takerPct: k.fees.takerPct,
     slipPct: pos.slipPct,
+    stopSlipPct: k.stopLoss?.extraSlipPct ?? 0,
     fundingRatePerHour: pos.fundingPctPerHour / 100,
     closeAtMs: pos.fill.candleT + k.maxHoldHours * HOUR,
     nowMs: now.getTime(),
@@ -101,6 +104,7 @@ function recordClose(run, res, k) {
       entryPx: pos.fill.px,
       exitPx: res.exitPx,
       liqPx: pos.liqPx,
+      stopPx: pos.stopPx ?? null,
       marginUsd: round(pos.marginUsd, 4),
       notionalUsd: round(res.p.notional, 2),
       feesUsd: res.reason === 'liquidated' ? round(res.p.entryFee, 4) : round(feesUsd, 4),
@@ -154,7 +158,7 @@ export async function runPerps({ cfg, dryRun, dataDir, cacheDir, reportPath, log
     if (!run && (!last || prev)) {
       run = newRun(now, k, time, v, prev);
       ledger.runs.push(run);
-      await send(`${PAPER}\n🔁 <b>${tag(run)}${prev ? ` cycle ${run.cycle}` : ''} STARTED</b> with $${run.seedUsd} on Hyperliquid perps: ${k.leverage}x, longs and shorts, sell at +${v.targetNetPct}% net or after ${k.maxHoldHours}h, no stop-loss${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new trades until midnight ET` : ''}; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}.`);
+      await send(`${PAPER}\n🔁 <b>${tag(run)}${prev ? ` cycle ${run.cycle}` : ''} STARTED</b> with $${run.seedUsd} on Hyperliquid perps: ${k.leverage}x, longs and shorts, sell at +${v.targetNetPct}% net or after ${k.maxHoldHours}h, ${k.stopLoss ? `stop-loss at ${k.stopLoss.beforeLiquidationFraction * 100}% of the way to liquidation` : 'no stop-loss'}${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new trades until midnight ET` : ''}; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}.`);
     }
     if (run?.status === 'active') runs.push(run);
   }
