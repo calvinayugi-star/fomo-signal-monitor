@@ -26,6 +26,8 @@ const readOr = (file, fallback) => {
   }
 };
 export const goalBankroll = (run) => run.goalUsd + run.seedUsd;
+// Time limit of a variant (since 2026-11-17 the Aggressive run has 4h, the default is perps.maxHoldHours).
+export const holdOf = (k, v) => v?.maxHoldHours ?? k.maxHoldHours;
 export const bankrollOf = (run) => run.cash + (run.position ? run.position.mark?.proceeds ?? run.position.marginUsd : 0);
 
 function newRun(now, k, time, v, prev) {
@@ -76,7 +78,7 @@ async function settle(pos, k, now) {
     slipPct: pos.slipPct,
     stopSlipPct: k.stopLoss?.extraSlipPct ?? 0,
     fundingRatePerHour: pos.fundingPctPerHour / 100,
-    closeAtMs: pos.fill.candleT + k.maxHoldHours * HOUR,
+    closeAtMs: pos.fill.candleT + (pos.maxHoldHours ?? k.maxHoldHours) * HOUR,
     nowMs: now.getTime(),
   });
   if (todo.length) pos.checkedThrough = todo.at(-1).t;
@@ -158,7 +160,7 @@ export async function runPerps({ cfg, dryRun, dataDir, cacheDir, reportPath, log
     if (!run && (!last || prev)) {
       run = newRun(now, k, time, v, prev);
       ledger.runs.push(run);
-      await send(`${PAPER}\n🔁 <b>${tag(run)}${prev ? ` cycle ${run.cycle}` : ''} STARTED</b> with $${run.seedUsd} on Hyperliquid perps: ${k.leverage}x, longs and shorts, sell at +${v.targetNetPct}% net or after ${k.maxHoldHours}h, ${k.stopLoss ? `stop-loss at ${k.stopLoss.beforeLiquidationFraction * 100}% of the way to liquidation` : 'no stop-loss'}${run.per === 'day' ? `; once the day is up +${v.targetNetPct}%, no new trades until midnight ET` : ''}; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}.`);
+      await send(`${PAPER}\n🔁 <b>${tag(run)}${prev ? ` cycle ${run.cycle}` : ''} STARTED</b> with $${run.seedUsd} on Hyperliquid perps: ${k.leverage}x, longs and shorts, sell at +${v.targetNetPct}% net or after ${holdOf(k, v)}h, ${k.stopLoss ? `stop-loss at ${k.stopLoss.beforeLiquidationFraction * 100}% of the way to liquidation` : 'no stop-loss'}${run.per === 'day' ? (v.dayStop === 'firstTarget' ? '; after its first target sale of the day, no new trades until midnight ET' : `; once the day is up +${v.targetNetPct}%, no new trades until midnight ET`) : ''}; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}.`);
     }
     if (run?.status === 'active') runs.push(run);
   }
@@ -198,6 +200,11 @@ export async function runPerps({ cfg, dryRun, dataDir, cacheDir, reportPath, log
           const t = recordClose(run, res, k);
           h.exit = { coin: t.coin, side: t.side, reason: t.reason, netPct: t.netPct, netUsd: t.netUsd };
           await send(closeMessage(run, t));
+          // dayStop firstTarget (Conservative, since 2026-11-17): the first target sale ends the day, even if earlier trades lost.
+          if (run.per === 'day' && v.dayStop === 'firstTarget' && t.targetHit && !run.day.goalMetAt) {
+            run.day.goalMetAt = now.toISOString();
+            await send(`${PAPER}\n🎯 <b>${tag(run)}: target hit for today</b> (${usd(run.day.startBankroll)} → ${usd(run.cash)}). No new trades until midnight ET.`);
+          }
           if (run.cash >= goalBankroll(run) - 0.005) {
             run.cashOutUsd = round(run.cash - run.seedUsd);
             Object.assign(run, { status: 'completed', endedAt: now.toISOString(), finalBankroll: round(run.cash), note: `goal reached: cashed out ${usd(run.cashOutUsd)}, ${usd(run.seedUsd)} kept for the next cycle` });
@@ -257,6 +264,7 @@ export async function runPerps({ cfg, dryRun, dataDir, cacheDir, reportPath, log
             slipPct: round(m.spreadPct / 2, 4),
             fundingPctPerHour: m.fundingPctPerHour,
             targetNetPct: round(targetNetPct, 4),
+            maxHoldHours: holdOf(k, v),
             score: best.score,
             entry: best,
             state: {},

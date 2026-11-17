@@ -16,8 +16,7 @@ const k = cfg.perps;
 // Overrides: hold=H (time limit in hours), dayMode=goal|firstTarget|oneTrade (Conservative: stop for the day when the day is up
 // the target / after the first target sale / after any one trade), any other key=value goes to perps.entry.
 const args = Object.fromEntries(process.argv.slice(3).map((a) => a.split('=')).map(([key, v]) => [key, v === 'true' ? true : v === 'false' ? false : isNaN(Number(v)) ? v : Number(v)]));
-const { hold, dayMode = 'goal', ...entryArgs } = args;
-if (hold) k.maxHoldHours = hold;
+const { hold, dayMode, ...entryArgs } = args; // without overrides each run uses its own settings (variant maxHoldHours, dayStop)
 const e = { ...k.entry, ...entryArgs };
 const M5 = 5 * 60e3, H = 3600e3;
 const FUNDING_PER_HOUR = 0.0000125; // 0.00125%/h, Hyperliquid's usual baseline, charged against the position
@@ -71,8 +70,9 @@ for (let t = Math.ceil(from / (15 * 60e3)) * 15 * 60e3; t < now - 3 * H; t += 15
     if (!fill) continue;
     const d = r.side === 'long' ? 1 : -1;
     const p = openPerp({ marginUsd: run.cash, leverage: k.leverage, side: r.side, entryPx: fill.o * (1 + (d * m.spreadPct) / 200), takerPct: k.fees.takerPct, mmrPct: m.mmrPct, stopFraction: k.stopLoss?.beforeLiquidationFraction ?? null });
-    const closeAt = fill.t + k.maxHoldHours * H;
-    const res = replayPerp(p, cs.slice(i + 1, i + 1 + k.maxHoldHours * 12 + 1), {}, { targetNetPct: run.v.targetNetPct, ...k.fees, slipPct: m.spreadPct / 2, stopSlipPct: k.stopLoss?.extraSlipPct ?? 0, fundingRatePerHour: FUNDING_PER_HOUR * d, closeAtMs: closeAt, nowMs: closeAt });
+    const holdH = hold ?? run.v.maxHoldHours ?? k.maxHoldHours;
+    const closeAt = fill.t + holdH * H;
+    const res = replayPerp(p, cs.slice(i + 1, i + 1 + holdH * 12 + 1), {}, { targetNetPct: run.v.targetNetPct, ...k.fees, slipPct: m.spreadPct / 2, stopSlipPct: k.stopLoss?.extraSlipPct ?? 0, fundingRatePerHour: FUNDING_PER_HOUR * d, closeAtMs: closeAt, nowMs: closeAt });
     run.trades.push({ t: new Date(t).toISOString().slice(5, 16), coin: m.coin, side: r.side, score: r.score, reason: res.reason, netPct: res.netPct, mins: Math.round((res.exitAt - fill.t) / 60e3) });
     run.cash = res.proceeds;
     run.pos = m.coin;
@@ -83,7 +83,8 @@ for (let t = Math.ceil(from / (15 * 60e3)) * 15 * 60e3; t < now - 3 * H; t += 15
       (run.tradesPerDay ??= {})[run.day.date] = run.day.trades;
       const goal = run.cash >= run.day.start * (1 + run.v.targetNetPct / 100) - 0.005;
       if (goal) run.daysMet++;
-      if (goal || (dayMode === 'firstTarget' && res.targetHit) || dayMode === 'oneTrade') run.day.met = true;
+      const mode = dayMode ?? run.v.dayStop ?? 'goal';
+      if (goal || (mode === 'firstTarget' && res.targetHit) || mode === 'oneTrade') run.day.met = true;
     }
   }
 }

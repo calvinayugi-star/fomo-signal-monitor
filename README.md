@@ -72,12 +72,17 @@ The spot memecoin Compounders below were retired on 2026-11-17 (Conservative end
 two runs on **Hyperliquid perpetual futures**, paper-traded on Hyperliquid's free public data (no account, no orders). Code in
 [src/perps/](src/perps), settings under `perps` in [config.json](config.json), results in [PERPS.md](PERPS.md).
 
-- **Both:** 10x isolated, 100% of the bankroll as margin, **longs and shorts**, **no stop-loss**, take-profit at the run's net target
-  (resting limit order, maker fee 0.015%), otherwise closed at market after **2h** (taker 0.045% + half the spread). Funding paid on the hour.
+- **Both:** 10x isolated, 100% of the bankroll as margin, **longs and shorts**, take-profit at the run's net target
+  (resting limit order, maker fee 0.015%), otherwise closed at market at the time limit (taker 0.045% + half the spread). Funding paid on the hour.
+  **Stop-loss at 90% of the way to liquidation** (user request, 2026-11-17): a market order that keeps the margin a liquidation would take
+  (about −50% instead of −100% on coins capped at 10x).
   Liquidation is simulated with Hyperliquid's maintenance margin (half the margin at the coin's max leverage): about 5% against the
   position on coins capped at 10x, 7.5% at 20x, 8.75% for BTC. Never both runs on the same coin; no coin twice within 24h.
-- **Conservative Perps:** $110 seed, +13.93% net once a day (a 1.45% price move), then no new trades until midnight ET.
-- **Aggressive Perps:** $25 seed, +20% net per trade (a 2.06% price move), searching again right after each sale.
+- **Conservative Perps:** $110 seed, +13.93% net (a 1.45% price move), 2h time limit; after its **first target sale of the day** no new
+  trades until midnight ET (earlier losing trades that day don't matter).
+- **Aggressive Perps:** $25 seed, +20% net per trade (a 2.06% price move), **4h time limit**, searching again right after each sale.
+- **Started 2026-11-17** in paper mode with the strict entry rules (a lax version took both runs under $1 in the backtest). 16-day backtest
+  of these exact settings: Conservative $110 → $152.84 (33 trades, 45% at target), Aggressive $25 → $15.92 (39 trades, 46% at target).
 - **Goal:** at $5,000 + the seed a run cashes out $5,000+ and starts a new cycle from the seed. A run that falls under $1 is BUSTED and waits for the user.
 - **Universe:** only perps allowing 10x (34 of 179 on 2026-11-17), 24h volume ≥ $5M, open interest ≥ $2M, spread ≤ 0.1%.
 - **Entry** (`src/perps/signal.js`): 15-min volume ≥ 1.5× the day's average, a 0.3–2.5% move in 15 min (long if up, short if down) with
