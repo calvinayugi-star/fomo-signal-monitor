@@ -45,10 +45,17 @@
     }
    ],
    "day": {
-    "date": "2026-11-16",
-    "startBankroll": 110,
-    "goalMetAt": "2026-11-17T03:30:27.772Z"
-   }
+    "date": "2026-11-17",
+    "startBankroll": 125.32
+   },
+   "days": [
+    {
+     "date": "2026-11-16",
+     "startBankroll": 110,
+     "goalMetAt": "2026-11-17T03:30:27.772Z",
+     "endBankroll": 125.32
+    }
+   ]
   },
   {
    "id": "perps-aggressive-2026-11-16",
