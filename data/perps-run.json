@@ -1,0 +1,46 @@
+{
+ "runs": [
+  {
+   "id": "perps-conservative-2026-11-16",
+   "venue": "hyperliquid",
+   "variant": "conservative",
+   "name": "Conservative Perps",
+   "per": "day",
+   "mode": "paper",
+   "seedUsd": 110,
+   "goalUsd": 5000,
+   "cycle": 1,
+   "cashedOutBeforeUsd": 0,
+   "targetNetPct": 13.93,
+   "leverage": 10,
+   "startedAt": "2026-11-17T02:15:24.597Z",
+   "status": "active",
+   "cash": 110,
+   "position": null,
+   "trades": [],
+   "day": {
+    "date": "2026-11-16",
+    "startBankroll": 110
+   }
+  },
+  {
+   "id": "perps-aggressive-2026-11-16",
+   "venue": "hyperliquid",
+   "variant": "aggressive",
+   "name": "Aggressive Perps",
+   "per": "trade",
+   "mode": "paper",
+   "seedUsd": 25,
+   "goalUsd": 5000,
+   "cycle": 1,
+   "cashedOutBeforeUsd": 0,
+   "targetNetPct": 20,
+   "leverage": 10,
+   "startedAt": "2026-11-17T02:15:24.597Z",
+   "status": "active",
+   "cash": 25,
+   "position": null,
+   "trades": []
+  }
+ ]
+}
