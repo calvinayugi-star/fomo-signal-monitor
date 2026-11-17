@@ -73,15 +73,15 @@ two runs on **Hyperliquid perpetual futures**, paper-traded on Hyperliquid's fre
 [src/perps/](src/perps), settings under `perps` in [config.json](config.json), results in [PERPS.md](PERPS.md).
 
 - **Both:** 10x isolated, 100% of the bankroll as margin, **longs and shorts**, take-profit at the run's net target
-  (resting limit order, maker fee 0.015%), otherwise closed at market at the time limit (taker 0.045% + half the spread). Funding paid on the hour.
+  (resting limit order, maker fee 0.015%), **no time limit since 2026-11-17** (trades get time to breathe; they close only at the target, the stop or the cash-out goal). Funding paid on the hour.
   **Stop-loss at 90% of the way to liquidation** (user request, 2026-11-17): a market order that keeps the margin a liquidation would take
   (about −50% instead of −100% on coins capped at 10x).
   Liquidation is simulated with Hyperliquid's maintenance margin (half the margin at the coin's max leverage): about 5% against the
   position on coins capped at 10x, 7.5% at 20x, 8.75% for BTC. Never both runs on the same coin; no coin twice within 24h.
-- **Conservative Perps:** $110 seed, +13.93% net (a 1.45% price move), 2h time limit; after its **first target sale of the day** no new
+- **Conservative Perps:** $110 seed, +13.93% net (a 1.45% price move); after its **first target sale of the day** no new
   trades until midnight ET (earlier losing trades that day don't matter). Since 2026-11-17 it also trades only in the direction of
   the last 4h (`variants[].entry.requireTrend4hAgreement`), the best single change in the backtest.
-- **Aggressive Perps:** $25 seed, +20% net per trade (a 2.06% price move), **4h time limit**, searching again right after each sale.
+- **Aggressive Perps:** $25 seed, +20% net per trade (a 2.06% price move), searching again right after each sale.
 - **Started 2026-11-17** in paper mode with the strict entry rules (a lax version took both runs under $1 in the backtest). 16-day backtest
   of these exact settings: Conservative $110 → $152.84 (33 trades, 45% at target), Aggressive $25 → $15.92 (39 trades, 46% at target).
 - **Goal:** at $5,000 + the seed a run cashes out $5,000+ and starts a new cycle from the seed. A run that falls under $1 is BUSTED and waits for the user.

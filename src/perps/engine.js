@@ -56,11 +56,15 @@ function newRun(now, k, time, v, prev) {
 }
 
 // Settles an open position on the 1-minute candles since the last check. Returns the close, { noFill }, or null (still open).
-async function settle(pos, k, now) {
+// holdH: the run's current time limit in hours (null = none), so a config change also applies to positions already open.
+async function settle(pos, k, now, holdH) {
   const fillAtMs = Date.parse(pos.decidedAt) + k.fillDelayMinutes * 60e3;
   const from = pos.checkedThrough != null ? pos.checkedThrough + 60e3 : fillAtMs - 60e3;
   if (now - from < 60e3) return null;
-  const cs = (await candles(pos.coin, '1m', from, now)).filter((c) => c.t >= from && c.t + 60e3 <= now);
+  // One call returns at most 5,000 one-minute candles (~3.5 days); with no time limit a position can outlast that between checks.
+  const cs = [];
+  for (let s = from; s < now; s += 4900 * 60e3) cs.push(...(await candles(pos.coin, '1m', s, Math.min(now, s + 4900 * 60e3 - 1))));
+  cs.splice(0, cs.length, ...cs.filter((c) => c.t >= from && c.t + 60e3 <= now));
   const d = pos.side === 'long' ? 1 : -1;
   if (!pos.fill) {
     const f = cs.find((c) => c.t >= fillAtMs);
@@ -80,7 +84,7 @@ async function settle(pos, k, now) {
     slipPct: pos.slipPct,
     stopSlipPct: k.stopLoss?.extraSlipPct ?? 0,
     fundingRatePerHour: pos.fundingPctPerHour / 100,
-    closeAtMs: pos.fill.candleT + (pos.maxHoldHours ?? k.maxHoldHours) * HOUR,
+    closeAtMs: holdH ? pos.fill.candleT + holdH * HOUR : Infinity,
     nowMs: now.getTime(),
   });
   if (todo.length) pos.checkedThrough = todo.at(-1).t;
@@ -162,7 +166,7 @@ export async function runPerps({ cfg, dryRun, dataDir, cacheDir, reportPath, log
     if (!run && (!last || prev)) {
       run = newRun(now, k, time, v, prev);
       ledger.runs.push(run);
-      await send(`${PAPER}\n🔁 <b>${tag(run)}${prev ? ` cycle ${run.cycle}` : ''} STARTED</b> with $${run.seedUsd} on Hyperliquid perps: ${k.leverage}x, longs and shorts, sell at +${v.targetNetPct}% net or after ${holdOf(k, v)}h, ${k.stopLoss ? `stop-loss at ${k.stopLoss.beforeLiquidationFraction * 100}% of the way to liquidation` : 'no stop-loss'}${run.per === 'day' ? (v.dayStop === 'firstTarget' ? '; after its first target sale of the day, no new trades until midnight ET' : `; once the day is up +${v.targetNetPct}%, no new trades until midnight ET`) : ''}; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}.`);
+      await send(`${PAPER}\n🔁 <b>${tag(run)}${prev ? ` cycle ${run.cycle}` : ''} STARTED</b> with $${run.seedUsd} on Hyperliquid perps: ${k.leverage}x, longs and shorts, sell at +${v.targetNetPct}% net${holdOf(k, v) ? ` or after ${holdOf(k, v)}h` : ' (no time limit)'}, ${k.stopLoss ? `stop-loss at ${k.stopLoss.beforeLiquidationFraction * 100}% of the way to liquidation` : 'no stop-loss'}${run.per === 'day' ? (v.dayStop === 'firstTarget' ? '; after its first target sale of the day, no new trades until midnight ET' : `; once the day is up +${v.targetNetPct}%, no new trades until midnight ET`) : ''}; at ${usd(goalBankroll(run))} it cashes out ${usd(run.goalUsd)}+ and starts again from $${run.seedUsd}.`);
     }
     if (run?.status === 'active') runs.push(run);
   }
@@ -197,7 +201,7 @@ export async function runPerps({ cfg, dryRun, dataDir, cacheDir, reportPath, log
 
     if (run.position) {
       try {
-        const res = await settle(run.position, k, now);
+        const res = await settle(run.position, k, now, holdOf(k, v));
         if (res) {
           const t = recordClose(run, res, k);
           h.exit = { coin: t.coin, side: t.side, reason: t.reason, netPct: t.netPct, netUsd: t.netUsd };

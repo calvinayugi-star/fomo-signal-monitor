@@ -3,7 +3,7 @@
   "monitor": { "enabled": false, "stoppedOn": "2026-10-10" },
 
   "_perps": "Perps Compounders (since 2026-11-17, user's spec): paper trading on Hyperliquid's public data, 10x isolated, 100% of the bankroll as margin, longs and shorts, no stop-loss, 2h time limit. Conservative $110 +13.93%/day, Aggressive $25 +20%/trade, $5,000 cash-out then a new cycle from the seed. Fees: Hyperliquid base tier (taker 0.045%, maker 0.015%).",
-  "_perpsVariants": "Since 2026-11-17 (user choice after the 16-day backtest): Conservative stops for the day after its first target sale (dayStop firstTarget, even if earlier trades that day lost), Aggressive has a 4h time limit (maxHoldHours overrides the 2h default). A variant's `entry` overrides perps.entry: Conservative also requires the last 4h to move the same way as the trade (user choice, same day; best single change in the backtest).",
+  "_perpsVariants": "Since 2026-11-17 (user choice after the 16-day backtest): Conservative stops for the day after its first target sale (dayStop firstTarget, even if earlier trades that day lost). A variant's maxHoldHours would override perps.maxHoldHours (Aggressive had 4h until the time limit was removed later that day). A variant's `entry` overrides perps.entry: Conservative also requires the last 4h to move the same way as the trade (user choice, same day; best single change in the backtest).",
   "perps": {
     "enabled": true,
     "venue": "hyperliquid",
@@ -11,13 +11,14 @@
     "fees": { "takerPct": 0.045, "makerPct": 0.015 },
     "fillDelayMinutes": 1,
     "noFillCancelHours": 1,
-    "maxHoldHours": 2,
+    "_maxHoldHours": "null = no time limit (since 2026-11-17, user's objective: give trades time to breathe and hit the target whenever it comes; a trade closes only at the target, the stop before liquidation, or the cash-out goal). Applies to open positions too. Was 2h (Aggressive 4h).",
+    "maxHoldHours": null,
     "cooldownHours": 24,
     "goalUsd": 5000,
     "minBankrollUsd": 1,
     "variants": [
       { "id": "conservative", "name": "Conservative Perps", "targetNetPct": 13.93, "per": "day", "dayStop": "firstTarget", "seedUsd": 110, "entry": { "requireTrend4hAgreement": true } },
-      { "id": "aggressive", "name": "Aggressive Perps", "targetNetPct": 20, "per": "trade", "maxHoldHours": 4, "seedUsd": 25 }
+      { "id": "aggressive", "name": "Aggressive Perps", "targetNetPct": 20, "per": "trade", "seedUsd": 25 }
     ],
     "restart": [],
     "_stopLoss": "Since 2026-11-17 (user request): a stop-loss market order at this fraction of the way to the liquidation price, paying the taker fee, half the spread and extraSlipPct; keeps the maintenance margin a liquidation would take (about half the bankroll on coins capped at 10x).",
