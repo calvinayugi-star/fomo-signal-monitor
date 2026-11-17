@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Mon, Nov 16, 22:15 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Mon, Nov 16, 22:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee) or at market after the run's time limit. **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,15 +11,14 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$110.00** (+0.0%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$125.32** (+13.9%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
-| Trades | 0: 0 at target, 0 at the time limit, 0 stopped, 0 liquidated |
-| Days the daily goal was met | 0 of 1 |
-| Open | **LONG AAVE** 10x, margin $110.00, entry pending, target n/a, liquidation n/a, now n/a, held fill pending |
+| Trades | 1: 1 at target, 0 at the time limit, 0 stopped, 0 liquidated |
+| Days the daily goal was met | 1 of 1 |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
-| – | – | – | – | – | – | – | – | – | – |
+| 1 | Nov 16, 22:17 | AAVE | long | +13.93% target | 0.16h | -1.2% | $0.66 | +13.9% ($15.32) | $125.32 |
 
 ## Aggressive Perps: perps-aggressive-2026-11-16 (ACTIVE)
 
