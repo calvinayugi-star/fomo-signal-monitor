@@ -66,7 +66,26 @@ Runner-ups build up several times faster than alerts, so these comparisons becom
 
 Stay in paper mode until about 50 alerts have closed and the numbers have been reviewed.
 
-## FOMO Compounder (second strategy, paper mode)
+## Perps Compounders (since 2026-11-17, paper mode)
+
+The spot memecoin Compounders below were retired on 2026-11-17 (Conservative ended at $80.93, Aggressive at $25) and replaced by
+two runs on **Hyperliquid perpetual futures**, paper-traded on Hyperliquid's free public data (no account, no orders). Code in
+[src/perps/](src/perps), settings under `perps` in [config.json](config.json), results in [PERPS.md](PERPS.md).
+
+- **Both:** 10x isolated, 100% of the bankroll as margin, **longs and shorts**, **no stop-loss**, take-profit at the run's net target
+  (resting limit order, maker fee 0.015%), otherwise closed at market after **2h** (taker 0.045% + half the spread). Funding paid on the hour.
+  Liquidation is simulated with Hyperliquid's maintenance margin (half the margin at the coin's max leverage): about 5% against the
+  position on coins capped at 10x, 7.5% at 20x, 8.75% for BTC. Never both runs on the same coin; no coin twice within 24h.
+- **Conservative Perps:** $110 seed, +13.93% net once a day (a 1.45% price move), then no new trades until midnight ET.
+- **Aggressive Perps:** $25 seed, +20% net per trade (a 2.06% price move), searching again right after each sale.
+- **Goal:** at $5,000 + the seed a run cashes out $5,000+ and starts a new cycle from the seed. A run that falls under $1 is BUSTED and waits for the user.
+- **Universe:** only perps allowing 10x (34 of 179 on 2026-11-17), 24h volume ≥ $5M, open interest ≥ $2M, spread ≤ 0.1%.
+- **Entry** (`src/perps/signal.js`): 15-min volume ≥ 1.5× the day's average, a 0.3–2.5% move in 15 min (long if up, short if down) with
+  the last hour the same way, funding against the side ≤ 0.01%/h, a typical 2h range ≥ the needed move, the worst 2h swing against the
+  side in the last day < 80% of the distance to liquidation, score ≥ 50 (volume 30, 15-min move 20, 1h trend 15, open interest 15, room 10, funding 10).
+- **Backtest** (`node research/perps-backtest.js [days] [key=value]`, 5-min candles, ~16 days): see the 2026-11-17 notes in PERPS.md once enabled.
+
+## FOMO Compounder (second strategy, paper mode, retired 2026-11-17)
 
 A separate paper strategy that runs in the same hourly job and shares the same candidate lists. It never trades;
 Telegram messages are marked PAPER MODE. Settings are under `compounder` in [config.json](config.json).

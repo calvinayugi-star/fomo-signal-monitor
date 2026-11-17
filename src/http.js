@@ -5,6 +5,7 @@ const MIN_GAP_MS = {
   'api.gopluslabs.io': 1000,
   'api.dexscreener.com': 300,
   'frontend-api-v3.pump.fun': 500,
+  'api.hyperliquid.xyz': 1200, // info calls weigh ~20-25 of the 1,200 allowed per minute per IP
 };
 const lastCall = new Map();
 

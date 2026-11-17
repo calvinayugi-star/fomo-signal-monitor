@@ -1,6 +1,38 @@
 {
   "mode": "paper",
   "monitor": { "enabled": false, "stoppedOn": "2026-10-10" },
+
+  "_perps": "Perps Compounders (since 2026-11-17, user's spec): paper trading on Hyperliquid's public data, 10x isolated, 100% of the bankroll as margin, longs and shorts, no stop-loss, 2h time limit. Conservative $110 +13.93%/day, Aggressive $25 +20%/trade, $5,000 cash-out then a new cycle from the seed. Fees: Hyperliquid base tier (taker 0.045%, maker 0.015%).",
+  "perps": {
+    "enabled": false,
+    "venue": "hyperliquid",
+    "leverage": 10,
+    "fees": { "takerPct": 0.045, "makerPct": 0.015 },
+    "fillDelayMinutes": 1,
+    "noFillCancelHours": 1,
+    "maxHoldHours": 2,
+    "cooldownHours": 24,
+    "goalUsd": 5000,
+    "minBankrollUsd": 1,
+    "variants": [
+      { "id": "conservative", "name": "Conservative Perps", "targetNetPct": 13.93, "per": "day", "seedUsd": 110 },
+      { "id": "aggressive", "name": "Aggressive Perps", "targetNetPct": 20, "per": "trade", "seedUsd": 25 }
+    ],
+    "restart": [],
+    "entry": {
+      "minDayVolumeUsd": 5000000,
+      "minOpenInterestUsd": 2000000,
+      "maxSpreadPct": 0.1,
+      "minVolumeSurge": 1.5,
+      "minMove15Pct": 0.3,
+      "maxMove15Pct": 2.5,
+      "requireTrendAgreement": true,
+      "maxAdverseFundingPctPerHour": 0.01,
+      "minRangeToTarget": 1.0,
+      "liqSafety": 0.8,
+      "minScore": 50
+    }
+  },
   "positionUsd": 20,
   "holdHours": 24,
   "displayTimezone": "America/New_York",

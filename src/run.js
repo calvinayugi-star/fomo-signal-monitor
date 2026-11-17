@@ -13,6 +13,7 @@ import { collectCandidates } from './sources.js';
 import { updateOpen, stats, resultsMarkdown } from './tracker.js';
 import { sendTelegram, esc } from './telegram.js';
 import { runCompounder } from './compounder.js';
+import { runPerps } from './perps/engine.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = path.resolve(process.env.DATA_DIR ?? path.join(ROOT, 'data'));
@@ -245,9 +246,9 @@ async function main() {
   const log = { t: now.toISOString(), errors: [] };
   let shared = {}; // candidates and DEX pairs, reused by the Compounder
   const monitorOn = cfg.monitor?.enabled !== false;
-  // Nothing enabled (since 2026-11-17, while the system is rebuilt for perps): exit before any API call or record, so scheduled runs stay idle.
-  if (!monitorOn && !cfg.compounder?.enabled) {
-    console.log('Monitor and Compounder are both switched off: nothing to do.');
+  // Nothing enabled: exit before any API call or record, so scheduled runs stay idle.
+  if (!monitorOn && !cfg.compounder?.enabled && !cfg.perps?.enabled) {
+    console.log('Monitor, Compounder and Perps are all switched off: nothing to do.');
     return;
   }
 
@@ -258,7 +259,7 @@ async function main() {
     log.errors.push(`tracker: ${e.message}`);
   }
 
-  if (!monitorOn) {
+  if (!monitorOn && cfg.compounder?.enabled) {
     // Monitor stopped: only gather what the Compounder needs (lists, DEX pairs, liquidity history).
     try {
       const candidates = await collectCandidates(cfg, log);
@@ -270,7 +271,7 @@ async function main() {
     } catch (e) {
       log.errors.push(`candidates: ${e.message}`);
     }
-  } else try {
+  } else if (monitorOn) try {
     const { best, others, candidates, pairs } = await screen(cfg, store, now, log);
     shared = { candidates, pairs };
     const recentShadow = new Set(
@@ -305,6 +306,16 @@ async function main() {
       });
     } catch (e) {
       log.errors.push(`compounder: ${e.message}`);
+    }
+  }
+
+  // Perps Compounders (since 2026-11-17): Hyperliquid perps, their own data and records; errors never stop the job.
+  if (cfg.perps?.enabled) {
+    try {
+      const line = await runPerps({ cfg, dryRun, dataDir: DATA, cacheDir: path.dirname(SNAPSHOTS), reportPath: path.join(process.env.DATA_DIR ? DATA : ROOT, 'PERPS.md'), log });
+      compounderLine = [compounderLine, line].filter(Boolean).join('\n');
+    } catch (e) {
+      log.errors.push(`perps: ${e.message}`);
     }
   }
 
