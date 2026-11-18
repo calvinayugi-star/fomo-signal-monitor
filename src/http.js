@@ -6,6 +6,7 @@ const MIN_GAP_MS = {
   'api.dexscreener.com': 300,
   'frontend-api-v3.pump.fun': 500,
   'api.hyperliquid.xyz': 1200, // info calls weigh ~20-25 of the 1,200 allowed per minute per IP
+  'api.gateio.ws': 150, // public futures stats, research only (200 calls per 10s allowed)
 };
 const lastCall = new Map();
 
