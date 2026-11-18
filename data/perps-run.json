@@ -70,9 +70,8 @@
     }
    ],
    "day": {
-    "date": "2026-11-17",
-    "startBankroll": 125.32,
-    "goalMetAt": "2026-11-17T12:30:24.577Z"
+    "date": "2026-11-18",
+    "startBankroll": 142.78
    },
    "days": [
     {
@@ -80,6 +79,12 @@
      "startBankroll": 110,
      "goalMetAt": "2026-11-17T03:30:27.772Z",
      "endBankroll": 125.32
+    },
+    {
+     "date": "2026-11-17",
+     "startBankroll": 125.32,
+     "goalMetAt": "2026-11-17T12:30:24.577Z",
+     "endBankroll": 142.78
     }
    ]
   },
