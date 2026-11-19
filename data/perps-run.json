@@ -51,10 +51,10 @@
      "reason": null
     },
     "state": {
-     "worstNetPct": -13.851807460287455,
+     "worstNetPct": -16.478567735562557,
      "peakNetPct": 0.6751501647893122,
-     "lastPx": 110.09,
-     "lastAt": 1795087800000,
+     "lastPx": 110.5,
+     "lastAt": 1795088700000,
      "fundingUsd": 0.2726539362729428,
      "fundedThrough": 1795086000000
     },
@@ -66,12 +66,12 @@
     "liqPx": 114.15019902,
     "stopPx": 113.631334479,
     "targetPx": 107.3603191686029,
-    "checkedThrough": 1795087740000,
+    "checkedThrough": 1795088640000,
     "mark": {
-     "at": "2026-11-19T11:30:00.000Z",
-     "px": 110.09,
-     "netPct": -11.69,
-     "proceeds": 143.65
+     "at": "2026-11-19T11:45:00.000Z",
+     "px": 110.5,
+     "netPct": -15.46,
+     "proceeds": 137.52
     }
    },
    "trades": [
