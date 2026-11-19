@@ -15,8 +15,43 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 162.6698,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "coin": "AAVE",
+    "side": "short",
+    "decidedAt": "2026-11-19T05:00:38.114Z",
+    "markPxAtDecision": 109.08,
+    "marginUsd": 162.6698,
+    "leverage": 10,
+    "mmrPct": 5,
+    "slipPct": 0.0261,
+    "fundingPctPerHour": -0.0027778499999999997,
+    "targetNetPct": 13.93,
+    "maxHoldHours": null,
+    "score": 51.4,
+    "entry": {
+     "coin": "AAVE",
+     "markPx": 109.08,
+     "dayVolumeUsd": 11447336,
+     "oiUsd": 42831887,
+     "spreadPct": 0.052,
+     "fundingPctPerHour": -0.0028,
+     "mmrPct": 5,
+     "side": "short",
+     "chg15": -0.56,
+     "chg60": -0.72,
+     "chg4h": -0.84,
+     "surge": 2.84,
+     "typical2hPct": 1.79,
+     "targetMovePct": 1.45,
+     "worstAdverse2hPct": 3.39,
+     "liqDistPct": 4.76,
+     "oiChgPct": -0.29,
+     "score": 51.4,
+     "reason": null
+    },
+    "state": {}
+   },
    "trades": [
     {
      "n": 1,
@@ -95,9 +130,8 @@
     }
    ],
    "day": {
-    "date": "2026-11-18",
-    "startBankroll": 142.78,
-    "goalMetAt": "2026-11-18T16:30:24.537Z"
+    "date": "2026-11-19",
+    "startBankroll": 162.67
    },
    "days": [
     {
@@ -111,6 +145,12 @@
      "startBankroll": 125.32,
      "goalMetAt": "2026-11-17T12:30:24.577Z",
      "endBankroll": 142.78
+    },
+    {
+     "date": "2026-11-18",
+     "startBankroll": 142.78,
+     "goalMetAt": "2026-11-18T16:30:24.537Z",
+     "endBankroll": 162.67
     }
    ]
   },
