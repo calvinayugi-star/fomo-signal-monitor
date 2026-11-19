@@ -15,65 +15,8 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "coin": "AAVE",
-    "side": "short",
-    "decidedAt": "2026-11-19T05:00:38.114Z",
-    "markPxAtDecision": 109.08,
-    "marginUsd": 162.6698,
-    "leverage": 10,
-    "mmrPct": 5,
-    "slipPct": 0.0261,
-    "fundingPctPerHour": -0.0027778499999999997,
-    "targetNetPct": 13.93,
-    "maxHoldHours": null,
-    "score": 51.4,
-    "entry": {
-     "coin": "AAVE",
-     "markPx": 109.08,
-     "dayVolumeUsd": 11447336,
-     "oiUsd": 42831887,
-     "spreadPct": 0.052,
-     "fundingPctPerHour": -0.0028,
-     "mmrPct": 5,
-     "side": "short",
-     "chg15": -0.56,
-     "chg60": -0.72,
-     "chg4h": -0.84,
-     "surge": 2.84,
-     "typical2hPct": 1.79,
-     "targetMovePct": 1.45,
-     "worstAdverse2hPct": 3.39,
-     "liqDistPct": 4.76,
-     "oiChgPct": -0.29,
-     "score": 51.4,
-     "reason": null
-    },
-    "state": {
-     "worstNetPct": -16.478567735562557,
-     "peakNetPct": 13.250608083133953,
-     "lastPx": 107.39,
-     "lastAt": 1795101300000,
-     "fundingUsd": 0.4536739879614707,
-     "fundedThrough": 1795100400000
-    },
-    "fill": {
-     "at": "2026-11-19T05:02:00.000Z",
-     "px": 108.96155361,
-     "candleT": 1795064520000
-    },
-    "liqPx": 114.15019902,
-    "stopPx": 113.631334479,
-    "targetPx": 107.35118946732308,
-    "checkedThrough": 1795101240000,
-    "mark": {
-     "at": "2026-11-19T15:15:00.000Z",
-     "px": 107.39,
-     "netPct": 12.99,
-     "proceeds": 183.81
-    }
-   },
+   "cash": 185.3297,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -149,11 +92,37 @@
      "targetHit": true,
      "score": 68.6,
      "newBankroll": 162.6698
+    },
+    {
+     "n": 4,
+     "coin": "AAVE",
+     "side": "short",
+     "decidedAt": "2026-11-19T05:00:38.114Z",
+     "fillAt": "2026-11-19T05:02:00.000Z",
+     "exitAt": "2026-11-19T15:15:30.000Z",
+     "holdHours": 10.22,
+     "reason": "+13.93% target",
+     "entryPx": 108.96155361,
+     "exitPx": 107.3481956718774,
+     "liqPx": 114.15019902,
+     "stopPx": 113.631334479,
+     "marginUsd": 162.6698,
+     "notionalUsd": 1626.7,
+     "feesUsd": 0.9724,
+     "fundingUsd": 0.4537,
+     "netUsd": 22.6599,
+     "netPct": 13.93,
+     "peakNetPct": 13.25,
+     "worstNetPct": -16.48,
+     "targetHit": true,
+     "score": 51.4,
+     "newBankroll": 185.3297
     }
    ],
    "day": {
     "date": "2026-11-19",
-    "startBankroll": 162.67
+    "startBankroll": 162.67,
+    "goalMetAt": "2026-11-19T15:30:26.750Z"
    },
    "days": [
     {
