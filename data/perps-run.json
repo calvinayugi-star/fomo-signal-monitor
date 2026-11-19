@@ -129,66 +129,35 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "coin": "ENA",
-    "side": "short",
-    "decidedAt": "2026-11-18T15:45:20.345Z",
-    "markPxAtDecision": 0.109205,
-    "marginUsd": 25,
-    "leverage": 10,
-    "mmrPct": 5,
-    "slipPct": 0.0472,
-    "fundingPctPerHour": 0.00125,
-    "targetNetPct": 20,
-    "maxHoldHours": null,
-    "score": 72.5,
-    "entry": {
+   "cash": 13.7134,
+   "position": null,
+   "trades": [
+    {
+     "n": 1,
      "coin": "ENA",
-     "markPx": 0.109205,
-     "dayVolumeUsd": 7109678,
-     "oiUsd": 30231995,
-     "spreadPct": 0.094,
-     "fundingPctPerHour": 0.0013,
-     "mmrPct": 5,
      "side": "short",
-     "chg15": -1.33,
-     "chg60": -1.39,
-     "chg4h": -2.54,
-     "surge": 6.12,
-     "typical2hPct": 2.49,
-     "targetMovePct": 2.06,
-     "worstAdverse2hPct": 3.66,
-     "liqDistPct": 4.76,
-     "oiChgPct": -2.49,
+     "decidedAt": "2026-11-18T15:45:20.345Z",
+     "fillAt": "2026-11-18T15:47:00.000Z",
+     "exitAt": "2026-11-19T04:04:30.000Z",
+     "holdHours": 12.29,
+     "reason": "stop-loss before liquidation",
+     "entryPx": 0.10895854728,
+     "exitPx": 0.11379546001566457,
+     "liqPx": 0.11414704953142858,
+     "stopPx": 0.11362819930628572,
+     "marginUsd": 25,
+     "notionalUsd": 250,
+     "feesUsd": 0.23,
+     "fundingUsd": -0.0414,
+     "netUsd": -11.2866,
+     "netPct": -45.15,
+     "peakNetPct": 12.6,
+     "worstNetPct": -43.61,
+     "targetHit": false,
      "score": 72.5,
-     "reason": null
-    },
-    "state": {
-     "worstNetPct": -38.406549286327866,
-     "peakNetPct": 12.596606397448943,
-     "lastPx": 0.11284,
-     "lastAt": 1795060800000,
-     "fundingUsd": -0.03817793650745157,
-     "fundedThrough": 1795057200000
-    },
-    "fill": {
-     "at": "2026-11-18T15:47:00.000Z",
-     "px": 0.10895854728,
-     "candleT": 1795016820000
-    },
-    "liqPx": 0.11414704953142858,
-    "stopPx": 0.11362819930628572,
-    "targetPx": 0.10673097459193519,
-    "checkedThrough": 1795060740000,
-    "mark": {
-     "at": "2026-11-19T04:00:00.000Z",
-     "px": 0.11284,
-     "netPct": -36.88,
-     "proceeds": 15.78
+     "newBankroll": 13.7134
     }
-   },
-   "trades": []
+   ]
   }
  ]
 }
