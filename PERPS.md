@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Fri, Nov 20, 07:00 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Fri, Nov 20, 07:15 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,11 +11,11 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$157.93** (+43.6%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$147.46** (+34.1%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 4: 4 at target, 0 at the time limit, 0 stopped, 0 liquidated |
 | Days the daily goal was met | 4 of 5 |
-| Open | **LONG LINK** 10x, margin $185.33, entry $8.9012, target $9.0311, liquidation $8.4327, now -14.8%, held 6.0h |
+| Open | **LONG LINK** 10x, margin $185.33, entry $8.9012, target $9.0311, liquidation $8.4327, now -20.4%, held 6.2h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -28,10 +28,10 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$19.76** (-21.0%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$21.25** (-15.0%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
 | Trades | 3: 2 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **SHORT UNI** 10x, margin $19.75, entry $4.7982, target $4.6994, liquidation $5.0267, now +0.1%, held 0.2h |
+| Open | **SHORT UNI** 10x, margin $19.75, entry $4.7982, target $4.6994, liquidation $5.0267, now +7.6%, held 0.5h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
