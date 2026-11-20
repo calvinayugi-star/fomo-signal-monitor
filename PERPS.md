@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Fri, Nov 20, 06:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Fri, Nov 20, 06:45 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,11 +11,11 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$175.67** (+59.7%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$166.71** (+51.6%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 4: 4 at target, 0 at the time limit, 0 stopped, 0 liquidated |
 | Days the daily goal was met | 4 of 5 |
-| Open | **LONG LINK** 10x, margin $185.33, entry $8.9012, target $9.0311, liquidation $8.4327, now -5.2%, held 5.5h |
+| Open | **LONG LINK** 10x, margin $185.33, entry $8.9012, target $9.0311, liquidation $8.4327, now -10.1%, held 5.7h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -28,13 +28,14 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$18.21** (-27.2%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$19.75** (-21.0%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
-| Trades | 2: 1 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **SHORT ZEC** 10x, margin $16.46, entry $838.63, target $821.36, liquidation $878.56, now +10.7%, held 1.5h |
+| Trades | 3: 2 at target, 0 at the time limit, 1 stopped, 0 liquidated |
+| Open | **SHORT UNI** 10x, margin $19.75, entry pending, target n/a, liquidation n/a, now n/a, held fill pending |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
+| 3 | Nov 20, 05:02 | ZEC | short | +20% target | 1.54h | -8.8% | $0.10 | +20.0% ($3.29) | $19.75 |
 | 2 | Nov 19, 20:47 | PUMP | short | +20% target | 0.57h | -4.6% | $0.08 | +20.0% ($2.74) | $16.46 |
 | 1 | Nov 18, 10:47 | ENA | short | stop-loss before liquidation | 12.29h | -43.6% | $0.23 | -45.1% (-$11.29) | $13.71 |
 
