@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Fri, Nov 20, 10:45 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Fri, Nov 20, 11:00 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,14 +11,14 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$99.92** (-9.2%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$106.71** (-3.0%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
-| Trades | 5: 4 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Days the daily goal was met | 4 of 5 |
-| Open | **SHORT ZEC** 10x, margin $93.66, entry $779.35, target $768.02, liquidation $816.46, now +6.7%, held 0.2h |
+| Trades | 6: 5 at target, 0 at the time limit, 1 stopped, 0 liquidated |
+| Days the daily goal was met | 5 of 5 |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
+| 6 | Nov 20, 10:32 | ZEC | short | +13.93% target | 0.23h | -5.0% | $0.56 | +13.9% ($13.05) | $106.71 |
 | 5 | Nov 20, 01:02 | LINK | long | stop-loss before liquidation | 9.28h | -48.4% | $1.63 | -49.5% (-$91.67) | $93.66 |
 | 4 | Nov 19, 00:02 | AAVE | short | +13.93% target | 10.22h | -16.5% | $0.97 | +13.9% ($22.66) | $185.33 |
 | 3 | Nov 18, 05:17 | kPEPE | short | +13.93% target | 6.06h | -20.1% | $0.85 | +13.9% ($19.89) | $162.67 |
@@ -29,13 +29,13 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$31.18** (+24.7%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$34.12** (+36.5%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
-| Trades | 5: 4 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **SHORT ENA** 10x, margin $28.44, entry $0.09887, target $0.09683, liquidation $0.1036, now +9.7%, held 0.5h |
+| Trades | 6: 5 at target, 0 at the time limit, 1 stopped, 0 liquidated |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
+| 6 | Nov 20, 10:17 | ENA | short | +20% target | 0.49h | -2.4% | $0.17 | +20.0% ($5.69) | $34.12 |
 | 5 | Nov 20, 08:47 | TRUMP | short | +20% target | 1.36h | -11.5% | $0.14 | +20.0% ($4.74) | $28.44 |
 | 4 | Nov 20, 06:47 | UNI | short | +20% target | 1.59h | -1.6% | $0.12 | +20.0% ($3.95) | $23.70 |
 | 3 | Nov 20, 05:02 | ZEC | short | +20% target | 1.54h | -8.8% | $0.10 | +20.0% ($3.29) | $19.75 |

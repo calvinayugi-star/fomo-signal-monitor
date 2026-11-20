@@ -15,63 +15,8 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "coin": "ZEC",
-    "side": "short",
-    "decidedAt": "2026-11-20T15:30:32.639Z",
-    "markPxAtDecision": 786.85,
-    "marginUsd": 93.6615,
-    "leverage": 10,
-    "mmrPct": 5,
-    "slipPct": 0.0056,
-    "fundingPctPerHour": 0.00125,
-    "targetNetPct": 13.93,
-    "maxHoldHours": null,
-    "score": 84.2,
-    "entry": {
-     "coin": "ZEC",
-     "markPx": 786.85,
-     "dayVolumeUsd": 305200985,
-     "oiUsd": 268808450,
-     "spreadPct": 0.011,
-     "fundingPctPerHour": 0.0013,
-     "mmrPct": 5,
-     "side": "short",
-     "chg15": -1.79,
-     "chg60": -3.89,
-     "chg4h": -4.82,
-     "surge": 8.07,
-     "typical2hPct": 2.79,
-     "targetMovePct": 1.45,
-     "worstAdverse2hPct": 2.79,
-     "liqDistPct": 4.76,
-     "oiChgPct": -4.7,
-     "score": 84.2,
-     "reason": null
-    },
-    "state": {
-     "worstNetPct": -4.999695807356074,
-     "peakNetPct": 11.097951834201224,
-     "lastPx": 773.4,
-     "lastAt": 1795189500000
-    },
-    "fill": {
-     "at": "2026-11-20T15:32:00.000Z",
-     "px": 779.34635416,
-     "candleT": 1795188720000
-    },
-    "liqPx": 816.4580853104762,
-    "stopPx": 812.7469121954286,
-    "targetPx": 768.0241499646844,
-    "checkedThrough": 1795189440000,
-    "mark": {
-     "at": "2026-11-20T15:45:00.000Z",
-     "px": 773.4,
-     "netPct": 6.68,
-     "proceeds": 99.92
-    }
-   },
+   "cash": 106.7085,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -197,11 +142,37 @@
      "targetHit": false,
      "score": 81.1,
      "newBankroll": 93.6615
+    },
+    {
+     "n": 6,
+     "coin": "ZEC",
+     "side": "short",
+     "decidedAt": "2026-11-20T15:30:32.639Z",
+     "fillAt": "2026-11-20T15:32:00.000Z",
+     "exitAt": "2026-11-20T15:45:30.000Z",
+     "holdHours": 0.23,
+     "reason": "+13.93% target",
+     "entryPx": 779.34635416,
+     "exitPx": 768.0241499646844,
+     "liqPx": 816.4580853104762,
+     "stopPx": 812.7469121954286,
+     "marginUsd": 93.6615,
+     "notionalUsd": 936.62,
+     "feesUsd": 0.5599,
+     "fundingUsd": 0,
+     "netUsd": 13.047,
+     "netPct": 13.93,
+     "peakNetPct": 11.1,
+     "worstNetPct": -5,
+     "targetHit": true,
+     "score": 84.2,
+     "newBankroll": 106.7085
     }
    ],
    "day": {
     "date": "2026-11-20",
-    "startBankroll": 185.33
+    "startBankroll": 185.33,
+    "goalMetAt": "2026-11-20T16:00:29.005Z"
    },
    "days": [
     {
@@ -245,63 +216,8 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "coin": "ENA",
-    "side": "short",
-    "decidedAt": "2026-11-20T15:15:20.545Z",
-    "markPxAtDecision": 0.099863,
-    "marginUsd": 28.4362,
-    "leverage": 10,
-    "mmrPct": 5,
-    "slipPct": 0.0336,
-    "fundingPctPerHour": 0.00125,
-    "targetNetPct": 20,
-    "maxHoldHours": null,
-    "score": 76.1,
-    "entry": {
-     "coin": "ENA",
-     "markPx": 0.099863,
-     "dayVolumeUsd": 13184367,
-     "oiUsd": 32700016,
-     "spreadPct": 0.067,
-     "fundingPctPerHour": 0.0013,
-     "mmrPct": 5,
-     "side": "short",
-     "chg15": -2.39,
-     "chg60": -2.38,
-     "chg4h": -3.73,
-     "surge": 12.67,
-     "typical2hPct": 2.28,
-     "targetMovePct": 2.06,
-     "worstAdverse2hPct": 2.85,
-     "liqDistPct": 4.76,
-     "oiChgPct": -6.87,
-     "score": 76.1,
-     "reason": null
-    },
-    "state": {
-     "worstNetPct": -2.420219461458651,
-     "peakNetPct": 16.108174654986566,
-     "lastPx": 0.09779,
-     "lastAt": 1795189500000
-    },
-    "fill": {
-     "at": "2026-11-20T15:17:00.000Z",
-     "px": 0.098865769936,
-     "candleT": 1795187820000
-    },
-    "liqPx": 0.1035736637424762,
-    "stopPx": 0.10310287436182858,
-    "targetPx": 0.0968294405247301,
-    "checkedThrough": 1795189440000,
-    "mark": {
-     "at": "2026-11-20T15:45:00.000Z",
-     "px": 0.09779,
-     "netPct": 9.65,
-     "proceeds": 31.18
-    }
-   },
+   "cash": 34.1234,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -427,6 +343,31 @@
      "targetHit": true,
      "score": 60.4,
      "newBankroll": 28.4362
+    },
+    {
+     "n": 6,
+     "coin": "ENA",
+     "side": "short",
+     "decidedAt": "2026-11-20T15:15:20.545Z",
+     "fillAt": "2026-11-20T15:17:00.000Z",
+     "exitAt": "2026-11-20T15:46:30.000Z",
+     "holdHours": 0.49,
+     "reason": "+20% target",
+     "entryPx": 0.098865769936,
+     "exitPx": 0.0968294405247301,
+     "liqPx": 0.1035736637424762,
+     "stopPx": 0.10310287436182858,
+     "marginUsd": 28.4362,
+     "notionalUsd": 284.36,
+     "feesUsd": 0.1697,
+     "fundingUsd": 0,
+     "netUsd": 5.6872,
+     "netPct": 20,
+     "peakNetPct": 17.75,
+     "worstNetPct": -2.42,
+     "targetHit": true,
+     "score": 76.1,
+     "newBankroll": 34.1234
     }
    ]
   }
