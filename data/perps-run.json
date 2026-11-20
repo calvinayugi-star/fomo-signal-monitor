@@ -53,8 +53,8 @@
     "state": {
      "worstNetPct": -10.694951110752289,
      "peakNetPct": 1.3866111171050575,
-     "lastPx": 8.8234,
-     "lastAt": 1795167900000,
+     "lastPx": 8.8272,
+     "lastAt": 1795168800000,
      "fundingUsd": 0.06929603835616938,
      "fundedThrough": 1795165200000
     },
@@ -66,12 +66,12 @@
     "liqPx": 8.432730064610528,
     "stopPx": 8.479578564969476,
     "targetPx": 9.03090199868052,
-    "checkedThrough": 1795167840000,
+    "checkedThrough": 1795168740000,
     "mark": {
-     "at": "2026-11-20T09:45:00.000Z",
-     "px": 8.8234,
-     "netPct": -9.83,
-     "proceeds": 167.11
+     "at": "2026-11-20T10:00:00.000Z",
+     "px": 8.8272,
+     "netPct": -9.41,
+     "proceeds": 167.9
     }
    },
    "trades": [
@@ -222,8 +222,43 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 16.4561,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "coin": "ZEC",
+    "side": "short",
+    "decidedAt": "2026-11-20T10:00:25.289Z",
+    "markPxAtDecision": 837.16,
+    "marginUsd": 16.4561,
+    "leverage": 10,
+    "mmrPct": 5,
+    "slipPct": 0.0015,
+    "fundingPctPerHour": 0.00125,
+    "targetNetPct": 20,
+    "maxHoldHours": null,
+    "score": 50.8,
+    "entry": {
+     "coin": "ZEC",
+     "markPx": 837.16,
+     "dayVolumeUsd": 251785338,
+     "oiUsd": 284630298,
+     "spreadPct": 0.003,
+     "fundingPctPerHour": 0.0013,
+     "mmrPct": 5,
+     "side": "short",
+     "chg15": -0.73,
+     "chg60": -1.33,
+     "chg4h": -2.14,
+     "surge": 2.05,
+     "typical2hPct": 2.17,
+     "targetMovePct": 2.06,
+     "worstAdverse2hPct": 2.79,
+     "liqDistPct": 4.76,
+     "oiChgPct": -0.5,
+     "score": 50.8,
+     "reason": null
+    },
+    "state": {}
+   },
    "trades": [
     {
      "n": 1,
