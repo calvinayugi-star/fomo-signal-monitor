@@ -51,10 +51,10 @@
      "reason": null
     },
     "state": {
-     "worstNetPct": -24.46917269854657,
+     "worstNetPct": -26.92840380714025,
      "peakNetPct": 1.3866111171050575,
-     "lastPx": 8.6921,
-     "lastAt": 1795181400000,
+     "lastPx": 8.688,
+     "lastAt": 1795182300000,
      "fundingUsd": 0.16100844384367463,
      "fundedThrough": 1795179600000
     },
@@ -66,12 +66,12 @@
     "liqPx": 8.432730064610528,
     "stopPx": 8.479578564969476,
     "targetPx": 9.031342551013369,
-    "checkedThrough": 1795181340000,
+    "checkedThrough": 1795182240000,
     "mark": {
-     "at": "2026-11-20T13:30:00.000Z",
-     "px": 8.6921,
-     "netPct": -24.62,
-     "proceeds": 139.69
+     "at": "2026-11-20T13:45:00.000Z",
+     "px": 8.688,
+     "netPct": -25.08,
+     "proceeds": 138.84
     }
    },
    "trades": [
@@ -222,8 +222,43 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 23.6968,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "coin": "TRUMP",
+    "side": "short",
+    "decidedAt": "2026-11-20T13:45:21.016Z",
+    "markPxAtDecision": 0.87678,
+    "marginUsd": 23.6968,
+    "leverage": 10,
+    "mmrPct": 5,
+    "slipPct": 0.0445,
+    "fundingPctPerHour": -0.0029139400000000003,
+    "targetNetPct": 20,
+    "maxHoldHours": null,
+    "score": 60.4,
+    "entry": {
+     "coin": "TRUMP",
+     "markPx": 0.87678,
+     "dayVolumeUsd": 6616521,
+     "oiUsd": 7181191,
+     "spreadPct": 0.089,
+     "fundingPctPerHour": -0.0029,
+     "mmrPct": 5,
+     "side": "short",
+     "chg15": -0.53,
+     "chg60": -1.85,
+     "chg4h": -5.44,
+     "surge": 4.16,
+     "typical2hPct": 2.25,
+     "targetMovePct": 2.06,
+     "worstAdverse2hPct": 2.88,
+     "liqDistPct": 4.76,
+     "oiChgPct": -1.33,
+     "score": 60.4,
+     "reason": null
+    },
+    "state": {}
+   },
    "trades": [
     {
      "n": 1,
