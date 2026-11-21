@@ -2918,3 +2918,4 @@
 {"t":"2026-11-21T12:15:25.489Z","errors":[],"closed":[],"closedShadows":0,"perps":{"conservative":{"decision":"NO TRADE (cash)","bankroll":106.71},"aggressive":{"decision":"HOLD","bankroll":62.71}}}
 {"t":"2026-11-21T12:30:24.281Z","errors":[],"closed":[],"closedShadows":0,"perps":{"conservative":{"decision":"NO TRADE (cash)","bankroll":106.71},"aggressive":{"decision":"HOLD","bankroll":63.89}}}
 {"t":"2026-11-21T12:45:25.908Z","errors":[],"closed":[],"closedShadows":0,"perps":{"conservative":{"decision":"NO TRADE (cash)","bankroll":106.71},"aggressive":{"decision":"HOLD","bankroll":66.05}}}
+{"t":"2026-11-21T13:00:26.528Z","errors":[],"closed":[],"closedShadows":0,"perps":{"conservative":{"decision":"NO TRADE (cash)","bankroll":106.71},"aggressive":{"decision":"HOLD","bankroll":64.1}}}
