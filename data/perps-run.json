@@ -53,8 +53,8 @@
     "state": {
      "worstNetPct": -13.461767037498454,
      "peakNetPct": 11.5733286336775,
-     "lastPx": 0.92111,
-     "lastAt": 1795322700000,
+     "lastPx": 0.92091,
+     "lastAt": 1795323600000,
      "fundingUsd": -0.00835515174869752,
      "fundedThrough": 1795320000000
     },
@@ -66,12 +66,12 @@
     "liqPx": 0.8556238626923077,
     "stopPx": 0.8627540615480769,
     "targetPx": 0.9403888455959392,
-    "checkedThrough": 1795322640000,
+    "checkedThrough": 1795323540000,
     "mark": {
-     "at": "2026-11-22T04:45:00.000Z",
-     "px": 0.92111,
-     "netPct": -7.29,
-     "proceeds": 98.93
+     "at": "2026-11-22T05:00:00.000Z",
+     "px": 0.92091,
+     "netPct": -7.5,
+     "proceeds": 98.7
     }
    },
    "trades": [
@@ -227,8 +227,8 @@
     }
    ],
    "day": {
-    "date": "2026-11-21",
-    "startBankroll": 106.71
+    "date": "2026-11-22",
+    "startBankroll": 98.93
    },
    "days": [
     {
@@ -260,6 +260,11 @@
      "startBankroll": 185.33,
      "goalMetAt": "2026-11-20T16:00:29.005Z",
      "endBankroll": 106.71
+    },
+    {
+     "date": "2026-11-21",
+     "startBankroll": 106.71,
+     "endBankroll": 98.93
     }
    ]
   },
@@ -316,8 +321,8 @@
     "state": {
      "worstNetPct": -24.005737629714595,
      "peakNetPct": 7.324830820019225,
-     "lastPx": 59286,
-     "lastAt": 1795322700000,
+     "lastPx": 59282,
+     "lastAt": 1795323600000,
      "fundingUsd": 0.13183857013749392,
      "fundedThrough": 1795320000000
     },
@@ -329,12 +334,12 @@
     "liqPx": 55122.44190562025,
     "stopPx": 55658.35453525823,
     "targetPx": 61738.946201161074,
-    "checkedThrough": 1795322640000,
+    "checkedThrough": 1795323540000,
     "mark": {
-     "at": "2026-11-22T04:45:00.000Z",
-     "px": 59286,
-     "netPct": -20.9,
-     "proceeds": 55.97
+     "at": "2026-11-22T05:00:00.000Z",
+     "px": 59282,
+     "netPct": -20.97,
+     "proceeds": 55.92
     }
    },
    "trades": [
