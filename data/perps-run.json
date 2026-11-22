@@ -51,12 +51,12 @@
      "reason": null
     },
     "state": {
-     "worstNetPct": -8.275423564666141,
+     "worstNetPct": -12.038345737703244,
      "peakNetPct": 11.5733286336775,
-     "lastPx": 0.92165,
-     "lastAt": 1795316400000,
-     "fundingUsd": -0.00725244249102935,
-     "fundedThrough": 1795312800000
+     "lastPx": 0.9177,
+     "lastAt": 1795317300000,
+     "fundingUsd": -0.007804633009540849,
+     "fundedThrough": 1795316400000
     },
     "fill": {
      "at": "2026-11-21T13:47:00.000Z",
@@ -66,12 +66,12 @@
     "liqPx": 0.8556238626923077,
     "stopPx": 0.8627540615480769,
     "targetPx": 0.9403898036105865,
-    "checkedThrough": 1795316340000,
+    "checkedThrough": 1795317240000,
     "mark": {
-     "at": "2026-11-22T03:00:00.000Z",
-     "px": 0.92165,
-     "netPct": -6.71,
-     "proceeds": 99.55
+     "at": "2026-11-22T03:15:00.000Z",
+     "px": 0.9177,
+     "netPct": -10.97,
+     "proceeds": 95.01
     }
    },
    "trades": [
@@ -314,12 +314,12 @@
      "reason": null
     },
     "state": {
-     "worstNetPct": -19.134649689070578,
+     "worstNetPct": -21.675497951912444,
      "peakNetPct": 7.324830820019225,
-     "lastPx": 59467,
-     "lastAt": 1795316400000,
-     "fundingUsd": 0.11446564791198763,
-     "fundedThrough": 1795312800000
+     "lastPx": 59283,
+     "lastAt": 1795317300000,
+     "fundingUsd": 0.12316205328904939,
+     "fundedThrough": 1795316400000
     },
     "fill": {
      "at": "2026-11-21T13:47:00.000Z",
@@ -329,12 +329,12 @@
     "liqPx": 55122.44190562025,
     "stopPx": 55658.35453525823,
     "targetPx": 61737.46100338141,
-    "checkedThrough": 1795316340000,
+    "checkedThrough": 1795317240000,
     "mark": {
-     "at": "2026-11-22T03:00:00.000Z",
-     "px": 59467,
-     "netPct": -17.89,
-     "proceeds": 58.1
+     "at": "2026-11-22T03:15:00.000Z",
+     "px": 59283,
+     "netPct": -20.94,
+     "proceeds": 55.94
     }
    },
    "trades": [
