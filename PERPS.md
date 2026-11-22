@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Sat, Nov 21, 19:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Sat, Nov 21, 19:45 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,11 +11,11 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$111.86** (+1.7%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$109.49** (-0.5%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 6: 5 at target, 0 at the time limit, 1 stopped, 0 liquidated |
 | Days the daily goal was met | 5 of 6 |
-| Open | **LONG XRP** 10x, margin $106.71, entry $0.9269, target $0.9404, liquidation $0.8556, now +4.8%, held 10.7h |
+| Open | **LONG XRP** 10x, margin $106.71, entry $0.9269, target $0.9404, liquidation $0.8556, now +2.6%, held 11.0h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -30,10 +30,10 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$67.67** (+170.7%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$67.31** (+169.2%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
 | Trades | 10: 9 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **LONG BTC** 10x, margin $70.76, entry $60481.57, target $61735.96, liquidation $55122.44, now -4.4%, held 10.7h |
+| Open | **LONG BTC** 10x, margin $70.76, entry $60481.57, target $61735.96, liquidation $55122.44, now -4.9%, held 11.0h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
