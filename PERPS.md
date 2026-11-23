@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Sun, Nov 22, 22:15 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Sun, Nov 22, 22:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,11 +11,11 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$102.86** (-6.5%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$111.70** (+1.5%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 6: 5 at target, 0 at the time limit, 1 stopped, 0 liquidated |
 | Days the daily goal was met | 5 of 7 |
-| Open | **LONG XRP** 10x, margin $106.71, entry $0.9269, target $0.9404, liquidation $0.8556, now -3.6%, held 37.5h |
+| Open | **LONG XRP** 10x, margin $106.71, entry $0.9269, target $0.9404, liquidation $0.8556, now +4.7%, held 37.7h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -30,13 +30,13 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$77.35** (+209.4%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$84.91** (+239.6%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
-| Trades | 10: 9 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **LONG BTC** 10x, margin $70.76, entry $60481.57, target $61755.60, liquidation $55122.44, now +9.3%, held 37.5h |
+| Trades | 11: 10 at target, 0 at the time limit, 1 stopped, 0 liquidated |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
+| 11 | Nov 21, 08:47 | BTC | long | +20% target | 37.58h | -29.9% | $0.43 | +20.0% ($14.15) | $84.91 |
 | 10 | Nov 21, 02:02 | XRP | long | +20% target | 6.41h | -18.9% | $0.36 | +20.0% ($11.79) | $70.76 |
 | 9 | Nov 20, 23:02 | PUMP | short | +20% target | 1.71h | -17.1% | $0.29 | +20.0% ($9.83) | $58.97 |
 | 8 | Nov 20, 21:47 | HYPE | short | +20% target | 0.72h | -1.9% | $0.24 | +20.0% ($8.19) | $49.14 |

@@ -53,8 +53,8 @@
     "state": {
      "worstNetPct": -17.871183348272627,
      "peakNetPct": 11.5733286336775,
-     "lastPx": 0.92451,
-     "lastAt": 1795403700000,
+     "lastPx": 0.9322,
+     "lastAt": 1795404600000,
      "fundingUsd": -0.02109413440064047,
      "fundedThrough": 1795402800000
     },
@@ -65,13 +65,13 @@
     },
     "liqPx": 0.8556238626923077,
     "stopPx": 0.8627540615480769,
-    "targetPx": 0.9403782548720506,
-    "checkedThrough": 1795403640000,
+    "targetPx": 0.9403777781891082,
+    "checkedThrough": 1795404540000,
     "mark": {
-     "at": "2026-11-23T03:15:00.000Z",
-     "px": 0.92451,
-     "netPct": -3.61,
-     "proceeds": 102.86
+     "at": "2026-11-23T03:30:00.000Z",
+     "px": 0.9322,
+     "netPct": 4.68,
+     "proceeds": 111.7
     }
    },
    "trades": [
@@ -283,65 +283,8 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "coin": "BTC",
-    "side": "long",
-    "decidedAt": "2026-11-21T13:45:19.274Z",
-    "markPxAtDecision": 60413,
-    "marginUsd": 70.7582,
-    "leverage": 10,
-    "mmrPct": 1.25,
-    "slipPct": 0.0059,
-    "fundingPctPerHour": 0.00125,
-    "targetNetPct": 20,
-    "maxHoldHours": null,
-    "score": 70.9,
-    "entry": {
-     "coin": "BTC",
-     "markPx": 60413,
-     "dayVolumeUsd": 7817814676,
-     "oiUsd": 2284040959,
-     "spreadPct": 0.012,
-     "fundingPctPerHour": 0.0013,
-     "mmrPct": 1.25,
-     "side": "long",
-     "chg15": 1.36,
-     "chg60": 2.44,
-     "chg4h": 4.2,
-     "surge": 3.45,
-     "typical2hPct": 2.1,
-     "targetMovePct": 2.06,
-     "worstAdverse2hPct": 5.92,
-     "liqDistPct": 8.86,
-     "oiChgPct": 0.13,
-     "score": 70.9,
-     "reason": null
-    },
-    "state": {
-     "worstNetPct": -29.89716741721496,
-     "peakNetPct": 18.058644555333846,
-     "lastPx": 61132,
-     "lastAt": 1795403700000,
-     "fundingUsd": 0.33553600280000556,
-     "fundedThrough": 1795402800000
-    },
-    "fill": {
-     "at": "2026-11-21T13:47:00.000Z",
-     "px": 60481.568202,
-     "candleT": 1795268820000
-    },
-    "liqPx": 55122.44190562025,
-    "stopPx": 55658.35453525823,
-    "targetPx": 61755.6026246246,
-    "checkedThrough": 1795403640000,
-    "mark": {
-     "at": "2026-11-23T03:15:00.000Z",
-     "px": 61132,
-     "netPct": 9.32,
-     "proceeds": 77.35
-    }
-   },
+   "cash": 84.9098,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -592,6 +535,31 @@
      "targetHit": true,
      "score": 84.5,
      "newBankroll": 70.7582
+    },
+    {
+     "n": 11,
+     "coin": "BTC",
+     "side": "long",
+     "decidedAt": "2026-11-21T13:45:19.274Z",
+     "fillAt": "2026-11-21T13:47:00.000Z",
+     "exitAt": "2026-11-23T03:21:30.000Z",
+     "holdHours": 37.58,
+     "reason": "+20% target",
+     "entryPx": 60481.568202,
+     "exitPx": 61756.360138251635,
+     "liqPx": 55122.44190562025,
+     "stopPx": 55658.35453525823,
+     "marginUsd": 70.7582,
+     "notionalUsd": 707.58,
+     "feesUsd": 0.4268,
+     "fundingUsd": 0.3355,
+     "netUsd": 14.1516,
+     "netPct": 20,
+     "peakNetPct": 18.06,
+     "worstNetPct": -29.9,
+     "targetHit": true,
+     "score": 70.9,
+     "newBankroll": 84.9098
     }
    ]
   }
