@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Mon, Nov 23, 00:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Mon, Nov 23, 00:45 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,14 +11,14 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$114.82** (+4.4%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$121.57** (+10.5%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
-| Trades | 6: 5 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Days the daily goal was met | 5 of 8 |
-| Open | **LONG XRP** 10x, margin $106.71, entry $0.9269, target $0.9404, liquidation $0.8556, now +7.6%, held 39.7h |
+| Trades | 7: 6 at target, 0 at the time limit, 1 stopped, 0 liquidated |
+| Days the daily goal was met | 6 of 8 |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
+| 7 | Nov 21, 08:47 | XRP | long | +13.93% target | 39.96h | -17.9% | $0.64 | +13.9% ($14.86) | $121.57 |
 | 6 | Nov 20, 10:32 | ZEC | short | +13.93% target | 0.23h | -5.0% | $0.56 | +13.9% ($13.05) | $106.71 |
 | 5 | Nov 20, 01:02 | LINK | long | stop-loss before liquidation | 9.28h | -48.4% | $1.63 | -49.5% (-$91.67) | $93.66 |
 | 4 | Nov 19, 00:02 | AAVE | short | +13.93% target | 10.22h | -16.5% | $0.97 | +13.9% ($22.66) | $185.33 |
