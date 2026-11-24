@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Tue, Nov 24, 12:15 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Tue, Nov 24, 12:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -31,10 +31,10 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$87.17** (+248.7%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$85.94** (+243.8%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
 | Trades | 12: 11 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **SHORT UNI** 10x, margin $101.89, entry $4.6619, target $4.5659, liquidation $4.8839, now -14.4%, held 1.7h |
+| Open | **SHORT UNI** 10x, margin $101.89, entry $4.6619, target $4.5660, liquidation $4.8839, now -15.7%, held 2.0h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
