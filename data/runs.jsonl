@@ -3223,3 +3223,4 @@
 {"t":"2026-11-24T15:30:23.409Z","errors":[],"closed":[],"closedShadows":0,"perps":{"conservative":{"decision":"HOLD","bankroll":123.63},"aggressive":{"decision":"OPEN SHORT","bankroll":101.89}}}
 {"t":"2026-11-24T15:45:24.487Z","errors":[],"closed":[],"closedShadows":0,"perps":{"conservative":{"decision":"HOLD","bankroll":123.94},"aggressive":{"decision":"HOLD","bankroll":104.88}}}
 {"t":"2026-11-24T16:00:32.037Z","errors":[],"closed":[],"closedShadows":0,"perps":{"conservative":{"decision":"HOLD","bankroll":121.58},"aggressive":{"decision":"HOLD","bankroll":98.49}}}
+{"t":"2026-11-24T16:15:21.509Z","errors":[],"closed":[],"closedShadows":0,"perps":{"conservative":{"decision":"HOLD","bankroll":131.78},"aggressive":{"decision":"HOLD","bankroll":102.51}}}
