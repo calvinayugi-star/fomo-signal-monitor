@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Wed, Nov 25, 05:15 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Wed, Nov 25, 05:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,11 +11,11 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$98.12** (-10.8%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$100.08** (-9.0%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 8: 7 at target, 0 at the time limit, 1 stopped, 0 liquidated |
 | Days the daily goal was met | 7 of 10 |
-| Open | **LONG kPEPE** 10x, margin $138.51, entry $0.003535, target $0.003586, liquidation $0.003349, now -29.2%, held 4.0h |
+| Open | **LONG kPEPE** 10x, margin $138.51, entry $0.003535, target $0.003586, liquidation $0.003349, now -27.8%, held 4.2h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -32,10 +32,10 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$124.85** (+399.4%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$129.03** (+416.1%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
 | Trades | 13: 12 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **SHORT ZEC** 10x, margin $122.27, entry $728.77, target $713.78, liquidation $763.48, now +2.1%, held 2.5h |
+| Open | **SHORT ZEC** 10x, margin $122.27, entry $728.77, target $713.79, liquidation $763.48, now +5.5%, held 2.7h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
