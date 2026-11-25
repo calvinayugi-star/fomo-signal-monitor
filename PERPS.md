@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Wed, Nov 25, 08:15 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Wed, Nov 25, 08:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,11 +11,11 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$70.00** (-36.4%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$65.12** (-40.8%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 9: 7 at target, 0 at the time limit, 2 stopped, 0 liquidated |
 | Days the daily goal was met | 7 of 10 |
-| Open | **SHORT ZEC** 10x, margin $70.00, entry pending, target n/a, liquidation n/a, now n/a, held fill pending |
+| Open | **SHORT ZEC** 10x, margin $70.00, entry $707.59, target $697.31, liquidation $741.28, now -7.0%, held 0.2h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -36,6 +36,7 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 | Start → now | $25 → **$146.72** (+486.9%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
 | Trades | 14: 13 at target, 0 at the time limit, 1 stopped, 0 liquidated |
+| Open | **LONG PUMP** 10x, margin $146.72, entry pending, target n/a, liquidation n/a, now n/a, held fill pending |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|

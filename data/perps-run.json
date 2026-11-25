@@ -50,7 +50,27 @@
      "score": 54.5,
      "reason": null
     },
-    "state": {}
+    "state": {
+     "worstNetPct": -8.678243720865026,
+     "peakNetPct": 3.099429883020648,
+     "lastPx": 711.87,
+     "lastAt": 1795613400000
+    },
+    "fill": {
+     "at": "2026-11-25T13:17:00.000Z",
+     "px": 707.5886784,
+     "candleT": 1795612620000
+    },
+    "liqPx": 741.2833773714286,
+    "stopPx": 737.9139074742858,
+    "targetPx": 697.3089568610787,
+    "checkedThrough": 1795613340000,
+    "mark": {
+     "at": "2026-11-25T13:30:00.000Z",
+     "px": 711.87,
+     "netPct": -6.97,
+     "proceeds": 65.12
+    }
    },
    "trades": [
     {
@@ -353,8 +373,43 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 146.7242,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "coin": "PUMP",
+    "side": "long",
+    "decidedAt": "2026-11-25T13:30:25.011Z",
+    "markPxAtDecision": 0.002356,
+    "marginUsd": 146.7242,
+    "leverage": 10,
+    "mmrPct": 5,
+    "slipPct": 0.0424,
+    "fundingPctPerHour": -0.00289863,
+    "targetNetPct": 20,
+    "maxHoldHours": null,
+    "score": 53.5,
+    "entry": {
+     "coin": "PUMP",
+     "markPx": 0.002356,
+     "dayVolumeUsd": 11561843,
+     "oiUsd": 35766807,
+     "spreadPct": 0.085,
+     "fundingPctPerHour": -0.0029,
+     "mmrPct": 5,
+     "side": "long",
+     "chg15": 0.77,
+     "chg60": 0.55,
+     "chg4h": 0.59,
+     "surge": 2.47,
+     "typical2hPct": 2.11,
+     "targetMovePct": 2.06,
+     "worstAdverse2hPct": 3.42,
+     "liqDistPct": 5.26,
+     "oiChgPct": 0.34,
+     "score": 53.5,
+     "reason": null
+    },
+    "state": {}
+   },
    "trades": [
     {
      "n": 1,
