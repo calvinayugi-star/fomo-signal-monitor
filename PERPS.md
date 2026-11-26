@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Thu, Nov 26, 11:15 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Thu, Nov 26, 11:30 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,11 +11,11 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$79.76** (-27.5%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$69.98** (-36.4%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 10: 8 at target, 0 at the time limit, 2 stopped, 0 liquidated |
 | Days the daily goal was met | 8 of 11 |
-| Open | **LONG NEAR** 10x, margin $79.76, entry pending, target n/a, liquidation n/a, now n/a, held fill pending |
+| Open | **LONG NEAR** 10x, margin $79.76, entry $3.0852, target $3.1301, liquidation $2.9228, now -12.3%, held 0.2h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -34,10 +34,10 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$140.69** (+462.8%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$133.85** (+435.4%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
 | Trades | 15: 14 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **LONG XPL** 10x, margin $176.07, entry $0.04859, target $0.04960, liquidation $0.04603, now -20.1%, held 20.7h |
+| Open | **LONG XPL** 10x, margin $176.07, entry $0.04859, target $0.04960, liquidation $0.04603, now -24.0%, held 21.0h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
