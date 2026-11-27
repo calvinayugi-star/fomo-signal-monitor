@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Fri, Nov 27, 10:00 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Fri, Nov 27, 10:15 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,14 +11,14 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$97.91** (-11.0%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$103.52** (-5.9%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
-| Trades | 11: 9 at target, 0 at the time limit, 2 stopped, 0 liquidated |
-| Days the daily goal was met | 9 of 12 |
-| Open | **SHORT kPEPE** 10x, margin $90.87, entry $0.003474, target $0.003424, liquidation $0.003639, now +7.8%, held 0.2h |
+| Trades | 12: 10 at target, 0 at the time limit, 2 stopped, 0 liquidated |
+| Days the daily goal was met | 10 of 12 |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
+| 12 | Nov 27, 09:47 | kPEPE | short | +13.93% target | 0.23h | -2.9% | $0.54 | +13.9% ($12.66) | $103.52 |
 | 11 | Nov 26, 11:17 | NEAR | long | +13.93% target | 10.13h | -19.9% | $0.48 | +13.9% ($11.11) | $90.87 |
 | 10 | Nov 25, 08:17 | ZEC | short | +13.93% target | 0.24h | -8.7% | $0.42 | +13.9% ($9.75) | $79.76 |
 | 9 | Nov 25, 01:17 | kPEPE | long | stop-loss before liquidation | 6.56h | -48.2% | $1.22 | -49.5% (-$68.50) | $70.00 |
