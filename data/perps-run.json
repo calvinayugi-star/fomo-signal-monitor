@@ -50,7 +50,27 @@
      "score": 76.9,
      "reason": null
     },
-    "state": {}
+    "state": {
+     "worstNetPct": -2.9130976662882175,
+     "peakNetPct": 8.606156544183323,
+     "lastPx": 0.003443,
+     "lastAt": 1795791600000
+    },
+    "fill": {
+     "at": "2026-11-27T14:47:00.000Z",
+     "px": 0.003474009625,
+     "candleT": 1795790820000
+    },
+    "liqPx": 0.003639438654761905,
+    "stopPx": 0.0036228957517857145,
+    "targetPx": 0.003423539835617157,
+    "checkedThrough": 1795791540000,
+    "mark": {
+     "at": "2026-11-27T15:00:00.000Z",
+     "px": 0.003443,
+     "netPct": 7.75,
+     "proceeds": 97.91
+    }
    },
    "trades": [
     {
@@ -415,65 +435,8 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 0,
-   "position": {
-    "coin": "XPL",
-    "side": "long",
-    "decidedAt": "2026-11-25T19:30:28.072Z",
-    "markPxAtDecision": 0.048653,
-    "marginUsd": 176.069,
-    "leverage": 10,
-    "mmrPct": 5,
-    "slipPct": 0.0463,
-    "fundingPctPerHour": 0.00125,
-    "targetNetPct": 20,
-    "maxHoldHours": null,
-    "score": 52.4,
-    "entry": {
-     "coin": "XPL",
-     "markPx": 0.048653,
-     "dayVolumeUsd": 8168156,
-     "oiUsd": 25110668,
-     "spreadPct": 0.093,
-     "fundingPctPerHour": 0.0013,
-     "mmrPct": 5,
-     "side": "long",
-     "chg15": 0.78,
-     "chg60": 1.86,
-     "chg4h": 8.13,
-     "surge": 1.71,
-     "typical2hPct": 2.53,
-     "targetMovePct": 2.06,
-     "worstAdverse2hPct": 3.36,
-     "liqDistPct": 5.26,
-     "oiChgPct": 0.98,
-     "score": 52.4,
-     "reason": null
-    },
-    "state": {
-     "worstNetPct": -42.04330167291525,
-     "peakNetPct": 12.20003034626323,
-     "lastPx": 0.04704,
-     "lastAt": 1795790700000,
-     "fundingUsd": 0.9316337184163427,
-     "fundedThrough": 1795788000000
-    },
-    "fill": {
-     "at": "2026-11-25T19:32:00.000Z",
-     "px": 0.048589486521,
-     "candleT": 1795635120000
-    },
-    "liqPx": 0.0460321451251579,
-    "stopPx": 0.04628787926474211,
-    "targetPx": 0.049616294114471625,
-    "checkedThrough": 1795790640000,
-    "mark": {
-     "at": "2026-11-27T14:45:00.000Z",
-     "px": 0.04704,
-     "netPct": -33.75,
-     "proceeds": 116.64
-    }
-   },
+   "cash": 87.7364,
+   "position": null,
    "trades": [
     {
      "n": 1,
@@ -849,6 +812,31 @@
      "targetHit": true,
      "score": 53.5,
      "newBankroll": 176.069
+    },
+    {
+     "n": 16,
+     "coin": "XPL",
+     "side": "long",
+     "decidedAt": "2026-11-25T19:30:28.072Z",
+     "fillAt": "2026-11-25T19:32:00.000Z",
+     "exitAt": "2026-11-27T14:52:30.000Z",
+     "holdHours": 43.34,
+     "reason": "stop-loss before liquidation",
+     "entryPx": 0.048589486521,
+     "exitPx": 0.04622016009737779,
+     "liqPx": 0.0460321451251579,
+     "stopPx": 0.04628787926474211,
+     "marginUsd": 176.069,
+     "notionalUsd": 1760.69,
+     "feesUsd": 1.546,
+     "fundingUsd": 0.9316,
+     "netUsd": -88.3326,
+     "netPct": -50.17,
+     "peakNetPct": 12.2,
+     "worstNetPct": -48.78,
+     "targetHit": false,
+     "score": 52.4,
+     "newBankroll": 87.7364
     }
    ]
   }

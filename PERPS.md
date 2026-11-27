@@ -1,6 +1,6 @@
 # Perps Compounders: Results (PAPER MODE)
 
-Updated Fri, Nov 27, 09:45 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
+Updated Fri, Nov 27, 10:00 EST. Paper trades on Hyperliquid's live market data: no account, no real orders.
 
 **Rules (since 2026-11-17):** every 15 min, screen every Hyperliquid perp; open the best setup, **long or short, 10x isolated with 100% of the bankroll as margin**.
 Close at the run's net target (a resting limit order, maker fee); no time limit since 2026-11-17 (trades get time to breathe). **Stop-loss at 90% of the way to liquidation** (since 2026-11-17; liquidation is about 5–9% against the position depending on the coin), a market order that keeps the margin a liquidation would take.
@@ -11,11 +11,11 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $110 → **$90.87** (-17.4%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $110 → **$97.91** (-11.0%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5110.00 |
 | Trades | 11: 9 at target, 0 at the time limit, 2 stopped, 0 liquidated |
 | Days the daily goal was met | 9 of 12 |
-| Open | **SHORT kPEPE** 10x, margin $90.87, entry pending, target n/a, liquidation n/a, now n/a, held fill pending |
+| Open | **SHORT kPEPE** 10x, margin $90.87, entry $0.003474, target $0.003424, liquidation $0.003639, now +7.8%, held 0.2h |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
@@ -35,13 +35,13 @@ At $5000.00 + the seed a run cashes out $5000.00+ and starts again from the seed
 
 | | |
 |---|---|
-| Start → now | $25 → **$116.64** (+366.6%) since Mon, Nov 16, 21:15 EST |
+| Start → now | $25 → **$87.74** (+250.9%) since Mon, Nov 16, 21:15 EST |
 | Cycle | 1, $0.00 cashed out in earlier cycles; goal $5025.00 |
-| Trades | 15: 14 at target, 0 at the time limit, 1 stopped, 0 liquidated |
-| Open | **LONG XPL** 10x, margin $176.07, entry $0.04859, target $0.04962, liquidation $0.04603, now -33.8%, held 43.2h |
+| Trades | 16: 14 at target, 0 at the time limit, 2 stopped, 0 liquidated |
 
 | # | Filled | Coin | Side | Exit | Held | Worst | Fees | Net | Bankroll after |
 |---|---|---|---|---|---|---|---|---|---|
+| 16 | Nov 25, 14:32 | XPL | long | stop-loss before liquidation | 43.34h | -48.8% | $1.55 | -50.2% (-$88.33) | $87.74 |
 | 15 | Nov 25, 08:32 | PUMP | long | +20% target | 3.67h | -28.1% | $0.88 | +20.0% ($29.34) | $176.07 |
 | 14 | Nov 25, 02:47 | ZEC | short | +20% target | 5.06h | -12.8% | $0.73 | +20.0% ($24.45) | $146.72 |
 | 13 | Nov 24, 10:32 | UNI | short | +20% target | 15.93h | -22.3% | $0.61 | +20.0% ($20.38) | $122.27 |
