@@ -15,8 +15,43 @@
    "leverage": 10,
    "startedAt": "2026-11-17T02:15:24.597Z",
    "status": "active",
-   "cash": 90.8652,
-   "position": null,
+   "cash": 0,
+   "position": {
+    "coin": "kPEPE",
+    "side": "short",
+    "decidedAt": "2026-11-27T14:45:27.035Z",
+    "markPxAtDecision": 0.003514,
+    "marginUsd": 90.8652,
+    "leverage": 10,
+    "mmrPct": 5,
+    "slipPct": 0.0285,
+    "fundingPctPerHour": 0.00125,
+    "targetNetPct": 13.93,
+    "maxHoldHours": null,
+    "score": 76.9,
+    "entry": {
+     "coin": "kPEPE",
+     "markPx": 0.003514,
+     "dayVolumeUsd": 9151398,
+     "oiUsd": 15071059,
+     "spreadPct": 0.057,
+     "fundingPctPerHour": 0.0013,
+     "mmrPct": 5,
+     "side": "short",
+     "chg15": -2.28,
+     "chg60": -3.41,
+     "chg4h": -3.54,
+     "surge": 8.01,
+     "typical2hPct": 1.73,
+     "targetMovePct": 1.45,
+     "worstAdverse2hPct": 3.53,
+     "liqDistPct": 4.76,
+     "oiChgPct": -3.5,
+     "score": 76.9,
+     "reason": null
+    },
+    "state": {}
+   },
    "trades": [
     {
      "n": 1,
@@ -418,8 +453,8 @@
     "state": {
      "worstNetPct": -42.04330167291525,
      "peakNetPct": 12.20003034626323,
-     "lastPx": 0.047747,
-     "lastAt": 1795789800000,
+     "lastPx": 0.04704,
+     "lastAt": 1795790700000,
      "fundingUsd": 0.9316337184163427,
      "fundedThrough": 1795788000000
     },
@@ -431,12 +466,12 @@
     "liqPx": 0.0460321451251579,
     "stopPx": 0.04628787926474211,
     "targetPx": 0.049616294114471625,
-    "checkedThrough": 1795789740000,
+    "checkedThrough": 1795790640000,
     "mark": {
-     "at": "2026-11-27T14:30:00.000Z",
-     "px": 0.047747,
-     "netPct": -19.21,
-     "proceeds": 142.24
+     "at": "2026-11-27T14:45:00.000Z",
+     "px": 0.04704,
+     "netPct": -33.75,
+     "proceeds": 116.64
     }
    },
    "trades": [
